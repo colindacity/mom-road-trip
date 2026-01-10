@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { DayPlan, TripPhase } from '@/types/trip';
+import { DayPlan, TripPhase, Activity } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
-import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play } from 'lucide-react';
+import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play, Trash2, CalendarCheck, CalendarX } from 'lucide-react';
 
 interface CompactDayRowProps {
   day: DayPlan;
@@ -12,10 +12,30 @@ interface CompactDayRowProps {
   isSelected: boolean;
   onToggle: () => void;
   onSelect: () => void;
+  onRemoveActivity?: (activity: Activity, dayId: string, dayNumber: number) => void;
+  onToggleConfirmed?: (activityId: string) => void;
+  isActivityHidden?: (activityId: string) => boolean;
+  isActivityConfirmed?: (activityId: string) => boolean;
 }
 
-export default function CompactDayRow({ day, phase, isExpanded, isSelected, onToggle, onSelect }: CompactDayRowProps) {
+export default function CompactDayRow({
+  day,
+  phase,
+  isExpanded,
+  isSelected,
+  onToggle,
+  onSelect,
+  onRemoveActivity,
+  onToggleConfirmed,
+  isActivityHidden,
+  isActivityConfirmed,
+}: CompactDayRowProps) {
   const [activityExpanded, setActivityExpanded] = useState<string | null>(null);
+
+  // Filter out hidden activities
+  const visibleActivities = day.activities.filter(
+    (activity) => !isActivityHidden?.(activity.id)
+  );
 
   // Use location image or fallback
   const imageUrl = day.location.image || 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80';
@@ -71,7 +91,7 @@ export default function CompactDayRow({ day, phase, isExpanded, isSelected, onTo
           )}
           <span className="flex items-center gap-1">
             <Camera className="w-3 h-3" />
-            {day.activities.length}
+            {visibleActivities.length}
           </span>
           {day.budgetBreakdown?.total && (
             <span className="flex items-center gap-1">
@@ -151,27 +171,35 @@ export default function CompactDayRow({ day, phase, isExpanded, isSelected, onTo
 
           {/* Activities list - rich cards */}
           <div className="space-y-2">
-            {day.activities.map((activity, idx) => (
+            {visibleActivities.map((activity, idx) => {
+              const isConfirmed = isActivityConfirmed?.(activity.id);
+              return (
               <div key={activity.id} className="group/activity">
                 <div
-                  onClick={() => setActivityExpanded(
-                    activityExpanded === activity.id ? null : activity.id
-                  )}
-                  className={`rounded-lg border transition-all cursor-pointer ${
-                    activityExpanded === activity.id
+                  className={`rounded-lg border transition-all ${
+                    isConfirmed
+                      ? 'border-green-200 bg-green-50/50 ring-1 ring-green-200'
+                      : activityExpanded === activity.id
                       ? 'border-gray-200 bg-white shadow-sm'
                       : 'border-gray-100 hover:border-gray-200 hover:bg-gray-50'
                   }`}
                 >
                   {/* Activity header */}
-                  <div className="flex items-start gap-3 p-2.5">
+                  <div
+                    onClick={() => setActivityExpanded(
+                      activityExpanded === activity.id ? null : activity.id
+                    )}
+                    className="flex items-start gap-3 p-2.5 cursor-pointer"
+                  >
                     {/* Activity number/icon */}
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
-                      activity.seniorFriendly
+                      isConfirmed
+                        ? 'bg-green-500 text-white'
+                        : activity.seniorFriendly
                         ? 'bg-green-100 text-green-700'
                         : 'bg-gray-100 text-gray-600'
                     }`}>
-                      {idx + 1}
+                      {isConfirmed ? <CalendarCheck className="w-3.5 h-3.5" /> : idx + 1}
                     </div>
 
                     {/* Activity thumbnail if available */}
@@ -227,7 +255,6 @@ export default function CompactDayRow({ day, phase, isExpanded, isSelected, onTo
                       activityExpanded === activity.id ? 'rotate-90' : ''
                     }`} />
                   </div>
-                </div>
 
                 {/* Expanded activity details */}
                 {activityExpanded === activity.id && (
@@ -315,10 +342,56 @@ export default function CompactDayRow({ day, phase, isExpanded, isSelected, onTo
                         </a>
                       </div>
                     )}
+
+                    {/* Action buttons */}
+                    {(onToggleConfirmed || onRemoveActivity) && (
+                      <div className="border-t border-gray-200 pt-2 flex items-center gap-2">
+                        {onToggleConfirmed && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onToggleConfirmed(activity.id);
+                            }}
+                            className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors ${
+                              isConfirmed
+                                ? 'bg-green-500 text-white hover:bg-green-600'
+                                : 'bg-green-50 text-green-700 hover:bg-green-100'
+                            }`}
+                          >
+                            {isConfirmed ? (
+                              <>
+                                <CalendarCheck className="w-3.5 h-3.5" />
+                                On Calendar
+                              </>
+                            ) : (
+                              <>
+                                <CalendarX className="w-3.5 h-3.5" />
+                                Add to Calendar
+                              </>
+                            )}
+                          </button>
+                        )}
+                        {onRemoveActivity && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onRemoveActivity(activity, day.id, day.dayNumber);
+                            }}
+                            className="flex items-center justify-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-600 rounded text-xs hover:bg-red-100 transition-colors"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            Remove
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
+                </div>
               </div>
-            ))}
+            );
+            }
+            )}
           </div>
 
           {/* Accommodation - compact */}

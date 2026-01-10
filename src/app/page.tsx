@@ -1,13 +1,15 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { tripData, locations } from '@/data/tripData';
-import { TripPhase, ViewMode } from '@/types/trip';
+import { TripPhase } from '@/types/trip';
 import PhaseNav from '@/components/PhaseNav';
 import CompactDayRow from '@/components/CompactDayRow';
+import ActivityQueue from '@/components/ActivityQueue';
+import { useTripState } from '@/hooks/useTripState';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -25,6 +27,22 @@ export default function Home() {
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [showMap, setShowMap] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showQueue, setShowQueue] = useState(false);
+
+  // Trip state management (persisted to localStorage)
+  const {
+    state,
+    isLoaded,
+    toggleConfirmed,
+    removeActivity,
+    restoreActivity,
+    deleteFromQueue,
+    isHidden,
+    isConfirmed,
+    resetState,
+    queuedCount,
+    confirmedCount,
+  } = useTripState();
 
   // Filter days by phase and search
   const filteredDays = useMemo(() => {
@@ -94,6 +112,45 @@ export default function Home() {
               </span>
             </div>
             <div className="flex items-center gap-2">
+              {/* Confirmed activities count */}
+              {confirmedCount > 0 && (
+                <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 text-green-700 rounded-lg text-xs">
+                  <CalendarCheck className="w-3.5 h-3.5" />
+                  <span className="font-medium">{confirmedCount}</span>
+                </div>
+              )}
+
+              {/* Queue button */}
+              <button
+                onClick={() => setShowQueue(!showQueue)}
+                className={`relative p-2 rounded-lg transition-colors ${
+                  showQueue ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Activity queue"
+              >
+                <ListTodo className="w-4 h-4" />
+                {queuedCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-white text-[10px] rounded-full flex items-center justify-center">
+                    {queuedCount}
+                  </span>
+                )}
+              </button>
+
+              {/* Reset button */}
+              {(queuedCount > 0 || confirmedCount > 0) && (
+                <button
+                  onClick={() => {
+                    if (confirm('Reset all selections? This will restore all activities and clear calendar selections.')) {
+                      resetState();
+                    }
+                  }}
+                  className="p-2 rounded-lg text-gray-400 hover:text-gray-600 transition-colors"
+                  title="Reset all"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                </button>
+              )}
+
               <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
@@ -197,6 +254,10 @@ export default function Home() {
                   isSelected={selectedDay === day.dayNumber}
                   onToggle={() => toggleDay(day.id)}
                   onSelect={() => selectDay(day.dayNumber)}
+                  onRemoveActivity={removeActivity}
+                  onToggleConfirmed={toggleConfirmed}
+                  isActivityHidden={isHidden}
+                  isActivityConfirmed={isConfirmed}
                 />
               ))}
               {filteredDays.length === 0 && (
@@ -223,18 +284,31 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right column - Map */}
-          {showMap && (
+          {/* Right column - Map or Queue */}
+          {(showMap || showQueue) && (
             <div className="lg:col-span-1 order-first lg:order-last">
-              <div className="lg:sticky lg:top-20">
-                <div className="rounded-lg overflow-hidden border border-gray-100 bg-gray-50 h-[250px] sm:h-[300px] lg:h-[calc(100vh-140px)]">
-                  <TripMap
-                    locations={locations}
-                    days={tripData.days}
-                    selectedDay={selectedDay}
-                    onSelectDay={selectDay}
+              <div className="lg:sticky lg:top-20 space-y-4">
+                {/* Activity Queue */}
+                {showQueue && (
+                  <ActivityQueue
+                    queuedActivities={state.queuedActivities}
+                    onRestore={restoreActivity}
+                    onDelete={deleteFromQueue}
+                    onClose={() => setShowQueue(false)}
                   />
-                </div>
+                )}
+
+                {/* Map */}
+                {showMap && (
+                  <div className="rounded-lg overflow-hidden border border-gray-100 bg-gray-50 h-[250px] sm:h-[300px] lg:h-[calc(100vh-140px)]">
+                    <TripMap
+                      locations={locations}
+                      days={tripData.days}
+                      selectedDay={selectedDay}
+                      onSelectDay={selectDay}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           )}
