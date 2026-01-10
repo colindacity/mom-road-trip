@@ -115,12 +115,12 @@ export const locations: Location[] = [
 export const tripData: TripData = {
   id: 'mom-road-trip-2025',
   name: "Southwest to Glacier Road Trip",
-  tagline: "27 days, 7 national parks, Phoenix to Seattle, one unforgettable journey with Mom",
+  tagline: "30 days, 7 national parks, Phoenix to Glacier, one unforgettable journey with Mom",
   startDate: '2025-05-20',
-  endDate: '2025-06-16',
+  endDate: '2025-06-18',
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → PHX' },
-    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → PHX' }
+    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → PHX. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight. Airlines provide free assistance for seniors - just call airline or add to booking.' }
   ],
   phases: [
     {
@@ -157,21 +157,21 @@ export const tripData: TripData = {
       id: 'montana',
       name: 'Montana',
       summary: 'Crown of the Continent at Glacier National Park',
-      days: [22, 23, 24, 25, 26],
+      days: [22, 23, 24, 25, 26, 27, 28, 29],
       startDay: 22,
-      endDay: 26,
+      endDay: 29,
       color: '#06b6d4',
-      highlights: ['Going-to-the-Sun Road', 'Lake McDonald', 'Alpine meadows']
+      highlights: ['Going-to-the-Sun Road', 'Lake McDonald', 'Alpine meadows', 'Whitefish', 'Flathead Lake']
     },
     {
       id: 'departure',
       name: 'Departure',
-      summary: 'Reflect, pack up, and fly home',
-      days: [27],
-      startDay: 27,
-      endDay: 27,
+      summary: 'Fly home from Glacier Park (FCA)',
+      days: [30],
+      startDay: 30,
+      endDay: 30,
       color: '#8b5cf6',
-      highlights: ['Final morning', 'Fly home']
+      highlights: ['FCA→SEA→YYZ', 'Colin home to Seattle', 'Mom home to Toronto']
     }
   ],
   flights: [
@@ -201,23 +201,35 @@ export const tripData: TripData = {
       id: 'f3',
       type: 'return',
       passenger: 'colin',
-      from: 'SEA',
+      from: 'FCA',
+      fromCity: 'Glacier Park Intl (Kalispell)',
       to: 'SEA',
-      date: '2025-06-15',
-      airline: 'N/A - Driving home',
-      price: 0,
-      notes: 'Colin drives home from SEA airport after dropping off rental car. No flight needed!'
+      toCity: 'Seattle',
+      date: '2025-06-18',
+      airline: 'Alaska Airlines',
+      flightNumber: 'AS2331',
+      departureTime: '6:00 AM',
+      arrivalTime: '7:21 AM',
+      duration: '1h 21m',
+      price: 89,
+      notes: 'DIRECT flight FCA→SEA only. Colin heads home after landing in Seattle. Request wheelchair assist for mom during connection.'
     },
     {
       id: 'f4',
       type: 'return',
       passenger: 'mom',
-      from: 'SEA',
+      from: 'FCA',
+      fromCity: 'Glacier Park Intl (Kalispell)',
       to: 'YYZ',
-      date: '2025-06-16',
-      airline: 'Air Canada or Alaska Airlines (DIRECT)',
-      price: 250,
-      notes: 'DIRECT flight ~4h 45m! Air Canada has 7 weekly nonstops, Alaska has 7 weekly. Morning departures 6am-12pm. Much better than connecting via FCA.'
+      toCity: 'Toronto',
+      date: '2025-06-18',
+      airline: 'Alaska Airlines',
+      flightNumber: 'AS2331 + AS385',
+      departureTime: '6:00 AM',
+      arrivalTime: '5:40 PM',
+      duration: '8h 40m (1 stop SEA)',
+      price: 337,
+      notes: 'FCA→SEA→YYZ. Connecting in Seattle (~3hr layover). Request wheelchair/passenger assistance when booking - Alaska provides free mobility assistance for seniors. Call 1-800-252-7522 48hrs before to confirm.'
     }
   ],
   flightOptions: [
@@ -225,36 +237,125 @@ export const tripData: TripData = {
       id: 'fo1',
       passenger: 'mom',
       type: 'return',
-      recommended: 'sea-direct',
-      notes: 'Flying from Seattle gives Mom a DIRECT flight to Toronto - no connections needed!',
+      recommended: 'fca-sea-yyz',
+      notes: 'Flying from FCA (Kalispell) eliminates 10+ hour drive to Seattle. Worth the connection!',
       options: [
         {
-          id: 'sea-direct',
+          id: 'fca-sea-yyz',
           type: 'return',
           passenger: 'mom',
-          from: 'SEA',
-          fromCity: 'Seattle',
+          from: 'FCA',
+          fromCity: 'Glacier Park (Kalispell)',
           to: 'YYZ',
           toCity: 'Toronto',
-          date: '2025-06-16',
-          airline: 'Air Canada (Recommended)',
-          price: 250,
-          duration: '4h 45m DIRECT',
-          notes: 'DIRECT flight! Air Canada has daily nonstops. Morning departure, arrive Toronto same day.'
+          date: '2025-06-18',
+          airline: 'Alaska Airlines (SELECTED)',
+          flightNumber: 'AS2331 + AS385',
+          price: 337,
+          duration: '8h 40m (1 stop SEA)',
+          notes: 'SELECTED: FCA→SEA→YYZ. 3hr layover in Seattle. Request passenger assistance.'
         },
         {
-          id: 'sea-alaska',
+          id: 'fca-sea-yyz-later',
           type: 'return',
           passenger: 'mom',
-          from: 'SEA',
-          fromCity: 'Seattle',
+          from: 'FCA',
+          fromCity: 'Glacier Park (Kalispell)',
           to: 'YYZ',
           toCity: 'Toronto',
-          date: '2025-06-16',
+          date: '2025-06-18',
           airline: 'Alaska Airlines',
-          price: 250,
-          duration: '4h 45m DIRECT',
-          notes: 'DIRECT flight! Alaska also flies nonstop SEA-YYZ. Same great service.'
+          price: 380,
+          duration: '10h (1 stop SEA)',
+          notes: 'Later departure option. More relaxed morning but longer layover.'
+        }
+      ]
+    },
+    {
+      id: 'fo2',
+      passenger: 'colin',
+      type: 'outbound',
+      recommended: 'sea-phx-direct',
+      notes: 'Colin flies SEA→PHX to meet Mom. Multiple direct options daily.',
+      options: [
+        {
+          id: 'sea-phx-direct',
+          type: 'outbound',
+          passenger: 'colin',
+          from: 'SEA',
+          fromCity: 'Seattle',
+          to: 'PHX',
+          toCity: 'Phoenix',
+          date: '2025-05-20',
+          airline: 'Alaska Airlines (Recommended)',
+          price: 89,
+          duration: '2h 55m DIRECT',
+          notes: 'DIRECT flight! 4+ daily nonstops. Book 45-60 days ahead for ~$89-120.'
+        },
+        {
+          id: 'sea-phx-sw',
+          type: 'outbound',
+          passenger: 'colin',
+          from: 'SEA',
+          fromCity: 'Seattle',
+          to: 'PHX',
+          toCity: 'Phoenix',
+          date: '2025-05-20',
+          airline: 'Southwest',
+          price: 100,
+          duration: '2h 55m DIRECT',
+          notes: 'DIRECT! Southwest has free checked bags and flexible rebooking.'
+        }
+      ]
+    },
+    {
+      id: 'fo3',
+      passenger: 'mom',
+      type: 'outbound',
+      recommended: 'yyz-phx-porter',
+      notes: 'Mom flies YYZ→PHX. Porter recommended for comfort and service.',
+      options: [
+        {
+          id: 'yyz-phx-porter',
+          type: 'outbound',
+          passenger: 'mom',
+          from: 'YYZ',
+          fromCity: 'Toronto',
+          to: 'PHX',
+          toCity: 'Phoenix',
+          date: '2025-05-20',
+          airline: 'Porter Airlines (Recommended)',
+          price: 220,
+          duration: '4h 32m DIRECT',
+          notes: 'DIRECT! Porter has no middle seats, free wine, snacks. 8:50am dep, 10:22am PHX arrival. Perfect for senior travelers!'
+        },
+        {
+          id: 'yyz-phx-westjet',
+          type: 'outbound',
+          passenger: 'mom',
+          from: 'YYZ',
+          fromCity: 'Toronto',
+          to: 'PHX',
+          toCity: 'Phoenix',
+          date: '2025-05-20',
+          airline: 'WestJet',
+          price: 280,
+          duration: '4h 35m DIRECT',
+          notes: 'DIRECT! Canadian airline, good service.'
+        },
+        {
+          id: 'yyz-phx-ac',
+          type: 'outbound',
+          passenger: 'mom',
+          from: 'YYZ',
+          fromCity: 'Toronto',
+          to: 'PHX',
+          toCity: 'Phoenix',
+          date: '2025-05-20',
+          airline: 'Air Canada',
+          price: 350,
+          duration: '4h 35m DIRECT',
+          notes: 'DIRECT! Air Canada daily nonstop. Can book together with return.'
         }
       ]
     }
@@ -264,13 +365,13 @@ export const tripData: TripData = {
     vehicleType: 'Subaru Crosstrek / Toyota RAV4 / Mazda CX-30 (compact AWD SUV)',
     pickupLocation: 'Phoenix Sky Harbor Airport (PHX)',
     pickupDate: '2025-05-20',
-    dropoffLocation: 'Seattle-Tacoma International Airport (SEA)',
-    dropoffDate: '2025-06-15',
-    totalDays: 26,
+    dropoffLocation: 'Glacier Park International Airport (FCA)',
+    dropoffDate: '2025-06-17',
+    totalDays: 28,
     dailyRate: 45,
-    dropoffFee: 150,
-    totalCost: 1320,
-    notes: 'One-way compact AWD SUV. PHX to SEA is a common one-way route with lower drop-off fees than FCA. Book via Costco Travel or AutoSlash for best rates. AWD for mountain roads. AARP/AAA discounts available.'
+    dropoffFee: 200,
+    totalCost: 1460,
+    notes: 'One-way compact AWD SUV. PHX to FCA drop-off saves 10+ hr drive to Seattle! Book via Costco Travel or AutoSlash for best rates. AWD essential for mountain roads. AARP/AAA discounts available. Return car evening before 6am flight.'
   },
   days: [
     {
@@ -2092,47 +2193,45 @@ export const tripData: TripData = {
       id: 'd26',
       dayNumber: 26,
       date: '2025-06-14',
-      title: 'Whitefish → Spokane',
-      summary: 'Scenic drive through Montana and Idaho to Spokane',
-      location: locations.find(l => l.id === 'spokane')!,
-      overnight: 'Spokane, WA',
-      drivingDistance: '230 miles',
-      drivingTime: '4 hours',
-      weather: { high: 75, low: 50, conditions: 'Sunny' },
+      title: 'Whitefish - Relaxation Day',
+      summary: 'Easy day in charming Whitefish, spa, shopping, rest',
+      location: locations.find(l => l.id === 'whitefish')!,
+      overnight: 'Whitefish, MT',
+      weather: { high: 72, low: 48, conditions: 'Sunny' },
       activities: [
         {
           id: 'a26-1',
-          name: 'Morning in Whitefish',
-          description: 'Last breakfast at a local cafe, final mountain views',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false
-        },
-        {
-          id: 'a26-2',
-          name: 'Scenic Drive to Spokane',
-          description: 'Drive through beautiful Montana and Idaho scenery via I-90. Stop at Coeur d\'Alene lakefront if time permits.',
-          duration: '4-5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Coeur d\'Alene is a nice halfway stop', 'Beautiful lake views', 'Gas up before leaving Montana']
-        },
-        {
-          id: 'a26-3',
-          name: 'Explore Spokane Riverfront',
-          description: 'Walk along Spokane Falls and the beautiful riverfront park',
+          name: 'Sleep In & Leisurely Breakfast',
+          description: 'No rush today! Enjoy a slow morning at the hotel or a cafe in downtown Whitefish.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false
         },
         {
+          id: 'a26-2',
+          name: 'Explore Downtown Whitefish',
+          description: 'Charming mountain town with boutiques, galleries, and cafes. Great for leisurely strolling.',
+          duration: '2-3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Great local shops', 'Art galleries', 'Many cafes for coffee breaks']
+        },
+        {
+          id: 'a26-3',
+          name: 'Spa or Rest Time',
+          description: 'Book a massage, enjoy the hotel amenities, or just rest. Well deserved after 3+ weeks of adventure!',
+          duration: '2-3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false
+        },
+        {
           id: 'a26-4',
-          name: 'Dinner in Spokane',
-          description: 'Enjoy dinner in downtown Spokane',
-          duration: '1.5 hours',
+          name: 'Dinner at Whitefish Lake Restaurant',
+          description: 'Upscale dining with lake views. Perfect for a celebration dinner.',
+          duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false
@@ -2140,60 +2239,59 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc26',
-        name: 'Hotel in Downtown Spokane',
+        name: 'Lodge at Whitefish Lake / Grouse Mountain Lodge',
         type: 'hotel',
-        priceRange: '$120-180',
-        pricePerNight: 150,
+        priceRange: '$180-280',
+        pricePerNight: 220,
         seniorFriendly: true,
-        notes: 'Downtown location for easy morning departure'
+        notes: 'Nice property with lake access'
       },
-      notes: ['DRIVING DAY - easy 4 hour drive', 'Last night of the road trip!'],
-      budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 40, total: 270 }
+      notes: ['RELAXATION DAY', 'No driving, no hiking - just rest!', 'Enjoy the mountain town vibe'],
+      budgetBreakdown: { accommodation: 220, food: 100, activities: 50, gas: 0, total: 370 }
     },
     {
       id: 'd27',
       dayNumber: 27,
       date: '2025-06-15',
-      title: 'Spokane → Seattle / Fly Home',
-      summary: 'Final drive to Seattle. Colin home, Mom flies direct to Toronto.',
-      location: locations.find(l => l.id === 'seattle')!,
-      overnight: 'Home (Colin) / Seattle Airport Hotel (Mom)',
-      drivingDistance: '280 miles',
-      drivingTime: '4.5 hours',
-      weather: { high: 70, low: 55, conditions: 'Partly Cloudy' },
+      title: 'Whitefish / Flathead Lake Day',
+      summary: 'Explore Flathead Lake, the largest natural freshwater lake west of Mississippi',
+      location: locations.find(l => l.id === 'whitefish')!,
+      overnight: 'Whitefish, MT',
+      drivingDistance: '60 miles round trip',
+      weather: { high: 74, low: 48, conditions: 'Sunny' },
       activities: [
         {
           id: 'a27-1',
-          name: 'Morning Drive to Seattle',
-          description: 'Scenic drive across Washington state via I-90. Stop in Ellensburg or Snoqualmie Pass.',
-          duration: '4.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Beautiful mountain pass scenery', 'Stop at Snoqualmie Falls if time', 'Arrive Seattle early afternoon']
-        },
-        {
-          id: 'a27-2',
-          name: 'Return Rental Car at SEA',
-          description: 'Drop off car at Seattle-Tacoma International Airport',
-          duration: '30 min',
+          name: 'Breakfast in Whitefish',
+          description: 'Leisurely breakfast at Buffalo Cafe or Loula\'s',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false
         },
         {
+          id: 'a27-2',
+          name: 'Drive to Flathead Lake',
+          description: 'Short scenic drive to the largest freshwater lake west of the Mississippi. Stop at Bigfork for charming shops.',
+          duration: '2-3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Bigfork is adorable', 'Cherry orchards along the way', 'Great photo ops']
+        },
+        {
           id: 'a27-3',
-          name: 'Colin Goes Home / Mom to Hotel',
-          description: 'Colin takes light rail home. Mom checks into airport hotel for early morning flight.',
-          duration: '2 hours',
+          name: 'Lakeside Lunch',
+          description: 'Lunch at a lakefront restaurant in Bigfork or Polson',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false
         },
         {
           id: 'a27-4',
-          name: 'Farewell Dinner',
-          description: 'Final dinner together near the airport or in Seattle',
+          name: 'Evening in Whitefish',
+          description: 'Return to Whitefish for final evening. Pack and prepare for departure.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -2202,26 +2300,244 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc27',
-        name: 'Hilton Seattle Airport / Marriott SeaTac',
+        name: 'Same hotel in Whitefish',
         type: 'hotel',
-        priceRange: '$150-200',
-        pricePerNight: 175,
-        seniorFriendly: true,
-        notes: 'Mom stays here, flies out next morning. Colin goes home.'
+        priceRange: '$180-280',
+        pricePerNight: 220,
+        seniorFriendly: true
       },
-      notes: ['End of road trip!', 'Mom flies SEA → YYZ DIRECT next morning (June 16)', 'Air Canada or Alaska Airlines ~5 hours'],
-      budgetBreakdown: { accommodation: 175, food: 60, activities: 0, gas: 45, total: 280 }
+      notes: ['EASY DAY TRIP', 'Beautiful lake scenery', 'Start packing tonight'],
+      budgetBreakdown: { accommodation: 220, food: 90, activities: 0, gas: 20, total: 330 }
+    },
+    {
+      id: 'd28',
+      dayNumber: 28,
+      date: '2025-06-16',
+      title: 'Flexible Buffer Day',
+      summary: 'Optional extra Glacier day or rest before departure',
+      location: locations.find(l => l.id === 'glacier')!,
+      overnight: 'Whitefish, MT',
+      weather: { high: 72, low: 46, conditions: 'Partly Cloudy' },
+      activities: [
+        {
+          id: 'a28-1',
+          name: 'Option A: Return to Glacier',
+          description: 'One more visit to favorite spots - Lake McDonald, Trail of the Cedars, or Apgar Village',
+          duration: '4-5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Last chance for photos!', 'Visit the gift shop', 'Say goodbye to the glaciers']
+        },
+        {
+          id: 'a28-2',
+          name: 'Option B: Rest Day in Whitefish',
+          description: 'Stay in town and relax. Read, nap, enjoy the hotel.',
+          duration: 'All day',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false
+        },
+        {
+          id: 'a28-3',
+          name: 'Pack and Organize',
+          description: 'Get everything ready for departure. Check flight details.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Confirm Alaska flight AS2331', 'Request wheelchair assist if not already done', 'Print boarding passes']
+        }
+      ],
+      accommodation: {
+        id: 'acc28',
+        name: 'Same hotel in Whitefish',
+        type: 'hotel',
+        priceRange: '$180-280',
+        pricePerNight: 220,
+        seniorFriendly: true
+      },
+      notes: ['FLEXIBLE DAY', 'Do what feels right', 'Flight is day after tomorrow'],
+      budgetBreakdown: { accommodation: 220, food: 80, activities: 0, gas: 15, total: 315 }
+    },
+    {
+      id: 'd29',
+      dayNumber: 29,
+      date: '2025-06-17',
+      title: 'Final Day - Return Rental Car',
+      summary: 'Last day in Montana. Return rental car at FCA, stay near airport.',
+      location: locations.find(l => l.id === 'kalispell')!,
+      overnight: 'Kalispell (near FCA airport)',
+      drivingDistance: '25 miles',
+      weather: { high: 74, low: 48, conditions: 'Sunny' },
+      activities: [
+        {
+          id: 'a29-1',
+          name: 'Late Checkout & Final Breakfast',
+          description: 'No rush! Enjoy a leisurely last breakfast in Whitefish.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false
+        },
+        {
+          id: 'a29-2',
+          name: 'Drive to Kalispell & Return Rental Car',
+          description: 'Short 25-min drive to Glacier Park International Airport (FCA). Return the rental car by 5pm.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Take photos of the car', 'Get gas before returning', 'Check for personal items']
+        },
+        {
+          id: 'a29-3',
+          name: 'Check into Airport Hotel',
+          description: 'Walk or shuttle to nearby hotel. Early 6am flight tomorrow requires staying close.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true
+        },
+        {
+          id: 'a29-4',
+          name: 'Farewell Dinner',
+          description: 'Final dinner together celebrating an amazing 30-day adventure!',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Montana Club Restaurant', 'Norm\'s News for casual', 'Keep it light - early morning ahead!']
+        },
+        {
+          id: 'a29-5',
+          name: 'Early Night - 4am Wake Up',
+          description: 'Get to bed early! 6am flight means airport by 4:30am.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Set multiple alarms', 'Pack carry-ons tonight', 'Confirm passenger assistance']
+        }
+      ],
+      accommodation: {
+        id: 'acc29',
+        name: 'Red Lion Kalispell / Hampton Inn Kalispell',
+        type: 'hotel',
+        priceRange: '$130-180',
+        pricePerNight: 150,
+        seniorFriendly: true,
+        notes: 'Walking distance or free shuttle to FCA. Book room near lobby for easy exit.'
+      },
+      notes: ['TRAVEL PREP DAY', 'Return car by 5pm', 'Early dinner, early bed', '6AM FLIGHT TOMORROW'],
+      budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 10, total: 240 }
+    },
+    {
+      id: 'd30',
+      dayNumber: 30,
+      date: '2025-06-18',
+      title: 'Fly Home - End of Trip',
+      summary: 'Colin to Seattle, Mom to Toronto. What an adventure!',
+      location: locations.find(l => l.id === 'kalispell')!,
+      overnight: 'Home!',
+      weather: { high: 70, low: 45, conditions: 'Clear skies for flying' },
+      activities: [
+        {
+          id: 'a30-1',
+          name: '4:00 AM - Wake Up & Get Ready',
+          description: 'Early wake up for 6am flight. Quick shower, final packing check.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Clothes laid out from night before', 'Quick hotel breakfast if available']
+        },
+        {
+          id: 'a30-2',
+          name: '4:30 AM - Arrive at FCA Airport',
+          description: 'Small airport but arrive 90min early. Check in, get passenger assistance for Mom.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Alaska desk opens early', 'Wheelchair assist at check-in', 'FCA is very manageable']
+        },
+        {
+          id: 'a30-3',
+          name: '6:00 AM - Alaska AS2331 FCA → SEA',
+          description: '1hr 21min flight to Seattle. Beautiful mountain views from the air!',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          tips: ['Window seat for views', 'Arrive SEA 7:21am', 'Colin heads home from here!']
+        },
+        {
+          id: 'a30-4',
+          name: '7:21 AM - Arrive Seattle / Colin Home',
+          description: 'Colin says goodbye and takes light rail home. Mom continues to Toronto.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Goodbye hugs!', 'What an incredible trip!', 'Start planning the next one!']
+        },
+        {
+          id: 'a30-5',
+          name: '10:45 AM - Alaska AS385 SEA → YYZ (Mom only)',
+          description: 'Mom\'s connecting flight to Toronto. 4h 15m flight arriving 5:40pm Eastern.',
+          duration: '4.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          tips: ['Passenger assistance throughout', 'Direct to Toronto!', 'Arrival 5:40pm local time']
+        }
+      ],
+      accommodation: {
+        id: 'acc30',
+        name: 'N/A - Flying home!',
+        type: 'hotel',
+        priceRange: '$0',
+        pricePerNight: 0,
+        seniorFriendly: true
+      },
+      notes: ['TRAVEL DAY', 'Colin: FCA→SEA, home by 9am', 'Mom: FCA→SEA→YYZ, home by 6pm', '30 AMAZING DAYS COMPLETE!'],
+      budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
   totalBudget: {
-    flights: 700,
-    carRental: 1680,
-    accommodations: 5800,
-    food: 2200,
+    flights: 736,
+    carRental: 1460,
+    accommodations: 6200,
+    food: 2400,
     activities: 700,
-    gas: 800,
+    gas: 750,
     misc: 500,
-    total: 12380
+    total: 12746
+  },
+  // EDITABLE COST BREAKDOWN - Swap options by changing prices
+  costBreakdown: {
+    flights: {
+      colinOutbound: { description: 'SEA→PHX (Alaska)', price: 90, editable: true },
+      momOutbound: { description: 'YYZ→PHX (Porter DIRECT)', price: 220, editable: true },
+      colinReturn: { description: 'FCA→SEA (Alaska)', price: 89, editable: true },
+      momReturn: { description: 'FCA→SEA→YYZ (Alaska)', price: 337, editable: true },
+      total: 736
+    },
+    carRental: {
+      dailyRate: 45,
+      days: 28,
+      dropoffFee: 200,
+      total: 1460,
+      notes: 'PHX→FCA one-way, AWD SUV'
+    },
+    passengerAssistance: {
+      cost: 0,
+      notes: 'FREE - Request 48hrs ahead. Alaska: 1-800-252-7522. Porter: 1-833-909-0909'
+    },
+    accommodationAvg: 220,
+    foodPerDay: 85,
+    gasEstimate: 750
   },
   packingList: [
     'Sturdy walking/hiking shoes (broken in)',

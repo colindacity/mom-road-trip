@@ -171,6 +171,36 @@ export interface RouteSegment {
   highlights?: string[];
 }
 
+export interface CostItem {
+  description: string;
+  price: number;
+  editable?: boolean;
+}
+
+export interface CostBreakdown {
+  flights: {
+    colinOutbound: CostItem;
+    momOutbound: CostItem;
+    colinReturn: CostItem;
+    momReturn: CostItem;
+    total: number;
+  };
+  carRental: {
+    dailyRate: number;
+    days: number;
+    dropoffFee: number;
+    total: number;
+    notes?: string;
+  };
+  passengerAssistance: {
+    cost: number;
+    notes: string;
+  };
+  accommodationAvg: number;
+  foodPerDay: number;
+  gasEstimate: number;
+}
+
 export interface TripData {
   id: string;
   name: string;
@@ -201,6 +231,7 @@ export interface TripData {
     misc: number;
     total: number;
   };
+  costBreakdown?: CostBreakdown;
   packingList?: string[];
   importantReservations?: {
     item: string;
