@@ -9,6 +9,7 @@ import CompactDayRow from '@/components/CompactDayRow';
 import ActivityQueue from '@/components/ActivityQueue';
 import DndCalendar from '@/components/DndCalendar';
 import { useTripState } from '@/hooks/useTripState';
+import CostBreakdown from '@/components/CostBreakdown';
 import {
   Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List
 } from 'lucide-react';
@@ -29,6 +30,7 @@ export default function Home() {
   const [showMap, setShowMap] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [showQueue, setShowQueue] = useState(false);
+  const [showBudget, setShowBudget] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
@@ -176,6 +178,16 @@ export default function Home() {
               </div>
 
               <button
+                onClick={() => setShowBudget(!showBudget)}
+                className={`p-2 rounded-lg transition-colors ${
+                  showBudget ? 'bg-emerald-100 text-emerald-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Toggle budget breakdown"
+              >
+                <DollarSign className="w-4 h-4" />
+              </button>
+
+              <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
                   showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
@@ -316,8 +328,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right column - Map or Queue */}
-            {(showMap || showQueue) && (
+            {/* Right column - Map, Queue, or Budget */}
+            {(showMap || showQueue || showBudget) && (
               <div className="lg:col-span-1 order-first lg:order-last">
                 <div className="lg:sticky lg:top-20 space-y-4">
                   {/* Activity Queue */}
@@ -327,6 +339,15 @@ export default function Home() {
                       onRestore={restoreActivity}
                       onDelete={deleteFromQueue}
                       onClose={() => setShowQueue(false)}
+                    />
+                  )}
+
+                  {/* Budget Breakdown */}
+                  {showBudget && tripData.costBreakdown && tripData.totalBudget && (
+                    <CostBreakdown
+                      breakdown={tripData.costBreakdown}
+                      totalBudget={tripData.totalBudget}
+                      tripDays={tripData.days.length}
                     />
                   )}
 
