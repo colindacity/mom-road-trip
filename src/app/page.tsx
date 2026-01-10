@@ -7,9 +7,10 @@ import { TripPhase } from '@/types/trip';
 import PhaseNav from '@/components/PhaseNav';
 import CompactDayRow from '@/components/CompactDayRow';
 import ActivityQueue from '@/components/ActivityQueue';
+import DndCalendar from '@/components/DndCalendar';
 import { useTripState } from '@/hooks/useTripState';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -28,6 +29,7 @@ export default function Home() {
   const [showMap, setShowMap] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [showQueue, setShowQueue] = useState(false);
+  const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
   const {
@@ -151,6 +153,28 @@ export default function Home() {
                 </button>
               )}
 
+              {/* View toggle */}
+              <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setViewMode('timeline')}
+                  className={`p-2 transition-colors ${
+                    viewMode === 'timeline' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Timeline view"
+                >
+                  <List className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setViewMode('calendar')}
+                  className={`p-2 transition-colors ${
+                    viewMode === 'calendar' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Calendar view"
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                </button>
+              </div>
+
               <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
@@ -167,7 +191,7 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 py-4">
         {/* Quick stats row */}
-        <div className="flex items-center gap-3 sm:gap-6 text-xs text-gray-500 mb-4 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex items-center gap-3 sm:gap-6 text-xs text-gray-500 mb-4 overflow-x-auto pb-2 scrollbar-hide" suppressHydrationWarning>
           <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
             <Calendar className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
             <span className="font-medium text-gray-700">{totalDays}</span> <span className="hidden sm:inline">days</span><span className="sm:hidden">d</span>
@@ -195,124 +219,133 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left column - Itinerary */}
-          <div className="lg:col-span-2">
-            {/* Phase navigation */}
-            <div className="mb-3">
-              <PhaseNav
-                phases={tripData.phases}
-                activePhase={activePhase}
-                onSelectPhase={setActivePhase}
-              />
-            </div>
-
-            {/* Search */}
-            <div className="relative mb-3">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search days, locations, activities..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                autoComplete="off"
-                suppressHydrationWarning
-                className="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-              />
-            </div>
-
-            {/* Phase summary */}
-            {activePhase && (
-              <div className="mb-3 p-3 rounded-lg" style={{
-                backgroundColor: `${tripData.phases.find(p => p.id === activePhase)?.color}10`,
-                borderLeft: `3px solid ${tripData.phases.find(p => p.id === activePhase)?.color}`
-              }}>
-                <h2 className="text-sm font-medium text-gray-900">
-                  {tripData.phases.find(p => p.id === activePhase)?.name}
-                </h2>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  {tripData.phases.find(p => p.id === activePhase)?.summary}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mt-2">
-                  {tripData.phases.find(p => p.id === activePhase)?.highlights?.map((h, i) => (
-                    <span key={i} className="text-[10px] px-2 py-0.5 bg-white rounded-full text-gray-600">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Days list */}
-            <div className="border border-gray-100 rounded-lg divide-y divide-gray-50">
-              {filteredDays.map(day => (
-                <CompactDayRow
-                  key={day.id}
-                  day={day}
-                  phase={getPhaseForDay(day.dayNumber)}
-                  isExpanded={expandedDays.has(day.id)}
-                  isSelected={selectedDay === day.dayNumber}
-                  onToggle={() => toggleDay(day.id)}
-                  onSelect={() => selectDay(day.dayNumber)}
-                  onRemoveActivity={removeActivity}
-                  onToggleConfirmed={toggleConfirmed}
-                  isActivityHidden={isHidden}
-                  isActivityConfirmed={isConfirmed}
+        {/* Calendar View */}
+        {viewMode === 'calendar' ? (
+          <DndCalendar
+            onPhaseSelect={setActivePhase}
+            selectedPhase={activePhase}
+          />
+        ) : (
+          /* Timeline View */
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left column - Itinerary */}
+            <div className="lg:col-span-2">
+              {/* Phase navigation */}
+              <div className="mb-3">
+                <PhaseNav
+                  phases={tripData.phases}
+                  activePhase={activePhase}
+                  onSelectPhase={setActivePhase}
                 />
-              ))}
-              {filteredDays.length === 0 && (
-                <div className="p-8 text-center text-gray-400 text-sm">
-                  No days match your search
+              </div>
+
+              {/* Search */}
+              <div className="relative mb-3">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search days, locations, activities..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoComplete="off"
+                  suppressHydrationWarning
+                  className="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                />
+              </div>
+
+              {/* Phase summary */}
+              {activePhase && (
+                <div className="mb-3 p-3 rounded-lg" style={{
+                  backgroundColor: `${tripData.phases.find(p => p.id === activePhase)?.color}10`,
+                  borderLeft: `3px solid ${tripData.phases.find(p => p.id === activePhase)?.color}`
+                }}>
+                  <h2 className="text-sm font-medium text-gray-900">
+                    {tripData.phases.find(p => p.id === activePhase)?.name}
+                  </h2>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    {tripData.phases.find(p => p.id === activePhase)?.summary}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {tripData.phases.find(p => p.id === activePhase)?.highlights?.map((h, i) => (
+                      <span key={i} className="text-[10px] px-2 py-0.5 bg-white rounded-full text-gray-600">
+                        {h}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
-            </div>
 
-            {/* Quick actions */}
-            <div className="mt-4 flex items-center justify-between text-xs text-gray-400">
-              <button
-                onClick={() => setExpandedDays(new Set(tripData.days.map(d => d.id)))}
-                className="hover:text-gray-600"
-              >
-                Expand all
-              </button>
-              <button
-                onClick={() => setExpandedDays(new Set())}
-                className="hover:text-gray-600"
-              >
-                Collapse all
-              </button>
-            </div>
-          </div>
-
-          {/* Right column - Map or Queue */}
-          {(showMap || showQueue) && (
-            <div className="lg:col-span-1 order-first lg:order-last">
-              <div className="lg:sticky lg:top-20 space-y-4">
-                {/* Activity Queue */}
-                {showQueue && (
-                  <ActivityQueue
-                    queuedActivities={state.queuedActivities}
-                    onRestore={restoreActivity}
-                    onDelete={deleteFromQueue}
-                    onClose={() => setShowQueue(false)}
+              {/* Days list */}
+              <div className="border border-gray-100 rounded-lg divide-y divide-gray-50">
+                {filteredDays.map(day => (
+                  <CompactDayRow
+                    key={day.id}
+                    day={day}
+                    phase={getPhaseForDay(day.dayNumber)}
+                    isExpanded={expandedDays.has(day.id)}
+                    isSelected={selectedDay === day.dayNumber}
+                    onToggle={() => toggleDay(day.id)}
+                    onSelect={() => selectDay(day.dayNumber)}
+                    onRemoveActivity={removeActivity}
+                    onToggleConfirmed={toggleConfirmed}
+                    isActivityHidden={isHidden}
+                    isActivityConfirmed={isConfirmed}
                   />
-                )}
-
-                {/* Map */}
-                {showMap && (
-                  <div className="rounded-lg overflow-hidden border border-gray-100 bg-gray-50 h-[250px] sm:h-[300px] lg:h-[calc(100vh-140px)]">
-                    <TripMap
-                      locations={locations}
-                      days={tripData.days}
-                      selectedDay={selectedDay}
-                      onSelectDay={selectDay}
-                    />
+                ))}
+                {filteredDays.length === 0 && (
+                  <div className="p-8 text-center text-gray-400 text-sm">
+                    No days match your search
                   </div>
                 )}
               </div>
+
+              {/* Quick actions */}
+              <div className="mt-4 flex items-center justify-between text-xs text-gray-400">
+                <button
+                  onClick={() => setExpandedDays(new Set(tripData.days.map(d => d.id)))}
+                  className="hover:text-gray-600"
+                >
+                  Expand all
+                </button>
+                <button
+                  onClick={() => setExpandedDays(new Set())}
+                  className="hover:text-gray-600"
+                >
+                  Collapse all
+                </button>
+              </div>
             </div>
-          )}
-        </div>
+
+            {/* Right column - Map or Queue */}
+            {(showMap || showQueue) && (
+              <div className="lg:col-span-1 order-first lg:order-last">
+                <div className="lg:sticky lg:top-20 space-y-4">
+                  {/* Activity Queue */}
+                  {showQueue && (
+                    <ActivityQueue
+                      queuedActivities={state.queuedActivities}
+                      onRestore={restoreActivity}
+                      onDelete={deleteFromQueue}
+                      onClose={() => setShowQueue(false)}
+                    />
+                  )}
+
+                  {/* Map */}
+                  {showMap && (
+                    <div className="rounded-lg overflow-hidden border border-gray-100 bg-gray-50 h-[250px] sm:h-[300px] lg:h-[calc(100vh-140px)]">
+                      <TripMap
+                        locations={locations}
+                        days={tripData.days}
+                        selectedDay={selectedDay}
+                        onSelectDay={selectDay}
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Bottom quick info */}
         <div className="mt-8 pt-6 border-t border-gray-100">

@@ -1,0 +1,102 @@
+name: E2E Image Tests
+
+on:
+  # Trigger on Vercel deployment success
+  deployment_status:
+  # Also run on push/PR for local testing
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Job that runs after Vercel deployment
+  test-deployment:
+    name: Test Vercel Deployment
+    runs-on: ubuntu-latest
+    # Only run when Vercel deployment succeeds
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run E2E tests against deployment
+        run: npx playwright test
+        env:
+          CI: true
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-deployment
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Upload screenshots on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-screenshots-deployment
+          path: test-results/
+          retention-days: 7
+
+  # Job that runs on push/PR (local build)
+  test-local:
+    name: Test Local Build
+    runs-on: ubuntu-latest
+    if: github.event_name != 'deployment_status'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Build
+        run: npm run build
+
+      - name: Run E2E tests
+        run: |
+          npm run start &
+          sleep 5
+          npx playwright test
+        env:
+          CI: true
+          BASE_URL: http://localhost:4012
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-local
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Upload screenshots on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-screenshots-local
+          path: test-results/
+          retention-days: 7

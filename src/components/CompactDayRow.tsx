@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { DayPlan, TripPhase, Activity } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
 import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play, Trash2, CalendarCheck, CalendarX } from 'lucide-react';
+import HistoricalWeather from './HistoricalWeather';
 
 interface CompactDayRowProps {
   day: DayPlan;
@@ -163,6 +164,15 @@ export default function CompactDayRow({
               </a>
             )}
           </div>
+
+          {/* Historical Weather */}
+          {day.location.lat && day.location.lng && (
+            <HistoricalWeather
+              lat={day.location.lat}
+              lng={day.location.lng}
+              date={day.date}
+            />
+          )}
 
           {/* Summary row */}
           {day.summary && (
