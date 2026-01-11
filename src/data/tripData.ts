@@ -110,6 +110,41 @@ export const locations: Location[] = [
     image: 'https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=1200',
     infoUrl: 'https://visitseattle.org/',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Seattle-Tacoma+International+Airport' },
+  { id: 'portland', name: 'Portland, OR (PDX)', lat: 45.5152, lng: -122.6784, type: 'city',
+    image: 'https://images.unsplash.com/photo-1507245351038-92eb0d498a15?w=1200',
+    infoUrl: 'https://www.travelportland.com/',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Portland+OR' },
+];
+
+// Chase Sapphire Reserve Exclusive Tables - Portland restaurants
+export const portlandRestaurants = [
+  { name: "L'Orange", cuisine: 'Mediterranean', neighborhood: 'Southeast', priceRange: '$$$$',
+    chaseReserve: true, notes: 'NYT Best Restaurants 2024. Intimate upstairs setting.',
+    reservationUrl: 'https://www.opentable.com/r/lorange-portland' },
+  { name: 'Arden', cuisine: 'Pacific Northwest', neighborhood: 'Pearl District', priceRange: '$$$',
+    chaseReserve: true, notes: 'Prix fixe $75, 250+ wine list. Seasonal menus.',
+    reservationUrl: 'https://www.opentable.com/r/arden-portland' },
+  { name: 'Nodoguro', cuisine: 'Japanese Kaiseki', neighborhood: 'Downtown', priceRange: '$$$$',
+    chaseReserve: true, notes: '20-course seasonal tasting. Reservations essential.',
+    reservationUrl: 'https://www.opentable.com/r/nodoguro-portland' },
+  { name: 'Canard', cuisine: 'Wine Bar/American', neighborhood: 'Burnside', priceRange: '$$',
+    chaseReserve: true, notes: 'From Le Pigeon team. Casual but excellent.',
+    reservationUrl: 'https://www.opentable.com/r/canard-portland' },
+  { name: "Oma's Hideaway", cuisine: 'Malaysian/Indonesian', neighborhood: 'Richmond', priceRange: '$$',
+    chaseReserve: true, notes: 'Hawker-inspired, vegan-friendly. Vibrant atmosphere.',
+    reservationUrl: 'https://www.opentable.com/r/omas-hideaway-portland' },
+  { name: 'Han Oak', cuisine: 'Korean', neighborhood: 'Northeast', priceRange: '$$$',
+    chaseReserve: true, notes: 'Communal prix-fixe dining. Has karaoke!',
+    reservationUrl: 'https://www.opentable.com/r/han-oak-portland' },
+  { name: 'Jeju', cuisine: 'Korean BBQ', neighborhood: 'Southeast', priceRange: '$$$',
+    chaseReserve: true, notes: 'Wood-fired, whole-animal butchery. From Han Oak family.',
+    reservationUrl: 'https://www.opentable.com/r/jeju-portland' },
+  { name: "Shalom Y'all", cuisine: 'Levantine/Mediterranean', neighborhood: 'Southeast', priceRange: '$$',
+    chaseReserve: true, notes: 'Middle Eastern with PNW ingredients. Great for sharing.',
+    reservationUrl: 'https://www.opentable.com/r/shalom-yall-portland' },
+  { name: 'Hayward', cuisine: 'Farm-to-table', neighborhood: 'Carlton (Wine Country)', priceRange: '$$$$',
+    chaseReserve: true, notes: 'James Beard finalist 2024. 45min from Portland.',
+    reservationUrl: 'https://www.opentable.com/r/hayward-carlton' },
 ];
 
 export const tripData: TripData = {
@@ -2189,8 +2224,146 @@ export const tripData: TripData = {
       notes: ['BUFFER DAY', 'Prepare for departure in 2 days', 'Review trip photos and memories'],
       budgetBreakdown: { accommodation: 250, food: 100, activities: 0, gas: 20, total: 370 }
     },
+    // ============================================
+    // OPTION A: PORTLAND WEEKEND (Days 26-27)
+    // Drive Whitefish → Portland, use Chase Reserve $300 dining credit
+    // Fly home from PDX instead of FCA
+    // ============================================
     {
       id: 'd26',
+      dayNumber: 26,
+      date: '2025-06-14',
+      title: 'Whitefish → Portland (Road Trip Finale)',
+      summary: 'Scenic 8-hour drive to Portland for a foodie weekend',
+      location: locations.find(l => l.id === 'portland')!,
+      overnight: 'Portland, OR',
+      drivingDistance: '530 miles',
+      drivingTime: '8 hours',
+      weather: { high: 75, low: 55, conditions: 'Sunny' },
+      activities: [
+        {
+          id: 'a26-1',
+          name: 'Early Start from Whitefish',
+          description: 'Leave by 7am for the drive to Portland. Beautiful scenery through Montana, Idaho, and Washington/Oregon.',
+          duration: '8 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Pack snacks and lunch', 'Stop at Coeur d\'Alene for break', 'Scenic Columbia River Gorge on approach to Portland']
+        },
+        {
+          id: 'a26-2',
+          name: 'Check into Portland Hotel',
+          description: 'Arrive ~4pm. Check into hotel in Pearl District or Downtown for walkability.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          tips: ['The Hoxton, Woodlark Hotel, or Hotel Lucia all excellent', 'Request ground floor for Mom']
+        },
+        {
+          id: 'a26-3',
+          name: 'Dinner: L\'Orange ⭐ Chase Reserve',
+          description: 'NYT Best Restaurants 2024. Intimate Mediterranean upstairs gem. BOOK AHEAD.',
+          duration: '2.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          reservationUrl: 'https://www.opentable.com/r/lorange-portland',
+          tips: ['Chase Sapphire Reserve Exclusive Table', 'Use your $300 annual dining credit!', 'Book via OpenTable']
+        }
+      ],
+      accommodation: {
+        id: 'acc26-pdx',
+        name: 'The Hoxton Portland / Woodlark Hotel',
+        type: 'hotel',
+        priceRange: '$200-300',
+        pricePerNight: 250,
+        seniorFriendly: true,
+        notes: 'Central location, walkable to restaurants. Rooftop bar at Hoxton.'
+      },
+      notes: ['DRIVING DAY', 'Long but scenic drive', 'PORTLAND WEEKEND - Use Chase Reserve $300 credit!'],
+      budgetBreakdown: { accommodation: 250, food: 150, activities: 0, gas: 80, total: 480 }
+    },
+    {
+      id: 'd27',
+      dayNumber: 27,
+      date: '2025-06-15',
+      title: 'Portland Foodie Sunday',
+      summary: 'Explore Portland, brunch, Powell\'s Books, dinner at Chase Reserve restaurant',
+      location: locations.find(l => l.id === 'portland')!,
+      overnight: 'Portland, OR',
+      weather: { high: 78, low: 56, conditions: 'Partly Cloudy' },
+      activities: [
+        {
+          id: 'a27-1',
+          name: 'Brunch: Canard ⭐ Chase Reserve',
+          description: 'Wine bar meets casual eatery from the Le Pigeon team. Perfect for brunch.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          reservationUrl: 'https://www.opentable.com/r/canard-portland',
+          tips: ['Another Chase Reserve restaurant!', 'Great wine selection', 'Casual but excellent']
+        },
+        {
+          id: 'a27-2',
+          name: 'Powell\'s City of Books',
+          description: 'World\'s largest independent bookstore. A full city block of books! Mom will love it.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Get a map at the entrance', 'Rare book room is amazing', 'Great for souvenirs']
+        },
+        {
+          id: 'a27-3',
+          name: 'Explore Pearl District',
+          description: 'Walk around the trendy Pearl District. Art galleries, boutiques, coffee shops.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false
+        },
+        {
+          id: 'a27-4',
+          name: 'Rest at Hotel',
+          description: 'Afternoon rest before the final dinner of the trip.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false
+        },
+        {
+          id: 'a27-5',
+          name: 'Dinner: Arden or Nodoguro ⭐ Chase Reserve',
+          description: 'Final celebration dinner! Arden for PNW cuisine ($75 prix fixe) or Nodoguro for 20-course kaiseki experience.',
+          duration: '2.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          reservationUrl: 'https://www.opentable.com/r/arden-portland',
+          tips: ['Both are Chase Reserve Exclusive Tables', 'Nodoguro is more adventurous', 'Arden more approachable for Mom']
+        }
+      ],
+      accommodation: {
+        id: 'acc27-pdx',
+        name: 'Same hotel in Portland',
+        type: 'hotel',
+        priceRange: '$200-300',
+        pricePerNight: 250,
+        seniorFriendly: true
+      },
+      notes: ['FOODIE DAY', 'Multiple Chase Reserve options', 'Pack tonight - fly home tomorrow'],
+      budgetBreakdown: { accommodation: 250, food: 200, activities: 0, gas: 0, total: 450 }
+    },
+    // ============================================
+    // OPTION B: STAY IN WHITEFISH (Original Plan)
+    // Keep relaxing near Glacier, fly home from FCA
+    // ============================================
+    /*
+    {
+      id: 'd26-alt',
       dayNumber: 26,
       date: '2025-06-14',
       title: 'Whitefish - Relaxation Day',
@@ -2249,72 +2422,109 @@ export const tripData: TripData = {
       notes: ['RELAXATION DAY', 'No driving, no hiking - just rest!', 'Enjoy the mountain town vibe'],
       budgetBreakdown: { accommodation: 220, food: 100, activities: 50, gas: 0, total: 370 }
     },
-    {
-      id: 'd27',
-      dayNumber: 27,
-      date: '2025-06-15',
-      title: 'Whitefish / Flathead Lake Day',
-      summary: 'Explore Flathead Lake, the largest natural freshwater lake west of Mississippi',
-      location: locations.find(l => l.id === 'whitefish')!,
-      overnight: 'Whitefish, MT',
-      drivingDistance: '60 miles round trip',
-      weather: { high: 74, low: 48, conditions: 'Sunny' },
-      activities: [
-        {
-          id: 'a27-1',
-          name: 'Breakfast in Whitefish',
-          description: 'Leisurely breakfast at Buffalo Cafe or Loula\'s',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false
-        },
-        {
-          id: 'a27-2',
-          name: 'Drive to Flathead Lake',
-          description: 'Short scenic drive to the largest freshwater lake west of the Mississippi. Stop at Bigfork for charming shops.',
-          duration: '2-3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Bigfork is adorable', 'Cherry orchards along the way', 'Great photo ops']
-        },
-        {
-          id: 'a27-3',
-          name: 'Lakeside Lunch',
-          description: 'Lunch at a lakefront restaurant in Bigfork or Polson',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false
-        },
-        {
-          id: 'a27-4',
-          name: 'Evening in Whitefish',
-          description: 'Return to Whitefish for final evening. Pack and prepare for departure.',
-          duration: '2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false
-        }
-      ],
-      accommodation: {
-        id: 'acc27',
-        name: 'Same hotel in Whitefish',
-        type: 'hotel',
-        priceRange: '$180-280',
-        pricePerNight: 220,
-        seniorFriendly: true
-      },
-      notes: ['EASY DAY TRIP', 'Beautiful lake scenery', 'Start packing tonight'],
-      budgetBreakdown: { accommodation: 220, food: 90, activities: 0, gas: 20, total: 330 }
-    },
+    */
+    // Day 28: Fly Home from Portland (PORTLAND OPTION)
     {
       id: 'd28',
       dayNumber: 28,
       date: '2025-06-16',
-      title: 'Flexible Buffer Day',
-      summary: 'Optional extra Glacier day or rest before departure',
+      title: 'Fly Home from Portland',
+      summary: 'Colin home to Seattle, Mom connects to Toronto. End of an epic trip!',
+      location: locations.find(l => l.id === 'portland')!,
+      overnight: 'Home!',
+      weather: { high: 72, low: 54, conditions: 'Clear' },
+      activities: [
+        {
+          id: 'a28-1',
+          name: 'Return Rental Car at PDX',
+          description: 'Drop off the rental car at Portland International Airport by 9am.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Fill gas before returning', 'PDX is easy to navigate', 'Allow 30 min for return process']
+        },
+        {
+          id: 'a28-2',
+          name: 'Colin: PDX → SEA (Alaska ~1hr)',
+          description: 'Short flight home to Seattle. Multiple daily flights available.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          tips: ['~$89-120 one way', 'Home by noon!', 'What a trip!']
+        },
+        {
+          id: 'a28-3',
+          name: 'Mom: PDX → YYZ (Direct options available)',
+          description: 'Alaska or Air Canada fly direct PDX→YYZ. ~4.5 hour flight.',
+          duration: '6 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          tips: ['Request wheelchair assistance', 'Direct flight available!', 'Arrive Toronto ~6pm']
+        }
+      ],
+      accommodation: {
+        id: 'acc28-home',
+        name: 'Home!',
+        type: 'hotel',
+        priceRange: '$0',
+        pricePerNight: 0,
+        seniorFriendly: true
+      },
+      notes: ['TRAVEL DAY', '28 AMAZING DAYS COMPLETE!', 'Portland option saves 2 days vs FCA'],
+      budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
+    }
+    // ============================================
+    // Remaining days 28-30 for FCA option are commented out above
+    // Uncomment and use if skipping Portland
+    // ============================================
+  ],
+  totalBudget: {
+    flights: 736,
+    carRental: 1460,
+    accommodations: 6200,
+    food: 2400,
+    activities: 700,
+    gas: 750,
+    misc: 500,
+    total: 12746
+  },
+  // EDITABLE COST BREAKDOWN - Swap options by changing prices
+  costBreakdown: {
+    flights: {
+      colinOutbound: { description: 'SEA→PHX (Alaska)', price: 90, editable: true },
+      momOutbound: { description: 'YYZ→PHX (Porter DIRECT)', price: 220, editable: true },
+      colinReturn: { description: 'PDX→SEA (Alaska)', price: 89, editable: true },
+      momReturn: { description: 'PDX→YYZ (Alaska/AC)', price: 300, editable: true },
+      total: 699
+    },
+    carRental: {
+      dailyRate: 45,
+      days: 27,
+      dropoffFee: 200,
+      total: 1415,
+      notes: 'PHX→PDX one-way, AWD SUV'
+    },
+    passengerAssistance: {
+      cost: 0,
+      notes: 'FREE - Request 48hrs ahead. Alaska: 1-800-252-7522. Porter: 1-833-909-0909'
+    },
+    accommodationAvg: 220,
+    foodPerDay: 85,
+    gasEstimate: 800
+  },
+  /* COMMENTED OUT: FCA Option days 28-30
+     Uncomment these and comment out Portland days if flying from Glacier instead
+
+  // Day 28 FCA Option:
+  {
+    id: 'd28-fca',
+    dayNumber: 28,
+    date: '2025-06-16',
+    title: 'Flexible Buffer Day',
+    summary: 'Optional extra Glacier day or rest before departure',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Whitefish, MT',
       weather: { high: 72, low: 46, conditions: 'Partly Cloudy' },
@@ -2504,41 +2714,7 @@ export const tripData: TripData = {
       notes: ['TRAVEL DAY', 'Colin: FCA→SEA, home by 9am', 'Mom: FCA→SEA→YYZ, home by 6pm', '30 AMAZING DAYS COMPLETE!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
-  ],
-  totalBudget: {
-    flights: 736,
-    carRental: 1460,
-    accommodations: 6200,
-    food: 2400,
-    activities: 700,
-    gas: 750,
-    misc: 500,
-    total: 12746
-  },
-  // EDITABLE COST BREAKDOWN - Swap options by changing prices
-  costBreakdown: {
-    flights: {
-      colinOutbound: { description: 'SEA→PHX (Alaska)', price: 90, editable: true },
-      momOutbound: { description: 'YYZ→PHX (Porter DIRECT)', price: 220, editable: true },
-      colinReturn: { description: 'FCA→SEA (Alaska)', price: 89, editable: true },
-      momReturn: { description: 'FCA→SEA→YYZ (Alaska)', price: 337, editable: true },
-      total: 736
-    },
-    carRental: {
-      dailyRate: 45,
-      days: 28,
-      dropoffFee: 200,
-      total: 1460,
-      notes: 'PHX→FCA one-way, AWD SUV'
-    },
-    passengerAssistance: {
-      cost: 0,
-      notes: 'FREE - Request 48hrs ahead. Alaska: 1-800-252-7522. Porter: 1-833-909-0909'
-    },
-    accommodationAvg: 220,
-    foodPerDay: 85,
-    gasEstimate: 750
-  },
+  END OF FCA OPTION */
   packingList: [
     'Sturdy walking/hiking shoes (broken in)',
     'Sandals for evenings',
