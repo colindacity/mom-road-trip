@@ -10,8 +10,10 @@ import ActivityQueue from '@/components/ActivityQueue';
 import DndCalendar from '@/components/DndCalendar';
 import { useTripState } from '@/hooks/useTripState';
 import CostBreakdown from '@/components/CostBreakdown';
+import ReservationsChecklist from '@/components/ReservationsChecklist';
+import PackingList from '@/components/PackingList';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -31,6 +33,8 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showQueue, setShowQueue] = useState(false);
   const [showBudget, setShowBudget] = useState(false);
+  const [showReservations, setShowReservations] = useState(false);
+  const [showPacking, setShowPacking] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
@@ -188,6 +192,26 @@ export default function Home() {
               </button>
 
               <button
+                onClick={() => setShowReservations(!showReservations)}
+                className={`p-2 rounded-lg transition-colors ${
+                  showReservations ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Toggle reservations checklist"
+              >
+                <ClipboardCheck className="w-4 h-4" />
+              </button>
+
+              <button
+                onClick={() => setShowPacking(!showPacking)}
+                className={`p-2 rounded-lg transition-colors ${
+                  showPacking ? 'bg-indigo-100 text-indigo-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Toggle packing list"
+              >
+                <Backpack className="w-4 h-4" />
+              </button>
+
+              <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
                   showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
@@ -328,8 +352,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right column - Map, Queue, or Budget */}
-            {(showMap || showQueue || showBudget) && (
+            {/* Right column - Map, Queue, Budget, Reservations, Packing */}
+            {(showMap || showQueue || showBudget || showReservations || showPacking) && (
               <div className="lg:col-span-1 order-first lg:order-last">
                 <div className="lg:sticky lg:top-20 space-y-4">
                   {/* Activity Queue */}
@@ -349,6 +373,16 @@ export default function Home() {
                       totalBudget={tripData.totalBudget}
                       tripDays={tripData.days.length}
                     />
+                  )}
+
+                  {/* Reservations Checklist */}
+                  {showReservations && tripData.importantReservations && (
+                    <ReservationsChecklist reservations={tripData.importantReservations} />
+                  )}
+
+                  {/* Packing List */}
+                  {showPacking && tripData.packingList && (
+                    <PackingList items={tripData.packingList} />
                   )}
 
                   {/* Map */}
