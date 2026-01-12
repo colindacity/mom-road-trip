@@ -2,7 +2,22 @@
 
 ## Git Workflow
 
-**ALWAYS commit and push to GitHub after making any changes.**
+**ALWAYS follow this workflow after making changes:**
+
+1. **Test locally** - Run `npm run build` to catch TypeScript/build errors
+2. **Commit and push** - Commit with descriptive message, push to GitHub
+3. **Verify CI/CD** - Check GitHub Actions for test results
+4. **Verify deployment** - Confirm changes are live on Vercel production
+5. **Run E2E tests** - Run `npm run test:e2e` against production URL
+
+```bash
+# Full workflow
+npm run build                    # 1. Test locally
+git add -A && git commit -m "..." && git push  # 2. Commit & push
+gh run list --limit 1            # 3. Check CI status
+curl -s https://mom-road-trip.vercel.app | grep "expected-text"  # 4. Verify deploy
+npm run test:e2e                 # 5. E2E tests
+```
 
 ## Dev Server Port
 
