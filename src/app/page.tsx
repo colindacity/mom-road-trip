@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { tripData, locations } from '@/data/tripData';
 import { TripPhase } from '@/types/trip';
+import { differenceInDays, parseISO } from 'date-fns';
 import PhaseNav from '@/components/PhaseNav';
 import CompactDayRow from '@/components/CompactDayRow';
 import ActivityQueue from '@/components/ActivityQueue';
@@ -12,8 +13,9 @@ import { useTripState } from '@/hooks/useTripState';
 import CostBreakdown from '@/components/CostBreakdown';
 import ReservationsChecklist from '@/components/ReservationsChecklist';
 import PackingList from '@/components/PackingList';
+import FlightInfo from '@/components/FlightInfo';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -35,6 +37,7 @@ export default function Home() {
   const [showBudget, setShowBudget] = useState(false);
   const [showReservations, setShowReservations] = useState(false);
   const [showPacking, setShowPacking] = useState(false);
+  const [showFlights, setShowFlights] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
@@ -106,6 +109,9 @@ export default function Home() {
     const miles = d.drivingDistance?.match(/(\d+)/)?.[1];
     return sum + (miles ? parseInt(miles) : 0);
   }, 0);
+
+  // Calculate days until trip
+  const daysUntilTrip = differenceInDays(parseISO(tripData.startDate), new Date());
 
   return (
     <div className="min-h-screen bg-white">
@@ -212,6 +218,16 @@ export default function Home() {
               </button>
 
               <button
+                onClick={() => setShowFlights(!showFlights)}
+                className={`p-2 rounded-lg transition-colors ${
+                  showFlights ? 'bg-blue-100 text-blue-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Toggle flight info"
+              >
+                <Plane className="w-4 h-4" />
+              </button>
+
+              <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
                   showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
@@ -240,6 +256,14 @@ export default function Home() {
             <DollarSign className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
             <span className="font-medium text-gray-700">${totalBudget.toLocaleString()}</span>
           </div>
+          {daysUntilTrip > 0 && (
+            <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap bg-amber-50 px-2 py-0.5 rounded-full">
+              <Clock className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-600" />
+              <span className="font-medium text-amber-700">{daysUntilTrip}</span>
+              <span className="text-amber-600 hidden sm:inline">days to go!</span>
+              <span className="text-amber-600 sm:hidden">d</span>
+            </div>
+          )}
           <div className="hidden md:flex items-center gap-1.5 whitespace-nowrap">
             <Users className="w-3.5 h-3.5" />
             {tripData.travelers.map((t, i) => (
@@ -379,6 +403,11 @@ export default function Home() {
                   {/* Packing List */}
                   {showPacking && tripData.packingList && (
                     <PackingList items={tripData.packingList} />
+                  )}
+
+                  {/* Flight Info */}
+                  {showFlights && tripData.flights && (
+                    <FlightInfo flights={tripData.flights} tripStartDate={tripData.startDate} />
                   )}
 
                   {/* Map */}
