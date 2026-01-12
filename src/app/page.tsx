@@ -367,12 +367,8 @@ export default function Home() {
                   )}
 
                   {/* Budget Breakdown */}
-                  {showBudget && tripData.costBreakdown && tripData.totalBudget && (
-                    <CostBreakdown
-                      breakdown={tripData.costBreakdown}
-                      totalBudget={tripData.totalBudget}
-                      tripDays={tripData.days.length}
-                    />
+                  {showBudget && (
+                    <CostBreakdown tripDays={tripData.days.length} />
                   )}
 
                   {/* Reservations Checklist */}

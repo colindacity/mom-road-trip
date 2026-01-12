@@ -1,27 +1,29 @@
 'use client';
 
 import { useState } from 'react';
-import { DollarSign, Plane, Car, Utensils, Fuel, Home, Accessibility, Edit2, Check, X } from 'lucide-react';
-import { CostBreakdown as CostBreakdownType } from '@/types/trip';
+import { DollarSign, Plane, Car, Utensils, Fuel, Home, Accessibility, Edit2, Check, X, Loader2, RefreshCw } from 'lucide-react';
+import { useCosts } from '@/hooks/useCosts';
 
 interface CostBreakdownProps {
-  breakdown: CostBreakdownType;
-  totalBudget: {
-    flights: number;
-    carRental: number;
-    accommodations: number;
-    food: number;
-    activities: number;
-    gas: number;
-    misc: number;
-    total: number;
-  };
   tripDays: number;
 }
 
-export default function CostBreakdownComponent({ breakdown, totalBudget, tripDays }: CostBreakdownProps) {
+export default function CostBreakdownComponent({ tripDays }: CostBreakdownProps) {
+  const {
+    breakdown,
+    totalBudget,
+    isLoading,
+    isSaving,
+    lastSaved,
+    updateFlightPrice,
+    updateCarRental,
+    updateAccommodationAvg,
+    updateFoodPerDay,
+    updateGasEstimate,
+    resetToDefaults,
+  } = useCosts();
+
   const [isEditing, setIsEditing] = useState(false);
-  const [editedBreakdown, setEditedBreakdown] = useState(breakdown);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -33,14 +35,20 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
   };
 
   const handleSave = () => {
-    // In a real app, this would save to backend/localStorage
     setIsEditing(false);
   };
 
   const handleCancel = () => {
-    setEditedBreakdown(breakdown);
     setIsEditing(false);
   };
+
+  if (isLoading) {
+    return (
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex items-center justify-center">
+        <Loader2 className="w-6 h-6 animate-spin text-emerald-500" />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -50,35 +58,52 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
           <div className="flex items-center gap-2 text-white">
             <DollarSign className="w-5 h-5" />
             <h2 className="font-semibold">Trip Cost Breakdown</h2>
+            {isSaving && <Loader2 className="w-3 h-3 animate-spin" />}
           </div>
-          {isEditing ? (
-            <div className="flex gap-2">
+          <div className="flex gap-2">
+            {isEditing ? (
+              <>
+                <button
+                  onClick={handleSave}
+                  className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  title="Done editing"
+                >
+                  <Check className="w-4 h-4 text-white" />
+                </button>
+                <button
+                  onClick={handleCancel}
+                  className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  title="Cancel"
+                >
+                  <X className="w-4 h-4 text-white" />
+                </button>
+                <button
+                  onClick={resetToDefaults}
+                  className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  title="Reset to defaults"
+                >
+                  <RefreshCw className="w-4 h-4 text-white" />
+                </button>
+              </>
+            ) : (
               <button
-                onClick={handleSave}
+                onClick={() => setIsEditing(true)}
                 className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-                title="Save changes"
+                title="Edit costs"
               >
-                <Check className="w-4 h-4 text-white" />
+                <Edit2 className="w-4 h-4 text-white" />
               </button>
-              <button
-                onClick={handleCancel}
-                className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-                title="Cancel"
-              >
-                <X className="w-4 h-4 text-white" />
-              </button>
-            </div>
-          ) : (
-            <button
-              onClick={() => setIsEditing(true)}
-              className="p-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-              title="Edit costs"
-            >
-              <Edit2 className="w-4 h-4 text-white" />
-            </button>
-          )}
+            )}
+          </div>
         </div>
-        <p className="text-white/80 text-sm mt-1">{tripDays} days • Click edit to swap options</p>
+        <p className="text-white/80 text-sm mt-1">
+          {tripDays} days • {isEditing ? 'Edit values below' : 'Click edit to modify'}
+          {lastSaved && !isEditing && (
+            <span className="text-white/60 text-xs ml-2">
+              Saved {new Date(lastSaved).toLocaleTimeString()}
+            </span>
+          )}
+        </p>
       </div>
 
       <div className="p-4 space-y-4">
@@ -88,45 +113,33 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
             <Plane className="w-4 h-4" />
             <span>Flights</span>
             <span className="ml-auto text-emerald-600 font-semibold">
-              {formatCurrency(editedBreakdown.flights.total)}
+              {formatCurrency(totalBudget.flights)}
             </span>
           </div>
           <div className="pl-6 space-y-1.5 text-sm">
             <FlightRow
               label="Colin: SEA→PHX"
-              item={editedBreakdown.flights.colinOutbound}
+              item={breakdown.flights.colinOutbound}
               isEditing={isEditing}
-              onChange={(price) => setEditedBreakdown({
-                ...editedBreakdown,
-                flights: { ...editedBreakdown.flights, colinOutbound: { ...editedBreakdown.flights.colinOutbound, price } }
-              })}
+              onChange={(price) => updateFlightPrice('colinOutbound', price)}
             />
             <FlightRow
               label="Mom: YYZ→PHX"
-              item={editedBreakdown.flights.momOutbound}
+              item={breakdown.flights.momOutbound}
               isEditing={isEditing}
-              onChange={(price) => setEditedBreakdown({
-                ...editedBreakdown,
-                flights: { ...editedBreakdown.flights, momOutbound: { ...editedBreakdown.flights.momOutbound, price } }
-              })}
+              onChange={(price) => updateFlightPrice('momOutbound', price)}
             />
             <FlightRow
-              label="Colin: FCA→SEA"
-              item={editedBreakdown.flights.colinReturn}
+              label="Colin: PDX→SEA"
+              item={breakdown.flights.colinReturn}
               isEditing={isEditing}
-              onChange={(price) => setEditedBreakdown({
-                ...editedBreakdown,
-                flights: { ...editedBreakdown.flights, colinReturn: { ...editedBreakdown.flights.colinReturn, price } }
-              })}
+              onChange={(price) => updateFlightPrice('colinReturn', price)}
             />
             <FlightRow
-              label="Mom: FCA→YYZ"
-              item={editedBreakdown.flights.momReturn}
+              label="Mom: PDX→YYZ"
+              item={breakdown.flights.momReturn}
               isEditing={isEditing}
-              onChange={(price) => setEditedBreakdown({
-                ...editedBreakdown,
-                flights: { ...editedBreakdown.flights, momReturn: { ...editedBreakdown.flights.momReturn, price } }
-              })}
+              onChange={(price) => updateFlightPrice('momReturn', price)}
             />
           </div>
         </div>
@@ -136,12 +149,38 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
           <Car className="w-4 h-4" />
           <div className="flex-1">
             <span className="font-medium">Car Rental</span>
-            <p className="text-xs text-gray-500">
-              {editedBreakdown.carRental.days} days @ ${editedBreakdown.carRental.dailyRate}/day + ${editedBreakdown.carRental.dropoffFee} dropoff
-            </p>
+            {isEditing ? (
+              <div className="flex items-center gap-2 mt-1 text-xs">
+                <input
+                  type="number"
+                  value={breakdown.carRental.days}
+                  onChange={(e) => updateCarRental({ days: parseInt(e.target.value) || 0 })}
+                  className="w-12 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>days @</span>
+                <input
+                  type="number"
+                  value={breakdown.carRental.dailyRate}
+                  onChange={(e) => updateCarRental({ dailyRate: parseInt(e.target.value) || 0 })}
+                  className="w-14 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>/day +</span>
+                <input
+                  type="number"
+                  value={breakdown.carRental.dropoffFee}
+                  onChange={(e) => updateCarRental({ dropoffFee: parseInt(e.target.value) || 0 })}
+                  className="w-16 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>dropoff</span>
+              </div>
+            ) : (
+              <p className="text-xs text-gray-500">
+                {breakdown.carRental.days} days @ ${breakdown.carRental.dailyRate}/day + ${breakdown.carRental.dropoffFee} dropoff
+              </p>
+            )}
           </div>
           <span className="text-emerald-600 font-semibold">
-            {formatCurrency(editedBreakdown.carRental.total)}
+            {formatCurrency(totalBudget.carRental)}
           </span>
         </div>
 
@@ -150,7 +189,20 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
           <Home className="w-4 h-4" />
           <div className="flex-1">
             <span className="font-medium">Accommodations</span>
-            <p className="text-xs text-gray-500">~${editedBreakdown.accommodationAvg}/night avg</p>
+            {isEditing ? (
+              <div className="flex items-center gap-2 mt-1 text-xs">
+                <span>~$</span>
+                <input
+                  type="number"
+                  value={breakdown.accommodationAvg}
+                  onChange={(e) => updateAccommodationAvg(parseInt(e.target.value) || 0)}
+                  className="w-16 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>/night avg</span>
+              </div>
+            ) : (
+              <p className="text-xs text-gray-500">~${breakdown.accommodationAvg}/night avg</p>
+            )}
           </div>
           <span className="text-emerald-600 font-semibold">
             {formatCurrency(totalBudget.accommodations)}
@@ -162,7 +214,20 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
           <Utensils className="w-4 h-4" />
           <div className="flex-1">
             <span className="font-medium">Food & Dining</span>
-            <p className="text-xs text-gray-500">~${editedBreakdown.foodPerDay}/day for 2 people</p>
+            {isEditing ? (
+              <div className="flex items-center gap-2 mt-1 text-xs">
+                <span>~$</span>
+                <input
+                  type="number"
+                  value={breakdown.foodPerDay}
+                  onChange={(e) => updateFoodPerDay(parseInt(e.target.value) || 0)}
+                  className="w-16 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>/day for 2 people</span>
+              </div>
+            ) : (
+              <p className="text-xs text-gray-500">~${breakdown.foodPerDay}/day for 2 people</p>
+            )}
           </div>
           <span className="text-emerald-600 font-semibold">
             {formatCurrency(totalBudget.food)}
@@ -172,9 +237,23 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
         {/* Gas */}
         <div className="flex items-center gap-2 text-gray-700">
           <Fuel className="w-4 h-4" />
-          <span className="font-medium flex-1">Gas</span>
+          <div className="flex-1">
+            <span className="font-medium">Gas</span>
+            {isEditing && (
+              <div className="flex items-center gap-2 mt-1 text-xs">
+                <span>$</span>
+                <input
+                  type="number"
+                  value={breakdown.gasEstimate}
+                  onChange={(e) => updateGasEstimate(parseInt(e.target.value) || 0)}
+                  className="w-20 px-1 py-0.5 border border-gray-200 rounded text-center"
+                />
+                <span>estimate</span>
+              </div>
+            )}
+          </div>
           <span className="text-emerald-600 font-semibold">
-            {formatCurrency(editedBreakdown.gasEstimate)}
+            {formatCurrency(totalBudget.gas)}
           </span>
         </div>
 
@@ -183,7 +262,7 @@ export default function CostBreakdownComponent({ breakdown, totalBudget, tripDay
           <Accessibility className="w-4 h-4" />
           <div className="flex-1">
             <span className="font-medium">Passenger Assistance</span>
-            <p className="text-xs text-gray-500">{editedBreakdown.passengerAssistance.notes}</p>
+            <p className="text-xs text-gray-500">{breakdown.passengerAssistance.notes}</p>
           </div>
           <span className="text-emerald-600 font-semibold">FREE</span>
         </div>
@@ -226,7 +305,7 @@ function FlightRow({ label, item, isEditing, onChange }: FlightRowProps) {
       <span>{label}</span>
       <div className="flex items-center gap-2">
         <span className="text-xs text-gray-400">{item.description}</span>
-        {isEditing && item.editable ? (
+        {isEditing ? (
           <input
             type="number"
             value={item.price}
