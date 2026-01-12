@@ -16,7 +16,7 @@ import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
 import CarRentalInfo from '@/components/CarRentalInfo';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock, MoreVertical, X
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -40,6 +40,7 @@ export default function Home() {
   const [showPacking, setShowPacking] = useState(false);
   const [showFlights, setShowFlights] = useState(false);
   const [showCarRental, setShowCarRental] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
@@ -189,55 +190,100 @@ export default function Home() {
                 </button>
               </div>
 
-              <button
-                onClick={() => setShowBudget(!showBudget)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showBudget ? 'bg-emerald-100 text-emerald-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Toggle budget breakdown"
-              >
-                <DollarSign className="w-4 h-4" />
-              </button>
+              {/* Desktop panel buttons */}
+              <div className="hidden md:flex items-center gap-1">
+                <button
+                  onClick={() => setShowBudget(!showBudget)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showBudget ? 'bg-emerald-100 text-emerald-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Budget"
+                >
+                  <DollarSign className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setShowReservations(!showReservations)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showReservations ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Reservations"
+                >
+                  <ClipboardCheck className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setShowPacking(!showPacking)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showPacking ? 'bg-indigo-100 text-indigo-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Packing"
+                >
+                  <Backpack className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setShowFlights(!showFlights)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showFlights ? 'bg-blue-100 text-blue-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Flights"
+                >
+                  <Plane className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setShowCarRental(!showCarRental)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showCarRental ? 'bg-orange-100 text-orange-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Car Rental"
+                >
+                  <Car className="w-4 h-4" />
+                </button>
+              </div>
 
-              <button
-                onClick={() => setShowReservations(!showReservations)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showReservations ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Toggle reservations checklist"
-              >
-                <ClipboardCheck className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => setShowPacking(!showPacking)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showPacking ? 'bg-indigo-100 text-indigo-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Toggle packing list"
-              >
-                <Backpack className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => setShowFlights(!showFlights)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showFlights ? 'bg-blue-100 text-blue-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Toggle flight info"
-              >
-                <Plane className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => setShowCarRental(!showCarRental)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showCarRental ? 'bg-orange-100 text-orange-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Toggle car rental info"
-              >
-                <Car className="w-4 h-4" />
-              </button>
+              {/* Mobile more menu */}
+              <div className="relative md:hidden">
+                <button
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showMobileMenu ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                >
+                  {showMobileMenu ? <X className="w-4 h-4" /> : <MoreVertical className="w-4 h-4" />}
+                </button>
+                {showMobileMenu && (
+                  <div className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[160px] z-50">
+                    <button
+                      onClick={() => { setShowBudget(!showBudget); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showBudget ? 'bg-emerald-50 text-emerald-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <DollarSign className="w-4 h-4" /> Budget
+                    </button>
+                    <button
+                      onClick={() => { setShowFlights(!showFlights); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showFlights ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <Plane className="w-4 h-4" /> Flights
+                    </button>
+                    <button
+                      onClick={() => { setShowCarRental(!showCarRental); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showCarRental ? 'bg-orange-50 text-orange-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <Car className="w-4 h-4" /> Car Rental
+                    </button>
+                    <button
+                      onClick={() => { setShowReservations(!showReservations); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showReservations ? 'bg-amber-50 text-amber-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <ClipboardCheck className="w-4 h-4" /> Reservations
+                    </button>
+                    <button
+                      onClick={() => { setShowPacking(!showPacking); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showPacking ? 'bg-indigo-50 text-indigo-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <Backpack className="w-4 h-4" /> Packing List
+                    </button>
+                  </div>
+                )}
+              </div>
 
               <button
                 onClick={() => setShowMap(!showMap)}
