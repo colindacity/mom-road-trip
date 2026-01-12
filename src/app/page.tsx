@@ -14,6 +14,7 @@ import CostBreakdown from '@/components/CostBreakdown';
 import ReservationsChecklist from '@/components/ReservationsChecklist';
 import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
+import CarRentalInfo from '@/components/CarRentalInfo';
 import {
   Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock
 } from 'lucide-react';
@@ -38,6 +39,7 @@ export default function Home() {
   const [showReservations, setShowReservations] = useState(false);
   const [showPacking, setShowPacking] = useState(false);
   const [showFlights, setShowFlights] = useState(false);
+  const [showCarRental, setShowCarRental] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
   // Trip state management (persisted to localStorage)
@@ -228,6 +230,16 @@ export default function Home() {
               </button>
 
               <button
+                onClick={() => setShowCarRental(!showCarRental)}
+                className={`p-2 rounded-lg transition-colors ${
+                  showCarRental ? 'bg-orange-100 text-orange-700' : 'text-gray-400 hover:text-gray-600'
+                }`}
+                title="Toggle car rental info"
+              >
+                <Car className="w-4 h-4" />
+              </button>
+
+              <button
                 onClick={() => setShowMap(!showMap)}
                 className={`p-2 rounded-lg transition-colors ${
                   showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
@@ -408,6 +420,11 @@ export default function Home() {
                   {/* Flight Info */}
                   {showFlights && tripData.flights && (
                     <FlightInfo flights={tripData.flights} tripStartDate={tripData.startDate} />
+                  )}
+
+                  {/* Car Rental Info */}
+                  {showCarRental && tripData.carRental && (
+                    <CarRentalInfo carRental={tripData.carRental} />
                   )}
 
                   {/* Map */}
