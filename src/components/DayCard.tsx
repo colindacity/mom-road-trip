@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { DayPlan, Activity } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
+import { Accommodation } from '@/types/trip';
 import {
   ChevronDown,
   ChevronRight,
@@ -20,7 +21,11 @@ import {
   CheckCircle2,
   ExternalLink,
   Edit2,
-  Footprints
+  Footprints,
+  Star,
+  Home,
+  Trees,
+  Building2
 } from 'lucide-react';
 
 interface DayCardProps {
@@ -151,30 +156,26 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
             </div>
           )}
 
-          {/* Accommodation */}
-          {day.accommodation && (
+          {/* Accommodation Options */}
+          {(day.accommodationOptions || day.accommodation) && (
             <div className="p-4 bg-gray-50 border-t border-gray-100">
-              <h4 className="font-medium text-gray-900 mb-2 flex items-center gap-2">
+              <h4 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
                 <Hotel className="w-4 h-4 text-blue-500" />
-                Accommodation: {day.overnight}
+                Stays: {day.overnight}
+                {day.accommodationOptions && day.accommodationOptions.length > 1 && (
+                  <span className="text-xs font-normal text-gray-500">
+                    ({day.accommodationOptions.length} options)
+                  </span>
+                )}
               </h4>
-              <div className="bg-white rounded-lg p-3 border border-gray-200">
-                <div className="font-medium text-gray-900">{day.accommodation.name}</div>
-                <div className="text-sm text-gray-600 mt-1">
-                  {day.accommodation.priceRange} per night
-                </div>
-                {day.accommodation.amenities && (
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {day.accommodation.amenities.map((amenity, idx) => (
-                      <span key={idx} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">
-                        {amenity}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                {day.accommodation.notes && (
-                  <p className="text-sm text-gray-500 mt-2 italic">{day.accommodation.notes}</p>
-                )}
+              <div className="space-y-2">
+                {day.accommodationOptions && day.accommodationOptions.length > 0 ? (
+                  day.accommodationOptions.map((acc) => (
+                    <AccommodationCard key={acc.id} acc={acc} />
+                  ))
+                ) : day.accommodation ? (
+                  <AccommodationCard acc={day.accommodation} />
+                ) : null}
               </div>
             </div>
           )}
@@ -248,6 +249,96 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
             </div>
           )}
         </div>
+      )}
+    </div>
+  );
+}
+
+const accTypeConfig: Record<string, { icon: typeof Hotel; label: string; color: string }> = {
+  hotel: { icon: Building2, label: 'Hotel', color: 'bg-blue-100 text-blue-700' },
+  motel: { icon: Building2, label: 'Motel', color: 'bg-blue-100 text-blue-700' },
+  inn: { icon: Hotel, label: 'Inn', color: 'bg-blue-100 text-blue-700' },
+  lodge: { icon: Hotel, label: 'Lodge', color: 'bg-amber-100 text-amber-700' },
+  resort: { icon: Hotel, label: 'Resort', color: 'bg-purple-100 text-purple-700' },
+  airbnb: { icon: Home, label: 'Airbnb', color: 'bg-rose-100 text-rose-700' },
+  cabin: { icon: Trees, label: 'Cabin', color: 'bg-green-100 text-green-700' },
+  condo: { icon: Home, label: 'Condo', color: 'bg-teal-100 text-teal-700' },
+};
+
+function AccommodationCard({ acc }: { acc: Accommodation }) {
+  const typeConf = accTypeConfig[acc.type] || accTypeConfig.hotel;
+  const TypeIcon = typeConf.icon;
+
+  return (
+    <div className={`bg-white rounded-lg p-3 border ${acc.recommended ? 'border-blue-300 ring-1 ring-blue-100' : 'border-gray-200'}`}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            {acc.recommended && (
+              <span className="px-1.5 py-0.5 bg-blue-500 text-white text-[10px] font-semibold rounded uppercase tracking-wide">
+                Top Pick
+              </span>
+            )}
+            <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-medium rounded ${typeConf.color}`}>
+              <TypeIcon className="w-2.5 h-2.5" />
+              {typeConf.label}
+            </span>
+            <span className="font-medium text-gray-900 text-sm">{acc.name}</span>
+          </div>
+          <div className="flex items-center gap-3 mt-1.5 text-xs text-gray-600 flex-wrap">
+            <span className="font-semibold text-gray-900">{acc.priceRange}/night</span>
+            {acc.reviewRating && (
+              <span className="inline-flex items-center gap-0.5">
+                <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+                <span className="font-medium">{acc.reviewRating}</span>
+                {acc.reviewSource && (
+                  <span className="text-gray-400">({acc.reviewSource})</span>
+                )}
+              </span>
+            )}
+            {acc.reviewCount && (
+              <span className="text-gray-400">{acc.reviewCount.toLocaleString()} reviews</span>
+            )}
+          </div>
+        </div>
+        <div className="flex gap-1 flex-shrink-0">
+          {acc.website && (
+            <a
+              href={acc.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+              title="Website"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
+          {acc.bookingUrl && acc.bookingUrl !== acc.website && (
+            <a
+              href={acc.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded transition-colors"
+              title="Book"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <CheckCircle2 className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
+      </div>
+      {acc.amenities && acc.amenities.length > 0 && (
+        <div className="flex flex-wrap gap-1 mt-2">
+          {acc.amenities.map((amenity, idx) => (
+            <span key={idx} className="px-1.5 py-0.5 bg-gray-100 text-gray-500 text-[10px] rounded">
+              {amenity}
+            </span>
+          ))}
+        </div>
+      )}
+      {acc.notes && (
+        <p className="text-xs text-gray-500 mt-1.5">{acc.notes}</p>
       )}
     </div>
   );

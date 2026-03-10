@@ -411,6 +411,12 @@ export default function CompactDayRow({
               <span className="font-medium text-gray-600">{day.accommodation.name}</span>
               <span className="text-gray-400">·</span>
               <span>{day.accommodation.priceRange}</span>
+              {day.accommodationOptions && day.accommodationOptions.length > 1 && (
+                <>
+                  <span className="text-gray-400">·</span>
+                  <span className="text-blue-500">{day.accommodationOptions.length} options</span>
+                </>
+              )}
             </div>
           )}
 
