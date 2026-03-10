@@ -152,6 +152,7 @@ export const tripData: TripData = {
       airline: 'Alaska Airlines',
       price: 90,
       duration: '2h 55m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+PHX+on+2026-05-15&curr=USD',
       notes: 'Direct flights ~2h 55m. Book 45-60 days ahead for best rates.'
     },
     {
@@ -164,6 +165,7 @@ export const tripData: TripData = {
       airline: 'Porter Airlines (Recommended)',
       price: 220,
       duration: '4h 32m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15&curr=USD',
       notes: 'DIRECT flight. Porter has no middle seats, complimentary wine. Request wheelchair assist 48hrs ahead.'
     },
     {
@@ -177,6 +179,7 @@ export const tripData: TripData = {
       date: '2026-06-04',
       airline: 'Alaska Airlines',
       price: 120,
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+SEA+on+2026-06-04&curr=USD',
       notes: 'MSO→SEA. Check for direct or 1-stop options.'
     },
     {
@@ -190,6 +193,7 @@ export const tripData: TripData = {
       date: '2026-06-04',
       airline: 'United / Alaska',
       price: 350,
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+YYZ+on+2026-06-04&curr=USD',
       notes: 'MSO→connecting hub→YYZ. Request wheelchair/passenger assistance. United has MSO→DEN→YYZ options.'
     }
   ],
@@ -211,6 +215,7 @@ export const tripData: TripData = {
           airline: 'Alaska Airlines',
           price: 89,
           duration: '2h 55m DIRECT',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+PHX+on+2026-05-15&curr=USD',
           notes: 'DIRECT! 4+ daily nonstops.'
         },
         {
@@ -223,7 +228,8 @@ export const tripData: TripData = {
           airline: 'Southwest',
           price: 100,
           duration: '2h 55m DIRECT',
-          notes: 'Free checked bags and flexible rebooking.'
+          bookingUrl: 'https://www.southwest.com/',
+          notes: 'Free checked bags and flexible rebooking. Not on Google Flights — book direct.'
         }
       ]
     },
@@ -244,6 +250,7 @@ export const tripData: TripData = {
           airline: 'Porter Airlines',
           price: 220,
           duration: '4h 32m DIRECT',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15&curr=USD',
           notes: 'No middle seats, free wine, snacks. Best for seniors.'
         },
         {
@@ -256,6 +263,7 @@ export const tripData: TripData = {
           airline: 'WestJet',
           price: 280,
           duration: '4h 35m DIRECT',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15+WestJet&curr=USD',
           notes: 'Canadian airline, good service.'
         }
       ]

@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { Location, DayPlan } from '@/types/trip';
 import { MapPin, Car, Bed, Camera, ChevronRight } from 'lucide-react';
 import MapController from './MapController';
+import { useRouteGeometry } from '@/hooks/useRouteGeometry';
 
 interface TripMapProps {
   locations: Location[];
@@ -169,6 +170,9 @@ export default function TripMap({ days, selectedDay, onSelectDay }: TripMapProps
     });
   }, []);
 
+  // Fetch real road routes from OSRM
+  const { routes: roadRoutes, loading: routesLoading } = useRouteGeometry(days);
+
   // Get selected day's location for auto-zoom - must be before conditional return
   const selectedDayData = selectedDay ? days.find(d => d.dayNumber === selectedDay) ?? null : null;
 
@@ -250,15 +254,30 @@ export default function TripMap({ days, selectedDay, onSelectDay }: TripMapProps
           setZoomLevel={setZoomLevel}
         />
 
-      <Polyline
-        positions={routeCoordinates}
-        pathOptions={{
-          color: '#dc2626',
-          weight: 3,
-          opacity: 0.6,
-          dashArray: '8, 8'
-        }}
-      />
+      {/* Road routes — real OSRM geometries, fallback to straight lines */}
+      {roadRoutes.length > 0 ? (
+        roadRoutes.map((route, i) => (
+          <Polyline
+            key={`route-${route.from}-${route.to}`}
+            positions={route.coordinates.length > 0 ? route.coordinates : []}
+            pathOptions={{
+              color: '#dc2626',
+              weight: 3,
+              opacity: 0.7,
+            }}
+          />
+        ))
+      ) : (
+        <Polyline
+          positions={routeCoordinates}
+          pathOptions={{
+            color: '#dc2626',
+            weight: 3,
+            opacity: 0.4,
+            dashArray: '8, 8'
+          }}
+        />
+      )}
 
       {locationData.map((locData) => {
         const isSelected = selectedDay !== null &&

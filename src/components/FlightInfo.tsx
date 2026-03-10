@@ -135,6 +135,19 @@ function FlightCard({ flight }: { flight: Flight }) {
           {flight.airline?.replace(' (Recommended)', '')}
         </div>
       </div>
+
+      {/* Search link */}
+      {flight.bookingUrl && (
+        <a
+          href={flight.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 px-2.5 py-1.5 bg-blue-500 text-white text-xs rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-1"
+        >
+          <ExternalLink className="w-3 h-3" />
+          Search
+        </a>
+      )}
     </div>
   );
 }
