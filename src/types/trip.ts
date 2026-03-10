@@ -47,16 +47,20 @@ export interface Activity {
 export interface Accommodation {
   id: string;
   name: string;
-  type: 'hotel' | 'lodge' | 'resort' | 'motel';
+  type: 'hotel' | 'lodge' | 'resort' | 'motel' | 'airbnb' | 'cabin' | 'condo' | 'inn';
   priceRange: string;
   pricePerNight?: number;
   rating?: number;
+  reviewRating?: number; // e.g. 4.5 (out of 5)
+  reviewSource?: string; // e.g. 'TripAdvisor', 'Booking.com'
+  reviewCount?: number;
   address?: string;
   phone?: string;
   website?: string;
   bookingUrl?: string;
   amenities?: string[];
   seniorFriendly: boolean;
+  recommended?: boolean;
   notes?: string;
   image?: string;
 }
@@ -92,6 +96,7 @@ export interface DayPlan {
     dinner?: Restaurant;
   };
   accommodation?: Accommodation;
+  accommodationOptions?: Accommodation[];
   notes?: string[];
   reservationsNeeded?: string[];
   budgetBreakdown?: {
