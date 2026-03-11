@@ -852,8 +852,8 @@ export const tripData: TripData = {
           id: 'acc6b',
           name: 'Aarchway Inn',
           type: 'hotel',
-          priceRange: '$150-230',
-          pricePerNight: 175,
+          priceRange: '$130-175',
+          pricePerNight: 150,
           reviewRating: 4.7,
           reviewSource: 'Booking.com (9.3/10)',
           address: '1551 N Highway 191, Moab, UT',
@@ -861,7 +861,7 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
           amenities: ['Pool', 'Hot tub', 'Free breakfast', 'Free parking', 'EV charger'],
           seniorFriendly: true,
-          notes: 'Closest to Arches (2mi). Free hot breakfast saves $30+/day. May push budget in peak season.'
+          notes: 'Closest to Arches (2mi). Free hot breakfast saves $30+/day. Book early for best rates, May is peak.'
         },
         {
           id: 'acc6c',
@@ -1112,6 +1112,8 @@ export const tripData: TripData = {
           reviewRating: 4.2,
           reviewSource: 'TripAdvisor (4+/5)',
           address: 'Downtown SLC',
+          website: 'https://www.hilton.com/en/hotels/slcdagi-hilton-garden-inn-salt-lake-city-downtown/',
+          bookingUrl: 'https://www.kayak.com/Salt-Lake-City-Hotels-Hilton-Garden-Inn-Salt-Lake-City-Downtown.5926.ksp',
           amenities: ['Indoor pool', 'Hot tub', 'Free WiFi', 'On-site restaurant'],
           seniorFriendly: true,
           notes: '2 queen beds. Consistent Hilton quality. Top of budget. Check for AAA/AARP discounts.'
@@ -1126,6 +1128,7 @@ export const tripData: TripData = {
           reviewSource: 'TripAdvisor (3.5/5)',
           address: 'Off I-80, near airport',
           website: 'https://www.choicehotels.com/utah/salt-lake-city/comfort-inn-hotels',
+          bookingUrl: 'https://www.kayak.com/Salt-Lake-City-Hotels-Comfort-Inn-Suites-Salt-Lake-City-Airport.21397.ksp',
           amenities: ['Free breakfast', 'Free parking', 'Free WiFi'],
           seniorFriendly: true,
           notes: 'Budget fallback. 2 queen beds. Reviews are mixed — Crystal Inn is better for $10 more.'
@@ -1640,6 +1643,7 @@ export const tripData: TripData = {
           reviewCount: 291,
           address: '1370 N 7th Ave, Bozeman',
           website: 'https://www.choicehotels.com/montana/bozeman/comfort-inn-hotels/mt029',
+          bookingUrl: 'https://www.kayak.com/Bozeman-Hotels-Comfort-Inn-Bozeman.25627.ksp',
           amenities: ['Free breakfast', 'Indoor pool', 'Hot tub', 'Free parking'],
           seniorFriendly: true,
           notes: '2 queen beds. Cheapest reliable option. Walmart next door for supplies.'
@@ -1653,6 +1657,7 @@ export const tripData: TripData = {
           reviewRating: 4.0,
           reviewSource: 'TripAdvisor',
           website: 'https://www.myplacehotels.com/locations/my-place-hotel-bozeman-mt',
+          bookingUrl: 'https://www.kayak.com/Bozeman-Hotels-My-Place-Hotel-Bozeman-MT.2459870.ksp',
           amenities: ['Full kitchen', 'Free parking', 'Free WiFi', '24hr laundry'],
           seniorFriendly: true,
           notes: '2 queen beds + full kitchen. Extended-stay style. No breakfast but you can cook. Budget pick.'
@@ -1930,13 +1935,13 @@ export const tripData: TripData = {
         },
         {
           id: 'a19-3',
-          name: 'Columbia Falls / Whitefish Town Walk',
-          description: 'Browse local shops, get ice cream, walk the town. Whitefish is 15min north and has a charming downtown.',
+          name: 'Columbia Falls Town Walk',
+          description: 'Browse local shops, get ice cream, walk the town. Columbia Falls has a charming, unhurried main street.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Whitefish Gallery Nights on Thursdays', 'Great Coffee at Montana Coffee Traders']
+          tips: ['Montana Coffee Traders for great local coffee', 'Glacier Distilling Company tasting room']
         }
       ],
       accommodation: {
