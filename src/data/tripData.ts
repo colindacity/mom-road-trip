@@ -97,7 +97,7 @@ export const tripData: TripData = {
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → PHX' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → PHX. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
-    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (May 30-31). Flying SEA → FCA or MSO.' }
+    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (May 30-31). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 30min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -310,7 +310,7 @@ export const tripData: TripData = {
     dailyRate: 40,
     dropoffFee: 200,
     totalCost: 960,
-    notes: 'One-way compact AWD SUV. PHX to MSO drop-off. Book via Costco Travel or AutoSlash. AWD essential for mountain roads. Target $20-50/day. AARP/AAA discounts available.'
+    notes: 'One-way compact SUV. PHX to MSO drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget. Expect ~$1,100-1,200 all-in with taxes/fees.'
   },
   days: [
     // ============================================================
@@ -753,15 +753,15 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'a5-1',
-          name: 'Upper Antelope Canyon Tour',
-          description: 'Guided Navajo tour through the famous slot canyon. Light beams in late morning are magical.',
+          name: 'Antelope Canyon Tour (Upper or Canyon X)',
+          description: 'Guided Navajo tour through the famous slot canyon. Light beams in late morning are magical. Upper Canyon has a steep hill climb on exit now — consider Antelope Canyon X (Taadidiin Tours) as a senior-friendly alternative with no ladders or steep stairs.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          cost: '$65-80 per person',
-          tips: ['Book 2-3 months ahead', '10am-12pm for best light beams', 'Sandy ground — wear closed shoes', 'Photography tour option if interested'],
-          reservationUrl: 'https://navajonationparks.org/tribal-parks/antelope-canyon/'
+          cost: '$75-140/person + $15 Navajo park fee',
+          tips: ['Upper Canyon now has steep stairs on exit — Canyon X is easier for seniors', 'Book 2-3 weeks ahead minimum (1,500/day cap)', '11am-1pm slot for best light beams (May 19 is in peak beam season)', 'Sandy ground — wear closed shoes', 'Antelope Canyon Tours (upper): antelopecanyon.com', 'Taadidiin Tours (Canyon X, senior-friendly): antelopecanyonx.com'],
+          reservationUrl: 'https://www.antelopecanyon.com/upper-antelope-canyon-tour/'
         },
         {
           id: 'a5-2',
@@ -1345,22 +1345,22 @@ export const tripData: TripData = {
       dayNumber: 12,
       date: '2026-05-26',
       title: 'Grand Teton Day 2 — Hiking & Lakes',
-      summary: 'String Lake and Leigh Lake, mountain reflections, max 3.5mi',
+      summary: 'String Lake east shore walk, mountain reflections, easy 2mi',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Jackson, WY',
       weather: { high: 65, low: 38, conditions: 'Clear, cool mornings' },
       activities: [
         {
           id: 'a12-1',
-          name: 'String Lake Trail',
-          description: 'Gentle flat trail along the lakeshore with mountain reflections. One of the most accessible hikes in the Tetons.',
-          duration: '2 hours',
+          name: 'String Lake East Shore (out-and-back)',
+          description: 'Walk the flat east shore of String Lake with stunning Teton reflections. The full loop (3.7mi) has a strenuous rocky west side — do the east shore as an out-and-back instead (flat, 2mi total). Turn around at the north end.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '3.5 miles (out and back or partial loop)',
+          distance: '2 miles (east shore out-and-back)',
           elevation: { gain: 50 },
-          tips: ['Flat and sandy trail', 'Can turn around at any point', 'Morning reflections are best', 'Carry bear spray']
+          tips: ['East shore only — west side is rocky and strenuous', 'Flat sandy trail along the lakeshore', 'Morning reflections are best', 'Can extend to Leigh Lake overlook if feeling good', 'Carry bear spray', 'Jenny Lake boat shuttle is free for 80+ seniors']
         },
         {
           id: 'a12-2',
@@ -1393,7 +1393,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night.'
       },
-      notes: ['HIKING DAY — 3.5mi max (easy, flat)', 'String Lake is the gentlest trail in the Tetons', 'Carry bear spray'],
+      notes: ['HIKING DAY — 2mi east shore out-and-back (easy, flat)', 'Skip west side of loop — rocky and strenuous', 'Jenny Lake boat is free for 80+ seniors', 'Carry bear spray'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 10, total: 210 }
     },
 
@@ -1887,15 +1887,15 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'a18-1',
-          name: 'Avalanche Lake Trail (if conditions allow)',
-          description: 'Beautiful hike through old-growth forest to a stunning alpine lake surrounded by waterfalls. The reward-to-effort ratio is incredible.',
-          duration: '3 hours',
+          name: 'Avalanche Lake Trail (or partial)',
+          description: 'Old-growth cedar forest to a turquoise alpine lake with waterfalls. Actually ~5.8 miles RT with 784ft gain — do the first portion through the forest and turn around when ready. Trail of the Cedars (0.9mi accessible boardwalk) is the first section and is spectacular on its own.',
+          duration: '3-4 hours (full) or 1.5 hours (partial to cedars)',
           difficulty: 'moderate',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '3.4 miles round trip',
-          elevation: { gain: 500 },
-          tips: ['Trail may have snow patches in early June', 'Carry bear spray', 'Poles helpful for the last section', 'Turn around at any point if too strenuous']
+          distance: '5.8 miles RT full (or 0.9mi Trail of the Cedars only)',
+          elevation: { gain: 784 },
+          tips: ['Full trail is ~6mi RT with 784ft gain — honest assessment: may be too much for Mom', 'Trail of the Cedars boardwalk (first 0.9mi) is wheelchair-accessible and stunning on its own', 'Walk 15-20 min past the junction as a bonus if feeling good', 'Snow patches likely in early June', 'Carry bear spray and hiking poles']
         },
         {
           id: 'a18-2',
@@ -1928,7 +1928,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night.'
       },
-      notes: ['HIKING DAY — Avalanche Lake is 3.4mi with 500ft gain (moderate)', 'Max trail for this trip — go at Mom\'s pace', 'Skip if conditions are bad'],
+      notes: ['HIKING DAY — Avalanche Lake is actually 5.8mi RT / 784ft gain', 'Trail of the Cedars (0.9mi boardwalk) is a great alternative if full trail is too much', 'Go at Mom\'s pace — turn around anytime'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 15, total: 215 }
     },
 
@@ -2146,10 +2146,40 @@ export const tripData: TripData = {
   },
   importantReservations: [
     {
-      item: 'Antelope Canyon Tour',
-      bookBy: '2026-03-15',
-      website: 'https://navajonationparks.org/tribal-parks/antelope-canyon/',
-      notes: 'Book 2-3 months ahead. 10am-12pm slot for best light beams.'
+      item: 'Antelope Canyon Tour (Upper or Canyon X)',
+      bookBy: '2026-04-25',
+      website: 'https://www.antelopecanyon.com/upper-antelope-canyon-tour/',
+      notes: 'Book 2-3 weeks ahead min. 11am-1pm for best light beams. Canyon X (Taadidiin Tours) is easier for seniors — no steep exit climb.'
+    },
+    {
+      item: 'Grand Canyon Lodging (Tusayan)',
+      bookBy: '2026-03-19',
+      website: 'https://www.redfeatherlodge.com/',
+      notes: 'May is peak season. Book ASAP. In-park lodges (Yavapai) book 6-13 months ahead — check grandcanyonlodges.com too.'
+    },
+    {
+      item: 'Jackson WY Lodging (Memorial Day Weekend)',
+      bookBy: '2026-03-19',
+      website: 'https://www.kayak.com/Jackson-Hotels.22713.hotel.ksp',
+      notes: 'May 24-27 overlaps Memorial Day weekend (May 23-25). Jackson is a resort town — prices spike. Book ASAP.'
+    },
+    {
+      item: 'Car Rental PHX→MSO One-Way',
+      bookBy: '2026-03-19',
+      website: 'https://www.costcotravel.com/Rental-Cars',
+      notes: 'Inside optimal 4-8 week booking window. Book via Costco Travel, then check AutoSlash (autoslash.com). Free cancellation — rebook if prices drop.'
+    },
+    {
+      item: 'El Tovar Dining Room Reservation',
+      bookBy: '2026-03-16',
+      website: 'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim',
+      notes: 'Opens 60 days ahead on Tock. For May 17 dinner, book by mid-March. Lunch is easier to get.'
+    },
+    {
+      item: 'America the Beautiful Annual Pass',
+      bookBy: '2026-05-01',
+      website: 'https://www.recreation.gov/pass/',
+      notes: '$80 annual pass covers vehicle + all occupants at 6 national parks on this trip. Saves $210+ vs individual fees.'
     },
     {
       item: 'Arches NP — No Timed Entry in 2026',
