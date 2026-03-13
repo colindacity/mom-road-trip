@@ -2252,14 +2252,14 @@ export const tripData: TripData = {
     }
   ],
   totalBudget: {
-    flights: 780,
-    carRental: 960,
-    accommodations: 2580,
-    food: 1470,
-    activities: 300,
-    gas: 500,
-    misc: 300,
-    total: 6890
+    flights: 999,
+    carRental: 1200,
+    accommodations: 2675,
+    food: 1500,
+    activities: 400,
+    gas: 300,
+    misc: 941,
+    total: 8015
   },
   importantReservations: [
     {
@@ -2293,10 +2293,10 @@ export const tripData: TripData = {
       notes: 'Opens 60 days ahead on Tock. For May 17 dinner, book by mid-March. Lunch is easier to get.'
     },
     {
-      item: 'America the Beautiful Annual Pass',
+      item: 'Park Passes (NEW 2026 Nonresident Fees!)',
       bookBy: '2026-05-01',
-      website: 'https://www.recreation.gov/pass/',
-      notes: '$80 annual pass covers vehicle + all occupants at 6 national parks on this trip. Saves $210+ vs individual fees.'
+      website: 'https://www.nps.gov/planyourvisit/passes.htm',
+      notes: 'Colin: $80 America the Beautiful pass. Mom (Canadian): NEW $250 Nonresident Annual Pass — saves $150 vs paying $100 surcharge at each of 4 designated parks (Grand Canyon, Teton, Yellowstone, Glacier). Buy at first park entrance.'
     },
     {
       item: 'Arches NP — No Timed Entry in 2026',
