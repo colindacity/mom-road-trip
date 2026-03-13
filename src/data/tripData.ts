@@ -544,21 +544,21 @@ export const tripData: TripData = {
         },
         {
           id: 'acc2c',
-          name: 'Grand Canyon Plaza Hotel',
-          type: 'hotel',
-          priceRange: '$130-180',
+          name: 'Maswik Lodge (Inside Park)',
+          type: 'lodge',
+          priceRange: '$96-200',
           pricePerNight: 150,
-          reviewRating: 3.5,
-          reviewSource: 'TripAdvisor (3.5/5), HotelsCombined (8.0/10)',
-          reviewCount: 5340,
-          address: 'Tusayan, AZ',
-          website: 'https://www.grandcanyonplaza.com/',
-          amenities: ['Hot tub', 'Pool (seasonal)', 'Restaurant', 'Free WiFi'],
+          reviewRating: 4.0,
+          reviewSource: 'TripAdvisor (4.0/5)',
+          address: 'Grand Canyon Village, South Rim',
+          website: 'https://www.grandcanyonlodges.com/lodging/maswik-lodge/',
+          bookingUrl: 'https://www.grandcanyonlodges.com/',
+          amenities: ['Inside park', 'Free shuttle', 'Pizza pub', 'Gift shop'],
           seniorFriendly: true,
-          notes: 'Budget fallback. Slightly dated but clean and spacious. 2 queen beds.'
+          notes: 'Inside the park! 2 queen beds. Call (888) 297-2757 to book. Best budget in-park option.'
         }
       ],
-      notes: ['DRIVING DAY — light activities', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening'],
+      notes: ['DRIVING DAY — light activities', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'Mom pays $100 nonresident surcharge at gate (new 2026 policy for non-US visitors)', 'BOOK El Tovar dinner NOW — 60 day window, reserve at grandcanyonlodges.com'],
       budgetBreakdown: { accommodation: 165, food: 80, activities: 35, gas: 50, total: 330 }
     },
 
@@ -578,7 +578,7 @@ export const tripData: TripData = {
         {
           id: 'a3-1',
           name: 'Rim Trail Walk',
-          description: 'Walk sections of the paved Rim Trail between viewpoints. Flat and accessible.',
+          description: 'Walk sections of the paved Rim Trail between viewpoints. Flat and accessible. Best section: Mather Point to Yavapai Point (0.7mi, paved, wheelchair accessible, benches). Or extend to Bright Angel Lodge (2mi total).',
           duration: '2.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -606,6 +606,16 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           tips: ['Free shuttle only (no private cars in summer)', 'Get off at any stop, catch next shuttle', 'The Abyss and Pima Point are favorites']
+        },
+        {
+          id: 'a3-4',
+          name: 'Sunrise at Yavapai Point',
+          description: 'Less crowded than Mather Point with same eastern exposure. Arrive 30min before sunrise (~5:15am in May).',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Sunrise ~5:15am mid-May', 'Far fewer people than Mather Point', 'Geology Museum opens at 8am nearby']
         }
       ],
       accommodation: {
@@ -620,7 +630,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night — same hotel.'
       },
-      notes: ['HIKING DAY — 2.8mi Rim Trail (easy, paved)', 'Max 3.5mi today', 'Hydrate at altitude'],
+      notes: ['HIKING DAY — 2.8mi Rim Trail (easy, paved)', 'Skip South Kaibab to Ooh Aah Point — too steep and loose gravel for 80yo', 'Sunset at Mohave Point (less crowded than Hopi, same views)', 'Hydrate at altitude'],
       budgetBreakdown: { accommodation: 165, food: 80, activities: 0, gas: 0, total: 245 }
     },
 
@@ -760,8 +770,8 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: true,
           cost: '$75-140/person + $15 Navajo park fee',
-          tips: ['Upper Canyon now has steep stairs on exit — Canyon X is easier for seniors', 'Book 2-3 weeks ahead minimum (1,500/day cap)', '11am-1pm slot for best light beams (May 19 is in peak beam season)', 'Sandy ground — wear closed shoes', 'Antelope Canyon Tours (upper): antelopecanyon.com', 'Taadidiin Tours (Canyon X, senior-friendly): antelopecanyonx.com'],
-          reservationUrl: 'https://www.antelopecanyon.com/upper-antelope-canyon-tour/'
+          tips: ['Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited', 'Book at antelopecanyon.com (FareHarbor)', '$65-80/person + $15 Navajo entry fee', 'Sandy ground — wear closed shoes'],
+          reservationUrl: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-19/?ref=https://www.antelopecanyon.com'
         },
         {
           id: 'a5-2',
@@ -895,17 +905,19 @@ export const tripData: TripData = {
         },
         {
           id: 'acc6c',
-          name: 'Airbnb 2BR Condo in Moab',
-          type: 'airbnb',
-          priceRange: '$120-180',
-          pricePerNight: 145,
-          reviewRating: 4.8,
-          reviewSource: 'Airbnb',
-          address: 'Downtown Moab or South Valley',
-          bookingUrl: 'https://www.airbnb.com/moab-ut/stays',
-          amenities: ['2 bedrooms', 'Full kitchen', 'Pool (complex)', 'Free parking', 'Washer/dryer'],
+          name: 'Expedition Lodge',
+          type: 'hotel',
+          priceRange: '$60-98',
+          pricePerNight: 80,
+          reviewRating: 4.3,
+          reviewSource: 'KAYAK (8.6/10), 3,334 reviews',
+          reviewCount: 3334,
+          address: 'Moab, UT',
+          website: 'https://www.expeditionlodge.com/',
+          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Expedition-Lodge.2847337.ksp',
+          amenities: ['Heated pool', 'Water slides', 'Free breakfast', 'Free parking'],
           seniorFriendly: true,
-          notes: '3 nights with a kitchen saves serious money. Search: 2BR, May 20-23, pool. Weekly discounts common.'
+          notes: 'Best value in Moab. 2 queen rooms. Heated pool with slides. Walking distance to shops. Way under budget.'
         }
       ],
       notes: ['DRIVING DAY — no hiking', 'Monument Valley is an optional stop', 'Rest day for the body'],
@@ -981,7 +993,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night in Moab.'
       },
-      notes: ['HIKING DAY — ~3mi total (easy terrain)', 'Timed entry reservation required for Arches — book at recreation.gov', 'Start early to beat heat', 'Bring 2L water per person'],
+      notes: ['HIKING DAY — ~3mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Wednesday = fewer crowds than weekend', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 10, total: 235 }
     },
 
