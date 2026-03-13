@@ -920,7 +920,7 @@ export const tripData: TripData = {
           notes: 'Best value in Moab. 2 queen rooms. Heated pool with slides. Walking distance to shops. Way under budget.'
         }
       ],
-      notes: ['DRIVING DAY — no hiking', 'Monument Valley is an optional stop', 'Rest day for the body'],
+      notes: ['DRIVING DAY — no hiking', 'Monument Valley is an optional stop', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Rest day for the body'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 8, gas: 55, total: 273 }
     },
 
@@ -1176,7 +1176,7 @@ export const tripData: TripData = {
           notes: 'Budget fallback. 2 queen beds. Reviews are mixed — Crystal Inn is better for $10 more.'
         }
       ],
-      notes: ['Light hiking AM + driving PM', 'Canyonlands overlooks are easy', 'Transit night in SLC'],
+      notes: ['Light hiking AM + driving PM', 'Canyonlands overlooks are easy', 'FILL GAS in Moab — Green River to Salina on I-70 is 110mi with NO gas stations', 'Transit night in SLC'],
       budgetBreakdown: { accommodation: 100, food: 70, activities: 15, gas: 55, total: 240 }
     },
 
@@ -1879,7 +1879,7 @@ export const tripData: TripData = {
           notes: 'Search: 2BR, May 30-Jun 3, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
-      notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA', '3 adults: need 2 bedrooms or 2BR rental', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA', '3 adults: need 2 bedrooms or 2BR rental', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully, one of MT\'s most dangerous roads', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
