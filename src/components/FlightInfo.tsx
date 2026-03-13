@@ -14,17 +14,24 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
   const tripStart = parseISO(tripStartDate);
   const daysUntilTrip = differenceInDays(tripStart, today);
 
-  // Group flights by type
+  // Group flights by type, then by date within each group
   const outboundFlights = flights.filter(f => f.type === 'outbound');
   const returnFlights = flights.filter(f => f.type === 'return');
 
-  const getPassengerColor = (passenger: string) => {
-    return passenger === 'colin' ? 'bg-blue-100 text-blue-700' : 'bg-pink-100 text-pink-700';
-  };
+  // Group outbound by date (main trip vs wife's separate date)
+  const outboundByDate = outboundFlights.reduce<Record<string, typeof outboundFlights>>((acc, f) => {
+    const key = f.date;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(f);
+    return acc;
+  }, {});
 
-  const getPassengerName = (passenger: string) => {
-    return passenger === 'colin' ? 'Colin' : 'Mom';
-  };
+  const returnByDate = returnFlights.reduce<Record<string, typeof returnFlights>>((acc, f) => {
+    const key = f.date;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(f);
+    return acc;
+  }, {});
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -49,29 +56,33 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
       </div>
 
       <div className="p-4 space-y-4">
-        {/* Outbound Flights */}
-        <div>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-            Outbound - {outboundFlights[0]?.date ? format(parseISO(outboundFlights[0].date), 'EEEE, MMM d') : ''}
-          </h3>
-          <div className="space-y-2">
-            {outboundFlights.map(flight => (
-              <FlightCard key={flight.id} flight={flight} />
-            ))}
+        {/* Outbound Flights grouped by date */}
+        {Object.entries(outboundByDate).sort(([a], [b]) => a.localeCompare(b)).map(([date, flights]) => (
+          <div key={`out-${date}`}>
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Outbound - {format(parseISO(date), 'EEEE, MMM d')}
+            </h3>
+            <div className="space-y-2">
+              {flights.map(flight => (
+                <FlightCard key={flight.id} flight={flight} />
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
 
-        {/* Return Flights */}
-        <div>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-            Return - {returnFlights[0]?.date ? format(parseISO(returnFlights[0].date), 'EEEE, MMM d') : ''}
-          </h3>
-          <div className="space-y-2">
-            {returnFlights.map(flight => (
-              <FlightCard key={flight.id} flight={flight} />
-            ))}
+        {/* Return Flights grouped by date */}
+        {Object.entries(returnByDate).sort(([a], [b]) => a.localeCompare(b)).map(([date, flights]) => (
+          <div key={`ret-${date}`}>
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Return - {format(parseISO(date), 'EEEE, MMM d')}
+            </h3>
+            <div className="space-y-2">
+              {flights.map(flight => (
+                <FlightCard key={flight.id} flight={flight} />
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
 
         {/* Accessibility reminder */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-start gap-3">
@@ -100,11 +111,17 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
 
 function FlightCard({ flight }: { flight: Flight }) {
   const getPassengerColor = (passenger: string) => {
-    return passenger === 'colin' ? 'bg-blue-100 text-blue-700' : 'bg-pink-100 text-pink-700';
+    const colors: Record<string, string> = {
+      colin: 'bg-blue-100 text-blue-700',
+      mom: 'bg-pink-100 text-pink-700',
+      wife: 'bg-purple-100 text-purple-700',
+    };
+    return colors[passenger] || 'bg-gray-100 text-gray-700';
   };
 
   const getPassengerName = (passenger: string) => {
-    return passenger === 'colin' ? 'Colin' : 'Mom';
+    const names: Record<string, string> = { colin: 'Colin', mom: 'Mom', wife: 'Wife' };
+    return names[passenger] || passenger;
   };
 
   return (

@@ -138,7 +138,7 @@ export const tripData: TripData = {
       startDay: 16,
       endDay: 21,
       color: '#06b6d4',
-      highlights: ['Going-to-the-Sun Road', 'Lake McDonald', 'Wife joins for weekend', 'Fly home from MSO']
+      highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from MSO']
     }
   ],
   flights: [
@@ -195,6 +195,36 @@ export const tripData: TripData = {
       price: 350,
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+YYZ+on+2026-06-04&curr=USD',
       notes: 'MSO→connecting hub→YYZ. Request wheelchair/passenger assistance. United has MSO→DEN→YYZ options.'
+    },
+    {
+      id: 'f5',
+      type: 'outbound',
+      passenger: 'wife',
+      from: 'SEA',
+      fromCity: 'Seattle',
+      to: 'FCA',
+      toCity: 'Kalispell (Glacier Park)',
+      date: '2026-05-29',
+      airline: 'Alaska Airlines',
+      price: 110,
+      duration: '1h 20m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-29&curr=USD',
+      notes: 'Wife\'s flight. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Fri evening arrival recommended.'
+    },
+    {
+      id: 'f6',
+      type: 'return',
+      passenger: 'wife',
+      from: 'FCA',
+      fromCity: 'Kalispell (Glacier Park)',
+      to: 'SEA',
+      toCity: 'Seattle',
+      date: '2026-06-01',
+      airline: 'Alaska Airlines',
+      price: 110,
+      duration: '1h 20m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+      notes: 'Wife\'s return. Monday morning flight if she can take the day off, otherwise Sunday May 31 evening ~9:42pm.'
     }
   ],
   flightOptions: [
@@ -1789,21 +1819,21 @@ export const tripData: TripData = {
       id: 'd17',
       dayNumber: 17,
       date: '2026-05-31',
-      title: 'Glacier — Going-to-the-Sun Road',
-      summary: 'Iconic mountain road, Lake McDonald, alpine scenery with wife',
+      title: 'Glacier — Lake McDonald & Sun Road (Wife Day 2)',
+      summary: 'Drive Sun Road to Avalanche Creek, Trail of the Cedars, Lake McDonald',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 62, low: 38, conditions: 'Cool, possible mountain weather' },
       activities: [
         {
           id: 'a17-1',
-          name: 'Going-to-the-Sun Road Drive',
-          description: 'One of the most scenic roads in North America. Drive as far as the road is open (may not be fully open until late June). Logan Pass if open.',
-          duration: '4-5 hours (with stops)',
+          name: 'Going-to-the-Sun Road Drive (West Side)',
+          description: 'Drive the lower section of Sun Road from Apgar to Avalanche Creek (road will NOT be open to Logan Pass in late May/early June). The Lake McDonald stretch is stunning — stop at every pulloff.',
+          duration: '2-3 hours (with stops)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Vehicle reservation may be required June 1+ — check nps.gov/glac', 'Road may only be open to Avalanche Creek in late May', 'Stop at every pulloff', 'Lake McDonald Lodge is worth a stop']
+          tips: ['No vehicle reservation needed in 2026 (system discontinued)', 'Road open from Apgar to Avalanche Creek area only', 'Logan Pass opens mid-to-late June typically', 'Lake McDonald Lodge is a must-stop', 'Stop at every pulloff for photos']
         },
         {
           id: 'a17-2',
@@ -1838,7 +1868,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night. Sunday — last day with wife.'
       },
-      notes: ['MODERATE DAY — driving + ~2mi walking', 'Going-to-the-Sun Road may not be fully open in late May', 'Check road status at nps.gov/glac'],
+      notes: ['MODERATE DAY — driving + ~2mi walking', 'Sun Road open Apgar to Avalanche Creek only (Logan Pass closed until mid-June)', 'No vehicle reservation needed in 2026'],
       budgetBreakdown: { accommodation: 130, food: 80, activities: 35, gas: 15, total: 260 }
     },
 
@@ -2122,10 +2152,10 @@ export const tripData: TripData = {
       notes: 'Book 2-3 months ahead. 10am-12pm slot for best light beams.'
     },
     {
-      item: 'Arches NP Timed Entry',
-      bookBy: '2026-04-01',
-      website: 'https://www.recreation.gov/timed-entry/10088426',
-      notes: 'Timed entry reservation required April-October. Book on recreation.gov.'
+      item: 'Arches NP — No Timed Entry in 2026',
+      bookBy: 'N/A',
+      website: 'https://www.nps.gov/arch/planyourvisit/timed-entry-reservation.htm',
+      notes: 'Timed entry dropped for 2026. No reservation needed. Arrive early (before 8am) to avoid crowds.'
     },
     {
       item: 'Paddle Ridge Cabin (Glacier) — 20% Early Bird',
@@ -2140,10 +2170,10 @@ export const tripData: TripData = {
       notes: 'In-park lodges book 12+ months ahead. Tusayan hotels fill fast for May.'
     },
     {
-      item: 'Glacier Going-to-the-Sun Road Vehicle Reservation',
-      bookBy: '2026-05-01',
-      website: 'https://www.nps.gov/glac/planyourvisit/gtsrvehiclereservation.htm',
-      notes: 'May be required starting June 1. Check for 2026 dates. Road may only be partially open in late May.'
+      item: 'Glacier — No Vehicle Reservation in 2026',
+      bookBy: 'N/A',
+      website: 'https://www.nps.gov/glac/planyourvisit/visiting-glacier-2026.htm',
+      notes: 'Timed-entry vehicle reservation system discontinued for 2026. New ticketed shuttle + 3hr Logan Pass parking limit starts July 1 (after your trip). Sun Road will only be open to Avalanche Creek area in late May.'
     }
   ]
 };
