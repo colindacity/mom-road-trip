@@ -16,7 +16,7 @@ import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
 import CarRentalInfo from '@/components/CarRentalInfo';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock, MoreVertical, X
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -535,6 +535,40 @@ export default function Home() {
                 ${Math.round(totalBudget / totalDays)}/day
               </div>
             </div>
+          </div>
+
+          {/* Travel Guides */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <a
+              href="/packing-list.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-medium hover:bg-indigo-100 transition-colors"
+            >
+              <Backpack className="w-3.5 h-3.5" />
+              Packing List
+              <ExternalLink className="w-3 h-3 opacity-50" />
+            </a>
+            <a
+              href="/medical-emergency-guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-medium hover:bg-red-100 transition-colors"
+            >
+              <HeartPulse className="w-3.5 h-3.5" />
+              Medical &amp; Emergency Guide
+              <ExternalLink className="w-3 h-3 opacity-50" />
+            </a>
+            <a
+              href="/connectivity-guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-sky-50 text-sky-700 rounded-lg text-xs font-medium hover:bg-sky-100 transition-colors"
+            >
+              <Wifi className="w-3.5 h-3.5" />
+              Cell &amp; WiFi Guide
+              <ExternalLink className="w-3 h-3 opacity-50" />
+            </a>
           </div>
         </div>
       </main>

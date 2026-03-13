@@ -480,7 +480,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Accessible viewpoints', 'Visitor Center nearby', 'Prepare to be amazed!']
+          tips: ['Accessible viewpoints', 'Visitor Center nearby', 'iPhone: use 0.5x ultrawide to capture the full canyon', 'Late afternoon light paints the walls orange and red']
         },
         {
           id: 'a2-4',
@@ -490,7 +490,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Shuttle runs regularly', 'Bring layers — cool after sunset', 'Arrive 30 min early']
+          tips: ['Shuttle runs regularly', 'Bring layers — cool after sunset', 'Arrive 30 min early for a good spot', 'Sunset ~7:30pm mid-May. iPhone: shoot in 2x for layered canyon depth', 'Timelapse mode captures the shadow sweep beautifully']
         }
       ],
       accommodation: {
@@ -615,7 +615,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Sunrise ~5:15am mid-May', 'Far fewer people than Mather Point', 'Geology Museum opens at 8am nearby']
+          tips: ['Sunrise ~5:15am mid-May — warm light floods the canyon', 'Far fewer people than Mather Point', 'Geology Museum opens at 8am nearby', 'iPhone: burst mode during golden hour, 0.5x ultrawide captures the full panorama']
         }
       ],
       accommodation: {
@@ -678,7 +678,7 @@ export const tripData: TripData = {
           reservationRequired: false,
           distance: '1.5 miles round trip',
           elevation: { gain: 150, highest: 4300, lowest: 4150 },
-          tips: ['$10 parking fee', 'Go late afternoon for best light', 'Stairs with handrails', 'Bring water — exposed and hot']
+          tips: ['$10 parking fee', 'Go late afternoon for best light — sun illuminates the bend', 'Stairs with handrails', 'Bring water — exposed and hot', 'iPhone: 0.5x ultrawide is essential here to get the full horseshoe. Shoot vertically for Instagram-worthy framing']
         }
       ],
       accommodation: {
@@ -770,7 +770,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: true,
           cost: '$75-140/person + $15 Navajo park fee',
-          tips: ['Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited', 'Book at antelopecanyon.com (FareHarbor)', '$65-80/person + $15 Navajo entry fee', 'Sandy ground — wear closed shoes'],
+          tips: ['Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited', 'Book at antelopecanyon.com (FareHarbor)', '$65-80/person + $15 Navajo entry fee', 'Sandy ground — wear closed shoes', 'iPhone: shoot straight up for light beams. HDR auto mode handles the extreme contrast well. Best light beams 10:30am-12:30pm in Upper Canyon'],
           reservationUrl: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-19/?ref=https://www.antelopecanyon.com'
         },
         {
@@ -842,7 +842,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           cost: '$8 entry fee',
-          tips: ['Visitor center has restrooms and snacks', 'Views from parking lot are incredible', 'Full Navajo guided tour optional ($65, 2.5hrs)']
+          tips: ['Visitor center has restrooms and snacks', 'Views from parking lot are incredible', 'Full Navajo guided tour optional ($65, 2.5hrs)', 'iPhone: 2x zoom frames the mittens beautifully. The Forrest Gump road shot is on US-163 about 13mi south of the park entrance — stop on the center line (carefully) facing north']
         },
         {
           id: 'a6-3',
@@ -958,7 +958,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.5 miles round trip',
-          tips: ['Lower viewpoint is flat and accessible', 'Bring binoculars for a closer look', 'Full hike to the arch is 3mi with 480ft gain — not recommended for this trip']
+          tips: ['Lower viewpoint is flat and accessible', 'Bring binoculars for a closer look', 'Full hike to the arch is 3mi with 480ft gain — not recommended for this trip', 'Best light: late afternoon when the arch glows orange-red. iPhone 5x zoom works well from the lower viewpoint']
         },
         {
           id: 'a7-3',
@@ -1048,7 +1048,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           cost: '$20 vehicle entry',
-          tips: ['30-min drive from Moab', 'View from the car/parking lot — no hiking needed', 'Arrive 45min before sunset']
+          tips: ['30-min drive from Moab', 'View from the car/parking lot — no hiking needed', 'Arrive 45min before sunset (~8pm late May)', 'One of the best sunset photo spots in Utah — Colorado River meanders 2,000ft below. iPhone panorama mode captures the full mesa']
         }
       ],
       accommodation: {
@@ -1089,7 +1089,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.5 miles round trip',
-          tips: ['Sunrise ~6am in late May', 'Only if you\'re up early', 'Can skip and just do Grand View instead']
+          tips: ['Sunrise ~6am in late May — the arch literally glows from beneath', 'Only if you\'re up early — this is THE iconic Canyonlands photo', 'Can skip and just do Grand View instead', 'iPhone: lie on the ground and shoot through the arch for the classic shot. 0.5x ultrawide captures arch + canyon']
         },
         {
           id: 'a9-2',
@@ -1303,7 +1303,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Arrive 15-20min before sunrise', 'Stay in or near the car — bison are close', 'T.A. Moulton Barn is the most photographed barn in America', 'No park fee needed from east side approach']
+          tips: ['Arrive 15-20min before sunrise (~5:50am late May)', 'Stay in or near the car — bison are close', 'T.A. Moulton Barn is the most photographed barn in America', 'No park fee needed from east side approach', 'iPhone: use 1x or 2x with barn in foreground, Tetons behind. The pink alpenglow on the peaks lasts only 5-10 minutes']
         },
         {
           id: 'a11-2',
@@ -1326,7 +1326,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.5 miles',
-          tips: ['Best reflections in early morning or late afternoon', 'Gravel road is fine for any car', 'Beavers active at dawn/dusk', 'Flat, easy walk from parking area']
+          tips: ['Best reflections in early morning or late afternoon — need still water', 'Gravel road is fine for any car', 'Beavers active at dawn/dusk', 'Flat, easy walk from parking area', 'iPhone: shoot at water level for mirror reflections of the Tetons. 0.5x ultrawide captures the full range']
         },
         {
           id: 'a11-4',
@@ -1384,7 +1384,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Dawn is best — still water for reflections', 'Moose are frequently spotted here', 'Bring binoculars', 'Stay in/near the car', 'Mt. Moran reflection is a classic Teton shot']
+          tips: ['Dawn is best — still water for reflections', 'Moose are frequently spotted here', 'Bring binoculars', 'Stay in/near the car', 'Mt. Moran reflection is a classic Teton shot', 'iPhone: 2x zoom for the Mt. Moran reflection composition. Portrait mode works great for moose with blurred background']
         },
         {
           id: 'a12-2',
@@ -1539,7 +1539,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.8 miles (boardwalk loop)',
-          tips: ['Download the GeyserTimes app for eruption predictions', 'Arrive 30min early for good bench seats', 'Old Faithful Inn lobby is worth seeing — largest log structure in the world', 'Flat boardwalk with benches throughout']
+          tips: ['Download the GeyserTimes app for eruption predictions', 'Arrive 30min early for good bench seats', 'Old Faithful Inn lobby is worth seeing — largest log structure in the world', 'Flat boardwalk with benches throughout', 'iPhone: video mode for the eruption, then switch to slo-mo for the peak. Shoot from the south side for the sun behind you']
         },
         {
           id: 'a14-3',
@@ -1550,7 +1550,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.8 miles (boardwalk)',
-          tips: ['Midway Geyser Basin parking fills up — go early or late', 'Colors best on sunny days', 'Grand Prismatic Overlook trail is 1.6mi — skip for this trip', 'Steam can obscure the colors on cool mornings — afternoon may be better']
+          tips: ['Midway Geyser Basin parking fills up — go early or late', 'Colors best on sunny, warm days when steam is minimal', 'Grand Prismatic Overlook trail is 1.6mi — skip for this trip', 'Afternoon (after 1pm) is better for photos: less steam, sun overhead shows the colors', 'iPhone: 0.5x ultrawide from the boardwalk. Colors look best shooting away from the steam']
         },
         {
           id: 'a14-4',
@@ -1811,7 +1811,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Sunset over the lake is stunning', 'Apgar Village has a gift shop and visitor center', 'Park entrance: $35/vehicle or use America the Beautiful pass']
+          tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Sunset over the lake is stunning — ~9:15pm in late May', 'Apgar Village has a gift shop and visitor center', 'Park entrance: $35/vehicle or use America the Beautiful pass', 'iPhone: shoot at rock-level on the shore for colorful pebbles in foreground with mountains behind. Golden hour lasts extra long here due to mountain shadows']
         }
       ],
       accommodation: {
