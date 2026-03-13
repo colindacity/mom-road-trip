@@ -1283,49 +1283,63 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 11: GRAND TETON DAY 1 — SCENIC DRIVING
+    // DAY 11: GRAND TETON DAY 1 — SOUTHERN PARK: JENNY LAKE & ICONS
     // ============================================================
     {
       id: 'd11',
       dayNumber: 11,
       date: '2026-05-25',
-      title: 'Grand Teton Day 1 — Scenic Driving & Overlooks',
-      summary: 'Teton Park Road, Jenny Lake, iconic mountain views',
+      title: 'Grand Teton Day 1 — Jenny Lake & Iconic Views',
+      summary: 'Mormon Row sunrise, Jenny Lake boat to Hidden Falls, Schwabacher Landing reflections',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Jackson, WY',
       weather: { high: 65, low: 38, conditions: 'Clear skies, crisp mountain air' },
       activities: [
         {
           id: 'a11-1',
-          name: 'Teton Park Road Scenic Drive',
-          description: 'Drive the inner park road with pulloffs at every major viewpoint. The Tetons rise dramatically from the valley floor.',
-          duration: '3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Stop at every pulloff — each view is different', 'Mormon Row is a classic photo spot', 'Snake River Overlook (Ansel Adams\' famous shot)']
-        },
-        {
-          id: 'a11-2',
-          name: 'Jenny Lake Overlook',
-          description: 'Drive to Jenny Lake and enjoy the crystal-clear water with Teton reflections.',
+          name: 'Mormon Row Sunrise',
+          description: 'Drive-up sunrise spot: iconic Moulton Barns with the Teton Range behind them. Bison often graze in the fields at dawn. Free — no park fee needed if entering from the east side.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Visitor center has good info', 'Short flat walk along the lakeshore', 'Boat shuttle runs across lake (optional)']
+          tips: ['Arrive 15-20min before sunrise', 'Stay in or near the car — bison are close', 'T.A. Moulton Barn is the most photographed barn in America', 'No park fee needed from east side approach']
+        },
+        {
+          id: 'a11-2',
+          name: 'Jenny Lake Boat Shuttle & Hidden Falls',
+          description: 'Take the boat shuttle across Jenny Lake to Hidden Falls. Short 1mi round trip hike with 300ft gain to a beautiful waterfall. Mom rides FREE at 80+. Boat is $12-20 RT for others.',
+          duration: '2.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '1 mile RT (from boat dock to Hidden Falls)',
+          elevation: { gain: 300 },
+          tips: ['Boat shuttle: $12-20 RT, FREE for 80+ seniors', 'First boat at 10am typically', 'Trail to Hidden Falls is well-maintained but uphill', 'Can continue to Inspiration Point (+0.5mi, +400ft) if feeling strong', 'Arrive early — boat line gets long by 11am']
         },
         {
           id: 'a11-3',
-          name: 'Craig Thomas Visitor Center',
-          description: 'Beautiful modern visitor center with exhibits on Teton geology and wildlife.',
+          name: 'Schwabacher Landing',
+          description: 'Short gravel road to a beaver-pond area with stunning Teton reflections. Only 0.5mi walk from parking to the best viewpoints. One of the most photographed spots in the park.',
           duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          distance: '0.5 miles',
+          tips: ['Best reflections in early morning or late afternoon', 'Gravel road is fine for any car', 'Beavers active at dawn/dusk', 'Flat, easy walk from parking area']
         },
         {
           id: 'a11-4',
+          name: 'Cathedral Group & Teton Point Turnouts',
+          description: 'Drive-up pulloffs along Teton Park Road with some of the best framed views of the Cathedral Group (Grand, Middle, and South Teton). No walking required.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Cathedral Group Turnout has the classic postcard view', 'Teton Point Turnout is great for sunset']
+        },
+        {
+          id: 'a11-5',
           name: 'Dinner in Jackson',
           description: 'Return to Jackson for dinner. Great restaurants near the town square.',
           duration: '1.5 hours',
@@ -1345,54 +1359,65 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night.'
       },
-      notes: ['LIGHT DAY — driving + short walks', 'No real hiking today', 'Save energy for hiking day tomorrow'],
+      notes: ['Jenny Lake boat is FREE for 80+ seniors', 'Mormon Row sunrise is a drive-up — no hiking needed', 'Schwabacher Landing is flat, easy 0.5mi walk', 'Hidden Falls trail is short but uphill — assess Mom\'s energy'],
       budgetBreakdown: { accommodation: 130, food: 80, activities: 15, gas: 15, total: 240 }
     },
 
     // ============================================================
-    // DAY 12: GRAND TETON DAY 2 — HIKING & LAKES
+    // DAY 12: GRAND TETON DAY 2 — NORTHERN PARK: LODGE, LAKES & WILDLIFE
     // ============================================================
     {
       id: 'd12',
       dayNumber: 12,
       date: '2026-05-26',
-      title: 'Grand Teton Day 2 — Hiking & Lakes',
-      summary: 'String Lake east shore walk, mountain reflections, easy 2mi',
+      title: 'Grand Teton Day 2 — Lodge, Lakes & Wildlife',
+      summary: 'Oxbow Bend sunrise, Jackson Lake Lodge, Colter Bay lakeshore, Signal Mountain',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Jackson, WY',
       weather: { high: 65, low: 38, conditions: 'Clear, cool mornings' },
       activities: [
         {
           id: 'a12-1',
-          name: 'String Lake East Shore (out-and-back)',
-          description: 'Walk the flat east shore of String Lake with stunning Teton reflections. The full loop (3.7mi) has a strenuous rocky west side — do the east shore as an out-and-back instead (flat, 2mi total). Turn around at the north end.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '2 miles (east shore out-and-back)',
-          elevation: { gain: 50 },
-          tips: ['East shore only — west side is rocky and strenuous', 'Flat sandy trail along the lakeshore', 'Morning reflections are best', 'Can extend to Leigh Lake overlook if feeling good', 'Carry bear spray', 'Jenny Lake boat shuttle is free for 80+ seniors']
-        },
-        {
-          id: 'a12-2',
-          name: 'Picnic Lunch at String Lake',
-          description: 'Picnic area at the String Lake trailhead. Bring lunch from town or pack from the hotel.',
+          name: 'Oxbow Bend Sunrise Wildlife Drive',
+          description: 'Drive to Oxbow Bend at dawn for moose, beavers, and the iconic Mt. Moran reflection on still water. All viewing from the car or roadside pulloff.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Picnic tables available', 'Pack out all trash', 'Gorgeous setting for lunch']
+          tips: ['Dawn is best — still water for reflections', 'Moose are frequently spotted here', 'Bring binoculars', 'Stay in/near the car', 'Mt. Moran reflection is a classic Teton shot']
         },
         {
-          id: 'a12-3',
-          name: 'Afternoon Rest',
-          description: 'Head back to Jackson for a rest. Optional browse of the National Museum of Wildlife Art.',
-          duration: '2-3 hours',
+          id: 'a12-2',
+          name: 'Jackson Lake Lodge',
+          description: 'Visit the historic Jackson Lake Lodge with its famous 60-foot picture windows framing the entire Teton Range. The lobby alone is worth the visit. Walk to Lunch Tree Hill (1mi, easy) for a panoramic view.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Museum is on the hill north of town', 'Or just rest at the hotel']
+          distance: '1 mile (Lunch Tree Hill)',
+          tips: ['60-foot windows in the lobby — one of the great views in the national parks', 'Lunch Tree Hill: 1mi easy walk behind the lodge, 360-degree views', 'Grab coffee or lunch at the lodge', 'Lobby has comfortable seating to just sit and take in the view']
+        },
+        {
+          id: 'a12-3',
+          name: 'Colter Bay Lakeshore Trail',
+          description: 'Easy flat trail along the Jackson Lake shoreline with mountain views. 2mi round trip on level ground.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '2 miles RT',
+          elevation: { gain: 50 },
+          tips: ['Flat trail along the lakeshore', 'Great mountain views across the lake', 'Colter Bay Visitor Center has a Native American art collection', 'Carry bear spray']
+        },
+        {
+          id: 'a12-4',
+          name: 'Signal Mountain Summit Drive',
+          description: 'Drive the 5-mile road to the 7,720ft summit of Signal Mountain for 360-degree views of the Tetons, Jackson Lake, and the valley. No hiking required — drive to the top.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Check if road is open (may be closed in late May for snow)', 'Views from the summit are incredible', 'Two overlooks: Jackson Point and the summit', 'Drive-up — no hiking needed']
         }
       ],
       accommodation: {
@@ -1405,52 +1430,64 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night.'
       },
-      notes: ['HIKING DAY — 2mi east shore out-and-back (easy, flat)', 'Skip west side of loop — rocky and strenuous', 'Jenny Lake boat is free for 80+ seniors', 'Carry bear spray'],
-      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 10, total: 210 }
+      notes: ['Northern park focus — lodges, lakes, and wildlife', 'Oxbow Bend sunrise is from the car', 'Colter Bay trail is flat and easy', 'Signal Mountain drive may be closed — check at visitor center', 'Carry bear spray on all trails'],
+      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 15, total: 215 }
     },
 
     // ============================================================
-    // DAY 13: GRAND TETON DAY 3 — WILDLIFE & REST
+    // DAY 13: GRAND TETON DAY 3 — REST DAY IN JACKSON
     // ============================================================
     {
       id: 'd13',
       dayNumber: 13,
       date: '2026-05-27',
-      title: 'Grand Teton Day 3 — Wildlife Dawn & Rest',
-      summary: 'Early wildlife spotting, lazy afternoon, rest before Yellowstone',
+      title: 'Grand Teton Day 3 — Rest Day in Jackson',
+      summary: 'Sleep in, optional Leigh Lake, browse Jackson, recharge before Yellowstone',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Jackson, WY',
       weather: { high: 65, low: 38, conditions: 'Clear, cool' },
       activities: [
         {
           id: 'a13-1',
-          name: 'Dawn Wildlife Drive',
-          description: 'Drive through the park at dawn for best wildlife viewing. Moose, elk, bison, and maybe bears. No hiking — just drive and watch.',
+          name: 'Sleep In & Late Breakfast',
+          description: 'No alarm. Sleep in and enjoy a late breakfast in Jackson at Persephone Bakery (excellent pastries and coffee, European-style).',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Leave by 6am for best sightings', 'Oxbow Bend for moose', 'Bring binoculars', 'Stay in the car — watch from a safe distance']
+          tips: ['Persephone Bakery — arrive by 9am to beat the line', 'The Bunnery for a classic American breakfast alternative']
         },
         {
           id: 'a13-2',
-          name: 'Breakfast in Jackson',
-          description: 'Return to town for a nice breakfast.',
-          duration: '1 hour',
+          name: 'Optional: Leigh Lake Trail',
+          description: 'If feeling up for it, the Leigh Lake trail is 1.8mi and nearly flat. Beautiful alpine lake with mountain backdrop. Easy enough for a rest day stroll.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Persephone Bakery', 'The Bunnery for classic breakfast']
+          distance: '1.8 miles RT',
+          elevation: { gain: 50 },
+          tips: ['Nearly flat trail', 'Starts from the String Lake trailhead', 'Can skip if tired — it\'s a rest day', 'Carry bear spray']
         },
         {
           id: 'a13-3',
-          name: 'Rest Afternoon',
-          description: 'Full afternoon off. Read, nap, walk around town. Recharge before Yellowstone tomorrow.',
-          duration: '4-5 hours',
+          name: 'Browse Jackson Town Square',
+          description: 'Walk the iconic town square with its elk-antler arches. Browse western art galleries, souvenir shops, and outdoor gear stores.',
+          duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Jackson has great bookshops', 'Valley Bookstore is lovely']
+          tips: ['Elk-antler arches on all 4 corners of the square', 'Valley Bookstore is lovely', 'Made: a Jackson Hole gift shop for local crafts', 'Grab ice cream at Moo\'s Gourmet Ice Cream']
+        },
+        {
+          id: 'a13-4',
+          name: 'Dinner: Hand Fire Pizza or The Mangy Moose',
+          description: 'Hand Fire Pizza: wood-fired pizza in a converted 1941 movie theater. Or The Mangy Moose at Teton Village for a lively mountain-town vibe.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hand Fire Pizza — wood-fired in a converted 1941 theater', 'The Mangy Moose — lively, at Teton Village (15min drive)', 'Both are casual and fun']
         }
       ],
       accommodation: {
@@ -1463,67 +1500,78 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Fourth and final night in Jackson.'
       },
-      notes: ['REST DAY — no hiking', 'Wildlife drive is from the car', 'Recharge for Yellowstone'],
+      notes: ['REST DAY — sleep in, take it easy', 'Leigh Lake trail is optional (1.8mi, nearly flat)', 'Recharge for Yellowstone tomorrow', 'Last night in Jackson — enjoy the town'],
       budgetBreakdown: { accommodation: 130, food: 80, activities: 0, gas: 10, total: 220 }
     },
 
     // ============================================================
-    // DAY 14: TETON → YELLOWSTONE DAY 1
+    // DAY 14: GRAND TETON → YELLOWSTONE SOUTH LOOP
     // ============================================================
     {
       id: 'd14',
       dayNumber: 14,
       date: '2026-05-28',
-      title: 'Yellowstone Day 1 — Geysers & Hot Springs',
-      summary: 'Old Faithful, Grand Prismatic Spring, geyser basins on boardwalks',
+      title: 'Yellowstone Day 1 — South Loop: Geysers, Springs & Canyon',
+      summary: 'West Thumb, Old Faithful, Grand Prismatic, Artist Point at the Grand Canyon of Yellowstone',
       location: locations.find(l => l.id === 'yellowstone')!,
       overnight: 'West Yellowstone, MT',
-      drivingDistance: '60 miles (Jackson to Old Faithful)',
-      drivingTime: '1.5 hours',
+      drivingDistance: '60 miles (Jackson to Old Faithful) + ~80mi loop',
+      drivingTime: '1.5 hours (to Old Faithful)',
       weather: { high: 60, low: 32, conditions: 'Cool, variable — can change fast at elevation' },
       activities: [
         {
           id: 'a14-1',
-          name: 'Drive Jackson to Old Faithful',
-          description: 'Drive through Grand Teton into Yellowstone via the south entrance. Watch for bison on the road.',
-          duration: '1.5 hours',
+          name: 'Enter South Entrance from Grand Teton',
+          description: 'Drive through Grand Teton into Yellowstone via the south entrance. Watch for bison on the road. Stop at West Thumb Geyser Basin right on Yellowstone Lake — a 30min boardwalk loop.',
+          duration: '2 hours (drive + West Thumb)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['South entrance may have lines', 'Bison frequently block the road — be patient!', 'Lewis Lake is a nice stop']
+          distance: '0.5 miles (West Thumb boardwalk)',
+          tips: ['South entrance may have lines — arrive early', 'West Thumb Geyser Basin is right on the lakeshore', 'Bison frequently block the road — be patient!', 'Fill gas at Grant Village']
         },
         {
           id: 'a14-2',
           name: 'Old Faithful',
-          description: 'Watch the world\'s most famous geyser erupt. Eruptions every ~90 minutes, predicted times posted at visitor center.',
+          description: 'Watch the world\'s most famous geyser erupt. 0.8mi flat boardwalk loop around the geyser basin with benches. Eruptions every 60-110 minutes — check the visitor center for the next predicted time.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.5 miles (boardwalk loop)',
-          tips: ['Check eruption prediction at visitor center', 'Arrive 30min early for good seats', 'Old Faithful Inn lobby is worth seeing']
+          distance: '0.8 miles (boardwalk loop)',
+          tips: ['Download the GeyserTimes app for eruption predictions', 'Arrive 30min early for good bench seats', 'Old Faithful Inn lobby is worth seeing — largest log structure in the world', 'Flat boardwalk with benches throughout']
         },
         {
           id: 'a14-3',
-          name: 'Grand Prismatic Spring',
-          description: 'The largest hot spring in the US, famous for its rainbow colors. Boardwalk loop.',
-          duration: '1 hour',
+          name: 'Grand Prismatic Spring / Midway Geyser Basin',
+          description: 'The largest hot spring in the US, famous for its vivid rainbow colors. Short boardwalk loop, 30-45 minutes.',
+          duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
           distance: '0.8 miles (boardwalk)',
-          tips: ['Midway Geyser Basin parking fills up — go early or late', 'Colors best on sunny days', 'Grand Prismatic Overlook trail is 1.6mi — skip for this trip']
+          tips: ['Midway Geyser Basin parking fills up — go early or late', 'Colors best on sunny days', 'Grand Prismatic Overlook trail is 1.6mi — skip for this trip', 'Steam can obscure the colors on cool mornings — afternoon may be better']
         },
         {
           id: 'a14-4',
-          name: 'Biscuit Basin & Black Sand Basin',
-          description: 'Two small but beautiful geyser basins near Old Faithful. Short boardwalks.',
+          name: 'Drive to Canyon Village',
+          description: 'Drive north through Hayden Valley to Canyon Village. Watch for bison herds and maybe grizzlies along the way.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.5 miles each',
-          tips: ['Less crowded than Old Faithful area', 'Sapphire Pool in Biscuit Basin is stunning']
+          tips: ['Fill gas at Canyon Village', 'Hayden Valley is prime wildlife territory — scan the meadows', 'Pull fully off road for wildlife stops']
+        },
+        {
+          id: 'a14-5',
+          name: 'Artist Point — Grand Canyon of the Yellowstone',
+          description: 'Short paved walk to the most iconic viewpoint in Yellowstone: the Grand Canyon of the Yellowstone with Lower Falls (308ft). This is a must-see.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '0.3 miles (paved walk to overlook)',
+          tips: ['Artist Point is THE iconic Yellowstone viewpoint', 'Short paved path from parking', 'Uncle Tom\'s Trail has 300+ stairs — skip it', 'Upper Falls viewpoint is also easy and worth a quick stop']
         }
       ],
       accommodation: {
@@ -1589,55 +1637,65 @@ export const tripData: TripData = {
           notes: 'Budget pick. Full kitchen is a bonus. On main strip. Reviews inconsistent — read recent ones.'
         }
       ],
-      notes: ['LIGHT DAY — all boardwalk walking (~2mi total)', 'Yellowstone boardwalks are flat and accessible', 'Dress in layers — Yellowstone is cold!'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 35, gas: 20, total: 265 }
+      notes: ['Download GeyserTimes app for eruption predictions', 'All boardwalk walking (~3mi total) — flat and accessible', 'Fill gas at Grant Village and Canyon Village', 'Dress in layers — Yellowstone is cold!', 'Artist Point is a MUST-SEE — don\'t skip it'],
+      budgetBreakdown: { accommodation: 140, food: 70, activities: 35, gas: 25, total: 270 }
     },
 
     // ============================================================
-    // DAY 15: YELLOWSTONE DAY 2 → BOZEMAN
+    // DAY 15: YELLOWSTONE NORTH → BOZEMAN
     // ============================================================
     {
       id: 'd15',
       dayNumber: 15,
       date: '2026-05-29',
-      title: 'Yellowstone Day 2 → Bozeman',
-      summary: 'Canyon, wildlife, Lamar Valley morning, then drive to Bozeman',
+      title: 'Yellowstone North Loop → Bozeman',
+      summary: 'Lamar Valley wildlife at dawn, Tower Fall, Mammoth Hot Springs, drive to Bozeman via Paradise Valley',
       location: locations.find(l => l.id === 'bozeman')!,
       overnight: 'Bozeman, MT',
-      drivingDistance: '90 miles (West Yellowstone to Bozeman)',
-      drivingTime: '1.5 hours',
+      drivingDistance: '78 miles (Gardiner to Bozeman via Paradise Valley)',
+      drivingTime: '1hr 20min (Gardiner to Bozeman)',
       weather: { high: 60, low: 35, conditions: 'Cool, variable' },
       activities: [
         {
           id: 'a15-1',
-          name: 'Grand Canyon of the Yellowstone',
-          description: 'See the dramatic yellow canyon and Lower Falls (308ft). Multiple viewpoints, some accessible.',
-          duration: '2 hours',
+          name: 'Lamar Valley Wildlife Drive',
+          description: 'Early morning drive through the Lamar Valley — the "Serengeti of North America." Dawn to 9am is best. Stay in the car with binoculars. Wolves, bison herds, bears, pronghorn, and elk are all possible.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '1 mile (between viewpoints)',
-          tips: ['Artist Point is the most iconic viewpoint', 'Uncle Tom\'s Trail has 300+ stairs — skip it', 'Upper Falls viewpoint is very easy']
+          tips: ['Dawn to 9am is the best window', 'Stay in the car — binoculars essential', 'Wolves are best spotted with a scope at distance', 'Bison herds are almost guaranteed', 'Look for bears on hillsides in early morning', 'Fill gas at Tower/Roosevelt area']
         },
         {
           id: 'a15-2',
-          name: 'Hayden Valley Wildlife Watching',
-          description: 'Drive through Hayden Valley between Canyon and Yellowstone Lake. Prime bison and sometimes grizzly territory.',
-          duration: '1-1.5 hours',
+          name: 'Tower Fall Viewpoint',
+          description: 'Short walk from parking to view the 132ft Tower Fall. Quick stop on the way west.',
+          duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stay in/near vehicle', 'Binoculars essential', 'Morning is best for activity', 'Pull fully off road for wildlife stops']
+          tips: ['Very short walk from parking to the overlook', 'The trail down to the base is steep — skip it for this trip']
         },
         {
           id: 'a15-3',
-          name: 'Drive to Bozeman',
-          description: 'Head north from West Yellowstone to Bozeman via US-191 through the Gallatin Canyon. Scenic river road.',
+          name: 'Mammoth Hot Springs Terraces',
+          description: 'Boardwalk through stunning travertine terraces formed by hot springs. 30-45 minutes, gentle inclines on the lower terraces. The terraces constantly change — some are flowing, some are dry.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '0.75 miles (lower terraces boardwalk)',
+          tips: ['Lower terraces boardwalk has gentle inclines', 'Upper terraces accessible by car (one-way loop drive)', 'Terraces change constantly — different every visit', 'Fill gas at Mammoth before exiting the park', 'Historic Fort Yellowstone buildings are worth a quick look']
+        },
+        {
+          id: 'a15-4',
+          name: 'Exit North Entrance & Drive to Bozeman',
+          description: 'Exit at Gardiner, MT (the original park entrance with the Roosevelt Arch). Drive 78mi through scenic Paradise Valley along the Yellowstone River to Bozeman.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Beautiful drive along the Gallatin River', 'Arrive Bozeman by mid-afternoon']
+          tips: ['Photo op at the Roosevelt Arch in Gardiner', 'Paradise Valley is gorgeous — Yellowstone River with Absaroka Range backdrop', 'Stop in Livingston for a late lunch if hungry (Gil\'s Goods or Pinky\'s Cafe)', 'Arrive Bozeman by mid-afternoon']
         }
       ],
       accommodation: {
@@ -1692,20 +1750,21 @@ export const tripData: TripData = {
         },
         {
           id: 'acc15c',
-          name: 'My Place Hotel Bozeman',
-          type: 'hotel',
-          priceRange: '$71-129',
-          pricePerNight: 105,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor',
-          website: 'https://www.myplacehotels.com/locations/my-place-hotel-bozeman-mt',
-          bookingUrl: 'https://www.kayak.com/Bozeman-Hotels-My-Place-Hotel-Bozeman-MT.2459870.ksp',
-          amenities: ['Full kitchen', 'Free parking', 'Free WiFi', '24hr laundry'],
+          name: 'The Sapphire Motel',
+          type: 'motel',
+          priceRange: '$100-140',
+          pricePerNight: 120,
+          reviewRating: 4.8,
+          reviewSource: 'KAYAK (9.6/10)',
+          address: 'Bozeman, MT (3 blocks off Main St)',
+          website: 'https://www.thesapphiremotel.com/',
+          bookingUrl: 'https://www.kayak.com/Bozeman-Hotels-Royal-7-Budget-Inn-Motel.69210.ksp',
+          amenities: ['Free parking', 'Fridge', 'Microwave', 'Free WiFi'],
           seniorFriendly: true,
-          notes: '2 queen beds + full kitchen. Extended-stay style. No breakfast but you can cook. Budget pick.'
+          notes: 'Boutique mid-century motel, beautifully restored. 2-queen rooms. 9.6/10 reviews. Charming character.'
         }
       ],
-      notes: ['Yellowstone AM + driving PM', 'Bozeman is a transit stop for Glacier', 'Fuel up for 4.5hr drive tomorrow'],
+      notes: ['Fill gas at Tower/Roosevelt and Mammoth before exiting', 'Lamar Valley at dawn is a highlight — don\'t sleep in!', 'Gardiner to Bozeman via Paradise Valley is scenic and easy', 'Bozeman is a transit stop for Glacier — fuel up for 4.5hr drive tomorrow'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 25, total: 225 }
     },
 
@@ -1736,23 +1795,23 @@ export const tripData: TripData = {
         },
         {
           id: 'a16-2',
-          name: 'Check In & Settle',
-          description: 'Arrive at accommodation, get settled. Wife arrives at FCA/MSO — pick up or meet.',
+          name: 'Settle in at Columbia Falls',
+          description: 'Arrive at accommodation, unpack, get settled. Stock up on groceries in Columbia Falls for the next few days (full kitchen in the condo).',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Coordinate wife\'s arrival time', 'Stock up on groceries in Columbia Falls']
+          tips: ['Super 1 Foods in Columbia Falls for groceries', 'Stock up — you have a full kitchen for 4 nights', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA']
         },
         {
           id: 'a16-3',
-          name: 'Apgar Village & Lake McDonald',
-          description: 'Quick afternoon visit to Apgar Village at the foot of Lake McDonald. Crystal clear water, mountain backdrop.',
+          name: 'Evening at Lake McDonald',
+          description: 'Drive to the west entrance (20min from Columbia Falls) for an evening visit to Lake McDonald. Walk along the famous colorful rocky shore, watch the sunset over the lake.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['10min from West Glacier entrance', 'Walk along the lakeshore', 'Gift shop and visitor center', 'Famous colorful rocks on the shore']
+          tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Sunset over the lake is stunning', 'Apgar Village has a gift shop and visitor center', 'Park entrance: $35/vehicle or use America the Beautiful pass']
         }
       ],
       accommodation: {
@@ -1820,54 +1879,55 @@ export const tripData: TripData = {
           notes: 'Search: 2BR, May 30-Jun 3, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
-      notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', '3 adults: need 2 bedrooms or 2BR rental'],
+      notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA', '3 adults: need 2 bedrooms or 2BR rental', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
     // ============================================================
-    // DAY 17: GLACIER DAY 2 — GOING-TO-THE-SUN ROAD
+    // DAY 17: GLACIER — WEST SIDE (WIFE'S DAY)
     // ============================================================
     {
       id: 'd17',
       dayNumber: 17,
       date: '2026-05-31',
-      title: 'Glacier — Lake McDonald & Sun Road (Wife Day 2)',
-      summary: 'Drive Sun Road to Avalanche Creek, Trail of the Cedars, Lake McDonald',
+      title: 'Glacier West Side — Trail of Cedars & Avalanche Lake (Wife\'s Day)',
+      summary: 'Trail of the Cedars boardwalk, Avalanche Lake hike for Colin + wife, Lake McDonald kayaking',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 62, low: 38, conditions: 'Cool, possible mountain weather' },
       activities: [
         {
           id: 'a17-1',
-          name: 'Going-to-the-Sun Road Drive (West Side)',
-          description: 'Drive the lower section of Sun Road from Apgar to Avalanche Creek (road will NOT be open to Logan Pass in late May/early June). The Lake McDonald stretch is stunning — stop at every pulloff.',
-          duration: '2-3 hours (with stops)',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['No vehicle reservation needed in 2026 (system discontinued)', 'Road open from Apgar to Avalanche Creek area only', 'Logan Pass opens mid-to-late June typically', 'Lake McDonald Lodge is a must-stop', 'Stop at every pulloff for photos']
-        },
-        {
-          id: 'a17-2',
           name: 'Trail of the Cedars',
-          description: 'Easy boardwalk loop through ancient cedar forest. Wheelchair accessible.',
+          description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Wheelchair accessible, flat, gorgeous. Everyone does this together.',
           duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.7 miles (loop)',
-          tips: ['Boardwalk is fully accessible', 'Old-growth cedars and hemlocks', 'Near Avalanche Creek area']
+          distance: '1 mile (boardwalk loop)',
+          tips: ['Fully wheelchair accessible boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
+        },
+        {
+          id: 'a17-2',
+          name: 'Avalanche Lake Hike (Colin + Wife)',
+          description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — wait at the trailhead or drive back to Lake McDonald Lodge. Colin + wife: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls. Wife\'s day so activities can be more ambitious.',
+          duration: '3-4 hours (full hike)',
+          difficulty: 'moderate',
+          seniorFriendly: false,
+          reservationRequired: false,
+          distance: '5.8 miles RT',
+          elevation: { gain: 730 },
+          tips: ['Mom: Trail of the Cedars only (1mi, flat boardwalk)', 'Colin + wife: continue to Avalanche Lake (5.8mi RT, 730ft gain)', 'Snow patches likely in early June — bring hiking poles', 'Carry bear spray', 'The lake is surrounded by waterfalls from Sperry Glacier', 'Trail starts easy, gets steeper in the last mile']
         },
         {
           id: 'a17-3',
-          name: 'Lake McDonald Lakeshore Walk',
-          description: 'Walk along the colorful rocky shore of Lake McDonald. Crystal clear water with mountain reflections.',
-          duration: '1 hour',
+          name: 'Afternoon: Lake McDonald Scenic Area',
+          description: 'Regroup at Lake McDonald for a relaxed afternoon. Kayak or canoe rental at Apgar if available, or just enjoy the lakeshore. Lake McDonald Lodge is worth a visit.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '1 mile (casual walk)',
-          tips: ['Famous colorful rocks', 'Great for photos', 'Flat walking along the shore']
+          tips: ['Kayak/canoe rentals at Apgar Village (if open by late May)', 'Lake McDonald Lodge has a Swiss chalet vibe — worth a look inside', 'Colorful rocky shoreline is great for photos', 'Water is cold — kayaking/canoeing only, no swimming!']
         }
       ],
       accommodation: {
@@ -1878,56 +1938,67 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night. Sunday — last day with wife.'
+        notes: 'Second night. Sunday — wife\'s day in Glacier.'
       },
-      notes: ['MODERATE DAY — driving + ~2mi walking', 'Sun Road open Apgar to Avalanche Creek only (Logan Pass closed until mid-June)', 'No vehicle reservation needed in 2026'],
+      notes: ['WIFE\'S DAY — activities can be more ambitious', 'Mom: Trail of the Cedars only (1mi, flat boardwalk)', 'Colin + wife: Avalanche Lake hike (5.8mi RT, 730ft)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 35, gas: 15, total: 280 }
     },
 
     // ============================================================
-    // DAY 18: GLACIER DAY 3
+    // DAY 18: GLACIER — MANY GLACIER (EAST SIDE)
     // ============================================================
     {
       id: 'd18',
       dayNumber: 18,
       date: '2026-06-01',
-      title: 'Glacier Day 3 — Explore & Discover',
-      summary: 'Avalanche Lake or Many Glacier, depending on road conditions',
+      title: 'Glacier — Many Glacier Valley',
+      summary: 'Drive to Many Glacier, Swiftcurrent Lake, boat tour, Iceberg Lake trail start',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
+      drivingDistance: '~150 miles RT (Columbia Falls to Many Glacier via Hwy 2)',
+      drivingTime: '~2.5 hours each way',
       weather: { high: 62, low: 38, conditions: 'Cool mountain weather' },
       activities: [
         {
           id: 'a18-1',
-          name: 'Avalanche Lake Trail (or partial)',
-          description: 'Old-growth cedar forest to a turquoise alpine lake with waterfalls. Actually ~5.8 miles RT with 784ft gain — do the first portion through the forest and turn around when ready. Trail of the Cedars (0.9mi accessible boardwalk) is the first section and is spectacular on its own.',
-          duration: '3-4 hours (full) or 1.5 hours (partial to cedars)',
-          difficulty: 'moderate',
+          name: 'Drive to Many Glacier',
+          description: 'Drive to the east side of Glacier via Hwy 2 (south of the park) to the Many Glacier entrance. About 2.5 hours from Columbia Falls. Many Glacier is widely considered the most spectacular valley in the park.',
+          duration: '2.5 hours',
+          difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '5.8 miles RT full (or 0.9mi Trail of the Cedars only)',
-          elevation: { gain: 784 },
-          tips: ['Full trail is ~6mi RT with 784ft gain — honest assessment: may be too much for Mom', 'Trail of the Cedars boardwalk (first 0.9mi) is wheelchair-accessible and stunning on its own', 'Walk 15-20 min past the junction as a bonus if feeling good', 'Snow patches likely in early June', 'Carry bear spray and hiking poles']
+          tips: ['Leave early — it\'s a long drive', 'Route: Columbia Falls → Hwy 2 east → Hwy 89 north → Many Glacier Road', 'Note: construction at Many Glacier in 2026 (parking, water system) — expect some disruption', 'Fill gas before entering — no gas in Many Glacier']
         },
         {
           id: 'a18-2',
-          name: 'Lunch & Rest',
-          description: 'Return to Columbia Falls or Hungry Horse for lunch and rest.',
-          duration: '2 hours',
+          name: 'Swiftcurrent Lake Area',
+          description: 'Explore the Swiftcurrent Lake area with flat trails and a stunning mountain backdrop. The Many Glacier Hotel sits on the lakeshore with incredible views.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Backslope Brewing in Columbia Falls', 'Glacier Grill for casual food']
+          tips: ['Many Glacier Hotel is worth a visit for the views', 'Flat trails around the lakeshore', 'Mountain backdrop is dramatic — bring the camera', 'Watch for moose along Swiftcurrent Creek']
         },
         {
           id: 'a18-3',
-          name: 'Flathead Lake Drive (optional)',
-          description: 'If energy permits, drive the east shore of Flathead Lake (largest natural freshwater lake west of the Mississippi).',
-          duration: '2 hours',
+          name: 'Boat Tour on Swiftcurrent Lake',
+          description: 'Scenic boat tour on Swiftcurrent Lake operated by Glacier Park Boat Company. Check if running by June 1 — season may not have started yet.',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Cherry orchards along the shore', 'Bigfork is a charming arts village', 'Wild Horse Island is visible from shore']
+          tips: ['Glacier Park Boat Company operates the tours', 'Check schedule — may not be running by June 1', 'If not running, the lakeshore walk is just as beautiful', 'Mountain reflections on the lake are incredible']
+        },
+        {
+          id: 'a18-4',
+          name: 'Iceberg Lake Trail (first 1-2 miles)',
+          description: 'The full Iceberg Lake trail is 9.6mi RT, but the first 1-2 miles are flat and scenic with wildflower meadows and mountain views. Walk as far as comfortable, then turn back. Great for all fitness levels as a partial hike.',
+          duration: '1-1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '2-4 miles RT (partial)',
+          tips: ['First 1-2 miles are flat and scenic — turn back at Mom\'s comfort level', 'Wildflower meadows with mountain backdrop', 'Full trail to Iceberg Lake is 9.6mi RT — not for this trip', 'Carry bear spray — grizzly country', 'Trail may have snow patches in early June']
         }
       ],
       accommodation: {
@@ -1940,50 +2011,74 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night.'
       },
-      notes: ['HIKING DAY — Avalanche Lake is actually 5.8mi RT / 784ft gain', 'Trail of the Cedars (0.9mi boardwalk) is a great alternative if full trail is too much', 'Go at Mom\'s pace — turn around anytime'],
-      budgetBreakdown: { accommodation: 150, food: 70, activities: 0, gas: 15, total: 235 }
+      notes: ['FULL DAY — long drive to Many Glacier (~2.5hrs each way)', 'Many Glacier is worth the drive — most spectacular valley in the park', 'Construction at Many Glacier in 2026 (parking, water system)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 30, total: 270 }
     },
 
     // ============================================================
-    // DAY 19: GLACIER REST/BUFFER DAY
+    // DAY 19: GLACIER — EAST SIDE / ST. MARY + REST
     // ============================================================
     {
       id: 'd19',
       dayNumber: 19,
       date: '2026-06-02',
-      title: 'Glacier — Rest & Buffer Day',
-      summary: 'Rest day, revisit favorites, or explore local towns',
+      title: 'Glacier East Side — St. Mary & Rest',
+      summary: 'GTSR east side drive, St. Mary Falls, boat tour, afternoon rest',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 62, low: 38, conditions: 'Cool' },
       activities: [
         {
           id: 'a19-1',
-          name: 'Sleep In & Lazy Morning',
-          description: 'No alarm, cook breakfast in the kitchen, enjoy the mountain air from the deck.',
-          duration: '2-3 hours',
+          name: 'Drive to St. Mary Entrance (East Side)',
+          description: 'Drive to the St. Mary entrance on the east side of the park. The GTSR east side from St. Mary to Jackson Glacier Overlook should be open.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Route: Columbia Falls → Hwy 2 east → Hwy 89 north to St. Mary', 'About 1.5 hours from Columbia Falls']
         },
         {
           id: 'a19-2',
-          name: 'Optional: Revisit Lake McDonald or Apgar',
-          description: 'Go back to your favorite spot, take more photos, or just sit by the lake.',
-          duration: '2 hours',
+          name: 'GTSR East Side Drive',
+          description: 'Drive the open section of Going-to-the-Sun Road from St. Mary entrance. Stop at Rising Sun, Wild Goose Island overlook (iconic photo spot), and Sun Point.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Wild Goose Island overlook is an iconic Glacier photo', 'Rising Sun has a small store and restaurant', 'Sun Point has a short walk to a St. Mary Lake viewpoint', 'Road open from St. Mary to Jackson Glacier Overlook area']
         },
         {
           id: 'a19-3',
-          name: 'Columbia Falls Town Walk',
-          description: 'Browse local shops, get ice cream, walk the town. Columbia Falls has a charming, unhurried main street.',
-          duration: '2 hours',
+          name: 'St. Mary Falls Hike',
+          description: 'Easy 1.6mi round trip hike to a beautiful waterfall. One of the most rewarding short hikes in the park.',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Montana Coffee Traders for great local coffee', 'Glacier Distilling Company tasting room']
+          distance: '1.6 miles RT',
+          elevation: { gain: 200 },
+          tips: ['Trailhead is at the St. Mary Falls shuttle stop on GTSR', 'Mostly downhill to the falls, uphill on the return', 'Beautiful cascading waterfall', 'Can continue to Virginia Falls (+0.6mi) if feeling good']
+        },
+        {
+          id: 'a19-4',
+          name: 'Boat Tour on St. Mary Lake (optional)',
+          description: 'Scenic boat tour on St. Mary Lake departing from Rising Sun. Check if running by early June.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Glacier Park Boat Company operates the tours', 'Departures from Rising Sun dock', 'Check schedule — may not be running by June 2', 'St. Mary Lake is the second-largest lake in the park']
+        },
+        {
+          id: 'a19-5',
+          name: 'Afternoon Rest & Leisure',
+          description: 'Head back to Columbia Falls for a quiet afternoon. Rest at the condo, or explore local shops and coffee.',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Montana Coffee Traders for great local coffee', 'Backslope Brewing in Columbia Falls', 'Pack and prep for drive to Missoula tomorrow']
         }
       ],
       accommodation: {
@@ -1996,8 +2091,8 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Fourth and final night at Glacier.'
       },
-      notes: ['REST DAY — no hiking', 'Recovery from Avalanche Lake yesterday', 'Pack and prep for drive to Missoula tomorrow'],
-      budgetBreakdown: { accommodation: 150, food: 60, activities: 0, gas: 10, total: 220 }
+      notes: ['REST DAY vibe — take it easy after 3 active Glacier days', 'St. Mary Falls is short and easy (1.6mi RT)', 'Wild Goose Island overlook is a must-photo', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 25, total: 265 }
     },
 
     // ============================================================
@@ -2007,12 +2102,12 @@ export const tripData: TripData = {
       id: 'd20',
       dayNumber: 20,
       date: '2026-06-03',
-      title: 'Drive to Missoula',
-      summary: 'Short drive south, evening in Missoula, return rental car',
+      title: 'Glacier → Missoula',
+      summary: 'Goat Lick overlook, drive south via US-93, evening in Missoula, return rental car',
       location: locations.find(l => l.id === 'missoula')!,
       overnight: 'Missoula, MT (near MSO airport)',
-      drivingDistance: '145 miles',
-      drivingTime: '2.5 hours',
+      drivingDistance: '~150 miles (via Hwy 2 + US-93)',
+      drivingTime: '~3 hours',
       weather: { high: 72, low: 45, conditions: 'Pleasant' },
       activities: [
         {
@@ -2026,16 +2121,26 @@ export const tripData: TripData = {
         },
         {
           id: 'a20-2',
-          name: 'Drive to Missoula',
-          description: 'Head south on US-93 through the Flathead Valley and Mission Valley. Beautiful ranch and mountain scenery.',
-          duration: '2.5 hours',
+          name: 'Goat Lick Overlook (Hwy 2)',
+          description: 'Stop at the Goat Lick overlook on Hwy 2 (between West Glacier and Essex). Mountain goats are frequently visible from this highway pulloff, licking mineral deposits on the exposed rock face.',
+          duration: '20 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stop at Flathead Lake for one last look', 'National Bison Range is near the route', 'Return rental car at MSO airport']
+          tips: ['Right off Hwy 2 — easy pulloff', 'Mountain goats visible on the rock face', 'Bring binoculars for a closer look', 'Best in spring/early summer when goats crave minerals']
         },
         {
           id: 'a20-3',
+          name: 'Drive to Missoula',
+          description: 'Head south on US-93 through the Flathead Valley and Mission Valley. Glacier to Missoula is about 3 hours. Beautiful ranch and mountain scenery.',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Stop at Flathead Lake for one last look', 'National Bison Range is near the route (check if open)', 'Return rental car at MSO airport']
+        },
+        {
+          id: 'a20-4',
           name: 'Explore Downtown Missoula',
           description: 'Walk the Hip Strip and downtown. Great breweries, bookshops (it\'s a college town), and restaurants.',
           duration: '2-3 hours',
@@ -2104,7 +2209,7 @@ export const tripData: TripData = {
           notes: '2 queen beds. Free breakfast and pool. 10min to airport.'
         }
       ],
-      notes: ['DRIVING + LIGHT DAY', 'Return rental car at MSO', 'Last evening — nice dinner to celebrate the trip!'],
+      notes: ['DRIVING + LIGHT DAY', 'Goat Lick overlook on Hwy 2 — mountain goats visible from highway pulloff', 'Glacier to Missoula is ~3hrs via US-93', 'Return rental car at MSO', 'Last evening — nice dinner to celebrate the trip!'],
       budgetBreakdown: { accommodation: 110, food: 80, activities: 0, gas: 30, total: 220 }
     },
 
