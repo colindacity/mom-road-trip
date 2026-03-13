@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectivity Guide — Southwest to Glacier Road Trip (May 15 – Jun 4, 2026)</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --text: #1c1917;
+      --muted: #78716c;
+      --border: #d6d3d1;
+      --accent: #2563eb;
+      --accent-bg: #eff6ff;
+      --check: #16a34a;
+      --danger: #dc2626;
+      --info-bg: #eff6ff;
+      --info-border: #3b82f6;
+      --warn-bg: #fefce8;
+      --warn-border: #ca8a04;
+      --danger-bg: #fef2f2;
+      --danger-border: #dc2626;
+      --good: #16a34a;
+      --ok: #ca8a04;
+      --bad: #dc2626;
+      --none: #6b7280;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 28px 0 8px;
+      padding: 6px 10px;
+      background: var(--accent-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+    }
+    h3 {
+      font-size: 0.95rem;
+      margin: 16px 0 6px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    p { font-size: 0.9rem; margin: 8px 0; }
+    a { color: var(--accent); }
+
+    .callout {
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .callout-info { background: var(--info-bg); border-left: 3px solid var(--info-border); }
+    .callout-warn { background: var(--warn-bg); border-left: 3px solid var(--warn-border); }
+    .callout-danger { background: var(--danger-bg); border-left: 3px solid var(--danger-border); }
+    .callout strong { display: block; margin-bottom: 2px; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 3px 0 3px 28px;
+      position: relative;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f5f5f4;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+    }
+    .checklist li .note {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .checklist li .essential {
+      color: var(--danger);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    /* Coverage table */
+    .coverage-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 10px 0;
+    }
+    .coverage-table th {
+      text-align: left;
+      padding: 6px 8px;
+      background: #f5f5f4;
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .coverage-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #f5f5f4;
+      vertical-align: top;
+    }
+    .coverage-table tr:hover td { background: #fafaf9; }
+
+    .signal-full { color: var(--good); font-weight: 600; }
+    .signal-partial { color: var(--ok); font-weight: 600; }
+    .signal-weak { color: #d97706; }
+    .signal-none { color: var(--bad); font-weight: 600; }
+
+    .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .badge-good { background: #dcfce7; color: #166534; }
+    .badge-ok { background: #fef9c3; color: #854d0e; }
+    .badge-bad { background: #fef2f2; color: #991b1b; }
+    .badge-none { background: #f3f4f6; color: #374151; }
+
+    /* Dead zone map */
+    .dead-zone-map {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 12px 0;
+      font-size: 0.85rem;
+      font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .segment {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin: 10px 0;
+    }
+    .segment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .segment-title { font-weight: 600; font-size: 0.92rem; }
+    .segment-days { color: var(--muted); font-size: 0.8rem; }
+    .segment-detail { font-size: 0.85rem; color: #374151; }
+    .segment-detail li { margin-bottom: 3px; }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .carrier-card {
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+    .carrier-verizon { background: #fef2f2; border: 1px solid #fecaca; }
+    .carrier-att { background: #eff6ff; border: 1px solid #bfdbfe; }
+    .carrier-tmobile { background: #fdf4ff; border: 1px solid #f5d0fe; }
+    .carrier-card strong { display: block; margin-bottom: 4px; }
+    .carrier-card .score {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .esim-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 10px 0;
+    }
+    .esim-table th {
+      text-align: left;
+      padding: 6px 8px;
+      background: #f5f5f4;
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+    }
+    .esim-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #f5f5f4;
+    }
+    .esim-table tr.recommended { background: #f0fdf4; }
+    .esim-table tr.recommended td:first-child { font-weight: 600; }
+
+    .action-item {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+    }
+    .action-item strong { color: #166534; }
+
+    .gear-rec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .gear-item {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+    .gear-item strong { display: block; margin-bottom: 2px; }
+    .gear-item .price { color: var(--accent); font-weight: 600; }
+    .gear-item .detail { color: var(--muted); font-size: 0.8rem; }
+
+    .sources {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .sources a { color: var(--info-border); }
+    .sources ul { padding-left: 18px; }
+    .sources li { margin-bottom: 3px; }
+
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      h1 { font-size: 1.25rem; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .gear-rec { grid-template-columns: 1fr; }
+      .dead-zone-map { font-size: 0.72rem; }
+    }
+
+    @media print {
+      .callout, .segment, .carrier-card, .gear-item { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Connectivity Guide: Southwest to Glacier Road Trip</h1>
+<p class="subtitle">21 days (May 15 - Jun 4, 2026) &middot; Cell coverage, dead zones, eSIM plans, offline prep, and emergency communication &middot; For a Canadian mom and her son</p>
+
+<!-- ============================================================ -->
+<!-- TL;DR -->
+<!-- ============================================================ -->
+
+<div class="callout callout-danger">
+  <strong>The short version: you will be without cell service for significant portions of this trip.</strong>
+  Roughly 40% of your driving miles pass through areas with no or unreliable cell coverage. All five national parks have limited-to-zero service. The Navajo Nation stretch (Page to Monument Valley to Moab) is the longest dead zone: 200+ miles with only scattered coverage. Prepare for disconnection, not against it. Download everything offline before you leave each town.
+</div>
+
+<!-- ============================================================ -->
+<!-- CARRIER COMPARISON -->
+<!-- ============================================================ -->
+
+<h2>Which Carrier Has the Best Coverage?</h2>
+
+<div class="comparison-grid">
+  <div class="carrier-card carrier-verizon">
+    <strong>Verizon</strong>
+    <div class="score">Best Overall</div>
+    Most extensive rural coverage across the Western US. Best in national park gateway towns. Strongest on the Navajo Nation (has roaming agreements with Commnet, the tribal carrier). Still has dead zones in parks themselves.
+  </div>
+  <div class="carrier-card carrier-att">
+    <strong>AT&amp;T</strong>
+    <div class="score">Close Second</div>
+    Strong in cities and along interstates. FirstNet (public safety network) adds extra towers in some remote areas. Comparable to Verizon on most highway segments. Slightly weaker in southern Utah and Navajo Nation. Good in Montana towns.
+  </div>
+  <div class="carrier-card carrier-tmobile">
+    <strong>T-Mobile</strong>
+    <div class="score">Weakest Rural</div>
+    Excellent in cities (Phoenix, SLC, Bozeman, Missoula). Weakest in rural stretches between towns. Significant gaps on the Navajo Nation, between Moab and SLC, and in remote Montana. However, T-Mobile now has satellite-to-cell partnership with SpaceX (basic texting in dead zones from compatible phones).
+  </div>
+</div>
+
+<div class="callout callout-info">
+  <strong>Recommendation: If Mom gets a US eSIM, choose one on the T-Mobile network.</strong>
+  Why T-Mobile when Verizon has better rural coverage? Because eSIM providers (Airalo, Holafly, Nomad) primarily use T-Mobile's network. And T-Mobile's satellite texting feature (available on iPhone 14+ and newer Android phones) provides basic emergency texting even in dead zones. For critical coverage, pair the T-Mobile eSIM with Mom's Canadian carrier roaming (which may connect to Verizon or AT&amp;T towers). Two networks are better than one on this trip.
+</div>
+
+<!-- ============================================================ -->
+<!-- SEGMENT-BY-SEGMENT COVERAGE -->
+<!-- ============================================================ -->
+
+<h2>Coverage by Route Segment</h2>
+
+<table class="coverage-table">
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Days</th>
+      <th>Distance</th>
+      <th>Coverage</th>
+      <th>Dead Zones</th>
+      <th>Download Offline Maps?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Phoenix</strong></td>
+      <td>1</td>
+      <td>City</td>
+      <td><span class="badge badge-good">Full</span></td>
+      <td>None</td>
+      <td>Download ALL offline maps here on hotel Wi-Fi</td>
+    </tr>
+    <tr>
+      <td><strong>Phoenix to Flagstaff</strong></td>
+      <td>2</td>
+      <td>145 mi</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>I-17 has solid coverage the whole way</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Flagstaff to Grand Canyon</strong></td>
+      <td>2-3</td>
+      <td>80 mi</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>Spotty between Flagstaff and park. Drops out on US-180.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Grand Canyon South Rim</strong></td>
+      <td>2-4</td>
+      <td>Park</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>Service at Grand Canyon Village and Mather Point area (Verizon and AT&amp;T). Very weak or none along Hermit Road and Desert View Drive.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Grand Canyon to Page</strong></td>
+      <td>4</td>
+      <td>135 mi</td>
+      <td><span class="badge badge-bad">Poor</span></td>
+      <td>Long stretches of no service on US-89 through Navajo Nation. Marble Canyon to Page is mostly dead.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Page, AZ</strong></td>
+      <td>4-5</td>
+      <td>Town</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Town has all carriers. Service at Horseshoe Bend parking lot. Antelope Canyon has no service inside.</td>
+      <td>Yes (for canyon tours)</td>
+    </tr>
+    <tr>
+      <td><strong>Page to Monument Valley</strong></td>
+      <td>5-6</td>
+      <td>125 mi</td>
+      <td><span class="badge badge-bad">Poor</span></td>
+      <td>Navajo Nation. Kayenta has some service. Long dead stretches on US-163. Monument Valley itself has weak Verizon only near the visitor center.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Monument Valley to Moab</strong></td>
+      <td>6</td>
+      <td>150 mi</td>
+      <td><span class="badge badge-bad">Poor</span></td>
+      <td>Through Mexican Hat, Bluff, Blanding. Scattered small-town coverage. Long dead gaps on US-191 north of Blanding through open desert.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Moab, UT</strong></td>
+      <td>6-8</td>
+      <td>Town</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Town has all carriers. Recharge, redownload, sync.</td>
+      <td>Yes (for parks)</td>
+    </tr>
+    <tr>
+      <td><strong>Arches NP</strong></td>
+      <td>7</td>
+      <td>Park</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>Some service near the entrance and at Windows section (Verizon). No service deep in the park or at Delicate Arch trailhead.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Canyonlands (Island in the Sky)</strong></td>
+      <td>8</td>
+      <td>Park</td>
+      <td><span class="badge badge-bad">Poor</span></td>
+      <td>Very limited service. Maybe a bar of Verizon at Grand View Point on a clear day. Assume no service.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Moab to SLC</strong></td>
+      <td>9</td>
+      <td>235 mi</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>I-70 through Price Canyon has gaps. Green River has service. Full coverage returns approaching Provo/SLC.</td>
+      <td>Recommended</td>
+    </tr>
+    <tr>
+      <td><strong>Salt Lake City</strong></td>
+      <td>9-10</td>
+      <td>City</td>
+      <td><span class="badge badge-good">Full</span></td>
+      <td>None. Big city, full coverage.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>SLC to Jackson</strong></td>
+      <td>10</td>
+      <td>275 mi</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>Good on I-15 north. Gaps on US-89 through Star Valley. Alpine and Hoback Canyon can be spotty.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Jackson, WY</strong></td>
+      <td>10-11</td>
+      <td>Town</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>All carriers work in town.</td>
+      <td>Yes (for parks)</td>
+    </tr>
+    <tr>
+      <td><strong>Grand Teton NP</strong></td>
+      <td>11-12</td>
+      <td>Park</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>Verizon and AT&amp;T have coverage along Teton Park Road and at Jenny Lake area. Service is weak to nonexistent in the northern part of the park and on trails. Jackson Lake Lodge area has some coverage.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Yellowstone NP</strong></td>
+      <td>12-15</td>
+      <td>Park</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>See detailed breakdown below. Cell towers at Mammoth, Old Faithful, Grant, Lake Village, Canyon, and Mt. Washburn. Dead between them. Lamar Valley = zero. Summer crowds overwhelm towers.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>West Yellowstone, MT</strong></td>
+      <td>15-16</td>
+      <td>Town</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Small town but all carriers work.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>West Yellowstone to Bozeman</strong></td>
+      <td>16</td>
+      <td>90 mi</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>US-191 through Gallatin Canyon has spotty coverage. Beautiful drive, but gaps in the canyon.</td>
+      <td>Recommended</td>
+    </tr>
+    <tr>
+      <td><strong>Bozeman, MT</strong></td>
+      <td>16</td>
+      <td>City</td>
+      <td><span class="badge badge-good">Full</span></td>
+      <td>College town with great coverage.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Bozeman to Glacier</strong></td>
+      <td>17</td>
+      <td>280 mi</td>
+      <td><span class="badge badge-ok">Partial</span></td>
+      <td>I-90 to Missoula is good. US-93 north from Missoula through Flathead Reservation has some gaps. Coverage in Kalispell and Columbia Falls.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Glacier NP</strong></td>
+      <td>17-20</td>
+      <td>Park</td>
+      <td><span class="badge badge-bad">Poor</span></td>
+      <td>See detailed breakdown below. Coverage ONLY at West Glacier/Apgar Village and St. Mary. Zero at Logan Pass, Many Glacier, Two Medicine, Going-to-the-Sun Road, and all backcountry.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Columbia Falls / Whitefish</strong></td>
+      <td>17-20</td>
+      <td>Towns</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Gateway towns have full coverage. Your evening base.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Glacier to Missoula</strong></td>
+      <td>21</td>
+      <td>140 mi</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>US-93 south is mostly covered. A few short gaps in the Flathead area.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Missoula, MT (MSO)</strong></td>
+      <td>21</td>
+      <td>City</td>
+      <td><span class="badge badge-good">Full</span></td>
+      <td>Full coverage. Airport.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================================ -->
+<!-- DEAD ZONE MAP -->
+<!-- ============================================================ -->
+
+<h2>Dead Zone Corridor Map</h2>
+
+<div class="dead-zone-map">PHOENIX ====== FLAGSTAFF ====== GRAND CANYON -------- PAGE
+   <span class="signal-full">full signal</span>          <span class="signal-full">good</span>        <span class="signal-partial">village only</span>    <span class="signal-none">DEAD ZONE</span>  <span class="signal-full">good</span>
+
+PAGE -------- MONUMENT VALLEY -------- MOAB ====== ARCHES
+<span class="signal-full">good</span>  <span class="signal-none">DEAD ZONE (Navajo Nation)</span>   <span class="signal-none">DEAD</span>    <span class="signal-full">good</span>   <span class="signal-partial">entrance only</span>
+
+MOAB ====== SLC ====== JACKSON ====== TETON ------ YELLOWSTONE
+<span class="signal-full">good</span>  <span class="signal-partial">gaps I-70</span>  <span class="signal-full">full</span>  <span class="signal-partial">gaps Star V.</span> <span class="signal-full">good</span>  <span class="signal-partial">partial</span>   <span class="signal-partial">developed areas only</span>
+
+YELLOWSTONE ------ W. YELLOWSTONE == BOZEMAN ====== GLACIER ------ MISSOULA
+     <span class="signal-partial">developed only</span>       <span class="signal-full">good</span>           <span class="signal-full">full</span>    <span class="signal-partial">gaps</span>  <span class="signal-none">Apgar only</span>   <span class="signal-full">full</span>
+
+====== Good/Full coverage     ------ Weak/Partial     <span class="signal-none">DEAD ZONE</span> = No service
+</div>
+
+<div class="callout callout-warn">
+  <strong>The three worst dead zone corridors on this trip:</strong>
+  <ol style="margin: 6px 0 0 18px; font-size: 0.85rem;">
+    <li><strong>Grand Canyon to Page to Monument Valley to Moab</strong> (Days 4-6): ~300 miles across the Navajo Nation with only scattered coverage in Kayenta and small towns. The longest continuous stretch without service is about 60-80 miles.</li>
+    <li><strong>Inside Yellowstone</strong> (Days 12-15): Coverage exists at 6 developed areas (Mammoth, Old Faithful, Canyon, Grant, Lake, Tower) but drops to zero between them. Lamar Valley, Hayden Valley, and most geyser basins beyond Old Faithful have no service.</li>
+    <li><strong>Inside Glacier</strong> (Days 17-20): Only Apgar Village (west entrance) and St. Mary (east entrance) have any cell reception. Going-to-the-Sun Road, all trails, Logan Pass, Many Glacier, and Two Medicine are completely dead.</li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<!-- NATIONAL PARK DETAIL -->
+<!-- ============================================================ -->
+
+<h2>National Park Coverage (Detailed)</h2>
+
+<h3>Grand Canyon South Rim</h3>
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Coverage: <span class="badge badge-ok">Partial</span></span>
+    <span class="segment-days">Days 2-4</span>
+  </div>
+  <ul class="segment-detail">
+    <li><strong>Grand Canyon Village / Mather Point:</strong> Verizon and AT&amp;T work here. T-Mobile is weaker but functional. This is where the visitor center, El Tovar, Bright Angel Lodge, and main overlooks are.</li>
+    <li><strong>Hermit Road (west):</strong> Coverage drops quickly. Spotty to none at most overlooks west of the Village.</li>
+    <li><strong>Desert View Drive (east):</strong> Coverage fades after Yaki Point. Desert View Watchtower area may have a faint signal.</li>
+    <li><strong>Below the rim:</strong> Zero. If hiking even partway down Bright Angel Trail, there is no service.</li>
+    <li><strong>Wi-Fi:</strong> El Tovar and Bright Angel Lodge offer Wi-Fi for guests. Yavapai Lodge and Maswik Lodge have Wi-Fi. Market Plaza area has spotty public Wi-Fi.</li>
+  </ul>
+</div>
+
+<h3>Arches &amp; Canyonlands</h3>
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Coverage: <span class="badge badge-ok">Partial</span> / <span class="badge badge-bad">Poor</span></span>
+    <span class="segment-days">Days 7-8</span>
+  </div>
+  <ul class="segment-detail">
+    <li><strong>Arches entrance / visitor center:</strong> Service from Moab towers still reaches here (Verizon, AT&amp;T).</li>
+    <li><strong>Windows section / Delicate Arch:</strong> Unreliable. Don't count on any data connectivity.</li>
+    <li><strong>Canyonlands Island in the Sky:</strong> Essentially no coverage anywhere in the park. The mesa sits 1,000ft above the surrounding terrain, and Moab's towers can't reach most of it.</li>
+    <li><strong>Moab town:</strong> Full coverage. Do all your syncing, uploading, and downloading from Moab.</li>
+    <li><strong>Wi-Fi:</strong> Hotels and Airbnbs in Moab have Wi-Fi. No public Wi-Fi inside either park.</li>
+  </ul>
+</div>
+
+<h3>Grand Teton National Park</h3>
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Coverage: <span class="badge badge-ok">Partial</span></span>
+    <span class="segment-days">Days 11-12</span>
+  </div>
+  <ul class="segment-detail">
+    <li><strong>Moose / Craig Thomas Visitor Center:</strong> Verizon and AT&amp;T service available near the visitor center.</li>
+    <li><strong>Jenny Lake:</strong> Weak but sometimes functional signal (Verizon).</li>
+    <li><strong>Teton Park Road:</strong> Intermittent. Works in some pull-offs, nothing in others.</li>
+    <li><strong>Signal Mountain / Jackson Lake Lodge:</strong> Some coverage from towers on the ridgeline.</li>
+    <li><strong>Trails:</strong> No coverage on any trail (Cascade Canyon, Lake Solitude, etc.).</li>
+    <li><strong>Wi-Fi:</strong> Jackson Lake Lodge, Jenny Lake Lodge, and Signal Mountain Lodge offer guest Wi-Fi.</li>
+  </ul>
+</div>
+
+<h3>Yellowstone National Park</h3>
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Coverage: <span class="badge badge-ok">Partial (developed areas only)</span></span>
+    <span class="segment-days">Days 12-15</span>
+  </div>
+  <ul class="segment-detail">
+    <li><strong>Cell towers exist at:</strong> Mammoth Hot Springs, Old Faithful, Grant Village, Lake Village/Fishing Bridge, Canyon Village, and Mount Washburn.</li>
+    <li><strong>Old Faithful area:</strong> Best coverage in the park. All three carriers usually work near the geyser and visitor center. Breaks down on trails beyond the immediate boardwalk area.</li>
+    <li><strong>Canyon Village:</strong> Good coverage at the Village itself. Weak at the Grand Canyon of the Yellowstone overlooks.</li>
+    <li><strong>Mammoth Hot Springs:</strong> Good coverage in the developed area (closest to the north entrance).</li>
+    <li><strong>Lamar Valley:</strong> <span class="signal-none">ZERO coverage.</span> This is the park's premier wildlife area and it is a complete dead zone. If you're out at dawn watching wolves, you're completely disconnected.</li>
+    <li><strong>Hayden Valley:</strong> No coverage. Another prime wildlife corridor with no service.</li>
+    <li><strong>Between developed areas:</strong> Expect 20-45 minutes of no service between any two points on the Grand Loop Road.</li>
+    <li><strong>Summer congestion:</strong> NPS warns that even in areas with towers, peak summer crowds can overwhelm cellular circuits. Texting works better than calling when the network is saturated.</li>
+    <li><strong>Wi-Fi:</strong> Available at Old Faithful Inn, Lake Yellowstone Hotel, Mammoth Hot Springs Hotel, Canyon Lodge, and Grant Village Lodge for registered guests. Slow and unreliable during peak hours.</li>
+  </ul>
+</div>
+
+<h3>Glacier National Park</h3>
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Coverage: <span class="badge badge-bad">Poor to None</span></span>
+    <span class="segment-days">Days 17-20</span>
+  </div>
+  <ul class="segment-detail">
+    <li><strong>West Glacier to Apgar Village:</strong> Some cell reception. This is the ONLY area on the west side with any signal. NPS confirms "most visitors will find cell reception in West Glacier up to Apgar Village."</li>
+    <li><strong>St. Mary (east side):</strong> Limited coverage. The other end of the park.</li>
+    <li><strong>Going-to-the-Sun Road:</strong> <span class="signal-none">NO coverage</span> along the road once you pass Apgar. The road follows Lake McDonald and climbs through dense forest and mountain terrain that blocks all signals.</li>
+    <li><strong>Logan Pass:</strong> No coverage (and likely still closed in late May/early June anyway).</li>
+    <li><strong>Many Glacier:</strong> No coverage.</li>
+    <li><strong>Two Medicine:</strong> No coverage.</li>
+    <li><strong>All trails (including Avalanche Lake):</strong> No coverage.</li>
+    <li><strong>The park explicitly states:</strong> "Reception greatly diminishes as you move away from [Apgar and St. Mary] when venturing further into the park."</li>
+    <li><strong>Wi-Fi:</strong> Public Wi-Fi at Apgar Visitor Center and St. Mary Visitor Center ONLY. The park recommends downloading "apps, music, or podcasts before entering the park."</li>
+    <li><strong>Your base (Columbia Falls / Whitefish):</strong> Full coverage. You'll have connectivity every evening.</li>
+  </ul>
+</div>
+
+<div class="callout callout-info">
+  <strong>NPS says it best:</strong> "This lack of connectivity makes planning ahead imperative." The park suggests you file a Day Trip Plan before hiking and tell friends/family you may be unreachable during the day.
+</div>
+
+<!-- ============================================================ -->
+<!-- NAVAJO NATION -->
+<!-- ============================================================ -->
+
+<h2>Navajo Nation Coverage (Page to Monument Valley to Moab)</h2>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">The longest dead zone corridor on the trip</span>
+    <span class="segment-days">Days 4-6</span>
+  </div>
+  <p style="font-size: 0.88rem; margin: 8px 0;">The Navajo Nation covers 27,000 square miles across Arizona, Utah, and New Mexico. Cell infrastructure is sparse. The primary carrier on tribal land is <strong>Commnet</strong>, a regional carrier with roaming agreements primarily with Verizon (and limited AT&amp;T). T-Mobile has the weakest Navajo Nation coverage.</p>
+
+  <ul class="segment-detail" style="margin-top: 8px;">
+    <li><strong>Page, AZ:</strong> Full coverage (not technically on the Nation, though it borders it). Last reliable connectivity heading east.</li>
+    <li><strong>US-98/US-160 (Page to Kayenta):</strong> Mostly dead. 80 miles with only brief, unreliable patches near Tuba City junction.</li>
+    <li><strong>Kayenta, AZ:</strong> Small town with Commnet/Verizon coverage. A good spot for a gas and connectivity stop.</li>
+    <li><strong>US-163 (Kayenta to Monument Valley):</strong> Spotty. The famous "Forrest Gump road" stretch has no service.</li>
+    <li><strong>Monument Valley Navajo Tribal Park:</strong> Weak Verizon signal near the visitor center and The View Hotel. Nothing on the Valley Drive loop.</li>
+    <li><strong>US-163 north to Mexican Hat:</strong> Dead zone.</li>
+    <li><strong>Mexican Hat / Bluff:</strong> Brief patches of service.</li>
+    <li><strong>US-191 (Bluff to Moab):</strong> Dead for long stretches. Some service around Blanding and Monticello. Coverage returns approaching Moab.</li>
+  </ul>
+</div>
+
+<div class="callout callout-warn">
+  <strong>Before leaving Page on Day 5:</strong>
+  <ul style="margin: 6px 0 0 18px; font-size: 0.85rem;">
+    <li>Fill the gas tank completely. Gas stations are far apart on the Nation.</li>
+    <li>Download offline Google Maps for the entire region (Page through Moab).</li>
+    <li>Text/call family to let them know you'll be unreachable for up to 6-8 hours.</li>
+    <li>Save all hotel confirmations and addresses offline.</li>
+    <li>Have cash for Navajo vendors at Monument Valley ($20-40 for crafts/jewelry).</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- MOM'S CANADIAN PHONE -->
+<!-- ============================================================ -->
+
+<h2>Mom's Canadian Phone: Roaming vs. eSIM</h2>
+
+<h3>Option 1: Use Canadian Plan Roaming (Simplest)</h3>
+<div class="segment">
+  <p>All three major Canadian carriers (Rogers, Bell, Telus) offer US roaming add-ons. The specifics depend on Mom's current plan, but the typical setup:</p>
+  <ul class="segment-detail" style="margin-top: 8px;">
+    <li><strong>Rogers "Roam Like Home":</strong> $12-14 CAD/day, uses your existing plan's data/calls/texts in the US. Auto-charged only on days you actually use your phone.</li>
+    <li><strong>Bell "Roam Better":</strong> $12-13 CAD/day, same concept. Applies to US, uses your Canadian plan allowance.</li>
+    <li><strong>Telus "Easy Roam":</strong> $12-14 CAD/day, same model.</li>
+    <li><strong>21-day cost at $13/day:</strong> ~$273 CAD (~$200 USD). Expensive, but zero hassle.</li>
+    <li><strong>Many newer Canadian plans include US roaming.</strong> Check if Mom's plan already includes US data/calls. Some Rogers Infinite and Bell Unlimited plans include US roaming at no extra charge.</li>
+    <li><strong>Which US network?</strong> Canadian carriers roam on different US networks. Rogers typically roams on AT&amp;T. Bell and Telus typically roam on T-Mobile or AT&amp;T. Check with her carrier.</li>
+  </ul>
+</div>
+
+<h3>Option 2: US eSIM (Best Value for 21 Days)</h3>
+<div class="segment">
+  <p>If Mom's phone supports eSIM (iPhone XS or newer, most Android phones from 2020+), she can add a US data eSIM while keeping her Canadian number active on the physical SIM. This is the recommended approach for a 21-day trip.</p>
+
+  <table class="esim-table">
+    <thead>
+      <tr>
+        <th>Provider</th>
+        <th>Data</th>
+        <th>Duration</th>
+        <th>Price (USD)</th>
+        <th>Network</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="recommended">
+        <td>Airalo "Moshi Moshi"</td>
+        <td>10 GB</td>
+        <td>30 days</td>
+        <td>~$26</td>
+        <td>T-Mobile</td>
+        <td>Best value. Top up if needed. Data only (no US calls/texts).</td>
+      </tr>
+      <tr class="recommended">
+        <td>Airalo "Moshi Moshi"</td>
+        <td>20 GB</td>
+        <td>30 days</td>
+        <td>~$42</td>
+        <td>T-Mobile</td>
+        <td>Recommended for 21 days with maps/photos. Data only.</td>
+      </tr>
+      <tr>
+        <td>Holafly USA</td>
+        <td>Unlimited</td>
+        <td>20 days</td>
+        <td>~$47</td>
+        <td>T-Mobile</td>
+        <td>Unlimited data but throttled after heavy use. No hotspot.</td>
+      </tr>
+      <tr>
+        <td>Nomad (eSIM.me)</td>
+        <td>10 GB</td>
+        <td>30 days</td>
+        <td>~$24</td>
+        <td>T-Mobile</td>
+        <td>Similar to Airalo. Good app experience.</td>
+      </tr>
+      <tr>
+        <td>T-Mobile Prepaid</td>
+        <td>Unlimited</td>
+        <td>30 days</td>
+        <td>$40-60</td>
+        <td>T-Mobile</td>
+        <td>Physical SIM from T-Mobile store. Includes US calls/texts. Buy at Phoenix T-Mobile on Day 1.</td>
+      </tr>
+      <tr>
+        <td>Mint Mobile</td>
+        <td>20 GB</td>
+        <td>30 days</td>
+        <td>~$25</td>
+        <td>T-Mobile</td>
+        <td>eSIM supported. Great value. Activation can be fiddly.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="action-item">
+  <strong>Recommended plan for Mom:</strong>
+  <ol style="margin: 6px 0 0 18px; font-size: 0.88rem;">
+    <li><strong>Before the trip:</strong> Check if her Canadian plan already includes free US roaming. Many current plans do.</li>
+    <li><strong>If no free roaming:</strong> Buy an Airalo 20GB eSIM ($42 USD) before she flies. Install it at home on Wi-Fi. Activate it when she lands in Phoenix.</li>
+    <li><strong>Keep her Canadian SIM active</strong> for receiving texts and calls from home (Canadian friends, doctor, bank). Most banks send 2FA codes to the Canadian number.</li>
+    <li><strong>Use eSIM for data</strong> (maps, browsing, WhatsApp, photo uploads). Use Canadian SIM for Canadian calls/texts.</li>
+    <li><strong>Turn off Canadian data roaming</strong> to avoid surprise charges. Let the eSIM handle all data.</li>
+  </ol>
+</div>
+
+<div class="callout callout-info">
+  <strong>Important for 2FA/banking:</strong> Mom should notify her Canadian bank she's traveling to the US (May 15 - Jun 4, 2026) to avoid her credit/debit cards being flagged. She should also verify her phone can receive Canadian SMS texts while in the US (most can, even without a roaming plan, if the phone connects to a US tower).
+</div>
+
+<!-- ============================================================ -->
+<!-- OFFLINE DOWNLOADS -->
+<!-- ============================================================ -->
+
+<h2>Offline Downloads Checklist (Do This Before Leaving Phoenix)</h2>
+
+<div class="callout callout-danger">
+  <strong>Download EVERYTHING on Phoenix hotel Wi-Fi the night of Day 1.</strong> You will not have reliable enough connectivity at most subsequent stops to download large map files. Do it once, do it right, on Day 1.
+</div>
+
+<h3>Google Maps Offline Areas</h3>
+<ul class="checklist">
+  <li>Phoenix to Flagstaff corridor <span class="essential">essential</span></li>
+  <li>Grand Canyon area (include Flagstaff to Grand Canyon to Page) <span class="essential">essential</span></li>
+  <li>Page, AZ area (include Horseshoe Bend and Antelope Canyon) <span class="essential">essential</span></li>
+  <li>Monument Valley and Navajo Nation corridor (Page to Kayenta to Monument Valley) <span class="essential">essential</span></li>
+  <li>Monument Valley to Moab (Mexican Hat, Bluff, Blanding, Moab) <span class="essential">essential</span></li>
+  <li>Arches and Canyonlands area <span class="essential">essential</span></li>
+  <li>Moab to Salt Lake City (I-70 and US-6 corridor) <span class="essential">essential</span></li>
+  <li>Salt Lake City to Jackson (via I-15 and US-89) <span class="essential">essential</span></li>
+  <li>Grand Teton and Yellowstone area (entire park plus Jackson) <span class="essential">essential</span></li>
+  <li>West Yellowstone to Bozeman (US-191 Gallatin Canyon) <span class="essential">essential</span></li>
+  <li>Bozeman to Glacier (I-90 plus US-93 north) <span class="essential">essential</span></li>
+  <li>Glacier National Park and Columbia Falls / Whitefish / Kalispell area <span class="essential">essential</span></li>
+  <li>Glacier to Missoula (US-93 south) <span class="essential">essential</span></li>
+</ul>
+
+<p style="font-size: 0.85rem; color: var(--muted);">Each offline area is about 50-200 MB. Total for all areas: roughly 1-2 GB. Google Maps offline areas expire after 365 days and include turn-by-turn navigation, search, and driving directions. They do NOT include traffic data or transit info offline.</p>
+
+<h3>Other Apps to Download Offline Content</h3>
+<ul class="checklist">
+  <li><strong>NPS App</strong> — Download each park for offline use: Grand Canyon, Arches, Canyonlands, Grand Teton, Yellowstone, Glacier. Includes maps, trail info, points of interest. <span class="essential">essential</span></li>
+  <li><strong>AllTrails</strong> — Download trail maps for offline use. Requires AllTrails+ subscription ($36/year) for offline maps. Worth it for this trip. Download all planned hikes. <span class="note">Offline maps include topo lines and trail routes with GPS tracking.</span></li>
+  <li><strong>Gaia GPS</strong> — Alternative to AllTrails. Better topo maps. $40/year. Good for more adventurous trails.</li>
+  <li><strong>Spotify/Apple Music</strong> — Download playlists and podcasts for the long drives. You'll have 15-20 hours of driving through dead zones.</li>
+  <li><strong>Audible/podcasts</strong> — Download audiobooks. The Page-to-Moab drive through Monument Valley is 5+ hours with no service.</li>
+  <li><strong>Hotel/Airbnb confirmations</strong> — Screenshot or save as PDF all booking confirmations with addresses and check-in instructions. <span class="essential">essential</span></li>
+  <li><strong>Antelope Canyon tour confirmation</strong> — Save offline. No service inside the canyon.</li>
+  <li><strong>Restaurant reservations</strong> — Screenshot any reservations for Jackson or other stops.</li>
+</ul>
+
+<div class="callout callout-info">
+  <strong>Storage check:</strong> Make sure both phones have at least 5 GB free for offline maps and content. Delete old photos to iCloud or free up space before the trip.
+</div>
+
+<!-- ============================================================ -->
+<!-- EMERGENCY COMMUNICATION -->
+<!-- ============================================================ -->
+
+<h2>Emergency Communication</h2>
+
+<h3>iPhone Satellite Features (Free, Already on Your Phone)</h3>
+<div class="segment">
+  <p>If either of you has an <strong>iPhone 14 or newer</strong>, you already have satellite emergency capabilities built in at no extra cost:</p>
+  <ul class="segment-detail" style="margin-top: 8px;">
+    <li><strong>Emergency SOS via Satellite:</strong> Contact emergency services (911) when there's no cell or Wi-Fi coverage. Point your phone at the sky, follow on-screen directions to connect to a satellite. Works anywhere in the US and Canada with a clear view of the sky.</li>
+    <li><strong>Messages via Satellite (iPhone 14+, iOS 18+):</strong> Send and receive iMessages and SMS texts via satellite when no cell service is available. Slow (messages take 30-60 seconds to send), but functional for check-ins.</li>
+    <li><strong>Find My via Satellite:</strong> Share your location with family even without cell service.</li>
+    <li><strong>No subscription required.</strong> These features are included free with the phone. Apple pays for the satellite access.</li>
+    <li><strong>Limitation:</strong> Requires clear sky view. Won't work in deep canyons (Antelope Canyon) or dense forest. Works well at overlooks, trailheads, and open terrain.</li>
+  </ul>
+</div>
+
+<h3>Should You Carry a Garmin inReach?</h3>
+<div class="segment">
+  <p>The <strong>Garmin inReach Mini 2</strong> ($350 + $15-65/month subscription) is a dedicated satellite communicator that works anywhere on Earth via the Iridium satellite network.</p>
+  <ul class="segment-detail" style="margin-top: 8px;">
+    <li><strong>SOS button:</strong> Triggers a distress alert to Garmin's 24/7 emergency coordination center, which contacts local search and rescue.</li>
+    <li><strong>Two-way texting:</strong> Send and receive text messages via satellite. Share GPS coordinates.</li>
+    <li><strong>Location tracking:</strong> Family at home can follow your trip on a MapShare page in real time.</li>
+    <li><strong>Battery life:</strong> 14 days at 10-minute tracking intervals.</li>
+    <li><strong>Subscription:</strong> Plans start at ~$15/month (pay-per-message) up to $65/month (unlimited). All include SOS. You can activate for one month and suspend.</li>
+  </ul>
+
+  <div class="callout callout-info" style="margin-top: 8px;">
+    <strong>Verdict: Nice to have, not strictly necessary for this trip.</strong>
+    <ul style="margin: 6px 0 0 18px; font-size: 0.85rem;">
+      <li>If you have an iPhone 14+, you already have satellite SOS and messaging for free. That covers the emergency use case.</li>
+      <li>You're not doing backcountry camping or multi-day hikes. You're driving between towns and doing day hikes on well-trafficked trails.</li>
+      <li>The longest you'll be off-grid is a full day in Glacier or a driving day through the Navajo Nation. Both are on paved roads with other travelers around.</li>
+      <li>Cost for the trip: $350 device + ~$35 for one month of service = $385. That's steep for peace of mind you may not need.</li>
+      <li><strong>If Mom does NOT have an iPhone 14+:</strong> Then yes, seriously consider renting or buying an inReach. An 80-year-old driving through 300 miles of dead zones with no way to call for help is a genuine safety concern.</li>
+      <li><strong>Rental option:</strong> Some outdoor shops in Jackson and Glacier gateway towns rent satellite communicators for $5-10/day.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Other Emergency Prep</h3>
+<ul class="checklist">
+  <li>Save 911 and park emergency numbers offline <span class="note">— Grand Canyon: 928-638-7888 / Yellowstone: 307-344-7381 / Glacier: 406-888-7800</span></li>
+  <li>Tell family your daily itinerary <span class="note">— "Today we're driving Page to Monument Valley, expect no contact for 6-8 hours"</span></li>
+  <li>Check in every evening from town <span class="note">— quick text or call when you have Wi-Fi at the hotel</span></li>
+  <li>Carry printed emergency info <span class="note">— laminated card with: both travelers' medical info, emergency contacts, insurance, car rental company, roadside assistance number</span></li>
+  <li>Know where the nearest hospitals are for each segment <span class="note">— Flagstaff Medical Center, Page Hospital, Moab Regional, SLC hospitals, St. John's Jackson, Livingston HealthCare (near Yellowstone), Kalispell Regional, Missoula hospitals</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- WI-FI AT ACCOMMODATIONS -->
+<!-- ============================================================ -->
+
+<h2>Wi-Fi at Hotels &amp; Lodges</h2>
+
+<table class="coverage-table">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Days</th>
+      <th>Wi-Fi</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Phoenix hotel</td>
+      <td>1</td>
+      <td><span class="badge badge-good">Fast</span></td>
+      <td>City hotel. Use this to download ALL offline content.</td>
+    </tr>
+    <tr>
+      <td>Grand Canyon lodges</td>
+      <td>2-3</td>
+      <td><span class="badge badge-ok">Slow</span></td>
+      <td>El Tovar, Bright Angel, Yavapai, Maswik all have Wi-Fi. Expect slow speeds, especially evenings.</td>
+    </tr>
+    <tr>
+      <td>Page hotels</td>
+      <td>4-5</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Small town but hotels have decent Wi-Fi.</td>
+    </tr>
+    <tr>
+      <td>Monument Valley (The View Hotel)</td>
+      <td>5</td>
+      <td><span class="badge badge-ok">Slow</span></td>
+      <td>Remote location. Wi-Fi exists but is unreliable. Don't count on it for large downloads.</td>
+    </tr>
+    <tr>
+      <td>Moab hotels/Airbnb</td>
+      <td>6-8</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Tourist town with solid infrastructure. Catch up on uploads here.</td>
+    </tr>
+    <tr>
+      <td>SLC hotel</td>
+      <td>9</td>
+      <td><span class="badge badge-good">Fast</span></td>
+      <td>City hotel. Second best connectivity stop after Phoenix.</td>
+    </tr>
+    <tr>
+      <td>Jackson hotels</td>
+      <td>10-11</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Upscale tourist town with good internet infrastructure.</td>
+    </tr>
+    <tr>
+      <td>Yellowstone lodges</td>
+      <td>12-14</td>
+      <td><span class="badge badge-ok">Slow</span></td>
+      <td>Old Faithful Inn, Lake Hotel, Canyon Lodge have guest Wi-Fi. All are slow and unreliable during peak hours. Do not plan to upload photos here.</td>
+    </tr>
+    <tr>
+      <td>West Yellowstone hotels</td>
+      <td>15</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Gateway town. Good connectivity.</td>
+    </tr>
+    <tr>
+      <td>Bozeman hotel</td>
+      <td>16</td>
+      <td><span class="badge badge-good">Fast</span></td>
+      <td>College town with fast internet.</td>
+    </tr>
+    <tr>
+      <td>Columbia Falls / Whitefish</td>
+      <td>17-20</td>
+      <td><span class="badge badge-good">Good</span></td>
+      <td>Your base for Glacier. Reliable Wi-Fi for evening catch-up.</td>
+    </tr>
+    <tr>
+      <td>Missoula hotel</td>
+      <td>21</td>
+      <td><span class="badge badge-good">Fast</span></td>
+      <td>City with strong infrastructure. Final night.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-info">
+  <strong>Photo backup strategy:</strong> Don't try to upload 200 photos over hotel Wi-Fi each night. Instead, let iCloud/Google Photos auto-upload in the background whenever you're on Wi-Fi. Focus manual uploads on the best 10-20 photos from each day. Or carry a small USB-C flash drive to back up photos locally.
+</div>
+
+<!-- ============================================================ -->
+<!-- GEAR RECOMMENDATIONS -->
+<!-- ============================================================ -->
+
+<h2>Gear Recommendations</h2>
+
+<h3>Car Charger</h3>
+<div class="gear-rec">
+  <div class="gear-item">
+    <strong>Anker 535 Car Charger (67W)</strong>
+    <span class="price">~$28</span>
+    <div class="detail">Dual USB-C ports. 67W total, charges two phones simultaneously at full speed. Compact. Charges an iPhone to 50% in about 25 minutes. The most widely recommended dual USB-C car charger.</div>
+  </div>
+  <div class="gear-item">
+    <strong>Belkin BoostCharge 2-Port (37W)</strong>
+    <span class="price">~$20</span>
+    <div class="detail">Budget pick. Dual USB-C, 37W total. Slower than the Anker but charges two phones fine for all-day driving. More than enough for navigation + charging.</div>
+  </div>
+</div>
+
+<h3>Portable Battery Pack</h3>
+<div class="gear-rec">
+  <div class="gear-item">
+    <strong>Anker PowerCore 20,000mAh (USB-C)</strong>
+    <span class="price">~$35-45</span>
+    <div class="detail">Charges an iPhone 4-5 times. USB-C in/out. 12.5 oz. The standard recommendation for road trips. Enough for two full days without any outlet access. Charge it in the car during drives.</div>
+  </div>
+  <div class="gear-item">
+    <strong>Nitecore NB10000 Gen 3</strong>
+    <span class="price">~$45</span>
+    <div class="detail">10,000mAh but extremely compact and light (5.3 oz). Charges an iPhone 2 times. Better for daypack hiking if weight matters. USB-C.</div>
+  </div>
+</div>
+
+<div class="callout callout-info">
+  <strong>Charging routine:</strong> Plug both phones into the car charger every time you drive. Run the portable battery to zero during hike days, then recharge it in the car on the next drive day. This way you always start each hike day with a full battery pack.
+</div>
+
+<h3>Car Phone Mount</h3>
+<div class="gear-rec">
+  <div class="gear-item">
+    <strong>iOttie Easy One Touch 6</strong>
+    <span class="price">~$25</span>
+    <div class="detail">Dashboard or windshield mount. One-handed phone grab. Works with all phone sizes including large iPhones with cases. The most popular car mount for a reason.</div>
+  </div>
+  <div class="gear-item">
+    <strong>Quad Lock Car Mount</strong>
+    <span class="price">~$40 (mount + case)</span>
+    <div class="detail">Premium option. Requires a Quad Lock case on the phone. Rock-solid hold. No rattling on rough roads (relevant for Monument Valley and park roads). Pricier but bombproof.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- OFFLINE NAV APPS -->
+<!-- ============================================================ -->
+
+<h2>Best Offline Navigation Setup</h2>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Primary: Google Maps Offline</span>
+    <span class="badge badge-good">Free</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Download areas for the entire route (see checklist above).</li>
+    <li>Works for turn-by-turn driving navigation offline.</li>
+    <li>Searches work offline for saved/downloaded areas (gas stations, restaurants, attractions).</li>
+    <li>Does NOT show real-time traffic, construction, or road closures offline.</li>
+    <li>Each area downloads in about 30 seconds on Wi-Fi.</li>
+  </ul>
+</div>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Backup: Apple Maps Offline (iPhone)</span>
+    <span class="badge badge-good">Free</span>
+  </div>
+  <ul class="segment-detail">
+    <li>iOS 17+ supports downloading maps for offline use.</li>
+    <li>Download entire states: Arizona, Utah, Wyoming, Montana.</li>
+    <li>Good integration with CarPlay.</li>
+    <li>Use as backup if Google Maps offline has gaps.</li>
+  </ul>
+</div>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Trail Navigation: AllTrails+ Offline</span>
+    <span class="badge badge-ok">$36/year</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Download individual trail maps with topo lines and GPS tracking.</li>
+    <li>Shows your position on trail in real time using phone GPS (GPS works without cell service).</li>
+    <li>Download all planned hikes before each park visit.</li>
+    <li>Worth the subscription for this trip. Cancel after if you don't need it.</li>
+  </ul>
+</div>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Park Info: NPS App Offline</span>
+    <span class="badge badge-good">Free</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Download each park's content: maps, trail descriptions, points of interest, alerts.</li>
+    <li>More useful for planning and info than navigation.</li>
+    <li>Download all 6 parks: Grand Canyon, Arches, Canyonlands, Grand Teton, Yellowstone, Glacier.</li>
+  </ul>
+</div>
+
+<div class="callout callout-warn">
+  <strong>GPS works without cell service.</strong> Your phone's GPS chip receives signals directly from satellites and works everywhere, regardless of cell coverage. What you need cell service for is loading the MAP that shows your GPS dot. That's why downloading offline maps matters: the GPS knows where you are, but without a downloaded map, it has nothing to display your position on.
+</div>
+
+<!-- ============================================================ -->
+<!-- DAILY CONNECTIVITY RHYTHM -->
+<!-- ============================================================ -->
+
+<h2>Daily Connectivity Rhythm</h2>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Morning (at hotel/Airbnb with Wi-Fi)</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Check weather and road conditions for the day's route.</li>
+    <li>Verify any reservation details (restaurant, tour, etc.).</li>
+    <li>Let photos auto-upload to iCloud/Google Photos from last night.</li>
+    <li>Text family your plan: "Heading to Yellowstone Canyon today, probably unreachable until evening."</li>
+    <li>Confirm offline maps are downloaded for today's area.</li>
+  </ul>
+</div>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">During the Day (assume no service)</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Navigate using offline Google Maps.</li>
+    <li>Track hikes with AllTrails offline (GPS only).</li>
+    <li>Take photos. They'll upload later.</li>
+    <li>If you hit a town with service, send a quick text check-in.</li>
+    <li>Keep phones charging in the car whenever driving.</li>
+  </ul>
+</div>
+
+<div class="segment">
+  <div class="segment-header">
+    <span class="segment-title">Evening (back at hotel with Wi-Fi)</span>
+  </div>
+  <ul class="segment-detail">
+    <li>Connect to Wi-Fi. Let photo uploads run in background.</li>
+    <li>Call or text family: "Made it to Moab, great day, all good."</li>
+    <li>Check tomorrow's weather, road conditions, and any park alerts.</li>
+    <li>Download any offline maps you need for tomorrow.</li>
+    <li>Charge all devices overnight.</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- PRE-TRIP CHECKLIST -->
+<!-- ============================================================ -->
+
+<h2>Pre-Trip Tech Checklist</h2>
+
+<ul class="checklist">
+  <li><strong>2-3 weeks before:</strong> Check if Mom's Canadian plan includes US roaming <span class="essential">do now</span></li>
+  <li><strong>2-3 weeks before:</strong> If no roaming, buy Airalo eSIM (20GB, 30 days, ~$42) <span class="note">— install on Wi-Fi at home, activate on landing</span></li>
+  <li><strong>2-3 weeks before:</strong> Notify Mom's bank of US travel dates (May 15 - Jun 4)</li>
+  <li><strong>1 week before:</strong> Update both phones to latest iOS/Android <span class="note">— ensures satellite features work, latest offline map capabilities</span></li>
+  <li><strong>1 week before:</strong> Free up at least 5 GB of phone storage on each phone</li>
+  <li><strong>1 week before:</strong> Download NPS app and AllTrails app</li>
+  <li><strong>1 week before:</strong> Subscribe to AllTrails+ if you want offline trail maps ($36/year)</li>
+  <li><strong>1 week before:</strong> Order Anker car charger and battery pack if you don't have them</li>
+  <li><strong>Day 1 evening (Phoenix hotel):</strong> Download ALL offline Google Maps areas <span class="essential">essential</span></li>
+  <li><strong>Day 1 evening:</strong> Download all 6 parks in NPS app</li>
+  <li><strong>Day 1 evening:</strong> Download planned trail maps in AllTrails</li>
+  <li><strong>Day 1 evening:</strong> Download music/podcasts/audiobooks for dead zone drives</li>
+  <li><strong>Day 1 evening:</strong> Save all booking confirmations as screenshots/PDFs</li>
+  <li><strong>Day 1 evening:</strong> Test that Mom's eSIM/roaming is working correctly</li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- MINDSET -->
+<!-- ============================================================ -->
+
+<h2>Embracing Disconnection</h2>
+
+<div class="callout callout-info">
+  <strong>This isn't a bug, it's a feature.</strong> The fact that you can stand on the rim of the Grand Canyon, look across 277 miles of carved earth, and not receive a single notification is one of the best parts of visiting national parks. The Navajo Nation's vast silence, Yellowstone's geothermal weirdness, Glacier's alpine wilderness: these places are powerful precisely because the modern world can't reach you there. Prepare your connectivity so you can let go of it. Download what you need, set up your safety net, then put your phone in your pocket and be present with your mom in some of the most beautiful places on Earth.
+</div>
+
+<!-- ============================================================ -->
+<!-- SOURCES -->
+<!-- ============================================================ -->
+
+<div class="sources">
+  <strong>Sources &amp; References</strong>
+  <ul>
+    <li><a href="https://www.nps.gov/glac/planyourvisit/connectivity.htm">NPS — Glacier National Park Connectivity Guide</a></li>
+    <li><a href="https://www.nps.gov/yell/planyourvisit/goodsandservices.htm">NPS — Yellowstone Goods &amp; Services (cell coverage info)</a></li>
+    <li><a href="https://www.nps.gov/grca/planyourvisit/basicinfo.htm">NPS — Grand Canyon Basic Information</a></li>
+    <li><a href="https://www.nps.gov/subjects/digital/nps-apps.htm">NPS — National Park Service App (offline downloads)</a></li>
+    <li><a href="https://www.rvmobileinternet.com/overview/">RV Mobile Internet Resource Center — Carrier comparison for travelers</a></li>
+    <li><a href="https://www.garmin.com/en-US/p/765374">Garmin inReach Mini 2 — Satellite communicator</a></li>
+    <li><a href="https://www.garmin.com/en-US/p/837461">Garmin inReach — Satellite subscription plans</a></li>
+    <li><a href="https://www.airalo.com/">Airalo — eSIM for US travel</a></li>
+    <li><a href="https://support.google.com/maps/answer/6291838">Google Maps — Download offline areas</a></li>
+    <li><a href="https://www.alltrails.com/">AllTrails — Offline trail maps</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
