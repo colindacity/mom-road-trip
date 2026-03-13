@@ -1247,7 +1247,7 @@ export const tripData: TripData = {
           amenities: ['Free parking', 'Fridge', 'Microwave', 'Elk Refuge views'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2 queen beds. Best budget option in Jackson. 5min from Teton entrance.'
+          notes: '2 queen beds. Best budget option in Jackson. 5min from Teton entrance. 18% discount for direct bookings. BOOK ASAP — Memorial Day weekend (May 23-25) overlaps and Jackson prices spike.'
         },
         {
           id: 'acc10b',
@@ -1261,7 +1261,7 @@ export const tripData: TripData = {
           website: 'https://www.tetonvalleycabins.com/',
           amenities: ['Hot tub', 'Fire pit', 'Fridge', 'Microwave', 'Free parking'],
           seniorFriendly: true,
-          notes: 'Charming log cabins. 2 queen beds. 40-45min to park via Teton Pass. Cheaper than Jackson.'
+          notes: 'Charming log cabins. 2 queen beds. 40-45min to park via Teton Pass. $50-80/night cheaper than Jackson proper.'
         },
         {
           id: 'acc10c',
@@ -1777,8 +1777,8 @@ export const tripData: TripData = {
           id: 'acc16a',
           name: 'Meadow Lake Resort & Condos',
           type: 'condo',
-          priceRange: '$99-150',
-          pricePerNight: 130,
+          priceRange: '$130-180',
+          pricePerNight: 150,
           reviewRating: 4.0,
           reviewSource: 'TripAdvisor (#1 in Columbia Falls)',
           reviewCount: 1147,
@@ -1788,7 +1788,7 @@ export const tripData: TripData = {
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Pool', 'Restaurant'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2BR condo. Full kitchen, hot tub. 20min to park. Best value for 4 nights with 3 adults.'
+          notes: '2BR condo. Full kitchen, hot tub. 20min to park. Best value for 4 nights with 3 adults. Late May rates trending $130-180.'
         },
         {
           id: 'acc16b',
@@ -1821,7 +1821,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', '3 adults: need 2 bedrooms or 2BR rental'],
-      budgetBreakdown: { accommodation: 130, food: 80, activities: 0, gas: 55, total: 265 }
+      budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
     // ============================================================
@@ -1874,14 +1874,14 @@ export const tripData: TripData = {
         id: 'acc16a',
         name: 'Meadow Lake Resort (same as previous night)',
         type: 'condo',
-        priceRange: '$99-150',
-        pricePerNight: 130,
+        priceRange: '$130-180',
+        pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night. Sunday — last day with wife.'
       },
       notes: ['MODERATE DAY — driving + ~2mi walking', 'Sun Road open Apgar to Avalanche Creek only (Logan Pass closed until mid-June)', 'No vehicle reservation needed in 2026'],
-      budgetBreakdown: { accommodation: 130, food: 80, activities: 35, gas: 15, total: 260 }
+      budgetBreakdown: { accommodation: 150, food: 80, activities: 35, gas: 15, total: 280 }
     },
 
     // ============================================================
@@ -1934,14 +1934,14 @@ export const tripData: TripData = {
         id: 'acc16a',
         name: 'Meadow Lake Resort (same as previous night)',
         type: 'condo',
-        priceRange: '$99-150',
-        pricePerNight: 130,
+        priceRange: '$130-180',
+        pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night.'
       },
       notes: ['HIKING DAY — Avalanche Lake is actually 5.8mi RT / 784ft gain', 'Trail of the Cedars (0.9mi boardwalk) is a great alternative if full trail is too much', 'Go at Mom\'s pace — turn around anytime'],
-      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 15, total: 215 }
+      budgetBreakdown: { accommodation: 150, food: 70, activities: 0, gas: 15, total: 235 }
     },
 
     // ============================================================
@@ -1990,14 +1990,14 @@ export const tripData: TripData = {
         id: 'acc16a',
         name: 'Meadow Lake Resort (same as previous night)',
         type: 'condo',
-        priceRange: '$99-150',
-        pricePerNight: 130,
+        priceRange: '$130-180',
+        pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
         notes: 'Fourth and final night at Glacier.'
       },
       notes: ['REST DAY — no hiking', 'Recovery from Avalanche Lake yesterday', 'Pack and prep for drive to Missoula tomorrow'],
-      budgetBreakdown: { accommodation: 130, food: 60, activities: 0, gas: 10, total: 200 }
+      budgetBreakdown: { accommodation: 150, food: 60, activities: 0, gas: 10, total: 220 }
     },
 
     // ============================================================
@@ -2160,8 +2160,8 @@ export const tripData: TripData = {
     {
       item: 'Antelope Canyon Tour (Upper or Canyon X)',
       bookBy: '2026-04-25',
-      website: 'https://www.antelopecanyon.com/upper-antelope-canyon-tour/',
-      notes: 'Book 2-3 weeks ahead min. 11am-1pm for best light beams. Canyon X (Taadidiin Tours) is easier for seniors — no steep exit climb.'
+      website: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-19/?ref=https://www.antelopecanyon.com',
+      notes: 'Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited. $65-80/person + $15 Navajo entry fee. Book at antelopecanyon.com (FareHarbor).'
     },
     {
       item: 'Grand Canyon Lodging (Tusayan)',
