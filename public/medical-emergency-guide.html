@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical & Emergency Guide — Southwest to Glacier Road Trip (May 15 – Jun 4, 2026)</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --text: #1c1917;
+      --muted: #78716c;
+      --border: #d6d3d1;
+      --accent: #b45309;
+      --accent-bg: #fef3c7;
+      --check: #16a34a;
+      --danger: #dc2626;
+      --info-bg: #eff6ff;
+      --info-border: #3b82f6;
+      --warn-bg: #fefce8;
+      --warn-border: #ca8a04;
+      --danger-bg: #fef2f2;
+      --danger-border: #dc2626;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 28px 0 8px;
+      padding: 6px 10px;
+      background: var(--accent-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+    }
+    h3 {
+      font-size: 0.95rem;
+      margin: 16px 0 6px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    p, li { font-size: 0.9rem; }
+    p { margin: 6px 0; }
+
+    .callout {
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .callout-info { background: var(--info-bg); border-left: 3px solid var(--info-border); }
+    .callout-warn { background: var(--warn-bg); border-left: 3px solid var(--warn-border); }
+    .callout-danger { background: var(--danger-bg); border-left: 3px solid var(--danger-border); }
+    .callout-success { background: var(--success-bg); border-left: 3px solid var(--success-border); }
+    .callout strong { display: block; margin-bottom: 2px; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 3px 0 3px 28px;
+      position: relative;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f5f5f4;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+    }
+    .checklist li .note {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .checklist li .essential {
+      color: var(--danger);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 10px 0;
+    }
+    th {
+      text-align: left;
+      padding: 6px 10px;
+      background: #f5f5f4;
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+    }
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f5f5f4;
+      vertical-align: top;
+    }
+    tr:hover td { background: #fafaf9; }
+
+    .hospital-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 8px 0;
+    }
+    .hospital-card .name { font-weight: 700; font-size: 0.95rem; }
+    .hospital-card .addr { color: var(--muted); font-size: 0.82rem; }
+    .hospital-card .phone { font-weight: 600; color: var(--info-border); font-size: 0.88rem; }
+    .hospital-card .detail { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+    .hospital-card .dist { font-size: 0.82rem; background: #fef3c7; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-top: 4px; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+    .tag-er { background: #fef2f2; color: #991b1b; }
+    .tag-clinic { background: #eff6ff; color: #1e40af; }
+    .tag-24hr { background: #f0fdf4; color: #166534; }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .comparison > div {
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+    .comparison .bad { background: #fef2f2; border: 1px solid #fecaca; }
+    .comparison .good { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .comparison strong { display: block; margin-bottom: 4px; }
+
+    .altitude-bar {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin: 12px 0;
+      height: 120px;
+    }
+    .altitude-bar > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+    .altitude-bar .bar {
+      width: 100%;
+      background: #dbeafe;
+      border-radius: 3px 3px 0 0;
+      min-height: 4px;
+    }
+    .altitude-bar .elev { font-weight: 600; margin-bottom: 2px; }
+    .altitude-bar .loc { margin-top: 4px; color: var(--muted); line-height: 1.2; }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .emergency-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .emergency-card .label { font-weight: 700; font-size: 0.88rem; }
+    .emergency-card .number { font-size: 1.1rem; font-weight: 700; color: var(--danger); }
+    .emergency-card .context { font-size: 0.78rem; color: var(--muted); }
+
+    @media print {
+      body { max-width: 100%; padding: 12px; font-size: 10pt; }
+      .callout { break-inside: avoid; }
+      .hospital-card { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .comparison { grid-template-columns: 1fr; }
+      .emergency-grid { grid-template-columns: 1fr; }
+      table { font-size: 0.78rem; }
+      td, th { padding: 4px 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Medical & Emergency Preparedness Guide</h1>
+<p class="subtitle">Southwest to Glacier Road Trip &middot; May 15 &ndash; Jun 4, 2026 &middot; For an active 80-year-old Canadian traveler</p>
+
+<div class="callout callout-danger">
+  <strong>Print this document before departure.</strong>
+  Keep a paper copy in the glove compartment and save a PDF on both phones. Cell service is unreliable or nonexistent inside Grand Canyon, Yellowstone, and Glacier.
+</div>
+
+<!-- ====================== SECTION 1: PRE-TRIP MEDICAL CHECKLIST ====================== -->
+
+<h2>1. Pre-Trip Medical Checklist</h2>
+
+<p>Complete these items at least 4-6 weeks before May 15.</p>
+
+<h3>Doctor Visit</h3>
+<ul class="checklist">
+  <li>Schedule pre-trip physical with family doctor <span class="essential">essential</span></li>
+  <li>Discuss altitude exposure (7,000-8,000 ft for multiple days) <span class="note">Ask about acetazolamide (Diamox) prescription</span></li>
+  <li>Discuss extreme heat exposure (90-100+ F in Phoenix/Page/Moab)</li>
+  <li>Review all current medications for heat sensitivity <span class="note">Diuretics, beta-blockers, and anticholinergics all increase heat risk</span></li>
+  <li>Get written letter listing all conditions and medications <span class="note">For border crossing and emergency situations</span></li>
+  <li>Ask about adjusting diuretic dosage during hot/high-altitude days</li>
+  <li>Confirm up-to-date tetanus booster</li>
+  <li>Discuss travel fitness for 5+ hour driving days</li>
+</ul>
+
+<h3>Insurance & Documents</h3>
+<ul class="checklist">
+  <li>Purchase travel medical insurance (see Section 7) <span class="essential">essential</span></li>
+  <li>Print insurance policy number and 24/7 claims phone number</li>
+  <li>Carry Canadian health card (OHIP) <span class="note">Limited coverage abroad, but needed for repatriation</span></li>
+  <li>Register trip with Global Affairs Canada <span class="note"><a href="https://travel.gc.ca/travelling/registration">travel.gc.ca/travelling/registration</a></span></li>
+  <li>Photocopy passport, insurance card, driver's license <span class="note">Keep copies separate from originals</span></li>
+  <li>Save emergency contacts in both phones (see Section 10)</li>
+</ul>
+
+<h3>Prescriptions & Medications</h3>
+<ul class="checklist">
+  <li>Get 30-day supply of all prescriptions (21 days + 9 extra) <span class="essential">essential</span></li>
+  <li>Keep all meds in original labeled pharmacy bottles <span class="essential">essential</span></li>
+  <li>Get doctor's letter listing all medications with generic names <span class="note">For US border and emergency rooms</span></li>
+  <li>Pack medications in carry-on luggage only <span class="note">Never in checked bags</span></li>
+  <li>Buy insulated medication travel case <span class="note">Car interiors in Phoenix can exceed 140 F</span></li>
+</ul>
+
+<!-- ====================== SECTION 2: HOSPITALS ALONG THE ROUTE ====================== -->
+
+<h2>2. Hospitals & Medical Facilities by Stop</h2>
+
+<div class="callout callout-info">
+  <strong>General rule: call 911 first for any emergency.</strong>
+  Even in remote areas, 911 connects to county dispatch. Inside national parks, call the park dispatch number (listed in Section 10) as they coordinate faster than county 911.
+</div>
+
+<h3>Stop 1-2: Phoenix / Scottsdale, AZ (May 15-16)</h3>
+<p>Major metro area with dozens of hospitals. No concern about access to care.</p>
+<div class="hospital-card">
+  <div class="name">HonorHealth Scottsdale Osborn <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">7400 E Osborn Rd, Scottsdale, AZ 85251</div>
+  <div class="phone">(480) 882-4000</div>
+  <div class="detail">Closest major ER to Scottsdale hotels. Level I Trauma Center.</div>
+</div>
+
+<h3>Stop 3: Grand Canyon / Tusayan, AZ (May 17-18)</h3>
+<div class="hospital-card">
+  <div class="name">North Country HealthCare - Grand Canyon Clinic <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">1 Clinic Rd, Grand Canyon Village, AZ 86023</div>
+  <div class="phone">(928) 638-2551</div>
+  <div class="detail">Inside the park, South Rim. Walk-in urgent care. Open M-F, limited hours. Not a hospital.</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Flagstaff Medical Center <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">1200 N Beaver St, Flagstaff, AZ 86001</div>
+  <div class="phone">(928) 779-3366</div>
+  <div class="detail">Nearest full hospital. Level I Trauma Center.</div>
+  <div class="dist">84 miles south (1 hr 20 min from Grand Canyon Village)</div>
+</div>
+
+<h3>Stop 4: Page, AZ (May 19-20)</h3>
+<div class="hospital-card">
+  <div class="name">Banner Page Hospital <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">501 N Navajo Dr, Page, AZ 86040</div>
+  <div class="phone">(928) 645-2424</div>
+  <div class="detail">25-bed Critical Access Hospital. Emergency, surgery, imaging. Right in town.</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Canyonlands Urgent Care <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">Downtown Page, AZ</div>
+  <div class="phone">(928) 645-8123</div>
+  <div class="detail">Walk-in urgent care for non-emergency issues.</div>
+</div>
+
+<h3>Stop 5: Moab, UT (May 21-22)</h3>
+<div class="hospital-card">
+  <div class="name">Moab Regional Hospital <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">450 Williams Way, Moab, UT 84532</div>
+  <div class="phone">(435) 719-3500</div>
+  <div class="detail">17-bed Critical Access Hospital. Level IV Trauma Center. 24/7 ER with helipad. Urgent care clinic also on-site.</div>
+</div>
+
+<h3>Stop 6: Salt Lake City, UT (May 23)</h3>
+<p>Major metro area with multiple hospitals. No concern about access.</p>
+<div class="hospital-card">
+  <div class="name">University of Utah Hospital <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">50 N Medical Dr, Salt Lake City, UT 84132</div>
+  <div class="phone">(801) 581-2121</div>
+  <div class="detail">Level I Trauma Center. Top-rated hospital in the region.</div>
+</div>
+
+<h3>Stop 7: Jackson, WY (May 24-25)</h3>
+<div class="hospital-card">
+  <div class="name">St. John's Health <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">625 E Broadway, Jackson, WY 83001</div>
+  <div class="phone">(307) 733-3636</div>
+  <div class="detail">108-bed hospital. ER, surgery, ICU, imaging, pharmacy. Named to Newsweek's World's Best Hospitals 5 consecutive years. Right in town.</div>
+</div>
+
+<h3>Stop 8: Yellowstone National Park (May 26-28)</h3>
+<div class="callout callout-warn">
+  <strong>Yellowstone is huge and remote.</strong>
+  Drive times between clinics can be 1-2 hours. Cell service is spotty. The nearest real hospital is 90 miles from Old Faithful (in either Jackson or Bozeman). Know which clinic is closest to wherever you are in the park.
+</div>
+<div class="hospital-card">
+  <div class="name">Mammoth Clinic <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">Mammoth Hot Springs, Yellowstone NP</div>
+  <div class="phone">(307) 344-7965</div>
+  <div class="detail">Only clinic with a physician on duty. Open year-round. M-Th 8:30am-5pm, Fri 8:30am-1pm. X-ray, lab, pharmacy.</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Old Faithful Clinic <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">Old Faithful, Yellowstone NP</div>
+  <div class="phone">(307) 545-7325</div>
+  <div class="detail">Open daily 7am-7pm during summer season (late May through Sept). X-ray, lab, pharmacy.</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Lake Clinic <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">Lake Village, Yellowstone NP</div>
+  <div class="phone">(307) 242-7241</div>
+  <div class="detail">10-bed clinic. Open daily 8am-5pm during summer. X-ray, lab, pharmacy.</div>
+</div>
+<p style="font-size:0.82rem; color:var(--muted); margin-top:8px;">All three clinics can stabilize trauma before helicopter evacuation to Jackson, Bozeman, or Idaho Falls.</p>
+
+<h3>Stop 9: West Yellowstone, MT (May 28)</h3>
+<div class="hospital-card">
+  <div class="name">Community Health Partners - West Yellowstone Clinic <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">11 Electric St, West Yellowstone, MT 59758</div>
+  <div class="phone">(406) 646-0200</div>
+  <div class="detail">Walk-in clinic. Same-day care available. Not a hospital.</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Bozeman Health Big Sky Medical Center <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">334 Town Center Ave, Big Sky, MT 59716</div>
+  <div class="phone">(406) 995-6995</div>
+  <div class="detail">8-bed Critical Access Hospital. 24/7 ER. Helipad.</div>
+  <div class="dist">50 miles north (1 hr from West Yellowstone)</div>
+</div>
+
+<h3>Stop 10: Bozeman, MT (May 29)</h3>
+<div class="hospital-card">
+  <div class="name">Bozeman Health Deaconess Regional Medical Center <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">915 Highland Blvd, Bozeman, MT 59715</div>
+  <div class="phone">(406) 585-5000</div>
+  <div class="detail">125-bed hospital. Level III Trauma Center. Full ER, surgery, imaging, pharmacy. 24/7.</div>
+</div>
+
+<h3>Stop 11: Columbia Falls / Glacier Area, MT (May 30 - Jun 2)</h3>
+<div class="hospital-card">
+  <div class="name">Logan Health Medical Center (formerly Kalispell Regional) <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">310 Sunnyview Ln, Kalispell, MT 59901</div>
+  <div class="phone">(406) 752-5111</div>
+  <div class="detail">622-bed tertiary medical center. Full ER, trauma, surgery, specialists. THE regional hospital for northern Montana.</div>
+  <div class="dist">15 miles from Columbia Falls (20 min)</div>
+</div>
+<div class="hospital-card">
+  <div class="name">Logan Health Walk-in Care - West Glacier <span class="tag tag-clinic">Clinic</span></div>
+  <div class="addr">100 Rea Rd, West Glacier, MT 59936</div>
+  <div class="phone">(406) 888-9924</div>
+  <div class="detail">Seasonal urgent care, open Memorial Day through September. Daily 9am-4pm. Walk-in, no appointment. X-ray, stitches, fracture stabilization.</div>
+</div>
+
+<h3>Stop 12: Missoula, MT (Jun 3-4)</h3>
+<div class="hospital-card">
+  <div class="name">Providence St. Patrick Hospital <span class="tag tag-er">ER</span> <span class="tag tag-24hr">24hr</span></div>
+  <div class="addr">500 W Broadway, Missoula, MT 59802</div>
+  <div class="phone">(406) 543-7271</div>
+  <div class="detail">Major regional hospital. 24/7 ER. Level II Trauma Center.</div>
+</div>
+
+<!-- ====================== SECTION 3: ALTITUDE SICKNESS ====================== -->
+
+<h2>3. Altitude Sickness</h2>
+
+<h3>Elevation Profile of the Trip</h3>
+
+<div class="altitude-bar">
+  <div><div class="elev">1,100 ft</div><div class="bar" style="height:8px"></div><div class="loc">Phoenix</div></div>
+  <div><div class="elev">7,000 ft</div><div class="bar" style="height:55px; background:#93c5fd;"></div><div class="loc">Grand Canyon Rim</div></div>
+  <div><div class="elev">4,100 ft</div><div class="bar" style="height:30px"></div><div class="loc">Page</div></div>
+  <div><div class="elev">4,000 ft</div><div class="bar" style="height:29px"></div><div class="loc">Moab</div></div>
+  <div><div class="elev">4,226 ft</div><div class="bar" style="height:31px"></div><div class="loc">SLC</div></div>
+  <div><div class="elev">6,237 ft</div><div class="bar" style="height:48px; background:#93c5fd;"></div><div class="loc">Jackson</div></div>
+  <div><div class="elev">7,700 ft</div><div class="bar" style="height:62px; background:#60a5fa;"></div><div class="loc">Yellowstone (avg)</div></div>
+  <div><div class="elev">6,666 ft</div><div class="bar" style="height:52px; background:#93c5fd;"></div><div class="loc">West Yellowstone</div></div>
+  <div><div class="elev">4,820 ft</div><div class="bar" style="height:35px"></div><div class="loc">Bozeman</div></div>
+  <div><div class="elev">3,200 ft</div><div class="bar" style="height:22px"></div><div class="loc">Glacier / Columbia Falls</div></div>
+</div>
+
+<div class="callout callout-warn">
+  <strong>Key risk window: Grand Canyon (Day 3-4) and Yellowstone (Day 12-14).</strong>
+  The Grand Canyon rim sits at 7,000 ft. She'll go from Phoenix (1,100 ft) to the rim in one day. Yellowstone averages 7,700 ft, with some areas above 8,000 ft. These are the two periods requiring the most altitude awareness.
+</div>
+
+<h3>Risk Factors for an 80-Year-Old</h3>
+<p>Counterintuitively, research suggests adults over 50 have slightly <em>lower</em> rates of acute mountain sickness (AMS) than younger people. However, there are specific concerns:</p>
+<ul style="margin:8px 0; padding-left:20px;">
+  <li>Pre-existing heart or lung conditions are the real risk multiplier, not age itself</li>
+  <li>Medications (especially diuretics) can worsen dehydration at altitude</li>
+  <li>Reduced cardiopulmonary reserve means less margin for error</li>
+  <li>AMS occurs in ~20% of people ascending to 7,000-9,000 ft</li>
+  <li>Research on elderly hikers shows healthy seniors acclimatize well, with performance normalizing after 5 days at altitude</li>
+</ul>
+
+<h3>Symptoms to Watch For</h3>
+<table>
+  <tr><th>Severity</th><th>Symptoms</th><th>Action</th></tr>
+  <tr>
+    <td style="font-weight:600; color:#ca8a04;">Mild AMS</td>
+    <td>Headache, fatigue, dizziness, nausea, poor sleep, loss of appetite</td>
+    <td>Rest, hydrate, take ibuprofen or acetaminophen for headache. Do not ascend further. Symptoms typically resolve in 1-3 days.</td>
+  </tr>
+  <tr>
+    <td style="font-weight:600; color:#ea580c;">Moderate AMS</td>
+    <td>Persistent vomiting, severe headache unresponsive to medication, increasing fatigue, shortness of breath with activity</td>
+    <td>Descend at least 1,000-2,000 ft. If at Grand Canyon rim, drive to Flagstaff (7,000 ft down to 6,900, marginal) or further to Sedona (4,350 ft). If in Yellowstone, drive to Bozeman (4,820 ft) or Jackson (6,237 ft).</td>
+  </tr>
+  <tr>
+    <td style="font-weight:600; color:var(--danger);">Severe (HACE/HAPE)</td>
+    <td>Confusion, stumbling gait, severe breathlessness at rest, persistent cough, blue lips</td>
+    <td><strong>Medical emergency. Call 911 / park dispatch immediately.</strong> Descend immediately. These can be fatal within hours.</td>
+  </tr>
+</table>
+
+<h3>Prevention Strategies</h3>
+<ul style="margin:8px 0; padding-left:20px;">
+  <li><strong>Night in Flagstaff first (6,900 ft):</strong> The itinerary already has you stopping in Flagstaff before the Grand Canyon, which is excellent. This provides partial acclimatization.</li>
+  <li><strong>Hydration:</strong> Drink 3-4 liters of water per day at altitude. Start extra hydration the day before ascending. Avoid alcohol for the first 48 hours at altitude.</li>
+  <li><strong>Go slow the first day:</strong> Limit physical exertion the first day at the Grand Canyon rim. Easy walks only. Save longer hikes for Day 2 when somewhat acclimatized.</li>
+  <li><strong>Sleep low:</strong> If possible, sleep at the lowest altitude you can. Tusayan (6,612 ft) is slightly lower than the rim (7,000 ft).</li>
+  <li><strong>Eat light, carb-rich meals:</strong> Complex carbohydrates are easier to metabolize at altitude than fatty/heavy meals.</li>
+  <li><strong>Monitor with pulse oximeter:</strong> Normal SpO2 at sea level is 95-100%. At 7,000 ft, 90-95% is expected. Below 88% warrants concern and possible descent.</li>
+</ul>
+
+<h3>Should She Ask About Acetazolamide (Diamox)?</h3>
+<div class="callout callout-info">
+  <strong>Yes, discuss with her doctor. Here are the facts to bring up:</strong>
+  <ul style="margin-top:6px; padding-left:16px; font-size:0.85rem;">
+    <li>Standard prophylactic dose: 125 mg every 12 hours</li>
+    <li>Start the day before ascending to altitude, continue for 2-4 days at altitude</li>
+    <li>Works by stimulating breathing and speeding acclimatization from 3-5 days down to ~1 day</li>
+    <li>No geriatric-specific concerns per Mayo Clinic, BUT elderly patients are more likely to have kidney/liver issues that require dose adjustment</li>
+    <li>Side effects: tingling in fingers/toes, increased urination, carbonated drinks taste flat. Generally well-tolerated.</li>
+    <li>Contraindicated with sulfa allergy, severe kidney disease, or certain other conditions</li>
+    <li>At 7,000-7,700 ft, this is a moderate-risk elevation, not extreme. Her doctor may decide the benefit outweighs the risk, or may say it's unnecessary. Bring the elevation profile so the doctor has context.</li>
+  </ul>
+</div>
+
+<!-- ====================== SECTION 4: HEAT-RELATED ILLNESS ====================== -->
+
+<h2>4. Heat-Related Illness</h2>
+
+<h3>Heat Exposure by Stop</h3>
+<table>
+  <tr><th>Stop</th><th>Dates</th><th>Expected Highs</th><th>Risk Level</th></tr>
+  <tr><td>Phoenix/Scottsdale</td><td>May 15-16</td><td>94-100+ F</td><td style="font-weight:600; color:var(--danger);">HIGH</td></tr>
+  <tr><td>Grand Canyon Rim</td><td>May 17-18</td><td>70-75 F</td><td style="color:var(--check);">Low</td></tr>
+  <tr><td>Page, AZ</td><td>May 19-20</td><td>85-92 F</td><td style="font-weight:600; color:#ea580c;">MODERATE-HIGH</td></tr>
+  <tr><td>Moab, UT</td><td>May 21-22</td><td>85-93 F</td><td style="font-weight:600; color:#ea580c;">MODERATE-HIGH</td></tr>
+  <tr><td>Salt Lake City</td><td>May 23</td><td>75-82 F</td><td style="color:var(--check);">Low</td></tr>
+  <tr><td>Jackson, WY</td><td>May 24-25</td><td>60-70 F</td><td style="color:var(--check);">Low</td></tr>
+  <tr><td>Yellowstone</td><td>May 26-28</td><td>55-68 F</td><td style="color:var(--check);">Low</td></tr>
+  <tr><td>Bozeman / Glacier</td><td>May 29 - Jun 2</td><td>60-75 F</td><td style="color:var(--check);">Low</td></tr>
+  <tr><td>Missoula</td><td>Jun 3-4</td><td>65-75 F</td><td style="color:var(--check);">Low</td></tr>
+</table>
+
+<div class="callout callout-danger">
+  <strong>The first 7 days (Phoenix through Moab) are the danger zone for heat.</strong>
+  34% of heat-related deaths in Arizona occur in adults over 65. Elderly people don't adjust to temperature changes as quickly and often don't recognize dehydration until symptoms are already serious. The dry desert air accelerates dehydration without obvious sweating.
+</div>
+
+<h3>Medications That Increase Heat Risk</h3>
+<p>If she takes any of these, her doctor should advise on heat precautions:</p>
+<table>
+  <tr><th>Drug Class</th><th>Common Names</th><th>How It Increases Risk</th></tr>
+  <tr><td>Diuretics</td><td>Furosemide (Lasix), hydrochlorothiazide</td><td>Causes fluid/electrolyte loss, accelerates dehydration</td></tr>
+  <tr><td>Beta-blockers</td><td>Metoprolol, atenolol, propranolol</td><td>Reduces blood flow to skin, impairs cooling</td></tr>
+  <tr><td>Anticholinergics</td><td>Oxybutynin, diphenhydramine (Benadryl)</td><td>Reduces sweating, core temperature rises</td></tr>
+  <tr><td>ACE inhibitors</td><td>Lisinopril, enalapril</td><td>Can worsen dehydration effects</td></tr>
+  <tr><td>Antidepressants</td><td>SSRIs, SNRIs</td><td>Impair thermoregulation, increase sweating</td></tr>
+  <tr><td>Antihistamines</td><td>Cetirizine (Reactine), loratadine</td><td>Mild anticholinergic effects, reduced sweating</td></tr>
+</table>
+
+<h3>Heat Exhaustion vs. Heat Stroke</h3>
+<div class="comparison">
+  <div class="bad">
+    <strong>Heat Exhaustion (treat immediately)</strong>
+    <ul style="padding-left:16px; font-size:0.82rem;">
+      <li>Heavy sweating (or absence of sweating in elderly)</li>
+      <li>Cool, clammy skin</li>
+      <li>Weak, rapid pulse</li>
+      <li>Nausea, dizziness, fatigue</li>
+      <li>Muscle cramps</li>
+      <li>Headache, fainting</li>
+    </ul>
+    <p style="margin-top:6px; font-size:0.82rem;"><strong>Action:</strong> Move to shade/AC, remove excess clothing, apply cool wet cloths, sip water slowly. If no improvement in 30 minutes, seek medical help.</p>
+  </div>
+  <div class="bad" style="background:#fee2e2; border-color:#fca5a5;">
+    <strong>Heat Stroke (CALL 911 IMMEDIATELY)</strong>
+    <ul style="padding-left:16px; font-size:0.82rem;">
+      <li>Body temp 104 F+ (40 C+)</li>
+      <li>Hot, red, dry skin (no sweating)</li>
+      <li>Strong, rapid pulse</li>
+      <li>Confusion, slurred speech, disorientation</li>
+      <li>Loss of consciousness</li>
+      <li>Seizures</li>
+    </ul>
+    <p style="margin-top:6px; font-size:0.82rem;"><strong>Action:</strong> Call 911. Move to cool area. Cool rapidly with ice packs on neck, armpits, groin. DO NOT give fluids if unconscious. This is a life-threatening emergency.</p>
+  </div>
+</div>
+
+<h3>Prevention Protocol for Phoenix / Page / Moab</h3>
+<ul style="margin:8px 0; padding-left:20px;">
+  <li><strong>Schedule activities for early morning (before 10am) and late afternoon (after 4pm).</strong> Midday hours (11am-3pm) should be spent in air conditioning.</li>
+  <li><strong>Hydration schedule:</strong> Drink 8 oz water every 30 minutes when outdoors, even if not thirsty. Aim for 3+ liters per day. Add electrolytes (Liquid IV, Nuun tablets) to at least one bottle per day.</li>
+  <li><strong>Car strategy:</strong> Run AC 10 minutes before she gets in. Never leave medications in the car. Park in shade when possible. Keep a cooler with cold water in the back seat.</li>
+  <li><strong>Cooling gear:</strong> Wet bandana for neck, wide-brim hat, UV-protective lightweight clothing. Carry a small spray bottle for misting face/neck.</li>
+  <li><strong>Warning signs to verbalize:</strong> Ask her every 30 minutes outdoors: "How are you feeling? Any dizziness? Nauseous?" She may not volunteer symptoms.</li>
+  <li><strong>Horseshoe Bend (Page) specific:</strong> The walk is 1.5 miles round trip with no shade and a steep return climb. Go at sunrise or skip if temps exceed 90 F. Bring 2 water bottles per person.</li>
+  <li><strong>Antelope Canyon:</strong> Slot canyons are naturally cooler (shade), but the walk to/from the canyon entrance is exposed. Hydrate before going in.</li>
+</ul>
+
+<!-- ====================== SECTION 5: MEDICATIONS ON THE ROAD ====================== -->
+
+<h2>5. Medications & Prescriptions</h2>
+
+<h3>Crossing the Canada-US Border with Medications</h3>
+<div class="callout callout-info">
+  <strong>Rules for Canadian residents entering the US:</strong>
+  <ul style="margin-top:6px; padding-left:16px; font-size:0.85rem;">
+    <li>Keep all medications in original, labeled pharmacy containers with her name on them</li>
+    <li>Carry a letter from her doctor listing all medications, dosages, and conditions</li>
+    <li>For controlled substances (opioids, benzodiazepines, ADHD meds): declare to the border officer. Carry no more than 90-day supply</li>
+    <li>Pack medications in carry-on luggage, never checked bags</li>
+    <li>Some Canadian OTC medications may be restricted in the US (e.g., codeine-containing products like Tylenol 1 are prescription-only in the US)</li>
+    <li>No special permits needed for standard prescriptions. The doctor's letter is a precaution, not a legal requirement, but it prevents problems</li>
+  </ul>
+</div>
+
+<h3>Medication Storage in Extreme Heat</h3>
+<p>Car interiors in Phoenix/Page/Moab can exceed 140 F. Most medications degrade above 86 F (30 C).</p>
+<table>
+  <tr><th>Medication Type</th><th>Heat Sensitivity</th><th>What to Do</th></tr>
+  <tr><td>Insulin</td><td style="color:var(--danger); font-weight:600;">Extremely sensitive</td><td>Insulated case with cool pack. Never leave in car. Becomes ineffective when heated.</td></tr>
+  <tr><td>Nitroglycerin</td><td style="color:var(--danger); font-weight:600;">Extremely sensitive</td><td>Becomes inactive when heated. Keep in insulated case close to body.</td></tr>
+  <tr><td>Inhalers (albuterol)</td><td style="color:#ea580c; font-weight:600;">Very sensitive</td><td>Pressurized canister can burst in extreme heat. Keep in AC or insulated bag.</td></tr>
+  <tr><td>EpiPens</td><td style="color:#ea580c; font-weight:600;">Very sensitive</td><td>Delivers less epinephrine when heat-exposed. Keep 59-86 F. Insulated case.</td></tr>
+  <tr><td>Blood pressure meds</td><td style="color:#ca8a04;">Moderate</td><td>Store below 86 F. Insulated bag in AC hotel room. Don't leave in car.</td></tr>
+  <tr><td>Most other pills</td><td style="color:#ca8a04;">Moderate</td><td>General rule: if it's too hot for you, it's too hot for your meds. Bring inside everywhere.</td></tr>
+</table>
+
+<div class="callout callout-success">
+  <strong>Buy before the trip: FRIO Insulin Cooling Wallet (~$25 CAD on Amazon)</strong>
+  Works by evaporative cooling, no ice needed. Keeps medications below 79 F for 45+ hours. Reactivate by soaking in water. Works for any heat-sensitive medication, not just insulin.
+</div>
+
+<h3>Pharmacies Along the Route</h3>
+<table>
+  <tr><th>Location</th><th>Pharmacy</th><th>Notes</th></tr>
+  <tr><td>Phoenix/Scottsdale</td><td>CVS, Walgreens everywhere</td><td>Full metro area, no issue</td></tr>
+  <tr><td>Flagstaff</td><td>Walgreens, CVS, Walmart</td><td>Full services</td></tr>
+  <tr><td>Page, AZ</td><td>Safeway Pharmacy</td><td>Only chain pharmacy in town. Limited hours.</td></tr>
+  <tr><td>Moab, UT</td><td>Walker Drug (290 S Main St), City Market Pharmacy</td><td>Small town. Walker Drug is local; City Market (Kroger) has more stock.</td></tr>
+  <tr><td>Salt Lake City</td><td>CVS, Walgreens, Costco everywhere</td><td>Full metro area</td></tr>
+  <tr><td>Jackson, WY</td><td>Albertsons Pharmacy, St. John's Health Pharmacy</td><td>Small town but good pharmacy access</td></tr>
+  <tr><td>West Yellowstone</td><td>The Trailhead (general store)</td><td>Very limited. Stock up in Jackson or wait for Bozeman.</td></tr>
+  <tr><td>Bozeman, MT</td><td>Walgreens, Albertsons, Costco</td><td>Good selection</td></tr>
+  <tr><td>Columbia Falls / Kalispell</td><td>Walmart, Walgreens in Kalispell</td><td>15 min from Columbia Falls</td></tr>
+  <tr><td>Missoula</td><td>CVS, Walgreens, Costco</td><td>Full services</td></tr>
+</table>
+
+<div class="callout callout-warn">
+  <strong>Filling a Canadian prescription in the US:</strong>
+  US pharmacies cannot fill Canadian prescriptions directly. If she runs out, options are: (1) visit a US urgent care or ER to get a US prescription written, (2) call her Canadian pharmacy and have them coordinate with a US pharmacy (rare, but some will), or (3) contact her travel insurance's 24/7 helpline, which often has a physician referral service.
+</div>
+
+<!-- ====================== SECTION 6: FIRST AID KIT ====================== -->
+
+<h2>6. First Aid Kit</h2>
+
+<h3>Standard Road Trip First Aid</h3>
+<ul class="checklist">
+  <li>Adhesive bandages (assorted sizes, 20+)</li>
+  <li>Gauze pads (4x4) and medical tape</li>
+  <li>Elastic bandage (ACE wrap) for sprains</li>
+  <li>Antiseptic wipes and antibiotic ointment (Neosporin)</li>
+  <li>Butterfly closures / Steri-Strips for small cuts</li>
+  <li>Tweezers (for splinters, cactus spines in AZ)</li>
+  <li>Scissors</li>
+  <li>Ibuprofen (Advil) and acetaminophen (Tylenol)</li>
+  <li>Diphenhydramine (Benadryl) for allergic reactions <span class="note">Caution: anticholinergic, avoid in heat</span></li>
+  <li>Antacids (Tums or Pepto-Bismol)</li>
+  <li>Anti-diarrhea (Imodium)</li>
+  <li>Hydrocortisone cream 1%</li>
+  <li>Aloe vera gel (sunburn)</li>
+  <li>Sunscreen SPF 50+ (UV is stronger at altitude)</li>
+  <li>Insect repellent (for Yellowstone/Glacier mosquitoes in late May)</li>
+  <li>Moleskin for blisters</li>
+  <li>Instant cold packs (2-3)</li>
+  <li>Emergency space blanket (mylar)</li>
+  <li>Nitrile gloves (several pairs)</li>
+</ul>
+
+<h3>Elderly-Specific Monitoring Equipment</h3>
+<ul class="checklist">
+  <li>Pulse oximeter <span class="essential">essential for altitude</span> <span class="note">~$20-30 on Amazon. Monitors blood oxygen. Normal: 95-100% at sea level, 90-95% at 7000ft. Below 88% = concern.</span></li>
+  <li>Digital blood pressure cuff (wrist-style for portability) <span class="note">~$30-50. Omron is reliable. Check BP morning and evening, especially at altitude and in heat.</span></li>
+  <li>Digital thermometer <span class="note">For checking body temp if heat illness suspected</span></li>
+  <li>Electrolyte packets (Liquid IV, Nuun, or Pedialyte packets) <span class="note">Pack 20+. Critical for dehydration prevention in heat and at altitude.</span></li>
+</ul>
+
+<h3>Where to Buy</h3>
+<table>
+  <tr><th>Option</th><th>Pros</th><th>Recommendation</th></tr>
+  <tr><td>Amazon (before trip)</td><td>Best selection, delivered to door, can customize</td><td>Buy pulse oximeter + BP cuff + a pre-made kit, then supplement</td></tr>
+  <tr><td>REI</td><td>High-quality wilderness-focused kits</td><td>REI's "Backpacker Extended" kit ($45) is a solid base</td></tr>
+  <tr><td>Walmart/Costco</td><td>Affordable, available everywhere</td><td>Good for restocking supplies on the road</td></tr>
+</table>
+
+<div class="callout callout-info">
+  <strong>Recommended approach:</strong> Buy a pre-made first aid kit (Adventure Medical Kits "Mountain Series" or REI "Backpacker Extended") and supplement with the elderly-specific monitoring items and extra electrolyte packets. Total cost: ~$100-130 CAD.
+</div>
+
+<!-- ====================== SECTION 7: TRAVEL INSURANCE ====================== -->
+
+<h2>7. Travel Insurance (Canadian Traveling to the US)</h2>
+
+<h3>Why OHIP Covers Almost Nothing</h3>
+<div class="comparison">
+  <div class="bad">
+    <strong>What OHIP pays (outside Canada)</strong>
+    <ul style="padding-left:16px; font-size:0.82rem;">
+      <li>~$400 CAD/day for hospital stays</li>
+      <li>Nothing for physician fees</li>
+      <li>Nothing for ambulance</li>
+      <li>Nothing for air evacuation</li>
+      <li>Nothing for prescriptions</li>
+    </ul>
+  </div>
+  <div class="bad" style="background:#fef9c3; border-color:#fde68a;">
+    <strong>What US care actually costs</strong>
+    <ul style="padding-left:16px; font-size:0.82rem;">
+      <li>$10,000-30,000 USD/day for hospital</li>
+      <li>$3,500+ USD for ER visit</li>
+      <li>$20,000-80,000 USD for air ambulance</li>
+      <li>$50,000+ USD for ICU stay</li>
+      <li>Average senior travel claim: $40,000-100,000 USD</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout callout-danger">
+  <strong>Travel medical insurance is non-negotiable.</strong>
+  A helicopter evacuation from Yellowstone to Bozeman costs $20,000-50,000 USD alone. OHIP would cover about $400 of that. Without insurance, she'd be personally liable for the difference.
+</div>
+
+<h3>What the Policy Must Cover</h3>
+<ul style="margin:8px 0; padding-left:20px;">
+  <li><strong>Emergency medical treatment:</strong> Minimum $1,000,000 CAD (most good policies offer $2-5 million)</li>
+  <li><strong>Emergency medical evacuation / air ambulance:</strong> Included in medical coverage</li>
+  <li><strong>Repatriation to Canada:</strong> Transport home if medically necessary</li>
+  <li><strong>Pre-existing condition coverage:</strong> She's 80; she'll likely have some pre-existing conditions. The policy MUST cover these or it's nearly useless. Most policies require conditions to be "stable" for 90-180 days before departure.</li>
+  <li><strong>Trip cancellation / interruption:</strong> Covers non-refundable costs if she can't travel or must return early</li>
+  <li><strong>Direct billing:</strong> The insurer pays the hospital directly rather than making her pay $50,000 upfront and reimburse later</li>
+  <li><strong>24/7 emergency assistance helpline:</strong> For coordinating care, finding doctors, arranging evacuation</li>
+</ul>
+
+<h3>Recommended Providers for Canadian Seniors</h3>
+<table>
+  <tr><th>Provider</th><th>Why Consider</th><th>Pre-Existing Conditions</th><th>Est. Cost (21 days, age 80)</th></tr>
+  <tr>
+    <td><strong>Medipac</strong></td>
+    <td>Specializes in seniors/snowbirds. Endorsed by Canadian Snowbird Association. Up to $5M coverage.</td>
+    <td>Covers fully disclosed conditions with 90-day stability period</td>
+    <td>$700-1,500 CAD</td>
+  </tr>
+  <tr>
+    <td><strong>Manulife CoverMe</strong></td>
+    <td>Major insurer, up to $5M medical. Good claims reputation.</td>
+    <td>Stability period varies by plan (90 or 180 days)</td>
+    <td>$400-900 CAD</td>
+  </tr>
+  <tr>
+    <td><strong>Blue Cross (provincial)</strong></td>
+    <td>A+ BBB rating. Up to $5M medical. Strong Canadian network.</td>
+    <td>90-day stability for most plans</td>
+    <td>$500-1,000 CAD</td>
+  </tr>
+  <tr>
+    <td><strong>Allianz Global</strong></td>
+    <td>International insurer. Covers to age 84.</td>
+    <td>Varies by plan</td>
+    <td>$400-800 CAD</td>
+  </tr>
+  <tr>
+    <td><strong>TuGo</strong></td>
+    <td>Canadian-based. No upper age limit on some plans.</td>
+    <td>90-day stability period</td>
+    <td>$500-1,200 CAD</td>
+  </tr>
+</table>
+
+<div class="callout callout-success">
+  <strong>Action items:</strong>
+  <ol style="padding-left:16px; font-size:0.85rem; margin-top:4px;">
+    <li>Get quotes from at least Medipac + Manulife + Blue Cross (they're all online, takes 5 min each)</li>
+    <li>Verify the "stability period" matches her medical history (conditions must be stable for 90+ days before departure)</li>
+    <li>Buy within 14-21 days of booking the trip for best pre-existing condition coverage</li>
+    <li>Print the policy document, emergency phone number, and policy number. Keep copies in wallet, glove compartment, and phone.</li>
+  </ol>
+</div>
+
+<!-- ====================== SECTION 8: FIRST AID QUICK REFERENCE ====================== -->
+
+<h2>8. Quick-Reference Emergency Protocols</h2>
+
+<h3>If She Falls on a Trail</h3>
+<ol style="margin:8px 0; padding-left:20px; font-size:0.88rem;">
+  <li>Don't move her if she can't move on her own (possible fracture)</li>
+  <li>Check for head injury: confusion, unequal pupils, loss of consciousness</li>
+  <li>If she can stand: assess pain, swelling, range of motion</li>
+  <li>If she cannot stand: call park dispatch (numbers in Section 10) or 911. Stay with her. Keep her warm (space blanket). Rangers can bring a litter.</li>
+  <li>For ankle/knee injury: RICE (rest, ice, compress, elevate). Use ACE wrap from kit.</li>
+</ol>
+
+<h3>If She Shows Altitude Symptoms</h3>
+<ol style="margin:8px 0; padding-left:20px; font-size:0.88rem;">
+  <li>Check pulse oximeter. Below 88% SpO2 = descend.</li>
+  <li>Mild headache/nausea: rest, hydrate, ibuprofen. Monitor for 2 hours.</li>
+  <li>Getting worse (confusion, severe headache, vomiting): drive to lower elevation immediately.</li>
+  <li>From Grand Canyon: drive to Flagstaff or further to Sedona/Phoenix</li>
+  <li>From Yellowstone: exit toward Bozeman (north) or Jackson (south)</li>
+</ol>
+
+<h3>If She Shows Heat Illness Symptoms</h3>
+<ol style="margin:8px 0; padding-left:20px; font-size:0.88rem;">
+  <li>Get to shade or air-conditioned space immediately</li>
+  <li>If conscious: cool water, electrolytes, wet cloths on neck/wrists/forehead</li>
+  <li>Check temperature. Above 103 F = call 911</li>
+  <li>If confused, slurring speech, not sweating, or unconscious: call 911 immediately. Apply ice to neck, armpits, groin. Do NOT give fluids if unconscious.</li>
+</ol>
+
+<h3>If She Has Chest Pain</h3>
+<ol style="margin:8px 0; padding-left:20px; font-size:0.88rem;">
+  <li><strong>Call 911 immediately.</strong> Do not wait to see if it passes.</li>
+  <li>Have her sit upright and stay calm</li>
+  <li>If she takes nitroglycerin, help her take it as prescribed</li>
+  <li>Give aspirin (325mg, chewed) unless she's allergic or her doctor said not to</li>
+  <li>Be prepared to perform CPR if she loses consciousness</li>
+  <li>In national parks: call park dispatch, they may have closer response than county EMS</li>
+</ol>
+
+<!-- ====================== SECTION 9: ROADSIDE ASSISTANCE ====================== -->
+
+<h2>9. Roadside Assistance & Vehicle Prep</h2>
+
+<h3>AAA Membership</h3>
+<div class="callout callout-success">
+  <strong>Yes, get AAA Plus or Premier before this trip.</strong>
+  <ul style="margin-top:6px; padding-left:16px; font-size:0.85rem;">
+    <li><strong>AAA Plus ($100/yr):</strong> Towing up to 100 miles, lockout service, flat tire, fuel delivery, battery jump</li>
+    <li><strong>AAA Premier ($130/yr):</strong> Towing up to 200 miles. Worth it for this trip. West Yellowstone to Bozeman alone is 90 miles.</li>
+    <li>AAA arrives ~20 minutes faster than other services on average</li>
+    <li>Works across the US and Canada</li>
+    <li>Bonus: hotel/rental car discounts, free maps, TripTik routing</li>
+    <li>AAA roadside: <strong>1-800-222-4357</strong></li>
+  </ul>
+</div>
+
+<h3>Vehicle Prep Checklist</h3>
+<ul class="checklist">
+  <li>Full-size spare tire (not just a donut) and verify you can change it <span class="note">Remote areas may be 50+ miles from a tire shop</span></li>
+  <li>Jumper cables or portable jump starter</li>
+  <li>2 gallons extra water (for radiator AND drinking)</li>
+  <li>Phone charging cables + car charger + portable battery bank</li>
+  <li>Paper maps of Arizona, Utah, Wyoming, Montana <span class="note">Cell service fails in most national parks and remote highways</span></li>
+  <li>Download offline Google Maps for entire route <span class="essential">essential</span></li>
+  <li>Flashlight with extra batteries</li>
+  <li>Reflective triangles or road flares</li>
+  <li>Blanket (desert nights can be cold; mountain nights are cold)</li>
+  <li>Sunshade for windshield <span class="note">Essential for Phoenix/Page/Moab parking</span></li>
+</ul>
+
+<!-- ====================== SECTION 10: EMERGENCY CONTACTS ====================== -->
+
+<h2>10. Emergency Contacts</h2>
+
+<h3>Universal</h3>
+<div class="emergency-grid">
+  <div class="emergency-card">
+    <div class="label">US Emergency</div>
+    <div class="number">911</div>
+    <div class="context">Works everywhere with cell service. In parks, may route to county dispatch.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Poison Control</div>
+    <div class="number">1-800-222-1222</div>
+    <div class="context">24/7. For accidental ingestion, medication reactions.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">AAA Roadside</div>
+    <div class="number">1-800-222-4357</div>
+    <div class="context">24/7. Towing, flat tire, lockout, jump start, fuel.</div>
+  </div>
+</div>
+
+<h3>National Park Dispatch</h3>
+<div class="emergency-grid">
+  <div class="emergency-card">
+    <div class="label">Grand Canyon NP</div>
+    <div class="number">(928) 638-2477</div>
+    <div class="context">24hr dispatch. Use this INSTEAD of 911 inside the park.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Grand Teton NP</div>
+    <div class="number">(307) 739-3301</div>
+    <div class="context">Emergency dispatch. Covers Jenny Lake, Moose, Jackson Hole area.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Yellowstone NP</div>
+    <div class="number">(307) 344-7381</div>
+    <div class="context">Select prompt "0" for emergency. Covers entire park.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Glacier NP</div>
+    <div class="number">(406) 888-7800</div>
+    <div class="context">Communications center / dispatch.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Arches / Canyonlands NP</div>
+    <div class="number">(435) 719-2313</div>
+    <div class="context">SE Utah Group dispatch for both parks.</div>
+  </div>
+</div>
+
+<h3>Canadian Government Assistance</h3>
+<div class="emergency-grid">
+  <div class="emergency-card">
+    <div class="label">Emergency Watch (Ottawa) - 24/7</div>
+    <div class="number">1-888-949-9993</div>
+    <div class="context">Toll-free from US. For Canadians in distress abroad. Operates 24/7/365.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Canadian Consulate - Denver</div>
+    <div class="number">1-844-880-6519</div>
+    <div class="context">Covers Utah, Wyoming, Montana. 1625 Broadway, Suite 2600, Denver, CO 80202.</div>
+  </div>
+  <div class="emergency-card">
+    <div class="label">Canadian Consulate - Los Angeles</div>
+    <div class="number">1-844-880-6519</div>
+    <div class="context">Covers Arizona. 550 S Hope St, 9th Floor, Los Angeles, CA 90071.</div>
+  </div>
+</div>
+
+<h3>Travel Insurance (fill in after purchasing)</h3>
+<div class="emergency-grid">
+  <div class="emergency-card" style="border: 2px dashed var(--border);">
+    <div class="label">Insurance Provider: _______________</div>
+    <div class="number" style="font-size:0.95rem;">Policy #: _______________</div>
+    <div class="context">24/7 Emergency Line: _______________</div>
+    <div class="context" style="margin-top:4px;">Claims Email: _______________</div>
+  </div>
+</div>
+
+<!-- ====================== SECTION 11: DAY-BY-DAY RISK SUMMARY ====================== -->
+
+<h2>11. Day-by-Day Risk Summary</h2>
+
+<table>
+  <tr><th>Day</th><th>Date</th><th>Location</th><th>Heat Risk</th><th>Altitude Risk</th><th>Remoteness</th><th>Key Concern</th></tr>
+  <tr><td>1</td><td>May 15</td><td>Phoenix</td><td style="color:var(--danger); font-weight:600;">HIGH</td><td>None</td><td>None</td><td>Heat. Limit outdoor time.</td></tr>
+  <tr><td>2</td><td>May 16</td><td>Scottsdale/Sedona</td><td style="color:var(--danger); font-weight:600;">HIGH</td><td>Low</td><td>Low</td><td>Heat. Drive to Flagstaff by evening.</td></tr>
+  <tr><td>3</td><td>May 17</td><td>Grand Canyon</td><td>Low</td><td style="color:#ea580c; font-weight:600;">MOD</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>First full day at 7,000ft. Go slow.</td></tr>
+  <tr><td>4</td><td>May 18</td><td>Grand Canyon</td><td>Low</td><td>Low-Mod</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Better acclimatized. Clinic on South Rim.</td></tr>
+  <tr><td>5</td><td>May 19</td><td>Page, AZ</td><td style="color:#ea580c; font-weight:600;">MOD-HIGH</td><td>Low</td><td>Low</td><td>Heat at Horseshoe Bend. Go early AM.</td></tr>
+  <tr><td>6</td><td>May 20</td><td>Page / Monument Valley</td><td style="color:#ea580c; font-weight:600;">MOD-HIGH</td><td>Low</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Monument Valley is remote. Carry water.</td></tr>
+  <tr><td>7</td><td>May 21</td><td>Moab</td><td style="color:#ea580c; font-weight:600;">MOD-HIGH</td><td>Low</td><td>Low</td><td>Heat at Arches. Morning visits only.</td></tr>
+  <tr><td>8</td><td>May 22</td><td>Moab</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Low</td><td>Low</td><td>Canyonlands. Stay on paved viewpoints.</td></tr>
+  <tr><td>9</td><td>May 23</td><td>Salt Lake City</td><td>Low</td><td>None</td><td>None</td><td>Rest/recovery day. Stock up.</td></tr>
+  <tr><td>10</td><td>May 24</td><td>Jackson, WY</td><td>None</td><td>Low</td><td>Low</td><td>Good medical access. Rest day.</td></tr>
+  <tr><td>11</td><td>May 25</td><td>Grand Teton</td><td>None</td><td>Low-Mod</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Park is 30 min from Jackson hospital.</td></tr>
+  <tr><td>12</td><td>May 26</td><td>Yellowstone (south)</td><td>None</td><td style="color:#ea580c; font-weight:600;">MOD</td><td style="color:var(--danger); font-weight:600;">HIGH</td><td>7,700ft avg. Clinics only. Watch SpO2.</td></tr>
+  <tr><td>13</td><td>May 27</td><td>Yellowstone (central)</td><td>None</td><td style="color:#ea580c; font-weight:600;">MOD</td><td style="color:var(--danger); font-weight:600;">HIGH</td><td>Most remote day. Know nearest clinic.</td></tr>
+  <tr><td>14</td><td>May 28</td><td>Yellowstone → W. Yellowstone</td><td>None</td><td>Low-Mod</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Leaving high altitude. Should feel better.</td></tr>
+  <tr><td>15</td><td>May 29</td><td>Bozeman</td><td>None</td><td>None</td><td>None</td><td>City with full hospital. Rest/stock up.</td></tr>
+  <tr><td>16</td><td>May 30</td><td>Drive to Columbia Falls</td><td>None</td><td>None</td><td>Low</td><td>Long drive. Stretch breaks every 90 min.</td></tr>
+  <tr><td>17-19</td><td>May 31 - Jun 2</td><td>Glacier NP</td><td>None</td><td>None</td><td style="color:#ea580c; font-weight:600;">MOD</td><td>Low altitude. Clinic at West Glacier. Kalispell 20 min.</td></tr>
+  <tr><td>20-21</td><td>Jun 3-4</td><td>Missoula</td><td>None</td><td>None</td><td>None</td><td>City with full hospital. Departure.</td></tr>
+</table>
+
+<!-- ====================== SECTION 12: PRE-TRIP SUPPLY SHOPPING LIST ====================== -->
+
+<h2>12. Pre-Trip Shopping List (Order 2+ Weeks Before)</h2>
+
+<h3>Amazon / Online Orders</h3>
+<ul class="checklist">
+  <li>Pulse oximeter (fingertip, e.g., Zacurate or Innovo) <span class="note">~$20-30 CAD</span></li>
+  <li>Digital blood pressure cuff, wrist-style (Omron) <span class="note">~$40-60 CAD</span></li>
+  <li>FRIO Insulin Cooling Wallet (for medication storage in heat) <span class="note">~$25 CAD</span></li>
+  <li>Electrolyte packets x 30 (Liquid IV or Nuun tablets) <span class="note">~$25-35 CAD</span></li>
+  <li>First aid kit base (Adventure Medical Kits or REI brand) <span class="note">~$35-50 CAD</span></li>
+  <li>Portable jump starter / battery bank combo <span class="note">~$60-80 CAD</span></li>
+  <li>Windshield sunshade (for desert parking) <span class="note">~$15 CAD</span></li>
+  <li>Cooling neck towel/bandana <span class="note">~$10-15 CAD</span></li>
+</ul>
+
+<h3>At the Pharmacy (Before Departure)</h3>
+<ul class="checklist">
+  <li>30-day supply of all prescriptions</li>
+  <li>Digital thermometer</li>
+  <li>Sunscreen SPF 50+ (face and body)</li>
+  <li>After-sun aloe vera gel</li>
+  <li>Ibuprofen (for altitude headaches)</li>
+  <li>Acetaminophen</li>
+  <li>Antacids</li>
+  <li>Anti-diarrhea medication (Imodium)</li>
+  <li>Insect repellent with DEET</li>
+  <li>Lip balm with SPF</li>
+</ul>
+
+<h3>Estimated Total for Medical/Emergency Prep</h3>
+<table>
+  <tr><th>Category</th><th>Estimated Cost</th></tr>
+  <tr><td>Monitoring equipment (pulse ox, BP cuff, thermometer)</td><td>$80-110 CAD</td></tr>
+  <tr><td>First aid kit + supplements</td><td>$60-80 CAD</td></tr>
+  <tr><td>Cooling/hydration supplies</td><td>$50-70 CAD</td></tr>
+  <tr><td>Travel medical insurance (21 days, age 80)</td><td>$500-1,500 CAD</td></tr>
+  <tr><td>AAA Premier membership</td><td>~$130 USD</td></tr>
+  <tr style="font-weight:700; background:#f5f5f4;"><td>Total</td><td>$820-1,890 CAD</td></tr>
+</table>
+
+<div class="callout callout-info" style="margin-top:24px;">
+  <strong>Final note:</strong> This guide covers preparation for unlikely-but-serious scenarios. The trip itinerary is well-designed for an active 80-year-old: it alternates between cities with full medical access and more remote parks, the altitude is moderate (not extreme), and the gradual north-from-Phoenix route means the hottest days come first while the most remote days come later when you've settled into a routine. The biggest single action item is travel medical insurance. Everything else is responsible preparation.
+</div>
+
+<p style="text-align:center; color:var(--muted); margin-top:32px; font-size:0.78rem;">
+  Last updated: March 2026 &middot; Verify phone numbers before departure &middot; Print this document
+</p>
+
+</body>
+</html>
