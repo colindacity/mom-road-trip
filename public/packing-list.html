@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing List — Southwest to Glacier Road Trip (May 15 – Jun 4, 2026)</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --text: #1c1917;
+      --muted: #78716c;
+      --border: #d6d3d1;
+      --accent: #b45309;
+      --accent-bg: #fef3c7;
+      --check: #16a34a;
+      --danger: #dc2626;
+      --info-bg: #eff6ff;
+      --info-border: #3b82f6;
+      --warn-bg: #fefce8;
+      --warn-border: #ca8a04;
+      --section-desert: #fef2f2;
+      --section-mountain: #f0fdf4;
+      --section-medical: #faf5ff;
+      --section-gear: #f0f9ff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 28px 0 8px;
+      padding: 6px 10px;
+      background: var(--accent-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+    }
+    h3 {
+      font-size: 0.95rem;
+      margin: 16px 0 6px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .callout {
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .callout-info { background: var(--info-bg); border-left: 3px solid var(--info-border); }
+    .callout-warn { background: var(--warn-bg); border-left: 3px solid var(--warn-border); }
+    .callout-danger { background: #fef2f2; border-left: 3px solid var(--danger); }
+    .callout strong { display: block; margin-bottom: 2px; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 3px 0 3px 28px;
+      position: relative;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f5f5f4;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+    }
+    .checklist li .qty {
+      display: inline-block;
+      background: #e7e5e4;
+      color: var(--text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0 5px;
+      border-radius: 3px;
+      margin-right: 4px;
+      min-width: 20px;
+      text-align: center;
+    }
+    .checklist li .note {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .checklist li .essential {
+      color: var(--danger);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    .climate-zones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .zone {
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+    .zone-desert { background: #fef2f2; border: 1px solid #fecaca; }
+    .zone-mid { background: #fef9c3; border: 1px solid #fde68a; }
+    .zone-mountain { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .zone-cold { background: #eff6ff; border: 1px solid #bfdbfe; }
+    .zone strong { display: block; margin-bottom: 2px; }
+    .zone .temp { font-weight: 600; }
+
+    .laundry-schedule {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 10px 0;
+    }
+    .laundry-schedule th {
+      text-align: left;
+      padding: 6px 10px;
+      background: #f5f5f4;
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+    }
+    .laundry-schedule td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f5f5f4;
+      vertical-align: top;
+    }
+    .laundry-schedule tr:hover td { background: #fafaf9; }
+
+    .do-not-pack {
+      background: #fef2f2;
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid #fecaca;
+    }
+    .do-not-pack li { color: #991b1b; }
+    .do-not-pack li .note { color: #b91c1c; }
+
+    .bear-info {
+      background: #faf5ff;
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid #e9d5ff;
+      margin: 12px 0;
+      font-size: 0.88rem;
+    }
+
+    .sources {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .sources a { color: var(--info-border); }
+    .sources ul { padding-left: 18px; }
+    .sources li { margin-bottom: 3px; }
+
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      h1 { font-size: 1.25rem; }
+      .climate-zones { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media print {
+      .checklist li::before { border-color: #000; }
+      .callout, .zone, .do-not-pack, .bear-info { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Packing List: Southwest to Glacier Road Trip</h1>
+<p class="subtitle">21 days (May 15 – Jun 4, 2026) &middot; Phoenix → Grand Canyon → Page → Moab → SLC → Jackson → Yellowstone → Glacier → Missoula &middot; 2 travelers, 1 compact SUV</p>
+
+<!-- ============================================================ -->
+<!-- CLIMATE OVERVIEW -->
+<!-- ============================================================ -->
+
+<h2>Climate Zones You'll Cross</h2>
+<div class="climate-zones">
+  <div class="zone zone-desert">
+    <strong>Low Desert (Days 1)</strong>
+    Phoenix: <span class="temp">100F / 73F</span><br>
+    Blazing sun, bone-dry air
+  </div>
+  <div class="zone zone-mid">
+    <strong>High Desert (Days 2-9)</strong>
+    Grand Canyon, Page, Moab: <span class="temp">78-90F / 45-60F</span><br>
+    Hot days, cool nights, intense UV
+  </div>
+  <div class="zone zone-mountain">
+    <strong>Mountain (Days 10-15)</strong>
+    Jackson, Teton, Yellowstone: <span class="temp">60-70F / 30-40F</span><br>
+    Afternoon storms, cold mornings
+  </div>
+  <div class="zone zone-cold">
+    <strong>Northern Rockies (Days 16-21)</strong>
+    Glacier NP: <span class="temp">55-65F / 35-42F</span><br>
+    Rain, possible snow, wind
+  </div>
+</div>
+
+<div class="callout callout-info">
+  <strong>Layering is everything.</strong>
+  You'll experience a 62-degree temperature swing (38F mountain nights to 100F Phoenix). Pack a versatile layering system instead of bulky single-purpose items. Everything below is sized for doing laundry every 5-6 days.
+</div>
+
+<!-- ============================================================ -->
+<!-- LAUNDRY PLAN -->
+<!-- ============================================================ -->
+
+<h2>Laundry Plan (Every 5-6 Days)</h2>
+
+<table class="laundry-schedule">
+  <thead>
+    <tr><th>When</th><th>Where</th><th>Options</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Day 6-8<br>(May 20-22)</td>
+      <td><strong>Moab, UT</strong></td>
+      <td><strong>Moab Laundry Express</strong> — 24/7, two locations on Main St, credit cards accepted, free WiFi. Or <strong>Canyonlands Laundromat</strong> at 555 N Main St (7am-9pm, quarters only).</td>
+    </tr>
+    <tr>
+      <td>Day 10-12<br>(May 24-26)</td>
+      <td><strong>Jackson, WY</strong></td>
+      <td><strong>Jackson Laundromat</strong> — 850 W Broadway, 8am-10pm, 32 washers, credit cards accepted, wash-and-fold drop-off available. Or <strong>Missing Sock</strong> at 1405 Hwy 89 (7am-10pm, coins only).</td>
+    </tr>
+    <tr>
+      <td>Day 17-19<br>(May 31 – Jun 2)</td>
+      <td><strong>Columbia Falls / Whitefish, MT</strong></td>
+      <td><strong>Falls Coin Wash</strong> in Columbia Falls. <strong>Tumble Laundry</strong> in Kalispell (card/app, modern machines). Many Airbnbs in the area have washers. Or use coin laundry at West Glacier Village.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-info">
+  <strong>Tip:</strong> If you book Airbnbs with in-unit washers in Moab (Day 6-8) and Columbia Falls (Day 16-20), you only need one laundromat stop in Jackson. Search Airbnb with the "washer" filter.
+</div>
+
+<!-- ============================================================ -->
+<!-- CLOTHING -->
+<!-- ============================================================ -->
+
+<h2>Clothing (Per Person)</h2>
+
+<h3>Base Layers &amp; Tops</h3>
+<ul class="checklist">
+  <li><span class="qty">4</span> Lightweight moisture-wicking t-shirts <span class="note">— synthetic or merino, NOT cotton. Light colors for desert.</span></li>
+  <li><span class="qty">2</span> Long-sleeve sun shirts (UPF 50+) <span class="note">— double as base layers. Wear in desert to block UV.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Lightweight merino or synthetic base layer top <span class="note">— for Yellowstone/Glacier mornings (38-45F)</span></li>
+  <li><span class="qty">1</span> Lightweight base layer bottoms <span class="note">— wear under pants on cold Glacier mornings</span></li>
+</ul>
+
+<h3>Mid Layers</h3>
+<ul class="checklist">
+  <li><span class="qty">1</span> Fleece jacket or pullover (midweight) <span class="note">— primary warmth layer for mountains. Patagonia Better Sweater or similar.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Lightweight down or synthetic puffy jacket <span class="note">— packs small, critical for Glacier evenings and 38F mornings</span> <span class="essential">essential</span></li>
+</ul>
+
+<h3>Outer Layers</h3>
+<ul class="checklist">
+  <li><span class="qty">1</span> Waterproof rain jacket with hood <span class="note">— Glacier gets rain/snow in late May. Also wind layer. Gore-Tex or similar.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Lightweight wind jacket <span class="note">— optional if rain jacket is light enough. Useful for Grand Canyon rim breezes.</span></li>
+</ul>
+
+<h3>Bottoms</h3>
+<ul class="checklist">
+  <li><span class="qty">2</span> Lightweight hiking pants <span class="note">— convertible zip-offs work great for desert-to-mountain flexibility</span></li>
+  <li><span class="qty">2</span> Comfortable travel pants or leggings <span class="note">— for driving days and casual wear</span></li>
+  <li><span class="qty">1</span> Shorts <span class="note">— for Phoenix and hot Moab days</span></li>
+  <li><span class="qty">1</span> Comfortable sleep pants</li>
+</ul>
+
+<h3>Underwear &amp; Socks</h3>
+<ul class="checklist">
+  <li><span class="qty">6</span> Underwear <span class="note">— moisture-wicking synthetic or merino. 6 gets you to each laundry stop.</span></li>
+  <li><span class="qty">4</span> Hiking socks (wool blend) <span class="note">— merino wool regulates temp from desert to mountains, dries fast</span></li>
+  <li><span class="qty">2</span> Lightweight liner socks <span class="note">— optional, for blister prevention on hikes</span></li>
+  <li><span class="qty">1</span> Warm socks for sleeping <span class="note">— for cold mountain nights</span></li>
+</ul>
+
+<h3>Accessories</h3>
+<ul class="checklist">
+  <li><span class="qty">1</span> Wide-brim sun hat (UPF rated) <span class="note">— non-negotiable for desert. Full brim protects ears and neck.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Warm beanie or knit hat <span class="note">— Yellowstone/Glacier mornings</span></li>
+  <li><span class="qty">1</span> Lightweight gloves <span class="note">— for 38F mornings at Old Faithful or Glacier. Thin fleece is fine.</span></li>
+  <li><span class="qty">1</span> Buff/neck gaiter <span class="note">— sun protection in desert, warmth in mountains, dust filter on trails</span></li>
+  <li><span class="qty">1</span> Sunglasses (polarized, UV400) <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Sunglasses retainer strap <span class="note">— wind at overlooks</span></li>
+  <li><span class="qty">1</span> Light scarf or shawl (Mom) <span class="note">— restaurant AC, drafty evenings</span></li>
+</ul>
+
+<h3>Sleepwear &amp; Extras</h3>
+<ul class="checklist">
+  <li><span class="qty">1</span> Pajama set or comfortable sleepwear</li>
+  <li><span class="qty">1</span> Swimsuit <span class="note">— hotel pools in Phoenix, possibly SLC and Jackson</span></li>
+  <li><span class="qty">1</span> Nice casual outfit <span class="note">— for Jackson Town Square dinner or nicer restaurants</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- FOOTWEAR -->
+<!-- ============================================================ -->
+
+<h2>Footwear</h2>
+
+<ul class="checklist">
+  <li><span class="qty">1</span> Supportive hiking shoes or trail runners <span class="note">— broken-in, ankle support preferred for uneven terrain. This is the #1 item for Mom's comfort and safety.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Comfortable walking shoes or sneakers <span class="note">— for driving days, town exploring, restaurants</span></li>
+  <li><span class="qty">1</span> Sandals or flip-flops <span class="note">— hotel rooms, pool, letting hiking shoes air out</span></li>
+</ul>
+
+<div class="callout callout-warn">
+  <strong>Mom's footwear note:</strong> Trails at Horseshoe Bend, Delicate Arch viewpoint, and Avalanche Lake have loose gravel and uneven surfaces. Sturdy, well-broken-in shoes with good tread are critical. Break them in 2-3 weeks before the trip, not during it.
+</div>
+
+<!-- ============================================================ -->
+<!-- HEALTH & MEDICAL -->
+<!-- ============================================================ -->
+
+<h2>Health &amp; Medical</h2>
+
+<h3>Prescription Medications (Mom)</h3>
+<ul class="checklist">
+  <li>All current prescription medications <span class="note">— 25-day supply minimum (21 days + buffer). Keep in original labeled bottles.</span> <span class="essential">essential</span></li>
+  <li>Copies of all prescriptions <span class="note">— paper copy + photos on phone. Include doctor's name and phone.</span></li>
+  <li>Ask doctor about acetazolamide (Diamox) <span class="note">— for altitude sickness prevention. Start 1-2 days before reaching 7,000ft+ (Grand Canyon, Day 2). Especially important for 80-year-old at altitude.</span></li>
+  <li>List of all medications, allergies, and conditions <span class="note">— laminated card in wallet + copy in glove box</span></li>
+</ul>
+
+<div class="callout callout-danger">
+  <strong>Altitude warning for Mom.</strong> Grand Canyon rim (7,000ft), Yellowstone (7,500ft), and Teton (6,200ft) are genuine altitude. Symptoms: headache, nausea, fatigue, shortness of breath. The CDC recommends people with heart/lung conditions consult their doctor before traveling above 8,000ft. Allow extra rest days and avoid alcohol for the first 48 hours at each new elevation. Hydrate aggressively — at least 3-4 liters of water per day at altitude.
+</div>
+
+<h3>First Aid &amp; OTC Medications</h3>
+<ul class="checklist">
+  <li>Pain relievers (acetaminophen AND ibuprofen) <span class="note">— ibuprofen also helps with altitude headaches</span></li>
+  <li>Antacid tablets (Tums or Pepto)</li>
+  <li>Anti-diarrhea medication (Imodium)</li>
+  <li>Antihistamine (Benadryl or Zyrtec) <span class="note">— allergies + helps with sleep</span></li>
+  <li>Hydrocortisone cream (1%) <span class="note">— bug bites, rashes</span></li>
+  <li>Antibiotic ointment (Neosporin)</li>
+  <li>Adhesive bandages (assorted sizes)</li>
+  <li>Moleskin <span class="note">— for blisters. Apply at the first sign of a hot spot.</span></li>
+  <li>Medical tape and gauze pads</li>
+  <li>Tweezers <span class="note">— splinters, cactus spines (real concern in Arizona)</span></li>
+  <li>Nail clippers</li>
+  <li>Small scissors</li>
+</ul>
+
+<h3>Sun &amp; Heat Protection</h3>
+<ul class="checklist">
+  <li><span class="qty">2</span> Sunscreen SPF 50+ (mineral, broad-spectrum) <span class="note">— apply every 2 hours. Arizona UV index regularly hits "extreme." Bring two bottles for 21 days.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">2</span> SPF lip balm (SPF 30+) <span class="note">— lips burn fast at altitude and in desert wind</span></li>
+  <li>Aloe vera gel (small bottle) <span class="note">— for sunburn. Buy in Phoenix if you forget.</span></li>
+  <li>Electrolyte packets or tablets (Nuun, Liquid IV, etc.) <span class="note">— pack 30+. Critical in desert heat and at altitude. Both cause faster dehydration.</span> <span class="essential">essential</span></li>
+  <li>Cooling towel <span class="note">— wet and drape around neck in Phoenix/Moab heat</span></li>
+  <li>Portable spray bottle or mister <span class="note">— quick cool-down for Mom in desert stops</span></li>
+</ul>
+
+<div class="callout callout-warn">
+  <strong>Heat safety rules for the desert days (Days 1-9):</strong> Hike before 10am or after 4pm only. Drink 1 liter of water per hour when active outdoors. When you've finished half your water, turn around. Watch Mom for confusion, dizziness, stopping sweating (heat stroke warning signs). If in doubt, get to AC immediately.
+</div>
+
+<h3>Altitude &amp; Cold Protection</h3>
+<ul class="checklist">
+  <li>Hand warmers (4-6 pairs) <span class="note">— for Yellowstone/Glacier early mornings. Cheap insurance.</span></li>
+  <li>Vaseline or Aquaphor <span class="note">— dry mountain air cracks skin and lips</span></li>
+  <li>Saline nasal spray <span class="note">— altitude + desert = dry nasal passages. Prevents nosebleeds.</span></li>
+  <li>Eye drops (artificial tears) <span class="note">— dry air irritates eyes, especially for seniors</span></li>
+</ul>
+
+<h3>Mom-Specific Medical Items</h3>
+<ul class="checklist">
+  <li>Collapsible walking stick or trekking pole <span class="note">— invaluable for stability on uneven trail surfaces. Can check one in luggage or buy at REI/Walmart in Phoenix.</span></li>
+  <li>Knee brace or support sleeve <span class="note">— if she has any knee issues, trails have uneven terrain</span></li>
+  <li>Compression socks <span class="note">— for flights and long driving days. Reduces swelling and DVT risk.</span></li>
+  <li>Small cushion or lumbar support <span class="note">— for long drives (4+ hours some days)</span></li>
+  <li>Medicare/insurance card + travel insurance docs <span class="essential">essential</span></li>
+  <li>Medical alert info <span class="note">— ICE contact in phone, written card in purse</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- ELECTRONICS -->
+<!-- ============================================================ -->
+
+<h2>Electronics</h2>
+
+<ul class="checklist">
+  <li>Phone + charger <span class="essential">essential</span></li>
+  <li>Car phone mount <span class="note">— for navigation. Essential on unfamiliar mountain roads.</span></li>
+  <li>Car charger (dual USB) <span class="note">— keep both phones charged during drives</span></li>
+  <li>Portable battery pack (10,000+ mAh) <span class="note">— no outlets on trails. Charge phones on long hike days.</span></li>
+  <li>Camera + charger/extra battery <span class="note">— if beyond phone camera. Cold drains batteries faster.</span></li>
+  <li>Earbuds or headphones <span class="note">— audiobooks/podcasts for driving days</span></li>
+  <li>Small flashlight or headlamp <span class="note">— for early morning starts, walking to car at night, power outages in remote areas</span></li>
+  <li>Multi-port USB wall charger <span class="note">— one charger block for everything. Hotels often have limited outlets.</span></li>
+  <li>Download offline maps before leaving <span class="note">— Google Maps offline for: Page AZ, Monument Valley, Moab, Teton area, Yellowstone, Glacier. Cell service is spotty to nonexistent in parks.</span> <span class="essential">essential</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- DOCUMENTS & MONEY -->
+<!-- ============================================================ -->
+
+<h2>Documents &amp; Money</h2>
+
+<ul class="checklist">
+  <li>Driver's license <span class="essential">essential</span></li>
+  <li>Passport (Mom — Canadian citizen crossing no borders, but carry for airline ID) <span class="essential">essential</span></li>
+  <li>America the Beautiful Annual Pass ($80) <span class="note">— covers all 6 national parks. One pass covers the whole car. Pays for itself after 2 parks ($35 each). Buy at first park entrance or <a href="https://store.usgs.gov/pass/index.html">online</a>.</span> <span class="essential">essential</span></li>
+  <li>Car rental confirmation</li>
+  <li>Hotel/Airbnb confirmations <span class="note">— print backup copies. Cell service unreliable in parks.</span></li>
+  <li>Flight confirmations (print copies for Mom)</li>
+  <li>Travel insurance policy <span class="note">— strongly recommended for 80-year-old. Confirm it covers: trip interruption, medical evacuation, pre-existing conditions.</span></li>
+  <li>Health insurance cards (both travelers)</li>
+  <li>Credit cards (2 different cards) <span class="note">— some small-town gas stations or laundromats are cash-only</span></li>
+  <li>Cash ($200-300) <span class="note">— for tips, laundromats (quarters!), small-town vendors, Navajo Nation vendors at Monument Valley</span></li>
+  <li>Roll of quarters ($10 worth) <span class="note">— some laundromats are quarters-only</span></li>
+  <li>Emergency contacts list (printed) <span class="note">— doctor, insurance, embassy (Mom), roadside assistance, family</span></li>
+  <li>Antelope Canyon tour reservation <span class="note">— must be pre-booked with Navajo tour operator</span></li>
+  <li>Arches NP timed entry reservation <span class="note">— required Apr-Oct. Book at recreation.gov.</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- HIKING & OUTDOOR GEAR -->
+<!-- ============================================================ -->
+
+<h2>Hiking &amp; Outdoor Gear</h2>
+
+<h3>Hydration &amp; Nutrition</h3>
+<ul class="checklist">
+  <li><span class="qty">2</span> Reusable water bottles (32oz each, per person) <span class="note">— insulated keeps water cold in desert. National parks have refill stations.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Small hydration bladder or extra bottle for longer hikes <span class="note">— Avalanche Lake trail (Glacier) is 3.5mi each way</span></li>
+  <li>Trail snacks <span class="note">— nuts, dried fruit, granola bars, jerky. Buy in bulk at Phoenix Costco on Day 1.</span></li>
+  <li>Electrolyte packets <span class="note">— listed in medical but worth repeating. Carry on every hike.</span></li>
+</ul>
+
+<h3>Day Pack</h3>
+<ul class="checklist">
+  <li><span class="qty">1</span> Lightweight daypack (20-25L) <span class="note">— carries water, snacks, layers, first aid, sunscreen for all hikes</span> <span class="essential">essential</span></li>
+  <li><span class="qty">1</span> Packable rain cover for daypack <span class="note">— or use a trash bag liner for Glacier rain days</span></li>
+</ul>
+
+<h3>Bear Safety (Days 10-21: Teton, Yellowstone, Glacier)</h3>
+
+<div class="bear-info">
+  <strong>Bear spray is mandatory gear in grizzly country.</strong> Both grizzly and black bears are active in Grand Teton, Yellowstone, and Glacier during late May and June. The NPS recommends every hiker carry bear spray.
+
+  <p style="margin-top: 8px;"><strong>You cannot fly with bear spray.</strong> TSA prohibits it in both carry-on and checked luggage. Buy or rent upon arrival in the region.</p>
+
+  <p style="margin-top: 8px;"><strong>Where to get it:</strong></p>
+  <ul style="margin: 6px 0 0 18px; font-size: 0.85rem;">
+    <li><strong>Jackson, WY (Day 10):</strong> <a href="https://bearaware.com/locations/">Bear Aware</a> at 565 N Cache St. Rental: $16/2 days, max $28. Or buy at any outdoor shop in Jackson ($40-60).</li>
+    <li><strong>Yellowstone:</strong> Bear Aware kiosks at Canyon Village and Old Faithful.</li>
+    <li><strong>Glacier area (Day 16):</strong> <a href="https://bearsprayshack.com/">Bear Spray Shack</a> 24hr kiosks in Whitefish, Columbia Falls, East Glacier. Rentals from $10. Or <a href="https://www.goglacieroutfitters.com/bear-spray-rental-glacier-national-park/">Glacier Outfitters</a> in West Glacier.</li>
+  </ul>
+
+  <p style="margin-top: 8px;"><strong>Recommended plan:</strong> Rent one canister each in Jackson on Day 10. Return at a Yellowstone drop-off. Rent again in Columbia Falls for Glacier days. Total cost: ~$50-60 for both rentals vs. $80-120 to buy two cans you can't take home.</p>
+</div>
+
+<ul class="checklist">
+  <li><span class="qty">2</span> Bear spray canisters <span class="note">— one per person, rent/buy locally (see above). Practice with demo canister.</span> <span class="essential">essential</span></li>
+  <li><span class="qty">2</span> Bear spray holsters <span class="note">— usually included with rental. Must be accessible on hip, NOT buried in pack.</span></li>
+  <li>Bear bell <span class="note">— optional, some hikers clip one to their pack. Making noise is the real prevention.</span></li>
+</ul>
+
+<h3>Other Hiking Gear</h3>
+<ul class="checklist">
+  <li>Trekking poles (1-2 collapsible) <span class="note">— huge help for Mom's stability. Can rent in Jackson or buy telescoping poles at Walmart/REI.</span></li>
+  <li>Binoculars <span class="note">— wildlife viewing in Teton (moose, bison), Yellowstone (wolves, bears, elk), Glacier</span></li>
+  <li>Small sit pad or foldable seat <span class="note">— for rest stops on trails and cold/wet benches at overlooks. Mom will appreciate this.</span></li>
+  <li>Gaiters (lightweight) <span class="note">— optional, keeps trail dust and pebbles out of shoes</span></li>
+  <li>Insect repellent <span class="note">— mosquitoes emerge in late May/June near water. Yellowstone and Glacier can be buggy.</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- CAR SUPPLIES -->
+<!-- ============================================================ -->
+
+<h2>Car &amp; Road Trip Supplies</h2>
+
+<ul class="checklist">
+  <li>Windshield sun shade <span class="note">— Phoenix and Moab will cook the car interior. $10 at any gas station.</span></li>
+  <li>Paper towels roll + wet wipes</li>
+  <li>Trash bags (small kitchen bags)</li>
+  <li>Cooler bag (soft-sided, collapsible) <span class="note">— for drinks, snacks, and picnic lunches. Buy ice at gas stations. Saves money vs. eating out every meal.</span></li>
+  <li>Reusable grocery bags <span class="note">— for groceries and laundry hauling</span></li>
+  <li>Blanket (lightweight) <span class="note">— picnics, extra warmth, napping in the car</span></li>
+  <li>Microfiber towel <span class="note">— dries fast, multi-use. Wipe sweat, clean up spills, impromptu picnic mat.</span></li>
+  <li>Tire pressure gauge <span class="note">— altitude changes affect tire pressure. Check when moving between desert and mountains.</span></li>
+  <li>Jumper cables or portable jump starter <span class="note">— rental car, but check it has one. Remote areas have limited AAA response.</span></li>
+  <li>Windshield washer fluid top-off <span class="note">— bugs on desert highways are relentless</span></li>
+  <li>Paper maps of national parks <span class="note">— free at visitor centers. Don't rely on phone in parks with no signal.</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- TOILETRIES -->
+<!-- ============================================================ -->
+
+<h2>Toiletries &amp; Personal Care</h2>
+
+<ul class="checklist">
+  <li>Toothbrush + toothpaste</li>
+  <li>Deodorant</li>
+  <li>Shampoo + conditioner <span class="note">— travel sizes or decanted. Hotels provide these but Airbnbs may not.</span></li>
+  <li>Body wash or soap</li>
+  <li>Face wash + moisturizer with SPF <span class="note">— desert air and altitude destroy skin hydration</span></li>
+  <li>Heavy moisturizer or lotion <span class="note">— apply at night. Cracking knuckles and dry patches are common.</span></li>
+  <li>Razor</li>
+  <li>Comb or brush</li>
+  <li>Tissues (travel packs, 4-5) <span class="note">— some trail toilets are out of TP</span></li>
+  <li>Hand sanitizer <span class="note">— trailhead restrooms are not always well-stocked</span></li>
+  <li>Laundry detergent pods (10-12) <span class="note">— cheaper than buying at the laundromat. Zip-lock bag them.</span></li>
+  <li>Dryer sheets (small pack)</li>
+  <li>Stain remover pen (Tide-to-Go)</li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- MISCELLANEOUS -->
+<!-- ============================================================ -->
+
+<h2>Miscellaneous</h2>
+
+<ul class="checklist">
+  <li>Zip-lock bags (assorted sizes) <span class="note">— wet clothes, dirty laundry, organize small items, protect phone from rain</span></li>
+  <li>Packing cubes <span class="note">— sanity saver when living out of bags for 21 days. One for clean, one for dirty.</span></li>
+  <li>Carabiners (2-3) <span class="note">— clip water bottles, hats, shoes to daypack</span></li>
+  <li>Duct tape (small roll or wrap some around a water bottle) <span class="note">— fixes everything</span></li>
+  <li>Notebook + pen <span class="note">— Mom may enjoy journaling the trip</span></li>
+  <li>Playing cards or small travel game <span class="note">— for hotel evenings</span></li>
+  <li>Book or e-reader <span class="note">— for rest days and before bed</span></li>
+  <li>Dry bag or large zip-lock for phone <span class="note">— Horseshoe Bend, boat tours, rain in Glacier</span></li>
+  <li>Collapsible water bowl (if applicable) <span class="note">— skip if no dog</span></li>
+  <li>Small travel umbrella <span class="note">— for Glacier rain days and Sun Road stops where you can't always hike to shelter</span></li>
+  <li>Earplugs + eye mask <span class="note">— sunrise is early (5:30am) in June, thin hotel curtains</span></li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- DO NOT PACK -->
+<!-- ============================================================ -->
+
+<h2>What NOT to Pack</h2>
+
+<div class="do-not-pack">
+  <ul class="checklist">
+    <li>Cotton t-shirts for hiking <span class="note">— cotton holds sweat, chafes, takes forever to dry. "Cotton kills" is the hiking mantra.</span></li>
+    <li>Jeans <span class="note">— heavy, slow to dry, uncomfortable for hiking and long drives. Bring hiking pants and travel pants instead.</span></li>
+    <li>More than 3 pairs of shoes <span class="note">— shoes eat car space fast. Three pairs (hike, walk, sandal) is the maximum.</span></li>
+    <li>Heavy coat or winter parka <span class="note">— layering system (base + fleece + puffy + rain shell) handles everything down to 30F without a bulky coat.</span></li>
+    <li>Full-size towels <span class="note">— hotels and Airbnbs provide them. A packable microfiber towel covers trail needs.</span></li>
+    <li>Bear spray from home <span class="note">— cannot fly with it (TSA bans from carry-on AND checked bags). Rent locally.</span></li>
+    <li>Excessive electronics (tablets, laptops, drones) <span class="note">— drones are banned in all national parks. Keep it simple.</span></li>
+    <li>Too many books <span class="note">— one book or an e-reader. You'll be too tired from the day to read much.</span></li>
+    <li>Formal clothes <span class="note">— Jackson is the fanciest stop and it's still casual-Western. No restaurant requires more than clean pants and a nice top.</span></li>
+    <li>More than 6 days of clothing <span class="note">— you're doing laundry every 5-6 days. Overpacking clothing is the #1 road trip mistake. A compact SUV with 2 travelers needs trunk space for cooler, daypack, and groceries.</span></li>
+    <li>Glass water bottles <span class="note">— weight, breakage risk. Use insulated stainless steel.</span></li>
+    <li>White clothing for trail days <span class="note">— red desert dust stains everything. Stick to earth tones and dark colors for hiking.</span></li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- GOING-TO-THE-SUN ROAD NOTE -->
+<!-- ============================================================ -->
+
+<h2>Special Notes</h2>
+
+<div class="callout callout-warn">
+  <strong>Glacier NP / Going-to-the-Sun Road (Days 16-20).</strong>
+  The full road typically doesn't open until mid-to-late June. In late May/early June, expect the road to be open only from West Glacier to Avalanche Creek (about 16 miles in). Logan Pass will almost certainly still be closed. This is still spectacular — Lake McDonald and Avalanche Lake are stunning. But pack for rain, possible snow flurries, and temperatures in the 40s-50s at trail elevation. This is the coldest segment of the trip.
+</div>
+
+<div class="callout callout-info">
+  <strong>Mom's airport wheelchair assistance.</strong>
+  Request wheelchair/mobility assistance at least 48 hours before each flight: YYZ→PHX outbound, MSO→connecting hub→YYZ return. Tip the wheelchair attendants $5-10 each. Confirm with airline on both outbound and return.
+</div>
+
+<div class="callout callout-info">
+  <strong>Packing strategy: two-bag system.</strong>
+  For a 21-day trip, use one medium rolling suitcase (checked) + one personal daypack (carry-on). Keep one change of clothes, medications, and documents in the carry-on in case checked bags are delayed. In the car, keep an easily accessible "day bag" with sunscreen, water, snacks, layers, and first aid that goes on every outing.
+</div>
+
+<!-- ============================================================ -->
+<!-- FIRST-DAY SHOPPING LIST -->
+<!-- ============================================================ -->
+
+<h2>Buy in Phoenix on Day 1</h2>
+
+<div class="callout callout-info">
+  <strong>Stock up at a Phoenix Costco, Walmart, or Target after landing.</strong> These items are cheaper to buy locally than to pack or ship:
+</div>
+
+<ul class="checklist">
+  <li>Case of water bottles <span class="note">— for the car cooler. Refill reusable bottles at parks.</span></li>
+  <li>Bulk trail snacks (nuts, bars, jerky, dried fruit)</li>
+  <li>Sunscreen (if you didn't pack enough)</li>
+  <li>Cooler bag (if you don't have one)</li>
+  <li>Windshield sun shade</li>
+  <li>Ice for the cooler <span class="note">— replenish at gas stations every 2-3 days</span></li>
+  <li>Fruit (apples, oranges — survive car heat)</li>
+  <li>Aloe vera gel</li>
+  <li>Any forgotten toiletries</li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- SOURCES -->
+<!-- ============================================================ -->
+
+<div class="sources">
+  <strong>Sources &amp; Useful Links</strong>
+  <ul>
+    <li><a href="https://bearaware.com/">Bear Aware — Bear spray rental (Yellowstone, Teton, Jackson)</a></li>
+    <li><a href="https://bearsprayshack.com/">Bear Spray Shack — 24hr rental kiosks (Glacier, Yellowstone)</a></li>
+    <li><a href="https://www.goglacieroutfitters.com/bear-spray-rental-glacier-national-park/">Glacier Outfitters — Bear spray rental in West Glacier</a></li>
+    <li><a href="https://www.tsa.gov/travel/security-screening/whatcanibring/items/bear-spray">TSA — Bear spray prohibited on flights</a></li>
+    <li><a href="https://www.nps.gov/grte/planyourvisit/bearsafety.htm">NPS — Bear safety in Grand Teton</a></li>
+    <li><a href="https://www.nps.gov/glac/planyourvisit/gtsrinfo.htm">NPS — Going-to-the-Sun Road conditions</a></li>
+    <li><a href="https://www.nps.gov/glac/planyourvisit/visiting-glacier-2026.htm">NPS — Visiting Glacier in 2026</a></li>
+    <li><a href="https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html">CDC — High altitude travel and illness</a></li>
+    <li><a href="https://altitudecontrol.com/seniors-and-high-altitude/">Altitude Control — Seniors and high altitude</a></li>
+    <li><a href="https://wwwnc.cdc.gov/travel/page/pack-smart">CDC — Pack Smart travel health kit</a></li>
+    <li><a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/travelers-firstaid-kit">Johns Hopkins — Traveler's first aid kit</a></li>
+    <li><a href="https://moablaundry.com/">Moab Laundry Express (24/7)</a></li>
+    <li><a href="https://www.jacksonlaundromat.com/">Jackson Laundromat</a></li>
+    <li><a href="https://www.fallscoinwashmt.com/">Falls Coin Wash — Columbia Falls, MT</a></li>
+    <li><a href="https://www.tumblelaundry.com/">Tumble Laundry — Kalispell, MT</a></li>
+    <li><a href="https://azstateparks.com/summer-heat-safety-tips">Arizona State Parks — Summer heat safety</a></li>
+    <li><a href="https://www.nathab.com/know-before-you-go/us-national-parks/southwest-canyons/packing-list">Natural Habitat Adventures — Southwest packing list</a></li>
+    <li><a href="https://www.travelfashiongirl.com/usa-southwest-road-trip/">Travel Fashion Girl — Southwest road trip packing</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
