@@ -1278,7 +1278,7 @@ export const tripData: TripData = {
           notes: 'Best value for 4 nights. Full kitchen saves on food. 40min to park. Search: 2BR, May 24-28, $150 max.'
         }
       ],
-      notes: ['DRIVING DAY — no hiking', 'Jackson is expensive — Driggs/Victor ID is cheaper alt', 'Cooler temps — bring layers'],
+      notes: ['DRIVING DAY — no hiking', 'Jackson is expensive — Driggs/Victor ID is cheaper alt', 'Cooler temps — bring layers', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs all active', 'Best spots: Oxbow Bend, Schwabacher Landing, Antelope Flats', 'Elk Refuge is EMPTY in May — herd migrates to high country by April'],
       budgetBreakdown: { accommodation: 130, food: 80, activities: 0, gas: 55, total: 265 }
     },
 
@@ -1637,7 +1637,7 @@ export const tripData: TripData = {
           notes: 'Budget pick. Full kitchen is a bonus. On main strip. Reviews inconsistent — read recent ones.'
         }
       ],
-      notes: ['Download GeyserTimes app for eruption predictions', 'All boardwalk walking (~3mi total) — flat and accessible', 'Fill gas at Grant Village and Canyon Village', 'Dress in layers — Yellowstone is cold!', 'Artist Point is a MUST-SEE — don\'t skip it'],
+      notes: ['Download GeyserTimes app for eruption predictions', 'All boardwalk walking (~3mi total) — flat and accessible', 'WILDLIFE: Hayden Valley (45min from West entrance) has huge bison herds with calves', 'Fill gas at Grant Village and Canyon Village', 'Dress in layers — Yellowstone is cold!', 'Artist Point is a MUST-SEE — don\'t skip it'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 35, gas: 25, total: 270 }
     },
 
@@ -1764,7 +1764,7 @@ export const tripData: TripData = {
           notes: 'Boutique mid-century motel, beautifully restored. 2-queen rooms. 9.6/10 reviews. Charming character.'
         }
       ],
-      notes: ['Fill gas at Tower/Roosevelt and Mammoth before exiting', 'Lamar Valley at dawn is a highlight — don\'t sleep in!', 'Gardiner to Bozeman via Paradise Valley is scenic and easy', 'Bozeman is a transit stop for Glacier — fuel up for 4.5hr drive tomorrow'],
+      notes: ['Fill gas at Tower/Roosevelt and Mammoth before exiting', 'WILDLIFE: Lamar Valley at dawn — wolves, grizzlies, bison calves (leave by 5am!)', 'Lamar is 1.5-2.5hrs from West Yellowstone — commit the whole morning', 'Gardiner to Bozeman via Paradise Valley is scenic and easy', 'Bozeman is a transit stop for Glacier — fuel up for 4.5hr drive tomorrow'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 25, total: 225 }
     },
 
@@ -2091,7 +2091,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Fourth and final night at Glacier.'
       },
-      notes: ['REST DAY vibe — take it easy after 3 active Glacier days', 'St. Mary Falls is short and easy (1.6mi RT)', 'Wild Goose Island overlook is a must-photo', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['REST DAY vibe — take it easy after 3 active Glacier days', 'St. Mary Falls is short and easy (1.6mi RT)', 'Wild Goose Island overlook is a must-photo', 'WILDLIFE: Goat Lick Overlook on Hwy 2 (30min east of West Glacier) — mountain goats at dawn/dusk', 'Bears common near Avalanche Creek — always carry bear spray'],
       budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 25, total: 265 }
     },
 
