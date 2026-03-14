@@ -86,18 +86,22 @@ export const locations: Location[] = [
     image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200',
     infoUrl: 'https://destinationmissoula.org/',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Missoula+MT' },
+  { id: 'whitefish', name: 'Whitefish, MT', lat: 48.4106, lng: -114.3528, type: 'city',
+    image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200',
+    infoUrl: 'https://www.explorewhitefish.com/',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Whitefish+MT' },
 ];
 
 export const tripData: TripData = {
   id: 'mom-road-trip-2026',
   name: "Southwest to Glacier Road Trip",
-  tagline: "22 days, 6 national parks, Las Vegas to Glacier, one unforgettable journey with Mom",
+  tagline: "28 days, 6 national parks, Las Vegas to Glacier, one unforgettable journey with Mom",
   startDate: '2026-05-15',
-  endDate: '2026-06-05',
+  endDate: '2026-06-11',
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
-    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (May 31 - Jun 2). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Jun 4 - Jun 6). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -114,9 +118,9 @@ export const tripData: TripData = {
       id: 'utah',
       name: 'Utah',
       summary: 'Monument Valley, Arches, Canyonlands, Salt Lake City',
-      days: [7, 8, 9, 10, 11],
+      days: [7, 8, 9, 10, 11, 12],
       startDay: 7,
-      endDay: 11,
+      endDay: 12,
       color: '#f59e0b',
       highlights: ['Monument Valley drive-by', 'Arches NP', 'Canyonlands', 'Salt Lake City']
     },
@@ -124,9 +128,9 @@ export const tripData: TripData = {
       id: 'wyoming',
       name: 'Wyoming',
       summary: 'Grand Teton and Yellowstone',
-      days: [12, 13, 14, 15, 16, 17],
-      startDay: 12,
-      endDay: 17,
+      days: [13, 14, 15, 16, 17, 18, 19, 20],
+      startDay: 13,
+      endDay: 20,
       color: '#22c55e',
       highlights: ['Grand Teton (3 days)', 'Yellowstone geysers', 'Yellowstone canyon & wildlife']
     },
@@ -134,9 +138,9 @@ export const tripData: TripData = {
       id: 'montana',
       name: 'Montana & Glacier',
       summary: 'Glacier National Park with wife joining for the weekend',
-      days: [18, 19, 20, 21, 22],
-      startDay: 18,
-      endDay: 22,
+      days: [21, 22, 23, 24, 25, 26, 27, 28],
+      startDay: 21,
+      endDay: 28,
       color: '#06b6d4',
       highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from MSO']
     }
@@ -176,10 +180,10 @@ export const tripData: TripData = {
       fromCity: 'Missoula, MT',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-06-05',
+      date: '2026-06-11',
       airline: 'Alaska Airlines',
       price: 120,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+SEA+on+2026-06-04&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+SEA+on+2026-06-11&curr=USD',
       notes: 'MSO→SEA. Check for direct or 1-stop options.'
     },
     {
@@ -190,10 +194,10 @@ export const tripData: TripData = {
       fromCity: 'Missoula, MT',
       to: 'YYZ',
       toCity: 'Toronto',
-      date: '2026-06-05',
+      date: '2026-06-11',
       airline: 'United / Alaska',
       price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+YYZ+on+2026-06-04&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+YYZ+on+2026-06-11&curr=USD',
       notes: 'MSO→connecting hub→YYZ. Request wheelchair/passenger assistance. United has MSO→DEN→YYZ options.'
     },
     {
@@ -204,12 +208,12 @@ export const tripData: TripData = {
       fromCity: 'Seattle',
       to: 'FCA',
       toCity: 'Kalispell (Glacier Park)',
-      date: '2026-05-31',
+      date: '2026-06-04',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-31&curr=USD',
-      notes: 'Wife\'s flight. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Saturday arrival — same day as Bozeman→Glacier drive.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD',
+      notes: 'Wife\'s flight. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Thursday arrival — same day as Bozeman→Glacier drive.'
     },
     {
       id: 'f6',
@@ -219,12 +223,12 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park)',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-06-02',
+      date: '2026-06-06',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-02&curr=USD',
-      notes: 'Wife\'s return. Tuesday morning flight, or Monday Jun 1 evening.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-06&curr=USD',
+      notes: 'Wife\'s return. Saturday morning flight.'
     }
   ],
   flightOptions: [
@@ -305,11 +309,11 @@ export const tripData: TripData = {
     pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-15',
     dropoffLocation: 'Missoula Airport (MSO)',
-    dropoffDate: '2026-06-03',
-    totalDays: 19,
+    dropoffDate: '2026-06-10',
+    totalDays: 26,
     dailyRate: 40,
     dropoffFee: 200,
-    totalCost: 960,
+    totalCost: 1240,
     notes: 'One-way compact SUV. LAS to MSO drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget. Expect ~$1,100-1,200 all-in with taxes/fees.'
   },
   days: [
@@ -829,12 +833,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 6: PAGE → MONUMENT VALLEY → MOAB (DRIVING DAY)
+    // DAY 6: WORK/REST DAY — PAGE
     // ============================================================
     {
       id: 'd6',
       dayNumber: 6,
       date: '2026-05-20',
+      title: 'Work Day — Page',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'page')!,
+      overnight: 'Page, AZ',
+      weather: { high: 31, low: 14, conditions: 'Sunny, warm' },
+      activities: [
+        {
+          id: 'aW1-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel WiFi or local cafe']
+        },
+        {
+          id: 'aW1-2',
+          name: 'Mom Explores Lake Powell Overlook & Pool',
+          description: 'Wahweap Overlook for Lake Powell views (short drive), or relax by the hotel pool. Browse the shops on Lake Powell Blvd.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Wahweap Overlook is a quick drive', 'Lake Powell Blvd has shops and restaurants']
+        },
+        {
+          id: 'aW1-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW1a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$100-140',
+        pricePerNight: 120,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Good WiFi at Home2 Suites'],
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 0, gas: 0, total: 190 }
+    },
+
+    // ============================================================
+    // DAY 7: PAGE → MONUMENT VALLEY → MOAB (DRIVING DAY)
+    // ============================================================
+    {
+      id: 'd7',
+      dayNumber: 7,
+      date: '2026-05-21',
       title: 'Page → Monument Valley → Moab',
       summary: 'Long drive with optional Monument Valley photo stop, no hiking',
       location: locations.find(l => l.id === 'moab')!,
@@ -945,12 +1006,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 7: ARCHES NATIONAL PARK
+    // DAY 8: ARCHES NATIONAL PARK
     // ============================================================
     {
-      id: 'd7',
-      dayNumber: 7,
-      date: '2026-05-21',
+      id: 'd8',
+      dayNumber: 8,
+      date: '2026-05-22',
       title: 'Arches National Park',
       summary: 'Windows, Delicate Arch viewpoint, iconic red rock arches',
       location: locations.find(l => l.id === 'arches')!,
@@ -1018,12 +1079,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 8: REST DAY IN MOAB
+    // DAY 9: REST DAY IN MOAB
     // ============================================================
     {
-      id: 'd8',
-      dayNumber: 8,
-      date: '2026-05-22',
+      id: 'd9',
+      dayNumber: 9,
+      date: '2026-05-23',
       title: 'Rest Day in Moab',
       summary: 'Pool, town exploring, optional sunset at Dead Horse Point',
       location: locations.find(l => l.id === 'moab')!,
@@ -1086,12 +1147,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 9: CANYONLANDS → DRIVE TO SLC
+    // DAY 10: CANYONLANDS → DRIVE TO SLC
     // ============================================================
     {
-      id: 'd9',
-      dayNumber: 9,
-      date: '2026-05-23',
+      id: 'd10',
+      dayNumber: 10,
+      date: '2026-05-24',
       title: 'Canyonlands Morning → Salt Lake City',
       summary: 'Morning overlooks at Canyonlands, afternoon drive to SLC',
       location: locations.find(l => l.id === 'slc')!,
@@ -1201,12 +1262,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 10: SALT LAKE CITY — FULL DAY
+    // DAY 11: SALT LAKE CITY — FULL DAY
     // ============================================================
     {
-      id: 'd10',
-      dayNumber: 10,
-      date: '2026-05-24',
+      id: 'd11',
+      dayNumber: 11,
+      date: '2026-05-25',
       title: 'Salt Lake City — Explore Day',
       summary: 'Temple Square, Great Salt Lake, downtown SLC',
       location: locations.find(l => l.id === 'slc')!,
@@ -1275,12 +1336,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 11: SLC → JACKSON / GRAND TETON
+    // DAY 12: WORK/REST DAY — SALT LAKE CITY
     // ============================================================
     {
-      id: 'd11',
-      dayNumber: 11,
-      date: '2026-05-25',
+      id: 'd12',
+      dayNumber: 12,
+      date: '2026-05-26',
+      title: 'Work Day — Salt Lake City',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'slc')!,
+      overnight: 'Salt Lake City, UT',
+      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      activities: [
+        {
+          id: 'aW2-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel WiFi or local cafe']
+        },
+        {
+          id: 'aW2-2',
+          name: 'Mom Explores Temple Square & City Creek Shopping',
+          description: 'Walk through Temple Square gardens, browse City Creek Center (outdoor mall), visit the Family History Library (free genealogy research).',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Temple Square is flat and beautiful', 'Family History Library is free and fascinating for genealogy buffs']
+        },
+        {
+          id: 'aW2-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW2a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$90-120',
+        pricePerNight: 100,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Temple Square and City Creek are walkable from most downtown hotels'],
+      budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 0, total: 170 }
+    },
+
+    // ============================================================
+    // DAY 13: SLC → JACKSON / GRAND TETON
+    // ============================================================
+    {
+      id: 'd13',
+      dayNumber: 13,
+      date: '2026-05-27',
       title: 'Salt Lake City → Jackson / Grand Teton',
       summary: 'Drive north to Jackson Hole, afternoon arrival in Teton country',
       location: locations.find(l => l.id === 'jackson')!,
@@ -1369,7 +1487,7 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/driggs-id/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Free parking', 'Teton views', 'Washer/dryer'],
           seniorFriendly: true,
-          notes: 'Best value for 4 nights. Full kitchen saves on food. 40min to park. Search: 2BR, May 24-28, $150 max.'
+          notes: 'Best value for 5 nights. Full kitchen saves on food. 40min to park. Search: 2BR, May 27-Jun 1, $150 max.'
         }
       ],
       notes: ['DRIVING DAY — no hiking', 'Jackson is expensive — Driggs/Victor ID is cheaper alt', 'Cooler temps — bring layers', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs all active', 'Best spots: Oxbow Bend, Schwabacher Landing, Antelope Flats', 'Elk Refuge is EMPTY in May — herd migrates to high country by April'],
@@ -1377,12 +1495,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 12: GRAND TETON DAY 1 — SOUTHERN PARK: JENNY LAKE & ICONS
+    // DAY 14: GRAND TETON DAY 1 — SOUTHERN PARK: JENNY LAKE & ICONS
     // ============================================================
     {
-      id: 'd12',
-      dayNumber: 12,
-      date: '2026-05-26',
+      id: 'd14',
+      dayNumber: 14,
+      date: '2026-05-28',
       title: 'Grand Teton Day 1 — Jenny Lake & Iconic Views',
       summary: 'Mormon Row sunrise, Jenny Lake boat to Hidden Falls, Schwabacher Landing reflections',
       location: locations.find(l => l.id === 'teton')!,
@@ -1458,12 +1576,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 13: GRAND TETON DAY 2 — NORTHERN PARK: LODGE, LAKES & WILDLIFE
+    // DAY 15: GRAND TETON DAY 2 — NORTHERN PARK: LODGE, LAKES & WILDLIFE
     // ============================================================
     {
-      id: 'd13',
-      dayNumber: 13,
-      date: '2026-05-27',
+      id: 'd15',
+      dayNumber: 15,
+      date: '2026-05-29',
       title: 'Grand Teton Day 2 — Lodge, Lakes & Wildlife',
       summary: 'Oxbow Bend sunrise, Jackson Lake Lodge, Colter Bay lakeshore, Signal Mountain',
       location: locations.find(l => l.id === 'teton')!,
@@ -1529,12 +1647,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 14: GRAND TETON DAY 3 — REST DAY IN JACKSON
+    // DAY 16: GRAND TETON DAY 3 — REST DAY IN JACKSON
     // ============================================================
     {
-      id: 'd14',
-      dayNumber: 14,
-      date: '2026-05-28',
+      id: 'd16',
+      dayNumber: 16,
+      date: '2026-05-30',
       title: 'Grand Teton Day 3 — Rest Day in Jackson',
       summary: 'Sleep in, optional Leigh Lake, browse Jackson, recharge before Yellowstone',
       location: locations.find(l => l.id === 'teton')!,
@@ -1599,12 +1717,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 15: GRAND TETON → YELLOWSTONE SOUTH LOOP
+    // DAY 17: WORK/REST DAY — JACKSON
     // ============================================================
     {
-      id: 'd15',
-      dayNumber: 15,
-      date: '2026-05-29',
+      id: 'd17',
+      dayNumber: 17,
+      date: '2026-05-31',
+      title: 'Work Day — Jackson',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'jackson')!,
+      overnight: 'Jackson, WY',
+      weather: { high: 18, low: 3, conditions: 'Clear, cool' },
+      activities: [
+        {
+          id: 'aW3-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel WiFi or local cafe']
+        },
+        {
+          id: 'aW3-2',
+          name: 'Mom Explores Jackson Town Square & Galleries',
+          description: 'Browse the art galleries on the town square, elk antler arches photo ops, window shop on Broadway. Persephone Bakery for a treat.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Town square is flat and walkable', 'Persephone Bakery is a must-stop']
+        },
+        {
+          id: 'aW3-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW3a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$110-150',
+        pricePerNight: 130,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Jackson town square is great for solo exploring'],
+      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
+    },
+
+    // ============================================================
+    // DAY 18: GRAND TETON → YELLOWSTONE SOUTH LOOP
+    // ============================================================
+    {
+      id: 'd18',
+      dayNumber: 18,
+      date: '2026-06-01',
       title: 'Yellowstone Day 1 — South Loop: Geysers, Springs & Canyon',
       summary: 'West Thumb, Old Faithful, Grand Prismatic, Artist Point at the Grand Canyon of Yellowstone',
       location: locations.find(l => l.id === 'yellowstone')!,
@@ -1736,12 +1911,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 16: YELLOWSTONE NORTH → BOZEMAN
+    // DAY 19: YELLOWSTONE NORTH → BOZEMAN
     // ============================================================
     {
-      id: 'd16',
-      dayNumber: 16,
-      date: '2026-05-30',
+      id: 'd19',
+      dayNumber: 19,
+      date: '2026-06-02',
       title: 'Yellowstone North Loop → Bozeman',
       summary: 'Lamar Valley wildlife at dawn, Tower Fall, Mammoth Hot Springs, drive to Bozeman via Paradise Valley',
       location: locations.find(l => l.id === 'bozeman')!,
@@ -1863,12 +2038,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 17: BOZEMAN → GLACIER (WIFE ARRIVES!)
+    // DAY 20: WORK/REST DAY — BOZEMAN
     // ============================================================
     {
-      id: 'd17',
-      dayNumber: 17,
-      date: '2026-05-31',
+      id: 'd20',
+      dayNumber: 20,
+      date: '2026-06-03',
+      title: 'Work Day — Bozeman',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'bozeman')!,
+      overnight: 'Bozeman, MT',
+      weather: { high: 16, low: 2, conditions: 'Cool, variable' },
+      activities: [
+        {
+          id: 'aW4-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Wild Joe*s Coffee, Treeline Coffee, or hotel lobby for work']
+        },
+        {
+          id: 'aW4-2',
+          name: 'Mom Explores Downtown Bozeman & Museum of the Rockies',
+          description: 'Walk Main Street, visit Museum of the Rockies (world-class dinosaur exhibits, Planetarium). Great coffee shops and bookstores.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Museum of the Rockies is world-class — allow 2+ hours', 'Main Street has great bookstores and cafes']
+        },
+        {
+          id: 'aW4-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW4a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$90-130',
+        pricePerNight: 110,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Museum of the Rockies is worth the visit'],
+      budgetBreakdown: { accommodation: 110, food: 70, activities: 0, gas: 0, total: 180 }
+    },
+
+    // ============================================================
+    // DAY 21: BOZEMAN → GLACIER (WIFE ARRIVES!)
+    // ============================================================
+    {
+      id: 'd21',
+      dayNumber: 21,
+      date: '2026-06-04',
       title: 'Bozeman → Glacier — Wife Arrives!',
       summary: 'Drive to Glacier, wife flies in for the weekend, afternoon exploring',
       location: locations.find(l => l.id === 'glacier')!,
@@ -1970,7 +2202,7 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/columbia-falls-mt/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub (some)', 'Free parking'],
           seniorFriendly: true,
-          notes: 'Search: 2BR, May 30-Jun 3, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
+          notes: 'Search: 2BR, Jun 4-Jun 10, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
       notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA', '3 adults: need 2 bedrooms or 2BR rental', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully, one of MT\'s most dangerous roads', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026'],
@@ -1978,12 +2210,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 18: GLACIER — WEST SIDE (WIFE'S DAY)
+    // DAY 22: GLACIER — WEST SIDE (WIFE'S DAY)
     // ============================================================
     {
-      id: 'd18',
-      dayNumber: 18,
-      date: '2026-06-01',
+      id: 'd22',
+      dayNumber: 22,
+      date: '2026-06-05',
       title: 'Glacier West Side — Trail of Cedars & Avalanche Lake (Wife\'s Day)',
       summary: 'Trail of the Cedars boardwalk, Avalanche Lake hike for Colin + wife, Lake McDonald kayaking',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2039,12 +2271,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 19: GLACIER — MANY GLACIER (EAST SIDE)
+    // DAY 23: GLACIER — MANY GLACIER (EAST SIDE)
     // ============================================================
     {
-      id: 'd19',
-      dayNumber: 19,
-      date: '2026-06-02',
+      id: 'd23',
+      dayNumber: 23,
+      date: '2026-06-06',
       title: 'Glacier — Many Glacier Valley',
       summary: 'Drive to Many Glacier, Swiftcurrent Lake, boat tour, Iceberg Lake trail start',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2110,12 +2342,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 20: GLACIER — EAST SIDE / ST. MARY + REST
+    // DAY 24: WHITEFISH DAY — WORK + MOM EXPLORES
     // ============================================================
     {
-      id: 'd20',
-      dayNumber: 20,
-      date: '2026-06-03',
+      id: 'd24',
+      dayNumber: 24,
+      date: '2026-06-07',
+      title: 'Whitefish Day — Work + Mom Explores',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'whitefish')!,
+      overnight: 'Columbia Falls / West Glacier, MT',
+      weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
+      activities: [
+        {
+          id: 'aW5-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel WiFi or local cafe']
+        },
+        {
+          id: 'aW5-2',
+          name: 'Mom Explores Whitefish',
+          description: 'Drive or shuttle 15 min to Whitefish, a charming mountain town. Browse Central Avenue shops, galleries, and cafes. Great walking town — flat, accessible, lots of benches. Whitefish Lake is beautiful.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Central Avenue is the main strip — flat and walkable', 'Whitefish Lake is a short drive from downtown']
+        },
+        {
+          id: 'aW5-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW5a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$110-160',
+        pricePerNight: 130,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Whitefish is 15 min from Columbia Falls — cute mountain town'],
+      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
+    },
+
+    // ============================================================
+    // DAY 25: GLACIER — EAST SIDE / ST. MARY + REST
+    // ============================================================
+    {
+      id: 'd25',
+      dayNumber: 25,
+      date: '2026-06-08',
       title: 'Glacier East Side — St. Mary & Rest',
       summary: 'GTSR east side drive, St. Mary Falls, boat tour, afternoon rest',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2190,12 +2479,69 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 21: GLACIER → MISSOULA
+    // DAY 26: WORK/REST DAY — GLACIER (LAKE McDONALD CHILL)
     // ============================================================
     {
-      id: 'd21',
-      dayNumber: 21,
-      date: '2026-06-04',
+      id: 'd26',
+      dayNumber: 26,
+      date: '2026-06-09',
+      title: 'Work Day — Glacier',
+      summary: 'Remote work day, Mom explores on her own',
+      location: locations.find(l => l.id === 'glacier')!,
+      overnight: 'Columbia Falls / West Glacier, MT',
+      weather: { high: 17, low: 3, conditions: 'Cool' },
+      activities: [
+        {
+          id: 'aW6-1',
+          name: 'Morning Work Session',
+          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          duration: '4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel WiFi or local cafe']
+        },
+        {
+          id: 'aW6-2',
+          name: 'Mom Explores Lake McDonald & Lodge',
+          description: 'Drive to Lake McDonald Lodge (20 min), sit on the porch with mountain views, walk the shoreline, browse the gift shop. Most peaceful spot in the park. Or just relax at the hotel.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Safe for solo exploration', 'Lake McDonald Lodge porch has rocking chairs with views', 'Gift shop has great local crafts']
+        },
+        {
+          id: 'aW6-3',
+          name: 'Afternoon Together',
+          description: 'Reconnect for a late lunch or easy evening activity.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        }
+      ],
+      accommodation: {
+        id: 'accW6a',
+        name: 'Same as previous night',
+        type: 'hotel',
+        priceRange: '$110-160',
+        pricePerNight: 130,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Same hotel — extra night.'
+      },
+      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Lake McDonald Lodge is the most peaceful spot in the park'],
+      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
+    },
+
+    // ============================================================
+    // DAY 27: GLACIER → MISSOULA
+    // ============================================================
+    {
+      id: 'd27',
+      dayNumber: 27,
+      date: '2026-06-10',
       title: 'Glacier → Missoula',
       summary: 'Goat Lick overlook, drive south via US-93, evening in Missoula, return rental car',
       location: locations.find(l => l.id === 'missoula')!,
@@ -2308,12 +2654,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 22: FLY HOME
+    // DAY 28: FLY HOME
     // ============================================================
     {
-      id: 'd22',
-      dayNumber: 22,
-      date: '2026-06-05',
+      id: 'd28',
+      dayNumber: 28,
+      date: '2026-06-11',
       title: 'Fly Home from Missoula',
       summary: 'Breakfast, airport shuttle, fly home — trip complete!',
       location: locations.find(l => l.id === 'missoula')!,
@@ -2347,13 +2693,13 @@ export const tripData: TripData = {
   ],
   totalBudget: {
     flights: 999,
-    carRental: 1200,
-    accommodations: 2675,
-    food: 1500,
+    carRental: 1500,
+    accommodations: 3395,
+    food: 1920,
     activities: 400,
     gas: 300,
     misc: 941,
-    total: 8015
+    total: 9455
   },
   costBreakdown: {
     flights: {
@@ -2365,9 +2711,9 @@ export const tripData: TripData = {
     },
     carRental: {
       dailyRate: 40,
-      days: 19,
+      days: 26,
       dropoffFee: 200,
-      total: 960,
+      total: 1240,
       notes: 'LAS→MSO one-way. Book via Costco Travel or AutoSlash.',
     },
     passengerAssistance: {
@@ -2395,7 +2741,7 @@ export const tripData: TripData = {
       item: 'Jackson WY Lodging (Memorial Day Weekend)',
       bookBy: '2026-03-19',
       website: 'https://www.kayak.com/Jackson-Hotels.22713.hotel.ksp',
-      notes: 'May 24-27 overlaps Memorial Day weekend (May 23-25). Jackson is a resort town — prices spike. Book ASAP.'
+      notes: 'May 27-Jun 1 is just after Memorial Day weekend (May 23-25). Jackson is a resort town — prices spike on holiday weekends. Book ASAP.'
     },
     {
       item: 'Car Rental LAS→MSO One-Way',
