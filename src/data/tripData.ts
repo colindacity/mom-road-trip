@@ -1087,31 +1087,31 @@ export const tripData: TripData = {
       id: 'd9',
       dayNumber: 9,
       date: '2026-05-23',
-      title: 'Rest Day in Moab',
-      summary: 'Pool, town exploring, optional sunset at Dead Horse Point',
+      title: 'Half Work Day + Rest in Moab',
+      summary: 'Colin works morning, pool & town, optional sunset at Dead Horse Point',
       location: locations.find(l => l.id === 'moab')!,
       overnight: 'Moab, UT',
       weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
       activities: [
         {
           id: 'a8-1',
-          name: 'Sleep In & Leisurely Morning',
-          description: 'No alarm. Enjoy breakfast at a local cafe or at the hotel.',
-          duration: '2 hours',
+          name: 'Colin Works — Hotel or Cafe (8am-12pm)',
+          description: 'Work block at hotel or a Moab cafe. Moab has decent WiFi options. Red Rock Bakery on Main St has WiFi and good coffee.',
+          duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Jailhouse Cafe for breakfast', 'Love Muffin Cafe is another favorite']
+          tips: ['Red Rock Bakery & Net Cafe: Main St, WiFi, coffee, pastries', 'Hotel WiFi is solid', 'Jailhouse Cafe for breakfast before work']
         },
         {
           id: 'a8-2',
-          name: 'Moab Town Exploration',
-          description: 'Browse shops on Main Street, grab ice cream, visit the Moab Museum.',
-          duration: '2-3 hours',
+          name: 'Mom Solo: Main Street & Pool',
+          description: 'Sleep in, then browse shops on Main Street, grab ice cream, visit the Moab Museum. Pool at the hotel to beat the heat.',
+          duration: '3-4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Main Street is walkable', 'Moab Brewery for lunch']
+          tips: ['Main Street is flat and walkable', 'Moab Museum: local history, free', 'Love Muffin Cafe is a local breakfast favorite', 'Pool to beat the 32°C heat']
         },
         {
           id: 'a8-3',
@@ -1144,7 +1144,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night in Moab.'
       },
-      notes: ['REST DAY — no hiking!', 'Recover from Arches before Canyonlands tomorrow', 'Pool and town day'],
+      notes: ['HALF WORK DAY — Colin works morning, rest afternoon', 'Recover from Arches before Canyonlands tomorrow', 'Dead Horse Point sunset is worth the drive'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 20, gas: 10, total: 240 }
     },
 
@@ -1270,31 +1270,31 @@ export const tripData: TripData = {
       id: 'd11',
       dayNumber: 11,
       date: '2026-05-25',
-      title: 'Salt Lake City — Explore Day',
-      summary: 'Temple Square, Great Salt Lake, downtown SLC',
+      title: 'Salt Lake City — Half Work + Explore',
+      summary: 'Colin works morning, Temple Square & Great Salt Lake afternoon',
       location: locations.find(l => l.id === 'slc')!,
       overnight: 'Salt Lake City, UT',
       weather: { high: 27, low: 13, conditions: 'Clear and warm' },
       activities: [
         {
           id: 'a10-1',
-          name: 'Temple Square & Capitol Hill',
-          description: 'Walk through the beautifully landscaped Temple Square (open to all visitors). See the Salt Lake Temple exterior (recently renovated), Tabernacle, and visitor centers. Then walk or drive up to the Utah State Capitol for panoramic views of the valley and Wasatch Mountains.',
-          duration: '2 hours',
+          name: 'Colin Works — Hotel or Three Pines Coffee (8am-12pm)',
+          description: 'Work block at Crystal Inn (free WiFi, lobby area) or walk to Three Pines Coffee (165 S Main St, specialty coffee, fast WiFi). Mom can sleep in or walk to Temple Square on her own.',
+          duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Temple Square is free and open to all — no membership required', 'The Tabernacle has incredible acoustics — free organ recitals at noon Mon-Sat', 'Capitol building is free to enter, rotunda is impressive', 'Great views of the Wasatch Front from Capitol steps']
+          tips: ['Three Pines Coffee: 165 S Main St, good WiFi, 10min walk from hotel', 'Crystal Inn lobby has a work-friendly area', 'Mom: Temple Square is a 10min walk — safe solo morning activity']
         },
         {
           id: 'a10-2',
-          name: 'Lunch Downtown',
-          description: 'Try the local food scene. Red Iguana for famous Mexican mole, or The Copper Onion for upscale American.',
-          duration: '1.5 hours',
+          name: 'Lunch & Temple Square Together',
+          description: 'Reconnect for lunch. Red Iguana for famous Mexican mole, or Caputo\'s for deli sandwiches. Then walk through Temple Square together (free, beautifully landscaped). Free organ recital in the Tabernacle at noon Mon-Sat.',
+          duration: '2.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Red Iguana: legendary mole sauces, always a line but worth it', 'The Copper Onion: one of the best restaurants in Utah', 'Caputo\'s Market & Deli for artisan sandwiches', 'City Creek Center food court for casual options']
+          tips: ['Red Iguana: legendary mole sauces, always a line but worth it', 'Temple Square is free and open to all', 'The Tabernacle has incredible acoustics — free organ recitals at noon Mon-Sat', 'Capitol building is free to enter — walk up for Wasatch views']
         },
         {
           id: 'a10-3',
@@ -1333,7 +1333,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night — same hotel. Book both nights together for better rate.'
       },
-      notes: ['EXPLORE DAY — no driving, no hiking', 'Temple Square is beautiful and free', 'Great Salt Lake is a unique experience for Canadians', 'Good rest day before the long drive to Jackson tomorrow', 'Laundry day — Crystal Inn has guest laundry'],
+      notes: ['HALF WORK DAY — Colin works morning, explore together afternoon', 'Temple Square is beautiful and free — Mom can visit solo in AM or together after lunch', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — Crystal Inn has guest laundry'],
       budgetBreakdown: { accommodation: 100, food: 80, activities: 15, gas: 10, total: 205 }
     },
 
@@ -1656,27 +1656,27 @@ export const tripData: TripData = {
       id: 'd16',
       dayNumber: 16,
       date: '2026-05-30',
-      title: 'Grand Teton Day 3 — Rest Day in Jackson',
-      summary: 'Sleep in, optional Leigh Lake, browse Jackson, recharge before Yellowstone',
+      title: 'Half Work Day + Rest in Jackson',
+      summary: 'Colin works morning, optional Leigh Lake, browse Jackson, recharge before Yellowstone',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Jackson, WY',
       weather: { high: 18, low: 3, conditions: 'Clear, cool' },
       activities: [
         {
           id: 'a14-1',
-          name: 'Sleep In & Late Breakfast',
-          description: 'No alarm. Sleep in and enjoy a late breakfast in Jackson at Persephone Bakery (excellent pastries and coffee, European-style).',
-          duration: '2 hours',
+          name: 'Colin Works — Persephone Bakery or Hotel (8am-12pm)',
+          description: 'Work from Persephone Bakery (145 E Broadway, fast WiFi, excellent pastries) or hotel. Mom can sleep in or browse the town square galleries on her own.',
+          duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Persephone Bakery — arrive by 9am to beat the line', 'The Bunnery for a classic American breakfast alternative']
+          tips: ['Persephone Bakery: 145 E Broadway, opens 7am, great WiFi', 'Cowboy Coffee: 125 N Cache St, on the square, opens 6:30am', 'Mom: town square galleries are a 5min walk from most hotels']
         },
         {
           id: 'a14-2',
-          name: 'Optional: Leigh Lake Trail',
-          description: 'If feeling up for it, the Leigh Lake trail is 1.8mi and nearly flat. Beautiful alpine lake with mountain backdrop. Easy enough for a rest day stroll.',
-          duration: '1.5 hours',
+          name: 'Afternoon: Optional Leigh Lake Trail',
+          description: 'Reconnect for lunch, then optional Leigh Lake trail (1.8mi, nearly flat). Beautiful alpine lake with mountain backdrop. Easy enough for a rest day stroll. Or just browse Jackson together.',
+          duration: '1.5-2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -1715,7 +1715,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Fourth and final night in Jackson.'
       },
-      notes: ['REST DAY — sleep in, take it easy', 'Leigh Lake trail is optional (1.8mi, nearly flat)', 'Recharge for Yellowstone tomorrow', 'Last night in Jackson — enjoy the town'],
+      notes: ['HALF WORK DAY — Colin works morning, rest/explore afternoon', 'Leigh Lake trail is optional (1.8mi, nearly flat)', 'Recharge for Yellowstone tomorrow', 'Last night in Jackson — enjoy the town'],
       budgetBreakdown: { accommodation: 130, food: 80, activities: 0, gas: 10, total: 220 }
     },
 
