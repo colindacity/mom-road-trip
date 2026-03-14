@@ -85,7 +85,7 @@ export default function DayDropZone({
         {day.weather && (
           <div className="hidden sm:flex items-center gap-1 text-xs text-gray-400">
             <WeatherIcon className="w-4 h-4" />
-            <span>{day.weather.high}°/{day.weather.low}°</span>
+            <span>{day.weather.high}°/{day.weather.low}°C</span>
           </div>
         )}
 

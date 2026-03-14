@@ -103,7 +103,7 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
               {day.weather && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-50 text-amber-700 text-xs rounded-full">
                   <Thermometer className="w-3 h-3" />
-                  {day.weather.high}°/{day.weather.low}°F
+                  {day.weather.high}°/{day.weather.low}°C
                 </span>
               )}
               {day.activities.length > 0 && (

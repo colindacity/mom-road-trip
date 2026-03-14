@@ -51,7 +51,7 @@ export default function HistoricalWeather({
             <span className="text-xs font-medium text-blue-700">Historical Weather</span>
           </div>
           <span className="text-sm text-gray-700">
-            {data.avgHigh}°/{data.avgLow}°F
+            {data.avgHigh}°/{data.avgLow}°C
           </span>
           {data.conditions[0] && (
             <span className="text-sm">
@@ -198,7 +198,7 @@ export function WeatherSummaryCard({ stats }: { stats: DailyWeatherStats[] }) {
           <span className="text-2xl">{topCondition?.[1].icon}</span>
           <div>
             <div className="text-lg font-semibold text-gray-800">
-              {avgHigh}°/{avgLow}°F
+              {avgHigh}°/{avgLow}°C
             </div>
             <div className="text-xs text-gray-500">Average temps</div>
           </div>
