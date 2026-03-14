@@ -2261,6 +2261,29 @@ export const tripData: TripData = {
     misc: 941,
     total: 8015
   },
+  costBreakdown: {
+    flights: {
+      colinOutbound: { description: 'SEA→PHX Alaska', price: 90 },
+      momOutbound: { description: 'YYZ→PHX Porter', price: 220 },
+      colinReturn: { description: 'MSO→SEA Alaska', price: 120 },
+      momReturn: { description: 'MSO→YYZ United', price: 350 },
+      total: 780,
+    },
+    carRental: {
+      dailyRate: 40,
+      days: 19,
+      dropoffFee: 200,
+      total: 960,
+      notes: 'PHX→MSO one-way. Book via Costco Travel or AutoSlash.',
+    },
+    passengerAssistance: {
+      cost: 0,
+      notes: 'Free wheelchair/mobility assistance on all airlines',
+    },
+    accommodationAvg: 134,
+    foodPerDay: 71,
+    gasEstimate: 300,
+  },
   importantReservations: [
     {
       item: 'Antelope Canyon Tour (Upper or Canyon X)',
