@@ -32,8 +32,23 @@ export interface UseCostsReturn {
   saveNow: () => Promise<void>;
 }
 
-const defaultBreakdown = tripData.costBreakdown!;
-const defaultBudget = tripData.totalBudget!;
+const defaultBreakdown: CostBreakdown = tripData.costBreakdown ?? {
+  flights: {
+    colinOutbound: { description: 'Outbound', price: 0 },
+    momOutbound: { description: 'Outbound', price: 0 },
+    colinReturn: { description: 'Return', price: 0 },
+    momReturn: { description: 'Return', price: 0 },
+    total: 0,
+  },
+  carRental: { dailyRate: 0, days: 0, dropoffFee: 0, total: 0 },
+  passengerAssistance: { cost: 0, notes: '' },
+  accommodationAvg: 0,
+  foodPerDay: 0,
+  gasEstimate: 0,
+};
+const defaultBudget = tripData.totalBudget ?? {
+  flights: 0, carRental: 0, accommodations: 0, food: 0, activities: 0, gas: 0, misc: 0, total: 0,
+};
 const tripDays = tripData.days.length;
 
 function calculateTotals(breakdown: CostBreakdown): TotalBudget {
