@@ -95,9 +95,9 @@ export const locations: Location[] = [
 export const tripData: TripData = {
   id: 'mom-road-trip-2026',
   name: "Southwest to Glacier Road Trip",
-  tagline: "28 days, 6 national parks, Las Vegas to Glacier, one unforgettable journey with Mom",
+  tagline: "25 days, 6 national parks, Las Vegas to Glacier, one unforgettable journey with Mom",
   startDate: '2026-05-15',
-  endDate: '2026-06-11',
+  endDate: '2026-06-08',
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
@@ -138,9 +138,9 @@ export const tripData: TripData = {
       id: 'montana',
       name: 'Montana & Glacier',
       summary: 'Glacier National Park with wife joining for the weekend',
-      days: [21, 22, 23, 24, 25, 26, 27, 28],
+      days: [21, 22, 23, 24, 25],
       startDay: 21,
-      endDay: 28,
+      endDay: 25,
       color: '#06b6d4',
       highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from FCA']
     }
@@ -180,11 +180,11 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park), MT',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-06-11',
+      date: '2026-06-08',
       airline: 'Alaska Airlines',
       price: 130,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-11&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-08&curr=USD',
       notes: 'FCA→SEA NONSTOP on Alaska Airlines. ~3 flights/day. Embraer E175 jet (76 seats, 2-2 config, excellent safety record). 1hr 20min.'
     },
     {
@@ -195,10 +195,10 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park), MT',
       to: 'YYZ',
       toCity: 'Toronto',
-      date: '2026-06-11',
+      date: '2026-06-08',
       airline: 'Delta',
       price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-11&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-08&curr=USD',
       notes: 'FCA→MSP→YYZ on Delta. Best option: one airline, one stop at Minneapolis hub (~8hrs total). MSP is well-organized.'
     },
     {
@@ -310,11 +310,11 @@ export const tripData: TripData = {
     pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-15',
     dropoffLocation: 'Glacier Park International Airport (FCA)',
-    dropoffDate: '2026-06-11',
-    totalDays: 27,
+    dropoffDate: '2026-06-08',
+    totalDays: 24,
     dailyRate: 40,
     dropoffFee: 200,
-    totalCost: 1280,
+    totalCost: 1160,
     notes: 'One-way compact SUV. LAS to FCA drop-off. Saves the 3-hour drive to Missoula! AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget.'
   },
   days: [
@@ -2160,7 +2160,7 @@ export const tripData: TripData = {
         amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Indoor/outdoor pool', 'Free parking', 'Golf course', 'Restaurant'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR condo: separate bedrooms for 3 adults when wife arrives Fri night. Full kitchen saves money over many nights. Private hot tub. Best value near Glacier.'
+        notes: '2BR condo: separate bedrooms for 3 adults when wife arrives Thu night. Full kitchen saves money over 4 nights. Private hot tub. Best value near Glacier.'
       },
       accommodationOptions: [
         {
@@ -2178,7 +2178,7 @@ export const tripData: TripData = {
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Pool', 'Restaurant'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2BR condo. Full kitchen, hot tub. 20min to park. Best value for 4 nights with 3 adults. Late May rates trending $130-180.'
+          notes: '2BR condo. Full kitchen, hot tub. 20min to park. 4 nights with 3 adults (Thu-Sun). Late May rates trending $130-180.'
         },
         {
           id: 'acc17b',
@@ -2207,7 +2207,7 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/columbia-falls-mt/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub (some)', 'Free parking'],
           seniorFriendly: true,
-          notes: 'Search: 2BR, Jun 4-Jun 11, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
+          notes: 'Search: 2BR, Jun 4-Jun 8, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
       notes: ['DRIVING DAY + wife arrival', 'Wife arrives FCA Thursday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls — she can Uber/taxi', '3 adults Thu-Sun: need 2 bedrooms', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
@@ -2276,60 +2276,70 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 23: GLACIER — MANY GLACIER (EAST SIDE)
+    // DAY 23: GLACIER EAST SIDE — GTSR, WILD GOOSE ISLAND, ST. MARY FALLS, GOAT LICK
     // ============================================================
     {
       id: 'd23',
       dayNumber: 23,
       date: '2026-06-06',
-      title: 'Glacier — Avalanche Lake & Many Glacier (Wife\'s Day)',
-      summary: 'Avalanche Lake hike (Colin + wife), Many Glacier drive, wife\'s full Saturday',
+      title: 'Glacier East Side — GTSR & St. Mary Falls',
+      summary: 'GTSR east drive, Wild Goose Island, St. Mary Falls, Goat Lick on the way back',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
-      drivingDistance: '~150 miles RT (Columbia Falls to Many Glacier via Hwy 2)',
-      drivingTime: '~2.5 hours each way',
+      drivingDistance: '~120 miles RT (Columbia Falls to St. Mary via Hwy 2)',
+      drivingTime: '~1.5 hours each way',
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
           id: 'a19-1',
-          name: 'Drive to Many Glacier',
-          description: 'Drive to the east side of Glacier via Hwy 2 (south of the park) to the Many Glacier entrance. About 2.5 hours from Columbia Falls. Many Glacier is widely considered the most spectacular valley in the park.',
-          duration: '2.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Leave early — it\'s a long drive', 'Route: Columbia Falls → Hwy 2 east → Hwy 89 north → Many Glacier Road', 'Note: construction at Many Glacier in 2026 (parking, water system) — expect some disruption', 'Fill gas before entering — no gas in Many Glacier']
-        },
-        {
-          id: 'a19-2',
-          name: 'Swiftcurrent Lake Area',
-          description: 'Explore the Swiftcurrent Lake area with flat trails and a stunning mountain backdrop. The Many Glacier Hotel sits on the lakeshore with incredible views.',
+          name: 'Drive to St. Mary Entrance (East Side)',
+          description: 'Drive to the St. Mary entrance on the east side of the park via Hwy 2. About 1.5 hours from Columbia Falls. The east side of GTSR from St. Mary to Jackson Glacier Overlook should be open.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Many Glacier Hotel is worth a visit for the views', 'Flat trails around the lakeshore', 'Mountain backdrop is dramatic — bring the camera', 'Watch for moose along Swiftcurrent Creek']
+          tips: ['Route: Columbia Falls → Hwy 2 east → Hwy 89 north to St. Mary', 'Leave by 8am to maximize the day', 'Fill gas in Columbia Falls before heading out']
         },
         {
-          id: 'a19-3',
-          name: 'Boat Tour on Swiftcurrent Lake',
-          description: 'Scenic boat tour on Swiftcurrent Lake operated by Glacier Park Boat Company. Check if running by June 1 — season may not have started yet.',
-          duration: '1 hour',
+          id: 'a19-2',
+          name: 'GTSR East Side Drive & Wild Goose Island',
+          description: 'Drive the open section of Going-to-the-Sun Road from St. Mary entrance. Stop at Wild Goose Island overlook (THE iconic Glacier photo), Rising Sun, Sun Point, and Jackson Glacier Overlook.',
+          duration: '1.5-2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Glacier Park Boat Company operates the tours', 'Check schedule — may not be running by June 1', 'If not running, the lakeshore walk is just as beautiful', 'Mountain reflections on the lake are incredible']
+          tips: ['Wild Goose Island overlook is THE iconic Glacier photo — don\'t miss it', 'Rising Sun has a small store and restaurant for snacks', 'Sun Point has a short walk to a stunning St. Mary Lake viewpoint', 'Road open from St. Mary to Jackson Glacier Overlook area']
         },
         {
-          id: 'a19-4',
-          name: 'Iceberg Lake Trail (first 1-2 miles)',
-          description: 'The full Iceberg Lake trail is 9.6mi RT, but the first 1-2 miles are flat and scenic with wildflower meadows and mountain views. Walk as far as comfortable, then turn back. Great for all fitness levels as a partial hike.',
+          id: 'a19-3',
+          name: 'St. Mary Falls Hike',
+          description: 'Easy 1.6mi round trip hike to a beautiful cascading waterfall. One of the most rewarding short hikes in the park. Can continue to Virginia Falls (+0.6mi) if feeling good.',
           duration: '1-1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '2-4 miles RT (partial)',
-          tips: ['First 1-2 miles are flat and scenic — turn back at Mom\'s comfort level', 'Wildflower meadows with mountain backdrop', 'Full trail to Iceberg Lake is 9.6mi RT — not for this trip', 'Carry bear spray — grizzly country', 'Trail may have snow patches in early June']
+          distance: '1.6 miles RT (2.8 with Virginia Falls)',
+          elevation: { gain: 200 },
+          tips: ['Trailhead is at the St. Mary Falls shuttle stop on GTSR', 'Mostly downhill to the falls, uphill on the return', 'Can continue to Virginia Falls (+0.6mi) — worth it if Mom is feeling good', 'Carry bear spray']
+        },
+        {
+          id: 'a19-4',
+          name: 'Lunch at Rising Sun',
+          description: 'Stop at Rising Sun for lunch at the camp store/restaurant before heading back. Or pack a picnic from groceries.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
+          id: 'a19-5',
+          name: 'Goat Lick Overlook (on the way back)',
+          description: 'Stop at Goat Lick overlook on Hwy 2 on the drive back to Columbia Falls. Mountain goats are frequently visible from this highway pulloff, licking mineral deposits on the exposed rock face.',
+          duration: '20-30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Right off Hwy 2 between West Glacier and Essex', 'Mountain goats visible on the rock face', 'Bring binoculars for a closer look', 'Best in spring/early summer when goats crave minerals']
         }
       ],
       accommodation: {
@@ -2340,27 +2350,27 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third night.'
+        notes: 'Third night. Wife\'s Saturday.'
       },
-      notes: ['WIFE\'S FULL DAY — activities can be more ambitious', 'Mom: Trail of the Cedars only (1mi boardwalk) while Colin + wife do Avalanche Lake', 'Avalanche Lake: 5.8mi RT, 730ft gain — turquoise alpine lake with waterfalls', 'OR: Many Glacier drive (~2.5hrs each way) for the most spectacular valley in the park', 'Construction at Many Glacier in 2026 (parking, water system)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
-      budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 30, total: 270 }
+      notes: ['FULL DAY — east side of Glacier', 'Wild Goose Island is THE iconic Glacier photo', 'St. Mary Falls is short and easy (1.6mi RT)', 'Goat Lick overlook on Hwy 2 on the way back — mountain goats!', 'Wife\'s full Saturday — all 3 together', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      budgetBreakdown: { accommodation: 150, food: 70, activities: 0, gas: 30, total: 250 }
     },
 
     // ============================================================
-    // DAY 24: WHITEFISH DAY — WORK + MOM EXPLORES
+    // DAY 24: WHITEFISH + WIFE FAREWELL + CELEBRATION DINNER
     // ============================================================
     {
       id: 'd24',
       dayNumber: 24,
       date: '2026-06-07',
-      title: 'Last Day with Wife — Whitefish & Farewell',
-      summary: 'Morning in Whitefish together, wife flies home Sunday evening',
+      title: 'Whitefish, Wife Farewell & Celebration Dinner',
+      summary: 'Morning in Whitefish, wife flies home Sunday evening, celebration dinner',
       location: locations.find(l => l.id === 'whitefish')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
-          id: 'aW5-1',
+          id: 'a20-1',
           name: 'Morning in Whitefish — All Three',
           description: 'Drive 15 min to Whitefish for a morning exploring this charming ski town. Browse Central Avenue shops and galleries. Coffee at Montana Coffee Traders (110 Central Ave) or Loula\'s Cafe for brunch in the historic Masonic temple.',
           duration: '3 hours',
@@ -2370,252 +2380,57 @@ export const tripData: TripData = {
           tips: ['Central Avenue: flat 4-block strip, boutiques, galleries, ice cream', 'Montana Coffee Traders: 110 Central Ave, locally roasted coffee', 'Loula\'s Cafe: brunch institution in historic building', 'Everything walkable — no car needed once in downtown Whitefish']
         },
         {
-          id: 'aW5-2',
+          id: 'a20-2',
           name: 'Whitefish Lake & City Beach',
-          description: 'Walk to Whitefish Lake City Beach (15min walk or 5min drive from downtown). Sandy beach, picnic tables, mountain views. Rent kayaks if available. Relaxed afternoon by the water.',
+          description: 'Walk to Whitefish Lake City Beach (15min walk or 5min drive from downtown). Sandy beach, picnic tables, mountain views. Relaxed afternoon by the water.',
           duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Whitefish Lake City Beach: sandy, benches, mountain backdrop', 'Paved lakeside trail for an easy walk', 'Great Northern Brewing Company nearby for a beer', 'Stumptown Historical Museum: free, quick visit']
+          tips: ['Whitefish Lake City Beach: sandy, benches, mountain backdrop', 'Paved lakeside trail for an easy walk', 'Great Northern Brewing Company nearby for a beer']
         },
         {
-          id: 'aW5-3',
-          name: 'Drop Wife at FCA — Farewell Dinner',
-          description: 'Drive wife to FCA airport (13min from Columbia Falls) for her Sunday evening flight. Then a quiet dinner — just Colin and Mom for the rest of the trip.',
+          id: 'a20-3',
+          name: 'Drop Wife at FCA',
+          description: 'Drive wife to FCA airport (13min from Columbia Falls) for her Sunday evening flight back to Seattle.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['FCA is 13min from Columbia Falls', 'Wife: Alaska nonstop to SEA, 1h20m', 'Small airport — drop off 1.5hrs before flight']
+        },
+        {
+          id: 'a20-4',
+          name: 'Celebration Dinner — Last Night',
+          description: 'Nice dinner to celebrate an incredible trip. Whitefish has great restaurants, or cook a final meal in the condo.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['FCA is 13min from Columbia Falls', 'Wife: Alaska nonstop to SEA, 1h20m', 'Tupelo Grille in Whitefish for farewell dinner', 'Or cook at the condo — more intimate']
+          tips: ['Cafe Kandahar — upscale Montana cuisine', 'Tupelo Grille — Southern-inspired, excellent reviews', 'Whitefish Lake Restaurant — lakeside dining', 'Or cook at the condo — more intimate last meal']
         }
       ],
       accommodation: {
-        id: 'accW5a',
-        name: 'Same as previous night',
-        type: 'hotel',
-        priceRange: '$110-160',
-        pricePerNight: 130,
+        id: 'acc17a',
+        name: 'Meadow Lake Resort (last night)',
+        type: 'condo',
+        priceRange: '$130-180',
+        pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Same hotel — extra night.'
+        notes: 'Last night! Pack tonight for tomorrow\'s flight.'
       },
-      notes: ['WIFE\'S LAST DAY — Sunday evening flight FCA→SEA (Alaska nonstop, 1h20m)', 'Full day together before wife departs', 'Drop wife at FCA (~6pm) — 13 min from Columbia Falls', 'Whitefish is 15 min from Columbia Falls — cute mountain town', 'Same hotel as previous night'],
-      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
+      notes: ['WIFE\'S LAST DAY — Sunday evening flight FCA→SEA', 'Full day together before wife departs', 'Drop wife at FCA (~6pm) — 13 min from Columbia Falls', 'CELEBRATION DINNER — what an incredible trip!', 'Pack tonight — flight day tomorrow, no activities'],
+      budgetBreakdown: { accommodation: 150, food: 100, activities: 0, gas: 10, total: 260 }
     },
 
     // ============================================================
-    // DAY 25: GLACIER — EAST SIDE / ST. MARY + REST
+    // DAY 25: FLY HOME FROM FCA — NO ACTIVITIES
     // ============================================================
     {
       id: 'd25',
       dayNumber: 25,
       date: '2026-06-08',
-      title: 'Glacier East Side — St. Mary & Rest',
-      summary: 'GTSR east side drive, St. Mary Falls, boat tour, afternoon rest',
-      location: locations.find(l => l.id === 'glacier')!,
-      overnight: 'Columbia Falls / West Glacier, MT',
-      weather: { high: 17, low: 3, conditions: 'Cool' },
-      activities: [
-        {
-          id: 'a20-1',
-          name: 'Drive to St. Mary Entrance (East Side)',
-          description: 'Drive to the St. Mary entrance on the east side of the park. The GTSR east side from St. Mary to Jackson Glacier Overlook should be open.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Route: Columbia Falls → Hwy 2 east → Hwy 89 north to St. Mary', 'About 1.5 hours from Columbia Falls']
-        },
-        {
-          id: 'a20-2',
-          name: 'GTSR East Side Drive',
-          description: 'Drive the open section of Going-to-the-Sun Road from St. Mary entrance. Stop at Rising Sun, Wild Goose Island overlook (iconic photo spot), and Sun Point.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Wild Goose Island overlook is an iconic Glacier photo', 'Rising Sun has a small store and restaurant', 'Sun Point has a short walk to a St. Mary Lake viewpoint', 'Road open from St. Mary to Jackson Glacier Overlook area']
-        },
-        {
-          id: 'a20-3',
-          name: 'St. Mary Falls Hike',
-          description: 'Easy 1.6mi round trip hike to a beautiful waterfall. One of the most rewarding short hikes in the park.',
-          duration: '1 hour',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '1.6 miles RT',
-          elevation: { gain: 200 },
-          tips: ['Trailhead is at the St. Mary Falls shuttle stop on GTSR', 'Mostly downhill to the falls, uphill on the return', 'Beautiful cascading waterfall', 'Can continue to Virginia Falls (+0.6mi) if feeling good']
-        },
-        {
-          id: 'a20-4',
-          name: 'Boat Tour on St. Mary Lake (optional)',
-          description: 'Scenic boat tour on St. Mary Lake departing from Rising Sun. Check if running by early June.',
-          duration: '1 hour',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Glacier Park Boat Company operates the tours', 'Departures from Rising Sun dock', 'Check schedule — may not be running by June 2', 'St. Mary Lake is the second-largest lake in the park']
-        },
-        {
-          id: 'a20-5',
-          name: 'Afternoon Rest & Leisure',
-          description: 'Head back to Columbia Falls for a quiet afternoon. Rest at the condo, or explore local shops and coffee.',
-          duration: '3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Montana Coffee Traders for great local coffee', 'Backslope Brewing in Columbia Falls', 'Enjoy the quiet — you have several more nights at Glacier']
-        }
-      ],
-      accommodation: {
-        id: 'acc17a',
-        name: 'Meadow Lake Resort (same as previous night)',
-        type: 'condo',
-        priceRange: '$130-180',
-        pricePerNight: 150,
-        seniorFriendly: true,
-        recommended: true,
-        notes: 'Fourth and final night at Glacier.'
-      },
-      notes: ['REST DAY vibe — take it easy after 3 active Glacier days', 'St. Mary Falls is short and easy (1.6mi RT)', 'Wild Goose Island overlook is a must-photo', 'WILDLIFE: Goat Lick Overlook on Hwy 2 (30min east of West Glacier) — mountain goats at dawn/dusk', 'Bears common near Avalanche Creek — always carry bear spray'],
-      budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 25, total: 265 }
-    },
-
-    // ============================================================
-    // DAY 26: WORK/REST DAY — GLACIER (LAKE McDONALD CHILL)
-    // ============================================================
-    {
-      id: 'd26',
-      dayNumber: 26,
-      date: '2026-06-09',
-      title: 'Work Day — Glacier',
-      summary: 'Remote work day, Mom explores on her own',
-      location: locations.find(l => l.id === 'glacier')!,
-      overnight: 'Columbia Falls / West Glacier, MT',
-      weather: { high: 17, low: 3, conditions: 'Cool' },
-      activities: [
-        {
-          id: 'aW6-1',
-          name: 'Colin Works — Montana Coffee Traders or Condo (8am-12pm)',
-          description: 'Work from the condo (Meadow Lake has WiFi) or drive 5 min to Montana Coffee Traders in Columbia Falls for a change of scene. Odd Fellows Coffee is another option with locally roasted Fieldheads coffee.',
-          duration: '4 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Montana Coffee Traders Columbia Falls: roastery + cafe, WiFi', 'Odd Fellows Coffee: locally roasted Fieldheads coffee, pastries', 'Meadow Lake condo has WiFi and a quiet workspace', 'Cell hotspot as backup — coverage is decent in Columbia Falls']
-        },
-        {
-          id: 'aW6-2',
-          name: 'Mom Solo: Lake McDonald Lodge & Apgar Village',
-          description: 'Drive Mom to Lake McDonald Lodge (20 min). She can sit on the lodge porch in rocking chairs with mountain views, walk the colorful rocky shoreline, browse the gift shop. Apgar Village (5min further) has a general store, cafe, and boat dock. Most peaceful morning in the park.',
-          duration: '3-4 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Lake McDonald Lodge: Swiss chalet style, rocking chairs on porch with mountain views', 'Shoreline walk: flat, colorful rocks, iconic Glacier photos', 'Apgar Village: general store, Eddie\'s Cafe, gift shops', 'She can drive herself (20 min on easy highway) or you can drop her off', 'Park entrance: use the America the Beautiful pass — already purchased']
-        },
-        {
-          id: 'aW6-3',
-          name: 'Afternoon Together — Backslope Brewing',
-          description: 'Pick up Mom, head to Backslope Brewing in Columbia Falls for local craft beers and pub food, or cook dinner in the condo kitchen.',
-          duration: '2-3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Backslope Brewing: local craft beers, pub food, casual atmosphere', 'Or cook at the condo — you have a full kitchen and groceries', 'Last couple of nights at Glacier — enjoy the quiet']
-        }
-      ],
-      accommodation: {
-        id: 'accW6a',
-        name: 'Same as previous night',
-        type: 'hotel',
-        priceRange: '$110-160',
-        pricePerNight: 130,
-        seniorFriendly: true,
-        recommended: true,
-        notes: 'Same hotel — extra night.'
-      },
-      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Lake McDonald Lodge is the most peaceful spot in the park'],
-      budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
-    },
-
-    // ============================================================
-    // DAY 27: LAST DAY AT GLACIER — GOAT LICK & CELEBRATION DINNER
-    // ============================================================
-    {
-      id: 'd27',
-      dayNumber: 27,
-      date: '2026-06-10',
-      title: 'Last Day at Glacier — Goat Lick & Farewell Dinner',
-      summary: 'Goat Lick overlook, Flathead Lake drive, celebration dinner in Whitefish',
-      location: locations.find(l => l.id === 'glacier')!,
-      overnight: 'Columbia Falls / West Glacier, MT',
-      weather: { high: 17, low: 3, conditions: 'Cool' },
-      activities: [
-        {
-          id: 'a21-1',
-          name: 'Goat Lick Overlook (Hwy 2)',
-          description: 'Stop at the Goat Lick overlook on Hwy 2 (between West Glacier and Essex). Mountain goats are frequently visible from this highway pulloff, licking mineral deposits on the exposed rock face.',
-          duration: '30 min',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Right off Hwy 2 — easy pulloff', 'Mountain goats visible on the rock face', 'Bring binoculars for a closer look', 'Best in spring/early summer when goats crave minerals']
-        },
-        {
-          id: 'a21-2',
-          name: 'Drive to Flathead Lake (optional)',
-          description: 'Drive south to Polson/Bigfork for views of the largest natural freshwater lake west of the Mississippi. Cherry orchards, scenic lakeshore.',
-          duration: '2-3 hours (with drive)',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Polson is ~1hr south of Columbia Falls', 'Bigfork is a charming arts village on the NE shore', 'Cherry orchards along the east shore']
-        },
-        {
-          id: 'a21-3',
-          name: 'Pack & Prep for Tomorrow',
-          description: 'Pack up, do laundry at the condo, prep for departure day.',
-          duration: '1-2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-        },
-        {
-          id: 'a21-4',
-          name: 'Celebration Dinner in Whitefish',
-          description: 'Nice dinner to celebrate an incredible 4-week trip! Whitefish has great restaurants.',
-          duration: '2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Cafe Kandahar — upscale Montana cuisine', 'Tupelo Grille — Southern-inspired, excellent reviews', 'Whitefish Lake Restaurant — lakeside dining']
-        }
-      ],
-      accommodation: {
-        id: 'acc17a',
-        name: 'Meadow Lake Resort (same as previous nights)',
-        type: 'condo',
-        priceRange: '$130-180',
-        pricePerNight: 150,
-        seniorFriendly: true,
-        recommended: true,
-        notes: 'Last night! No need to drive to Missoula — fly from FCA tomorrow.'
-      },
-      notes: ['LAST FULL DAY — no Missoula drive needed!', 'Fly from FCA (Glacier Park International) tomorrow', 'Goat Lick overlook on Hwy 2 — mountain goats visible from highway pulloff', 'Pack tonight — early morning tomorrow', 'Celebration dinner in Whitefish!'],
-      budgetBreakdown: { accommodation: 150, food: 100, activities: 0, gas: 15, total: 265 }
-    },
-
-    // ============================================================
-    // DAY 28: FLY HOME FROM FCA
-    // ============================================================
-    {
-      id: 'd28',
-      dayNumber: 28,
-      date: '2026-06-11',
       title: 'Fly Home from Glacier Park',
       summary: 'Return rental car at FCA, fly home — trip complete!',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2623,7 +2438,7 @@ export const tripData: TripData = {
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
-          id: 'a22-1',
+          id: 'a21-1',
           name: 'Breakfast & Check Out',
           description: 'Last breakfast. Pack up and check out of Meadow Lake. Drive 15 min to FCA airport.',
           duration: '1.5 hours',
@@ -2633,7 +2448,7 @@ export const tripData: TripData = {
           tips: ['FCA is only 15 min from Columbia Falls', 'Return rental car at FCA airport', 'Small airport — no TSA chaos']
         },
         {
-          id: 'a22-2',
+          id: 'a21-2',
           name: 'Fly Home',
           description: 'Colin: FCA → SEA nonstop on Alaska Airlines (1h20m, Embraer E175 jet). Mom: FCA → MSP → YYZ on Delta (~8hrs total, one stop at Minneapolis).',
           duration: 'All day',
@@ -2643,7 +2458,7 @@ export const tripData: TripData = {
           tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Colin: Alaska nonstop to SEA, 1h20m', 'Mom: Delta to MSP then YYZ, ~8hrs total — one airline the whole way']
         }
       ],
-      notes: ['DEPARTURE DAY', 'Return rental car at FCA airport', 'Colin: FCA→SEA nonstop (Alaska, 1h20m)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', 'What an incredible 28-day trip!'],
+      notes: ['FLIGHT DAY — no activities', 'Return rental car at FCA airport', 'Colin: FCA→SEA nonstop (Alaska, 1h20m)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', 'What an incredible 25-day trip!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
@@ -2667,9 +2482,9 @@ export const tripData: TripData = {
     },
     carRental: {
       dailyRate: 40,
-      days: 27,
+      days: 24,
       dropoffFee: 200,
-      total: 1280,
+      total: 1160,
       notes: 'LAS→FCA one-way. Saves 3-hour drive to Missoula! Book via Costco Travel or AutoSlash.',
     },
     passengerAssistance: {
