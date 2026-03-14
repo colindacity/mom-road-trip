@@ -100,7 +100,7 @@ export const tripData: TripData = {
   endDate: '2026-06-11',
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
-    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
+    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
     { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Jun 5 - Jun 7). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
@@ -170,7 +170,7 @@ export const tripData: TripData = {
       price: 200,
       duration: '4h 45m',
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-15&curr=USD',
-      notes: 'YYZ→LAS has many options. Porter, WestJet, Flair all fly direct. Request wheelchair assist 48hrs ahead.'
+      notes: 'YYZ→LAS has many options. Porter, WestJet, Flair all fly direct.'
     },
     {
       id: 'f3',
@@ -199,7 +199,7 @@ export const tripData: TripData = {
       airline: 'Delta',
       price: 350,
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-11&curr=USD',
-      notes: 'FCA→MSP→YYZ on Delta. Best option for seniors: one airline, one stop at Minneapolis hub (~8hrs total). MSP is well-organized. Request wheelchair/passenger assistance.'
+      notes: 'FCA→MSP→YYZ on Delta. Best option: one airline, one stop at Minneapolis hub (~8hrs total). MSP is well-organized.'
     },
     {
       id: 'f5',
@@ -2640,10 +2640,10 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['Request wheelchair assist for Mom at FCA check-in', 'FCA is a small, easy airport — very manageable for Mom', 'Arrive 1.5hrs before departure', 'Colin: Alaska nonstop to SEA, 1h20m', 'Mom: Delta to MSP then YYZ, ~8hrs total — one airline the whole way']
+          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Colin: Alaska nonstop to SEA, 1h20m', 'Mom: Delta to MSP then YYZ, ~8hrs total — one airline the whole way']
         }
       ],
-      notes: ['DEPARTURE DAY', 'Return rental car at FCA airport', 'Colin: FCA→SEA nonstop (Alaska, 1h20m)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', 'Request wheelchair assistance for Mom', 'What an incredible 28-day trip!'],
+      notes: ['DEPARTURE DAY', 'Return rental car at FCA airport', 'Colin: FCA→SEA nonstop (Alaska, 1h20m)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', 'What an incredible 28-day trip!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
@@ -2674,7 +2674,7 @@ export const tripData: TripData = {
     },
     passengerAssistance: {
       cost: 0,
-      notes: 'Free wheelchair/mobility assistance on all airlines',
+      notes: 'No special assistance needed — Mom is active and mobile.',
     },
     accommodationAvg: 134,
     foodPerDay: 71,
