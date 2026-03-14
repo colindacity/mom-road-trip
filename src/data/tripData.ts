@@ -1,10 +1,10 @@
 import { TripData, Location, DayPlan, Accommodation } from '@/types/trip';
 
 export const locations: Location[] = [
-  { id: 'phx', name: 'Phoenix, AZ', lat: 33.4484, lng: -112.0740, type: 'city',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Downtown_Phoenix_Skyline_%286974043971%29.jpg/1280px-Downtown_Phoenix_Skyline_%286974043971%29.jpg',
-    infoUrl: 'https://www.visitphoenix.com/',
-    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Phoenix+Sky+Harbor+Airport' },
+  { id: 'las', name: 'Las Vegas, NV', lat: 36.1699, lng: -115.1398, type: 'city',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Las_Vegas_strip.jpg/1280px-Las_Vegas_strip.jpg',
+    infoUrl: 'https://www.visitlasvegas.com/',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Harry+Reid+International+Airport+Las+Vegas' },
   { id: 'flagstaff', name: 'Flagstaff, AZ', lat: 35.1983, lng: -111.6513, type: 'city',
     image: 'https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=1200',
     infoUrl: 'https://www.flagstaffarizona.org/',
@@ -91,42 +91,42 @@ export const locations: Location[] = [
 export const tripData: TripData = {
   id: 'mom-road-trip-2026',
   name: "Southwest to Glacier Road Trip",
-  tagline: "22 days, 6 national parks, Phoenix to Glacier, one unforgettable journey with Mom",
+  tagline: "22 days, 6 national parks, Las Vegas to Glacier, one unforgettable journey with Mom",
   startDate: '2026-05-15',
   endDate: '2026-06-05',
   travelers: [
-    { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → PHX' },
-    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → PHX. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
+    { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
+    { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
     { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (May 31 - Jun 2). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
-      id: 'arizona',
-      name: 'Arizona',
-      summary: 'Grand Canyon, Antelope Canyon, Horseshoe Bend',
-      days: [1, 2, 3, 4, 5],
+      id: 'southwest',
+      name: 'Vegas & Arizona',
+      summary: 'Las Vegas, Grand Canyon, Antelope Canyon, Horseshoe Bend',
+      days: [1, 2, 3, 4, 5, 6],
       startDay: 1,
-      endDay: 5,
+      endDay: 6,
       color: '#ef4444',
-      highlights: ['Phoenix arrival', 'Grand Canyon', 'Antelope Canyon', 'Horseshoe Bend']
+      highlights: ['Las Vegas (2 nights)', 'Grand Canyon', 'Desert View Watchtower', 'Antelope Canyon', 'Horseshoe Bend']
     },
     {
       id: 'utah',
       name: 'Utah',
-      summary: 'Arches, Canyonlands, red rock country',
-      days: [6, 7, 8, 9, 10],
-      startDay: 6,
-      endDay: 10,
+      summary: 'Monument Valley, Arches, Canyonlands, Salt Lake City',
+      days: [7, 8, 9, 10, 11],
+      startDay: 7,
+      endDay: 11,
       color: '#f59e0b',
-      highlights: ['Monument Valley drive-by', 'Arches NP', 'Rest day', 'Canyonlands', 'Salt Lake City']
+      highlights: ['Monument Valley drive-by', 'Arches NP', 'Canyonlands', 'Salt Lake City']
     },
     {
       id: 'wyoming',
       name: 'Wyoming',
       summary: 'Grand Teton and Yellowstone',
-      days: [11, 12, 13, 14, 15, 16],
-      startDay: 11,
-      endDay: 16,
+      days: [12, 13, 14, 15, 16, 17],
+      startDay: 12,
+      endDay: 17,
       color: '#22c55e',
       highlights: ['Grand Teton (3 days)', 'Yellowstone geysers', 'Yellowstone canyon & wildlife']
     },
@@ -134,8 +134,8 @@ export const tripData: TripData = {
       id: 'montana',
       name: 'Montana & Glacier',
       summary: 'Glacier National Park with wife joining for the weekend',
-      days: [17, 18, 19, 20, 21, 22],
-      startDay: 17,
+      days: [18, 19, 20, 21, 22],
+      startDay: 18,
       endDay: 22,
       color: '#06b6d4',
       highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from MSO']
@@ -147,26 +147,26 @@ export const tripData: TripData = {
       type: 'outbound',
       passenger: 'colin',
       from: 'SEA',
-      to: 'PHX',
+      to: 'LAS',
       date: '2026-05-15',
       airline: 'Alaska Airlines',
-      price: 90,
-      duration: '2h 55m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+PHX+on+2026-05-15&curr=USD',
-      notes: 'Direct flights ~2h 55m. Book 45-60 days ahead for best rates.'
+      price: 80,
+      duration: '2h 40m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+LAS+on+2026-05-15&curr=USD',
+      notes: 'Multiple direct flights daily ~2h 40m. SEA→LAS is heavily served — cheap fares.'
     },
     {
       id: 'f2',
       type: 'outbound',
       passenger: 'mom',
       from: 'YYZ',
-      to: 'PHX',
+      to: 'LAS',
       date: '2026-05-15',
-      airline: 'Porter Airlines (Recommended)',
-      price: 220,
-      duration: '4h 32m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15&curr=USD',
-      notes: 'DIRECT flight. Porter has no middle seats, complimentary wine. Request wheelchair assist 48hrs ahead.'
+      airline: 'Porter Airlines / WestJet',
+      price: 200,
+      duration: '4h 45m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-15&curr=USD',
+      notes: 'YYZ→LAS has many options. Porter, WestJet, Flair all fly direct. Request wheelchair assist 48hrs ahead.'
     },
     {
       id: 'f3',
@@ -233,19 +233,19 @@ export const tripData: TripData = {
       passenger: 'colin',
       type: 'outbound',
       recommended: 'sea-phx-direct',
-      notes: 'Colin flies SEA→PHX. Multiple direct options daily.',
+      notes: 'Colin flies SEA→LAS. Multiple direct flights daily.',
       options: [
         {
           id: 'sea-phx-direct',
           type: 'outbound',
           passenger: 'colin',
           from: 'SEA',
-          to: 'PHX',
+          to: 'LAS',
           date: '2026-05-15',
           airline: 'Alaska Airlines',
           price: 89,
           duration: '2h 55m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+PHX+on+2026-05-15&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+LAS+on+2026-05-15&curr=USD',
           notes: 'DIRECT! 4+ daily nonstops.'
         },
         {
@@ -253,7 +253,7 @@ export const tripData: TripData = {
           type: 'outbound',
           passenger: 'colin',
           from: 'SEA',
-          to: 'PHX',
+          to: 'LAS',
           date: '2026-05-15',
           airline: 'Southwest',
           price: 100,
@@ -268,19 +268,19 @@ export const tripData: TripData = {
       passenger: 'mom',
       type: 'outbound',
       recommended: 'yyz-phx-porter',
-      notes: 'Mom flies YYZ→PHX. Porter recommended for comfort.',
+      notes: 'Mom flies YYZ→LAS. Porter or WestJet direct.',
       options: [
         {
           id: 'yyz-phx-porter',
           type: 'outbound',
           passenger: 'mom',
           from: 'YYZ',
-          to: 'PHX',
+          to: 'LAS',
           date: '2026-05-15',
           airline: 'Porter Airlines',
           price: 220,
           duration: '4h 32m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-15&curr=USD',
           notes: 'No middle seats, free wine, snacks. Best for seniors.'
         },
         {
@@ -288,12 +288,12 @@ export const tripData: TripData = {
           type: 'outbound',
           passenger: 'mom',
           from: 'YYZ',
-          to: 'PHX',
+          to: 'LAS',
           date: '2026-05-15',
           airline: 'WestJet',
           price: 280,
           duration: '4h 35m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+PHX+on+2026-05-15+WestJet&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-15+WestJet&curr=USD',
           notes: 'Canadian airline, good service.'
         }
       ]
@@ -302,7 +302,7 @@ export const tripData: TripData = {
   carRental: {
     company: 'Budget or Enterprise',
     vehicleType: 'Compact AWD SUV (Subaru Crosstrek / Toyota RAV4)',
-    pickupLocation: 'Phoenix Sky Harbor Airport (PHX)',
+    pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-15',
     dropoffLocation: 'Missoula Airport (MSO)',
     dropoffDate: '2026-06-03',
@@ -310,180 +310,240 @@ export const tripData: TripData = {
     dailyRate: 40,
     dropoffFee: 200,
     totalCost: 960,
-    notes: 'One-way compact SUV. PHX to MSO drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget. Expect ~$1,100-1,200 all-in with taxes/fees.'
+    notes: 'One-way compact SUV. LAS to MSO drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget. Expect ~$1,100-1,200 all-in with taxes/fees.'
   },
   days: [
     // ============================================================
-    // DAY 1: ARRIVE PHOENIX
+    // DAY 1: ARRIVE LAS VEGAS
     // ============================================================
     {
       id: 'd1',
       dayNumber: 1,
       date: '2026-05-15',
-      title: 'Arrive Phoenix — Rest & Recover',
-      summary: 'Land, pick up car, easy evening, recover from travel',
-      location: locations.find(l => l.id === 'phx')!,
-      overnight: 'Phoenix / Scottsdale, AZ',
-      weather: { high: 38, low: 23, conditions: 'Hot and sunny — stay by the pool!' },
+      title: 'Arrive Las Vegas',
+      summary: 'Land, pick up car, evening on the Strip',
+      location: locations.find(l => l.id === 'las')!,
+      overnight: 'Las Vegas, NV',
+      weather: { high: 36, low: 20, conditions: 'Hot and sunny — desert heat!' },
       activities: [
         {
           id: 'a1-1',
-          name: 'Arrive Phoenix & Pick Up Rental',
-          description: 'Arrive at Phoenix Sky Harbor, pick up compact AWD SUV. Mom arrives ~10:30am, Colin adjust timing to meet.',
+          name: 'Arrive Las Vegas & Pick Up Rental',
+          description: 'Arrive at Harry Reid International (LAS). Pick up compact AWD SUV from rental car center. Mom arrives mid-morning, Colin adjust timing to meet.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['Pre-book rental online', 'Confirm AWD vehicle', 'Meet at rental car center']
+          tips: ['Rental car center is a short tram ride from baggage claim', 'Pre-book online for best rates', 'Confirm AWD vehicle']
         },
         {
           id: 'a1-2',
-          name: 'Check into Hotel & Rest',
-          description: 'Get settled, unpack, rest up. Long trip ahead — start well-rested!',
-          duration: '2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Request ground floor room', 'Pool hotels are ideal in Phoenix heat']
-        },
-        {
-          id: 'a1-3',
-          name: 'Pool Time & Relaxation',
-          description: 'Enjoy the Arizona sunshine by the pool. Hydrate well — desert air is dry!',
-          duration: '2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Sunscreen essential', 'Drink lots of water', 'Stay in shade 2-4pm']
-        },
-        {
-          id: 'a1-4',
-          name: 'Dinner in Scottsdale',
-          description: 'Nice dinner to kick off the trip. Old Town Scottsdale has great options.',
+          name: 'Check into Hotel & Freshen Up',
+          description: 'Get settled at the hotel. Rest up from the flights before hitting the Strip.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['The Mission, Barrio Queen, or Cafe Monarch', 'Outdoor patios lovely in the evening']
+          tips: ['Request a room away from elevators for quiet', 'Pool time if you arrive early enough']
+        },
+        {
+          id: 'a1-3',
+          name: 'Evening Strip Walk & Dinner',
+          description: 'Stroll the Las Vegas Strip at dusk when the lights come alive. See the Bellagio fountains, Venetian, and Caesars Palace. Grab dinner at one of the casino restaurants.',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Bellagio fountains run every 15 min after 8pm — free show', 'Wear comfortable shoes — the Strip is longer than it looks', 'Mon Ami Gabi at Paris has great patio dining with fountain views', 'Bacchanal Buffet at Caesars is the best buffet in Vegas (~$75/person)']
         }
       ],
       accommodation: {
         id: 'acc1a',
-        name: 'La Quinta Inn & Suites Scottsdale',
+        name: 'The LINQ Hotel + Experience',
         type: 'hotel',
-        priceRange: '$70-100',
-        pricePerNight: 85,
-        reviewRating: 4.1,
-        reviewSource: 'Booking.com (8.2/10)',
-        reviewCount: 1487,
-        address: '8888 E Shea Blvd, Scottsdale, AZ 85260',
-        website: 'https://www.wyndhamhotels.com/laquinta/scottsdale-arizona/la-quinta-phoenix-scottsdale/overview',
-        bookingUrl: 'https://www.kayak.com/Scottsdale-Hotels-La-Quinta-Inn-Suites-by-Wyndham-Phoenix-Scottsdale.34466.ksp',
-        amenities: ['Pool', 'Hot tub', 'Free breakfast', 'Free parking', 'Free WiFi'],
+        priceRange: '$50-90',
+        pricePerNight: 70,
+        reviewRating: 4.0,
+        reviewSource: 'TripAdvisor (4.0/5)',
+        address: '3535 S Las Vegas Blvd, Las Vegas, NV',
+        website: 'https://www.caesars.com/linq',
+        bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-The-LINQ-Hotel-Experience.23474.ksp',
+        amenities: ['Pool', 'Center Strip location', 'Free WiFi', 'Casino', 'Multiple restaurants'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Best value. 2 double beds, pool, free hot breakfast. May is off-peak in Phoenix so rates are low.'
+        notes: 'Center Strip location, great value mid-week. 2 queen beds. Walking distance to everything. May weeknights are cheap.'
       },
       accommodationOptions: [
         {
           id: 'acc1a',
-          name: 'La Quinta Inn & Suites Scottsdale',
+          name: 'The LINQ Hotel + Experience',
           type: 'hotel',
-          priceRange: '$70-100',
-          pricePerNight: 85,
-          reviewRating: 4.1,
-          reviewSource: 'Booking.com (8.2/10)',
-          reviewCount: 1487,
-          address: '8888 E Shea Blvd, Scottsdale, AZ 85260',
-          website: 'https://www.wyndhamhotels.com/laquinta/scottsdale-arizona/la-quinta-phoenix-scottsdale/overview',
-          bookingUrl: 'https://www.kayak.com/Scottsdale-Hotels-La-Quinta-Inn-Suites-by-Wyndham-Phoenix-Scottsdale.34466.ksp',
-          amenities: ['Pool', 'Hot tub', 'Free breakfast', 'Free parking', 'Free WiFi'],
+          priceRange: '$50-90',
+          pricePerNight: 70,
+          reviewRating: 4.0,
+          reviewSource: 'TripAdvisor (4.0/5)',
+          address: '3535 S Las Vegas Blvd',
+          website: 'https://www.caesars.com/linq',
+          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-The-LINQ-Hotel-Experience.23474.ksp',
+          amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'Best value. 2 double beds, pool, free hot breakfast. May off-peak pricing.'
+          notes: 'Best value on the Strip. Center location. 2 queen beds. May weeknights can be under $60.'
         },
         {
           id: 'acc1b',
-          name: 'Hampton Inn & Suites Scottsdale/Shea Blvd',
+          name: 'Flamingo Las Vegas',
           type: 'hotel',
-          priceRange: '$112-135',
-          pricePerNight: 125,
-          reviewRating: 4.3,
-          reviewSource: 'TripAdvisor (4.5/5)',
-          reviewCount: 850,
-          address: '10101 N Scottsdale Rd, Scottsdale, AZ 85253',
-          website: 'https://www.hilton.com/en/hotels/phxsdhx-hampton-suites-phoenix-scottsdale-on-shea-boulevard/',
-          bookingUrl: 'https://www.kayak.com/Scottsdale-Hotels-Hampton-Inn-Suites-Scottsdale-on-Shea-Blvd.5991.ksp',
-          amenities: ['Heated pool', 'Spa', 'Free breakfast', 'Free parking', 'Kitchen suite available'],
+          priceRange: '$40-80',
+          pricePerNight: 55,
+          reviewRating: 3.8,
+          reviewSource: 'TripAdvisor (3.5/5)',
+          address: '3555 S Las Vegas Blvd',
+          website: 'https://www.caesars.com/flamingo-las-vegas',
+          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-Flamingo-Las-Vegas.8700.ksp',
+          amenities: ['Pool complex', 'Wildlife habitat', 'Center Strip', 'Casino'],
           seniorFriendly: true,
-          notes: '2-queen suite with kitchen and living room. Best pool setup. Top of budget but more space.'
+          notes: 'Budget option. Famous pool and flamingo habitat. Older rooms but great location.'
         },
         {
           id: 'acc1c',
-          name: 'Airbnb 2BR Condo in Scottsdale',
-          type: 'airbnb',
-          priceRange: '$100-140',
-          pricePerNight: 120,
-          reviewRating: 4.9,
-          reviewSource: 'Airbnb',
-          address: 'North Scottsdale / Kierland area',
-          bookingUrl: 'https://www.airbnb.com/scottsdale-az/stays',
-          amenities: ['2 bedrooms', 'Full kitchen', 'Community pool', 'Free parking', 'Washer/dryer'],
+          name: 'Park MGM',
+          type: 'hotel',
+          priceRange: '$80-140',
+          pricePerNight: 100,
+          reviewRating: 4.2,
+          reviewSource: 'TripAdvisor (4.0/5)',
+          address: '3770 S Las Vegas Blvd',
+          website: 'https://www.parkmgm.com/',
+          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-Park-MGM-Las-Vegas.256206.ksp',
+          amenities: ['Pool', 'Spa', 'Eataly food hall', 'Non-smoking floors', 'Casino'],
           seniorFriendly: true,
-          notes: 'Search for 2BR condos near Kierland Commons. May off-peak = good inventory. Filter: 2BR, $150 max, pool.'
+          notes: 'Quieter, more refined. Has non-smoking casino floor. Eataly is great for casual dining.'
         }
       ],
-      notes: ['NO DRIVING TODAY — rest after flights!', 'Phoenix is HOT — stay cool', 'Hydrate constantly'],
-      budgetBreakdown: { accommodation: 85, food: 60, activities: 0, gas: 0, total: 145 }
+      notes: ['ARRIVAL DAY — light evening only', 'Vegas hotels are cheap mid-week in May', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry'],
+      budgetBreakdown: { accommodation: 70, food: 60, activities: 0, gas: 0, total: 130 }
     },
 
     // ============================================================
-    // DAY 2: PHOENIX → GRAND CANYON
+    // DAY 2: LAS VEGAS FULL DAY
     // ============================================================
     {
       id: 'd2',
       dayNumber: 2,
       date: '2026-05-16',
-      title: 'Phoenix → Grand Canyon',
-      summary: 'Morning drive through desert to canyon, first views at sunset',
-      location: locations.find(l => l.id === 'gc')!,
-      overnight: 'Grand Canyon (Tusayan)',
-      drivingDistance: '230 miles',
-      drivingTime: '4 hours',
-      weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation (7,000 ft)' },
+      title: 'Las Vegas — Full Day',
+      summary: 'Strip sights, shows, world-class dining, Fremont Street',
+      location: locations.find(l => l.id === 'las')!,
+      overnight: 'Las Vegas, NV',
+      weather: { high: 36, low: 20, conditions: 'Hot and sunny' },
       activities: [
         {
           id: 'a2-1',
-          name: 'Morning Drive: Phoenix to Grand Canyon',
-          description: 'Scenic 4-hour drive. Stop in Flagstaff for lunch. Watch landscape change from desert to pine forest.',
-          duration: '4 hours (with stops)',
+          name: 'Breakfast & Morning Strip Walk',
+          description: 'The Strip is much less crowded in the morning. Walk through the Bellagio Conservatory (free, stunning botanical display), browse the Forum Shops at Caesars, and see the Venetian Grand Canal.',
+          duration: '2.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Leave by 9am', 'Rest stop at Sunset Point and Flagstaff', 'Saguaros first hour, pines near Flagstaff']
+          tips: ['Bellagio Conservatory is free and wheelchair accessible', 'The Venetian canal has free gondolier singing', 'Egg & I or Hash House A Go Go for breakfast']
         },
         {
           id: 'a2-2',
-          name: 'Lunch in Flagstaff',
-          description: 'Stop in charming Flagstaff for lunch. Historic downtown has great cafes.',
+          name: 'High Roller Observation Wheel',
+          description: 'The world\'s tallest observation wheel (550 ft). 30-minute rotation with stunning views of the Strip and surrounding desert mountains. Fully enclosed, air-conditioned cabins.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['MartAnne\'s Breakfast Palace or Pizzicletta']
+          cost: '$25-37/person',
+          tips: ['Day ticket is cheaper than night ($25 vs $37)', 'Cabins are wheelchair accessible', 'Go early afternoon for shorter lines', 'iPhone: great panorama shots from the top']
         },
         {
           id: 'a2-3',
+          name: 'Afternoon Show or Pool',
+          description: 'Catch a matinee Cirque du Soleil show (O, Mystere, or Beatles LOVE), or relax by the pool. Alternatively, visit the Mob Museum or Neon Museum.',
+          duration: '2-3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          cost: '$70-150/person for shows',
+          tips: ['Mystere at Treasure Island is the most accessible Cirque show', 'Beatles LOVE at Mirage is great for music fans', 'Book shows in advance at cirquedusoleil.com', 'Neon Museum: book the guided tour ($20) for the best experience', 'Pool is free with hotel stay — great for an afternoon rest']
+        },
+        {
+          id: 'a2-4',
+          name: 'Dinner & Fremont Street',
+          description: 'Head downtown to Fremont Street Experience for the original Vegas vibe — the pedestrian canopy light show runs every hour after dark. Grab dinner at a celebrity chef restaurant.',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Fremont Street light show runs on the hour after dark — free', 'Oscar\'s Steakhouse at the Plaza is a classic downtown spot', 'Uber/taxi to Fremont is ~$15 from Strip', 'Mom might enjoy the old-school casino vibe at Golden Nugget', 'Return to Strip for Bellagio fountains at night']
+        }
+      ],
+      accommodation: {
+        id: 'acc2a',
+        name: 'The LINQ Hotel + Experience (same as previous night)',
+        type: 'hotel',
+        priceRange: '$50-90',
+        pricePerNight: 70,
+        reviewRating: 4.0,
+        reviewSource: 'TripAdvisor (4.0/5)',
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Second night — same hotel.'
+      },
+      notes: ['FULL VEGAS DAY — no driving', 'Book Cirque show in advance if interested', 'Bellagio Conservatory + fountains are free must-sees', 'Fremont Street is the authentic old Vegas', 'Wear comfortable shoes — lots of walking on marble floors'],
+      budgetBreakdown: { accommodation: 70, food: 100, activities: 80, gas: 0, total: 250 }
+    },
+
+    // ============================================================
+    // DAY 3: LAS VEGAS → GRAND CANYON
+    // ============================================================
+    {
+      id: 'd3',
+      dayNumber: 3,
+      date: '2026-05-17',
+      title: 'Las Vegas → Grand Canyon',
+      summary: 'Scenic desert drive to the canyon, first views and Hermit Road shuttle',
+      location: locations.find(l => l.id === 'gc')!,
+      overnight: 'Grand Canyon (Tusayan)',
+      drivingDistance: '280 miles',
+      drivingTime: '4.5 hours',
+      weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation (7,000 ft)' },
+      activities: [
+        {
+          id: 'a3-1',
+          name: 'Drive: Las Vegas to Grand Canyon',
+          description: 'Head southeast on US-93 to Kingman, then I-40 east to Williams, then AZ-64 north to the South Rim. Landscape shifts from Mojave desert to high-country pines. Stop in Williams for lunch — a charming Route 66 town.',
+          duration: '4.5 hours (with stops)',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Leave by 8:30am to have afternoon at the canyon', 'Hoover Dam bypass bridge has a viewpoint (optional 20 min stop)', 'Williams is a fun Route 66 stop for lunch', 'Gas up in Williams — last cheap gas before Tusayan']
+        },
+        {
+          id: 'a3-2',
+          name: 'Lunch in Williams (Route 66)',
+          description: 'Stop in this charming Route 66 town. Walk the main drag, grab lunch at a classic diner.',
+          duration: '1 hour',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Rod\'s Steak House or Pine Country Restaurant', 'Historic Route 66 signs make fun photos', 'Grand Canyon Railway departs from here (not for this trip but fun to see)']
+        },
+        {
+          id: 'a3-3',
           name: 'First Views at Mather Point',
-          description: 'Your first Grand Canyon views! Short accessible walk to iconic viewpoint. Visitor Center right here.',
+          description: 'Your first Grand Canyon views! Short accessible walk to the most iconic viewpoint. Visitor Center is right here.',
           duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Accessible viewpoints', 'Visitor Center nearby', 'iPhone: use 0.5x ultrawide to capture the full canyon', 'Late afternoon light paints the walls orange and red']
+          tips: ['Accessible viewpoints with railings', 'Visitor Center nearby for maps and info', 'iPhone: 0.5x ultrawide captures the full canyon', 'Late afternoon light paints the walls orange']
         },
         {
-          id: 'a2-4',
+          id: 'a3-4',
           name: 'Hermit Road Shuttle — Western Viewpoints',
           description: 'Take the free Red Route shuttle west along Hermit Road to 9 viewpoints. Hop on/off at each stop. Key stops: Trailview Overlook, Maricopa Point, Powell Point, Hopi Point (best sunset spot), Mohave Point, The Abyss, Pima Point, and Hermit\'s Rest (snacks, water, gift shop). Afternoon light is best for this direction — canyon walls glow orange.',
           duration: '3-4 hours',
@@ -494,7 +554,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc2a',
+        id: 'acc3a',
         name: 'Red Feather Lodge',
         type: 'hotel',
         priceRange: '$150-180',
@@ -511,7 +571,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc2a',
+          id: 'acc3a',
           name: 'Red Feather Lodge',
           type: 'hotel',
           priceRange: '$150-180',
@@ -527,7 +587,7 @@ export const tripData: TripData = {
           notes: 'Highest-rated in Tusayan. 2 queen beds. 1mi from park entrance.'
         },
         {
-          id: 'acc2b',
+          id: 'acc3b',
           name: 'Yavapai Lodge (Inside Park)',
           type: 'lodge',
           priceRange: '$150-200',
@@ -543,7 +603,7 @@ export const tripData: TripData = {
           notes: 'Inside the park! Request Yavapai East (newer, has A/C). 2 queen beds. Books 12+ months ahead.'
         },
         {
-          id: 'acc2c',
+          id: 'acc3c',
           name: 'Maswik Lodge (Inside Park)',
           type: 'lodge',
           priceRange: '$96-200',
@@ -558,132 +618,80 @@ export const tripData: TripData = {
           notes: 'Inside the park! 2 queen beds. Call (888) 297-2757 to book. Best budget in-park option.'
         }
       ],
-      notes: ['DRIVING DAY — light activities', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'Mom pays $100 nonresident surcharge at gate (new 2026 policy for non-US visitors)', 'BOOK El Tovar dinner NOW — 60 day window, reserve at grandcanyonlodges.com'],
-      budgetBreakdown: { accommodation: 165, food: 80, activities: 35, gas: 50, total: 330 }
+      notes: ['DRIVING DAY — light activities after arrival', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'Mom pays $100 nonresident surcharge at gate (new 2026 policy for non-US visitors)', 'BOOK El Tovar dinner NOW — 60 day window, reserve at grandcanyonlodges.com'],
+      budgetBreakdown: { accommodation: 165, food: 80, activities: 35, gas: 55, total: 335 }
     },
 
     // ============================================================
-    // DAY 3: GRAND CANYON FULL DAY
-    // ============================================================
-    {
-      id: 'd3',
-      dayNumber: 3,
-      date: '2026-05-17',
-      title: 'Grand Canyon — Desert View Drive East',
-      summary: 'Drive east to Watchtower, Lipan Point, and all the eastern viewpoints',
-      location: locations.find(l => l.id === 'gc')!,
-      overnight: 'Grand Canyon (Tusayan)',
-      weather: { high: 26, low: 7, conditions: 'Sunny, pleasant' },
-      activities: [
-        {
-          id: 'a3-1',
-          name: 'Sunrise at Yavapai Point',
-          description: 'Less crowded than Mather Point with same eastern exposure. Arrive 30min before sunrise (~5:15am in May). The Geology Museum nearby opens at 8am — worth a quick stop after.',
-          duration: '1 hour',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Sunrise ~5:15am mid-May — warm light floods the canyon', 'Far fewer people than Mather Point', 'Geology Museum opens at 8am nearby', 'iPhone: burst mode during golden hour, 0.5x ultrawide captures the full panorama']
-        },
-        {
-          id: 'a3-2',
-          name: 'Morning Rim Trail Walk',
-          description: 'Walk the paved Rim Trail from Mather Point to Bright Angel Lodge (2mi). Flat, wheelchair accessible, benches throughout. Cool morning temps are ideal for Mom.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '2 miles (Mather Point to Bright Angel Lodge)',
-          elevation: { gain: 100, highest: 7120, lowest: 7000 },
-          tips: ['Paved and wheelchair accessible', 'Free shuttle stops at viewpoints along the way', 'Benches every few hundred yards', 'Morning light is soft and great for photos']
-        },
-        {
-          id: 'a3-3',
-          name: 'Desert View Drive — Eastern Viewpoints',
-          description: 'Drive your own car 25 miles east along the South Rim on Desert View Drive (AZ-64). Stop at 6 major viewpoints with increasingly dramatic canyon views. Key stops: Yaki Point (panoramic views, shuttle-only but worth it), Grandview Point (one of the widest canyon views), Moran Point (colorful rock layers), Lipan Point (see the Colorado River and Unkar Delta), Navajo Point (highest point on the South Rim at 7,498ft), and Desert View Watchtower (Mary Colter\'s 70-foot stone tower with 360° views, Hopi-inspired murals inside, gift shop). Morning light illuminates the eastern canyon walls beautifully.',
-          duration: '3-4 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '25 miles one way (50 miles round trip)',
-          tips: [
-            'Drive your own car — no shuttle needed on Desert View Drive',
-            'Yaki Point requires the Orange Route shuttle (no private cars) — stop here first via shuttle before driving east',
-            'Grandview Point has the widest panorama on the South Rim',
-            'Lipan Point is the best place to see the Colorado River from the rim',
-            'Navajo Point is the highest overlook on the South Rim (7,498ft)',
-            'Desert View Watchtower: climb to the top for 360° views, $2 suggested donation',
-            'Watchtower has restrooms, snack bar, and gift shop',
-            'Morning light is best — canyon walls glow orange from this direction',
-            'iPhone: 0.5x ultrawide at the Watchtower top floor, 2x zoom for river shots at Lipan Point',
-            'Fill gas at Desert View gas station if needed (last gas before Cameron)'
-          ]
-        },
-        {
-          id: 'a3-4',
-          name: 'Lunch at El Tovar or Bright Angel Lodge',
-          description: 'Return to Grand Canyon Village for lunch at one of the historic lodges. El Tovar is upscale dining with canyon views. Bright Angel Lodge is more casual with good burgers and a saloon.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['El Tovar lunch is walk-in (dinner needs reservation)', 'Bright Angel has a casual café and the Arizona Room steakhouse', 'Both have canyon-view seating']
-        }
-      ],
-      accommodation: {
-        id: 'acc2a',
-        name: 'Red Feather Lodge (same as previous night)',
-        type: 'hotel',
-        priceRange: '$150-180',
-        pricePerNight: 165,
-        reviewRating: 4.0,
-        reviewSource: 'TripAdvisor',
-        seniorFriendly: true,
-        recommended: true,
-        notes: 'Second night — same hotel.'
-      },
-      notes: ['DESERT VIEW DRIVE DAY — 25mi scenic drive east along South Rim', 'Sunrise at Yavapai, morning rim walk, then drive east to Watchtower', 'Desert View Watchtower is a must-see — 70ft stone tower with 360° views', 'Skip South Kaibab to Ooh Aah Point — too steep and loose gravel for 80yo', 'Hydrate at altitude — 7,000ft'],
-      budgetBreakdown: { accommodation: 165, food: 80, activities: 0, gas: 0, total: 245 }
-    },
-
-    // ============================================================
-    // DAY 4: GRAND CANYON → PAGE + HORSESHOE BEND
+    // DAY 4: DESERT VIEW DRIVE → PAGE + HORSESHOE BEND
     // ============================================================
     {
       id: 'd4',
       dayNumber: 4,
       date: '2026-05-18',
-      title: 'Grand Canyon → Page & Horseshoe Bend',
-      summary: 'Drive to Page, afternoon at iconic Horseshoe Bend',
+      title: 'Desert View Drive → Page & Horseshoe Bend',
+      summary: 'Morning eastern viewpoints and Watchtower, then drive to Page for Horseshoe Bend',
       location: locations.find(l => l.id === 'page')!,
       overnight: 'Page, AZ',
-      drivingDistance: '135 miles',
-      drivingTime: '2.5 hours',
+      drivingDistance: '160 miles (Desert View to Page via Cameron)',
+      drivingTime: '2.5 hours (after Desert View Drive)',
       weather: { high: 31, low: 14, conditions: 'Sunny, warm in the desert' },
       activities: [
         {
           id: 'a4-1',
-          name: 'Drive Grand Canyon to Page',
-          description: 'Scenic 2.5-hour drive through the Navajo Nation. Desert views and wide open spaces.',
+          name: 'Sunrise at Yavapai Point',
+          description: 'Less crowded than Mather Point with same eastern exposure. Arrive 30min before sunrise (~5:15am in May). Quick stop — then head east.',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Sunrise ~5:15am mid-May — warm light floods the canyon', 'Far fewer people than Mather Point', 'iPhone: burst mode during golden hour, 0.5x ultrawide captures the full panorama']
+        },
+        {
+          id: 'a4-2',
+          name: 'Desert View Drive — Eastern Viewpoints',
+          description: 'Drive your own car 25 miles east along the South Rim on Desert View Drive (AZ-64). Stop at the best viewpoints on the way out of the park. Key stops: Grandview Point (widest canyon views), Moran Point (colorful rock layers), Lipan Point (see the Colorado River and Unkar Delta), Navajo Point (highest point on the South Rim at 7,498ft), and Desert View Watchtower (Mary Colter\'s 70-foot stone tower with 360° views, Hopi-inspired murals, gift shop, snack bar). Morning light illuminates the eastern canyon walls beautifully. End at Desert View — this is the east park exit, so you drive straight on to Page from here.',
+          duration: '2.5-3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '25 miles (Grand Canyon Village to Desert View)',
+          tips: [
+            'Drive your own car — no shuttle needed on Desert View Drive',
+            'Grandview Point has the widest panorama on the South Rim',
+            'Lipan Point is the best place to see the Colorado River from the rim',
+            'Navajo Point is the highest overlook on the South Rim (7,498ft)',
+            'Desert View Watchtower: climb to the top for 360° views, $2 suggested donation',
+            'Watchtower has restrooms, snack bar, and gift shop — good breakfast/snack stop',
+            'Morning light is best — canyon walls glow orange from this direction',
+            'iPhone: 0.5x ultrawide at the Watchtower top floor, 2x zoom for river shots at Lipan Point',
+            'Fill gas at Desert View gas station (last gas before Cameron, 30mi)'
+          ]
+        },
+        {
+          id: 'a4-3',
+          name: 'Drive Desert View → Page via Cameron',
+          description: 'Exit the park from Desert View east entrance. Drive AZ-64 east to Cameron, then US-89 north to Page. Stop at Cameron Trading Post for gas, snacks, and Navajo crafts. Beautiful Navajo Nation desert scenery.',
           duration: '2.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Fill up gas at Cameron Trading Post', 'Limited services on Navajo Nation']
+          tips: ['Cameron Trading Post is a must-stop — gas, food, restrooms, Native crafts', 'Limited services on Navajo Nation between Cameron and Page', 'Painted Desert views along US-89']
         },
         {
-          id: 'a4-2',
+          id: 'a4-4',
           name: 'Check In & Lunch in Page',
-          description: 'Arrive, get settled, grab lunch in town.',
+          description: 'Arrive in Page by early afternoon. Check into hotel, grab lunch.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Big John\'s Texas BBQ is a local favorite', 'Bonkers for good casual food']
         },
         {
-          id: 'a4-3',
+          id: 'a4-5',
           name: 'Horseshoe Bend',
-          description: 'Iconic 1,000-foot drop viewpoint over the Colorado River. Short walk from parking.',
+          description: 'Iconic 1,000-foot drop viewpoint over the Colorado River. Short walk from parking. Late afternoon light illuminates the bend beautifully.',
           duration: '1.5 hours',
           difficulty: 'moderate',
           seniorFriendly: true,
@@ -694,7 +702,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc4a',
+        id: 'acc5a',
         name: 'Home2 Suites by Hilton Page Lake Powell',
         type: 'hotel',
         priceRange: '$100-140',
@@ -711,7 +719,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc4a',
+          id: 'acc5a',
           name: 'Home2 Suites by Hilton Page Lake Powell',
           type: 'hotel',
           priceRange: '$100-140',
@@ -727,7 +735,7 @@ export const tripData: TripData = {
           notes: 'Newest hotel in Page (2020). Kitchenette with fridge, microwave, dishwasher. Budget pick.'
         },
         {
-          id: 'acc4b',
+          id: 'acc5b',
           name: 'Hampton Inn & Suites Page - Lake Powell',
           type: 'hotel',
           priceRange: '$120-160',
@@ -742,7 +750,7 @@ export const tripData: TripData = {
           notes: 'Highest-rated hotel in Page. 2-queen balcony studio suites. May be at top of budget in peak season.'
         },
         {
-          id: 'acc4c',
+          id: 'acc5c',
           name: 'Airbnb 2BR Duplex in Page',
           type: 'airbnb',
           priceRange: '$120-180',
@@ -807,7 +815,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc4a',
+        id: 'acc5a',
         name: 'Home2 Suites by Hilton Page (same as previous night)',
         type: 'hotel',
         priceRange: '$100-140',
@@ -1272,7 +1280,7 @@ export const tripData: TripData = {
     {
       id: 'd11',
       dayNumber: 11,
-      date: '2026-06-05',
+      date: '2026-05-25',
       title: 'Salt Lake City → Jackson / Grand Teton',
       summary: 'Drive north to Jackson Hole, afternoon arrival in Teton country',
       location: locations.find(l => l.id === 'jackson')!,
@@ -1374,7 +1382,7 @@ export const tripData: TripData = {
     {
       id: 'd12',
       dayNumber: 12,
-      date: '2026-06-05',
+      date: '2026-05-26',
       title: 'Grand Teton Day 1 — Jenny Lake & Iconic Views',
       summary: 'Mormon Row sunrise, Jenny Lake boat to Hidden Falls, Schwabacher Landing reflections',
       location: locations.find(l => l.id === 'teton')!,
@@ -1455,7 +1463,7 @@ export const tripData: TripData = {
     {
       id: 'd13',
       dayNumber: 13,
-      date: '2026-06-05',
+      date: '2026-05-27',
       title: 'Grand Teton Day 2 — Lodge, Lakes & Wildlife',
       summary: 'Oxbow Bend sunrise, Jackson Lake Lodge, Colter Bay lakeshore, Signal Mountain',
       location: locations.find(l => l.id === 'teton')!,
@@ -1526,7 +1534,7 @@ export const tripData: TripData = {
     {
       id: 'd14',
       dayNumber: 14,
-      date: '2026-06-05',
+      date: '2026-05-28',
       title: 'Grand Teton Day 3 — Rest Day in Jackson',
       summary: 'Sleep in, optional Leigh Lake, browse Jackson, recharge before Yellowstone',
       location: locations.find(l => l.id === 'teton')!,
@@ -1596,7 +1604,7 @@ export const tripData: TripData = {
     {
       id: 'd15',
       dayNumber: 15,
-      date: '2026-06-05',
+      date: '2026-05-29',
       title: 'Yellowstone Day 1 — South Loop: Geysers, Springs & Canyon',
       summary: 'West Thumb, Old Faithful, Grand Prismatic, Artist Point at the Grand Canyon of Yellowstone',
       location: locations.find(l => l.id === 'yellowstone')!,
@@ -1733,7 +1741,7 @@ export const tripData: TripData = {
     {
       id: 'd16',
       dayNumber: 16,
-      date: '2026-06-05',
+      date: '2026-05-30',
       title: 'Yellowstone North Loop → Bozeman',
       summary: 'Lamar Valley wildlife at dawn, Tower Fall, Mammoth Hot Springs, drive to Bozeman via Paradise Valley',
       location: locations.find(l => l.id === 'bozeman')!,
@@ -1860,7 +1868,7 @@ export const tripData: TripData = {
     {
       id: 'd17',
       dayNumber: 17,
-      date: '2026-06-05',
+      date: '2026-05-31',
       title: 'Bozeman → Glacier — Wife Arrives!',
       summary: 'Drive to Glacier, wife flies in for the weekend, afternoon exploring',
       location: locations.find(l => l.id === 'glacier')!,
@@ -1975,7 +1983,7 @@ export const tripData: TripData = {
     {
       id: 'd18',
       dayNumber: 18,
-      date: '2026-06-05',
+      date: '2026-06-01',
       title: 'Glacier West Side — Trail of Cedars & Avalanche Lake (Wife\'s Day)',
       summary: 'Trail of the Cedars boardwalk, Avalanche Lake hike for Colin + wife, Lake McDonald kayaking',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2036,7 +2044,7 @@ export const tripData: TripData = {
     {
       id: 'd19',
       dayNumber: 19,
-      date: '2026-06-05',
+      date: '2026-06-02',
       title: 'Glacier — Many Glacier Valley',
       summary: 'Drive to Many Glacier, Swiftcurrent Lake, boat tour, Iceberg Lake trail start',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2107,7 +2115,7 @@ export const tripData: TripData = {
     {
       id: 'd20',
       dayNumber: 20,
-      date: '2026-06-05',
+      date: '2026-06-03',
       title: 'Glacier East Side — St. Mary & Rest',
       summary: 'GTSR east side drive, St. Mary Falls, boat tour, afternoon rest',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2187,7 +2195,7 @@ export const tripData: TripData = {
     {
       id: 'd21',
       dayNumber: 21,
-      date: '2026-06-05',
+      date: '2026-06-04',
       title: 'Glacier → Missoula',
       summary: 'Goat Lick overlook, drive south via US-93, evening in Missoula, return rental car',
       location: locations.find(l => l.id === 'missoula')!,
@@ -2349,8 +2357,8 @@ export const tripData: TripData = {
   },
   costBreakdown: {
     flights: {
-      colinOutbound: { description: 'SEA→PHX Alaska', price: 90 },
-      momOutbound: { description: 'YYZ→PHX Porter', price: 220 },
+      colinOutbound: { description: 'SEA→LAS Alaska', price: 90 },
+      momOutbound: { description: 'YYZ→LAS Porter', price: 220 },
       colinReturn: { description: 'MSO→SEA Alaska', price: 120 },
       momReturn: { description: 'MSO→YYZ United', price: 350 },
       total: 780,
@@ -2360,7 +2368,7 @@ export const tripData: TripData = {
       days: 19,
       dropoffFee: 200,
       total: 960,
-      notes: 'PHX→MSO one-way. Book via Costco Travel or AutoSlash.',
+      notes: 'LAS→MSO one-way. Book via Costco Travel or AutoSlash.',
     },
     passengerAssistance: {
       cost: 0,
@@ -2390,7 +2398,7 @@ export const tripData: TripData = {
       notes: 'May 24-27 overlaps Memorial Day weekend (May 23-25). Jackson is a resort town — prices spike. Book ASAP.'
     },
     {
-      item: 'Car Rental PHX→MSO One-Way',
+      item: 'Car Rental LAS→MSO One-Way',
       bookBy: '2026-03-19',
       website: 'https://www.costcotravel.com/Rental-Cars',
       notes: 'Inside optimal 4-8 week booking window. Book via Costco Travel, then check AutoSlash (autoslash.com). Free cancellation — rebook if prices drop.'
