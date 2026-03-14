@@ -101,7 +101,7 @@ export const tripData: TripData = {
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
-    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Jun 5 - Jun 7). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier long weekend (Thu Jun 4 evening - Sun Jun 7 evening). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -209,12 +209,12 @@ export const tripData: TripData = {
       fromCity: 'Seattle',
       to: 'FCA',
       toCity: 'Kalispell (Glacier Park)',
-      date: '2026-06-05',
+      date: '2026-06-04',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-05&curr=USD',
-      notes: 'Wife takes Friday off. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Friday evening arrival.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD',
+      notes: 'Wife takes Friday off. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Thursday evening arrival — same day as Bozeman→Glacier drive.'
     },
     {
       id: 'f6',
@@ -229,7 +229,7 @@ export const tripData: TripData = {
       price: 110,
       duration: '1h 20m',
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-07&curr=USD',
-      notes: 'Wife\'s return. Sunday morning flight.'
+      notes: 'Wife\'s return. Sunday evening flight — full day in Glacier before heading home.'
     }
   ],
   flightOptions: [
@@ -2106,8 +2106,8 @@ export const tripData: TripData = {
       id: 'd21',
       dayNumber: 21,
       date: '2026-06-04',
-      title: 'Bozeman → Glacier',
-      summary: 'Drive to Glacier, settle in at Columbia Falls, evening at Lake McDonald',
+      title: 'Bozeman → Glacier — Wife Arrives!',
+      summary: 'Drive to Glacier, settle in, wife flies in Thursday evening',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       drivingDistance: '340 miles',
@@ -2210,7 +2210,7 @@ export const tripData: TripData = {
           notes: 'Search: 2BR, Jun 4-Jun 11, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
-      notes: ['DRIVING DAY', 'Wife arrives tomorrow (Friday) — takes Friday off', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully, one of MT\'s most dangerous roads', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026'],
+      notes: ['DRIVING DAY + wife arrival', 'Wife arrives FCA Thursday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls — she can Uber/taxi', '3 adults Thu-Sun: need 2 bedrooms', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
@@ -2221,8 +2221,8 @@ export const tripData: TripData = {
       id: 'd22',
       dayNumber: 22,
       date: '2026-06-05',
-      title: 'Glacier West Side — Wife Arrives!',
-      summary: 'Trail of the Cedars boardwalk, Lake McDonald, wife flies in Friday evening',
+      title: 'Glacier West Side — Wife\'s First Day',
+      summary: 'Trail of the Cedars boardwalk, Lake McDonald, all three together',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool, possible mountain weather' },
@@ -2269,9 +2269,9 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night. Wife arrives tonight (Friday). 3 adults: 2BR condo works perfectly.'
+        notes: 'Second night. Wife is here (arrived Thursday). 3 adults: 2BR condo works perfectly.'
       },
-      notes: ['WIFE ARRIVES TONIGHT — Alaska Airlines nonstop from SEA, lands FCA ~evening', 'Wife takes Friday off work', 'FCA is 13min from Columbia Falls — she can Uber/taxi', 'Morning: Trail of Cedars + Lake McDonald with Mom', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['WIFE\'S FIRST FULL DAY — she arrived last night', 'Wife took Friday off work — full day together, all 3', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 35, gas: 15, total: 280 }
     },
 
@@ -2353,41 +2353,41 @@ export const tripData: TripData = {
       id: 'd24',
       dayNumber: 24,
       date: '2026-06-07',
-      title: 'Wife Departs — Whitefish Day',
-      summary: 'Wife flies home Sunday morning, Colin works, Mom explores Whitefish',
+      title: 'Last Day with Wife — Whitefish & Farewell',
+      summary: 'Morning in Whitefish together, wife flies home Sunday evening',
       location: locations.find(l => l.id === 'whitefish')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
           id: 'aW5-1',
-          name: 'Colin Works — Montana Coffee Traders Whitefish (8am-12pm)',
-          description: 'Work from Montana Coffee Traders (110 Central Ave, Whitefish, free WiFi, locally roasted coffee, spacious). Or Wild Coffee Company (309 Central Ave, modern, good WiFi). Both are work-friendly. 15-min drive from Columbia Falls.',
-          duration: '4 hours',
+          name: 'Morning in Whitefish — All Three',
+          description: 'Drive 15 min to Whitefish for a morning exploring this charming ski town. Browse Central Avenue shops and galleries. Coffee at Montana Coffee Traders (110 Central Ave) or Loula\'s Cafe for brunch in the historic Masonic temple.',
+          duration: '3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Montana Coffee Traders: 110 Central Ave, free WiFi, locally roasted', 'Wild Coffee Company: 309 Central Ave, modern space, good WiFi', 'Drive Mom to Whitefish together, then split up for the morning', 'Drop wife at FCA first if she has an early flight']
+          tips: ['Central Avenue: flat 4-block strip, boutiques, galleries, ice cream', 'Montana Coffee Traders: 110 Central Ave, locally roasted coffee', 'Loula\'s Cafe: brunch institution in historic building', 'Everything walkable — no car needed once in downtown Whitefish']
         },
         {
           id: 'aW5-2',
-          name: 'Mom Solo: Whitefish Central Ave & Lake',
-          description: 'Browse Central Avenue shops, galleries, and cafes in this charming ski town. Flat, walkable, benches everywhere. Whitefish Lake City Beach (5min drive or 15min walk from downtown) has a sandy beach, picnic tables, and mountain views. Stumptown Art Studio has rotating exhibits.',
-          duration: '3-4 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Central Avenue: flat 4-block strip, boutiques, galleries, ice cream', 'Whitefish Lake City Beach: sandy, benches, mountain views', 'Stumptown Art Studio: rotating exhibits, free', 'Loula\'s Cafe: breakfast/brunch institution in historic Masonic temple', 'Everything walkable — no car needed once in downtown Whitefish']
-        },
-        {
-          id: 'aW5-3',
-          name: 'Afternoon Together — Whitefish Brewery & Lake',
-          description: 'Reconnect for lunch. Great Northern Brewing Company for local beers and burgers, or walk to Whitefish Lake together for a relaxed afternoon.',
+          name: 'Whitefish Lake & City Beach',
+          description: 'Walk to Whitefish Lake City Beach (15min walk or 5min drive from downtown). Sandy beach, picnic tables, mountain views. Rent kayaks if available. Relaxed afternoon by the water.',
           duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Great Northern Brewing: local brewery with pub food', 'Tupelo Grille: Southern-inspired, excellent reviews', 'Whitefish Lake is beautiful for an afternoon stroll']
+          tips: ['Whitefish Lake City Beach: sandy, benches, mountain backdrop', 'Paved lakeside trail for an easy walk', 'Great Northern Brewing Company nearby for a beer', 'Stumptown Historical Museum: free, quick visit']
+        },
+        {
+          id: 'aW5-3',
+          name: 'Drop Wife at FCA — Farewell Dinner',
+          description: 'Drive wife to FCA airport (13min from Columbia Falls) for her Sunday evening flight. Then a quiet dinner — just Colin and Mom for the rest of the trip.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['FCA is 13min from Columbia Falls', 'Wife: Alaska nonstop to SEA, 1h20m', 'Tupelo Grille in Whitefish for farewell dinner', 'Or cook at the condo — more intimate']
         }
       ],
       accommodation: {
@@ -2400,7 +2400,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Same hotel — extra night.'
       },
-      notes: ['WIFE DEPARTS — Sunday morning flight FCA→SEA (Alaska nonstop, 1h20m)', 'Drop wife at FCA (13 min from Columbia Falls) or she can Uber', 'WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Whitefish is 15 min from Columbia Falls — cute mountain town'],
+      notes: ['WIFE\'S LAST DAY — Sunday evening flight FCA→SEA (Alaska nonstop, 1h20m)', 'Full day together before wife departs', 'Drop wife at FCA (~6pm) — 13 min from Columbia Falls', 'Whitefish is 15 min from Columbia Falls — cute mountain town', 'Same hotel as previous night'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
     },
 
