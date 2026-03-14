@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mom's Road Trip | Phoenix to Glacier",
-  description: "27-day road trip itinerary from Phoenix to Glacier National Park with an active 80-year-old",
+  title: "Mom's Road Trip | Las Vegas to Glacier",
+  description: "25-day road trip itinerary from Las Vegas to Glacier National Park with an active 80-year-old",
   keywords: ["road trip", "national parks", "Grand Canyon", "Yellowstone", "Glacier", "travel planner"],
   authors: [{ name: "Colin" }],
   openGraph: {
     title: "Southwest to Glacier Road Trip",
-    description: "27-day adventure through America's most beautiful national parks",
+    description: "25-day adventure through America's most beautiful national parks",
     type: "website",
   },
 };
