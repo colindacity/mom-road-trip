@@ -101,7 +101,7 @@ export const tripData: TripData = {
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS. PASSENGER ASSISTANCE: Request wheelchair/mobility assistance 48hrs before each flight.' },
-    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Jun 4 - Jun 6). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Jun 5 - Jun 7). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -142,7 +142,7 @@ export const tripData: TripData = {
       startDay: 21,
       endDay: 28,
       color: '#06b6d4',
-      highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from MSO']
+      highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from FCA']
     }
   ],
   flights: [
@@ -176,29 +176,30 @@ export const tripData: TripData = {
       id: 'f3',
       type: 'return',
       passenger: 'colin',
-      from: 'MSO',
-      fromCity: 'Missoula, MT',
+      from: 'FCA',
+      fromCity: 'Kalispell (Glacier Park), MT',
       to: 'SEA',
       toCity: 'Seattle',
       date: '2026-06-11',
       airline: 'Alaska Airlines',
-      price: 120,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+SEA+on+2026-06-11&curr=USD',
-      notes: 'MSO→SEA. Check for direct or 1-stop options.'
+      price: 130,
+      duration: '1h 20m',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-11&curr=USD',
+      notes: 'FCA→SEA NONSTOP on Alaska Airlines. ~3 flights/day. Embraer E175 jet (76 seats, 2-2 config, excellent safety record). 1hr 20min.'
     },
     {
       id: 'f4',
       type: 'return',
       passenger: 'mom',
-      from: 'MSO',
-      fromCity: 'Missoula, MT',
+      from: 'FCA',
+      fromCity: 'Kalispell (Glacier Park), MT',
       to: 'YYZ',
       toCity: 'Toronto',
       date: '2026-06-11',
-      airline: 'United / Alaska',
+      airline: 'Delta',
       price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+MSO+to+YYZ+on+2026-06-11&curr=USD',
-      notes: 'MSO→connecting hub→YYZ. Request wheelchair/passenger assistance. United has MSO→DEN→YYZ options.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-11&curr=USD',
+      notes: 'FCA→MSP→YYZ on Delta. Best option for seniors: one airline, one stop at Minneapolis hub (~8hrs total). MSP is well-organized. Request wheelchair/passenger assistance.'
     },
     {
       id: 'f5',
@@ -208,12 +209,12 @@ export const tripData: TripData = {
       fromCity: 'Seattle',
       to: 'FCA',
       toCity: 'Kalispell (Glacier Park)',
-      date: '2026-06-04',
+      date: '2026-06-05',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD',
-      notes: 'Wife\'s flight. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Thursday arrival — same day as Bozeman→Glacier drive.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-05&curr=USD',
+      notes: 'Wife takes Friday off. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Friday evening arrival.'
     },
     {
       id: 'f6',
@@ -223,12 +224,12 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park)',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-06-06',
+      date: '2026-06-07',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-06&curr=USD',
-      notes: 'Wife\'s return. Saturday morning flight.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-07&curr=USD',
+      notes: 'Wife\'s return. Sunday morning flight.'
     }
   ],
   flightOptions: [
@@ -308,13 +309,13 @@ export const tripData: TripData = {
     vehicleType: 'Compact AWD SUV (Subaru Crosstrek / Toyota RAV4)',
     pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-15',
-    dropoffLocation: 'Missoula Airport (MSO)',
-    dropoffDate: '2026-06-10',
-    totalDays: 26,
+    dropoffLocation: 'Glacier Park International Airport (FCA)',
+    dropoffDate: '2026-06-11',
+    totalDays: 27,
     dailyRate: 40,
     dropoffFee: 200,
-    totalCost: 1240,
-    notes: 'One-way compact SUV. LAS to MSO drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget. Expect ~$1,100-1,200 all-in with taxes/fees.'
+    totalCost: 1280,
+    notes: 'One-way compact SUV. LAS to FCA drop-off. Saves the 3-hour drive to Missoula! AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget.'
   },
   days: [
     // ============================================================
@@ -847,32 +848,33 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'aW1-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Hotel or Slackers (8am-12pm)',
+          description: 'Work block at hotel (Home2 Suites has good WiFi and a lobby workspace) or Slackers bar/restaurant on Lake Powell Blvd which has WiFi and is open mornings.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hotel WiFi or local cafe']
+          tips: ['Home2 Suites lobby has a dedicated work area', 'Page is a small town — hotel WiFi is your best bet', 'Hotspot as backup — Verizon/T-Mobile have decent coverage in Page']
         },
         {
           id: 'aW1-2',
-          name: 'Mom Explores Lake Powell Overlook & Pool',
-          description: 'Wahweap Overlook for Lake Powell views (short drive), or relax by the hotel pool. Browse the shops on Lake Powell Blvd.',
+          name: 'Mom Solo: Wahweap Overlook & Lake Powell Blvd',
+          description: 'Drive or Uber 10 min to Wahweap Overlook for sweeping Lake Powell views (paved pulloff, no hiking required). Then browse the shops and galleries on Lake Powell Blvd — the main drag. Rim View Trail (0.5mi, flat, paved) has panoramic canyon views right in town.',
           duration: '3-4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Wahweap Overlook is a quick drive', 'Lake Powell Blvd has shops and restaurants']
+          tips: ['Wahweap Overlook: paved pulloff, wheelchair accessible views', 'Rim View Trail: 0.5mi flat paved loop in town, great canyon views', 'Lake Powell Blvd: shops, galleries, restaurants — Main Street of Page', 'Big Lake Trading Post for Navajo crafts and jewelry', 'Hotel pool is always an option for a quiet morning']
         },
         {
           id: 'aW1-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Sunset at Horseshoe Bend',
+          description: 'Reconnect for a late lunch on Lake Powell Blvd, then optional second visit to Horseshoe Bend for golden hour light (if you want better photos than yesterday).',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Bonkers for burgers or El Tapatio for Mexican', 'Horseshoe Bend at sunset is less crowded and the light is incredible']
         }
       ],
       accommodation: {
@@ -1350,32 +1352,33 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'aW2-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Hotel or Work Hive Coworking (8am-12pm)',
+          description: 'Work block at hotel or drop in at Work Hive, a locally-owned coworking space in downtown SLC. Day passes available. Fast WiFi, good coffee, professional environment.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hotel WiFi or local cafe']
+          tips: ['Work Hive: downtown SLC coworking, day pass ~$30', 'Hotel lobby/room WiFi is solid at Crystal Inn', 'SLC has excellent cell coverage for hotspot backup']
         },
         {
           id: 'aW2-2',
-          name: 'Mom Explores Temple Square & City Creek Shopping',
-          description: 'Walk through Temple Square gardens, browse City Creek Center (outdoor mall), visit the Family History Library (free genealogy research).',
-          duration: '3-4 hours',
+          name: 'Mom Solo: Temple Square, City Creek & Family History Library',
+          description: 'Walk through Temple Square gardens (35 acres, flat, benches everywhere). Browse City Creek Center — upscale outdoor mall with a retractable glass roof, right next to Temple Square. The Family History Library (free) has the world\'s largest genealogy collection — Mom could trace family roots.',
+          duration: '4-5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Temple Square is flat and beautiful', 'Family History Library is free and fascinating for genealogy buffs']
+          tips: ['Temple Square: free, flat, beautifully landscaped, 90min self-guided', 'City Creek Center: outdoor mall, retractable roof, great for browsing', 'Family History Library: free genealogy research — could spend hours here', 'Natural History Museum of Utah ($18, Uber 15min) if she wants more', 'All walkable from downtown hotels — no car needed']
         },
         {
           id: 'aW2-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Downtown Dinner',
+          description: 'Reconnect for a late lunch or explore downtown together. Red Iguana for famous Mexican mole, or The Copper Onion for upscale American.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Red Iguana: legendary SLC mole — worth a short wait', 'The Copper Onion: upscale American, great cocktails', 'Laundry at Crystal Inn if needed']
         }
       ],
       accommodation: {
@@ -1731,32 +1734,33 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'aW3-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Persephone Bakery or Cowboy Coffee (8am-12pm)',
+          description: 'Work from Persephone Bakery (145 E Broadway, fast WiFi, excellent pastries and coffee) or Cowboy Coffee (125 N Cache St, right on the square, WiFi, laid-back vibe). Both are work-friendly with good seating.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hotel WiFi or local cafe']
+          tips: ['Persephone Bakery: 145 E Broadway, opens 7am, great WiFi', 'Cowboy Coffee: 125 N Cache St, on the square, opens 6:30am', 'Hotel WiFi works too but the cafes are more fun', 'Jackson has good cell coverage for hotspot']
         },
         {
           id: 'aW3-2',
-          name: 'Mom Explores Jackson Town Square & Galleries',
-          description: 'Browse the art galleries on the town square, elk antler arches photo ops, window shop on Broadway. Persephone Bakery for a treat.',
-          duration: '3-4 hours',
+          name: 'Mom Solo: Town Square, Galleries & Wildlife Art Museum',
+          description: 'Stroll the Town Square with its famous elk antler arches (great photo ops). Browse 20+ art galleries along Broadway and Cache St. The National Museum of Wildlife Art ($18, 10min drive or shuttle) is world-class — built into a hillside overlooking the National Elk Refuge, with works by Georgia O\'Keeffe, Andy Warhol, and Carl Rungius.',
+          duration: '4-5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Town square is flat and walkable', 'Persephone Bakery is a must-stop']
+          tips: ['Town Square: flat, benches, people-watching, elk antler arches', 'National Museum of Wildlife Art: $18, 10min north of town, fully accessible', 'Galleries: Trailside Galleries, Mountain Trails Gallery — window shopping is free', 'Persephone Bakery for a pastry and coffee treat', 'Everything downtown is flat and walkable within 4 blocks']
         },
         {
           id: 'aW3-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Dinner with Teton Views',
+          description: 'Reconnect for a late lunch. The Bunnery for comfort food, or Cafe Genevieve for upscale Southern. Evening: drive to the Elk Refuge overlook for sunset Teton views.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['The Bunnery: legendary breakfast/lunch spot', 'Cafe Genevieve: Southern-inspired, on the square', 'Elk Refuge overlook at sunset — Tetons glow pink']
         }
       ],
       accommodation: {
@@ -2052,32 +2056,33 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'aW4-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Wild Joe\'s or Sidecar Coworking (8am-12pm)',
+          description: 'Work from Wild Joe\'s Coffee (18 W Main St, downtown, fast WiFi, large tables, great pastries) or Sidecar coworking on E Main St (day pass available, fast internet, proper workspace). Bozeman is a remote-work-friendly town.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Wild Joe*s Coffee, Treeline Coffee, or hotel lobby for work']
+          tips: ['Wild Joe\'s: 18 W Main St, opens 7am, work-friendly, strong WiFi', 'Sidecar coworking: E Main St, day pass available, pro setup', 'Treeline Coffee Roasters also excellent for a change of scene', 'Bozeman Public Library has free WiFi and study rooms with mountain views']
         },
         {
           id: 'aW4-2',
-          name: 'Mom Explores Downtown Bozeman & Museum of the Rockies',
-          description: 'Walk Main Street, visit Museum of the Rockies (world-class dinosaur exhibits, Planetarium). Great coffee shops and bookstores.',
-          duration: '3-4 hours',
+          name: 'Mom Solo: Museum of the Rockies & Main Street',
+          description: 'Museum of the Rockies ($16.50, Uber 5min or 20min walk from downtown) — world-class dinosaur collection with the largest T. rex skull ever found, plus a planetarium show. Then walk Main Street for indie bookshops (Country Bookshelf), galleries, and boutiques. Flat and very walkable.',
+          duration: '4-5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Museum of the Rockies is world-class — allow 2+ hours', 'Main Street has great bookstores and cafes']
+          tips: ['Museum of the Rockies: $16.50, fully accessible, allow 2-3 hours', 'Largest T. rex skull ever found is here', 'Planetarium shows run hourly — check schedule', 'Country Bookshelf: independent bookstore on Main St, a Bozeman institution', 'Main Street is flat, walkable, with benches and window shopping', 'Pick her up for lunch at the museum or she can walk back']
         },
         {
           id: 'aW4-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Dinner & Pack for Glacier',
+          description: 'Reconnect for lunch at the Co-op\'s Flying C Cafe (fresh, healthy) or Open Range for Montana fare. Pack for tomorrow\'s drive to Glacier.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Flying C Cafe at Bozeman Co-op: fresh sandwiches and juices', 'Open Range: Montana steaks and elk burgers on Main St', 'FILL GAS at Costco (1000 N 7th Ave) before Glacier drive tomorrow']
         }
       ],
       accommodation: {
@@ -2101,8 +2106,8 @@ export const tripData: TripData = {
       id: 'd21',
       dayNumber: 21,
       date: '2026-06-04',
-      title: 'Bozeman → Glacier — Wife Arrives!',
-      summary: 'Drive to Glacier, wife flies in for the weekend, afternoon exploring',
+      title: 'Bozeman → Glacier',
+      summary: 'Drive to Glacier, settle in at Columbia Falls, evening at Lake McDonald',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       drivingDistance: '340 miles',
@@ -2127,7 +2132,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Super 1 Foods in Columbia Falls for groceries', 'Stock up — you have a full kitchen for 4 nights', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA']
+          tips: ['Super 1 Foods in Columbia Falls for groceries', 'Stock up — you have a full kitchen for several nights']
         },
         {
           id: 'a17-3',
@@ -2155,7 +2160,7 @@ export const tripData: TripData = {
         amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Indoor/outdoor pool', 'Free parking', 'Golf course', 'Restaurant'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR condo: separate bedrooms for 3 adults (wife weekend). Full kitchen saves money over 4 nights. Private hot tub. Best value near Glacier.'
+        notes: '2BR condo: separate bedrooms for 3 adults when wife arrives Fri night. Full kitchen saves money over many nights. Private hot tub. Best value near Glacier.'
       },
       accommodationOptions: [
         {
@@ -2202,10 +2207,10 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/columbia-falls-mt/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub (some)', 'Free parking'],
           seniorFriendly: true,
-          notes: 'Search: 2BR, Jun 4-Jun 10, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
+          notes: 'Search: 2BR, Jun 4-Jun 11, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
-      notes: ['DRIVING DAY + wife arrival', 'Saturday — wife joins for the weekend!', 'Wife arrives FCA tonight — Alaska Airlines nonstop from SEA', '3 adults: need 2 bedrooms or 2BR rental', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully, one of MT\'s most dangerous roads', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026'],
+      notes: ['DRIVING DAY', 'Wife arrives tomorrow (Friday) — takes Friday off', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully, one of MT\'s most dangerous roads', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
@@ -2216,8 +2221,8 @@ export const tripData: TripData = {
       id: 'd22',
       dayNumber: 22,
       date: '2026-06-05',
-      title: 'Glacier West Side — Trail of Cedars & Avalanche Lake (Wife\'s Day)',
-      summary: 'Trail of the Cedars boardwalk, Avalanche Lake hike for Colin + wife, Lake McDonald kayaking',
+      title: 'Glacier West Side — Wife Arrives!',
+      summary: 'Trail of the Cedars boardwalk, Lake McDonald, wife flies in Friday evening',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool, possible mountain weather' },
@@ -2264,9 +2269,9 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night. Sunday — wife\'s day in Glacier.'
+        notes: 'Second night. Wife arrives tonight (Friday). 3 adults: 2BR condo works perfectly.'
       },
-      notes: ['WIFE\'S DAY — activities can be more ambitious', 'Mom: Trail of the Cedars only (1mi, flat boardwalk)', 'Colin + wife: Avalanche Lake hike (5.8mi RT, 730ft)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['WIFE ARRIVES TONIGHT — Alaska Airlines nonstop from SEA, lands FCA ~evening', 'Wife takes Friday off work', 'FCA is 13min from Columbia Falls — she can Uber/taxi', 'Morning: Trail of Cedars + Lake McDonald with Mom', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 35, gas: 15, total: 280 }
     },
 
@@ -2277,8 +2282,8 @@ export const tripData: TripData = {
       id: 'd23',
       dayNumber: 23,
       date: '2026-06-06',
-      title: 'Glacier — Many Glacier Valley',
-      summary: 'Drive to Many Glacier, Swiftcurrent Lake, boat tour, Iceberg Lake trail start',
+      title: 'Glacier — Avalanche Lake & Many Glacier (Wife\'s Day)',
+      summary: 'Avalanche Lake hike (Colin + wife), Many Glacier drive, wife\'s full Saturday',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       drivingDistance: '~150 miles RT (Columbia Falls to Many Glacier via Hwy 2)',
@@ -2337,7 +2342,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night.'
       },
-      notes: ['FULL DAY — long drive to Many Glacier (~2.5hrs each way)', 'Many Glacier is worth the drive — most spectacular valley in the park', 'Construction at Many Glacier in 2026 (parking, water system)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['WIFE\'S FULL DAY — activities can be more ambitious', 'Mom: Trail of the Cedars only (1mi boardwalk) while Colin + wife do Avalanche Lake', 'Avalanche Lake: 5.8mi RT, 730ft gain — turquoise alpine lake with waterfalls', 'OR: Many Glacier drive (~2.5hrs each way) for the most spectacular valley in the park', 'Construction at Many Glacier in 2026 (parking, water system)', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 70, activities: 20, gas: 30, total: 270 }
     },
 
@@ -2348,40 +2353,41 @@ export const tripData: TripData = {
       id: 'd24',
       dayNumber: 24,
       date: '2026-06-07',
-      title: 'Whitefish Day — Work + Mom Explores',
-      summary: 'Remote work day, Mom explores on her own',
+      title: 'Wife Departs — Whitefish Day',
+      summary: 'Wife flies home Sunday morning, Colin works, Mom explores Whitefish',
       location: locations.find(l => l.id === 'whitefish')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
           id: 'aW5-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Montana Coffee Traders Whitefish (8am-12pm)',
+          description: 'Work from Montana Coffee Traders (110 Central Ave, Whitefish, free WiFi, locally roasted coffee, spacious). Or Wild Coffee Company (309 Central Ave, modern, good WiFi). Both are work-friendly. 15-min drive from Columbia Falls.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hotel WiFi or local cafe']
+          tips: ['Montana Coffee Traders: 110 Central Ave, free WiFi, locally roasted', 'Wild Coffee Company: 309 Central Ave, modern space, good WiFi', 'Drive Mom to Whitefish together, then split up for the morning', 'Drop wife at FCA first if she has an early flight']
         },
         {
           id: 'aW5-2',
-          name: 'Mom Explores Whitefish',
-          description: 'Drive or shuttle 15 min to Whitefish, a charming mountain town. Browse Central Avenue shops, galleries, and cafes. Great walking town — flat, accessible, lots of benches. Whitefish Lake is beautiful.',
+          name: 'Mom Solo: Whitefish Central Ave & Lake',
+          description: 'Browse Central Avenue shops, galleries, and cafes in this charming ski town. Flat, walkable, benches everywhere. Whitefish Lake City Beach (5min drive or 15min walk from downtown) has a sandy beach, picnic tables, and mountain views. Stumptown Art Studio has rotating exhibits.',
           duration: '3-4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Central Avenue is the main strip — flat and walkable', 'Whitefish Lake is a short drive from downtown']
+          tips: ['Central Avenue: flat 4-block strip, boutiques, galleries, ice cream', 'Whitefish Lake City Beach: sandy, benches, mountain views', 'Stumptown Art Studio: rotating exhibits, free', 'Loula\'s Cafe: breakfast/brunch institution in historic Masonic temple', 'Everything walkable — no car needed once in downtown Whitefish']
         },
         {
           id: 'aW5-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Whitefish Brewery & Lake',
+          description: 'Reconnect for lunch. Great Northern Brewing Company for local beers and burgers, or walk to Whitefish Lake together for a relaxed afternoon.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Great Northern Brewing: local brewery with pub food', 'Tupelo Grille: Southern-inspired, excellent reviews', 'Whitefish Lake is beautiful for an afternoon stroll']
         }
       ],
       accommodation: {
@@ -2394,7 +2400,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Same hotel — extra night.'
       },
-      notes: ['WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Whitefish is 15 min from Columbia Falls — cute mountain town'],
+      notes: ['WIFE DEPARTS — Sunday morning flight FCA→SEA (Alaska nonstop, 1h20m)', 'Drop wife at FCA (13 min from Columbia Falls) or she can Uber', 'WORK DAY — Colin works, Mom explores', 'Same hotel as previous night', 'Whitefish is 15 min from Columbia Falls — cute mountain town'],
       budgetBreakdown: { accommodation: 130, food: 70, activities: 0, gas: 0, total: 200 }
     },
 
@@ -2461,7 +2467,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Montana Coffee Traders for great local coffee', 'Backslope Brewing in Columbia Falls', 'Pack and prep for drive to Missoula tomorrow']
+          tips: ['Montana Coffee Traders for great local coffee', 'Backslope Brewing in Columbia Falls', 'Enjoy the quiet — you have several more nights at Glacier']
         }
       ],
       accommodation: {
@@ -2493,32 +2499,33 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'aW6-1',
-          name: 'Morning Work Session',
-          description: 'Colin works remotely from hotel/cafe. Good WiFi available.',
+          name: 'Colin Works — Montana Coffee Traders or Condo (8am-12pm)',
+          description: 'Work from the condo (Meadow Lake has WiFi) or drive 5 min to Montana Coffee Traders in Columbia Falls for a change of scene. Odd Fellows Coffee is another option with locally roasted Fieldheads coffee.',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hotel WiFi or local cafe']
+          tips: ['Montana Coffee Traders Columbia Falls: roastery + cafe, WiFi', 'Odd Fellows Coffee: locally roasted Fieldheads coffee, pastries', 'Meadow Lake condo has WiFi and a quiet workspace', 'Cell hotspot as backup — coverage is decent in Columbia Falls']
         },
         {
           id: 'aW6-2',
-          name: 'Mom Explores Lake McDonald & Lodge',
-          description: 'Drive to Lake McDonald Lodge (20 min), sit on the porch with mountain views, walk the shoreline, browse the gift shop. Most peaceful spot in the park. Or just relax at the hotel.',
+          name: 'Mom Solo: Lake McDonald Lodge & Apgar Village',
+          description: 'Drive Mom to Lake McDonald Lodge (20 min). She can sit on the lodge porch in rocking chairs with mountain views, walk the colorful rocky shoreline, browse the gift shop. Apgar Village (5min further) has a general store, cafe, and boat dock. Most peaceful morning in the park.',
           duration: '3-4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Safe for solo exploration', 'Lake McDonald Lodge porch has rocking chairs with views', 'Gift shop has great local crafts']
+          tips: ['Lake McDonald Lodge: Swiss chalet style, rocking chairs on porch with mountain views', 'Shoreline walk: flat, colorful rocks, iconic Glacier photos', 'Apgar Village: general store, Eddie\'s Cafe, gift shops', 'She can drive herself (20 min on easy highway) or you can drop her off', 'Park entrance: use the America the Beautiful pass — already purchased']
         },
         {
           id: 'aW6-3',
-          name: 'Afternoon Together',
-          description: 'Reconnect for a late lunch or easy evening activity.',
-          duration: '2 hours',
+          name: 'Afternoon Together — Backslope Brewing',
+          description: 'Pick up Mom, head to Backslope Brewing in Columbia Falls for local craft beers and pub food, or cook dinner in the condo kitchen.',
+          duration: '2-3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          tips: ['Backslope Brewing: local craft beers, pub food, casual atmosphere', 'Or cook at the condo — you have a full kitchen and groceries', 'Last couple of nights at Glacier — enjoy the quiet']
         }
       ],
       accommodation: {
@@ -2536,158 +2543,107 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 27: GLACIER → MISSOULA
+    // DAY 27: LAST DAY AT GLACIER — GOAT LICK & CELEBRATION DINNER
     // ============================================================
     {
       id: 'd27',
       dayNumber: 27,
       date: '2026-06-10',
-      title: 'Glacier → Missoula',
-      summary: 'Goat Lick overlook, drive south via US-93, evening in Missoula, return rental car',
-      location: locations.find(l => l.id === 'missoula')!,
-      overnight: 'Missoula, MT (near MSO airport)',
-      drivingDistance: '~150 miles (via Hwy 2 + US-93)',
-      drivingTime: '~3 hours',
-      weather: { high: 22, low: 7, conditions: 'Pleasant' },
+      title: 'Last Day at Glacier — Goat Lick & Farewell Dinner',
+      summary: 'Goat Lick overlook, Flathead Lake drive, celebration dinner in Whitefish',
+      location: locations.find(l => l.id === 'glacier')!,
+      overnight: 'Columbia Falls / West Glacier, MT',
+      weather: { high: 17, low: 3, conditions: 'Cool' },
       activities: [
         {
           id: 'a21-1',
-          name: 'Morning at Glacier (optional last look)',
-          description: 'One more quick visit to the park if you want. Or just pack up and head south.',
-          duration: '1-2 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-        },
-        {
-          id: 'a21-2',
           name: 'Goat Lick Overlook (Hwy 2)',
           description: 'Stop at the Goat Lick overlook on Hwy 2 (between West Glacier and Essex). Mountain goats are frequently visible from this highway pulloff, licking mineral deposits on the exposed rock face.',
-          duration: '20 min',
+          duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
           tips: ['Right off Hwy 2 — easy pulloff', 'Mountain goats visible on the rock face', 'Bring binoculars for a closer look', 'Best in spring/early summer when goats crave minerals']
         },
         {
-          id: 'a21-3',
-          name: 'Drive to Missoula',
-          description: 'Head south on US-93 through the Flathead Valley and Mission Valley. Glacier to Missoula is about 3 hours. Beautiful ranch and mountain scenery.',
-          duration: '3 hours',
+          id: 'a21-2',
+          name: 'Drive to Flathead Lake (optional)',
+          description: 'Drive south to Polson/Bigfork for views of the largest natural freshwater lake west of the Mississippi. Cherry orchards, scenic lakeshore.',
+          duration: '2-3 hours (with drive)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stop at Flathead Lake for one last look', 'National Bison Range is near the route (check if open)', 'Return rental car at MSO airport']
+          tips: ['Polson is ~1hr south of Columbia Falls', 'Bigfork is a charming arts village on the NE shore', 'Cherry orchards along the east shore']
+        },
+        {
+          id: 'a21-3',
+          name: 'Pack & Prep for Tomorrow',
+          description: 'Pack up, do laundry at the condo, prep for departure day.',
+          duration: '1-2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
         },
         {
           id: 'a21-4',
-          name: 'Explore Downtown Missoula',
-          description: 'Walk the Hip Strip and downtown. Great breweries, bookshops (it\'s a college town), and restaurants.',
-          duration: '2-3 hours',
+          name: 'Celebration Dinner in Whitefish',
+          description: 'Nice dinner to celebrate an incredible 4-week trip! Whitefish has great restaurants.',
+          duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Caras Park along the Clark Fork River', 'Shakespeare & Co bookshop', 'Biga Pizza or Scotty\'s Table for dinner']
+          tips: ['Cafe Kandahar — upscale Montana cuisine', 'Tupelo Grille — Southern-inspired, excellent reviews', 'Whitefish Lake Restaurant — lakeside dining']
         }
       ],
       accommodation: {
-        id: 'acc21a',
-        name: 'Fairfield by Marriott Missoula Airport',
-        type: 'hotel',
-        priceRange: '$97-130',
-        pricePerNight: 110,
-        reviewRating: 4.0,
-        reviewSource: 'TripAdvisor (4.0/5, #18 of 40), Booking.com (8.1/10)',
-        address: 'Near MSO airport',
-        website: 'https://www.marriott.com/en-us/hotels/msofi-fairfield-inn-and-suites-missoula-airport/overview/',
-        amenities: ['Free breakfast', 'Free airport shuttle', 'Indoor pool', 'Free parking', 'Free WiFi'],
+        id: 'acc17a',
+        name: 'Meadow Lake Resort (same as previous nights)',
+        type: 'condo',
+        priceRange: '$130-180',
+        pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: '2 queen beds. Free breakfast before flight. Free airport shuttle (5min to MSO). No-brainer for last night.'
+        notes: 'Last night! No need to drive to Missoula — fly from FCA tomorrow.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc21a',
-          name: 'Fairfield by Marriott Missoula Airport',
-          type: 'hotel',
-          priceRange: '$97-130',
-          pricePerNight: 110,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (#18 of 40)',
-          website: 'https://www.marriott.com/en-us/hotels/msofi-fairfield-inn-and-suites-missoula-airport/overview/',
-          amenities: ['Free breakfast', 'Airport shuttle', 'Indoor pool', 'Free parking'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: '2 queen beds. Free breakfast + free airport shuttle. Best for last night.'
-        },
-        {
-          id: 'acc21b',
-          name: 'My Place Hotel Missoula',
-          type: 'hotel',
-          priceRange: '$85-110',
-          pricePerNight: 95,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5, #17 of 40)',
-          reviewCount: 277,
-          website: 'https://www.myplacehotels.com/locations/my-place-hotel-missoula',
-          amenities: ['Full kitchen', 'Free parking', 'Free WiFi', '24hr laundry'],
-          seniorFriendly: true,
-          notes: '2 queen beds. Full kitchen. No breakfast or shuttle. Budget pick — 10min to airport.'
-        },
-        {
-          id: 'acc21c',
-          name: 'La Quinta Inn Missoula',
-          type: 'hotel',
-          priceRange: '$95-150',
-          pricePerNight: 110,
-          reviewRating: 3.8,
-          reviewSource: 'TripAdvisor',
-          address: '5059 N Reserve St, Missoula',
-          website: 'https://www.wyndhamhotels.com/laquinta/missoula-montana/la-quinta-inn-missoula/overview',
-          amenities: ['Free breakfast', 'Indoor pool', 'Free parking', 'Pet-friendly'],
-          seniorFriendly: true,
-          notes: '2 queen beds. Free breakfast and pool. 10min to airport.'
-        }
-      ],
-      notes: ['DRIVING + LIGHT DAY', 'Goat Lick overlook on Hwy 2 — mountain goats visible from highway pulloff', 'Glacier to Missoula is ~3hrs via US-93', 'Return rental car at MSO', 'Last evening — nice dinner to celebrate the trip!'],
-      budgetBreakdown: { accommodation: 110, food: 80, activities: 0, gas: 30, total: 220 }
+      notes: ['LAST FULL DAY — no Missoula drive needed!', 'Fly from FCA (Glacier Park International) tomorrow', 'Goat Lick overlook on Hwy 2 — mountain goats visible from highway pulloff', 'Pack tonight — early morning tomorrow', 'Celebration dinner in Whitefish!'],
+      budgetBreakdown: { accommodation: 150, food: 100, activities: 0, gas: 15, total: 265 }
     },
 
     // ============================================================
-    // DAY 28: FLY HOME
+    // DAY 28: FLY HOME FROM FCA
     // ============================================================
     {
       id: 'd28',
       dayNumber: 28,
       date: '2026-06-11',
-      title: 'Fly Home from Missoula',
-      summary: 'Breakfast, airport shuttle, fly home — trip complete!',
-      location: locations.find(l => l.id === 'missoula')!,
+      title: 'Fly Home from Glacier Park',
+      summary: 'Return rental car at FCA, fly home — trip complete!',
+      location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Home!',
-      weather: { high: 22, low: 7, conditions: 'Pleasant' },
+      weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
           id: 'a22-1',
-          name: 'Hotel Breakfast & Pack Up',
-          description: 'Enjoy the free breakfast. Pack up and check out.',
-          duration: '1 hour',
+          name: 'Breakfast & Check Out',
+          description: 'Last breakfast. Pack up and check out of Meadow Lake. Drive 15 min to FCA airport.',
+          duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Take advantage of the free breakfast', 'Airport shuttle from hotel']
+          tips: ['FCA is only 15 min from Columbia Falls', 'Return rental car at FCA airport', 'Small airport — no TSA chaos']
         },
         {
           id: 'a22-2',
           name: 'Fly Home',
-          description: 'Colin: MSO → SEA. Mom: MSO → connecting hub → YYZ.',
+          description: 'Colin: FCA → SEA nonstop on Alaska Airlines (1h20m, Embraer E175 jet). Mom: FCA → MSP → YYZ on Delta (~8hrs total, one stop at Minneapolis).',
           duration: 'All day',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['Request wheelchair assist for Mom at check-in', 'MSO is a small, easy airport', 'Arrive 1.5hrs before departure']
+          tips: ['Request wheelchair assist for Mom at FCA check-in', 'FCA is a small, easy airport — very manageable for Mom', 'Arrive 1.5hrs before departure', 'Colin: Alaska nonstop to SEA, 1h20m', 'Mom: Delta to MSP then YYZ, ~8hrs total — one airline the whole way']
         }
       ],
-      notes: ['DEPARTURE DAY', 'Request wheelchair assistance for Mom', 'What an incredible trip!'],
+      notes: ['DEPARTURE DAY', 'Return rental car at FCA airport', 'Colin: FCA→SEA nonstop (Alaska, 1h20m)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', 'Request wheelchair assistance for Mom', 'What an incredible 28-day trip!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
@@ -2705,16 +2661,16 @@ export const tripData: TripData = {
     flights: {
       colinOutbound: { description: 'SEA→LAS Alaska', price: 90 },
       momOutbound: { description: 'YYZ→LAS Porter', price: 220 },
-      colinReturn: { description: 'MSO→SEA Alaska', price: 120 },
-      momReturn: { description: 'MSO→YYZ United', price: 350 },
-      total: 780,
+      colinReturn: { description: 'FCA→SEA Alaska nonstop', price: 130 },
+      momReturn: { description: 'FCA→MSP→YYZ Delta', price: 350 },
+      total: 790,
     },
     carRental: {
       dailyRate: 40,
-      days: 26,
+      days: 27,
       dropoffFee: 200,
-      total: 1240,
-      notes: 'LAS→MSO one-way. Book via Costco Travel or AutoSlash.',
+      total: 1280,
+      notes: 'LAS→FCA one-way. Saves 3-hour drive to Missoula! Book via Costco Travel or AutoSlash.',
     },
     passengerAssistance: {
       cost: 0,
