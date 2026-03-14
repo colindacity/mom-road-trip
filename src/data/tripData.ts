@@ -475,8 +475,8 @@ export const tripData: TripData = {
         {
           id: 'a2-3',
           name: 'First Views at Mather Point',
-          description: 'Your first Grand Canyon views! Short accessible walk to iconic viewpoint.',
-          duration: '1 hour',
+          description: 'Your first Grand Canyon views! Short accessible walk to iconic viewpoint. Visitor Center right here.',
+          duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -484,13 +484,13 @@ export const tripData: TripData = {
         },
         {
           id: 'a2-4',
-          name: 'Sunset at Hopi Point',
-          description: 'One of the best sunset spots on the South Rim. Take the free shuttle.',
-          duration: '1.5 hours',
+          name: 'Hermit Road Shuttle — Western Viewpoints',
+          description: 'Take the free Red Route shuttle west along Hermit Road to 9 viewpoints. Hop on/off at each stop. Key stops: Trailview Overlook, Maricopa Point, Powell Point, Hopi Point (best sunset spot), Mohave Point, The Abyss, Pima Point, and Hermit\'s Rest (snacks, water, gift shop). Afternoon light is best for this direction — canyon walls glow orange.',
+          duration: '3-4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Shuttle runs regularly', 'Bring layers — cool after sunset', 'Arrive 30 min early for a good spot', 'Sunset ~7:30pm mid-May. iPhone: shoot in 2x for layered canyon depth', 'Timelapse mode captures the shadow sweep beautifully']
+          tips: ['Free shuttle only — no private cars Mar-Nov', 'Hop off at any stop, catch the next shuttle (every 10-15 min)', 'Hopi Point is the classic sunset spot — stay here last', 'The Abyss is the most dramatic vertical drop', 'Hermit\'s Rest has restrooms, snacks, and Mary Colter\'s stone building', 'Sunset ~7:30pm mid-May. iPhone: 2x zoom for layered canyon depth', 'Bring layers — gets cool after sunset at 7,000ft']
         }
       ],
       accommodation: {
@@ -569,53 +569,65 @@ export const tripData: TripData = {
       id: 'd3',
       dayNumber: 3,
       date: '2026-05-17',
-      title: 'Grand Canyon Full Day',
-      summary: 'Rim walks, overlooks, take your time with the views',
+      title: 'Grand Canyon — Desert View Drive East',
+      summary: 'Drive east to Watchtower, Lipan Point, and all the eastern viewpoints',
       location: locations.find(l => l.id === 'gc')!,
       overnight: 'Grand Canyon (Tusayan)',
       weather: { high: 78, low: 45, conditions: 'Sunny, pleasant' },
       activities: [
         {
           id: 'a3-1',
-          name: 'Rim Trail Walk',
-          description: 'Walk sections of the paved Rim Trail between viewpoints. Flat and accessible. Best section: Mather Point to Yavapai Point (0.7mi, paved, wheelchair accessible, benches). Or extend to Bright Angel Lodge (2mi total).',
-          duration: '2.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '2.8 miles (Mather Point to Bright Angel Lodge)',
-          elevation: { gain: 100, highest: 7120, lowest: 7000 },
-          tips: ['Paved and wheelchair accessible', 'Free shuttle stops at viewpoints', 'Benches throughout']
-        },
-        {
-          id: 'a3-2',
-          name: 'Lunch at El Tovar or Bright Angel Lodge',
-          description: 'Historic lodges with canyon views. El Tovar is upscale, Bright Angel more casual.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['El Tovar may need reservation for dinner', 'Bright Angel has good burgers']
-        },
-        {
-          id: 'a3-3',
-          name: 'Hermit Road Scenic Drive',
-          description: 'Take the free shuttle along Hermit Road to multiple overlooks. Best in afternoon light.',
-          duration: '2-3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Free shuttle only (no private cars in summer)', 'Get off at any stop, catch next shuttle', 'The Abyss and Pima Point are favorites']
-        },
-        {
-          id: 'a3-4',
           name: 'Sunrise at Yavapai Point',
-          description: 'Less crowded than Mather Point with same eastern exposure. Arrive 30min before sunrise (~5:15am in May).',
+          description: 'Less crowded than Mather Point with same eastern exposure. Arrive 30min before sunrise (~5:15am in May). The Geology Museum nearby opens at 8am — worth a quick stop after.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
           tips: ['Sunrise ~5:15am mid-May — warm light floods the canyon', 'Far fewer people than Mather Point', 'Geology Museum opens at 8am nearby', 'iPhone: burst mode during golden hour, 0.5x ultrawide captures the full panorama']
+        },
+        {
+          id: 'a3-2',
+          name: 'Morning Rim Trail Walk',
+          description: 'Walk the paved Rim Trail from Mather Point to Bright Angel Lodge (2mi). Flat, wheelchair accessible, benches throughout. Cool morning temps are ideal for Mom.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '2 miles (Mather Point to Bright Angel Lodge)',
+          elevation: { gain: 100, highest: 7120, lowest: 7000 },
+          tips: ['Paved and wheelchair accessible', 'Free shuttle stops at viewpoints along the way', 'Benches every few hundred yards', 'Morning light is soft and great for photos']
+        },
+        {
+          id: 'a3-3',
+          name: 'Desert View Drive — Eastern Viewpoints',
+          description: 'Drive your own car 25 miles east along the South Rim on Desert View Drive (AZ-64). Stop at 6 major viewpoints with increasingly dramatic canyon views. Key stops: Yaki Point (panoramic views, shuttle-only but worth it), Grandview Point (one of the widest canyon views), Moran Point (colorful rock layers), Lipan Point (see the Colorado River and Unkar Delta), Navajo Point (highest point on the South Rim at 7,498ft), and Desert View Watchtower (Mary Colter\'s 70-foot stone tower with 360° views, Hopi-inspired murals inside, gift shop). Morning light illuminates the eastern canyon walls beautifully.',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '25 miles one way (50 miles round trip)',
+          tips: [
+            'Drive your own car — no shuttle needed on Desert View Drive',
+            'Yaki Point requires the Orange Route shuttle (no private cars) — stop here first via shuttle before driving east',
+            'Grandview Point has the widest panorama on the South Rim',
+            'Lipan Point is the best place to see the Colorado River from the rim',
+            'Navajo Point is the highest overlook on the South Rim (7,498ft)',
+            'Desert View Watchtower: climb to the top for 360° views, $2 suggested donation',
+            'Watchtower has restrooms, snack bar, and gift shop',
+            'Morning light is best — canyon walls glow orange from this direction',
+            'iPhone: 0.5x ultrawide at the Watchtower top floor, 2x zoom for river shots at Lipan Point',
+            'Fill gas at Desert View gas station if needed (last gas before Cameron)'
+          ]
+        },
+        {
+          id: 'a3-4',
+          name: 'Lunch at El Tovar or Bright Angel Lodge',
+          description: 'Return to Grand Canyon Village for lunch at one of the historic lodges. El Tovar is upscale dining with canyon views. Bright Angel Lodge is more casual with good burgers and a saloon.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['El Tovar lunch is walk-in (dinner needs reservation)', 'Bright Angel has a casual café and the Arizona Room steakhouse', 'Both have canyon-view seating']
         }
       ],
       accommodation: {
@@ -630,7 +642,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night — same hotel.'
       },
-      notes: ['HIKING DAY — 2.8mi Rim Trail (easy, paved)', 'Skip South Kaibab to Ooh Aah Point — too steep and loose gravel for 80yo', 'Sunset at Mohave Point (less crowded than Hopi, same views)', 'Hydrate at altitude'],
+      notes: ['DESERT VIEW DRIVE DAY — 25mi scenic drive east along South Rim', 'Sunrise at Yavapai, morning rim walk, then drive east to Watchtower', 'Desert View Watchtower is a must-see — 70ft stone tower with 360° views', 'Skip South Kaibab to Ooh Aah Point — too steep and loose gravel for 80yo', 'Hydrate at altitude — 7,000ft'],
       budgetBreakdown: { accommodation: 165, food: 80, activities: 0, gas: 0, total: 245 }
     },
 
