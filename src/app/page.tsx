@@ -15,6 +15,7 @@ import ReservationsChecklist from '@/components/ReservationsChecklist';
 import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
 import CarRentalInfo from '@/components/CarRentalInfo';
+import ActionTracker from '@/components/ActionTracker';
 import {
   Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink
 } from 'lucide-react';
@@ -40,6 +41,7 @@ export default function Home() {
   const [showPacking, setShowPacking] = useState(false);
   const [showFlights, setShowFlights] = useState(false);
   const [showCarRental, setShowCarRental] = useState(false);
+  const [showActions, setShowActions] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
@@ -237,6 +239,15 @@ export default function Home() {
                 >
                   <Car className="w-4 h-4" />
                 </button>
+                <button
+                  onClick={() => setShowActions(!showActions)}
+                  className={`p-2 rounded-lg transition-colors ${
+                    showActions ? 'bg-teal-100 text-teal-700' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Action Tracker"
+                >
+                  <ListTodo className="w-4 h-4" />
+                </button>
               </div>
 
               {/* Mobile more menu */}
@@ -280,6 +291,12 @@ export default function Home() {
                       className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showPacking ? 'bg-indigo-50 text-indigo-700' : 'text-gray-600 hover:bg-gray-50'}`}
                     >
                       <Backpack className="w-4 h-4" /> Packing List
+                    </button>
+                    <button
+                      onClick={() => { setShowActions(!showActions); setShowMobileMenu(false); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showActions ? 'bg-teal-50 text-teal-700' : 'text-gray-600 hover:bg-gray-50'}`}
+                    >
+                      <ListTodo className="w-4 h-4" /> Action Tracker
                     </button>
                   </div>
                 )}
@@ -435,7 +452,7 @@ export default function Home() {
             </div>
 
             {/* Right column - Map, Queue, Budget, Reservations, Packing */}
-            {(showMap || showQueue || showBudget || showReservations || showPacking) && (
+            {(showMap || showQueue || showBudget || showReservations || showPacking || showActions) && (
               <div className="lg:col-span-1 order-first lg:order-last">
                 <div className="lg:sticky lg:top-20 space-y-4">
                   {/* Activity Queue */}
@@ -471,6 +488,11 @@ export default function Home() {
                   {/* Car Rental Info */}
                   {showCarRental && tripData.carRental && (
                     <CarRentalInfo carRental={tripData.carRental} />
+                  )}
+
+                  {/* Action Tracker */}
+                  {showActions && (
+                    <ActionTracker />
                   )}
 
                   {/* Map */}
