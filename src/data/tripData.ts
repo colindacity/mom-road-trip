@@ -794,8 +794,8 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          cost: '$75-140/person + $15 Navajo park fee',
-          tips: ['Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited', 'Book at antelopecanyon.com (FareHarbor)', '$65-80/person + $15 Navajo entry fee', 'Sandy ground — wear closed shoes', 'iPhone: shoot straight up for light beams. HDR auto mode handles the extreme contrast well. Best light beams 10:30am-12:30pm in Upper Canyon'],
+          cost: '$92/person + $15 Navajo park fee',
+          tips: ['Book 9:00 AM slot — sells out fast, noon slot is premium priced', 'Book at antelopecanyon.com (FareHarbor)', '$92/person (ages 8+) + $15 Navajo entry fee', 'Sandy ground — wear closed shoes', 'iPhone: shoot straight up for light beams. HDR auto mode handles the extreme contrast well. Best light beams 10:30am-12:30pm in Upper Canyon'],
           reservationUrl: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-19/?ref=https://www.antelopecanyon.com'
         },
         {
@@ -830,7 +830,7 @@ export const tripData: TripData = {
         notes: 'Second night — same hotel.'
       },
       notes: ['LIGHT DAY — guided tour + rest', 'No hiking today', 'Good rest before driving day tomorrow'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 75, gas: 0, total: 265 }
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 107, gas: 0, total: 297 }
     },
 
     // ============================================================
@@ -924,7 +924,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          cost: '$8 entry fee',
+          cost: '$10/person entry fee + $15/vehicle for scenic drive',
           tips: ['Visitor center has restrooms and snacks', 'Views from parking lot are incredible', 'Full Navajo guided tour optional ($65, 2.5hrs)', 'iPhone: 2x zoom frames the mittens beautifully. The Forrest Gump road shot is on US-163 about 13mi south of the park entrance — stop on the center line (carefully) facing north']
         },
         {
@@ -2500,7 +2500,7 @@ export const tripData: TripData = {
       item: 'Antelope Canyon Tour (Upper or Canyon X)',
       bookBy: '2026-04-25',
       website: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-19/?ref=https://www.antelopecanyon.com',
-      notes: 'Book 9:00 AM slot — 11:20 AM sold out, 1:40 PM limited. $65-80/person + $15 Navajo entry fee. Book at antelopecanyon.com (FareHarbor).'
+      notes: 'Book 9:00 AM or 9:50 AM slot — noon is premium priced. $92/person + $15 Navajo entry fee = $107/person. Book at antelopecanyon.com (FareHarbor).'
     },
     {
       item: 'Grand Canyon Lodging (Tusayan)',
@@ -2515,14 +2515,14 @@ export const tripData: TripData = {
       notes: 'May 27-Jun 1 is just after Memorial Day weekend (May 23-25). Jackson is a resort town — prices spike on holiday weekends. Book ASAP.'
     },
     {
-      item: 'Car Rental LAS→MSO One-Way',
+      item: 'Car Rental LAS→FCA One-Way',
       bookBy: '2026-03-19',
       website: 'https://www.costcotravel.com/Rental-Cars',
       notes: 'Inside optimal 4-8 week booking window. Book via Costco Travel, then check AutoSlash (autoslash.com). Free cancellation — rebook if prices drop.'
     },
     {
       item: 'El Tovar Dining Room Reservation',
-      bookBy: '2026-03-16',
+      bookBy: '2026-03-18',
       website: 'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim',
       notes: 'Opens 60 days ahead on Tock. For May 17 dinner, book by mid-March. Lunch is easier to get.'
     },
