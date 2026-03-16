@@ -6,7 +6,7 @@ import type { ActionCategory, ActionItem } from '@/types/actions';
 import {
   CheckCircle2, Circle, ExternalLink, ChevronDown, ChevronUp,
   Plane, Building2, Ticket, Car, Shield, UtensilsCrossed, Loader2,
-  AlertTriangle, ArrowRight
+  AlertTriangle, ArrowRight, X, Info
 } from 'lucide-react';
 
 const CATEGORY_ICONS: Record<ActionCategory, typeof Plane> = {
@@ -16,6 +16,15 @@ const CATEGORY_ICONS: Record<ActionCategory, typeof Plane> = {
   car_rental: Car,
   pass: Shield,
   dining: UtensilsCrossed,
+};
+
+const CATEGORY_LABELS: Record<ActionCategory, string> = {
+  flight: 'Flight',
+  accommodation: 'Hotel',
+  activity: 'Activity',
+  car_rental: 'Car',
+  pass: 'Pass',
+  dining: 'Dining',
 };
 
 const CATEGORY_COLORS: Record<ActionCategory, string> = {
@@ -33,12 +42,12 @@ function getUrgency(deadline?: string): { label: string; className: string } | n
   const dl = new Date(deadline);
   const daysLeft = Math.ceil((dl.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
   if (daysLeft < 0) return { label: `${Math.abs(daysLeft)}d overdue!`, className: 'bg-red-500 text-white font-bold' };
-  if (daysLeft === 0) return { label: 'TODAY!', className: 'bg-red-500 text-white font-bold' };
-  if (daysLeft === 1) return { label: 'Tomorrow!', className: 'bg-red-500 text-white font-bold' };
-  if (daysLeft <= 3) return { label: `${daysLeft}d left`, className: 'bg-red-100 text-red-700 font-bold' };
-  if (daysLeft <= 7) return { label: `${daysLeft}d left`, className: 'bg-amber-100 text-amber-700 font-semibold' };
-  if (daysLeft <= 30) return { label: dl.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), className: 'bg-yellow-50 text-yellow-700' };
-  return { label: dl.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), className: 'bg-gray-100 text-gray-500' };
+  if (daysLeft === 0) return { label: 'Book today!', className: 'bg-red-500 text-white font-bold' };
+  if (daysLeft === 1) return { label: 'Book tomorrow!', className: 'bg-red-500 text-white font-bold' };
+  if (daysLeft <= 3) return { label: `${daysLeft} days left`, className: 'bg-red-100 text-red-700 font-bold' };
+  if (daysLeft <= 7) return { label: `${daysLeft} days left`, className: 'bg-amber-100 text-amber-700 font-semibold' };
+  if (daysLeft <= 30) return { label: `by ${dl.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`, className: 'bg-yellow-50 text-yellow-700' };
+  return { label: `by ${dl.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`, className: 'bg-gray-100 text-gray-500' };
 }
 
 function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }: {
@@ -65,29 +74,30 @@ function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }:
         <button
           onClick={(e) => { e.stopPropagation(); onToggle(); }}
           className="shrink-0 hover:scale-110 transition-transform"
+          title={done ? 'Booked! Click to undo' : 'Click when booked'}
         >
           {done
-            ? <CheckCircle2 className="w-5 h-5 text-green-500" />
-            : <Circle className="w-5 h-5 text-gray-300 hover:text-teal-400" />
+            ? <CheckCircle2 className="w-6 h-6 text-green-500" />
+            : <Circle className="w-6 h-6 text-gray-300 hover:text-teal-400" />
           }
         </button>
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             {isNext && !done && (
-              <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-teal-500 text-white font-bold uppercase tracking-wider shrink-0">
-                Next
+              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-teal-500 text-white font-bold uppercase tracking-wider shrink-0">
+                Do this first
               </span>
             )}
-            <span className={`text-sm font-medium truncate ${done ? 'line-through text-gray-400' : 'text-gray-800'}`}>
+            <span className={`text-sm font-medium ${done ? 'line-through text-gray-400' : 'text-gray-800'}`}>
               {item.title}
             </span>
           </div>
-          <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+          <div className="flex items-center gap-1.5 mt-1 flex-wrap">
             <span className={`text-[10px] px-1.5 py-0.5 rounded inline-flex items-center gap-0.5 ${CATEGORY_COLORS[item.category]}`}>
               <CatIcon className="w-2.5 h-2.5" />
-              {item.category.replace('_', ' ')}
+              {CATEGORY_LABELS[item.category]}
             </span>
             {urgency && (
               <span className={`text-[10px] px-1.5 py-0.5 rounded ${urgency.className}`}>
@@ -96,7 +106,7 @@ function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }:
             )}
             {item.estimatedCost != null && (
               <span className="text-[10px] text-gray-400">
-                {item.actualCost != null ? `$${item.actualCost}` : `~$${item.estimatedCost}`}
+                {item.actualCost != null ? `$${item.actualCost} paid` : `~$${item.estimatedCost}`}
               </span>
             )}
           </div>
@@ -109,14 +119,13 @@ function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }:
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className={`shrink-0 inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg transition-colors ${
+            className={`shrink-0 inline-flex items-center gap-1 text-xs px-3 py-2 rounded-lg transition-colors ${
               isNext
-                ? 'bg-teal-500 text-white hover:bg-teal-600 font-medium'
+                ? 'bg-teal-500 text-white hover:bg-teal-600 font-medium shadow-sm'
                 : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
             }`}
           >
-            {isNext ? 'Book' : <ExternalLink className="w-3 h-3" />}
-            {isNext && <ArrowRight className="w-3 h-3" />}
+            {isNext ? <>Book now <ArrowRight className="w-3 h-3" /></> : <ExternalLink className="w-3.5 h-3.5" />}
           </a>
         )}
 
@@ -128,63 +137,88 @@ function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }:
             onClick={(e) => e.stopPropagation()}
             className="shrink-0 p-1.5 text-gray-300 hover:text-blue-500 rounded transition-colors"
           >
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         )}
 
-        <button onClick={(e) => { e.stopPropagation(); onExpand(); }} className="shrink-0 p-0.5">
-          {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-gray-300" /> : <ChevronDown className="w-3.5 h-3.5 text-gray-300" />}
+        <button onClick={(e) => { e.stopPropagation(); onExpand(); }} className="shrink-0 p-1">
+          {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
         </button>
       </div>
 
       {/* Expanded */}
       {isExpanded && (
-        <div className="px-3 pb-3 pl-10 space-y-2 text-xs">
-          {item.description && <p className="text-gray-500">{item.description}</p>}
+        <div className="px-3 pb-3 pl-11 space-y-2.5 text-xs">
+          {item.description && <p className="text-gray-600 leading-relaxed">{item.description}</p>}
 
           <div className="flex items-center gap-2">
-            <label className="text-gray-500 w-20">Confirm #:</label>
+            <label className="text-gray-500 w-24 shrink-0">Confirmation #</label>
             <input
               type="text"
               value={item.confirmationNumber ?? ''}
               onChange={(e) => onUpdateItem(item.id, { confirmationNumber: e.target.value || undefined })}
               onClick={(e) => e.stopPropagation()}
-              placeholder="Enter after booking"
-              className="border border-gray-200 rounded px-2 py-1 flex-1 focus:outline-none focus:border-teal-300"
+              placeholder="Paste confirmation here after booking"
+              className="border border-gray-200 rounded px-2 py-1.5 flex-1 focus:outline-none focus:border-teal-300 text-xs"
             />
           </div>
 
           <div className="flex items-center gap-2">
-            <label className="text-gray-500 w-20">Actual $:</label>
-            <input
-              type="number"
-              value={item.actualCost ?? ''}
-              onChange={(e) => onUpdateItem(item.id, { actualCost: e.target.value ? Number(e.target.value) : undefined })}
-              onClick={(e) => e.stopPropagation()}
-              placeholder={item.estimatedCost?.toString() ?? '0'}
-              className="border border-gray-200 rounded px-2 py-1 w-24 focus:outline-none focus:border-teal-300"
-            />
-            {item.estimatedCost != null && (
-              <span className="text-gray-400">est. ${item.estimatedCost}</span>
-            )}
+            <label className="text-gray-500 w-24 shrink-0">Price paid</label>
+            <div className="flex items-center gap-1.5">
+              <span className="text-gray-400">$</span>
+              <input
+                type="number"
+                value={item.actualCost ?? ''}
+                onChange={(e) => onUpdateItem(item.id, { actualCost: e.target.value ? Number(e.target.value) : undefined })}
+                onClick={(e) => e.stopPropagation()}
+                placeholder={item.estimatedCost?.toString() ?? '0'}
+                className="border border-gray-200 rounded px-2 py-1.5 w-24 focus:outline-none focus:border-teal-300 text-xs"
+              />
+              {item.estimatedCost != null && (
+                <span className="text-gray-400">(estimated ${item.estimatedCost})</span>
+              )}
+            </div>
           </div>
 
           {item.notes && (
-            <div className="p-2 bg-gray-50 rounded text-gray-500 text-[11px]">
-              {item.notes}
+            <div className="p-2 bg-blue-50 rounded text-gray-600 text-[11px] leading-relaxed flex gap-1.5">
+              <Info className="w-3 h-3 text-blue-400 shrink-0 mt-0.5" />
+              <span>{item.notes}</span>
             </div>
           )}
 
           {done && (
             <button
               onClick={(e) => { e.stopPropagation(); onToggle(); }}
-              className="text-[10px] px-2 py-1 rounded bg-gray-100 text-gray-500 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+              className="text-[11px] px-2.5 py-1 rounded bg-gray-100 text-gray-500 hover:bg-amber-50 hover:text-amber-600 transition-colors"
             >
-              Mark as not done
+              Undo (mark as not booked)
             </button>
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+function HowItWorks({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="p-4 bg-teal-50 border-b border-teal-100">
+      <div className="flex items-start justify-between gap-2">
+        <div className="space-y-2 text-sm text-teal-800">
+          <p className="font-medium">How to use this checklist:</p>
+          <ol className="space-y-1.5 text-xs text-teal-700 list-decimal list-inside">
+            <li>Work through items <strong>top to bottom</strong> (most urgent first)</li>
+            <li>Tap <strong>&quot;Book now&quot;</strong> to open the booking website</li>
+            <li>After booking, tap the <strong>circle</strong> to check it off</li>
+            <li>Tap any row to save your <strong>confirmation number</strong> and actual price</li>
+          </ol>
+        </div>
+        <button onClick={onClose} className="p-1 text-teal-400 hover:text-teal-600 shrink-0">
+          <X className="w-4 h-4" />
+        </button>
+      </div>
     </div>
   );
 }
@@ -199,18 +233,26 @@ export default function ActionTracker() {
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showCompleted, setShowCompleted] = useState(false);
+  const [showHelp, setShowHelp] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    return !localStorage.getItem('action-tracker-help-dismissed');
+  });
 
   const pending = items.filter(i => i.status === 'pending' || i.status === 'needs_attention');
   const completed = items.filter(i => i.status === 'booked' || i.status === 'verified');
   const doneCount = completed.length;
   const progress = totalCount > 0 ? (doneCount / totalCount) * 100 : 0;
 
-  // First pending item is "next"
   const nextId = pending.length > 0 ? pending[0].id : null;
 
   const toggleDone = (item: ActionItem) => {
     const done = item.status === 'booked' || item.status === 'verified';
     updateStatus(item.id, done ? 'pending' : 'booked');
+  };
+
+  const dismissHelp = () => {
+    setShowHelp(false);
+    localStorage.setItem('action-tracker-help-dismissed', 'true');
   };
 
   if (isLoading) {
@@ -228,36 +270,53 @@ export default function ActionTracker() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-white">
             <Ticket className="w-5 h-5" />
-            <h2 className="font-semibold">Booking Checklist</h2>
+            <h2 className="font-semibold text-lg">Booking Checklist</h2>
             {isSaving && <Loader2 className="w-3 h-3 animate-spin text-white/60" />}
           </div>
-          <div className="text-white/90 text-sm font-medium">
-            {doneCount}/{totalCount}
+          <div className="flex items-center gap-2">
+            {!showHelp && (
+              <button
+                onClick={() => setShowHelp(true)}
+                className="text-white/60 hover:text-white/90 transition-colors"
+                title="How to use this"
+              >
+                <Info className="w-4 h-4" />
+              </button>
+            )}
+            <div className="text-white text-lg font-bold">
+              {doneCount}/{totalCount}
+            </div>
           </div>
         </div>
-        <div className="mt-2 h-2 bg-white/20 rounded-full overflow-hidden">
+        <div className="mt-2 h-2.5 bg-white/20 rounded-full overflow-hidden">
           <div
             className="h-full bg-white rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
-        {pending.length > 0 && (
-          <p className="mt-2 text-white/80 text-xs">
-            {pending.length} to book{' '}
-            {pending.some(i => {
-              const u = getUrgency(i.deadline);
-              return u?.className.includes('red');
-            }) && (
-              <span className="inline-flex items-center gap-0.5">
-                <AlertTriangle className="w-3 h-3" /> urgent items!
-              </span>
-            )}
-          </p>
-        )}
+        <p className="mt-2 text-white/80 text-xs">
+          {doneCount === 0 && pending.length > 0
+            ? 'Start with the first item below. Work your way down!'
+            : doneCount === totalCount
+              ? 'Everything is booked!'
+              : `${pending.length} left to book`
+          }
+          {pending.some(i => {
+            const u = getUrgency(i.deadline);
+            return u?.className.includes('red');
+          }) && doneCount < totalCount && (
+            <span className="inline-flex items-center gap-0.5 ml-1 font-medium text-white">
+              <AlertTriangle className="w-3 h-3" /> Some are urgent!
+            </span>
+          )}
+        </p>
       </div>
 
+      {/* Help / How it works */}
+      {showHelp && <HowItWorks onClose={dismissHelp} />}
+
       {/* Pending items */}
-      <div className="max-h-[450px] overflow-y-auto">
+      <div className="max-h-[500px] overflow-y-auto">
         {pending.map(item => (
           <ItemRow
             key={item.id}
@@ -275,11 +334,11 @@ export default function ActionTracker() {
           <>
             <button
               onClick={() => setShowCompleted(!showCompleted)}
-              className="w-full flex items-center gap-2 p-2.5 text-xs text-gray-400 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center gap-2 p-3 text-xs text-gray-400 hover:bg-gray-50 transition-colors border-t border-gray-100"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
-              {completed.length} completed
-              {showCompleted ? <ChevronUp className="w-3 h-3 ml-auto" /> : <ChevronDown className="w-3 h-3 ml-auto" />}
+              <CheckCircle2 className="w-4 h-4 text-green-400" />
+              <span>{completed.length} booked</span>
+              {showCompleted ? <ChevronUp className="w-3.5 h-3.5 ml-auto" /> : <ChevronDown className="w-3.5 h-3.5 ml-auto" />}
             </button>
             {showCompleted && completed.map(item => (
               <ItemRow
@@ -297,21 +356,21 @@ export default function ActionTracker() {
 
         {/* All done! */}
         {pending.length === 0 && (
-          <div className="p-6 text-center">
-            <p className="text-green-600 font-medium">All booked!</p>
-            <p className="text-xs text-gray-400 mt-1">Everything is reserved for your trip.</p>
+          <div className="p-8 text-center">
+            <p className="text-green-600 font-medium text-base">All booked!</p>
+            <p className="text-sm text-gray-400 mt-1">Everything is reserved. Time to pack!</p>
           </div>
         )}
       </div>
 
       {/* Footer */}
       <div className="p-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-xs">
-        <span className="text-gray-500">Est. total</span>
+        <span className="text-gray-500">Estimated total</span>
         <span className="font-medium text-gray-700">
           ${totalEstimated.toLocaleString()}
           {totalActual !== totalEstimated && (
-            <span className={`ml-1 ${totalActual > totalEstimated ? 'text-red-500' : 'text-green-500'}`}>
-              (actual ${totalActual.toLocaleString()})
+            <span className={`ml-1.5 ${totalActual > totalEstimated ? 'text-red-500' : 'text-green-500'}`}>
+              (paid: ${totalActual.toLocaleString()})
             </span>
           )}
         </span>
