@@ -2530,7 +2530,7 @@ export const tripData: TripData = {
       item: 'Park Passes (NEW 2026 Nonresident Fees!)',
       bookBy: '2026-05-01',
       website: 'https://www.nps.gov/planyourvisit/passes.htm',
-      notes: 'Colin: $80 America the Beautiful pass. Mom (Canadian): NEW $250 Nonresident Annual Pass — saves $150 vs paying $100 surcharge at each of 4 designated parks (Grand Canyon, Teton, Yellowstone, Glacier). Buy at first park entrance.'
+      notes: 'Colin: $80 America the Beautiful pass. This covers Colin + all passengers (including Mom) and waives nonresident fees. Mom does NOT need the $250 Nonresident Pass — Colin\'s pass covers her as a vehicle passenger at all parks. Buy at first park entrance or online at recreation.gov.'
     },
     {
       item: 'Arches NP — No Timed Entry in 2026',
