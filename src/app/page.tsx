@@ -11,13 +11,12 @@ import ActivityQueue from '@/components/ActivityQueue';
 import DndCalendar from '@/components/DndCalendar';
 import { useTripState } from '@/hooks/useTripState';
 import CostBreakdown from '@/components/CostBreakdown';
-import ReservationsChecklist from '@/components/ReservationsChecklist';
 import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
 import CarRentalInfo from '@/components/CarRentalInfo';
 import ActionTracker from '@/components/ActionTracker';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, ClipboardCheck, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -37,7 +36,6 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showQueue, setShowQueue] = useState(false);
   const [showBudget, setShowBudget] = useState(false);
-  const [showReservations, setShowReservations] = useState(false);
   const [showPacking, setShowPacking] = useState(false);
   const [showFlights, setShowFlights] = useState(false);
   const [showCarRental, setShowCarRental] = useState(false);
@@ -204,15 +202,6 @@ export default function Home() {
                   <DollarSign className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => setShowReservations(!showReservations)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showReservations ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Reservations"
-                >
-                  <ClipboardCheck className="w-4 h-4" />
-                </button>
-                <button
                   onClick={() => setShowPacking(!showPacking)}
                   className={`p-2 rounded-lg transition-colors ${
                     showPacking ? 'bg-indigo-100 text-indigo-700' : 'text-gray-400 hover:text-gray-600'
@@ -279,12 +268,6 @@ export default function Home() {
                       className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showCarRental ? 'bg-orange-50 text-orange-700' : 'text-gray-600 hover:bg-gray-50'}`}
                     >
                       <Car className="w-4 h-4" /> Car Rental
-                    </button>
-                    <button
-                      onClick={() => { setShowReservations(!showReservations); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showReservations ? 'bg-amber-50 text-amber-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <ClipboardCheck className="w-4 h-4" /> Reservations
                     </button>
                     <button
                       onClick={() => { setShowPacking(!showPacking); setShowMobileMenu(false); }}
@@ -452,7 +435,7 @@ export default function Home() {
             </div>
 
             {/* Right column - Map, Queue, Budget, Reservations, Packing */}
-            {(showMap || showQueue || showBudget || showReservations || showPacking || showActions) && (
+            {(showMap || showQueue || showBudget || showPacking || showActions) && (
               <div className="lg:col-span-1 order-first lg:order-last">
                 <div className="lg:sticky lg:top-20 space-y-4">
                   {/* Activity Queue */}
@@ -468,11 +451,6 @@ export default function Home() {
                   {/* Budget Breakdown */}
                   {showBudget && (
                     <CostBreakdown tripDays={tripData.days.length} />
-                  )}
-
-                  {/* Reservations Checklist */}
-                  {showReservations && tripData.importantReservations && (
-                    <ReservationsChecklist reservations={tripData.importantReservations} />
                   )}
 
                   {/* Packing List */}
