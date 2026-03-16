@@ -105,64 +105,61 @@ export default function CompactDayRow({
 
   return (
     <div className={`group transition-all ${isSelected ? 'bg-gray-50' : ''}`}>
-      {/* Main row — info dense, no click needed for essentials */}
+      {/* Top line: day info + title + badges — clickable to expand */}
       <div
         onClick={onToggle}
-        className="cursor-pointer hover:bg-gray-50/80 transition-colors"
+        className="flex items-center gap-2 py-2 px-3 cursor-pointer hover:bg-gray-50/80 transition-colors"
       >
-        {/* Top line: day info + title + badges */}
-        <div className="flex items-center gap-2 py-2 px-3">
-          {/* Day # + date */}
-          <div
-            className="w-16 shrink-0 flex items-baseline gap-1.5"
-            style={{ color: phase?.color || '#374151' }}
-          >
-            <span className="text-lg font-bold leading-none">{day.dayNumber}</span>
-            <span className="text-[10px] text-gray-400">{format(parseISO(day.date), 'EEE M/d')}</span>
-          </div>
-
-          {/* Title */}
-          <div className="flex-1 min-w-0">
-            <span className="text-sm font-medium text-gray-900">{day.title}</span>
-          </div>
-
-          {/* Day type badge */}
-          <span className={`px-1.5 py-0.5 text-[10px] font-semibold rounded shrink-0 ${badge.color}`}>
-            {badge.label}
-          </span>
-
-          {/* Driving */}
-          {day.drivingDistance && (
-            <span className="hidden sm:inline-flex items-center gap-0.5 text-[10px] text-gray-400 shrink-0">
-              <Car className="w-3 h-3" />
-              {day.drivingDistance}
-            </span>
-          )}
-
-          {/* Budget */}
-          {day.budgetBreakdown?.total && (
-            <span className="text-[10px] text-gray-400 shrink-0 font-medium">
-              ${day.budgetBreakdown.total}
-            </span>
-          )}
-
-          {/* Expand */}
-          <ChevronRight
-            className={`w-3.5 h-3.5 text-gray-300 transition-transform shrink-0 ${
-              isExpanded ? 'rotate-90' : ''
-            }`}
-          />
+        {/* Day # + date */}
+        <div
+          className="w-16 shrink-0 flex items-baseline gap-1.5"
+          style={{ color: phase?.color || '#374151' }}
+        >
+          <span className="text-lg font-bold leading-none">{day.dayNumber}</span>
+          <span className="text-[10px] text-gray-400">{format(parseISO(day.date), 'EEE M/d')}</span>
         </div>
 
-        {/* Bottom line: accommodation options — always visible */}
-        {accOptions.length > 0 && (
-          <div className="flex items-center gap-1.5 px-3 pb-2 pl-[76px] flex-wrap">
-            {accOptions.map((acc) => (
-              <AccOptionInline key={acc.id} acc={acc} />
-            ))}
-          </div>
+        {/* Title */}
+        <div className="flex-1 min-w-0">
+          <span className="text-sm font-medium text-gray-900">{day.title}</span>
+        </div>
+
+        {/* Day type badge */}
+        <span className={`px-1.5 py-0.5 text-[10px] font-semibold rounded shrink-0 ${badge.color}`}>
+          {badge.label}
+        </span>
+
+        {/* Driving */}
+        {day.drivingDistance && (
+          <span className="hidden sm:inline-flex items-center gap-0.5 text-[10px] text-gray-400 shrink-0">
+            <Car className="w-3 h-3" />
+            {day.drivingDistance}
+          </span>
         )}
+
+        {/* Budget */}
+        {day.budgetBreakdown?.total && (
+          <span className="text-[10px] text-gray-400 shrink-0 font-medium">
+            ${day.budgetBreakdown.total}
+          </span>
+        )}
+
+        {/* Expand */}
+        <ChevronRight
+          className={`w-3.5 h-3.5 text-gray-300 transition-transform shrink-0 ${
+            isExpanded ? 'rotate-90' : ''
+          }`}
+        />
       </div>
+
+      {/* Accommodation options — separate from expand click zone */}
+      {accOptions.length > 0 && (
+        <div className="flex items-center gap-1.5 px-3 pb-2 pl-[76px] flex-wrap">
+          {accOptions.map((acc) => (
+            <AccOptionInline key={acc.id} acc={acc} />
+          ))}
+        </div>
+      )}
 
       {/* Expanded content — detailed activities, weather, notes */}
       {isExpanded && (
