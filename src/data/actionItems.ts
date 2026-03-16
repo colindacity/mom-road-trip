@@ -27,7 +27,7 @@ export function generateActionItems(): ActionItem[] {
     id: 'acc-glacier-earlybird',
     category: 'accommodation',
     title: 'Book Glacier lodging (20% early bird)',
-    description: 'Paddle Ridge or Glacier Park Collection. Need 2BR for wife joining Jun 4-7. Call 1.844.868.7474.',
+    description: 'Paddle Ridge or Glacier Park Collection. Need 2BR for Robin joining Jun 4-7. Call 1.844.868.7474.',
     status: 'pending',
     deadline: '2026-03-31',
     tripDay: 21,
@@ -101,8 +101,8 @@ export function generateActionItems(): ActionItem[] {
     { id: 'flight-mom-out', title: 'Book Mom YYZ→LAS May 15', cost: 200, url: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-15&curr=USD', notes: 'Porter Airlines direct ~4h30m. CAD $190-207 base.' },
     { id: 'flight-mom-return', title: 'Book Mom FCA→YYZ Jun 8', cost: 350, url: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-08&curr=USD', notes: 'Delta via MSP. HIGHEST RISK — limited frequency, book earliest.' },
     { id: 'flight-colin-return', title: 'Book Colin FCA→SEA Jun 8', cost: 130, url: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-08&curr=USD', notes: 'Alaska nonstop 1h20m. ~$89-150 range.' },
-    { id: 'flight-wife-out', title: 'Book Wife SEA→FCA Jun 4', cost: 110, url: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD', notes: 'Alaska nonstop 1h20m. Thu evening arrival.' },
-    { id: 'flight-wife-return', title: 'Book Wife FCA→SEA Jun 7', cost: 110, url: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-07&curr=USD', notes: 'Alaska nonstop. Sunday = pricier ($120-150).' },
+    { id: 'flight-robin-out', title: 'Book Robin SEA→FCA Jun 4', cost: 110, url: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD', notes: 'Alaska nonstop 1h20m. Thu evening arrival.' },
+    { id: 'flight-robin-return', title: 'Book Robin FCA→SEA Jun 7', cost: 110, url: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-07&curr=USD', notes: 'Alaska nonstop. Sunday = pricier ($120-150).' },
   ];
 
   for (const f of flights) {
@@ -112,7 +112,7 @@ export function generateActionItems(): ActionItem[] {
       title: f.title,
       description: f.notes,
       status: 'pending',
-      tripDay: f.id.includes('return') || f.id.includes('wife') ? 25 : 1,
+      tripDay: f.id.includes('return') || f.id.includes('robin') ? 25 : 1,
       estimatedCost: f.cost,
       bookingUrl: f.url,
       notes: f.notes,

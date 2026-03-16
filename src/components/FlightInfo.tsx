@@ -18,7 +18,7 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
   const outboundFlights = flights.filter(f => f.type === 'outbound');
   const returnFlights = flights.filter(f => f.type === 'return');
 
-  // Group outbound by date (main trip vs wife's separate date)
+  // Group outbound by date (main trip vs Robin's separate date)
   const outboundByDate = outboundFlights.reduce<Record<string, typeof outboundFlights>>((acc, f) => {
     const key = f.date;
     if (!acc[key]) acc[key] = [];
@@ -114,13 +114,13 @@ function FlightCard({ flight }: { flight: Flight }) {
     const colors: Record<string, string> = {
       colin: 'bg-blue-100 text-blue-700',
       mom: 'bg-pink-100 text-pink-700',
-      wife: 'bg-purple-100 text-purple-700',
+      robin: 'bg-purple-100 text-purple-700',
     };
     return colors[passenger] || 'bg-gray-100 text-gray-700';
   };
 
   const getPassengerName = (passenger: string) => {
-    const names: Record<string, string> = { colin: 'Colin', mom: 'Mom', wife: 'Wife' };
+    const names: Record<string, string> = { colin: 'Colin', mom: 'Mom', robin: 'Robin' };
     return names[passenger] || passenger;
   };
 

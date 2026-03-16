@@ -101,7 +101,7 @@ export const tripData: TripData = {
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
-    { id: 'wife', name: 'Wife', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier long weekend (Thu Jun 4 evening - Sun Jun 7 evening). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier long weekend (Thu Jun 4 evening - Sun Jun 7 evening). Takes Friday off. Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$160-200 RT, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -137,12 +137,12 @@ export const tripData: TripData = {
     {
       id: 'montana',
       name: 'Montana & Glacier',
-      summary: 'Glacier National Park with wife joining for the weekend',
+      summary: 'Glacier National Park with Robin joining for the weekend',
       days: [21, 22, 23, 24, 25],
       startDay: 21,
       endDay: 25,
       color: '#06b6d4',
-      highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Wife joins for weekend', 'Fly home from FCA']
+      highlights: ['Sun Road (west side to Avalanche Creek)', 'Lake McDonald', 'Avalanche Lake hike', 'Robin joins for weekend', 'Fly home from FCA']
     }
   ],
   flights: [
@@ -204,7 +204,7 @@ export const tripData: TripData = {
     {
       id: 'f5',
       type: 'outbound',
-      passenger: 'wife',
+      passenger: 'robin',
       from: 'SEA',
       fromCity: 'Seattle',
       to: 'FCA',
@@ -214,12 +214,12 @@ export const tripData: TripData = {
       price: 110,
       duration: '1h 20m',
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-06-04&curr=USD',
-      notes: 'Wife takes Friday off. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Thursday evening arrival — same day as Bozeman→Glacier drive.'
+      notes: 'Robin takes Friday off. DIRECT on Alaska Airlines. ~3 flights/day. FCA is 13 min from Columbia Falls. Thursday evening arrival — same day as Bozeman→Glacier drive.'
     },
     {
       id: 'f6',
       type: 'return',
-      passenger: 'wife',
+      passenger: 'robin',
       from: 'FCA',
       fromCity: 'Kalispell (Glacier Park)',
       to: 'SEA',
@@ -229,7 +229,7 @@ export const tripData: TripData = {
       price: 110,
       duration: '1h 20m',
       bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-07&curr=USD',
-      notes: 'Wife\'s return. Sunday evening flight — full day in Glacier before heading home.'
+      notes: 'Robin\'s return. Sunday evening flight — full day in Glacier before heading home.'
     }
   ],
   flightOptions: [
@@ -2106,8 +2106,8 @@ export const tripData: TripData = {
       id: 'd21',
       dayNumber: 21,
       date: '2026-06-04',
-      title: 'Bozeman → Glacier — Wife Arrives!',
-      summary: 'Drive to Glacier, settle in, wife flies in Thursday evening',
+      title: 'Bozeman → Glacier — Robin Arrives!',
+      summary: 'Drive to Glacier, settle in, Robin flies in Thursday evening',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       drivingDistance: '340 miles',
@@ -2160,7 +2160,7 @@ export const tripData: TripData = {
         amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Indoor/outdoor pool', 'Free parking', 'Golf course', 'Restaurant'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR condo: separate bedrooms for 3 adults when wife arrives Thu night. Full kitchen saves money over 4 nights. Private hot tub. Best value near Glacier.'
+        notes: '2BR condo: separate bedrooms for 3 adults when Robin arrives Thu night. Full kitchen saves money over 4 nights. Private hot tub. Best value near Glacier.'
       },
       accommodationOptions: [
         {
@@ -2210,7 +2210,7 @@ export const tripData: TripData = {
           notes: 'Search: 2BR, Jun 4-Jun 8, $175 max. Hungry Horse is 10-15min from park. Book early — Glacier rentals go fast.'
         }
       ],
-      notes: ['DRIVING DAY + wife arrival', 'Wife arrives FCA Thursday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls — she can Uber/taxi', '3 adults Thu-Sun: need 2 bedrooms', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
+      notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Thursday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls — she can Uber/taxi', '3 adults Thu-Sun: need 2 bedrooms', 'FILL GAS in Bozeman — Costco gas at 1000 N 7th Ave', 'Gallatin Canyon (US-191) is winding — drive carefully', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 55, total: 285 }
     },
 
@@ -2221,7 +2221,7 @@ export const tripData: TripData = {
       id: 'd22',
       dayNumber: 22,
       date: '2026-06-05',
-      title: 'Glacier West Side — Wife\'s First Day',
+      title: 'Glacier West Side — Robin\'s First Day',
       summary: 'Trail of the Cedars boardwalk, Lake McDonald, all three together',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls / West Glacier, MT',
@@ -2240,15 +2240,15 @@ export const tripData: TripData = {
         },
         {
           id: 'a18-2',
-          name: 'Avalanche Lake Hike (Colin + Wife)',
-          description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — wait at the trailhead or drive back to Lake McDonald Lodge. Colin + wife: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls. Wife\'s day so activities can be more ambitious.',
+          name: 'Avalanche Lake Hike (Colin + Robin)',
+          description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — wait at the trailhead or drive back to Lake McDonald Lodge. Colin + Robin: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls.',
           duration: '3-4 hours (full hike)',
           difficulty: 'moderate',
           seniorFriendly: false,
           reservationRequired: false,
           distance: '5.8 miles RT',
           elevation: { gain: 730 },
-          tips: ['Mom: Trail of the Cedars only (1mi, flat boardwalk)', 'Colin + wife: continue to Avalanche Lake (5.8mi RT, 730ft gain)', 'Snow patches likely in early June — bring hiking poles', 'Carry bear spray', 'The lake is surrounded by waterfalls from Sperry Glacier', 'Trail starts easy, gets steeper in the last mile']
+          tips: ['Mom: Trail of the Cedars only (1mi, flat boardwalk)', 'Colin + Robin: continue to Avalanche Lake (5.8mi RT, 730ft gain)', 'Snow patches likely in early June — bring hiking poles', 'Carry bear spray', 'The lake is surrounded by waterfalls from Sperry Glacier', 'Trail starts easy, gets steeper in the last mile']
         },
         {
           id: 'a18-3',
@@ -2269,9 +2269,9 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night. Wife is here (arrived Thursday). 3 adults: 2BR condo works perfectly.'
+        notes: 'Second night. Robin is here (arrived Thursday). 3 adults: 2BR condo works perfectly.'
       },
-      notes: ['WIFE\'S FIRST FULL DAY — she arrived last night', 'Wife took Friday off work — full day together, all 3', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['ROBIN\'S FIRST FULL DAY — she arrived last night', 'Robin took Friday off work — full day together, all 3', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June', 'No vehicle reservations needed for 2026', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 35, gas: 15, total: 280 }
     },
 
@@ -2350,9 +2350,9 @@ export const tripData: TripData = {
         pricePerNight: 150,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third night. Wife\'s Saturday.'
+        notes: 'Third night. Robin\'s Saturday.'
       },
-      notes: ['FULL DAY — east side of Glacier', 'Wild Goose Island is THE iconic Glacier photo', 'St. Mary Falls is short and easy (1.6mi RT)', 'Goat Lick overlook on Hwy 2 on the way back — mountain goats!', 'Wife\'s full Saturday — all 3 together', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
+      notes: ['FULL DAY — east side of Glacier', 'Wild Goose Island is THE iconic Glacier photo', 'St. Mary Falls is short and easy (1.6mi RT)', 'Goat Lick overlook on Hwy 2 on the way back — mountain goats!', 'Robin\'s full Saturday — all 3 together', 'Park entrance: $35/vehicle or use America the Beautiful pass'],
       budgetBreakdown: { accommodation: 150, food: 70, activities: 0, gas: 30, total: 250 }
     },
 
@@ -2363,8 +2363,8 @@ export const tripData: TripData = {
       id: 'd24',
       dayNumber: 24,
       date: '2026-06-07',
-      title: 'Whitefish, Wife Farewell & Celebration Dinner',
-      summary: 'Morning in Whitefish, wife flies home Sunday evening, celebration dinner',
+      title: 'Whitefish, Robin Farewell & Celebration Dinner',
+      summary: 'Morning in Whitefish, Robin flies home Sunday evening, celebration dinner',
       location: locations.find(l => l.id === 'whitefish')!,
       overnight: 'Columbia Falls / West Glacier, MT',
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
@@ -2391,13 +2391,13 @@ export const tripData: TripData = {
         },
         {
           id: 'a20-3',
-          name: 'Drop Wife at FCA',
-          description: 'Drive wife to FCA airport (13min from Columbia Falls) for her Sunday evening flight back to Seattle.',
+          name: 'Drop Robin at FCA',
+          description: 'Drive Robin to FCA airport (13min from Columbia Falls) for her Sunday evening flight back to Seattle.',
           duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['FCA is 13min from Columbia Falls', 'Wife: Alaska nonstop to SEA, 1h20m', 'Small airport — drop off 1.5hrs before flight']
+          tips: ['FCA is 13min from Columbia Falls', 'Robin: Alaska nonstop to SEA, 1h20m', 'Small airport — drop off 1.5hrs before flight']
         },
         {
           id: 'a20-4',
@@ -2420,7 +2420,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Last night! Pack tonight for tomorrow\'s flight.'
       },
-      notes: ['WIFE\'S LAST DAY — Sunday evening flight FCA→SEA', 'Full day together before wife departs', 'Drop wife at FCA (~6pm) — 13 min from Columbia Falls', 'CELEBRATION DINNER — what an incredible trip!', 'Pack tonight — flight day tomorrow, no activities'],
+      notes: ['ROBIN\'S LAST DAY — Sunday evening flight FCA→SEA', 'Full day together before Robin departs', 'Drop Robin at FCA (~6pm) — 13 min from Columbia Falls', 'CELEBRATION DINNER — what an incredible trip!', 'Pack tonight — flight day tomorrow, no activities'],
       budgetBreakdown: { accommodation: 150, food: 100, activities: 0, gas: 10, total: 260 }
     },
 

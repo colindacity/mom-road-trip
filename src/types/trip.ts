@@ -126,7 +126,7 @@ export interface TripPhase {
 export interface Flight {
   id: string;
   type: 'outbound' | 'return';
-  passenger: 'colin' | 'mom' | 'wife';
+  passenger: 'colin' | 'mom' | 'robin';
   from: string;
   fromCity?: string;
   to: string;
@@ -145,7 +145,7 @@ export interface Flight {
 
 export interface FlightOption {
   id: string;
-  passenger: 'colin' | 'mom' | 'wife';
+  passenger: 'colin' | 'mom' | 'robin';
   type: 'outbound' | 'return';
   options: Flight[];
   recommended?: string; // ID of recommended option
