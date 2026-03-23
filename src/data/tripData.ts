@@ -2396,12 +2396,12 @@ export const tripData: TripData = {
   totalBudget: {
     flights: 980,
     carRental: 1040,
-    accommodations: 2770,
+    accommodations: 2790,
     food: 1570,
     activities: 350,
     gas: 505,
     misc: 520,
-    total: 7735
+    total: 7755
   },
   costBreakdown: {
     flights: {
