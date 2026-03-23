@@ -122,9 +122,9 @@ export const tripData: TripData = {
       id: 'utah',
       name: 'Utah',
       summary: 'Monument Valley, Arches, Canyonlands, Moab',
-      days: [7, 8, 9, 10, 11],
+      days: [7, 8, 9, 10],
       startDay: 7,
-      endDay: 11,
+      endDay: 10,
       color: '#f59e0b',
       highlights: ['Monument Valley drive-through', 'Arches NP full day', 'Canyonlands overlooks']
     },
@@ -132,8 +132,8 @@ export const tripData: TripData = {
       id: 'slc_tetons',
       name: 'SLC & Tetons',
       summary: 'Salt Lake City, Driggs, Grand Teton',
-      days: [12, 13, 14, 15, 16, 17],
-      startDay: 12,
+      days: [11, 12, 13, 14, 15, 16, 17],
+      startDay: 11,
       endDay: 17,
       color: '#22c55e',
       highlights: ['Temple Square', 'Natural History Museum', 'Teton Valley from Driggs', 'Oxbow Bend', 'Mormon Row', 'Schwabacher Landing']
@@ -625,6 +625,7 @@ export const tripData: TripData = {
           id: 'a3-2',
           name: 'Rim Trail Walk — Mather Point to Bright Angel Trailhead',
           description: '13mi total path along the canyon rim, mostly paved. For Mom, the 1-2mi section between Bright Angel Lodge and Mather Point is flat and accessible with benches throughout. Take the shuttle back. Alternative: just use the shuttle and walk short sections at each stop.',
+          url: 'https://www.alltrails.com/trail/us/arizona/grand-canyon-rim-trail--3',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -1145,89 +1146,17 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night in Moab.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for extra work day tomorrow'],
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for Arches tomorrow'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 20, gas: 10, total: 240 }
     },
 
     // ============================================================
-    // DAY 9: WORK DAY — MOAB (EXTRA WEEK 1 WORK DAY)
+    // DAY 9: ARCHES FULL DAY — WINDOWS, DOUBLE ARCH, DELICATE ARCH VIEW
     // ============================================================
     {
       id: 'd9',
       dayNumber: 9,
       date: '2026-05-18',
-      title: 'Work Day — Moab (Extra Week 1 Work Day)',
-      summary: 'Colin works full day, Mom explores Moab town or relaxes',
-      location: locations.find(l => l.id === 'moab')!,
-      overnight: 'Moab, UT',
-      weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
-      activities: [
-        {
-          id: 'a9-1',
-          name: 'Colin Works — Hotel or Cafe (Full Day)',
-          description: 'Full work day. Red Rock Bakery on Main St has WiFi and good coffee. Hotel WiFi is solid.',
-          duration: '8 hours',
-          startTime: '8:00 AM',
-          endTime: '5:00 PM',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Red Rock Bakery & Net Cafe: Main St, WiFi, coffee, pastries', 'Hotel WiFi is solid', 'Jailhouse Cafe for breakfast']
-        },
-        {
-          id: 'a9-2',
-          name: 'Mom Solo: Main Street Browse & Pool',
-          description: 'Browse shops on Main Street, grab ice cream, visit the Moab Museum. Hotel pool to beat the 32-degree heat.',
-          duration: '3-4 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Main Street is flat and walkable', 'Moab Museum: local history, free', 'Love Muffin Cafe is a local breakfast favorite', 'Pool to beat the heat']
-        },
-        {
-          id: 'a9-3',
-          name: 'Mom Solo: Dead Horse Point Scenic Drive (optional)',
-          optionalSkip: true,
-          description: 'If Mom didn\'t go yesterday, drive to Dead Horse Point State Park for one of the best viewpoints in Utah. Overlook right from the parking lot. Colorado River meanders 2,000ft below.',
-          duration: '2 hours (with drive)',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          cost: '$20 vehicle entry',
-          tips: ['30-min drive from Moab', 'View from the car/parking lot — no hiking needed', 'One of the best photo spots in Utah']
-        },
-        {
-          id: 'a9-4',
-          name: 'Dinner Together',
-          description: 'Reconnect for dinner in downtown Moab.',
-          duration: '1.5 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Sunset Grill for Moab valley views', 'Eddie McStiff\'s for pub food and local brews', 'Quesadilla Mobilla food truck']
-        }
-      ],
-      accommodation: {
-        id: 'acc9a',
-        name: 'Big Horn Lodge (same as previous night)',
-        type: 'motel',
-        priceRange: '$130-160',
-        pricePerNight: 140,
-        seniorFriendly: true,
-        recommended: true,
-        notes: 'Third night in Moab.'
-      },
-      notes: ['FULL WORK DAY — extra work day to catch up', 'Mom can explore Moab at her own pace', 'Rest up for Arches tomorrow'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 0, gas: 5, total: 215 }
-    },
-
-    // ============================================================
-    // DAY 10: ARCHES FULL DAY — WINDOWS, DOUBLE ARCH, DELICATE ARCH VIEW
-    // ============================================================
-    {
-      id: 'd10',
-      dayNumber: 10,
-      date: '2026-05-19',
       title: 'Arches Full Day — Windows, Double Arch, Delicate Arch View',
       summary: 'Windows section, Double Arch, Delicate Arch viewpoint, Balanced Rock',
       location: locations.find(l => l.id === 'arches')!,
@@ -1235,7 +1164,7 @@ export const tripData: TripData = {
       weather: { high: 32, low: 14, conditions: 'Sunny, hot — go early' },
       activities: [
         {
-          id: 'a10-1',
+          id: 'a9-1',
           name: 'Windows Section',
           description: 'Easy loop past North Window, South Window, and Turret Arch. Spectacular formations framing the desert beyond.',
           duration: '1.5 hours',
@@ -1247,7 +1176,7 @@ export const tripData: TripData = {
           tips: ['Flat, well-maintained trail', 'Go early morning for fewer crowds', 'Best photos in morning light', 'Walk through North Window for the classic framed view']
         },
         {
-          id: 'a10-2',
+          id: 'a9-2',
           name: 'Double Arch',
           description: 'Two massive arches joined at the base. Very short walk from the parking lot and incredibly photogenic. Featured in Indiana Jones and the Last Crusade.',
           duration: '30 min',
@@ -1258,7 +1187,7 @@ export const tripData: TripData = {
           tips: ['Very short walk from parking', 'Stand underneath for the scale of the arches', 'Sandy trail — easy terrain']
         },
         {
-          id: 'a10-3',
+          id: 'a9-3',
           name: 'Delicate Arch Viewpoint (Lower)',
           description: 'See Delicate Arch from the lower viewpoint. Much easier than the full hike up to the arch itself.',
           duration: '30 min',
@@ -1269,7 +1198,7 @@ export const tripData: TripData = {
           tips: ['Lower viewpoint is flat and accessible', 'Bring binoculars for a closer look', 'Full hike to the arch is 3mi with 480ft gain — not recommended for this trip', 'Best light: late afternoon when the arch glows orange-red']
         },
         {
-          id: 'a10-4',
+          id: 'a9-4',
           name: 'Balanced Rock & Park Avenue',
           description: 'Quick stops at iconic formations. Park Avenue viewpoint is right from the car. Balanced Rock has a short loop around the base.',
           duration: '45 min',
@@ -1279,7 +1208,7 @@ export const tripData: TripData = {
           tips: ['Short walk around Balanced Rock', 'Park Avenue viewpoint is a pullover — no walking needed']
         },
         {
-          id: 'a10-5',
+          id: 'a9-5',
           name: 'Landscape Arch (optional)',
           description: 'The longest natural arch in North America. Easy trail in Devils Garden. Only if energy permits.',
           duration: '1.5 hours',
@@ -1292,26 +1221,26 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc10a',
+        id: 'acc9a',
         name: 'Big Horn Lodge (same as previous night)',
         type: 'motel',
         priceRange: '$130-160',
         pricePerNight: 140,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Fourth night in Moab.'
+        notes: 'Third night in Moab.'
       },
-      notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Tuesday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
+      notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Monday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 10, total: 235 }
     },
 
     // ============================================================
-    // DAY 11: CANYONLANDS AM + HALF WORK PM
+    // DAY 10: CANYONLANDS AM + HALF WORK PM
     // ============================================================
     {
-      id: 'd11',
-      dayNumber: 11,
-      date: '2026-05-20',
+      id: 'd10',
+      dayNumber: 10,
+      date: '2026-05-19',
       title: 'Canyonlands AM + Half Work PM',
       summary: 'Morning overlooks at Canyonlands, Colin works afternoon',
       location: locations.find(l => l.id === 'canyonlands')!,
@@ -1319,7 +1248,7 @@ export const tripData: TripData = {
       weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
       activities: [
         {
-          id: 'a11-1',
+          id: 'a10-1',
           name: 'Mesa Arch Sunrise (optional)',
           description: 'Famous arch that glows orange at sunrise. Very short walk from parking. Only if you\'re up early.',
           duration: '1 hour',
@@ -1330,7 +1259,7 @@ export const tripData: TripData = {
           tips: ['Sunrise ~6am in late May — the arch literally glows from beneath', 'THE iconic Canyonlands photo', 'Can skip and just do Grand View instead', 'iPhone: lie on the ground and shoot through the arch']
         },
         {
-          id: 'a11-2',
+          id: 'a10-2',
           name: 'Grand View Point Overlook',
           description: 'The signature view of Canyonlands. Walk to the end of the point for 360-degree canyon views extending to the La Sal Mountains.',
           duration: '1.5 hours',
@@ -1342,7 +1271,7 @@ export const tripData: TripData = {
           tips: ['Flat trail along the rim', 'Views in every direction', 'Bring water even for short walks']
         },
         {
-          id: 'a11-3',
+          id: 'a10-3',
           name: 'Green River Overlook & Shafer Canyon',
           description: 'Drive to Green River Overlook for views of the winding river far below, then stop at Shafer Canyon Overlook to see the dramatic switchback road descending into the canyon.',
           duration: '45 min',
@@ -1352,7 +1281,7 @@ export const tripData: TripData = {
           tips: ['Both are drive-up viewpoints, no hiking', 'Green River Overlook is stunning in morning light', 'Shafer Canyon road is for 4WD only — just view from the top']
         },
         {
-          id: 'a11-4',
+          id: 'a10-4',
           name: 'Colin Works PM — Hotel (1pm-5pm)',
           description: 'Back to Moab by noon. Colin works the afternoon while Mom rests at the hotel or explores Main Street.',
           duration: '4 hours',
@@ -1363,26 +1292,26 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc11a',
+        id: 'acc10a',
         name: 'Big Horn Lodge (same as previous night)',
         type: 'motel',
         priceRange: '$130-160',
         pricePerNight: 140,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Fifth and final night in Moab.'
+        notes: 'Fourth and final night in Moab.'
       },
       notes: ['Canyonlands AM + HALF WORK PM', 'Canyonlands overlooks are easy — mostly drive-up', 'Last night in Moab — pack for SLC drive tomorrow', 'FILL GAS — Green River to Salina on I-70 is 110mi with NO gas stations'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 15, total: 240 }
     },
 
     // ============================================================
-    // DAY 12: HALF WORK AM + MOAB → SLC + TEMPLE SQUARE PM
+    // DAY 11: HALF WORK AM + MOAB → SLC + TEMPLE SQUARE PM
     // ============================================================
     {
-      id: 'd12',
-      dayNumber: 12,
-      date: '2026-05-21',
+      id: 'd11',
+      dayNumber: 11,
+      date: '2026-05-20',
       title: 'Half Work AM + Drive Moab → SLC + Temple Square',
       summary: 'Morning work, drive to SLC, Temple Square afternoon',
       location: locations.find(l => l.id === 'slc')!,
@@ -1392,7 +1321,7 @@ export const tripData: TripData = {
       weather: { high: 27, low: 13, conditions: 'Clear and warm' },
       activities: [
         {
-          id: 'a12-1',
+          id: 'a11-1',
           name: 'Colin Works — Hotel (8am-11am)',
           description: 'Morning work block while Mom packs and has breakfast. Check out by 11am.',
           startTime: '8:00 AM',
@@ -1404,7 +1333,7 @@ export const tripData: TripData = {
           tips: ['Check out by 11am', 'Mom: breakfast and final Main Street browse']
         },
         {
-          id: 'a12-2',
+          id: 'a11-2',
           name: 'Drive Moab to Salt Lake City',
           description: 'Head north on I-70 and I-15. Beautiful drive through canyons and valleys. The San Rafael Swell section on I-70 is stunning. Stop in Green River for gas and Tamarisk restaurant, Price UT for a break.',
           startTime: '11:30 AM',
@@ -1415,7 +1344,7 @@ export const tripData: TripData = {
           tips: ['Stop in Green River for gas/snacks — Tamarisk restaurant is good', 'I-70 through San Rafael Swell is stunning', 'FILL GAS before Green River — long stretch with nothing', 'Price UT is another good break point']
         },
         {
-          id: 'a12-checkin',
+          id: 'a11-checkin',
           name: 'Check In & Drop Bags at Hotel',
           description: 'Drop bags, freshen up, get settled before exploring.',
           duration: '30 min',
@@ -1424,7 +1353,7 @@ export const tripData: TripData = {
           reservationRequired: false,
         },
         {
-          id: 'a12-3',
+          id: 'a11-3',
           name: 'Temple Square PM',
           description: 'Arrive SLC by mid-afternoon. Walk through Temple Square (free, 35 acres, beautifully landscaped). See the Salt Lake Temple, Tabernacle, and Conference Center. Free organ recital in the Tabernacle at noon Mon-Sat.',
           duration: '2 hours',
@@ -1434,7 +1363,7 @@ export const tripData: TripData = {
           tips: ['Temple Square is free and open to all', 'The Tabernacle has incredible acoustics', 'Capitol building is free to enter — walk up for Wasatch views', 'City Creek Center next door for shopping']
         },
         {
-          id: 'a12-4',
+          id: 'a11-4',
           name: 'Dinner in Downtown SLC',
           description: 'Red Iguana for legendary Mexican mole sauces, or Caputo\'s for deli sandwiches.',
           duration: '1.5 hours',
@@ -1445,7 +1374,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc12a',
+        id: 'acc11a',
         name: 'Crystal Inn Hotel & Suites Downtown SLC',
         type: 'hotel',
         priceRange: '$90-120',
@@ -1461,7 +1390,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc12a',
+          id: 'acc11a',
           name: 'Crystal Inn Hotel & Suites Downtown SLC',
           type: 'hotel',
           priceRange: '$90-120',
@@ -1476,7 +1405,7 @@ export const tripData: TripData = {
           notes: '2 queen beds. Best value with hot breakfast. Downtown, right off I-15.'
         },
         {
-          id: 'acc12b',
+          id: 'acc11b',
           name: 'Hilton Garden Inn SLC Downtown',
           type: 'hotel',
           priceRange: '$130-160',
@@ -1491,8 +1420,79 @@ export const tripData: TripData = {
           notes: '2 queen beds. Consistent Hilton quality. Check for AAA/AARP discounts.'
         }
       ],
-      notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC is a transit city — 3 nights here with work mixed in', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
+      notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
       budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 55, total: 225 }
+    },
+
+    // ============================================================
+    // DAY 12: WORK DAY — SLC (EXTRA WORK DAY)
+    // ============================================================
+    {
+      id: 'd12',
+      dayNumber: 12,
+      date: '2026-05-21',
+      title: 'Work Day — SLC (Extra Work Day)',
+      summary: 'Colin works full day, Mom explores Capitol Hill, Liberty Park, or Family History Library',
+      location: locations.find(l => l.id === 'slc')!,
+      overnight: 'Salt Lake City, UT',
+      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      activities: [
+        {
+          id: 'a12-1',
+          name: 'Colin Works — Crystal Inn or Work Hive Coworking (Full Day)',
+          description: 'Full work day. Crystal Inn has free WiFi and a lobby work area. Work Hive (159 W Broadway) is a proper coworking space with fast WiFi, day passes available.',
+          duration: '8 hours',
+          startTime: '8:00 AM',
+          endTime: '5:00 PM',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Work Hive: 159 W Broadway, day pass ~$25, fast WiFi', 'Crystal Inn lobby has a work-friendly area', 'Three Pines Coffee: 165 S Main St, good WiFi, 10min walk from hotel']
+        },
+        {
+          id: 'a12-2',
+          name: 'Mom Solo: Capitol Hill & Liberty Park',
+          description: 'Walk to the Utah State Capitol (free, stunning Wasatch views from the steps). Then stroll Liberty Park (80 acres, flat paths, Tracy Aviary, pond).',
+          duration: '3-4 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Capitol building is free to enter', 'Liberty Park: flat, shady, 80 acres, Tracy Aviary ($12)', 'Both walkable from downtown hotels']
+        },
+        {
+          id: 'a12-3',
+          name: 'Mom Solo: Family History Library (optional)',
+          optionalSkip: true,
+          description: 'The largest genealogy library in the world, run by FamilySearch. Free to use. Even if you\'re not researching family, the building and resources are impressive.',
+          duration: '2 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Free admission', 'Staff can help you get started with family research', 'Right next to Temple Square', 'Mon-Sat, 9am-5pm']
+        },
+        {
+          id: 'a12-4',
+          name: 'Dinner Together',
+          description: 'Reconnect for dinner downtown.',
+          duration: '1.5 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Caputo\'s Market & Deli for Italian', 'The Copper Onion for upscale American', 'Laundry at Crystal Inn if needed']
+        }
+      ],
+      accommodation: {
+        id: 'acc12a',
+        name: 'Crystal Inn (same as previous night)',
+        type: 'hotel',
+        priceRange: '$90-120',
+        pricePerNight: 100,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Second night in SLC.'
+      },
+      notes: ['FULL WORK DAY — extra day in SLC for better WiFi than Moab', 'Mom can explore at her own pace', 'Capitol Hill is free and walkable', 'Laundry day — Crystal Inn has guest laundry'],
+      budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 5, total: 175 }
     },
 
     // ============================================================
@@ -1531,13 +1531,13 @@ export const tripData: TripData = {
         },
         {
           id: 'a13-3',
-          name: 'Mom Solo: Capitol Hill & City Creek',
-          description: 'Walk to the Utah State Capitol (free, stunning views of the Wasatch Mountains from the steps). Browse City Creek Center — upscale outdoor mall with retractable glass roof.',
+          name: 'Mom Solo: City Creek Center',
+          description: 'Browse City Creek Center, an upscale outdoor mall with retractable glass roof. Right next to Temple Square.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Capitol building is free to enter', 'City Creek Center: outdoor mall, retractable roof', 'Both walkable from downtown hotels']
+          tips: ['City Creek Center: outdoor mall, retractable roof', 'Walkable from downtown hotels']
         },
         {
           id: 'a13-4',
@@ -1547,7 +1547,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Red Iguana if you haven\'t been yet', 'The Copper Onion for upscale American', 'Laundry at Crystal Inn if needed']
+          tips: ['Red Iguana: legendary mole sauces, always a line but worth it', 'The Copper Onion for upscale American']
         }
       ],
       accommodation: {
@@ -1558,9 +1558,9 @@ export const tripData: TripData = {
         pricePerNight: 100,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night — same hotel.'
+        notes: 'Third night in SLC.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Capitol Hill is free and walkable', 'Laundry day — Crystal Inn has guest laundry'],
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — Crystal Inn has guest laundry'],
       budgetBreakdown: { accommodation: 100, food: 70, activities: 15, gas: 10, total: 195 }
     },
 
@@ -1642,7 +1642,7 @@ export const tripData: TripData = {
         pricePerNight: 100,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third and final night in SLC.'
+        notes: 'Fourth and final night in SLC.'
       },
       notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
       budgetBreakdown: { accommodation: 100, food: 80, activities: 18, gas: 0, total: 198 }
@@ -2396,12 +2396,12 @@ export const tripData: TripData = {
   totalBudget: {
     flights: 980,
     carRental: 1040,
-    accommodations: 2790,
+    accommodations: 2750,
     food: 1570,
     activities: 350,
     gas: 505,
     misc: 520,
-    total: 7755
+    total: 7715
   },
   costBreakdown: {
     flights: {
