@@ -79,7 +79,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 22,
     estimatedCost: 232,
-    bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
+    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
     notes: 'CHEAPEST: United via ORD $232 (50min connection — tight for 80yo). SAFER: Delta via MSP $375 (1h50m layover, manageable). American via ORD $232 (2h26m layover, better). Book earliest for best price.',
     updatedAt: now(),
   });
@@ -92,7 +92,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 1,
     estimatedCost: 89,
-    bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
+    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
     notes: 'Alaska or Southwest at $89 (carry-on included). Frontier $64 but no bags. Early AM flights get you to Vegas by 9am for car pickup.',
     updatedAt: now(),
   });
@@ -118,7 +118,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 22,
     estimatedCost: 164,
-    bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
     notes: 'Alaska 5:40pm at $164 is the deal. Morning flights $234. Book same flight as Robin if possible.',
     updatedAt: now(),
   });
@@ -131,7 +131,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 20,
     estimatedCost: 125,
-    bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
+    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
     notes: 'Robin can fly Friday evening after work (arrives ~9pm) or Saturday morning (arrives ~9am). Saturday morning means she joins for the full Glacier day.',
     updatedAt: now(),
   });
@@ -144,7 +144,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 22,
     estimatedCost: 164,
-    bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
     notes: 'Same flight as Colin: Alaska 5:40pm FCA→SEA $164. Book together for adjacent seats.',
     updatedAt: now(),
   });

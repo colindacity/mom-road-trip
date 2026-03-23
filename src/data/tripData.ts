@@ -160,7 +160,7 @@ export const tripData: TripData = {
       airline: 'Alaska Airlines',
       price: 80,
       duration: '2h 40m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
       notes: 'Multiple direct flights daily ~2h 40m. SEA→LAS is heavily served.'
     },
     {
@@ -173,7 +173,7 @@ export const tripData: TripData = {
       airline: 'Porter Airlines',
       price: 200,
       duration: '4h 45m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-11&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+YYZ+to+LAS+on+2026-05-11&curr=USD',
       notes: 'YYZ→LAS has many options. Porter, WestJet, Flair all fly direct.'
     },
     {
@@ -188,7 +188,7 @@ export const tripData: TripData = {
       airline: 'Alaska Airlines',
       price: 130,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
       notes: 'FCA→SEA NONSTOP on Alaska Airlines. ~3 flights/day. 1hr 20min. Could be same flight as Robin.'
     },
     {
@@ -202,7 +202,7 @@ export const tripData: TripData = {
       date: '2026-06-01',
       airline: 'Delta',
       price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
       notes: 'FCA→MSP→YYZ on Delta. One airline, one stop at Minneapolis hub (~8hrs total).'
     },
     {
@@ -217,7 +217,7 @@ export const tripData: TripData = {
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
       notes: 'Robin flies in Saturday evening. DIRECT on Alaska Airlines. FCA is 13 min from Columbia Falls.'
     },
     {
@@ -232,7 +232,7 @@ export const tripData: TripData = {
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
       notes: 'Robin\'s return. Monday Jun 1 flight — could be same flight as Colin.'
     }
   ],
@@ -254,7 +254,7 @@ export const tripData: TripData = {
           airline: 'Alaska Airlines',
           price: 89,
           duration: '2h 55m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
           notes: 'DIRECT! 4+ daily nonstops.'
         },
         {
@@ -289,7 +289,7 @@ export const tripData: TripData = {
           airline: 'Porter Airlines',
           price: 220,
           duration: '4h 32m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-11&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+YYZ+to+LAS+on+2026-05-11&curr=USD',
           notes: 'No middle seats, free wine, snacks. Best for seniors.'
         },
         {
@@ -302,7 +302,7 @@ export const tripData: TripData = {
           airline: 'WestJet',
           price: 280,
           duration: '4h 35m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+YYZ+to+LAS+on+2026-05-11+WestJet&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+YYZ+to+LAS+on+2026-05-11+WestJet&curr=USD',
           notes: 'Canadian airline, good service.'
         }
       ]
@@ -2416,7 +2416,7 @@ export const tripData: TripData = {
     },
     passengerAssistance: {
       cost: 0,
-      notes: 'No special assistance needed — Mom is active and mobile.',
+      notes: 'Mom is active — hikes, walks a lot. No assistance needed.',
     },
     accommodationAvg: 132,
     foodPerDay: 71,
