@@ -15,7 +15,7 @@ export const locations: Location[] = [
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Mather+Point+Grand+Canyon+Village+AZ',
     video: 'https://www.youtube.com/embed/K2dVhFc8Qzk' },
   { id: 'page', name: 'Page, AZ', lat: 36.9147, lng: -111.4558, type: 'city',
-    image: 'https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=1200',
+    image: 'https://images.unsplash.com/photo-1561747170-1cee67c74ccd?w=800',
     infoUrl: 'https://visitpagelakepowell.com/',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Page+AZ' },
   { id: 'antelope', name: 'Antelope Canyon', lat: 36.8619, lng: -111.3743, type: 'attraction',
