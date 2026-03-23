@@ -9,6 +9,7 @@ import PhaseNav from '@/components/PhaseNav';
 import CompactDayRow from '@/components/CompactDayRow';
 import ActivityQueue from '@/components/ActivityQueue';
 import DndCalendar from '@/components/DndCalendar';
+import TripCalendarView from '@/components/TripCalendarView';
 import { useTripState } from '@/hooks/useTripState';
 import CostBreakdown from '@/components/CostBreakdown';
 import PackingList from '@/components/PackingList';
@@ -349,9 +350,12 @@ export default function Home() {
 
         {/* Calendar View */}
         {viewMode === 'calendar' ? (
-          <DndCalendar
-            onPhaseSelect={setActivePhase}
-            selectedPhase={activePhase}
+          <TripCalendarView
+            onSelectDay={(dayNum) => {
+              setViewMode('timeline');
+              setSelectedDay(dayNum);
+              setExpandedDays(new Set([`d${dayNum}`]));
+            }}
           />
         ) : viewMode === 'table' ? (
           /* Table View */
