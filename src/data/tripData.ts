@@ -99,22 +99,22 @@ export const locations: Location[] = [
 export const tripData: TripData = {
   id: 'mom-road-trip-2026',
   name: "Southwest to Glacier Road Trip",
-  tagline: "21 days, 6 national parks, Las Vegas to Glacier",
+  tagline: "22 days, 6 national parks, Las Vegas to Glacier",
   startDate: '2026-05-11',
-  endDate: '2026-05-31',
+  endDate: '2026-06-01',
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
-    { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Fri May 29 evening - Sun May 31). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$110 one-way, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Sat May 30 evening - Mon Jun 1). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$110 one-way, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
       id: 'southwest',
       name: 'Vegas & Arizona',
       summary: 'Las Vegas, Grand Canyon, Antelope Canyon, Horseshoe Bend',
-      days: [1, 2, 3, 4, 5, 6],
+      days: [1, 2, 3, 4, 5, 6, 7],
       startDay: 1,
-      endDay: 6,
+      endDay: 7,
       color: '#ef4444',
       highlights: ['Las Vegas (1 night)', 'Grand Canyon (2 nights)', 'Horseshoe Bend', 'Antelope Canyon', 'Lake Powell']
     },
@@ -122,9 +122,9 @@ export const tripData: TripData = {
       id: 'utah',
       name: 'Utah',
       summary: 'Monument Valley, Arches, Canyonlands, Moab',
-      days: [7, 8, 9, 10],
-      startDay: 7,
-      endDay: 10,
+      days: [8, 9, 10, 11],
+      startDay: 8,
+      endDay: 11,
       color: '#f59e0b',
       highlights: ['Monument Valley drive-through', 'Arches NP full day', 'Canyonlands overlooks']
     },
@@ -132,19 +132,19 @@ export const tripData: TripData = {
       id: 'slc_tetons',
       name: 'SLC & Tetons',
       summary: 'Salt Lake City, Driggs, Grand Teton',
-      days: [11, 12, 13, 14, 15, 16],
-      startDay: 11,
-      endDay: 16,
+      days: [12, 13, 14, 15, 16, 17],
+      startDay: 12,
+      endDay: 17,
       color: '#22c55e',
-      highlights: ['Temple Square', 'Natural History Museum', 'Teton Valley from Driggs', 'Oxbow Bend', 'Mormon Row', 'Signal Mountain']
+      highlights: ['Temple Square', 'Natural History Museum', 'Teton Valley from Driggs', 'Oxbow Bend', 'Mormon Row', 'Schwabacher Landing']
     },
     {
       id: 'yellowstone_glacier',
       name: 'Yellowstone & Glacier',
       summary: 'Yellowstone geysers, Glacier with Robin',
-      days: [17, 18, 19, 20, 21],
-      startDay: 17,
-      endDay: 21,
+      days: [18, 19, 20, 21, 22],
+      startDay: 18,
+      endDay: 22,
       color: '#06b6d4',
       highlights: ['Old Faithful & Grand Prismatic', 'Yellowstone Canyon & Lamar Valley', 'Robin joins for Glacier', 'Lake McDonald', 'Trail of the Cedars', 'Fly home from FCA']
     }
@@ -184,11 +184,11 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park), MT',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-05-31',
+      date: '2026-06-01',
       airline: 'Alaska Airlines',
       price: 130,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
       notes: 'FCA→SEA NONSTOP on Alaska Airlines. ~3 flights/day. 1hr 20min. Could be same flight as Robin.'
     },
     {
@@ -199,10 +199,10 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park), MT',
       to: 'YYZ',
       toCity: 'Toronto',
-      date: '2026-05-31',
+      date: '2026-06-01',
       airline: 'Delta',
       price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-05-31&curr=USD',
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
       notes: 'FCA→MSP→YYZ on Delta. One airline, one stop at Minneapolis hub (~8hrs total).'
     },
     {
@@ -213,12 +213,12 @@ export const tripData: TripData = {
       fromCity: 'Seattle',
       to: 'FCA',
       toCity: 'Kalispell (Glacier Park)',
-      date: '2026-05-29',
+      date: '2026-05-30',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-29&curr=USD',
-      notes: 'Robin flies in Friday evening. DIRECT on Alaska Airlines. FCA is 13 min from Columbia Falls.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
+      notes: 'Robin flies in Saturday evening. DIRECT on Alaska Airlines. FCA is 13 min from Columbia Falls.'
     },
     {
       id: 'f6',
@@ -228,12 +228,12 @@ export const tripData: TripData = {
       fromCity: 'Kalispell (Glacier Park)',
       to: 'SEA',
       toCity: 'Seattle',
-      date: '2026-05-31',
+      date: '2026-06-01',
       airline: 'Alaska Airlines',
       price: 110,
       duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-      notes: 'Robin\'s return. Sunday flight — could be same flight as Colin.'
+      bookingUrl: 'https://www.google.com/travel/flights?q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
+      notes: 'Robin\'s return. Monday Jun 1 flight — could be same flight as Colin.'
     }
   ],
   flightOptions: [
@@ -314,11 +314,11 @@ export const tripData: TripData = {
     pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-11',
     dropoffLocation: 'Glacier Park International Airport (FCA)',
-    dropoffDate: '2026-05-31',
-    totalDays: 20,
+    dropoffDate: '2026-06-01',
+    totalDays: 21,
     dailyRate: 40,
     dropoffFee: 200,
-    totalCost: 1000,
+    totalCost: 1040,
     notes: 'One-way compact SUV. LAS to FCA drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget.'
   },
   days: [
@@ -360,6 +360,7 @@ export const tripData: TripData = {
           name: 'Bacchanal Buffet at Caesars Palace',
           description: 'The best buffet in Las Vegas. Over 250 dishes from nine stations including Japanese, Chinese, Italian, American, and seafood. Walk-in or reserve ahead. Worth the splurge for your first meal together.',
           duration: '2 hours',
+          startTime: '3:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
@@ -371,6 +372,7 @@ export const tripData: TripData = {
           name: 'Bellagio Fountains & Strip Walk',
           description: 'Walk the Strip at dusk when the lights come alive. Bellagio fountains run every 15 minutes after 8pm. See the Venetian and Caesars Palace lit up.',
           duration: '1.5 hours',
+          startTime: '7:30 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -381,6 +383,7 @@ export const tripData: TripData = {
           name: 'Fremont Street Experience',
           description: 'Head downtown for the original Vegas vibe. The pedestrian canopy light show runs every hour after dark. Old-school casinos, neon signs, and street performers.',
           duration: '2 hours',
+          startTime: '9:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -473,26 +476,38 @@ export const tripData: TripData = {
         {
           id: 'a2-1',
           name: 'Drive: Las Vegas to Grand Canyon',
-          description: 'Head southeast on US-93 to Kingman, then I-40 east to Williams, then AZ-64 north to the South Rim. Landscape shifts from Mojave desert to high-country pines. Stop in Williams for lunch.',
+          description: 'Head southeast on US-93 to Kingman, then I-40 east to Williams, then AZ-64 north to the South Rim. Landscape shifts from Mojave desert to high-country pines. Stop at Hoover Dam bypass bridge viewpoint (optional 15min), lunch in Williams AZ.',
           duration: '4.5 hours (with stops)',
+          startTime: '7:00 AM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Leave by 8:30am to have afternoon at the canyon', 'Hoover Dam bypass bridge has a viewpoint (optional 20 min stop)', 'Williams is a fun Route 66 stop for lunch', 'Gas up in Williams — last cheap gas before Tusayan']
+          tips: ['Leave by 7am to have full afternoon at the canyon', 'Hoover Dam bypass bridge viewpoint: optional 15min stop, great views', 'Williams: lunch at Pine Country Restaurant (great pies) or Rod\'s Steak House', 'Gas up in Williams — last cheap gas before Tusayan']
         },
         {
           id: 'a2-2',
           name: 'Lunch in Williams (Route 66)',
+          startTime: '10:30 AM',
           description: 'Stop in this charming Route 66 town. Walk the main drag, grab lunch at a classic diner.',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Rod\'s Steak House or Pine Country Restaurant', 'Historic Route 66 signs make fun photos', 'Grand Canyon Railway departs from here']
+          tips: ['Pine Country Restaurant: great pies and comfort food', 'Rod\'s Steak House for classic American', 'Historic Route 66 signs make fun photos', 'Grand Canyon Railway departs from here', 'Gas up in Williams — last cheap gas before Tusayan']
+        },
+        {
+          id: 'a2-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
         },
         {
           id: 'a2-3',
           name: 'First Views at Mather Point',
+          startTime: '12:00 PM',
           description: 'Your first Grand Canyon views! Short accessible walk to the most iconic viewpoint. Visitor Center is right here. This moment is worth savoring.',
           duration: '45 min',
           difficulty: 'easy',
@@ -503,8 +518,10 @@ export const tripData: TripData = {
         {
           id: 'a2-4',
           name: 'Hermit Road Shuttle — Sunset at Hopi Point',
-          description: 'Take the free Red Route shuttle west along Hermit Road. Hop on/off at viewpoints. Key stops: Maricopa Point, Powell Point, Hopi Point (best sunset). Sunset ~7:30pm mid-May.',
+          description: 'Free shuttle, 7mi with 9 overlooks. Hop-on/hop-off every 15min. Afternoon light paints the canyon walls orange. 2-3hrs for the 4-5 best stops (Maricopa, Powell, Hopi, The Abyss). Alternative: drive Desert View yourself (that\'s tomorrow).',
           duration: '3 hours',
+          startTime: '2:00 PM',
+          endTime: '5:30 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -606,7 +623,7 @@ export const tripData: TripData = {
         {
           id: 'a3-2',
           name: 'Rim Trail Walk — Mather Point to Bright Angel Trailhead',
-          description: 'Flat, paved trail along the canyon rim with views the entire way. 2.5 miles one-way from Mather Point west to Bright Angel Lodge. Benches and rest spots throughout. Take the shuttle back.',
+          description: '13mi total path along the canyon rim, mostly paved. For Mom, the 1-2mi section between Bright Angel Lodge and Mather Point is flat and accessible with benches throughout. Take the shuttle back. Alternative: just use the shuttle and walk short sections at each stop.',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -706,10 +723,19 @@ export const tripData: TripData = {
           tips: ['Cameron Trading Post is a must-stop — gas, food, restrooms, Native crafts', 'Limited services on Navajo Nation between Cameron and Page', 'Painted Desert views along US-89']
         },
         {
+          id: 'a4-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
           id: 'a4-3',
-          name: 'Check In & Lunch in Page',
-          description: 'Arrive in Page by early afternoon. Check into hotel, grab lunch.',
-          duration: '1.5 hours',
+          name: 'Lunch in Page',
+          description: 'Arrive in Page by early afternoon. Grab lunch on Lake Powell Blvd.',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -718,6 +744,7 @@ export const tripData: TripData = {
         {
           id: 'a4-4',
           name: 'Horseshoe Bend at Sunset',
+          optionalSkip: true,
           description: 'Iconic 1,000-foot drop viewpoint over the Colorado River. Short walk from parking. Late afternoon light illuminates the bend beautifully. Go for golden hour.',
           duration: '1.5 hours',
           difficulty: 'moderate',
@@ -797,7 +824,8 @@ export const tripData: TripData = {
         {
           id: 'a5-1',
           name: 'Antelope Canyon X Tour',
-          description: 'Guided Navajo tour through the slot canyon. Antelope Canyon X (Taadidiin Tours) is the most senior-friendly option — no ladders or steep stairs, less crowded than Upper Canyon. Light beams in late morning are magical.',
+          description: 'Canyon X recommended for Mom (boardwalk entry, no ladders, wider paths). Alternative: Upper Canyon has the famous light beams; inside is ground-level (no ladders), but the exit is a 1-mile stair climb. Mom can handle stairs, so Upper is doable if you want the beams.',
+          startTime: '9:00 AM',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -869,6 +897,8 @@ export const tripData: TripData = {
           name: 'Colin Works — Hotel (Full Day)',
           description: 'Full work day at hotel. Home2 Suites has good WiFi and a lobby workspace. Slackers bar on Lake Powell Blvd also has WiFi.',
           duration: '8 hours',
+          startTime: '8:00 AM',
+          endTime: '5:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
@@ -910,12 +940,85 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 7: HALF WORK AM + PAGE → MOAB VIA MONUMENT VALLEY
+    // DAY 7: HALF WORK AM + PAGE REST & LAKE POWELL VIEWS PM
     // ============================================================
     {
       id: 'd7',
       dayNumber: 7,
       date: '2026-05-17',
+      title: 'Half Work AM + Page Rest & Lake Powell Views PM',
+      summary: 'Colin works morning, afternoon Wahweap Marina or Lake Powell overlook, pool time',
+      location: locations.find(l => l.id === 'page')!,
+      overnight: 'Page, AZ',
+      weather: { high: 31, low: 14, conditions: 'Sunny, warm' },
+      activities: [
+        {
+          id: 'a7-1',
+          name: 'Colin Works — Hotel (8am-12pm)',
+          description: 'Morning work block at the hotel. Home2 Suites lobby workspace or in-room.',
+          duration: '4 hours',
+          startTime: '8:00 AM',
+          endTime: '12:00 PM',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Mom: sleep in, enjoy free breakfast, pool time', 'Home2 Suites lobby has a dedicated work area']
+        },
+        {
+          id: 'a7-2',
+          name: 'Lunch Together in Page',
+          description: 'Reconnect for lunch on Lake Powell Blvd.',
+          duration: '1 hour',
+          startTime: '12:30 PM',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Bonkers for burgers', 'El Tapatio for Mexican', 'Big John\'s Texas BBQ']
+        },
+        {
+          id: 'a7-3',
+          name: 'Wahweap Marina & Lake Powell Views',
+          description: 'Drive 10 min to Wahweap Marina for sweeping Lake Powell views. Walk the marina area, watch the boats, enjoy the turquoise water against red rock. Optional: book a short boat tour if available.',
+          duration: '2 hours',
+          startTime: '2:00 PM',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Wahweap Marina is 10min from Page', 'Beautiful views of Lake Powell from multiple angles', 'Optional boat tour ~$50/person if available', 'Scenic loop drive along Lakeshore Dr']
+        },
+        {
+          id: 'a7-4',
+          name: 'Pool Time & Rest',
+          description: 'Relaxing afternoon at the hotel pool. Recharge before tomorrow\'s long drive to Moab.',
+          duration: '2 hours',
+          startTime: '4:00 PM',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel pool is a great way to beat the desert heat', 'Pack tonight — early start tomorrow for Monument Valley']
+        }
+      ],
+      accommodation: {
+        id: 'acc7a',
+        name: 'Home2 Suites by Hilton Page (same as previous night)',
+        type: 'hotel',
+        priceRange: '$100-140',
+        pricePerNight: 120,
+        seniorFriendly: true,
+        recommended: true,
+        notes: 'Fourth night — same hotel.'
+      },
+      notes: ['HALF WORK + REST DAY — easy pace before big drive tomorrow', 'Last day in Page', 'Pack tonight for early departure to Moab via Monument Valley'],
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 0, gas: 5, total: 195 }
+    },
+
+    // ============================================================
+    // DAY 8: HALF WORK AM + PAGE → MOAB VIA MONUMENT VALLEY
+    // ============================================================
+    {
+      id: 'd8',
+      dayNumber: 8,
+      date: '2026-05-18',
       title: 'Half Work AM + Page → Moab via Monument Valley',
       summary: 'Colin works morning, afternoon drive through Monument Valley to Moab',
       location: locations.find(l => l.id === 'moab')!,
@@ -925,27 +1028,30 @@ export const tripData: TripData = {
       weather: { high: 32, low: 16, conditions: 'Sunny, hot in the desert' },
       activities: [
         {
-          id: 'a7-1',
+          id: 'a8-1',
           name: 'Colin Works — Hotel (8am-12pm)',
           description: 'Morning work block at the hotel while Mom finishes packing and has breakfast.',
           duration: '4 hours',
+          startTime: '8:00 AM',
+          endTime: '12:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
           tips: ['Check out by noon', 'Mom: enjoy free breakfast, pack the car']
         },
         {
-          id: 'a7-2',
+          id: 'a8-2',
           name: 'Drive Page to Monument Valley',
-          description: 'Head northeast through Navajo Nation. Iconic buttes appear as you approach on US-163.',
+          description: 'Head northeast through Navajo Nation. Iconic buttes appear as you approach on US-163. Pack food — limited services on Navajo Nation. Stop in Bluff UT or Mexican Hat for views.',
           duration: '2.5 hours',
+          startTime: '12:30 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Fill gas in Kayenta', 'The approach on US-163 is the famous Forrest Gump road']
+          tips: ['Fill gas in Kayenta', 'The approach on US-163 is the famous Forrest Gump road', 'Pack food — limited services between Page and Moab', 'Bluff UT is a good stretch stop', 'Mexican Hat has iconic rock formation views']
         },
         {
-          id: 'a7-3',
+          id: 'a8-3',
           name: 'Monument Valley Photo Stop',
           description: 'Quick stop at the Monument Valley Visitor Center for the iconic mittens view. No need for a full tour — the views from the parking lot are incredible.',
           duration: '30-45 min',
@@ -956,18 +1062,27 @@ export const tripData: TripData = {
           tips: ['Visitor center has restrooms and snacks', 'Views from parking lot are incredible', 'iPhone: 2x zoom frames the mittens beautifully', 'Forrest Gump road shot is on US-163 about 13mi south of the park entrance']
         },
         {
-          id: 'a7-4',
+          id: 'a8-4',
           name: 'Continue to Moab',
-          description: 'Drive north through Utah to Moab. Red rock scenery the whole way.',
+          description: 'Drive north through Utah to Moab. Red rock scenery the whole way. Pack food — limited services between Monument Valley and Moab.',
           duration: '2.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stop in Bluff or Mexican Hat for a stretch', 'Gas up before Moab stretch']
+          tips: ['Stop in Bluff or Mexican Hat for a stretch', 'Mexican Hat has great rock formation views', 'Gas up before Moab stretch']
+        },
+        {
+          id: 'a8-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
         }
       ],
       accommodation: {
-        id: 'acc7a',
+        id: 'acc8a',
         name: 'Big Horn Lodge',
         type: 'motel',
         priceRange: '$130-160',
@@ -984,7 +1099,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc7a',
+          id: 'acc8a',
           name: 'Big Horn Lodge',
           type: 'motel',
           priceRange: '$130-160',
@@ -1000,7 +1115,7 @@ export const tripData: TripData = {
           notes: 'Downtown Moab, walkable. 2 queen beds. Best value. May is peak — book early.'
         },
         {
-          id: 'acc7b',
+          id: 'acc8b',
           name: 'Aarchway Inn',
           type: 'hotel',
           priceRange: '$130-175',
@@ -1015,7 +1130,7 @@ export const tripData: TripData = {
           notes: 'Closest to Arches (2mi). Free hot breakfast saves $30+/day.'
         },
         {
-          id: 'acc7c',
+          id: 'acc8c',
           name: 'Expedition Lodge',
           type: 'hotel',
           priceRange: '$60-98',
@@ -1031,17 +1146,17 @@ export const tripData: TripData = {
           notes: 'Best value in Moab. Heated pool with slides. Way under budget.'
         }
       ],
-      notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Arrive Moab by evening'],
+      notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 10, gas: 55, total: 275 }
     },
 
     // ============================================================
-    // DAY 8: WORK DAY — MOAB (MOM: POOL, DEAD HORSE POINT DRIVE)
+    // DAY 9: WORK DAY — MOAB (MOM: POOL, DEAD HORSE POINT DRIVE)
     // ============================================================
     {
-      id: 'd8',
-      dayNumber: 8,
-      date: '2026-05-18',
+      id: 'd9',
+      dayNumber: 9,
+      date: '2026-05-19',
       title: 'Work Day — Moab',
       summary: 'Colin works full day, Mom: pool, Dead Horse Point drive',
       location: locations.find(l => l.id === 'moab')!,
@@ -1049,7 +1164,7 @@ export const tripData: TripData = {
       weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
       activities: [
         {
-          id: 'a8-1',
+          id: 'a9-1',
           name: 'Colin Works — Hotel or Cafe (Full Day)',
           description: 'Full work day. Red Rock Bakery on Main St has WiFi and good coffee. Hotel WiFi is solid.',
           duration: '8 hours',
@@ -1059,7 +1174,7 @@ export const tripData: TripData = {
           tips: ['Red Rock Bakery & Net Cafe: Main St, WiFi, coffee, pastries', 'Hotel WiFi is solid', 'Jailhouse Cafe for breakfast']
         },
         {
-          id: 'a8-2',
+          id: 'a9-2',
           name: 'Mom Solo: Main Street & Pool',
           description: 'Browse shops on Main Street, grab ice cream, visit the Moab Museum. Hotel pool to beat the 32-degree heat.',
           duration: '3-4 hours',
@@ -1069,8 +1184,9 @@ export const tripData: TripData = {
           tips: ['Main Street is flat and walkable', 'Moab Museum: local history, free', 'Love Muffin Cafe is a local breakfast favorite', 'Pool to beat the heat']
         },
         {
-          id: 'a8-3',
+          id: 'a9-3',
           name: 'Mom Solo: Dead Horse Point Drive (optional)',
+          optionalSkip: true,
           description: 'Drive to Dead Horse Point State Park for one of the best viewpoints in Utah. Overlook right from the parking lot. Colorado River meanders 2,000ft below. 30-minute drive from Moab.',
           duration: '2 hours (with drive)',
           difficulty: 'easy',
@@ -1080,7 +1196,7 @@ export const tripData: TripData = {
           tips: ['30-min drive from Moab', 'View from the car/parking lot — no hiking needed', 'One of the best photo spots in Utah', 'Or save it for a sunset drive with Colin tomorrow evening']
         },
         {
-          id: 'a8-4',
+          id: 'a9-4',
           name: 'Dinner Together',
           description: 'Reconnect for dinner in downtown Moab.',
           duration: '1.5 hours',
@@ -1091,7 +1207,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc8a',
+        id: 'acc9a',
         name: 'Big Horn Lodge (same as previous night)',
         type: 'motel',
         priceRange: '$130-160',
@@ -1105,12 +1221,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 9: ARCHES FULL DAY — WINDOWS, DOUBLE ARCH, DELICATE ARCH VIEW
+    // DAY 10: ARCHES FULL DAY — WINDOWS, DOUBLE ARCH, DELICATE ARCH VIEW
     // ============================================================
     {
-      id: 'd9',
-      dayNumber: 9,
-      date: '2026-05-19',
+      id: 'd10',
+      dayNumber: 10,
+      date: '2026-05-20',
       title: 'Arches Full Day — Windows, Double Arch, Delicate Arch View',
       summary: 'Windows section, Double Arch, Delicate Arch viewpoint, Balanced Rock',
       location: locations.find(l => l.id === 'arches')!,
@@ -1118,7 +1234,7 @@ export const tripData: TripData = {
       weather: { high: 32, low: 14, conditions: 'Sunny, hot — go early' },
       activities: [
         {
-          id: 'a9-1',
+          id: 'a10-1',
           name: 'Windows Section',
           description: 'Easy loop past North Window, South Window, and Turret Arch. Spectacular formations framing the desert beyond.',
           duration: '1.5 hours',
@@ -1130,7 +1246,7 @@ export const tripData: TripData = {
           tips: ['Flat, well-maintained trail', 'Go early morning for fewer crowds', 'Best photos in morning light', 'Walk through North Window for the classic framed view']
         },
         {
-          id: 'a9-2',
+          id: 'a10-2',
           name: 'Double Arch',
           description: 'Two massive arches joined at the base. Very short walk from the parking lot and incredibly photogenic. Featured in Indiana Jones and the Last Crusade.',
           duration: '30 min',
@@ -1141,7 +1257,7 @@ export const tripData: TripData = {
           tips: ['Very short walk from parking', 'Stand underneath for the scale of the arches', 'Sandy trail — easy terrain']
         },
         {
-          id: 'a9-3',
+          id: 'a10-3',
           name: 'Delicate Arch Viewpoint (Lower)',
           description: 'See Delicate Arch from the lower viewpoint. Much easier than the full hike up to the arch itself.',
           duration: '30 min',
@@ -1152,7 +1268,7 @@ export const tripData: TripData = {
           tips: ['Lower viewpoint is flat and accessible', 'Bring binoculars for a closer look', 'Full hike to the arch is 3mi with 480ft gain — not recommended for this trip', 'Best light: late afternoon when the arch glows orange-red']
         },
         {
-          id: 'a9-4',
+          id: 'a10-4',
           name: 'Balanced Rock & Park Avenue',
           description: 'Quick stops at iconic formations. Park Avenue viewpoint is right from the car. Balanced Rock has a short loop around the base.',
           duration: '45 min',
@@ -1162,7 +1278,7 @@ export const tripData: TripData = {
           tips: ['Short walk around Balanced Rock', 'Park Avenue viewpoint is a pullover — no walking needed']
         },
         {
-          id: 'a9-5',
+          id: 'a10-5',
           name: 'Landscape Arch (optional)',
           description: 'The longest natural arch in North America. Easy trail in Devils Garden. Only if energy permits.',
           duration: '1.5 hours',
@@ -1175,7 +1291,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc9a',
+        id: 'acc10a',
         name: 'Big Horn Lodge (same as previous night)',
         type: 'motel',
         priceRange: '$130-160',
@@ -1184,17 +1300,17 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third night in Moab.'
       },
-      notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Tuesday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
+      notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Wednesday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
       budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 10, total: 235 }
     },
 
     // ============================================================
-    // DAY 10: CANYONLANDS AM + HALF WORK PM
+    // DAY 11: CANYONLANDS AM + HALF WORK PM
     // ============================================================
     {
-      id: 'd10',
-      dayNumber: 10,
-      date: '2026-05-20',
+      id: 'd11',
+      dayNumber: 11,
+      date: '2026-05-21',
       title: 'Canyonlands AM + Half Work PM',
       summary: 'Morning overlooks at Canyonlands, Colin works afternoon',
       location: locations.find(l => l.id === 'canyonlands')!,
@@ -1202,7 +1318,7 @@ export const tripData: TripData = {
       weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
       activities: [
         {
-          id: 'a10-1',
+          id: 'a11-1',
           name: 'Mesa Arch Sunrise (optional)',
           description: 'Famous arch that glows orange at sunrise. Very short walk from parking. Only if you\'re up early.',
           duration: '1 hour',
@@ -1213,7 +1329,7 @@ export const tripData: TripData = {
           tips: ['Sunrise ~6am in late May — the arch literally glows from beneath', 'THE iconic Canyonlands photo', 'Can skip and just do Grand View instead', 'iPhone: lie on the ground and shoot through the arch']
         },
         {
-          id: 'a10-2',
+          id: 'a11-2',
           name: 'Grand View Point Overlook',
           description: 'The signature view of Canyonlands. Walk to the end of the point for 360-degree canyon views extending to the La Sal Mountains.',
           duration: '1.5 hours',
@@ -1225,7 +1341,7 @@ export const tripData: TripData = {
           tips: ['Flat trail along the rim', 'Views in every direction', 'Bring water even for short walks']
         },
         {
-          id: 'a10-3',
+          id: 'a11-3',
           name: 'Green River Overlook & Shafer Canyon',
           description: 'Drive to Green River Overlook for views of the winding river far below, then stop at Shafer Canyon Overlook to see the dramatic switchback road descending into the canyon.',
           duration: '45 min',
@@ -1235,7 +1351,7 @@ export const tripData: TripData = {
           tips: ['Both are drive-up viewpoints, no hiking', 'Green River Overlook is stunning in morning light', 'Shafer Canyon road is for 4WD only — just view from the top']
         },
         {
-          id: 'a10-4',
+          id: 'a11-4',
           name: 'Colin Works PM — Hotel (1pm-5pm)',
           description: 'Back to Moab by noon. Colin works the afternoon while Mom rests at the hotel or explores Main Street.',
           duration: '4 hours',
@@ -1246,7 +1362,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc10a',
+        id: 'acc11a',
         name: 'Big Horn Lodge (same as previous night)',
         type: 'motel',
         priceRange: '$130-160',
@@ -1260,12 +1376,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 11: HALF WORK AM + MOAB → SLC + TEMPLE SQUARE PM
+    // DAY 12: HALF WORK AM + MOAB → SLC + TEMPLE SQUARE PM
     // ============================================================
     {
-      id: 'd11',
-      dayNumber: 11,
-      date: '2026-05-21',
+      id: 'd12',
+      dayNumber: 12,
+      date: '2026-05-22',
       title: 'Half Work AM + Drive Moab → SLC + Temple Square',
       summary: 'Morning work, drive to SLC, Temple Square afternoon',
       location: locations.find(l => l.id === 'slc')!,
@@ -1275,9 +1391,11 @@ export const tripData: TripData = {
       weather: { high: 27, low: 13, conditions: 'Clear and warm' },
       activities: [
         {
-          id: 'a11-1',
+          id: 'a12-1',
           name: 'Colin Works — Hotel (8am-11am)',
           description: 'Morning work block while Mom packs and has breakfast. Check out by 11am.',
+          startTime: '8:00 AM',
+          endTime: '11:00 AM',
           duration: '3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -1285,17 +1403,27 @@ export const tripData: TripData = {
           tips: ['Check out by 11am', 'Mom: breakfast and final Main Street browse']
         },
         {
-          id: 'a11-2',
+          id: 'a12-2',
           name: 'Drive Moab to Salt Lake City',
-          description: 'Head north on I-70 and I-15. Beautiful drive through canyons and valleys. The San Rafael Swell section on I-70 is stunning.',
+          description: 'Head north on I-70 and I-15. Beautiful drive through canyons and valleys. The San Rafael Swell section on I-70 is stunning. Stop in Green River for gas and Tamarisk restaurant, Price UT for a break.',
+          startTime: '11:30 AM',
           duration: '4 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stop in Green River for gas/snacks', 'I-70 through San Rafael Swell is stunning', 'FILL GAS before Green River — long stretch with nothing']
+          tips: ['Stop in Green River for gas/snacks — Tamarisk restaurant is good', 'I-70 through San Rafael Swell is stunning', 'FILL GAS before Green River — long stretch with nothing', 'Price UT is another good break point']
         },
         {
-          id: 'a11-3',
+          id: 'a12-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
+          id: 'a12-3',
           name: 'Temple Square PM',
           description: 'Arrive SLC by mid-afternoon. Walk through Temple Square (free, 35 acres, beautifully landscaped). See the Salt Lake Temple, Tabernacle, and Conference Center. Free organ recital in the Tabernacle at noon Mon-Sat.',
           duration: '2 hours',
@@ -1305,7 +1433,7 @@ export const tripData: TripData = {
           tips: ['Temple Square is free and open to all', 'The Tabernacle has incredible acoustics', 'Capitol building is free to enter — walk up for Wasatch views', 'City Creek Center next door for shopping']
         },
         {
-          id: 'a11-4',
+          id: 'a12-4',
           name: 'Dinner in Downtown SLC',
           description: 'Red Iguana for legendary Mexican mole sauces, or Caputo\'s for deli sandwiches.',
           duration: '1.5 hours',
@@ -1316,7 +1444,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc11a',
+        id: 'acc12a',
         name: 'Crystal Inn Hotel & Suites Downtown SLC',
         type: 'hotel',
         priceRange: '$90-120',
@@ -1332,7 +1460,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc11a',
+          id: 'acc12a',
           name: 'Crystal Inn Hotel & Suites Downtown SLC',
           type: 'hotel',
           priceRange: '$90-120',
@@ -1347,7 +1475,7 @@ export const tripData: TripData = {
           notes: '2 queen beds. Best value with hot breakfast. Downtown, right off I-15.'
         },
         {
-          id: 'acc11b',
+          id: 'acc12b',
           name: 'Hilton Garden Inn SLC Downtown',
           type: 'hotel',
           priceRange: '$130-160',
@@ -1362,17 +1490,17 @@ export const tripData: TripData = {
           notes: '2 queen beds. Consistent Hilton quality. Check for AAA/AARP discounts.'
         }
       ],
-      notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC is a transit city — 3 nights here with work mixed in'],
+      notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC is a transit city — 3 nights here with work mixed in', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
       budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 55, total: 225 }
     },
 
     // ============================================================
-    // DAY 12: WORK DAY — SLC (MOM: GREAT SALT LAKE, CAPITOL HILL)
+    // DAY 13: WORK DAY — SLC (MOM: GREAT SALT LAKE, CAPITOL HILL)
     // ============================================================
     {
-      id: 'd12',
-      dayNumber: 12,
-      date: '2026-05-22',
+      id: 'd13',
+      dayNumber: 13,
+      date: '2026-05-23',
       title: 'Work Day — SLC',
       summary: 'Colin works full day, Mom: Great Salt Lake, Capitol Hill',
       location: locations.find(l => l.id === 'slc')!,
@@ -1380,7 +1508,7 @@ export const tripData: TripData = {
       weather: { high: 27, low: 13, conditions: 'Clear and warm' },
       activities: [
         {
-          id: 'a12-1',
+          id: 'a13-1',
           name: 'Colin Works — Hotel or Three Pines Coffee (Full Day)',
           description: 'Full work day at Crystal Inn (free WiFi, lobby area) or Three Pines Coffee (165 S Main St, specialty coffee, fast WiFi).',
           duration: '8 hours',
@@ -1390,7 +1518,7 @@ export const tripData: TripData = {
           tips: ['Three Pines Coffee: 165 S Main St, good WiFi, 10min walk from hotel', 'Crystal Inn lobby has a work-friendly area']
         },
         {
-          id: 'a12-2',
+          id: 'a13-2',
           name: 'Mom Solo: Great Salt Lake (Antelope Island)',
           description: 'Uber or drive 40 minutes north to Antelope Island State Park. See the Great Salt Lake up close, free-roaming bison, and walk the short Bridger Bay trail. The lake is 8x saltier than the ocean.',
           duration: '3 hours (including drive)',
@@ -1401,7 +1529,7 @@ export const tripData: TripData = {
           tips: ['$15 per vehicle entry fee', 'Bison roam freely — keep 25+ yards distance', 'The water is 8x saltier than the ocean — you will float', 'Bring water shoes if you want to wade in']
         },
         {
-          id: 'a12-3',
+          id: 'a13-3',
           name: 'Mom Solo: Capitol Hill & City Creek',
           description: 'Walk to the Utah State Capitol (free, stunning views of the Wasatch Mountains from the steps). Browse City Creek Center — upscale outdoor mall with retractable glass roof.',
           duration: '2 hours',
@@ -1411,7 +1539,7 @@ export const tripData: TripData = {
           tips: ['Capitol building is free to enter', 'City Creek Center: outdoor mall, retractable roof', 'Both walkable from downtown hotels']
         },
         {
-          id: 'a12-4',
+          id: 'a13-4',
           name: 'Dinner Together',
           description: 'Reconnect for dinner downtown.',
           duration: '1.5 hours',
@@ -1422,7 +1550,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc12a',
+        id: 'acc13a',
         name: 'Crystal Inn (same as previous night)',
         type: 'hotel',
         priceRange: '$90-120',
@@ -1436,20 +1564,20 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 13: SLC EXPLORE — NATURAL HISTORY MUSEUM, LIBERTY PARK
+    // DAY 14: SLC EXPLORE — NATURAL HISTORY MUSEUM, ANTELOPE ISLAND, ENSIGN PEAK
     // ============================================================
     {
-      id: 'd13',
-      dayNumber: 13,
-      date: '2026-05-23',
-      title: 'SLC Explore — Natural History Museum, Liberty Park',
-      summary: 'Natural History Museum of Utah, Liberty Park, downtown dinner',
+      id: 'd14',
+      dayNumber: 14,
+      date: '2026-05-24',
+      title: 'SLC Explore — Natural History Museum, Antelope Island, Ensign Peak',
+      summary: 'Natural History Museum, Antelope Island scenic drive, Ensign Peak views',
       location: locations.find(l => l.id === 'slc')!,
       overnight: 'Salt Lake City, UT',
       weather: { high: 27, low: 13, conditions: 'Clear and warm' },
       activities: [
         {
-          id: 'a13-1',
+          id: 'a14-1',
           name: 'Natural History Museum of Utah',
           description: 'World-class museum built into the hillside above the city. Stunning architecture and exhibits on Utah\'s geology, dinosaurs, and Native peoples. The Canyon overlook from the building is worth the visit alone.',
           duration: '2.5 hours',
@@ -1460,27 +1588,42 @@ export const tripData: TripData = {
           tips: ['$18 admission', 'Fully accessible', 'The Past Worlds gallery has incredible dinosaur skeletons', 'Canyon views from the upper floors are stunning', 'Allow 2-3 hours — it\'s a large museum', 'Uber 15min from downtown or drive']
         },
         {
-          id: 'a13-2',
-          name: 'Lunch at 9th & 9th Neighborhood',
-          description: 'Charming neighborhood with indie coffee shops, restaurants, and boutiques. Walk the tree-lined streets.',
-          duration: '1.5 hours',
+          id: 'a14-2',
+          name: 'Antelope Island State Park',
+          description: 'Drive 25mi north to Antelope Island for a scenic loop drive through the Great Salt Lake. See free-roaming bison and antelope from the car, short rim walks with lake views. Perfect for an 80-year-old: stay in the car for most of it, short flat walks at viewpoints.',
+          duration: '3 hours (with drive)',
+          optionalSkip: true,
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Liberty Heights Fresh for a casual neighborhood vibe', 'The Coffee Garden for a local coffee stop', 'Ken Sanders Rare Books if Mom loves books', 'Flat, walkable neighborhood']
+          cost: '$15 vehicle entry',
+          tips: ['25mi north of downtown SLC', 'Scenic loop drive — see bison and antelope from the car', 'Short rim walks at viewpoints', 'The causeway drive across the lake is beautiful', 'Bring binoculars for wildlife', 'Can skip if tired from museum — do Ensign Peak instead']
         },
         {
-          id: 'a13-3',
-          name: 'Liberty Park',
-          description: 'SLC\'s largest park — 80 acres with a lake, gardens, tennis courts, and paved walking paths. Tracy Aviary ($12) is inside the park. Perfect for a leisurely afternoon stroll.',
-          duration: '1.5 hours',
+          id: 'a14-3',
+          name: 'Ensign Peak',
+          description: 'Short 0.7mi hike with panoramic SLC valley views. The Wasatch Mountains, Great Salt Lake, and downtown spread out below. A hidden gem most tourists miss.',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Paved paths throughout — easy for walking', 'Tracy Aviary: $12, nice for bird lovers', 'Chase Mill (on the grounds) is a historic 1852 building', 'Benches everywhere — rest when you want']
+          distance: '0.7 miles round trip',
+          elevation: { gain: 400 },
+          tips: ['0.7mi with 400ft gain — steep but short', 'Panoramic valley views at the top', 'Free, no entry fee', 'Trailhead is 5min drive from downtown', 'Can drive partway up for shorter walk']
         },
         {
-          id: 'a13-4',
+          id: 'a14-4',
+          name: 'City Creek Canyon (optional)',
+          description: 'Scenic drive into the mountains from downtown SLC. Paved road winds through a wooded canyon with a stream. Good for a peaceful afternoon drive.',
+          duration: '1 hour',
+          optionalSkip: true,
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Scenic drive right from downtown into the mountains', 'Paved road, easy driving', 'Memory Grove park at the base is also nice for a short walk']
+        },
+        {
+          id: 'a14-5',
           name: 'Farewell Dinner in SLC',
           description: 'Last night in Salt Lake City. Nice dinner to mark the transition from desert to mountains.',
           duration: '2 hours',
@@ -1491,7 +1634,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc13a',
+        id: 'acc14a',
         name: 'Crystal Inn (same as previous night)',
         type: 'hotel',
         priceRange: '$90-120',
@@ -1500,17 +1643,17 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third and final night in SLC.'
       },
-      notes: ['EXPLORE DAY — no driving, all SLC', 'Natural History Museum is a highlight', 'Saturday in SLC — good energy downtown', 'Pack tonight for Driggs drive tomorrow'],
+      notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Sunday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
       budgetBreakdown: { accommodation: 100, food: 80, activities: 18, gas: 0, total: 198 }
     },
 
     // ============================================================
-    // DAY 14: HALF WORK AM + SLC → DRIGGS
+    // DAY 15: HALF WORK AM + SLC → DRIGGS
     // ============================================================
     {
-      id: 'd14',
-      dayNumber: 14,
-      date: '2026-05-24',
+      id: 'd15',
+      dayNumber: 15,
+      date: '2026-05-25',
       title: 'Half Work AM + SLC → Driggs',
       summary: 'Morning work, afternoon drive to Teton Valley',
       location: locations.find(l => l.id === 'driggs')!,
@@ -1520,9 +1663,11 @@ export const tripData: TripData = {
       weather: { high: 18, low: 3, conditions: 'Cooler mountain weather, partly cloudy' },
       activities: [
         {
-          id: 'a14-1',
+          id: 'a15-1',
           name: 'Colin Works — Hotel (8am-11am)',
           description: 'Morning work block at Crystal Inn. Check out by 11am.',
+          startTime: '8:00 AM',
+          endTime: '11:00 AM',
           duration: '3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -1530,7 +1675,7 @@ export const tripData: TripData = {
           tips: ['Free breakfast before work', 'Check out by 11am']
         },
         {
-          id: 'a14-2',
+          id: 'a15-2',
           name: 'Drive SLC to Driggs, ID',
           description: 'Head north on I-15 through Idaho farmland, then east on ID-33 to Driggs. The last stretch has Teton views appearing on the horizon. Driggs is on the west (quiet) side of the Tetons.',
           duration: '4.5 hours (with stops)',
@@ -1540,7 +1685,16 @@ export const tripData: TripData = {
           tips: ['Stop in Pocatello or Idaho Falls for lunch and gas', 'ID-33 from Rexburg to Driggs is scenic farmland with Teton backdrop', 'Driggs is the "quiet side" of the Tetons — much cheaper than Jackson']
         },
         {
-          id: 'a14-3',
+          id: 'a15-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
+          id: 'a15-3',
           name: 'Arrive Driggs & Teton Views',
           description: 'Check in and take in the western Teton views. Walk downtown Driggs — a small charming Idaho mountain town with a few shops and restaurants. The Tetons loom just to the east.',
           duration: '1.5 hours',
@@ -1551,7 +1705,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc14a',
+        id: 'acc15a',
         name: 'Teton Valley Cabins',
         type: 'cabin',
         priceRange: '$130-160',
@@ -1567,7 +1721,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc14a',
+          id: 'acc15a',
           name: 'Teton Valley Cabins',
           type: 'cabin',
           priceRange: '$130-160',
@@ -1582,7 +1736,7 @@ export const tripData: TripData = {
           notes: '2 queen beds. Log cabins with Teton views. 45min to park via Teton Pass.'
         },
         {
-          id: 'acc14b',
+          id: 'acc15b',
           name: 'Airbnb 2BR in Driggs/Victor, ID',
           type: 'airbnb',
           priceRange: '$80-140',
@@ -1593,10 +1747,10 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/driggs-id/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Free parking', 'Teton views', 'Washer/dryer'],
           seniorFriendly: true,
-          notes: 'Best value. Full kitchen saves on food. 45min to park. Search: 2BR, May 24-27, $150 max.'
+          notes: 'Best value. Full kitchen saves on food. 45min to park. Search: 2BR, May 25-28, $150 max.'
         },
         {
-          id: 'acc14c',
+          id: 'acc15c',
           name: 'Grand Targhee Resort (Alta, WY)',
           type: 'resort',
           priceRange: '$140-200',
@@ -1610,35 +1764,35 @@ export const tripData: TripData = {
           notes: 'Ski resort with summer amenities. Up the canyon — closer to the Tetons. Splurge option.'
         }
       ],
-      notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Memorial Day weekend is Mon May 25 — could be busy on the roads'],
+      notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'MEMORIAL DAY Monday May 25 — holiday traffic on I-15 northbound'],
       budgetBreakdown: { accommodation: 145, food: 70, activities: 0, gas: 55, total: 270 }
     },
 
     // ============================================================
-    // DAY 15: WORK DAY — DRIGGS (MEMORIAL DAY, MOM: TOWN WALK, TETON VIEWS)
+    // DAY 16: WORK DAY — DRIGGS (MEMORIAL DAY, MOM: TOWN WALK, TETON VIEWS)
     // ============================================================
     {
-      id: 'd15',
-      dayNumber: 15,
-      date: '2026-05-25',
-      title: 'Work Day — Driggs (Memorial Day)',
+      id: 'd16',
+      dayNumber: 16,
+      date: '2026-05-26',
+      title: 'Work Day — Driggs',
       summary: 'Colin works full day, Mom: town walk and Teton views',
       location: locations.find(l => l.id === 'driggs')!,
       overnight: 'Driggs, ID',
       weather: { high: 18, low: 3, conditions: 'Clear, cool mountain air' },
       activities: [
         {
-          id: 'a15-1',
+          id: 'a16-1',
           name: 'Colin Works — Cabin or Cafe (Full Day)',
-          description: 'Full work day. Work from cabin (WiFi) or walk to Citizen 33 coffee shop in downtown Driggs. Memorial Day — Monday holiday, but Colin works.',
+          description: 'Full work day. Work from cabin (WiFi) or walk to Citizen 33 coffee shop in downtown Driggs.',
           duration: '8 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Citizen 33: downtown Driggs, good coffee and WiFi', 'Cabin WiFi should be decent', 'Memorial Day — some businesses may have holiday hours']
+          tips: ['Citizen 33: downtown Driggs, good coffee and WiFi', 'Cabin WiFi should be decent', 'Tuesday — regular business hours']
         },
         {
-          id: 'a15-2',
+          id: 'a16-2',
           name: 'Mom Solo: Driggs Town Walk & Teton Views',
           description: 'Walk downtown Driggs (flat, 2 blocks). Browse shops, grab coffee. Walk east on any side road for open Teton views across the farm fields. The setting is peaceful and beautiful.',
           duration: '3-4 hours',
@@ -1648,8 +1802,9 @@ export const tripData: TripData = {
           tips: ['Downtown is tiny but charming — 2 blocks', 'Walk east toward the Tetons for open field views', 'Barrels & Bins for groceries and local goods', 'Peaked Sports for outdoor gear window shopping', 'Teton views from town are spectacular on clear days']
         },
         {
-          id: 'a15-3',
+          id: 'a16-3',
           name: 'Mom Solo: Alta, WY Drive (optional)',
+          optionalSkip: true,
           description: 'Short drive east to Alta, Wyoming — a tiny mountain community at the base of the Tetons. Grand Targhee Resort is up the canyon with mountain views and a nice lodge to explore.',
           duration: '2 hours',
           difficulty: 'easy',
@@ -1658,7 +1813,7 @@ export const tripData: TripData = {
           tips: ['12mi drive from Driggs to Alta/Grand Targhee', 'Grand Targhee has a restaurant and nice mountain setting', 'Road is paved and easy']
         },
         {
-          id: 'a15-4',
+          id: 'a16-4',
           name: 'Dinner Together',
           description: 'Reconnect for dinner in Driggs.',
           duration: '1.5 hours',
@@ -1669,7 +1824,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc15a',
+        id: 'acc16a',
         name: 'Teton Valley Cabins (same as previous night)',
         type: 'cabin',
         priceRange: '$130-160',
@@ -1678,25 +1833,25 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night in Driggs.'
       },
-      notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
+      notes: ['FULL WORK DAY — Tuesday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
       budgetBreakdown: { accommodation: 145, food: 70, activities: 0, gas: 5, total: 220 }
     },
 
     // ============================================================
-    // DAY 16: TETON FULL DAY — OXBOW BEND, MORMON ROW, JACKSON LAKE, SIGNAL MTN
+    // DAY 17: TETON FULL DAY — OXBOW BEND, MORMON ROW, JACKSON LAKE, SIGNAL MTN
     // ============================================================
     {
-      id: 'd16',
-      dayNumber: 16,
-      date: '2026-05-26',
+      id: 'd17',
+      dayNumber: 17,
+      date: '2026-05-27',
       title: 'Teton Full Day — Oxbow Bend, Mormon Row, Jackson Lake',
-      summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Signal Mountain drive',
+      summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Schwabacher Landing',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Driggs, ID',
       weather: { high: 18, low: 3, conditions: 'Clear skies, crisp mountain air' },
       activities: [
         {
-          id: 'a16-1',
+          id: 'a17-1',
           name: 'Drive Driggs to Grand Teton via Teton Pass',
           description: 'Cross over Teton Pass (8,431ft) from the Idaho side into Jackson Hole. Dramatic mountain pass with hairpin turns and stunning views. Enter Grand Teton from the south.',
           duration: '1 hour',
@@ -1706,7 +1861,7 @@ export const tripData: TripData = {
           tips: ['Teton Pass is dramatic — pullover for photos at the top', 'From Jackson, head north into Grand Teton NP', 'America the Beautiful pass covers entry']
         },
         {
-          id: 'a16-2',
+          id: 'a17-2',
           name: 'Oxbow Bend Wildlife Stop',
           description: 'Drive to Oxbow Bend for the iconic Mt. Moran reflection on still water. Moose, beavers, and bald eagles are frequently spotted. All viewing from the car or roadside pulloff.',
           duration: '45 min',
@@ -1716,7 +1871,7 @@ export const tripData: TripData = {
           tips: ['Morning is best — still water for reflections', 'Moose are frequently spotted here', 'Bring binoculars', 'Stay in/near the car', 'iPhone: 2x zoom for the Mt. Moran reflection']
         },
         {
-          id: 'a16-3',
+          id: 'a17-3',
           name: 'Mormon Row — Iconic Barns & Bison',
           description: 'Drive to the famous Moulton Barns with the Teton Range behind them. Bison often graze in the fields. The T.A. Moulton Barn is the most photographed barn in America.',
           duration: '45 min',
@@ -1726,7 +1881,7 @@ export const tripData: TripData = {
           tips: ['T.A. Moulton Barn is the classic postcard shot', 'Bison are common — stay in or near the car', 'Morning or evening light is best', 'iPhone: 1x or 2x with barn in foreground, Tetons behind']
         },
         {
-          id: 'a16-4',
+          id: 'a17-4',
           name: 'Jackson Lake Lodge — Picture Windows & Lunch',
           description: 'Visit the historic Jackson Lake Lodge with its famous 60-foot picture windows framing the entire Teton Range. The lobby alone is worth the visit. Grab lunch at the lodge.',
           duration: '1.5 hours',
@@ -1736,17 +1891,17 @@ export const tripData: TripData = {
           tips: ['60-foot windows in the lobby — one of the great views in the national parks', 'Lunch Tree Hill: 1mi easy walk behind the lodge, 360-degree views', 'Comfortable seating to just sit and take in the view']
         },
         {
-          id: 'a16-5',
-          name: 'Signal Mountain Summit Drive',
-          description: 'Drive the 5-mile road to the 7,720ft summit of Signal Mountain for 360-degree views of the Tetons, Jackson Lake, and the valley. No hiking required.',
-          duration: '45 min',
+          id: 'a17-5',
+          name: 'Schwabacher Landing & Jackson Lake Dam',
+          description: 'Schwabacher Landing: short dirt road to the Snake River with iconic Teton reflections (best morning calm water). Then Jackson Lake Dam viewpoint for sweeping lake and mountain views. Signal Mountain Summit Road is usually closed until June 1 — skip it this trip.',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Check if road is open (may be closed in late May for snow)', 'Views from the summit are incredible', 'Two overlooks: Jackson Point and the summit', 'Drive-up — no hiking needed']
+          tips: ['Schwabacher Landing: bumpy dirt road (0.5mi) but any car can handle it', 'Best reflections in early morning calm water', 'Jackson Lake Dam has restrooms and a great viewpoint', 'Signal Mountain road likely CLOSED in late May — opens ~June 1']
         },
         {
-          id: 'a16-6',
+          id: 'a17-6',
           name: 'Cathedral Group Turnout & Return to Driggs',
           description: 'Stop at Cathedral Group Turnout along Teton Park Road for the classic postcard view of Grand, Middle, and South Teton. Then drive back over Teton Pass to Driggs for dinner.',
           duration: '1.5 hours (including drive back)',
@@ -1757,7 +1912,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc16a',
+        id: 'acc17a',
         name: 'Teton Valley Cabins (same as previous night)',
         type: 'cabin',
         priceRange: '$130-160',
@@ -1766,17 +1921,17 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third and final night in Driggs.'
       },
-      notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road may be snow-closed — check at visitor center', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
+      notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road likely CLOSED in late May (opens ~June 1) — skip it, do Schwabacher Landing instead', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
       budgetBreakdown: { accommodation: 145, food: 80, activities: 0, gas: 30, total: 255 }
     },
 
     // ============================================================
-    // DAY 17: DRIGGS → YELLOWSTONE — TETON AM STOPS + SOUTH LOOP PM
+    // DAY 18: DRIGGS → YELLOWSTONE — TETON AM STOPS + SOUTH LOOP PM
     // ============================================================
     {
-      id: 'd17',
-      dayNumber: 17,
-      date: '2026-05-27',
+      id: 'd18',
+      dayNumber: 18,
+      date: '2026-05-28',
       title: 'Driggs → Yellowstone — Teton AM + Old Faithful & Grand Prismatic PM',
       summary: 'Last Teton stops, enter Yellowstone south, Old Faithful, Grand Prismatic',
       location: locations.find(l => l.id === 'yellowstone')!,
@@ -1786,7 +1941,7 @@ export const tripData: TripData = {
       weather: { high: 16, low: 0, conditions: 'Cool, variable — can change fast at elevation' },
       activities: [
         {
-          id: 'a17-1',
+          id: 'a18-1',
           name: 'Drive Driggs → Grand Teton (Teton Pass)',
           description: 'Cross Teton Pass one more time. Enter the park from the south and stop at Schwabacher Landing for Teton reflections in beaver ponds. Last Teton views before heading north.',
           duration: '1.5 hours',
@@ -1796,7 +1951,7 @@ export const tripData: TripData = {
           tips: ['Schwabacher Landing: flat, easy 0.5mi walk to beaver ponds with Teton reflections', 'Best reflections in early morning with still water', 'Gravel road is fine for any car']
         },
         {
-          id: 'a17-2',
+          id: 'a18-2',
           name: 'Drive Through Grand Teton → Yellowstone South Entrance',
           description: 'Drive north through Grand Teton into Yellowstone via the south entrance. Watch for bison on the road. Stop at West Thumb Geyser Basin right on Yellowstone Lake — a 30min boardwalk loop.',
           duration: '2 hours (drive + West Thumb)',
@@ -1807,7 +1962,7 @@ export const tripData: TripData = {
           tips: ['South entrance may have lines — arrive by late morning', 'West Thumb Geyser Basin is right on the lakeshore', 'Fill gas at Grant Village']
         },
         {
-          id: 'a17-3',
+          id: 'a18-3',
           name: 'Old Faithful',
           description: 'Watch the world\'s most famous geyser erupt. Flat boardwalk loop with benches. Eruptions every 60-110 minutes. Check the visitor center for the next predicted time.',
           duration: '1.5 hours',
@@ -1818,7 +1973,7 @@ export const tripData: TripData = {
           tips: ['Download the GeyserTimes app for eruption predictions', 'Arrive 30min early for good bench seats', 'Old Faithful Inn lobby is worth seeing — largest log structure in the world', 'iPhone: video mode for the eruption, then slo-mo for the peak']
         },
         {
-          id: 'a17-4',
+          id: 'a18-4',
           name: 'Grand Prismatic Spring',
           description: 'The largest hot spring in the US, famous for its vivid rainbow colors. Short boardwalk loop at Midway Geyser Basin.',
           duration: '45 min',
@@ -1829,7 +1984,16 @@ export const tripData: TripData = {
           tips: ['Midway Geyser Basin parking fills up — go mid-afternoon when morning crowds thin', 'Colors best on sunny days when steam is minimal', 'Afternoon (after 1pm) is better for photos: less steam, sun overhead', 'iPhone: 0.5x ultrawide from the boardwalk']
         },
         {
-          id: 'a17-5',
+          id: 'a18-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
+          id: 'a18-5',
           name: 'Drive to West Yellowstone via Madison',
           description: 'Exit the park via the west entrance to West Yellowstone, MT. Stop at Madison Junction to scan for elk and bison in the meadows along the Madison River.',
           duration: '45 min',
@@ -1840,7 +2004,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc17a',
+        id: 'acc18a',
         name: 'Kelly Inn West Yellowstone',
         type: 'hotel',
         priceRange: '$130-150',
@@ -1857,7 +2021,7 @@ export const tripData: TripData = {
       },
       accommodationOptions: [
         {
-          id: 'acc17a',
+          id: 'acc18a',
           name: 'Kelly Inn West Yellowstone',
           type: 'hotel',
           priceRange: '$130-150',
@@ -1873,7 +2037,7 @@ export const tripData: TripData = {
           notes: '2 queen beds. Highest-rated in town. Rustic wood furniture. Great breakfast.'
         },
         {
-          id: 'acc17b',
+          id: 'acc18b',
           name: 'Holiday Inn West Yellowstone',
           type: 'hotel',
           priceRange: '$130-170',
@@ -1893,12 +2057,12 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 18: YELLOWSTONE FULL DAY — CANYON, MAMMOTH, TOWER FALL, LAMAR
+    // DAY 19: YELLOWSTONE FULL DAY — CANYON, MAMMOTH, TOWER FALL, LAMAR
     // ============================================================
     {
-      id: 'd18',
-      dayNumber: 18,
-      date: '2026-05-28',
+      id: 'd19',
+      dayNumber: 19,
+      date: '2026-05-29',
       title: 'Yellowstone Full Day — Canyon, Mammoth, Tower Fall, Lamar',
       summary: 'Artist Point, Mammoth terraces, Tower Fall, Lamar Valley wildlife',
       location: locations.find(l => l.id === 'yellowstone')!,
@@ -1906,7 +2070,7 @@ export const tripData: TripData = {
       weather: { high: 16, low: 0, conditions: 'Cool, variable' },
       activities: [
         {
-          id: 'a18-1',
+          id: 'a19-1',
           name: 'Lamar Valley Wildlife Drive (early AM)',
           description: 'Early morning drive to the Lamar Valley — the "Serengeti of North America." Dawn to 9am is best. Stay in the car with binoculars. Wolves, bison herds, bears, pronghorn, and elk are all possible.',
           duration: '2.5 hours',
@@ -1916,7 +2080,7 @@ export const tripData: TripData = {
           tips: ['Leave West Yellowstone by 5am for dawn in Lamar (1.5hr drive via Canyon)', 'Stay in the car — binoculars essential', 'Wolves are best spotted with a scope at distance', 'Bison herds are almost guaranteed', 'Look for bears on hillsides in early morning']
         },
         {
-          id: 'a18-2',
+          id: 'a19-2',
           name: 'Tower Fall Viewpoint',
           description: 'Short walk from parking to view the 132ft Tower Fall. Quick stop on the way back west.',
           duration: '30 min',
@@ -1926,7 +2090,7 @@ export const tripData: TripData = {
           tips: ['Very short walk from parking to the overlook', 'The trail down to the base is steep — skip it']
         },
         {
-          id: 'a18-3',
+          id: 'a19-3',
           name: 'Mammoth Hot Springs Terraces',
           description: 'Boardwalk through stunning travertine terraces formed by hot springs. The terraces constantly change — some are flowing, some are dry. Lower terraces have gentle inclines.',
           duration: '45 min',
@@ -1937,7 +2101,7 @@ export const tripData: TripData = {
           tips: ['Lower terraces boardwalk has gentle inclines', 'Upper terraces accessible by car (one-way loop drive)', 'Terraces change constantly — different every visit', 'Fill gas at Mammoth', 'Elk often lounge right on the Mammoth lawns']
         },
         {
-          id: 'a18-4',
+          id: 'a19-4',
           name: 'Artist Point — Grand Canyon of the Yellowstone',
           description: 'Drive back through Canyon Village. Short paved walk to the most iconic viewpoint in Yellowstone: the Grand Canyon of the Yellowstone with Lower Falls (308ft). This is a must-see.',
           duration: '45 min',
@@ -1948,7 +2112,7 @@ export const tripData: TripData = {
           tips: ['Artist Point is THE iconic Yellowstone viewpoint', 'Short paved path from parking', 'Uncle Tom\'s Trail has 300+ stairs — skip it', 'Upper Falls viewpoint is also easy and worth a quick stop']
         },
         {
-          id: 'a18-5',
+          id: 'a19-5',
           name: 'Return to West Yellowstone',
           description: 'Drive back to West Yellowstone via Madison Junction. Watch for wildlife in the meadows along the Madison River in the evening.',
           duration: '1 hour',
@@ -1959,7 +2123,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc18a',
+        id: 'acc19a',
         name: 'Kelly Inn West Yellowstone (same as previous night)',
         type: 'hotel',
         priceRange: '$130-150',
@@ -1973,14 +2137,14 @@ export const tripData: TripData = {
     },
 
     // ============================================================
-    // DAY 19: DRIVE YELLOWSTONE → GLACIER + ROBIN ARRIVES FCA EVE
+    // DAY 20: DRIVE YELLOWSTONE → GLACIER + ROBIN ARRIVES FCA EVE
     // ============================================================
     {
-      id: 'd19',
-      dayNumber: 19,
-      date: '2026-05-29',
+      id: 'd20',
+      dayNumber: 20,
+      date: '2026-05-30',
       title: 'Drive Yellowstone → Glacier + Robin Arrives',
-      summary: 'Drive to Glacier via Missoula, Robin flies in Friday evening',
+      summary: 'Drive to Glacier via Missoula, Robin flies in Saturday evening',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls, MT',
       drivingDistance: '380 miles',
@@ -1988,7 +2152,7 @@ export const tripData: TripData = {
       weather: { high: 17, low: 3, conditions: 'Cool, mountain weather' },
       activities: [
         {
-          id: 'a19-1',
+          id: 'a20-1',
           name: 'Drive West Yellowstone to Glacier',
           description: 'Drive west on US-20/I-15 to Butte, then I-90 west to Missoula, then US-93 north to Polson and up to Columbia Falls. Long drive but beautiful Montana scenery. Stop in Butte or Missoula for lunch.',
           duration: '5.5 hours (with stops)',
@@ -1998,7 +2162,16 @@ export const tripData: TripData = {
           tips: ['Leave by 8am to arrive mid-afternoon', 'Missoula is a great lunch stop — hip college town', 'Polson on Flathead Lake is scenic if you need another stretch break', 'Fill gas in Missoula']
         },
         {
-          id: 'a19-2',
+          id: 'a20-checkin',
+          name: 'Check In & Drop Bags at Hotel',
+          description: 'Drop bags, freshen up, get settled before exploring.',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+        },
+        {
+          id: 'a20-2',
           name: 'Settle in at Columbia Falls',
           description: 'Arrive mid-afternoon. Check in to the condo, stock up on groceries at Super 1 Foods. Relax before Robin arrives.',
           duration: '1.5 hours',
@@ -2008,18 +2181,18 @@ export const tripData: TripData = {
           tips: ['Super 1 Foods in Columbia Falls for groceries', 'Stock up — you have a full kitchen for 2 nights', 'Walmart also in Columbia Falls for supplies']
         },
         {
-          id: 'a19-3',
+          id: 'a20-3',
           name: 'Robin Arrives FCA — Evening',
-          description: 'Robin flies in Friday evening on Alaska Airlines from Seattle. FCA is 13 minutes from Columbia Falls. Pick her up at the airport.',
+          description: 'Robin flies in Saturday evening on Alaska Airlines from Seattle. FCA is 13 minutes from Columbia Falls. Pick her up at the airport.',
           duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['FCA is 13min from Columbia Falls', 'Robin: Alaska nonstop from SEA, 1h20m', 'Small airport — she\'ll be out quickly', 'Celebrate the reunion at the condo!']
+          tips: ['FCA is 13min from Columbia Falls', 'Robin: Alaska nonstop from SEA, 1h20m (Saturday evening)', 'Small airport — she\'ll be out quickly', 'Celebrate the reunion at the condo!']
         }
       ],
       accommodation: {
-        id: 'acc19a',
+        id: 'acc20a',
         name: 'Meadow Lake Resort & Condos',
         type: 'condo',
         priceRange: '$130-180',
@@ -2033,11 +2206,11 @@ export const tripData: TripData = {
         amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Indoor/outdoor pool', 'Free parking', 'Golf course', 'Restaurant'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR condo: separate bedrooms for 3 adults when Robin arrives Friday night. Full kitchen saves money. Private hot tub.'
+        notes: '2BR condo: separate bedrooms for 3 adults when Robin arrives Saturday night. Full kitchen saves money. Private hot tub.'
       },
       accommodationOptions: [
         {
-          id: 'acc19a',
+          id: 'acc20a',
           name: 'Meadow Lake Resort & Condos',
           type: 'condo',
           priceRange: '$130-180',
@@ -2054,7 +2227,7 @@ export const tripData: TripData = {
           notes: '2BR condo. Full kitchen, hot tub. 20min to park. 2 nights (Fri-Sun). Late May rates trending $130-180.'
         },
         {
-          id: 'acc19b',
+          id: 'acc20b',
           name: 'Paddle Ridge Cabins (West Glacier)',
           type: 'cabin',
           priceRange: '$126-160',
@@ -2069,7 +2242,7 @@ export const tripData: TripData = {
           notes: '1BR cabin (queen + sleeper sofa for 3). RIGHT at park entrance.'
         },
         {
-          id: 'acc19c',
+          id: 'acc20c',
           name: 'Airbnb 2BR Cabin (Hungry Horse/Columbia Falls)',
           type: 'airbnb',
           priceRange: '$100-175',
@@ -2080,20 +2253,20 @@ export const tripData: TripData = {
           bookingUrl: 'https://www.airbnb.com/columbia-falls-mt/stays',
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub (some)', 'Free parking'],
           seniorFriendly: true,
-          notes: 'Search: 2BR, May 29-31, $175 max. Hungry Horse is 10-15min from park.'
+          notes: 'Search: 2BR, May 30-Jun 1, $175 max. Hungry Horse is 10-15min from park.'
         }
       ],
-      notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
+      notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Saturday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls', '3 adults Sat-Mon: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 60, total: 290 }
     },
 
     // ============================================================
-    // DAY 20: GLACIER — ALL THREE — LAKE MCDONALD, TRAIL OF CEDARS, HIKE
+    // DAY 21: GLACIER — ALL THREE — LAKE MCDONALD, TRAIL OF CEDARS, HIKE
     // ============================================================
     {
-      id: 'd20',
-      dayNumber: 20,
-      date: '2026-05-30',
+      id: 'd21',
+      dayNumber: 21,
+      date: '2026-05-31',
       title: 'Glacier — All Three — Lake McDonald, Trail of Cedars, Hike',
       summary: 'Lake McDonald, Trail of Cedars boardwalk, Avalanche Lake hike, colorful rocks',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2101,7 +2274,7 @@ export const tripData: TripData = {
       weather: { high: 17, low: 3, conditions: 'Cool, possible mountain weather' },
       activities: [
         {
-          id: 'a20-1',
+          id: 'a21-1',
           name: 'Lake McDonald Morning',
           description: 'Drive to the west entrance (20min from Columbia Falls). Walk along the famous colorful rocky shore at Lake McDonald. Clear water over multicolored stones is one of Glacier\'s signature sights.',
           duration: '1 hour',
@@ -2111,7 +2284,7 @@ export const tripData: TripData = {
           tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Morning calm water = best reflections', 'iPhone: shoot at rock-level for colorful pebbles with mountains behind', 'Park entrance: $35/vehicle or use America the Beautiful pass']
         },
         {
-          id: 'a20-2',
+          id: 'a21-2',
           name: 'Trail of the Cedars',
           description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Wheelchair accessible, flat, gorgeous. Everyone does this together.',
           duration: '30 min',
@@ -2122,7 +2295,7 @@ export const tripData: TripData = {
           tips: ['Fully wheelchair accessible boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
         },
         {
-          id: 'a20-3',
+          id: 'a21-3',
           name: 'Avalanche Lake Hike (Colin + Robin)',
           description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — relax at Lake McDonald Lodge or Apgar Village while Colin and Robin hike. Colin + Robin: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls.',
           duration: '3-4 hours (full hike)',
@@ -2134,7 +2307,7 @@ export const tripData: TripData = {
           tips: ['Mom: Trail of the Cedars only — wait at Lake McDonald Lodge or Apgar', 'Colin + Robin: Avalanche Lake is 5.8mi RT, 730ft gain', 'Snow patches possible in late May — bring hiking poles', 'Carry bear spray', 'The lake is surrounded by waterfalls from Sperry Glacier']
         },
         {
-          id: 'a20-4',
+          id: 'a21-4',
           name: 'Afternoon: Lake McDonald Lodge & Apgar Village',
           description: 'Regroup at Lake McDonald for a relaxed afternoon. Lake McDonald Lodge has a Swiss chalet vibe and is worth exploring inside. Apgar Village has a gift shop, boat rentals, and visitor center.',
           duration: '2 hours',
@@ -2144,7 +2317,7 @@ export const tripData: TripData = {
           tips: ['Lake McDonald Lodge has a Swiss chalet vibe', 'Apgar Village has a gift shop and visitor center', 'Kayak/canoe rentals at Apgar if available', 'Water is cold — kayaking only, no swimming!']
         },
         {
-          id: 'a20-5',
+          id: 'a21-5',
           name: 'Celebration Dinner — Last Night Together',
           description: 'Cook a final meal in the condo (full kitchen) or go out for a nice dinner. Celebrate an incredible 21-day trip.',
           duration: '2 hours',
@@ -2155,7 +2328,7 @@ export const tripData: TripData = {
         }
       ],
       accommodation: {
-        id: 'acc20a',
+        id: 'acc21a',
         name: 'Meadow Lake Resort (same as previous night)',
         type: 'condo',
         priceRange: '$130-180',
@@ -2164,17 +2337,17 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second and final night. All 3 together. Pack tonight for tomorrow\'s flights.'
       },
-      notes: ['ALL THREE TOGETHER — Robin\'s full day in Glacier', 'Trail of the Cedars is the must-do for everyone', 'Avalanche Lake is Colin + Robin only (Mom waits at lodge/Apgar)', 'Going-to-the-Sun Road only open to Avalanche Creek area in late May', 'No vehicle reservations needed for 2026', 'CELEBRATION DINNER — what an incredible trip!'],
+      notes: ['ALL THREE TOGETHER — Robin\'s full day in Glacier (Sunday)', 'Trail of the Cedars is the must-do for everyone', 'Avalanche Lake is Colin + Robin only (Mom waits at lodge/Apgar)', 'Going-to-the-Sun Road only open to Avalanche Creek area in late May', 'No vehicle reservations needed for 2026', 'CELEBRATION DINNER — what an incredible trip!'],
       budgetBreakdown: { accommodation: 150, food: 100, activities: 35, gas: 15, total: 300 }
     },
 
     // ============================================================
-    // DAY 21: FLY HOME FROM FCA — MORNING LAKE, AFTERNOON FLIGHTS
+    // DAY 22: FLY HOME FROM FCA — MORNING LAKE, AFTERNOON FLIGHTS
     // ============================================================
     {
-      id: 'd21',
-      dayNumber: 21,
-      date: '2026-05-31',
+      id: 'd22',
+      dayNumber: 22,
+      date: '2026-06-01',
       title: 'Fly Home from FCA — Morning Lake, Afternoon Flights',
       summary: 'Morning at the lake, return rental car, fly home',
       location: locations.find(l => l.id === 'glacier')!,
@@ -2182,7 +2355,7 @@ export const tripData: TripData = {
       weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
       activities: [
         {
-          id: 'a21-1',
+          id: 'a22-1',
           name: 'Morning at Lake McDonald (optional)',
           description: 'If flights are afternoon, one last morning visit to Lake McDonald for quiet shoreline time. The colorful rocks at sunrise are magical.',
           duration: '1 hour',
@@ -2192,7 +2365,7 @@ export const tripData: TripData = {
           tips: ['Only if flights are afternoon — skip if morning departure', 'Morning calm water = best reflections on the lake', 'Say goodbye to the mountains']
         },
         {
-          id: 'a21-2',
+          id: 'a22-2',
           name: 'Breakfast & Check Out',
           description: 'Last breakfast at the condo. Pack up and check out. Drive 15 min to FCA airport.',
           duration: '1.5 hours',
@@ -2202,7 +2375,7 @@ export const tripData: TripData = {
           tips: ['FCA is only 15 min from Columbia Falls', 'Return rental car at FCA airport', 'Small airport — no TSA chaos']
         },
         {
-          id: 'a21-3',
+          id: 'a22-3',
           name: 'Fly Home',
           description: 'Colin + Robin: FCA → SEA nonstop on Alaska Airlines (1h20m) — could be same flight. Mom: FCA → MSP → YYZ on Delta (~8hrs total, one stop at Minneapolis).',
           duration: 'All day',
@@ -2212,19 +2385,19 @@ export const tripData: TripData = {
           tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Colin + Robin: Alaska nonstop to SEA, 1h20m — could share a flight!', 'Mom: Delta to MSP then YYZ, ~8hrs total', 'What an incredible 21-day trip!']
         }
       ],
-      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Colin + Robin: FCA→SEA nonstop (Alaska, could be same flight!)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', '21 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
+      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Colin + Robin: FCA→SEA nonstop (Alaska, could be same flight!)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
   totalBudget: {
     flights: 980,
-    carRental: 1000,
-    accommodations: 2650,
-    food: 1500,
+    carRental: 1040,
+    accommodations: 2770,
+    food: 1570,
     activities: 350,
-    gas: 500,
+    gas: 505,
     misc: 520,
-    total: 7500
+    total: 7735
   },
   costBreakdown: {
     flights: {
@@ -2236,10 +2409,10 @@ export const tripData: TripData = {
     },
     carRental: {
       dailyRate: 40,
-      days: 20,
+      days: 21,
       dropoffFee: 200,
-      total: 1000,
-      notes: 'LAS→FCA one-way. 20 days. Book via Costco Travel or AutoSlash.',
+      total: 1040,
+      notes: 'LAS→FCA one-way. 21 days (May 11 → Jun 1). Book via Costco Travel or AutoSlash.',
     },
     passengerAssistance: {
       cost: 0,
@@ -2278,13 +2451,13 @@ export const tripData: TripData = {
       item: 'Driggs Lodging (Memorial Day Weekend)',
       bookBy: '2026-03-15',
       website: 'https://www.tetonvalleycabins.com/',
-      notes: 'May 24-27 overlaps Memorial Day weekend (Mon May 25). Teton Valley fills up — book ASAP.'
+      notes: 'May 25-28 overlaps Memorial Day weekend (Mon May 26). Teton Valley fills up — book ASAP.'
     },
     {
       item: 'Glacier Lodging (Columbia Falls)',
       bookBy: '2026-03-15',
       website: 'https://meadowlake.com/',
-      notes: '2BR condo for 3 adults (Robin arrives Fri). May 29-31. Book early — Memorial Day weekend travelers may extend into this period.'
+      notes: '2BR condo for 3 adults (Robin arrives Sat). May 30-Jun 1. Book early — Memorial Day weekend travelers may extend into this period.'
     },
     {
       item: 'Park Passes (NEW 2026 Nonresident Fees!)',
