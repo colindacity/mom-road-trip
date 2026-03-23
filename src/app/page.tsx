@@ -15,8 +15,9 @@ import PackingList from '@/components/PackingList';
 import FlightInfo from '@/components/FlightInfo';
 import CarRentalInfo from '@/components/CarRentalInfo';
 import ActionTracker from '@/components/ActionTracker';
+import TripTable from '@/components/TripTable';
 import {
-  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink
+  Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink, Table2
 } from 'lucide-react';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
@@ -41,7 +42,7 @@ export default function Home() {
   const [showCarRental, setShowCarRental] = useState(false);
   const [showActions, setShowActions] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
+  const [viewMode, setViewMode] = useState<'timeline' | 'calendar' | 'table'>('timeline');
 
   // Trip state management (persisted to localStorage)
   const {
@@ -187,6 +188,15 @@ export default function Home() {
                   title="Calendar view"
                 >
                   <LayoutGrid className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setViewMode('table')}
+                  className={`p-2 transition-colors ${
+                    viewMode === 'table' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  }`}
+                  title="Table view"
+                >
+                  <Table2 className="w-4 h-4" />
                 </button>
               </div>
 
@@ -342,6 +352,17 @@ export default function Home() {
           <DndCalendar
             onPhaseSelect={setActivePhase}
             selectedPhase={activePhase}
+          />
+        ) : viewMode === 'table' ? (
+          /* Table View */
+          <TripTable
+            days={tripData.days}
+            phases={tripData.phases}
+            onSelectDay={(dayNum) => {
+              setViewMode('timeline');
+              setSelectedDay(dayNum);
+              setExpandedDays(new Set([`d${dayNum}`]));
+            }}
           />
         ) : (
           /* Timeline View */

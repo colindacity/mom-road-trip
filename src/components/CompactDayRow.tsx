@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { DayPlan, TripPhase, Activity, Accommodation } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
-import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play, Trash2, CalendarCheck, CalendarX, Star, Home, Trees, Building2, Hotel } from 'lucide-react';
+import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play, Trash2, CalendarCheck, CalendarX, Star, Home, Trees, Building2, Hotel, Sun, Cloud, CloudRain, Snowflake, Laptop, Mountain, Plane } from 'lucide-react';
+import Image from 'next/image';
 import HistoricalWeather from './HistoricalWeather';
 
 interface CompactDayRowProps {
@@ -42,6 +43,26 @@ const dayTypeBadge = (day: DayPlan) => {
   if (notes.includes('departure'))
     return { label: 'DEPART', color: 'bg-purple-100 text-purple-700' };
   return { label: 'LIGHT', color: 'bg-gray-100 text-gray-600' };
+};
+
+const weatherIcon = (conditions?: string) => {
+  if (!conditions) return null;
+  const c = conditions.toLowerCase();
+  if (c.includes('snow')) return <Snowflake className="w-3 h-3 text-blue-300" />;
+  if (c.includes('rain') || c.includes('storm')) return <CloudRain className="w-3 h-3 text-blue-400" />;
+  if (c.includes('cloud') || c.includes('overcast') || c.includes('variable')) return <Cloud className="w-3 h-3 text-gray-400" />;
+  return <Sun className="w-3 h-3 text-amber-400" />;
+};
+
+const dayTypeIcon = (badge: { label: string }) => {
+  switch (badge.label) {
+    case 'DRIVE': return <Car className="w-3 h-3" />;
+    case 'ARRIVE': case 'DEPART': return <Plane className="w-3 h-3" />;
+    case 'REST': return <Bed className="w-3 h-3" />;
+    default:
+      if (badge.label.startsWith('HIKE')) return <Mountain className="w-3 h-3" />;
+      return null;
+  }
 };
 
 const accTypeIcon: Record<string, string> = {
@@ -110,9 +131,21 @@ export default function CompactDayRow({
         onClick={onToggle}
         className="flex items-center gap-2 py-2 px-3 cursor-pointer hover:bg-gray-50/80 transition-colors"
       >
+        {/* Location thumbnail */}
+        {day.location.image && (
+          <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 hidden sm:block">
+            <img
+              src={day.location.image}
+              alt={day.location.name}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        )}
+
         {/* Day # + date */}
         <div
-          className="w-16 shrink-0 flex items-baseline gap-1.5"
+          className="w-14 sm:w-16 shrink-0 flex items-baseline gap-1"
           style={{ color: phase?.color || '#374151' }}
         >
           <span className="text-lg font-bold leading-none">{day.dayNumber}</span>
@@ -121,17 +154,26 @@ export default function CompactDayRow({
 
         {/* Title */}
         <div className="flex-1 min-w-0">
-          <span className="text-sm font-medium text-gray-900">{day.title}</span>
+          <span className="text-sm font-medium text-gray-900 truncate block">{day.title}</span>
         </div>
 
-        {/* Day type badge */}
-        <span className={`px-1.5 py-0.5 text-[10px] font-semibold rounded shrink-0 ${badge.color}`}>
+        {/* Day type badge with icon */}
+        <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-semibold rounded shrink-0 ${badge.color}`}>
+          {dayTypeIcon(badge)}
           {badge.label}
         </span>
 
+        {/* Weather */}
+        {day.weather && (
+          <span className="hidden sm:inline-flex items-center gap-0.5 text-[10px] text-gray-400 shrink-0">
+            {weatherIcon(day.weather.conditions)}
+            <span>{day.weather.high}°</span>
+          </span>
+        )}
+
         {/* Driving */}
         {day.drivingDistance && (
-          <span className="hidden sm:inline-flex items-center gap-0.5 text-[10px] text-gray-400 shrink-0">
+          <span className="hidden md:inline-flex items-center gap-0.5 text-[10px] text-gray-400 shrink-0">
             <Car className="w-3 h-3" />
             {day.drivingDistance}
           </span>
@@ -154,7 +196,7 @@ export default function CompactDayRow({
 
       {/* Accommodation options — separate from expand click zone */}
       {accOptions.length > 0 && (
-        <div className="flex items-center gap-1.5 px-3 pb-2 pl-[76px] flex-wrap">
+        <div className="flex items-center gap-1.5 px-3 pb-2 pl-14 sm:pl-[104px] flex-wrap">
           {accOptions.map((acc) => (
             <AccOptionInline key={acc.id} acc={acc} />
           ))}
@@ -221,8 +263,16 @@ export default function CompactDayRow({
                     {isConfirmed ? <CalendarCheck className="w-3 h-3" /> : idx + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="font-medium text-gray-900">{activity.name}</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-medium text-gray-900">{activity.name}</span>
+                      {activity.optionalSkip && (
+                        <span className="text-[9px] px-1 py-0.5 bg-gray-100 text-gray-500 rounded">flex</span>
+                      )}
+                    </div>
                     <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                      {activity.startTime && (
+                        <span className="text-teal-600 font-medium">{activity.startTime}{activity.endTime ? `–${activity.endTime}` : ''}</span>
+                      )}
                       <span className="text-gray-400">{activity.duration}</span>
                       {activity.distance && (
                         <span className="text-blue-500">{activity.distance}</span>
@@ -268,12 +318,20 @@ export default function CompactDayRow({
                       </ul>
                     )}
 
-                    {activity.reservationUrl && (
-                      <a href={activity.reservationUrl} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
-                        Book Now <ExternalLink className="w-3 h-3" />
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {activity.directionsUrl && (
+                        <a href={activity.directionsUrl} target="_blank" rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+                          <Navigation className="w-3 h-3" /> View Route
+                        </a>
+                      )}
+                      {activity.reservationUrl && (
+                        <a href={activity.reservationUrl} target="_blank" rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                          Book Now <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
+                    </div>
 
                     {(onToggleConfirmed || onRemoveActivity) && (
                       <div className="flex items-center gap-2 pt-1 border-t border-gray-200">

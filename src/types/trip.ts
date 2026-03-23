@@ -42,6 +42,10 @@ export interface Activity {
   url?: string; // External info link (AllTrails, NPS, etc.)
   bestTime?: string;
   requirements?: string[];
+  startTime?: string; // Local time, e.g. "2:00 PM"
+  endTime?: string;   // Local time, e.g. "5:00 PM"
+  directionsUrl?: string; // Google Maps route with waypoints for multi-stop activities
+  optionalSkip?: boolean; // Can skip this for half-work day instead
 }
 
 export interface Accommodation {
