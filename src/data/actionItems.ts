@@ -8,49 +8,21 @@ export function generateActionItems(): ActionItem[] {
   const items: ActionItem[] = [];
 
   // =============================================
-  // PRIORITY 1: BOOK NOW — peak season fills fast
+  // PRIORITY 1: BOOK NOW — peak season, limited supply
   // =============================================
 
   items.push({
     id: 'acc-moab',
     category: 'accommodation',
     title: 'Book Moab hotel (4n May 16-19) — PEAK SEASON',
-    description: 'Hyatt Place Moab: 2BR casita option ($200-250/night), free breakfast, best hotel in Moab. Alt: Aarchway Inn ($150, free breakfast). May is peak — book ASAP.',
+    description: 'Hyatt Place Moab 2BR casita ($250-350/night peak May) — ONLY 8 casitas exist. Alt: Aarchway Inn ($150-180, free breakfast). Book ASAP.',
     status: 'pending',
     deadline: '2026-03-31',
     tripDay: 7,
-    estimatedCost: 700,
+    estimatedCost: 1000,
     bookingUrl: 'https://www.hyatt.com/hyatt-place/en-US/slczm-hyatt-place-moab/rooms',
-    notes: 'Hyatt Place 2BR casita: king + 2 queens, kitchenette, 841 sqft. Free WiFi (good reviews). Alt: Aarchway Inn $150/night (free hot breakfast, fast WiFi confirmed). May is PEAK in Moab — book now.',
-    cardTip: '💳 Chase UR → World of Hyatt transfer (1:1). Hyatt points = best hotel value. ~12,000-15,000 pts/night for casita. Check Chase portal too.',
-    updatedAt: now(),
-  });
-
-  items.push({
-    id: 'acc-glacier',
-    category: 'accommodation',
-    title: 'Book Glacier lodging (2n May 29-30, need 2BR for Robin)',
-    description: 'The Kabins: luxury 2BR cabin ($200-300/night), 15min to Glacier. Alt: Meadow Lake Resort 2BR condo ($150-180). Must have 2 bedrooms for Robin joining.',
-    status: 'pending',
-    deadline: '2026-04-01',
-    tripDay: 20,
-    estimatedCost: 450,
-    bookingUrl: 'https://www.thekabins.com/',
-    notes: 'The Kabins: 2 separate bedrooms, luxury finishes, full kitchen. Small property — limited availability. Alt: Meadow Lake Resort 2BR condo ($150/night), Glacier Hidden Cabins (queen + loft with 2 queens).',
-    updatedAt: now(),
-  });
-
-  items.push({
-    id: 'acc-driggs',
-    category: 'accommodation',
-    title: 'Book Driggs lodging (3n May 24-26) — Memorial Day wknd',
-    description: 'Teton View Cabin on Airbnb: unobstructed Teton views, new build, 8 private acres ($150-200/night). Alt: Teton Valley Cabins ($130-160). Memorial Day = book early.',
-    status: 'pending',
-    deadline: '2026-04-01',
-    tripDay: 15,
-    estimatedCost: 450,
-    bookingUrl: 'https://www.airbnb.com/driggs-id/stays',
-    notes: 'Search Airbnb for "Teton view cabin Driggs" — several new builds with mountain views. WiFi varies (log walls block signal). T-Mobile hotspot as backup. Memorial Day proximity = prices up.',
+    notes: 'Casita: 841 sqft, king + 2 queens, 2 baths, kitchenette. Sat check-in = priciest night. Alt: Aarchway Inn $150-180/night (free hot breakfast, fast WiFi). May is ABSOLUTE PEAK in Moab.',
+    cardTip: '💳 Chase UR → World of Hyatt (1:1). 12-15K pts/night for casita = great value. Check Chase portal too.',
     updatedAt: now(),
   });
 
@@ -58,101 +30,129 @@ export function generateActionItems(): ActionItem[] {
     id: 'acc-gc',
     category: 'accommodation',
     title: 'Book Grand Canyon lodging (2n May 11-12)',
-    description: 'Grand Canyon Hotel & Suites Tusayan: $140-180/night, free breakfast, fridge/microwave. Alt: Red Feather Lodge ($165). Try Yavapai Lodge in-park (call 877-404-4611).',
+    description: 'CALL Yavapai Lodge in-park first (877-404-4611). Fallback: Red Feather Lodge Tusayan ($140-175/night).',
     status: 'pending',
     deadline: '2026-04-01',
     tripDay: 2,
     estimatedCost: 330,
     bookingUrl: 'https://www.redfeatherlodge.com/',
-    notes: 'In-park Yavapai Lodge East is best if available ($175-220, call 877-404-4611). Fallback: Red Feather Lodge $165/night or Grand Canyon Hotel & Suites $140-180/night (both Tusayan, 1mi from park).',
+    notes: 'In-park Yavapai Lodge East ($140-220) is best — no re-entry hassle. Call 877-404-4611 (Mon-Fri 7am-7pm MST). Fallback: Red Feather Lodge $140-175/night. Mon-Tue weeknights = good availability.',
+    updatedAt: now(),
+  });
+
+  items.push({
+    id: 'acc-glacier',
+    category: 'accommodation',
+    title: 'Book Glacier 2BR (2n May 29-30) — Robin joins',
+    description: 'Meadow Lake Resort 2BR condo ($150-220/night). Full kitchen, washer/dryer. The Kabins is $450/night — too pricey.',
+    status: 'pending',
+    deadline: '2026-04-01',
+    tripDay: 20,
+    estimatedCost: 400,
+    bookingUrl: 'https://meadowlake.com/',
+    notes: 'Meadow Lake 2BR condo: confirmed 2 separate bedrooms, full kitchen, pool, spa. $150-220/night. Alt: Glacier Hidden Cabins (queen + loft with 2 queens). The Kabins = $450/night, skip it. Also check Airbnb/VRBO 2BR in Columbia Falls.',
+    updatedAt: now(),
+  });
+
+  items.push({
+    id: 'acc-driggs',
+    category: 'accommodation',
+    title: 'Book Driggs lodging (3n May 24-26) — Memorial Day wknd',
+    description: 'Teton Valley Cabins ($140-180/night) or Airbnb with Teton views. Memorial Day Mon May 25 = higher prices.',
+    status: 'pending',
+    deadline: '2026-04-01',
+    tripDay: 15,
+    estimatedCost: 480,
+    bookingUrl: 'https://www.tetonvalleycabins.com/',
+    notes: 'Memorial Day proximity pushes prices. Teton Valley Cabins: rustic log cabins, 2 queens, fridge, microwave. WiFi spotty in log walls — T-Mobile hotspot backup. Airbnb new-build with Teton views may have better WiFi ($150-200/night).',
     updatedAt: now(),
   });
 
   // =============================================
-  // PRIORITY 2: BOOK FLIGHTS (actual fares found!)
+  // PRIORITY 2: FLIGHTS (actual fares Mar 23, 2026)
   // =============================================
 
   items.push({
     id: 'flight-mom-return',
     category: 'flight',
-    title: 'Book Mom FCA→YYZ May 31 — $232 via Chicago!',
-    description: 'United via ORD: $232 (cheapest!), 6h 9m. Delta via MSP: $375 (preferred routing, 6h 44m). Book on Google Flights.',
+    title: 'Book Mom FCA→YYZ May 31 (Sun) — $315 via Chicago',
+    description: 'American via ORD: $315 (2h26m layover, safe for 80yo). United via ORD: $321 (50min layover, tight). Delta via MSP: ~$375.',
     status: 'pending',
     tripDay: 22,
-    estimatedCost: 232,
-    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+YYZ+on+2026-05-31&curr=USD',
-    notes: 'CHEAPEST: United via ORD $232 (50min connection — tight for 80yo). SAFER: Delta via MSP $375 (1h50m layover, manageable). American via ORD $232 (2h26m layover, better). Book earliest for best price.',
-    cardTip: '💳 Chase Sapphire Reserve: book through Chase Travel portal for 1.5x points value ($232 = 15,467 UR pts). Or Capital One Venture X for 2x miles.',
+    estimatedCost: 315,
+    bookingUrl: 'https://www.google.com/travel/flights?tfs=CBwQAhoiEgoyMDI2LTA1LTMxagcIARIDRkNBcgcIARIDWVlacAFAAUgBcAE&hl=en&gl=us',
+    notes: 'Sunday flights pricier than weekday. BEST FOR MOM: American 1:25pm via ORD $315 (2h26m layover = comfortable). United 12:35pm via ORD $321 (only 50min connection = risky). Delta via MSP ~$375 (safest routing).',
+    cardTip: '💳 Chase Travel portal (1.5x = 21,000 UR pts) or Capital One 2x miles.',
     updatedAt: now(),
   });
 
   items.push({
     id: 'flight-colin-out',
     category: 'flight',
-    title: 'Book Colin SEA→LAS May 10 — $89 Alaska or Southwest',
-    description: 'Multiple nonstops $89. Alaska 7:15am $99, 5:17pm $89. Southwest 6:15am $89. Frontier $64 but bags extra.',
+    title: 'Book Colin SEA→LAS May 10 (Sun) — $89 Alaska nonstop',
+    description: 'Alaska 2:45pm nonstop $89. Southwest 6:30am $89. Frontier $44 but no bags.',
     status: 'pending',
     tripDay: 1,
     estimatedCost: 89,
-    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-10&curr=USD',
-    notes: 'Alaska or Southwest at $89 (carry-on included). Frontier $64 but no bags. Early AM flights get you to Vegas by 9am for car pickup.',
-    cardTip: '💳 Capital One Venture X: transfer points to Alaska Mileage Plan for potentially better value. Or Chase Travel portal (1.5x = 5,933 pts).',
+    bookingUrl: 'https://www.google.com/travel/flights?tfs=CBwQAhoiEgoyMDI2LTA1LTEwagcIARIDU0VBcgcIARIDTEFTcAFAAUgBcAE&hl=en&gl=us',
+    notes: 'Many nonstop options at $89 (Alaska, Delta, Southwest). Frontier $44 basic but 0 bags. Early AM = arrive by 9am for car pickup.',
+    cardTip: '💳 Capital One Venture X → Alaska Mileage Plan transfer. Or Chase Travel portal (1.5x = 5,933 pts).',
     updatedAt: now(),
   });
 
   items.push({
     id: 'flight-mom-out',
     category: 'flight',
-    title: 'Book Mom YYZ→LAS May 10 — $159 Porter nonstop',
-    description: 'Porter 9:55am nonstop $159 (basic, no bags). 2-2 seating, no middle seats. Upgrade to Economy Classic for bags (~$50 more).',
+    title: 'Book Mom YYZ→LAS May 10 (Sun) — $194 Porter nonstop',
+    description: 'Porter 9:55am nonstop $194 (basic). No middle seats (2-2 config), free wine. Add ~$50 for bag upgrade.',
     status: 'pending',
     tripDay: 1,
-    estimatedCost: 210,
-    bookingUrl: 'https://www.flyporter.com/en_ca/flights-from-toronto-to-las-vegas',
-    notes: 'Porter $159 basic + ~$50 bag upgrade = ~$210. Best for 80yo: no middle seats (2-2 config), free wine, wider seats. 9:55am departure ideal. Alt: WestJet $243 nonstop.',
-    cardTip: '💳 Book direct on Porter. Amex Platinum: 5x MR points on flights booked through Amex Travel (check if Porter is available there).',
+    estimatedCost: 244,
+    bookingUrl: 'https://www.flyporter.com/en_us/flights-from-toronto-to-las-vegas',
+    notes: 'Porter $194 basic + ~$50 bag upgrade = ~$244. Best for 80yo: 2-2 seating (no middle seats), free wine, wider seats. 9:55am departure ideal. Alt: Air Canada Rouge nonstop $204.',
+    cardTip: '💳 Book direct on Porter. Amex Platinum: 5x MR points if booked through Amex Travel.',
     updatedAt: now(),
   });
 
   items.push({
     id: 'flight-colin-return',
     category: 'flight',
-    title: 'Book Colin FCA→SEA May 31 — $164 Alaska nonstop',
-    description: 'Alaska 5:40pm nonstop $164. Earlier flights $234. Could share flight with Robin!',
+    title: 'Book Colin FCA→SEA May 31 (Sun) — $234 Alaska nonstop',
+    description: 'Alaska 11:33am nonstop $234. 6:15am also $234. Share flight with Robin!',
     status: 'pending',
     tripDay: 22,
-    estimatedCost: 164,
-    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-    notes: 'Alaska 5:40pm at $164 is the deal. Morning flights $234. Book same flight as Robin if possible.',
-    cardTip: '💳 Capital One Venture X: transfer to Alaska Mileage Plan (1:1). Or Chase Travel portal (1.5x = 10,933 pts).',
+    estimatedCost: 234,
+    bookingUrl: 'https://www.google.com/travel/flights?tfs=CBwQAhoiEgoyMDI2LTA1LTMxagcIARIDRkNBcgcIARIDU0VBcAFAAUgBcAE&hl=en&gl=us',
+    notes: 'Sunday = pricier than weekday ($234 vs $164). Alaska 11:33am nonstop is the sweet spot. Book same flight as Robin.',
+    cardTip: '💳 Capital One Venture X → Alaska Mileage Plan (1:1). Or Chase Travel portal (1.5x = 15,600 pts).',
     updatedAt: now(),
   });
 
   items.push({
     id: 'flight-robin-out',
     category: 'flight',
-    title: 'Book Robin SEA→FCA May 29 (Fri after work)',
-    description: 'Alaska nonstop ~$110-164. Friday evening flight after work.',
+    title: 'Book Robin SEA→FCA May 29 (Fri eve) — $274 Alaska nonstop',
+    description: 'Alaska 9:35pm nonstop $274. Arrives just before midnight. Alt: 1:13pm $234 if Robin can leave work early.',
     status: 'pending',
     tripDay: 20,
-    estimatedCost: 164,
-    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+FCA+on+2026-05-29&curr=USD',
-    notes: 'Robin flies Friday May 29 after work. Alaska nonstop 1h20m. Arrives FCA ~9pm. Colin picks her up on the way back from Glacier drive.',
-    cardTip: '💳 Capital One Venture X or Chase Travel portal — same Alaska flight strategy.',
+    estimatedCost: 274,
+    bookingUrl: 'https://www.google.com/travel/flights?tfs=CBwQAhoiEgoyMDI2LTA1LTI5agcIARIDU0VBcgcIARIDRkNBcAFAAUgBcAE&hl=en&gl=us',
+    notes: 'Friday evening = premium pricing. Alaska 9:35pm nonstop $274 (arrives 11:58pm). Delta 5:45pm via SLC $174 (arrives 11:14pm, 1 stop). Alaska 1:13pm nonstop $234 if Robin can leave early.',
+    cardTip: '💳 Capital One Venture X or Chase Travel portal.',
     updatedAt: now(),
   });
 
   items.push({
     id: 'flight-robin-return',
     category: 'flight',
-    title: 'Book Robin FCA→SEA May 31 — share flight with Colin!',
-    description: 'Alaska nonstop ~$164. Book same 5:40pm flight as Colin.',
+    title: 'Book Robin FCA→SEA May 31 (Sun) — $234 same flight as Colin',
+    description: 'Alaska 11:33am nonstop $234. Same flight as Colin — book together for adjacent seats.',
     status: 'pending',
     tripDay: 22,
-    estimatedCost: 164,
-    bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-    notes: 'Same flight as Colin: Alaska 5:40pm FCA→SEA $164. Book together for adjacent seats.',
-    cardTip: '💳 Same as Colin — Capital One Venture X or Chase Travel portal.',
+    estimatedCost: 234,
+    bookingUrl: 'https://www.google.com/travel/flights?tfs=CBwQAhoiEgoyMDI2LTA1LTMxagcIARIDRkNBcgcIARIDU0VBcAFAAUgBcAE&hl=en&gl=us',
+    notes: 'Same flight as Colin: Alaska 11:33am FCA→SEA $234. Book together.',
+    cardTip: '💳 Same as Colin.',
     updatedAt: now(),
   });
 
@@ -163,14 +163,14 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'acc-vegas',
     category: 'accommodation',
-    title: 'Book Las Vegas hotel (1n May 10)',
-    description: 'Best Western Plus Casino Royale: $75-85/night, NO resort fee, free parking on the Strip. Best value. Alt: LINQ $50-70 + $50 resort fee.',
+    title: 'Book Las Vegas hotel (1n Sun May 10)',
+    description: 'Best Western Casino Royale: $90-120/night (Sunday). NO resort fee, free parking. Best total value on the Strip.',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 1,
-    estimatedCost: 80,
-    bookingUrl: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29054.html',
-    notes: 'Casino Royale: center Strip, NO resort fee (saves $50 vs LINQ/Flamingo), free parking, Outback Steakhouse + Denny\'s on-site. Total ~$80 vs LINQ total ~$120.',
+    estimatedCost: 100,
+    bookingUrl: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
+    notes: 'Sunday night, Mother\'s Day weekend may push price slightly. NO resort fee saves $40-52 vs LINQ/Flamingo. Free parking, 7 restaurants on-site. Join BW Rewards (free) for member rate.',
     updatedAt: now(),
   });
 
@@ -178,13 +178,13 @@ export function generateActionItems(): ActionItem[] {
     id: 'acc-page',
     category: 'accommodation',
     title: 'Book Page AZ hotel (3n May 13-15)',
-    description: 'Hampton Inn & Suites: $113-140/night, best reviews (8.6/10), free hot breakfast, Hilton WiFi. Sign up Hilton Honors first.',
+    description: 'Hampton Inn & Suites: $110-150/night, 8.6/10 reviews, free hot breakfast, Hilton WiFi.',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 4,
-    estimatedCost: 500,
+    estimatedCost: 400,
     bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
-    notes: 'Hampton Inn: 8.6/10 on Booking.com. Free hot breakfast, indoor pool, RV/boat parking. 2 queen beds available. WiFi OK but not great — T-Mobile hotspot as backup for video calls.',
+    notes: 'Sign up Hilton Honors + AARP FIRST for member rate + Silver status. Free hot breakfast saves ~$25/day. WiFi OK for basic work — T-Mobile hotspot backup for video calls.',
     updatedAt: now(),
   });
 
@@ -192,13 +192,13 @@ export function generateActionItems(): ActionItem[] {
     id: 'acc-slc',
     category: 'accommodation',
     title: 'Book SLC hotel (4n May 20-23)',
-    description: 'Crystal Inn: $90-130/night, oversize rooms, full hot breakfast, free airport shuttle. Best value in SLC.',
+    description: 'Crystal Inn: $130-170/night (was estimated $90-130 — UPDATED). Oversize rooms, full breakfast, free parking.',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 11,
-    estimatedCost: 440,
+    estimatedCost: 600,
     bookingUrl: 'https://www.crystalinnsaltlake.com/',
-    notes: 'Crystal Inn: rooms are 30% larger than typical hotels. Full hot breakfast (not continental). Free parking. WiFi mixed reviews — use T-Mobile hotspot for video calls. AAA/AARP rates available.',
+    notes: 'PRICE UPDATED: website shows $148-171/night, not $90-130. Still best value with 30% larger rooms + full hot breakfast. Call (801) 328-4466 for AAA/AARP rate or multi-night discount. WiFi mixed — T-Mobile hotspot for video calls.',
     updatedAt: now(),
   });
 
@@ -206,13 +206,13 @@ export function generateActionItems(): ActionItem[] {
     id: 'acc-yellowstone',
     category: 'accommodation',
     title: 'Book W. Yellowstone hotel (2n May 27-28)',
-    description: 'Best Western Desert Inn: $160-200/night, best breakfast in town, indoor pool. Alt: Kelly Inn ($140-150, biggest pool).',
+    description: 'Kelly Inn: $140-180/night. Largest indoor pool, free breakfast. Book direct for "Book Direct Special."',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 18,
-    estimatedCost: 340,
-    bookingUrl: 'https://www.bestwestern.com/en_US/book/hotels-in-west-yellowstone/best-western-desert-inn/propertyCode.27088.html',
-    notes: 'Best Western Desert Inn: 2 blocks from west entrance, free hot breakfast (best in town per reviews), indoor pool/hot tub. WiFi 53% fiber availability in W. Yellowstone. Alt: Kelly Inn $140 (largest indoor pool).',
+    estimatedCost: 320,
+    bookingUrl: 'https://www.yellowstonekellyinn.com/',
+    notes: 'Kelly Inn: #2 rated in W. Yellowstone. Free breakfast, indoor pool (largest in town). Late May = start of high season. Book direct at yellowstonekellyinn.com. Alt: Best Western Desert Inn $160-220.',
     updatedAt: now(),
   });
 
@@ -226,7 +226,7 @@ export function generateActionItems(): ActionItem[] {
     title: 'Book Antelope Canyon X tour (May 14)',
     description: 'Canyon X by Taadidiin Tours: boardwalk entry, best for Mom. 9am slot. ~$62/person.',
     status: 'pending',
-    deadline: '2026-04-15',
+    deadline: '2026-04-14',
     tripDay: 5,
     estimatedCost: 124,
     bookingUrl: 'https://taadidiintours.com/',
@@ -238,13 +238,13 @@ export function generateActionItems(): ActionItem[] {
     id: 'dining-el-tovar',
     category: 'dining',
     title: 'Book El Tovar lunch (May 12)',
-    description: 'Tock reservation. 30-day window opens Apr 12 at 6am MST. Book lunch (easier than dinner).',
+    description: 'Tock reservation. 30-day window opens Apr 12 at 6am MST.',
     status: 'pending',
     deadline: '2026-04-12',
     tripDay: 3,
     estimatedCost: 80,
     bookingUrl: 'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim',
-    notes: 'Set alarm for 5:55am MST April 12. Create Tock account NOW. Lunch is easier to get than dinner. Budget ~$40/person. Backup: Arizona Room (no reservation, arrive 4:30pm for waitlist).',
+    notes: 'Set alarm for 5:55am MST April 12. Create Tock account NOW. Lunch easier than dinner. Budget ~$40/person. Backup: Arizona Room (no reservation, arrive 4:30pm for waitlist).',
     updatedAt: now(),
   });
 
@@ -252,14 +252,14 @@ export function generateActionItems(): ActionItem[] {
     id: 'car-rental',
     category: 'car_rental',
     title: 'Book car rental LAS→FCA (21 days)',
-    description: 'Compact SUV one-way. National (no drop fee!), AARP at Budget/Avis, Costco Travel, AutoSlash.',
+    description: 'Compact SUV one-way May 10-31. National (no drop fee), AARP at Budget/Avis, Costco Travel, AutoSlash.',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 1,
     estimatedCost: 1040,
     bookingUrl: 'https://www.autoslash.com',
-    notes: 'May 10 LAS → May 31 FCA = 21 days. STEP 1: National Emerald Club (free, may waive drop fee). STEP 2: Budget BCD Y508539 / Avis AWD A359824. STEP 3: Costco Travel. STEP 4: AutoSlash price tracker. Decline rental insurance (credit card covers).',
-    cardTip: '💳 PAY WITH Chase Sapphire Reserve — primary rental car insurance covers full 21 days. Decline ALL CDW/LDW at counter (saves $300-400). Capital One Venture X also has primary coverage.',
+    notes: 'May 10 LAS → May 31 FCA = 21 days. STEP 1: National Emerald Club (free, may waive drop fee). STEP 2: Budget BCD Y508539 / Avis AWD A359824. STEP 3: Costco Travel. STEP 4: AutoSlash price tracker.',
+    cardTip: '💳 PAY WITH Chase Sapphire Reserve — primary rental car insurance covers full 21 days. Decline ALL CDW/LDW at counter (saves $300-400).',
     updatedAt: now(),
   });
 
@@ -276,7 +276,7 @@ export function generateActionItems(): ActionItem[] {
     tripDay: 0,
     estimatedCost: 12,
     bookingUrl: 'https://www.aarp.org/membership/',
-    notes: 'Unlocks: 30-35% off car rental at Avis/Budget, 10% hotel discounts, instant Hilton Silver status. Only $12/year.',
+    notes: 'Unlocks: 30-35% off car rental, 10% hotel discounts, instant Hilton Silver status. Only $12/year.',
     updatedAt: now(),
   });
 
@@ -284,11 +284,11 @@ export function generateActionItems(): ActionItem[] {
     id: 'signup-hilton',
     category: 'pass',
     title: 'Sign up Hilton Honors (free)',
-    description: 'Member rates at Hampton Inn Page. With AARP = instant Silver status.',
+    description: 'Member rates at Hampton Inn Page (3 nights). With AARP = instant Silver status.',
     status: 'pending',
     tripDay: 0,
     bookingUrl: 'https://www.hilton.com/en/hilton-honors/',
-    notes: 'Free signup. Use member rate at Hampton Inn Page (3 nights). With AARP = Silver status (20% bonus points).',
+    notes: 'Free signup. Use member rate at Hampton Inn Page. With AARP = Silver status (20% bonus points).',
     updatedAt: now(),
   });
 
@@ -314,7 +314,7 @@ export function generateActionItems(): ActionItem[] {
     status: 'pending',
     tripDay: 0,
     bookingUrl: 'https://www.google.com/travel/flights',
-    notes: 'Takes 5 min. Especially important for Mom FCA→YYZ ($232-375 range) and Colin FCA→SEA ($164-234 range).',
+    notes: 'Sunday flights are pricier ($234 FCA→SEA vs $164 on Monday). Track all 6 routes for price drops. Most important: Robin SEA→FCA ($274) and Mom FCA→YYZ ($315).',
     updatedAt: now(),
   });
 
