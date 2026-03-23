@@ -629,7 +629,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '2.5 miles (one-way, shuttle return)',
-          tips: ['Paved and mostly flat — wheelchair accessible', 'Canyon views the entire way', 'Pass through Grand Canyon Village, historic buildings', 'Take the Village Route shuttle back to Mather Point', 'Morning light is best for this direction (facing west)']
+          tips: ['Paved and mostly flat — fully accessible', 'Canyon views the entire way', 'Pass through Grand Canyon Village, historic buildings', 'Take the Village Route shuttle back to Mather Point', 'Morning light is best for this direction (facing west)']
         },
         {
           id: 'a3-3',
@@ -852,7 +852,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Wahweap Overlook: paved pulloff, wheelchair accessible views', 'Glen Canyon Dam viewpoint is right off the road', 'Lake Powell is massive — 1,960 miles of shoreline', 'Great afternoon activity that\'s easy on the legs']
+          tips: ['Wahweap Overlook: paved pulloff, fully accessible views', 'Glen Canyon Dam viewpoint is right off the road', 'Lake Powell is massive — 1,960 miles of shoreline', 'Great afternoon activity that\'s easy on the legs']
         },
         {
           id: 'a5-4',
@@ -912,7 +912,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Wahweap Overlook: paved pulloff, wheelchair accessible views', 'Rim View Trail: 0.5mi flat paved loop in town', 'Lake Powell Blvd: shops, galleries, restaurants', 'Big Lake Trading Post for Navajo crafts', 'Hotel pool is always an option']
+          tips: ['Wahweap Overlook: paved pulloff, fully accessible views', 'Rim View Trail: 0.5mi flat paved loop in town', 'Lake Powell Blvd: shops, galleries, restaurants', 'Big Lake Trading Post for Navajo crafts', 'Hotel pool is always an option']
         },
         {
           id: 'a6-3',
@@ -2286,13 +2286,13 @@ export const tripData: TripData = {
         {
           id: 'a21-2',
           name: 'Trail of the Cedars',
-          description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Wheelchair accessible, flat, gorgeous. Everyone does this together.',
+          description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Fully accessible, flat, gorgeous. Everyone does this together.',
           duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
           distance: '1 mile (boardwalk loop)',
-          tips: ['Fully wheelchair accessible boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
+          tips: ['Fully fully accessible boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
         },
         {
           id: 'a21-3',
