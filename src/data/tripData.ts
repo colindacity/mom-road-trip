@@ -525,6 +525,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          directionsUrl: 'https://www.google.com/maps/dir/Mather+Point+Grand+Canyon/Trailview+Overlook/Maricopa+Point/Powell+Point/Hopi+Point/The+Abyss+Grand+Canyon/Hermits+Rest+Grand+Canyon',
           tips: ['Free shuttle only — no private cars Mar-Nov', 'Hop off at any stop, catch the next shuttle (every 10-15 min)', 'Hopi Point is the classic sunset spot — stay here last', 'The Abyss is the most dramatic vertical drop', 'Bring layers — gets cool after sunset at 7,000ft']
         }
       ],
@@ -704,6 +705,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '25 miles (Grand Canyon Village to Desert View)',
+          directionsUrl: 'https://www.google.com/maps/dir/Grandview+Point+Grand+Canyon/Moran+Point+Grand+Canyon/Lipan+Point/Navajo+Point+Grand+Canyon/Desert+View+Watchtower',
           tips: [
             'Drive your own car — no shuttle needed on Desert View Drive',
             'Grandview Point has the widest panorama on the South Rim',
@@ -1858,6 +1860,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit/Oxbow+Bend+Turnout/Mormon+Row+Historic+District/Jackson+Lake+Lodge/Schwabacher+Landing/Cathedral+Group+Turnout',
           tips: ['Teton Pass is dramatic — pullover for photos at the top', 'From Jackson, head north into Grand Teton NP', 'America the Beautiful pass covers entry']
         },
         {
@@ -1948,6 +1951,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Schwabacher+Landing/West+Thumb+Geyser+Basin/Old+Faithful/Grand+Prismatic+Spring+Overlook/West+Yellowstone+MT',
           tips: ['Schwabacher Landing: flat, easy 0.5mi walk to beaver ponds with Teton reflections', 'Best reflections in early morning with still water', 'Gravel road is fine for any car']
         },
         {
@@ -2077,6 +2081,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          directionsUrl: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Madison+Junction+Yellowstone/Canyon+Village+Yellowstone/Tower+Fall+Yellowstone/Lamar+Valley/Mammoth+Hot+Springs/West+Yellowstone+MT',
           tips: ['Leave West Yellowstone by 5am for dawn in Lamar (1.5hr drive via Canyon)', 'Stay in the car — binoculars essential', 'Wolves are best spotted with a scope at distance', 'Bison herds are almost guaranteed', 'Look for bears on hillsides in early morning']
         },
         {
