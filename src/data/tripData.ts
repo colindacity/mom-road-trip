@@ -748,6 +748,7 @@ export const tripData: TripData = {
           id: 'a4-4',
           name: 'Horseshoe Bend at Sunset',
           optionalSkip: true,
+          url: 'https://www.alltrails.com/trail/us/arizona/horseshoe-bend-trail',
           description: 'Iconic 1,000-foot drop viewpoint over the Colorado River. Short walk from parking. Late afternoon light illuminates the bend beautifully. Go for golden hour.',
           duration: '1.5 hours',
           difficulty: 'moderate',
@@ -1166,6 +1167,7 @@ export const tripData: TripData = {
         {
           id: 'a9-1',
           name: 'Windows Section',
+          url: 'https://www.alltrails.com/trail/us/utah/windows-loop-trail--3',
           description: 'Easy loop past North Window, South Window, and Turret Arch. Spectacular formations framing the desert beyond.',
           duration: '1.5 hours',
           difficulty: 'easy',
@@ -1189,6 +1191,7 @@ export const tripData: TripData = {
         {
           id: 'a9-3',
           name: 'Delicate Arch Viewpoint (Lower)',
+          url: 'https://www.alltrails.com/trail/us/utah/delicate-arch-viewpoint-trail',
           description: 'See Delicate Arch from the lower viewpoint. Much easier than the full hike up to the arch itself.',
           duration: '30 min',
           difficulty: 'easy',
@@ -1250,6 +1253,7 @@ export const tripData: TripData = {
         {
           id: 'a10-1',
           name: 'Mesa Arch Sunrise (optional)',
+          url: 'https://www.alltrails.com/trail/us/utah/mesa-arch',
           description: 'Famous arch that glows orange at sunrise. Very short walk from parking. Only if you\'re up early.',
           duration: '1 hour',
           difficulty: 'easy',
@@ -1603,6 +1607,7 @@ export const tripData: TripData = {
         {
           id: 'a14-3',
           name: 'Ensign Peak',
+          url: 'https://www.alltrails.com/trail/us/utah/ensign-peak-trail-and-overlook',
           description: 'Short 0.7mi hike with panoramic SLC valley views. The Wasatch Mountains, Great Salt Lake, and downtown spread out below. A hidden gem most tourists miss.',
           duration: '1 hour',
           difficulty: 'easy',
@@ -2290,6 +2295,7 @@ export const tripData: TripData = {
         {
           id: 'a21-2',
           name: 'Trail of the Cedars',
+          url: 'https://www.alltrails.com/trail/us/montana/trail-of-the-cedars--2',
           description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Fully accessible, flat, gorgeous. Everyone does this together.',
           duration: '30 min',
           difficulty: 'easy',
@@ -2301,6 +2307,7 @@ export const tripData: TripData = {
         {
           id: 'a21-3',
           name: 'Avalanche Lake Hike (Colin + Robin)',
+          url: 'https://www.alltrails.com/trail/us/montana/avalanche-lake--6',
           description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — relax at Lake McDonald Lodge or Apgar Village while Colin and Robin hike. Colin + Robin: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls.',
           duration: '3-4 hours (full hike)',
           difficulty: 'moderate',
