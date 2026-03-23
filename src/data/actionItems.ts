@@ -22,6 +22,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 600,
     bookingUrl: 'https://www.hyatt.com/hyatt-place/en-US/slczm-hyatt-place-moab/rooms',
     notes: 'Hyatt Place 2BR casita: king + 2 queens, kitchenette, 841 sqft. Free WiFi (good reviews). Alt: Aarchway Inn $150/night (free hot breakfast, fast WiFi confirmed). May is PEAK in Moab — book now.',
+    cardTip: '💳 Chase UR → World of Hyatt transfer (1:1). Hyatt points = best hotel value. ~12,000-15,000 pts/night for casita. Check Chase portal too.',
     updatedAt: now(),
   });
 
@@ -81,6 +82,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 232,
     bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+YYZ+on+2026-06-01&curr=USD',
     notes: 'CHEAPEST: United via ORD $232 (50min connection — tight for 80yo). SAFER: Delta via MSP $375 (1h50m layover, manageable). American via ORD $232 (2h26m layover, better). Book earliest for best price.',
+    cardTip: '💳 Chase Sapphire Reserve: book through Chase Travel portal for 1.5x points value ($232 = 15,467 UR pts). Or Capital One Venture X for 2x miles.',
     updatedAt: now(),
   });
 
@@ -94,6 +96,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 89,
     bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-11&curr=USD',
     notes: 'Alaska or Southwest at $89 (carry-on included). Frontier $64 but no bags. Early AM flights get you to Vegas by 9am for car pickup.',
+    cardTip: '💳 Capital One Venture X: transfer points to Alaska Mileage Plan for potentially better value. Or Chase Travel portal (1.5x = 5,933 pts).',
     updatedAt: now(),
   });
 
@@ -107,6 +110,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 210,
     bookingUrl: 'https://www.flyporter.com/en_ca/flights-from-toronto-to-las-vegas',
     notes: 'Porter $159 basic + ~$50 bag upgrade = ~$210. Best for 80yo: no middle seats (2-2 config), free wine, wider seats. 9:55am departure ideal. Alt: WestJet $243 nonstop.',
+    cardTip: '💳 Book direct on Porter. Amex Platinum: 5x MR points on flights booked through Amex Travel (check if Porter is available there).',
     updatedAt: now(),
   });
 
@@ -120,6 +124,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 164,
     bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
     notes: 'Alaska 5:40pm at $164 is the deal. Morning flights $234. Book same flight as Robin if possible.',
+    cardTip: '💳 Capital One Venture X: transfer to Alaska Mileage Plan (1:1). Or Chase Travel portal (1.5x = 10,933 pts).',
     updatedAt: now(),
   });
 
@@ -133,6 +138,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 125,
     bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+FCA+on+2026-05-30&curr=USD',
     notes: 'Robin can fly Friday evening after work (arrives ~9pm) or Saturday morning (arrives ~9am). Saturday morning means she joins for the full Glacier day.',
+    cardTip: '💳 Capital One Venture X or Chase Travel portal — same Alaska flight strategy.',
     updatedAt: now(),
   });
 
@@ -146,6 +152,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 164,
     bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-06-01&curr=USD',
     notes: 'Same flight as Colin: Alaska 5:40pm FCA→SEA $164. Book together for adjacent seats.',
+    cardTip: '💳 Same as Colin — Capital One Venture X or Chase Travel portal.',
     updatedAt: now(),
   });
 
@@ -252,6 +259,7 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 1040,
     bookingUrl: 'https://www.autoslash.com',
     notes: 'May 11 LAS → Jun 1 FCA = 21 days. STEP 1: National Emerald Club (free, may waive drop fee). STEP 2: Budget BCD Y508539 / Avis AWD A359824. STEP 3: Costco Travel. STEP 4: AutoSlash price tracker. Decline rental insurance (credit card covers).',
+    cardTip: '💳 PAY WITH Chase Sapphire Reserve — primary rental car insurance covers full 21 days. Decline ALL CDW/LDW at counter (saves $300-400). Capital One Venture X also has primary coverage.',
     updatedAt: now(),
   });
 

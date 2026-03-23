@@ -188,6 +188,12 @@ function ItemRow({ item, isNext, isExpanded, onToggle, onExpand, onUpdateItem }:
             </div>
           )}
 
+          {item.cardTip && (
+            <div className="p-2 bg-purple-50 rounded text-purple-700 text-[11px] leading-relaxed">
+              {item.cardTip}
+            </div>
+          )}
+
           {done && (
             <button
               onClick={(e) => { e.stopPropagation(); onToggle(); }}

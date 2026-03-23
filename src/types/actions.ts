@@ -15,6 +15,7 @@ export interface ActionItem {
   bookingUrl?: string;
   confirmationNumber?: string;
   notes?: string;
+  cardTip?: string; // Which credit card to use and why (e.g., "Chase Sapphire Reserve — 1.5x points")
   updatedAt: string;
 }
 
