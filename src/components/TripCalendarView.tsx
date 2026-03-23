@@ -32,7 +32,7 @@ const isWorkDay = (day: DayPlan) => {
 const hasDrive = (day: DayPlan) => !!day.drivingDistance;
 
 function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; onClick?: () => void }) {
-  if (!day) return <div className="min-h-[100px] bg-gray-50/50 border-r border-b border-gray-100" />;
+  if (!day) return <div className="min-h-[140px] bg-gray-50/50 border-r border-b border-gray-100" />;
 
   const work = isWorkDay(day);
   const drive = hasDrive(day);
@@ -41,7 +41,7 @@ function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; on
   return (
     <div
       onClick={onClick}
-      className={`min-h-[100px] border-r border-b border-gray-100 p-1.5 cursor-pointer hover:bg-gray-50 transition-colors overflow-hidden ${
+      className={`min-h-[140px] border-r border-b border-gray-100 p-1.5 cursor-pointer hover:bg-gray-50 transition-colors ${
         work ? 'bg-blue-50/30' : ''
       }`}
     >
@@ -69,9 +69,9 @@ function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; on
         {day.overnight || day.location.name}
       </div>
 
-      {/* Activities */}
+      {/* Activities — show ALL, no truncation */}
       <div className="space-y-0.5">
-        {day.activities.slice(0, 4).map((activity, idx) => {
+        {day.activities.map((activity) => {
           const isWork = activity.name.toLowerCase().includes('work');
           const isDrive = activity.name.toLowerCase().includes('drive') || activity.name.includes('→');
           const isHike = activity.distance && !activity.name.toLowerCase().includes('boardwalk');
@@ -79,7 +79,7 @@ function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; on
           return (
             <div
               key={activity.id}
-              className={`text-[9px] px-1 py-0.5 rounded truncate ${
+              className={`text-[8px] px-1 py-0.5 rounded truncate ${
                 isWork ? 'bg-blue-100 text-blue-700' :
                 isDrive ? 'bg-gray-100 text-gray-600' :
                 isHike ? 'bg-orange-50 text-orange-700' :
@@ -89,13 +89,10 @@ function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; on
               {activity.startTime && (
                 <span className="font-medium mr-0.5">{activity.startTime.replace(':00', '').replace(' AM', 'a').replace(' PM', 'p')}</span>
               )}
-              {activity.name.length > 30 ? activity.name.slice(0, 28) + '...' : activity.name}
+              {activity.name.length > 25 ? activity.name.slice(0, 23) + '…' : activity.name}
             </div>
           );
         })}
-        {day.activities.length > 4 && (
-          <div className="text-[8px] text-gray-400 px-1">+{day.activities.length - 4} more</div>
-        )}
       </div>
 
       {/* Drive indicator */}
