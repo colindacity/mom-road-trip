@@ -41,7 +41,6 @@ const defaultBreakdown: CostBreakdown = tripData.costBreakdown ?? {
     total: 0,
   },
   carRental: { dailyRate: 0, days: 0, dropoffFee: 0, total: 0 },
-  passengerAssistance: { cost: 0, notes: '' },
   accommodationAvg: 0,
   foodPerDay: 0,
   gasEstimate: 0,

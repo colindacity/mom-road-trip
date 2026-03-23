@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DollarSign, Plane, Car, Utensils, Fuel, Home, Accessibility, Edit2, Check, X, Loader2, RefreshCw } from 'lucide-react';
+import { DollarSign, Plane, Car, Utensils, Fuel, Home, Edit2, Check, X, Loader2, RefreshCw } from 'lucide-react';
 import { useCosts } from '@/hooks/useCosts';
 
 interface CostBreakdownProps {
@@ -257,15 +257,6 @@ export default function CostBreakdownComponent({ tripDays }: CostBreakdownProps)
           </span>
         </div>
 
-        {/* Passenger Assistance */}
-        <div className="flex items-center gap-2 text-gray-700">
-          <Accessibility className="w-4 h-4" />
-          <div className="flex-1">
-            <span className="font-medium">Passenger Assistance</span>
-            <p className="text-xs text-gray-500">{breakdown.passengerAssistance.notes}</p>
-          </div>
-          <span className="text-emerald-600 font-semibold">FREE</span>
-        </div>
 
         {/* Divider */}
         <hr className="border-gray-200" />

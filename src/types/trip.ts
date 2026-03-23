@@ -201,10 +201,6 @@ export interface CostBreakdown {
     total: number;
     notes?: string;
   };
-  passengerAssistance: {
-    cost: number;
-    notes: string;
-  };
   accommodationAvg: number;
   foodPerDay: number;
   gasEstimate: number;

@@ -630,7 +630,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '2.5 miles (one-way, shuttle return)',
-          tips: ['Paved and mostly flat — fully accessible', 'Canyon views the entire way', 'Pass through Grand Canyon Village, historic buildings', 'Take the Village Route shuttle back to Mather Point', 'Morning light is best for this direction (facing west)']
+          tips: ['Paved and mostly flat — easy access', 'Canyon views the entire way', 'Pass through Grand Canyon Village, historic buildings', 'Take the Village Route shuttle back to Mather Point', 'Morning light is best for this direction (facing west)']
         },
         {
           id: 'a3-3',
@@ -854,7 +854,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Wahweap Overlook: paved pulloff, fully accessible views', 'Glen Canyon Dam viewpoint is right off the road', 'Lake Powell is massive — 1,960 miles of shoreline', 'Great afternoon activity that\'s easy on the legs']
+          tips: ['Wahweap Overlook: paved pulloff, easy access views', 'Glen Canyon Dam viewpoint is right off the road', 'Lake Powell is massive — 1,960 miles of shoreline', 'Great afternoon activity that\'s easy on the legs']
         },
         {
           id: 'a5-4',
@@ -914,7 +914,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Wahweap Overlook: paved pulloff, fully accessible views', 'Rim View Trail: 0.5mi flat paved loop in town', 'Lake Powell Blvd: shops, galleries, restaurants', 'Big Lake Trading Post for Navajo crafts', 'Hotel pool is always an option']
+          tips: ['Wahweap Overlook: paved pulloff, easy access views', 'Rim View Trail: 0.5mi flat paved loop in town', 'Lake Powell Blvd: shops, galleries, restaurants', 'Big Lake Trading Post for Navajo crafts', 'Hotel pool is always an option']
         },
         {
           id: 'a6-3',
@@ -2296,7 +2296,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           distance: '1 mile (boardwalk loop)',
-          tips: ['Fully fully accessible boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
+          tips: ['Fully easy access boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
         },
         {
           id: 'a21-3',
@@ -2417,10 +2417,6 @@ export const tripData: TripData = {
       dropoffFee: 200,
       total: 1040,
       notes: 'LAS→FCA one-way. 21 days (May 10 → May 31). Book via Costco Travel or AutoSlash.',
-    },
-    passengerAssistance: {
-      cost: 0,
-      notes: 'Mom is active — hikes, walks a lot. No assistance needed.',
     },
     accommodationAvg: 132,
     foodPerDay: 71,

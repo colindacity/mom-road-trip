@@ -1,6 +1,6 @@
 'use client';
 
-import { Plane, Clock, User, ExternalLink, Phone, Accessibility } from 'lucide-react';
+import { Plane, Clock, User, ExternalLink, Phone } from 'lucide-react';
 import { Flight } from '@/types/trip';
 import { format, parseISO, differenceInDays } from 'date-fns';
 
@@ -51,7 +51,7 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
           )}
         </div>
         <p className="text-white/80 text-sm mt-1">
-          Book flights early for best rates. Request wheelchair assistance 48hrs ahead.
+          Book flights early for best rates.
         </p>
       </div>
 
@@ -84,26 +84,6 @@ export default function FlightInfo({ flights, tripStartDate }: FlightInfoProps) 
           </div>
         ))}
 
-        {/* Accessibility reminder */}
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-start gap-3">
-          <Accessibility className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-          <div className="text-sm">
-            <p className="font-medium text-amber-800">Wheelchair Assistance</p>
-            <p className="text-amber-700 text-xs mt-0.5">
-              FREE service. Request 48 hours before departure.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-2 text-xs">
-              <a href="tel:1-800-252-7522" className="flex items-center gap-1 text-amber-700 hover:text-amber-900">
-                <Phone className="w-3 h-3" />
-                Alaska: 1-800-252-7522
-              </a>
-              <a href="tel:1-833-909-0909" className="flex items-center gap-1 text-amber-700 hover:text-amber-900">
-                <Phone className="w-3 h-3" />
-                Porter: 1-833-909-0909
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
