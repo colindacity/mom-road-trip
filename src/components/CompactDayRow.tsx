@@ -319,6 +319,12 @@ export default function CompactDayRow({
                     )}
 
                     <div className="flex items-center gap-2 flex-wrap">
+                      {activity.url && (
+                        <a href={activity.url} target="_blank" rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-teal-500 text-white rounded hover:bg-teal-600 transition-colors">
+                          <ExternalLink className="w-3 h-3" /> {activity.url.includes('alltrails') ? 'AllTrails' : 'More Info'}
+                        </a>
+                      )}
                       {activity.directionsUrl && (
                         <a href={activity.directionsUrl} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
