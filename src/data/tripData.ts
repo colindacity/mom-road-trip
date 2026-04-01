@@ -348,7 +348,7 @@ export const tripData: TripData = {
         {
           id: 'a1-2',
           name: 'Check into Hotel & Freshen Up',
-          description: 'Get settled at The LINQ. Rest up from the flights before hitting the Strip.',
+          description: 'Get settled at Caesars Palace. Rest up from the flights before hitting the Strip. Walk to Bacchanal Buffet from your room.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -358,14 +358,15 @@ export const tripData: TripData = {
         {
           id: 'a1-3',
           name: 'Bacchanal Buffet at Caesars Palace',
-          description: 'The best buffet in Las Vegas. Over 250 dishes from nine stations including Japanese, Chinese, Italian, American, and seafood. Walk-in or reserve ahead. Worth the splurge for your first meal together.',
+          description: 'The best buffet in Las Vegas. Over 250 dishes from nine live-show kitchens. Sunday brunch 9am-3pm includes lobster claws, lobster egg bites, lobster bisque, crab legs, prime rib, sushi, and 250+ more. 90-minute dining experience. Reserve on OpenTable (acts as line pass).',
           duration: '2 hours',
           startTime: '3:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          cost: '$75/person',
-          tips: ['Reserve at caesars.com for shorter waits', 'Go for late lunch (3-4pm) to skip the dinner rush', 'The crab legs and prime rib are standouts', 'Unlimited food — pace yourself']
+          cost: '$65/person (brunch) or $80 crab upgrade',
+          url: 'https://www.opentable.com/r/bacchanal-buffet-caesars-palace-las-vegas',
+          tips: ['BOOK ON OPENTABLE — reservation = skip the line', 'Sunday brunch $65/person, crab brunch upgrade $80', 'YES — lobster claws, lobster bisque, lobster egg bites on Sunday', 'Go for late lunch (3-4pm) to skip rush', 'Crab legs and prime rib are standouts', '90 min dining window — pace yourself']
         },
         {
           id: 'a1-4',
@@ -392,66 +393,51 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc1a',
-        name: 'The LINQ Hotel + Experience',
+        name: 'Caesars Palace',
         type: 'hotel',
-        priceRange: '$50-90',
-        pricePerNight: 70,
-        reviewRating: 4.0,
-        reviewSource: 'TripAdvisor (4.0/5)',
-        address: '3535 S Las Vegas Blvd, Las Vegas, NV',
-        website: 'https://www.caesars.com/linq',
-        bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-The-LINQ-Hotel-Experience.23474.ksp',
-        amenities: ['Pool', 'Center Strip location', 'Free WiFi', 'Casino', 'Multiple restaurants'],
+        priceRange: '$100-180 + $55 resort fee',
+        pricePerNight: 175,
+        reviewRating: 4.3,
+        reviewSource: 'TripAdvisor (4.5/5)',
+        address: '3570 S Las Vegas Blvd, Las Vegas, NV',
+        website: 'https://www.caesars.com/caesars-palace',
+        bookingUrl: 'https://www.caesars.com/caesars-palace/hotel',
+        amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino', 'Bacchanal Buffet on-site', 'Spa'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Center Strip location, great value mid-week. 2 queen beds. Walking distance to everything. Sunday night = cheap.'
+        notes: 'Walk to Bacchanal from your room. Iconic property. Resort fee $55/night + parking $20. All-in ~$175. Sign up Caesars Rewards (free) for member rate.'
       },
       accommodationOptions: [
         {
           id: 'acc1a',
-          name: 'The LINQ Hotel + Experience',
+          name: 'Caesars Palace',
           type: 'hotel',
-          priceRange: '$50-90',
-          pricePerNight: 70,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5)',
-          address: '3535 S Las Vegas Blvd',
-          website: 'https://www.caesars.com/linq',
-          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-The-LINQ-Hotel-Experience.23474.ksp',
-          amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino'],
+          priceRange: '$100-180 + $55 resort fee',
+          pricePerNight: 175,
+          reviewRating: 4.3,
+          reviewSource: 'TripAdvisor (4.5/5)',
+          address: '3570 S Las Vegas Blvd',
+          website: 'https://www.caesars.com/caesars-palace',
+          bookingUrl: 'https://www.caesars.com/caesars-palace/hotel',
+          amenities: ['Pool', 'Center Strip', 'Bacchanal on-site', 'Spa', 'Casino'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'Best value on the Strip. Center location. 2 queen beds. Sunday night can be under $60.'
+          notes: 'Bacchanal is inside Caesars — walk from your room. Resort fee $55/night, parking $20. All-in ~$175.'
         },
         {
           id: 'acc1b',
-          name: 'Flamingo Las Vegas',
+          name: 'Best Western Casino Royale',
           type: 'hotel',
-          priceRange: '$40-80',
-          pricePerNight: 55,
+          priceRange: '$80-110',
+          pricePerNight: 95,
           reviewRating: 3.8,
-          reviewSource: 'TripAdvisor (3.5/5)',
-          address: '3555 S Las Vegas Blvd',
-          website: 'https://www.caesars.com/flamingo-las-vegas',
-          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-Flamingo-Las-Vegas.8700.ksp',
-          amenities: ['Pool complex', 'Wildlife habitat', 'Center Strip', 'Casino'],
+          reviewSource: 'TripAdvisor',
+          address: '3411 S Las Vegas Blvd',
+          website: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
+          bookingUrl: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
+          amenities: ['$0 resort fee', 'Free parking', 'Center Strip', 'Casino'],
           seniorFriendly: true,
-          notes: 'Budget option. Famous pool and flamingo habitat. Older rooms but great location.'
-        },
-        {
-          id: 'acc1c',
-          name: 'Park MGM',
-          type: 'hotel',
-          priceRange: '$80-140',
-          pricePerNight: 100,
-          reviewRating: 4.2,
-          reviewSource: 'TripAdvisor (4.0/5)',
-          address: '3770 S Las Vegas Blvd',
-          website: 'https://www.parkmgm.com/',
-          bookingUrl: 'https://www.kayak.com/Las-Vegas-Hotels-Park-MGM-Las-Vegas.256206.ksp',
-          amenities: ['Pool', 'Spa', 'Eataly food hall', 'Non-smoking floors', 'Casino'],
-          seniorFriendly: true,
-          notes: 'Quieter, more refined. Has non-smoking casino floor. Eataly is great for casual dining.'
+          notes: 'ONLY Strip hotel with $0 resort fee + free parking. All-in ~$95. 5 min walk to Caesars/Bacchanal.'
         }
       ],
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
@@ -531,71 +517,68 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc2a',
-        name: 'Red Feather Lodge',
-        type: 'hotel',
-        priceRange: '$150-180',
-        pricePerNight: 165,
+        name: 'Yavapai Lodge East (Inside Park)',
+        type: 'lodge',
+        priceRange: '$140-200+',
+        pricePerNight: 175,
         reviewRating: 4.0,
-        reviewSource: 'TripAdvisor (4.0/5), KAYAK (9.0/10)',
-        reviewCount: 2100,
-        address: 'Tusayan, AZ (1 mile from South Rim entrance)',
-        website: 'https://www.redfeatherlodge.com/',
-        amenities: ['Pool (seasonal)', 'Hot tub', 'Free parking', 'Free WiFi', 'On-site restaurant'],
+        reviewSource: 'TripAdvisor (4.0/5), KAYAK (8.6/10)',
+        reviewCount: 1800,
+        address: 'Grand Canyon Village, South Rim',
+        website: 'https://www.visitgrandcanyon.com/',
+        amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site', 'A/C'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Highest-rated hotel in Tusayan. Request hotel-side rooms (newer). Book ASAP — GC books up fast.'
+        notes: 'Inside the park! Request Yavapai East (newer, has A/C). Call 877-404-4611 to check availability. Books 12+ months ahead.'
       },
       accommodationOptions: [
         {
           id: 'acc2a',
-          name: 'Red Feather Lodge',
-          type: 'hotel',
-          priceRange: '$150-180',
-          pricePerNight: 165,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5), KAYAK (9.0/10)',
-          reviewCount: 2100,
-          address: 'Tusayan, AZ',
-          website: 'https://www.redfeatherlodge.com/',
-          amenities: ['Pool', 'Hot tub', 'Free parking', 'Restaurant'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'Highest-rated in Tusayan. 2 queen beds. 1mi from park entrance.'
-        },
-        {
-          id: 'acc2b',
-          name: 'Yavapai Lodge (Inside Park)',
+          name: 'Yavapai Lodge East (Inside Park)',
           type: 'lodge',
-          priceRange: '$150-200',
-          pricePerNight: 180,
+          priceRange: '$140-200+',
+          pricePerNight: 175,
           reviewRating: 4.0,
           reviewSource: 'TripAdvisor (4.0/5), KAYAK (8.6/10)',
           reviewCount: 1800,
           address: 'Grand Canyon Village, South Rim',
-          website: 'https://www.visitgrandcanyon.com/stay/lodging/yavapai-lodge/',
-          bookingUrl: 'https://www.grandcanyonlodges.com/',
-          amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site'],
+          website: 'https://www.visitgrandcanyon.com/',
+          amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site', 'A/C'],
           seniorFriendly: true,
-          notes: 'Inside the park! Request Yavapai East (newer, has A/C). Books 12+ months ahead.'
+          recommended: true,
+          notes: 'Inside the park! Request Yavapai East (newer, has A/C). Call 877-404-4611 to check availability.'
+        },
+        {
+          id: 'acc2b',
+          name: 'Holiday Inn Express Grand Canyon (Tusayan)',
+          type: 'hotel',
+          priceRange: '$170-250',
+          pricePerNight: 210,
+          reviewRating: 4.0,
+          reviewSource: 'TripAdvisor',
+          address: 'Tusayan, AZ (1 mile from South Rim entrance)',
+          website: 'https://www.ihg.com/',
+          amenities: ['Free breakfast', 'Pool', 'Free parking', 'Free WiFi'],
+          seniorFriendly: true,
+          notes: 'Holiday Inn Squire Tusayan. 1mi from park entrance. Reliable fallback.'
         },
         {
           id: 'acc2c',
-          name: 'Maswik Lodge (Inside Park)',
-          type: 'lodge',
-          priceRange: '$96-200',
-          pricePerNight: 150,
+          name: 'Grand Hotel Tusayan',
+          type: 'hotel',
+          priceRange: '$102-180',
+          pricePerNight: 140,
           reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5)',
-          address: 'Grand Canyon Village, South Rim',
-          website: 'https://www.grandcanyonlodges.com/lodging/maswik-lodge/',
-          bookingUrl: 'https://www.grandcanyonlodges.com/',
-          amenities: ['Inside park', 'Free shuttle', 'Pizza pub', 'Gift shop'],
+          reviewSource: 'TripAdvisor',
+          address: 'Tusayan, AZ',
+          website: 'https://www.visitgrandcanyon.com/',
+          amenities: ['Indoor pool', 'Hot tub', 'Free parking', 'Restaurant'],
           seniorFriendly: true,
-          notes: 'Inside the park! 2 queen beds. Call (888) 297-2757 to book. Best budget in-park option.'
+          notes: 'Grand Hotel Tusayan. Good value alternative outside the park.'
         }
       ],
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
-      budgetBreakdown: { accommodation: 165, food: 80, activities: 35, gas: 55, total: 335 }
+      budgetBreakdown: { accommodation: 175, food: 80, activities: 35, gas: 55, total: 345 }
     },
 
     // ============================================================
@@ -668,18 +651,18 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc3a',
-        name: 'Red Feather Lodge (same as previous night)',
-        type: 'hotel',
-        priceRange: '$150-180',
-        pricePerNight: 165,
+        name: 'Yavapai Lodge East (same as previous night)',
+        type: 'lodge',
+        priceRange: '$140-200+',
+        pricePerNight: 175,
         reviewRating: 4.0,
         reviewSource: 'TripAdvisor (4.0/5)',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night — same hotel.'
+        notes: 'Second night — same lodge.'
       },
       notes: ['FULL DAY at Grand Canyon — no driving', 'El Tovar lunch is a highlight — book ahead', 'Rim Trail is paved and flat — perfect for Mom', 'Rest in the afternoon, sunset shuttle in the evening'],
-      budgetBreakdown: { accommodation: 165, food: 100, activities: 0, gas: 0, total: 265 }
+      budgetBreakdown: { accommodation: 175, food: 100, activities: 0, gas: 0, total: 275 }
     },
 
     // ============================================================
@@ -761,23 +744,39 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc4a',
-        name: 'Home2 Suites by Hilton Page Lake Powell',
+        name: 'Hampton Inn & Suites Page — Lake Powell',
         type: 'hotel',
-        priceRange: '$100-140',
-        pricePerNight: 120,
-        reviewRating: 4.2,
-        reviewSource: 'TripAdvisor (4+/5), Booking.com',
+        priceRange: '$120-160',
+        pricePerNight: 140,
+        reviewRating: 4.5,
+        reviewSource: 'TripAdvisor (4.5/5), Booking.com (8.6/10)',
         address: 'Page, AZ',
-        website: 'https://www.hilton.com/en/hotels/pgaplht-home2-suites-page-lake-powell/',
-        bookingUrl: 'https://www.kayak.com/Page-Hotels-Home2-Suites-by-Hilton-Page-Lake-Powell.6116940.ksp',
-        amenities: ['Free breakfast', 'Kitchenette', 'Pool (seasonal)', 'Free parking', 'Free WiFi'],
+        website: 'https://www.hilton.com/',
+        bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
+        amenities: ['Free hot breakfast', 'Indoor pool', 'Hot tub', 'Free parking', 'Free WiFi'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Built 2020, spacious rooms with kitchenette. Queen bed + sofa bed. Best budget option in Page.'
+        notes: '#5 of 28 in Page, built 2014, 8.6/10, free hot breakfast, indoor pool. Sign up Hilton Honors + AARP for 5-15% off.'
       },
       accommodationOptions: [
         {
           id: 'acc4a',
+          name: 'Hampton Inn & Suites Page — Lake Powell',
+          type: 'hotel',
+          priceRange: '$120-160',
+          pricePerNight: 140,
+          reviewRating: 4.5,
+          reviewSource: 'TripAdvisor (4.5/5), Booking.com (8.6/10)',
+          address: 'Page, AZ',
+          website: 'https://www.hilton.com/',
+          bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
+          amenities: ['Free hot breakfast', 'Indoor pool', 'Hot tub', 'Free parking'],
+          seniorFriendly: true,
+          recommended: true,
+          notes: '#5 of 28 in Page, built 2014, 8.6/10, free hot breakfast, indoor pool. Sign up Hilton Honors + AARP for 5-15% off.'
+        },
+        {
+          id: 'acc4b',
           name: 'Home2 Suites by Hilton Page Lake Powell',
           type: 'hotel',
           priceRange: '$100-140',
@@ -786,30 +785,13 @@ export const tripData: TripData = {
           reviewSource: 'TripAdvisor (4+/5)',
           address: 'Page, AZ',
           website: 'https://www.hilton.com/en/hotels/pgaplht-home2-suites-page-lake-powell/',
-          bookingUrl: 'https://www.kayak.com/Page-Hotels-Home2-Suites-by-Hilton-Page-Lake-Powell.6116940.ksp',
           amenities: ['Free breakfast', 'Kitchenette', 'Pool', 'Free parking'],
           seniorFriendly: true,
-          recommended: true,
-          notes: 'Newest hotel in Page (2020). Kitchenette with fridge, microwave, dishwasher.'
-        },
-        {
-          id: 'acc4b',
-          name: 'Hampton Inn & Suites Page - Lake Powell',
-          type: 'hotel',
-          priceRange: '$120-160',
-          pricePerNight: 140,
-          reviewRating: 4.5,
-          reviewSource: 'TripAdvisor (4.5/5), Booking.com (8.6/10)',
-          address: 'Page, AZ',
-          website: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
-          bookingUrl: 'https://www.kayak.com/Page-Hotels-Hampton-Inn-Suites-Page---Lake-Powell-AZ.867305.ksp',
-          amenities: ['Free breakfast', 'Indoor pool', 'Hot tub', 'Free parking'],
-          seniorFriendly: true,
-          notes: 'Highest-rated hotel in Page. 2-queen balcony studio suites.'
+          notes: 'Newest hotel in Page (2020). Kitchenette with fridge, microwave, dishwasher. Budget fallback.'
         }
       ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 10, gas: 30, total: 230 }
+      budgetBreakdown: { accommodation: 140, food: 70, activities: 10, gas: 30, total: 250 }
     },
 
     // ============================================================
@@ -871,16 +853,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc5a',
-        name: 'Home2 Suites by Hilton Page (same as previous night)',
+        name: 'Hampton Inn & Suites Page (same as previous night)',
         type: 'hotel',
-        priceRange: '$100-140',
-        pricePerNight: 120,
+        priceRange: '$120-160',
+        pricePerNight: 140,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night — same hotel.'
       },
       notes: ['Antelope Canyon + Lake Powell views', 'No intense hiking today', 'Good rest before work day tomorrow'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 107, gas: 10, total: 307 }
+      budgetBreakdown: { accommodation: 140, food: 70, activities: 107, gas: 10, total: 327 }
     },
 
     // ============================================================
@@ -899,14 +881,14 @@ export const tripData: TripData = {
         {
           id: 'a6-1',
           name: 'Colin Works — Hotel (Full Day)',
-          description: 'Full work day at hotel. Home2 Suites has good WiFi and a lobby workspace. Slackers bar on Lake Powell Blvd also has WiFi.',
+          description: 'Full work day at hotel. Hampton Inn has good WiFi and a lobby workspace. Slackers bar on Lake Powell Blvd also has WiFi.',
           duration: '8 hours',
           startTime: '8:00 AM',
           endTime: '5:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Home2 Suites lobby has a dedicated work area', 'Page is a small town — hotel WiFi is your best bet', 'Hotspot as backup']
+          tips: ['Hampton Inn lobby has a dedicated work area', 'Page is a small town — hotel WiFi is your best bet', 'Hotspot as backup']
         },
         {
           id: 'a6-2',
@@ -931,16 +913,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc6a',
-        name: 'Home2 Suites by Hilton Page (same as previous night)',
+        name: 'Hampton Inn & Suites Page (same as previous night)',
         type: 'hotel',
-        priceRange: '$100-140',
-        pricePerNight: 120,
+        priceRange: '$120-160',
+        pricePerNight: 140,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night — same hotel.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same hotel as previous nights', 'Good WiFi at Home2 Suites', 'Pack tonight for early departure tomorrow'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 0, gas: 0, total: 190 }
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same hotel as previous nights', 'Good WiFi at Hampton Inn', 'Pack tonight for early departure tomorrow'],
+      budgetBreakdown: { accommodation: 140, food: 70, activities: 0, gas: 0, total: 210 }
     },
 
     // ============================================================
@@ -1014,23 +996,39 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc7a',
-        name: 'Big Horn Lodge',
-        type: 'motel',
-        priceRange: '$130-160',
-        pricePerNight: 140,
-        reviewRating: 4.0,
-        reviewSource: 'Booking.com (9.0/10)',
-        address: '550 S Main St, Moab, UT 84532',
-        website: 'https://moabbighorn.com/',
-        bookingUrl: 'https://www.kayak.com/Moab-Hotels-Big-Horn-Lodge.70345.ksp',
-        amenities: ['Pool (seasonal)', 'Free parking', 'Free WiFi', 'Fridge', 'On-site restaurant'],
+        name: 'Aarchway Inn',
+        type: 'hotel',
+        priceRange: '$130-180',
+        pricePerNight: 160,
+        reviewRating: 4.7,
+        reviewSource: 'Booking.com (9.3/10)',
+        address: '1551 N Highway 191, Moab, UT',
+        website: 'https://www.aarchwayinn.com/',
+        bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
+        amenities: ['Pool', 'Hot tub', 'Free hot breakfast', 'Free parking', 'Free WiFi', 'EV charger'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Best value in Moab. Downtown location, walkable to restaurants. 2 queen beds.'
+        notes: 'Best breakfast in Moab, fast WiFi confirmed, pool/hot tub. 4 nights Sat-Tue May 16-19.'
       },
       accommodationOptions: [
         {
           id: 'acc7a',
+          name: 'Aarchway Inn',
+          type: 'hotel',
+          priceRange: '$130-180',
+          pricePerNight: 160,
+          reviewRating: 4.7,
+          reviewSource: 'Booking.com (9.3/10)',
+          address: '1551 N Highway 191, Moab, UT',
+          website: 'https://www.aarchwayinn.com/',
+          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
+          amenities: ['Pool', 'Hot tub', 'Free hot breakfast', 'Free parking', 'EV charger'],
+          seniorFriendly: true,
+          recommended: true,
+          notes: 'Best breakfast in Moab, fast WiFi confirmed, pool/hot tub. Closest to Arches (2mi).'
+        },
+        {
+          id: 'acc7b',
           name: 'Big Horn Lodge',
           type: 'motel',
           priceRange: '$130-160',
@@ -1039,26 +1037,9 @@ export const tripData: TripData = {
           reviewSource: 'Booking.com (9.0/10)',
           address: '550 S Main St, Moab, UT',
           website: 'https://moabbighorn.com/',
-          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Big-Horn-Lodge.70345.ksp',
           amenities: ['Pool', 'Free parking', 'Fridge', 'Restaurant'],
           seniorFriendly: true,
-          recommended: true,
-          notes: 'Downtown Moab, walkable. 2 queen beds. Best value. May is peak — book early.'
-        },
-        {
-          id: 'acc7b',
-          name: 'Aarchway Inn',
-          type: 'hotel',
-          priceRange: '$130-175',
-          pricePerNight: 150,
-          reviewRating: 4.7,
-          reviewSource: 'Booking.com (9.3/10)',
-          address: '1551 N Highway 191, Moab, UT',
-          website: 'https://www.aarchwayinn.com/',
-          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
-          amenities: ['Pool', 'Hot tub', 'Free breakfast', 'Free parking', 'EV charger'],
-          seniorFriendly: true,
-          notes: 'Closest to Arches (2mi). Free hot breakfast saves $30+/day.'
+          notes: 'Downtown Moab, walkable. 2 queen beds. Budget fallback.'
         },
         {
           id: 'acc7c',
@@ -1078,7 +1059,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 10, gas: 55, total: 275 }
+      budgetBreakdown: { accommodation: 160, food: 70, activities: 10, gas: 55, total: 295 }
     },
 
     // ============================================================
@@ -1139,16 +1120,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc8a',
-        name: 'Big Horn Lodge (same as previous night)',
-        type: 'motel',
-        priceRange: '$130-160',
-        pricePerNight: 140,
+        name: 'Aarchway Inn (same as previous night)',
+        type: 'hotel',
+        priceRange: '$130-180',
+        pricePerNight: 160,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night in Moab.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for Arches tomorrow'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 20, gas: 10, total: 240 }
+      budgetBreakdown: { accommodation: 160, food: 70, activities: 20, gas: 10, total: 260 }
     },
 
     // ============================================================
@@ -1225,16 +1206,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc9a',
-        name: 'Big Horn Lodge (same as previous night)',
-        type: 'motel',
-        priceRange: '$130-160',
-        pricePerNight: 140,
+        name: 'Aarchway Inn (same as previous night)',
+        type: 'hotel',
+        priceRange: '$130-180',
+        pricePerNight: 160,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night in Moab.'
       },
       notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Monday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 10, total: 235 }
+      budgetBreakdown: { accommodation: 160, food: 70, activities: 15, gas: 10, total: 255 }
     },
 
     // ============================================================
@@ -1297,16 +1278,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc10a',
-        name: 'Big Horn Lodge (same as previous night)',
-        type: 'motel',
-        priceRange: '$130-160',
-        pricePerNight: 140,
+        name: 'Aarchway Inn (same as previous night)',
+        type: 'hotel',
+        priceRange: '$130-180',
+        pricePerNight: 160,
         seniorFriendly: true,
         recommended: true,
         notes: 'Fourth and final night in Moab.'
       },
       notes: ['Canyonlands AM + HALF WORK PM', 'Canyonlands overlooks are easy — mostly drive-up', 'Last night in Moab — pack for SLC drive tomorrow', 'FILL GAS — Green River to Salina on I-70 is 110mi with NO gas stations'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 15, gas: 15, total: 240 }
+      budgetBreakdown: { accommodation: 160, food: 70, activities: 15, gas: 15, total: 260 }
     },
 
     // ============================================================
@@ -1379,22 +1360,31 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc11a',
-        name: 'Crystal Inn Hotel & Suites Downtown SLC',
-        type: 'hotel',
-        priceRange: '$90-120',
-        pricePerNight: 100,
-        reviewRating: 4.0,
-        reviewSource: 'TripAdvisor (4.0/5)',
-        address: '230 W 500 S, Salt Lake City, UT',
-        website: 'https://www.crystalinnsaltlake.com/',
-        amenities: ['Free breakfast', 'Free parking', 'Airport shuttle', 'Indoor pool', 'Sauna'],
+        name: 'Downtown SLC Airbnb — 2BR condo',
+        type: 'vacation_rental',
+        priceRange: '$200-280',
+        pricePerNight: 250,
+        address: 'Downtown Salt Lake City, UT',
+        amenities: ['2 bedrooms', 'King beds', 'Ensuite bathrooms', 'Rooftop pool', 'Hot tub', 'Fast WiFi', 'Free parking'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2 queen beds. Best value downtown. Hot breakfast included. Right off I-15.'
+        notes: '2BR downtown condo with rooftop pool/hot tub, king beds, ensuite bathrooms, fast WiFi for work days. ~$1,000 total for 4 nights.'
       },
       accommodationOptions: [
         {
           id: 'acc11a',
+          name: 'Downtown SLC Airbnb — 2BR condo',
+          type: 'vacation_rental',
+          priceRange: '$200-280',
+          pricePerNight: 250,
+          address: 'Downtown Salt Lake City, UT',
+          amenities: ['2 bedrooms', 'King beds', 'Ensuite bathrooms', 'Rooftop pool', 'Hot tub', 'Fast WiFi'],
+          seniorFriendly: true,
+          recommended: true,
+          notes: '2BR downtown condo with rooftop pool/hot tub, king beds, ensuite bathrooms, fast WiFi for work days. ~$1,000 total for 4 nights.'
+        },
+        {
+          id: 'acc11b',
           name: 'Crystal Inn Hotel & Suites Downtown SLC',
           type: 'hotel',
           priceRange: '$90-120',
@@ -1405,27 +1395,11 @@ export const tripData: TripData = {
           website: 'https://www.crystalinnsaltlake.com/',
           amenities: ['Free breakfast', 'Free parking', 'Airport shuttle', 'Indoor pool'],
           seniorFriendly: true,
-          recommended: true,
-          notes: '2 queen beds. Best value with hot breakfast. Downtown, right off I-15.'
-        },
-        {
-          id: 'acc11b',
-          name: 'Hilton Garden Inn SLC Downtown',
-          type: 'hotel',
-          priceRange: '$130-160',
-          pricePerNight: 145,
-          reviewRating: 4.2,
-          reviewSource: 'TripAdvisor (4+/5)',
-          address: 'Downtown SLC',
-          website: 'https://www.hilton.com/en/hotels/slcdagi-hilton-garden-inn-salt-lake-city-downtown/',
-          bookingUrl: 'https://www.kayak.com/Salt-Lake-City-Hotels-Hilton-Garden-Inn-Salt-Lake-City-Downtown.5926.ksp',
-          amenities: ['Indoor pool', 'Hot tub', 'Free WiFi', 'On-site restaurant'],
-          seniorFriendly: true,
-          notes: '2 queen beds. Consistent Hilton quality. Check for AAA/AARP discounts.'
+          notes: '2 queen beds. Best value with hot breakfast. Downtown, right off I-15. Hotel fallback.'
         }
       ],
       notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
-      budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 55, total: 225 }
+      budgetBreakdown: { accommodation: 250, food: 70, activities: 0, gas: 55, total: 375 }
     },
 
     // ============================================================
@@ -1443,15 +1417,15 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'a12-1',
-          name: 'Colin Works — Crystal Inn or Work Hive Coworking (Full Day)',
-          description: 'Full work day. Crystal Inn has free WiFi and a lobby work area. Work Hive (159 W Broadway) is a proper coworking space with fast WiFi, day passes available.',
+          name: 'Colin Works — Airbnb or Work Hive Coworking (Full Day)',
+          description: 'Full work day. Airbnb has fast WiFi. Work Hive (159 W Broadway) is a proper coworking space with fast WiFi, day passes available.',
           duration: '8 hours',
           startTime: '8:00 AM',
           endTime: '5:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Work Hive: 159 W Broadway, day pass ~$25, fast WiFi', 'Crystal Inn lobby has a work-friendly area', 'Three Pines Coffee: 165 S Main St, good WiFi, 10min walk from hotel']
+          tips: ['Work Hive: 159 W Broadway, day pass ~$25, fast WiFi', 'Airbnb has fast WiFi — work from the condo', 'Three Pines Coffee: 165 S Main St, good WiFi, 10min walk']
         },
         {
           id: 'a12-2',
@@ -1482,21 +1456,21 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Caputo\'s Market & Deli for Italian', 'The Copper Onion for upscale American', 'Laundry at Crystal Inn if needed']
+          tips: ['Caputo\'s Market & Deli for Italian', 'The Copper Onion for upscale American', 'Laundry at nearby laundromat if needed']
         }
       ],
       accommodation: {
         id: 'acc12a',
-        name: 'Crystal Inn (same as previous night)',
-        type: 'hotel',
-        priceRange: '$90-120',
-        pricePerNight: 100,
+        name: 'Downtown SLC Airbnb (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$200-280',
+        pricePerNight: 250,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night in SLC.'
       },
-      notes: ['FULL WORK DAY — extra day in SLC for better WiFi than Moab', 'Mom can explore at her own pace', 'Capitol Hill is free and walkable', 'Laundry day — Crystal Inn has guest laundry'],
-      budgetBreakdown: { accommodation: 100, food: 70, activities: 0, gas: 5, total: 175 }
+      notes: ['FULL WORK DAY — extra day in SLC for better WiFi than Moab', 'Mom can explore at her own pace', 'Capitol Hill is free and walkable', 'Laundry day — nearby laundromat'],
+      budgetBreakdown: { accommodation: 250, food: 70, activities: 0, gas: 5, total: 325 }
     },
 
     // ============================================================
@@ -1514,13 +1488,13 @@ export const tripData: TripData = {
       activities: [
         {
           id: 'a13-1',
-          name: 'Colin Works — Hotel or Three Pines Coffee (Full Day)',
-          description: 'Full work day at Crystal Inn (free WiFi, lobby area) or Three Pines Coffee (165 S Main St, specialty coffee, fast WiFi).',
+          name: 'Colin Works — Airbnb or Three Pines Coffee (Full Day)',
+          description: 'Full work day at Airbnb (fast WiFi) or Three Pines Coffee (165 S Main St, specialty coffee, fast WiFi).',
           duration: '8 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Three Pines Coffee: 165 S Main St, good WiFi, 10min walk from hotel', 'Crystal Inn lobby has a work-friendly area']
+          tips: ['Three Pines Coffee: 165 S Main St, good WiFi, 10min walk', 'Airbnb has fast WiFi — work from the condo']
         },
         {
           id: 'a13-2',
@@ -1556,16 +1530,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc13a',
-        name: 'Crystal Inn (same as previous night)',
-        type: 'hotel',
-        priceRange: '$90-120',
-        pricePerNight: 100,
+        name: 'Downtown SLC Airbnb (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$200-280',
+        pricePerNight: 250,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night in SLC.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — Crystal Inn has guest laundry'],
-      budgetBreakdown: { accommodation: 100, food: 70, activities: 15, gas: 10, total: 195 }
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — nearby laundromat'],
+      budgetBreakdown: { accommodation: 250, food: 70, activities: 15, gas: 10, total: 345 }
     },
 
     // ============================================================
@@ -1641,16 +1615,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc14a',
-        name: 'Crystal Inn (same as previous night)',
-        type: 'hotel',
-        priceRange: '$90-120',
-        pricePerNight: 100,
+        name: 'Downtown SLC Airbnb (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$200-280',
+        pricePerNight: 250,
         seniorFriendly: true,
         recommended: true,
         notes: 'Fourth and final night in SLC.'
       },
       notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
-      budgetBreakdown: { accommodation: 100, food: 80, activities: 18, gas: 0, total: 198 }
+      budgetBreakdown: { accommodation: 250, food: 80, activities: 18, gas: 0, total: 348 }
     },
 
     // ============================================================
@@ -1671,7 +1645,7 @@ export const tripData: TripData = {
         {
           id: 'a15-1',
           name: 'Colin Works — Hotel (8am-11am)',
-          description: 'Morning work block at Crystal Inn. Check out by 11am.',
+          description: 'Morning work block at Airbnb. Check out by 11am.',
           startTime: '8:00 AM',
           endTime: '11:00 AM',
           duration: '3 hours',
@@ -2202,24 +2176,33 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc20a',
-        name: 'Meadow Lake Resort & Condos',
-        type: 'condo',
-        priceRange: '$130-180',
-        pricePerNight: 150,
-        reviewRating: 4.0,
-        reviewSource: 'TripAdvisor (4.0/5, #1 in Columbia Falls)',
-        reviewCount: 1147,
-        address: 'Columbia Falls, MT (20 min to West Glacier)',
-        website: 'https://meadowlake.com/',
-        bookingUrl: 'https://www.kayak.com/Columbia-Falls-Hotels-Meadow-Lake-Resort.83377.ksp',
-        amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Indoor/outdoor pool', 'Free parking', 'Golf course', 'Restaurant'],
+        name: 'Apgar Village Lodge & Cabins — BOOKED',
+        type: 'cabin',
+        priceRange: '$181/night',
+        pricePerNight: 196,
+        address: 'Apgar Village, West Glacier, MT (inside park)',
+        website: 'https://www.glacierparkcollection.com/',
+        amenities: ['3 Queen beds', '2 rooms', 'Inside park', 'Near Lake McDonald', 'Free parking'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR condo: separate bedrooms for 3 adults when Robin arrives Friday night. Full kitchen saves money. Private hot tub.'
+        notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
       },
       accommodationOptions: [
         {
           id: 'acc20a',
+          name: 'Apgar Village Lodge & Cabins — BOOKED',
+          type: 'cabin',
+          priceRange: '$181/night',
+          pricePerNight: 196,
+          address: 'Apgar Village, West Glacier, MT (inside park)',
+          website: 'https://www.glacierparkcollection.com/',
+          amenities: ['3 Queen beds', '2 rooms', 'Inside park', 'Near Lake McDonald'],
+          seniorFriendly: true,
+          recommended: true,
+          notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
+        },
+        {
+          id: 'acc20b',
           name: 'Meadow Lake Resort & Condos',
           type: 'condo',
           priceRange: '$130-180',
@@ -2229,26 +2212,9 @@ export const tripData: TripData = {
           reviewCount: 1147,
           address: 'Columbia Falls, MT',
           website: 'https://meadowlake.com/',
-          bookingUrl: 'https://www.kayak.com/Columbia-Falls-Hotels-Meadow-Lake-Resort.83377.ksp',
           amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Pool', 'Restaurant'],
           seniorFriendly: true,
-          recommended: true,
-          notes: '2BR condo. Full kitchen, hot tub. 20min to park. 2 nights (Thu-Sat). Late May rates trending $130-180.'
-        },
-        {
-          id: 'acc20b',
-          name: 'Paddle Ridge Cabins (West Glacier)',
-          type: 'cabin',
-          priceRange: '$126-160',
-          pricePerNight: 145,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5, 287 "Excellent")',
-          reviewCount: 371,
-          address: 'West Glacier, MT (1mi from park entrance)',
-          website: 'https://www.glacierparkcollection.com/lodging/paddle-ridge/',
-          amenities: ['Full kitchen', 'Electric fireplace', 'BBQ', 'Trout pond', 'Free WiFi'],
-          seniorFriendly: true,
-          notes: '1BR cabin (queen + sleeper sofa for 3). RIGHT at park entrance.'
+          notes: '2BR condo. Full kitchen, hot tub. 20min to park. Backup option.'
         },
         {
           id: 'acc20c',
@@ -2266,7 +2232,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
-      budgetBreakdown: { accommodation: 150, food: 80, activities: 0, gas: 60, total: 290 }
+      budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 }
     },
 
     // ============================================================
@@ -2340,16 +2306,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc21a',
-        name: 'Meadow Lake Resort (same as previous night)',
-        type: 'condo',
-        priceRange: '$130-180',
-        pricePerNight: 150,
+        name: 'Apgar Village Lodge (same as previous night)',
+        type: 'cabin',
+        priceRange: '$181/night',
+        pricePerNight: 196,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second and final night. All 3 together. Pack tonight for tomorrow\'s flights.'
       },
       notes: ['ALL THREE TOGETHER — Robin\'s full day in Glacier (Saturday)', 'Trail of the Cedars is the must-do for everyone', 'Avalanche Lake is Colin + Robin only (Mom waits at lodge/Apgar)', 'Going-to-the-Sun Road only open to Avalanche Creek area in late May', 'No vehicle reservations needed for 2026', 'CELEBRATION DINNER — what an incredible trip!'],
-      budgetBreakdown: { accommodation: 150, food: 100, activities: 35, gas: 15, total: 300 }
+      budgetBreakdown: { accommodation: 196, food: 100, activities: 35, gas: 15, total: 346 }
     },
 
     // ============================================================

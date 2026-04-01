@@ -51,7 +51,7 @@ export interface Activity {
 export interface Accommodation {
   id: string;
   name: string;
-  type: 'hotel' | 'lodge' | 'resort' | 'motel' | 'airbnb' | 'cabin' | 'condo' | 'inn';
+  type: 'hotel' | 'lodge' | 'resort' | 'motel' | 'airbnb' | 'cabin' | 'condo' | 'inn' | 'vacation_rental';
   priceRange: string;
   pricePerNight?: number;
   rating?: number;

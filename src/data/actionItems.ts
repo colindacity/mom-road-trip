@@ -149,14 +149,14 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'acc-vegas',
     category: 'accommodation',
-    title: 'Book Las Vegas (1n Sun May 10)',
-    description: 'Best Western Casino Royale: $80-110, NO resort fee, center Strip. Alt: Hampton Inn Tropicana ($100-130, free breakfast, off-Strip).',
+    title: 'Book Las Vegas (1n Sun May 10) — Caesars Palace',
+    description: 'Caesars Palace: room $100-180 + $55 resort fee + $20 parking = ~$175 all-in. Bacchanal Buffet is inside — walk from your room. Alt: Casino Royale $95 all-in ($0 resort fee).',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 1,
-    estimatedCost: 95,
-    bookingUrl: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
-    notes: 'Casino Royale: ONLY Strip hotel with $0 resort fee + free parking. Sunday $80-110. Mother\'s Day wknd (May 10). Alt: Hampton Inn Tropicana ($100-130, free breakfast, off-Strip). Join BW Rewards (free) for member rate. No rush — good availability. Prices as of Mar 31.',
+    estimatedCost: 175,
+    bookingUrl: 'https://www.caesars.com/caesars-palace/hotel',
+    notes: 'Caesars Palace: iconic, Bacchanal on-site. Resort fee $55/night, self-parking $20. Sign up Caesars Rewards (free) for member rate. Budget alt: Casino Royale $80-110 all-in ($0 resort fee, $0 parking, 5min walk to Caesars). Mother\'s Day wknd May 10. Prices as of Mar 31.',
     updatedAt: now(),
   });
 
@@ -177,15 +177,15 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'acc-slc',
     category: 'accommodation',
-    title: 'Book SLC (4n May 20-23) — best WiFi for work',
-    description: 'Homewood Suites $100-150/night (full kitchen, free breakfast, Wed social). Hyatt House $120-160 (workstation). Crystal Inn $111-169 (biggest rooms). May = cheap month for SLC.',
+    title: 'Book SLC (4n May 20-23) — Airbnb 2BR downtown condo',
+    description: 'Amazing downtown 2BR condos with rooftop pool/hot tub, king beds, ensuite bathrooms ~$250/night ($1K total). Way better than hotels for 4-night work stay. Alt: Homewood Suites $100-150.',
     status: 'pending',
     deadline: '2026-04-15',
     tripDay: 11,
-    estimatedCost: 520,
-    bookingUrl: 'https://www.hilton.com/en/hotels/slcblhw-homewood-suites-salt-lake-city-downtown/',
-    notes: 'Homewood Suites: 2BR suite, full kitchen, free breakfast + Wed evening social (free food/drinks). $100-150/night. Hyatt House: dedicated workstation + kitchen, $120-160/night. Crystal Inn: 30% larger rooms, full breakfast, free parking, $111-169/night. May = cheap in SLC, no urgency. Prices as of Mar 31.',
-    cardTip: '💳 Homewood = Hilton Honors eligible. Hyatt House = Chase UR → World of Hyatt.',
+    estimatedCost: 1000,
+    bookingUrl: 'https://www.airbnb.com/s/Salt-Lake-City--UT/homes?checkin=2026-05-20&checkout=2026-05-24&adults=2&room_types%5B%5D=Entire%20home%2Fapt&min_bedrooms=2',
+    notes: 'Search Airbnb for 2BR downtown SLC condos. Look for: rooftop pool/hot tub, king beds, ensuite bathrooms, fast WiFi (critical for work). ~$250/night = $1K total. VERIFY WIFI SPEED with host. Hotel fallbacks: Homewood Suites $100-150 (kitchen + breakfast), Hyatt House $120-160 (workstation), Crystal Inn $111-169 (free parking). Prices as of Mar 31.',
+    cardTip: '💳 Homewood = Hilton Honors. Hyatt House = Chase UR → World of Hyatt.',
     updatedAt: now(),
   });
 
@@ -218,6 +218,20 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 220,
     bookingUrl: 'https://antelopeslotcanyon.com/',
     notes: 'BOOKED: Order #FMBYMK, Booking #341017065. 2 adults, 10:00am-11:30am May 14, Upper Antelope Canyon. Luxury enclosed 4x4 vans. Colin signed waiver — MOM STILL NEEDS TO SIGN. Check email for waiver link.',
+    updatedAt: now(),
+  });
+
+  items.push({
+    id: 'dining-bacchanal',
+    category: 'dining',
+    title: 'Book Bacchanal Buffet (May 10) — OpenTable',
+    description: 'Sunday brunch $65/person (crab upgrade $80). 250+ dishes, lobster claws, lobster bisque. Reserve on OpenTable = line pass.',
+    status: 'pending',
+    deadline: '2026-05-01',
+    tripDay: 1,
+    estimatedCost: 160,
+    bookingUrl: 'https://www.opentable.com/r/bacchanal-buffet-caesars-palace-las-vegas',
+    notes: 'Sunday brunch 9am-3pm. Lobster: YES (claws, egg bites, bisque). Crab legs, prime rib, sushi, 250+ dishes. 90-min dining. Book on OpenTable for line skip. $65/pp brunch, $80/pp crab brunch. For 2 = $130-160. Call (702) 731-7110 for parties.',
     updatedAt: now(),
   });
 
@@ -302,6 +316,30 @@ export function generateActionItems(): ActionItem[] {
     estimatedCost: 80,
     bookingUrl: 'https://store.usgs.gov/pass/annual',
     notes: "Colin's pass covers all passengers including nonresident fees. SAVES $250!",
+    updatedAt: now(),
+  });
+
+  items.push({
+    id: 'signup-caesars',
+    category: 'pass',
+    title: 'Sign up Caesars Rewards (free) — do BEFORE booking Vegas',
+    description: 'Member rates at Caesars Palace. Free signup. Discounted rooms + resort fee sometimes waived for higher tiers.',
+    status: 'pending',
+    tripDay: 0,
+    bookingUrl: 'https://www.caesars.com/myrewards',
+    notes: 'Free signup. Member rate at Caesars Palace, may save $20-40 on room. Points toward future stays.',
+    updatedAt: now(),
+  });
+
+  items.push({
+    id: 'signup-tock',
+    category: 'pass',
+    title: 'Create Tock account (free) — BEFORE Apr 12',
+    description: 'Need account ready for El Tovar 30-day booking window. Free signup.',
+    status: 'pending',
+    tripDay: 0,
+    bookingUrl: 'https://www.exploretock.com/',
+    notes: 'Create account NOW. El Tovar lunch window opens Apr 12 at 6am MST. Need to be ready to book instantly.',
     updatedAt: now(),
   });
 
