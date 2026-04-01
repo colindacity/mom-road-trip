@@ -348,7 +348,7 @@ export const tripData: TripData = {
         {
           id: 'a1-2',
           name: 'Check into Hotel & Freshen Up',
-          description: 'Get settled at Caesars Palace. Rest up from the flights before hitting the Strip. Walk to Bacchanal Buffet from your room.',
+          description: 'Get settled at The LINQ. Rest up from the flights before hitting the Strip. Short walk to Bacchanal Buffet at Caesars Palace next door.',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -393,36 +393,36 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc1a',
-        name: 'Caesars Palace',
+        name: 'The LINQ Hotel & Casino — BOOKED',
         type: 'hotel',
-        priceRange: '$100-180 + $55 resort fee',
-        pricePerNight: 175,
+        priceRange: '$0 room + $57 resort fee',
+        pricePerNight: 57,
         reviewRating: 4.3,
         reviewSource: 'TripAdvisor (4.5/5)',
-        address: '3570 S Las Vegas Blvd, Las Vegas, NV',
-        website: 'https://www.caesars.com/caesars-palace',
-        bookingUrl: 'https://www.caesars.com/caesars-palace/hotel',
-        amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino', 'Bacchanal Buffet on-site', 'Spa'],
+        address: '3535 Las Vegas Blvd South, Las Vegas, NV',
+        website: 'https://www.caesars.com/linq',
+        bookingUrl: 'https://www.hotels.com/',
+        amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino', 'Bacchanal Buffet next door', 'Spa'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Walk to Bacchanal from your room. Iconic property. Resort fee $55/night + parking $20. All-in ~$175. Sign up Caesars Rewards (free) for member rate.'
+        notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in. 3535 Las Vegas Blvd South.'
       },
       accommodationOptions: [
         {
           id: 'acc1a',
-          name: 'Caesars Palace',
+          name: 'The LINQ Hotel & Casino — BOOKED',
           type: 'hotel',
-          priceRange: '$100-180 + $55 resort fee',
-          pricePerNight: 175,
+          priceRange: '$0 room + $57 resort fee',
+          pricePerNight: 57,
           reviewRating: 4.3,
           reviewSource: 'TripAdvisor (4.5/5)',
-          address: '3570 S Las Vegas Blvd',
-          website: 'https://www.caesars.com/caesars-palace',
-          bookingUrl: 'https://www.caesars.com/caesars-palace/hotel',
-          amenities: ['Pool', 'Center Strip', 'Bacchanal on-site', 'Spa', 'Casino'],
+          address: '3535 Las Vegas Blvd South',
+          website: 'https://www.caesars.com/linq',
+          bookingUrl: 'https://www.hotels.com/',
+          amenities: ['Pool', 'Center Strip', 'Bacchanal next door', 'Spa', 'Casino'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'Bacchanal is inside Caesars — walk from your room. Resort fee $55/night, parking $20. All-in ~$175.'
+          notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in.'
         },
         {
           id: 'acc1b',
@@ -441,7 +441,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
-      budgetBreakdown: { accommodation: 70, food: 100, activities: 0, gas: 0, total: 170 }
+      budgetBreakdown: { accommodation: 57, food: 100, activities: 0, gas: 0, total: 157 }
     },
 
     // ============================================================
@@ -517,36 +517,36 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc2a',
-        name: 'Yavapai Lodge East (Inside Park)',
+        name: 'Maswik Lodge (Inside Park) — BOOKED',
         type: 'lodge',
-        priceRange: '$140-200+',
-        pricePerNight: 175,
+        priceRange: '$256/night (20% off)',
+        pricePerNight: 274,
         reviewRating: 4.0,
         reviewSource: 'TripAdvisor (4.0/5), KAYAK (8.6/10)',
         reviewCount: 1800,
         address: 'Grand Canyon Village, South Rim',
-        website: 'https://www.visitgrandcanyon.com/',
-        amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site', 'A/C'],
+        website: 'https://www.grandcanyonlodges.com/',
+        amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Inside the park! Request Yavapai East (newer, has A/C). Call 877-404-4611 to check availability. Books 12+ months ahead.'
+        notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347. Cancel penalty after May 9. Phone: 888-297-2757.'
       },
       accommodationOptions: [
         {
           id: 'acc2a',
-          name: 'Yavapai Lodge East (Inside Park)',
+          name: 'Maswik Lodge (Inside Park) — BOOKED',
           type: 'lodge',
-          priceRange: '$140-200+',
-          pricePerNight: 175,
+          priceRange: '$256/night (20% off)',
+          pricePerNight: 274,
           reviewRating: 4.0,
           reviewSource: 'TripAdvisor (4.0/5), KAYAK (8.6/10)',
           reviewCount: 1800,
           address: 'Grand Canyon Village, South Rim',
-          website: 'https://www.visitgrandcanyon.com/',
-          amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site', 'A/C'],
+          website: 'https://www.grandcanyonlodges.com/',
+          amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'Inside the park! Request Yavapai East (newer, has A/C). Call 877-404-4611 to check availability.'
+          notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347.'
         },
         {
           id: 'acc2b',
@@ -578,7 +578,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
-      budgetBreakdown: { accommodation: 175, food: 80, activities: 35, gas: 55, total: 345 }
+      budgetBreakdown: { accommodation: 274, food: 80, activities: 35, gas: 55, total: 444 }
     },
 
     // ============================================================
@@ -651,18 +651,18 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc3a',
-        name: 'Yavapai Lodge East (same as previous night)',
+        name: 'Maswik Lodge (same as previous night)',
         type: 'lodge',
-        priceRange: '$140-200+',
-        pricePerNight: 175,
+        priceRange: '$256/night (20% off)',
+        pricePerNight: 274,
         reviewRating: 4.0,
         reviewSource: 'TripAdvisor (4.0/5)',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night — same lodge.'
+        notes: 'Second night — same lodge. BOOKED via Xanterra #20514347.'
       },
       notes: ['FULL DAY at Grand Canyon — no driving', 'El Tovar lunch is a highlight — book ahead', 'Rim Trail is paved and flat — perfect for Mom', 'Rest in the afternoon, sunset shuttle in the evening'],
-      budgetBreakdown: { accommodation: 175, food: 100, activities: 0, gas: 0, total: 275 }
+      budgetBreakdown: { accommodation: 274, food: 100, activities: 0, gas: 0, total: 374 }
     },
 
     // ============================================================
@@ -1360,28 +1360,28 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc11a',
-        name: 'Downtown SLC Airbnb — 2BR condo',
+        name: 'Convention Ctr 2BR Airbnb — BOOKED',
         type: 'vacation_rental',
-        priceRange: '$200-280',
-        pricePerNight: 250,
-        address: 'Downtown Salt Lake City, UT',
-        amenities: ['2 bedrooms', 'King beds', 'Ensuite bathrooms', 'Rooftop pool', 'Hot tub', 'Fast WiFi', 'Free parking'],
+        priceRange: '$272/night',
+        pricePerNight: 314,
+        address: '241 W 200 S, Salt Lake City, UT 84101',
+        amenities: ['2 bedrooms', 'Rooftop pool', 'Hot tub', 'Gym', 'Theatre', 'Fast WiFi', 'Self check-in'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2BR downtown condo with rooftop pool/hot tub, king beds, ensuite bathrooms, fast WiFi for work days. ~$1,000 total for 4 nights.'
+        notes: 'BOOKED: Airbnb HMN2P4MBR9. 2BR with rooftop pool/hot tub/gym/theatre. Hosted by GrandRoad. $1,256.86 total for 4 nights.'
       },
       accommodationOptions: [
         {
           id: 'acc11a',
-          name: 'Downtown SLC Airbnb — 2BR condo',
+          name: 'Convention Ctr 2BR Airbnb — BOOKED',
           type: 'vacation_rental',
-          priceRange: '$200-280',
-          pricePerNight: 250,
-          address: 'Downtown Salt Lake City, UT',
-          amenities: ['2 bedrooms', 'King beds', 'Ensuite bathrooms', 'Rooftop pool', 'Hot tub', 'Fast WiFi'],
+          priceRange: '$272/night',
+          pricePerNight: 314,
+          address: '241 W 200 S, Salt Lake City, UT 84101',
+          amenities: ['2 bedrooms', 'Rooftop pool', 'Hot tub', 'Gym', 'Theatre', 'Fast WiFi'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2BR downtown condo with rooftop pool/hot tub, king beds, ensuite bathrooms, fast WiFi for work days. ~$1,000 total for 4 nights.'
+          notes: 'BOOKED: Airbnb HMN2P4MBR9. 2BR with rooftop pool/hot tub/gym/theatre. Hosted by GrandRoad. $1,256.86 total for 4 nights.'
         },
         {
           id: 'acc11b',
@@ -1399,7 +1399,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
-      budgetBreakdown: { accommodation: 250, food: 70, activities: 0, gas: 55, total: 375 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 55, total: 439 }
     },
 
     // ============================================================
@@ -1461,16 +1461,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc12a',
-        name: 'Downtown SLC Airbnb (same as previous night)',
+        name: 'Convention Ctr 2BR Airbnb (same as previous night)',
         type: 'vacation_rental',
-        priceRange: '$200-280',
-        pricePerNight: 250,
+        priceRange: '$272/night',
+        pricePerNight: 314,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night in SLC.'
+        notes: 'Second night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['FULL WORK DAY — extra day in SLC for better WiFi than Moab', 'Mom can explore at her own pace', 'Capitol Hill is free and walkable', 'Laundry day — nearby laundromat'],
-      budgetBreakdown: { accommodation: 250, food: 70, activities: 0, gas: 5, total: 325 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 5, total: 389 }
     },
 
     // ============================================================
@@ -1530,16 +1530,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc13a',
-        name: 'Downtown SLC Airbnb (same as previous night)',
+        name: 'Convention Ctr 2BR Airbnb (same as previous night)',
         type: 'vacation_rental',
-        priceRange: '$200-280',
-        pricePerNight: 250,
+        priceRange: '$272/night',
+        pricePerNight: 314,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third night in SLC.'
+        notes: 'Third night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — nearby laundromat'],
-      budgetBreakdown: { accommodation: 250, food: 70, activities: 15, gas: 10, total: 345 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 15, gas: 10, total: 409 }
     },
 
     // ============================================================
@@ -1615,16 +1615,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc14a',
-        name: 'Downtown SLC Airbnb (same as previous night)',
+        name: 'Convention Ctr 2BR Airbnb (same as previous night)',
         type: 'vacation_rental',
-        priceRange: '$200-280',
-        pricePerNight: 250,
+        priceRange: '$272/night',
+        pricePerNight: 314,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Fourth and final night in SLC.'
+        notes: 'Fourth and final night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
-      budgetBreakdown: { accommodation: 250, food: 80, activities: 18, gas: 0, total: 348 }
+      budgetBreakdown: { accommodation: 314, food: 80, activities: 18, gas: 0, total: 412 }
     },
 
     // ============================================================
@@ -2406,7 +2406,7 @@ export const tripData: TripData = {
       item: 'Grand Canyon Lodging (Tusayan)',
       bookBy: '2026-03-15',
       website: 'https://www.redfeatherlodge.com/',
-      notes: 'May is peak season. Book ASAP. In-park lodges (Yavapai) book 6-13 months ahead — check grandcanyonlodges.com too.'
+      notes: 'BOOKED: Maswik Lodge in-park. Xanterra #20514347. 20% discount rate.'
     },
     {
       item: 'El Tovar Dining Room Reservation',
