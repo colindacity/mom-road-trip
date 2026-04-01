@@ -487,7 +487,7 @@ export const tripData: TripData = {
         {
           id: 'a2-2',
           name: 'Lunch in Williams (Route 66)',
-          startTime: '10:30 AM',
+          startTime: '10:00 AM',
           description: 'Stop in this charming Route 66 town. Walk the main drag, grab lunch at a classic diner.',
           duration: '1 hour',
           difficulty: 'easy',
@@ -819,24 +819,24 @@ export const tripData: TripData = {
       id: 'd5',
       dayNumber: 5,
       date: '2026-05-14',
-      title: 'Antelope Canyon X & Lake Powell Views',
-      summary: 'Guided slot canyon tour, Lake Powell overlooks, relaxing afternoon',
+      title: 'Upper Antelope Canyon & Lake Powell Views',
+      summary: 'BOOKED: Upper Antelope Canyon with light beams (10:00am), Lake Powell overlooks',
       location: locations.find(l => l.id === 'antelope')!,
       overnight: 'Page, AZ',
       weather: { high: 31, low: 14, conditions: 'Sunny, warm' },
       activities: [
         {
           id: 'a5-1',
-          name: 'Antelope Canyon X Tour',
-          description: 'Canyon X recommended for Mom (boardwalk entry, no ladders, wider paths). Alternative: Upper Canyon has the famous light beams; inside is ground-level (no ladders), but the exit is a 1-mile stair climb. Mom can handle stairs, so Upper is doable if you want the beams.',
-          startTime: '9:00 AM',
-          duration: '1.5 hours',
-          difficulty: 'easy',
+          name: 'Upper Antelope Canyon Tour — BOOKED 10:00am',
+          description: 'BOOKED with Antelope Slot Canyon Tours (Tsosie family). Upper Canyon with famous light beams (best 10:00am-12:30pm). Luxury enclosed 4x4 vans to/from canyon. 1.75hr tour including transport. Exit involves stairs and ramps (~1 mile) — Mom can handle it.',
+          startTime: '10:00 AM',
+          duration: '1 hour 45 min',
+          difficulty: 'moderate',
           seniorFriendly: true,
           reservationRequired: true,
-          cost: '$92/person + $15 Navajo park fee',
-          tips: ['Book 9:00 AM slot — sells out fast', 'Book at antelopecanyon.com (FareHarbor)', '$92/person (ages 8+) + $15 Navajo entry fee', 'Sandy ground — wear closed shoes', 'Canyon X has no ladders — best for seniors', 'iPhone: shoot straight up for light beams'],
-          reservationUrl: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-14/?ref=https://www.antelopecanyon.com'
+          cost: '$95/person + $15 Navajo fee = $220 total',
+          tips: ['BOOKED: 10:00am May 14, 2 adults', 'Antelope Slot Canyon Tours (Tsosie family)', 'Luxury enclosed 4x4 vans (heated/AC)', 'Light beams peak 10:00am-12:30pm in mid-May', 'Wear closed-toe shoes, bring water', 'Exit is stairs + ramps (1 mile) — wear good shoes', 'MOM: sign your waiver before the trip!', 'iPhone: shoot straight up for light beams, HDR auto mode'],
+          reservationUrl: 'https://antelopeslotcanyon.com/'
         },
         {
           id: 'a5-2',

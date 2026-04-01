@@ -14,14 +14,14 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'acc-glacier',
     category: 'accommodation',
-    title: '🔴 Book Glacier cabin — 20% early bird expires END OF TODAY!',
-    description: 'Paddle Ridge Cabins at West Glacier. Cabin rates $318-523/night (20% off = $254-418). Call 406-888-5454 NOW. 2 nights Fri-Sat May 29-30.',
-    status: 'pending',
-    deadline: '2026-03-31',
+    title: '✅ Glacier — Apgar Village Lodge & Cabins BOOKED',
+    description: 'Reservation #3870048. Cabin 3 Queen, 2 Room. May 29-31 (2 nights). $392.26 total ($189.22 paid, $203.04 balance at check-in).',
+    status: 'booked',
+    deadline: '2026-05-29',
     tripDay: 20,
-    estimatedCost: 510,
-    bookingUrl: 'https://www.glacierparkcollection.com/lodging/paddle-ridge/',
-    notes: 'Paddle Ridge (Glacier Park Collection): cabins at West Glacier entrance. Full rates $318-523/night; 20% early bird = $254-418/night for May 1-Jul 1 stays. DEADLINE: March 31 (TODAY). Call 406-888-5454. Alt: Belton Chalet (historic, $150-250), Whitefish hotels 30min away ($120-200). Prices as of Mar 31.',
+    estimatedCost: 392,
+    bookingUrl: 'https://www.glacierparkcollection.com/lodging/apgar-village/',
+    notes: 'BOOKED: Apgar Village Lodge (Glacier Park Collection / Pursuit). 3 Queen cabin, 2 rooms. $363.20 + $29.06 tax = $392.26. $189.22 paid, $203.04 balance due at check-in. Additional: Historic Preservation Fee at check-in + $1/night Glacier NP Conservancy donation. Contact: 1.844.868.7474. 3 guests (Colin + Mom + Robin).',
     updatedAt: now(),
   });
 
@@ -210,14 +210,14 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'activity-antelope',
     category: 'activity',
-    title: '✅ Upper Antelope Canyon — BOOKED 10:30am May 14',
-    description: 'Antelope Slot Canyon Tours (Tsosie family). Upper Canyon with light beams. 10:30am Thu May 14. 2 adults.',
+    title: '✅ Upper Antelope Canyon — BOOKED 10:00am May 14',
+    description: 'Antelope Slot Canyon Tours. Order #FMBYMK. Upper Canyon with light beams. 10:00am-11:30am Thu May 14. 2 adults.',
     status: 'booked',
     deadline: '2026-04-14',
     tripDay: 5,
     estimatedCost: 220,
     bookingUrl: 'https://antelopeslotcanyon.com/',
-    notes: 'BOOKED: 2 adults, 10:30am May 14, Upper Antelope Canyon. $95/person + $15 Navajo fee = $220 total. Luxury enclosed 4x4 vans. Colin signed waiver — MOM STILL NEEDS TO SIGN. Check email for waiver link.',
+    notes: 'BOOKED: Order #FMBYMK, Booking #341017065. 2 adults, 10:00am-11:30am May 14, Upper Antelope Canyon. Luxury enclosed 4x4 vans. Colin signed waiver — MOM STILL NEEDS TO SIGN. Check email for waiver link.',
     updatedAt: now(),
   });
 
