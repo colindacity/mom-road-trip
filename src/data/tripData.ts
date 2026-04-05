@@ -744,54 +744,58 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc4a',
-        name: 'Hampton Inn & Suites Page — Lake Powell',
-        type: 'hotel',
-        priceRange: '$120-160',
-        pricePerNight: 140,
-        reviewRating: 4.5,
-        reviewSource: 'TripAdvisor (4.5/5), Booking.com (8.6/10)',
+        name: 'Page 2BR Airbnb Duplex — 867 Mbps fiber',
+        type: 'vacation_rental',
+        priceRange: '$90-150/night',
+        pricePerNight: 120,
         address: 'Page, AZ',
-        website: 'https://www.hilton.com/',
-        bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
-        amenities: ['Free hot breakfast', 'Indoor pool', 'Hot tub', 'Free parking', 'Free WiFi'],
+        website: 'https://www.airbnb.com/page-az/stays',
+        amenities: ['867 Mbps fiber WiFi', '2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
         seniorFriendly: true,
         recommended: true,
-        notes: '#5 of 28 in Page, built 2014, 8.6/10, free hot breakfast, indoor pool. Sign up Hilton Honors + AARP for 5-15% off.'
+        notes: 'BEST for work day. 867 Mbps fiber confirmed — only verified-fast WiFi in Page. 2BR duplex, walking distance to downtown. 10-15min to Antelope Canyon and Horseshoe Bend.'
       },
       accommodationOptions: [
         {
           id: 'acc4a',
-          name: 'Hampton Inn & Suites Page — Lake Powell',
-          type: 'hotel',
-          priceRange: '$120-160',
-          pricePerNight: 140,
-          reviewRating: 4.5,
-          reviewSource: 'TripAdvisor (4.5/5), Booking.com (8.6/10)',
+          name: 'Page 2BR Airbnb Duplex — 867 Mbps fiber',
+          type: 'vacation_rental',
+          priceRange: '$90-150/night',
+          pricePerNight: 120,
           address: 'Page, AZ',
-          website: 'https://www.hilton.com/',
-          bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
-          amenities: ['Free hot breakfast', 'Indoor pool', 'Hot tub', 'Free parking'],
+          website: 'https://www.airbnb.com/page-az/stays',
+          amenities: ['867 Mbps fiber WiFi', '2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
           seniorFriendly: true,
           recommended: true,
-          notes: '#5 of 28 in Page, built 2014, 8.6/10, free hot breakfast, indoor pool. Sign up Hilton Honors + AARP for 5-15% off.'
+          notes: 'BEST for work day. 867 Mbps fiber confirmed — only verified-fast WiFi in Page. 2BR duplex, walking distance to downtown. 10-15min to Antelope Canyon and Horseshoe Bend.'
         },
         {
           id: 'acc4b',
-          name: 'Home2 Suites by Hilton Page Lake Powell',
+          name: 'Hampton Inn & Suites Page — Lake Powell',
           type: 'hotel',
-          priceRange: '$100-140',
-          pricePerNight: 120,
-          reviewRating: 4.2,
-          reviewSource: 'TripAdvisor (4+/5)',
+          priceRange: '$140-250/night',
+          pricePerNight: 180,
           address: 'Page, AZ',
-          website: 'https://www.hilton.com/en/hotels/pgaplht-home2-suites-page-lake-powell/',
-          amenities: ['Free breakfast', 'Kitchenette', 'Pool', 'Free parking'],
+          website: 'https://www.hilton.com/',
+          bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
+          amenities: ['Indoor pool', 'Free hot breakfast', '24hr business center', 'Desk in room', 'Hilton Honors'],
           seniorFriendly: true,
-          notes: 'Newest hotel in Page (2020). Kitchenette with fridge, microwave, dishwasher. Budget fallback.'
+          notes: '#1 of 22 in Page, 8.9/10 WiFi rated, best hotel backup'
+        },
+        {
+          id: 'acc4c',
+          name: 'Country Inn & Suites by Radisson',
+          type: 'hotel',
+          priceRange: '$114-160/night',
+          pricePerNight: 130,
+          address: 'Page, AZ',
+          amenities: ['Free breakfast', 'Business center', 'Indoor pool', 'Newer property'],
+          seniorFriendly: true,
+          notes: 'Budget option, newer property = better infrastructure'
         }
       ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 10, gas: 30, total: 250 }
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 10, gas: 30, total: 230 }
     },
 
     // ============================================================
@@ -853,16 +857,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc5a',
-        name: 'Hampton Inn & Suites Page (same as previous night)',
-        type: 'hotel',
-        priceRange: '$120-160',
-        pricePerNight: 140,
+        name: 'Page 2BR Airbnb Duplex (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$90-150/night',
+        pricePerNight: 120,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night — same hotel.'
+        notes: 'Second night — same Airbnb.'
       },
       notes: ['Antelope Canyon + Lake Powell views', 'No intense hiking today', 'Good rest before work day tomorrow'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 107, gas: 10, total: 327 }
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 107, gas: 10, total: 307 }
     },
 
     // ============================================================
@@ -913,16 +917,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc6a',
-        name: 'Hampton Inn & Suites Page (same as previous night)',
-        type: 'hotel',
-        priceRange: '$120-160',
-        pricePerNight: 140,
+        name: 'Page 2BR Airbnb Duplex (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$90-150/night',
+        pricePerNight: 120,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third night — same hotel.'
+        notes: 'Third night — same Airbnb.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same hotel as previous nights', 'Good WiFi at Hampton Inn', 'Pack tonight for early departure tomorrow'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 0, gas: 0, total: 210 }
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same Airbnb as previous nights', '867 Mbps fiber WiFi', 'Pack tonight for early departure tomorrow'],
+      budgetBreakdown: { accommodation: 120, food: 70, activities: 0, gas: 0, total: 190 }
     },
 
     // ============================================================
@@ -996,70 +1000,56 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc7a',
-        name: 'Aarchway Inn',
+        name: 'My Place Hotel Moab — 100+ Mbps WiFi',
         type: 'hotel',
-        priceRange: '$130-180',
-        pricePerNight: 160,
-        reviewRating: 4.7,
-        reviewSource: 'Booking.com (9.3/10)',
-        address: '1551 N Highway 191, Moab, UT',
-        website: 'https://www.aarchwayinn.com/',
-        bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
-        amenities: ['Pool', 'Hot tub', 'Free hot breakfast', 'Free parking', 'Free WiFi', 'EV charger'],
+        priceRange: '$200-280/night',
+        pricePerNight: 240,
+        address: 'Moab, UT',
+        website: 'https://www.myplacehotels.com/locations/my-place-hotel-moab-ut',
+        amenities: ['100+ Mbps WiFi confirmed', '2 Queen Beds', 'Rolling desk + office chair', 'Full kitchen', 'Business center', 'Next to Element Moab'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Best breakfast in Moab, fast WiFi confirmed, pool/hot tub. 4 nights Sat-Tue May 16-19.'
+        notes: 'BEST WORK HOTEL: 100+ Mbps confirmed (rare in Moab). 4-5mi to Arches entrance. Extended-stay brand designed for remote workers. Rolling desk + chair in room.'
       },
       accommodationOptions: [
         {
           id: 'acc7a',
-          name: 'Aarchway Inn',
+          name: 'My Place Hotel Moab — 100+ Mbps WiFi',
           type: 'hotel',
-          priceRange: '$130-180',
-          pricePerNight: 160,
-          reviewRating: 4.7,
-          reviewSource: 'Booking.com (9.3/10)',
-          address: '1551 N Highway 191, Moab, UT',
-          website: 'https://www.aarchwayinn.com/',
-          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Aarchway-Inn.97848.ksp',
-          amenities: ['Pool', 'Hot tub', 'Free hot breakfast', 'Free parking', 'EV charger'],
+          priceRange: '$200-280/night',
+          pricePerNight: 240,
+          address: 'Moab, UT',
+          website: 'https://www.myplacehotels.com/locations/my-place-hotel-moab-ut',
+          amenities: ['100+ Mbps WiFi confirmed', '2 Queen Beds', 'Rolling desk + office chair', 'Full kitchen', 'Business center', 'Next to Element Moab'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'Best breakfast in Moab, fast WiFi confirmed, pool/hot tub. Closest to Arches (2mi).'
+          notes: 'BEST WORK HOTEL: 100+ Mbps confirmed (rare in Moab). 4-5mi to Arches entrance. Extended-stay brand designed for remote workers. Rolling desk + chair in room.'
         },
         {
           id: 'acc7b',
-          name: 'Big Horn Lodge',
-          type: 'motel',
-          priceRange: '$130-160',
-          pricePerNight: 140,
-          reviewRating: 4.0,
-          reviewSource: 'Booking.com (9.0/10)',
-          address: '550 S Main St, Moab, UT',
-          website: 'https://moabbighorn.com/',
-          amenities: ['Pool', 'Free parking', 'Fridge', 'Restaurant'],
+          name: 'Element Moab (Marriott)',
+          type: 'hotel',
+          priceRange: '$250-350/night',
+          pricePerNight: 300,
+          address: 'Moab, UT',
+          amenities: ['2 queens 418sqft', 'Desk in every room', 'Kitchenette', 'Free breakfast', 'Pool', 'Marriott Bonvoy'],
           seniorFriendly: true,
-          notes: 'Downtown Moab, walkable. 2 queen beds. Budget fallback.'
+          notes: 'Larger rooms than My Place but WiFi unverified. Marriott enhanced WiFi tier worth buying. 6min to Arches.'
         },
         {
           id: 'acc7c',
-          name: 'Expedition Lodge',
-          type: 'hotel',
-          priceRange: '$60-98',
-          pricePerNight: 80,
-          reviewRating: 4.3,
-          reviewSource: 'KAYAK (8.6/10), 3,334 reviews',
-          reviewCount: 3334,
+          name: '2BR Airbnb with Fiber/Starlink',
+          type: 'vacation_rental',
+          priceRange: '$250-400/night',
+          pricePerNight: 320,
           address: 'Moab, UT',
-          website: 'https://www.expeditionlodge.com/',
-          bookingUrl: 'https://www.kayak.com/Moab-Hotels-Expedition-Lodge.2847337.ksp',
-          amenities: ['Heated pool', 'Water slides', 'Free breakfast', 'Free parking'],
+          amenities: ['Fiber or Starlink WiFi', 'True 2 bedrooms', 'Full kitchen', 'Privacy'],
           seniorFriendly: true,
-          notes: 'Best value in Moab. Heated pool with slides. Way under budget.'
+          notes: 'Search VRBO #431015 Arches Retreat (fiber confirmed) or Airbnb filter for "fiber/Starlink". Only way to get true 2BR + fast WiFi.'
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
-      budgetBreakdown: { accommodation: 160, food: 70, activities: 10, gas: 55, total: 295 }
+      budgetBreakdown: { accommodation: 240, food: 70, activities: 10, gas: 55, total: 375 }
     },
 
     // ============================================================
@@ -1120,16 +1110,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc8a',
-        name: 'Aarchway Inn (same as previous night)',
+        name: 'My Place Hotel Moab (same as previous night)',
         type: 'hotel',
-        priceRange: '$130-180',
-        pricePerNight: 160,
+        priceRange: '$200-280/night',
+        pricePerNight: 240,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night in Moab.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for Arches tomorrow'],
-      budgetBreakdown: { accommodation: 160, food: 70, activities: 20, gas: 10, total: 260 }
+      budgetBreakdown: { accommodation: 240, food: 70, activities: 20, gas: 10, total: 340 }
     },
 
     // ============================================================
@@ -1206,16 +1196,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc9a',
-        name: 'Aarchway Inn (same as previous night)',
+        name: 'My Place Hotel Moab (same as previous night)',
         type: 'hotel',
-        priceRange: '$130-180',
-        pricePerNight: 160,
+        priceRange: '$200-280/night',
+        pricePerNight: 240,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night in Moab.'
       },
       notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Monday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
-      budgetBreakdown: { accommodation: 160, food: 70, activities: 15, gas: 10, total: 255 }
+      budgetBreakdown: { accommodation: 240, food: 70, activities: 15, gas: 10, total: 335 }
     },
 
     // ============================================================
@@ -1278,16 +1268,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc10a',
-        name: 'Aarchway Inn (same as previous night)',
+        name: 'My Place Hotel Moab (same as previous night)',
         type: 'hotel',
-        priceRange: '$130-180',
-        pricePerNight: 160,
+        priceRange: '$200-280/night',
+        pricePerNight: 240,
         seniorFriendly: true,
         recommended: true,
         notes: 'Fourth and final night in Moab.'
       },
       notes: ['Canyonlands AM + HALF WORK PM', 'Canyonlands overlooks are easy — mostly drive-up', 'Last night in Moab — pack for SLC drive tomorrow', 'FILL GAS — Green River to Salina on I-70 is 110mi with NO gas stations'],
-      budgetBreakdown: { accommodation: 160, food: 70, activities: 15, gas: 15, total: 260 }
+      budgetBreakdown: { accommodation: 240, food: 70, activities: 15, gas: 15, total: 340 }
     },
 
     // ============================================================
@@ -1686,66 +1676,57 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc15a',
-        name: 'Teton Valley Cabins',
+        name: 'Bronze Buffalo Ranch — 2BR Luxury Suite',
         type: 'cabin',
-        priceRange: '$130-160',
-        pricePerNight: 145,
-        reviewRating: 4.3,
-        reviewSource: 'TripAdvisor',
-        address: '1 mile east of Driggs, ID',
-        website: 'https://www.tetonvalleycabins.com/',
-        amenities: ['Hot tub', 'Fire pit', 'Fridge', 'Microwave', 'Free parking', 'Teton views'],
+        priceRange: '$400-600/night',
+        pricePerNight: 500,
+        address: 'Victor, ID',
+        website: 'https://www.bronzebuffaloranch.com/',
+        amenities: ['Fiber WiFi', '2 separate bedrooms', '1,185sqft suite', 'Gourmet kitchen', 'Fireplace', 'Teton view balcony', 'Spa/pool', 'Golf'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'Charming log cabins. 2 queen beds. 45min to park via Teton Pass. Much cheaper than staying in Jackson.'
+        notes: 'LUXURY: Victor ID, 11mi south of Driggs. True 2BR for separate sleeping. Fiber WiFi reliable. Spa/pool great for Mom on work day. 27mi to Grand Teton NP.'
       },
       accommodationOptions: [
         {
           id: 'acc15a',
-          name: 'Teton Valley Cabins',
+          name: 'Bronze Buffalo Ranch — 2BR Luxury Suite',
           type: 'cabin',
-          priceRange: '$130-160',
-          pricePerNight: 145,
-          reviewRating: 4.3,
-          reviewSource: 'TripAdvisor',
-          address: '1 mile east of Driggs, ID',
-          website: 'https://www.tetonvalleycabins.com/',
-          amenities: ['Hot tub', 'Fire pit', 'Fridge', 'Microwave', 'Teton views'],
+          priceRange: '$400-600/night',
+          pricePerNight: 500,
+          address: 'Victor, ID',
+          website: 'https://www.bronzebuffaloranch.com/',
+          amenities: ['Fiber WiFi', '2 separate bedrooms', '1,185sqft suite', 'Gourmet kitchen', 'Fireplace', 'Teton view balcony', 'Spa/pool', 'Golf'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2 queen beds. Log cabins with Teton views. 45min to park via Teton Pass.'
+          notes: 'LUXURY: Victor ID, 11mi south of Driggs. True 2BR for separate sleeping. Fiber WiFi reliable. Spa/pool great for Mom on work day. 27mi to Grand Teton NP.'
         },
         {
           id: 'acc15b',
-          name: 'Airbnb 2BR in Driggs/Victor, ID',
-          type: 'airbnb',
-          priceRange: '$80-140',
-          pricePerNight: 110,
-          reviewRating: 4.9,
-          reviewSource: 'Airbnb',
-          address: 'Driggs or Victor, ID',
-          bookingUrl: 'https://www.airbnb.com/driggs-id/stays',
-          amenities: ['2 bedrooms', 'Full kitchen', 'Free parking', 'Teton views', 'Washer/dryer'],
+          name: 'Teton Valley Cabins',
+          type: 'cabin',
+          priceRange: '$150-200/night',
+          pricePerNight: 175,
+          address: '1 mile east of Driggs, ID',
+          website: 'https://www.tetonvalleycabins.com/',
+          amenities: ['Fiber WiFi confirmed', '2 queens', 'Cottonwood forest', 'Walking to Driggs'],
           seniorFriendly: true,
-          notes: 'Best value. Full kitchen saves on food. 45min to park. Search: 2BR, May 24-27, $150 max.'
+          notes: 'Fiber confirmed but 2 queens SAME ROOM (no bedroom separation). Best value. 1mi east of downtown Driggs.'
         },
         {
           id: 'acc15c',
-          name: 'Grand Targhee Resort (Alta, WY)',
-          type: 'resort',
-          priceRange: '$140-200',
-          pricePerNight: 170,
-          reviewRating: 4.5,
-          reviewSource: 'TripAdvisor',
-          address: 'Alta, WY (12mi from Driggs)',
-          website: 'https://www.grandtarghee.com/',
-          amenities: ['Pool', 'Hot tub', 'Restaurant', 'Spa', 'Mountain views'],
+          name: 'Saddlehorn Cabin (VRBO #1066147)',
+          type: 'vacation_rental',
+          priceRange: '$300-400/night',
+          pricePerNight: 350,
+          address: 'Driggs, ID',
+          amenities: ['True 2 bedrooms', '3 beds sleeps 5', '1,353sqft', 'Teton views', 'Full kitchen'],
           seniorFriendly: true,
-          notes: 'Ski resort with summer amenities. Up the canyon — closer to the Tetons. Splurge option.'
+          notes: 'True 2BR with Teton views. VERIFY WiFi speed with host before booking.'
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
-      budgetBreakdown: { accommodation: 145, food: 70, activities: 0, gas: 55, total: 270 }
+      budgetBreakdown: { accommodation: 500, food: 70, activities: 0, gas: 55, total: 625 }
     },
 
     // ============================================================
@@ -1805,16 +1786,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc16a',
-        name: 'Teton Valley Cabins (same as previous night)',
+        name: 'Bronze Buffalo Ranch (same as previous night)',
         type: 'cabin',
-        priceRange: '$130-160',
-        pricePerNight: 145,
+        priceRange: '$400-600/night',
+        pricePerNight: 500,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night in Driggs.'
+        notes: 'Second night at Bronze Buffalo Ranch.'
       },
       notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
-      budgetBreakdown: { accommodation: 145, food: 70, activities: 0, gas: 5, total: 220 }
+      budgetBreakdown: { accommodation: 500, food: 70, activities: 0, gas: 5, total: 575 }
     },
 
     // ============================================================
@@ -1894,16 +1875,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc17a',
-        name: 'Teton Valley Cabins (same as previous night)',
+        name: 'Bronze Buffalo Ranch (same as previous night)',
         type: 'cabin',
-        priceRange: '$130-160',
-        pricePerNight: 145,
+        priceRange: '$400-600/night',
+        pricePerNight: 500,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third and final night in Driggs.'
+        notes: 'Third and final night at Bronze Buffalo Ranch.'
       },
       notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road likely CLOSED in late May (opens ~June 1) — skip it, do Schwabacher Landing instead', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
-      budgetBreakdown: { accommodation: 145, food: 80, activities: 0, gas: 30, total: 255 }
+      budgetBreakdown: { accommodation: 500, food: 80, activities: 0, gas: 30, total: 610 }
     },
 
     // ============================================================
@@ -1987,55 +1968,57 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc18a',
-        name: 'Kelly Inn West Yellowstone',
+        name: 'Gray Wolf Inn & Suites — Just Renovated',
         type: 'hotel',
-        priceRange: '$130-150',
-        pricePerNight: 140,
-        reviewRating: 4.5,
-        reviewSource: 'TripAdvisor (4.5/5, #2 of 41), Booking.com (9.4/10)',
-        reviewCount: 2500,
-        address: '104 S Canyon St, West Yellowstone, MT',
-        website: 'https://www.yellowstonekellyinn.com/',
-        amenities: ['Free breakfast', 'Indoor pool (largest in town)', 'Hot tub', 'Free parking'],
+        priceRange: '$200-250/night',
+        pricePerNight: 225,
+        address: 'West Yellowstone, MT',
+        website: 'https://www.yellowstonevacations.com/stay/lodging/gray-wolf-inn-and-suites/',
+        amenities: ['Just renovated May 2026', '2 queens Deluxe Double', 'Indoor heated pool', 'Hot tub', 'Continental breakfast', 'Coffee bar', '2 blocks to West Entrance'],
         seniorFriendly: true,
         recommended: true,
-        notes: '2 queen beds. Best-rated hotel in West Yellowstone. Free breakfast. Walking distance to restaurants.'
+        notes: '$1.4M renovation just completed May 21, 2026. New bathrooms, furniture, carpeting. Closest walking distance to park entrance. AAA 3-Diamond.'
       },
       accommodationOptions: [
         {
           id: 'acc18a',
-          name: 'Kelly Inn West Yellowstone',
+          name: 'Gray Wolf Inn & Suites — Just Renovated',
           type: 'hotel',
-          priceRange: '$130-150',
-          pricePerNight: 140,
-          reviewRating: 4.5,
-          reviewSource: 'TripAdvisor (#2 of 41)',
-          reviewCount: 2500,
-          address: '104 S Canyon St, West Yellowstone',
-          website: 'https://www.yellowstonekellyinn.com/',
-          amenities: ['Free breakfast', 'Indoor pool', 'Hot tub', 'Free parking'],
+          priceRange: '$200-250/night',
+          pricePerNight: 225,
+          address: 'West Yellowstone, MT',
+          website: 'https://www.yellowstonevacations.com/stay/lodging/gray-wolf-inn-and-suites/',
+          amenities: ['Just renovated May 2026', '2 queens Deluxe Double', 'Indoor heated pool', 'Hot tub', 'Continental breakfast', 'Coffee bar', '2 blocks to West Entrance'],
           seniorFriendly: true,
           recommended: true,
-          notes: '2 queen beds. Highest-rated in town. Rustic wood furniture. Great breakfast.'
+          notes: '$1.4M renovation just completed May 21, 2026. New bathrooms, furniture, carpeting. Closest walking distance to park entrance. AAA 3-Diamond.'
         },
         {
           id: 'acc18b',
-          name: 'Holiday Inn West Yellowstone',
+          name: 'Kelly Inn West Yellowstone',
           type: 'hotel',
-          priceRange: '$130-170',
-          pricePerNight: 150,
-          reviewRating: 3.8,
-          reviewSource: 'TripAdvisor (3.5-4/5)',
-          reviewCount: 1100,
-          address: '315 Yellowstone Ave, West Yellowstone',
-          website: 'https://www.ihg.com/holidayinn/hotels/us/en/west-yellowstone/wysmt/hoteldetail',
-          amenities: ['Free breakfast (rate-dependent)', 'Indoor pool', 'Hot tub', 'Free parking'],
+          priceRange: '$200-280/night',
+          pricePerNight: 240,
+          address: '104 S Canyon St, West Yellowstone, MT',
+          website: 'https://www.yellowstonekellyinn.com/',
+          amenities: ['2 Queens Grizzly Bldg', 'Biggest indoor pool in town', 'Free continental breakfast', '11min walk to entrance'],
           seniorFriendly: true,
-          notes: '2 queen beds + sofa bed. Good if you have IHG points.'
+          notes: 'Reliable proven choice. Non-smoking. Strong reviews.'
+        },
+        {
+          id: 'acc18c',
+          name: 'Stage Coach Inn',
+          type: 'hotel',
+          priceRange: '$180-220/night',
+          pricePerNight: 200,
+          address: 'West Yellowstone, MT',
+          amenities: ['2 queen beds available', 'Center of town', 'Free WiFi'],
+          seniorFriendly: true,
+          notes: 'Budget option, older property but walkable to entrance and shops.'
         }
       ],
       notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 35, gas: 30, total: 275 }
+      budgetBreakdown: { accommodation: 225, food: 70, activities: 35, gas: 30, total: 360 }
     },
 
     // ============================================================
@@ -2107,16 +2090,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc19a',
-        name: 'Kelly Inn West Yellowstone (same as previous night)',
+        name: 'Gray Wolf Inn & Suites (same as previous night)',
         type: 'hotel',
-        priceRange: '$130-150',
-        pricePerNight: 140,
+        priceRange: '$200-250/night',
+        pricePerNight: 225,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night — same hotel.'
       },
       notes: ['FULL YELLOWSTONE DAY — big loop, long but rewarding', 'Leave early (5am) for Lamar Valley wildlife', 'Lamar → Tower Fall → Mammoth → Canyon → West Yellowstone', 'All boardwalk/drive-up activities — no real hiking', 'WILDLIFE: Lamar Valley at dawn — wolves, grizzlies, bison calves', 'Artist Point is a MUST-SEE', 'Dress in warm layers — Yellowstone is cold in late May'],
-      budgetBreakdown: { accommodation: 140, food: 70, activities: 0, gas: 40, total: 250 }
+      budgetBreakdown: { accommodation: 225, food: 70, activities: 0, gas: 40, total: 335 }
     },
 
     // ============================================================
