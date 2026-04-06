@@ -82,7 +82,7 @@ const STAYS = [
       checkOut: 'Sat May 16',
       guests: '2 adults',
       mustHave: [
-        '2 bedrooms OR 2 queen beds (Colin + Mom sleep separately)',
+        '2 bedrooms preferred, 2 queen beds OK as backup (1 work day here)',
         'Fast WiFi 300Mbps+ — May 15 is a FULL WORK DAY with video calls',
         'Central Page location (10-15min to Antelope Canyon + Horseshoe Bend)',
       ],
@@ -119,7 +119,7 @@ const STAYS = [
       checkOut: 'Wed May 20',
       guests: '2 adults',
       mustHave: [
-        '2 bedrooms OR 2 queen beds',
+        '2 BEDROOMS required (2+ work days — Colin needs a door to close for calls). 2 queens only as last resort.',
         'Fast WiFi 300Mbps+ — TWO WORK DAYS (May 17 full + May 16 & 19 half) with video calls',
         'Central Moab (5mi to Arches entrance, 32mi to Canyonlands)',
       ],
@@ -173,7 +173,7 @@ const STAYS = [
       checkOut: 'Wed May 27',
       guests: '2 adults',
       mustHave: [
-        '2 bedrooms OR 2 queen beds',
+        '2 bedrooms preferred, 2 queen beds OK as backup (1.5 work days)',
         'Fast WiFi 300Mbps+ — Memorial Day Mon is a FULL WORK DAY',
         'Driggs / Victor / Tetonia area (west side of Tetons)',
       ],
