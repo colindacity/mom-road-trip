@@ -248,6 +248,13 @@ export default function Home() {
                 >
                   <ListTodo className="w-4 h-4" />
                 </button>
+                <a
+                  href="/bookings"
+                  className="p-2 rounded-lg text-gray-400 hover:text-blue-600 transition-colors"
+                  title="Booking HQ"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
 
               {/* Mobile more menu */}
@@ -292,6 +299,12 @@ export default function Home() {
                     >
                       <ListTodo className="w-4 h-4" /> Action Tracker
                     </button>
+                    <a
+                      href="/bookings"
+                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-blue-600 hover:bg-blue-50"
+                    >
+                      <ExternalLink className="w-4 h-4" /> Booking HQ
+                    </a>
                   </div>
                 )}
               </div>
