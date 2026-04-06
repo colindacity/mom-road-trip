@@ -1,431 +1,490 @@
 'use client';
 
-import { CheckCircle2, Circle, AlertTriangle, ExternalLink, Plane, Hotel, UtensilsCrossed, Car, CreditCard, Wifi, BedDouble, MapPin, Clock, DollarSign } from 'lucide-react';
+import { tripData } from '@/data/tripData';
+import { format, parseISO } from 'date-fns';
+import { ExternalLink, Check, Circle, AlertTriangle, Search } from 'lucide-react';
 
-const BOOKED = [
-  {
-    label: 'Las Vegas',
-    dates: 'Sun May 10 (1 night)',
-    name: 'The LINQ Hotel & Casino',
-    conf: 'Hotels.com #73410152077445',
-    cost: '$56.63 resort fee (room via OneKeyCash)',
-    paid: '$0 room paid',
-    balance: '$56.63 resort fee at check-in',
-    details: 'Deluxe Room, 2 Queen Beds, Non Smoking. 3535 Las Vegas Blvd South. Check-in 4pm, out 11am.',
-    url: 'https://www.hotels.com/',
-  },
-  {
-    label: 'Grand Canyon (IN-PARK!)',
-    dates: 'Mon-Wed May 11-13 (2 nights)',
-    name: 'Maswik Lodge — 20% Discount',
-    conf: 'Xanterra #20514347',
-    cost: '$547.30 total',
-    paid: '$273.65 deposit (Visa)',
-    balance: '$273.65 at check-in',
-    details: 'Standard 2 Queen North. $255.99/night (20% off). Inside Grand Canyon National Park — no re-entry needed. Cancel penalty after May 9.',
-    url: 'https://www.grandcanyonlodges.com/',
-    phone: '888-297-2757',
-  },
-  {
-    label: 'Salt Lake City',
-    dates: 'Wed-Sun May 20-24 (4 nights)',
-    name: 'Convention Ctr 2BR Airbnb — Pool/HotTub/Gym/Theatre',
-    conf: 'Airbnb HMN2P4MBR9',
-    cost: '$1,256.86 total ($272/night)',
-    paid: '$544.00 (Apr 1, Visa 6386)',
-    balance: '$712.86 (charged May 5)',
-    details: '241 W 200 S, Salt Lake City, UT 84101. Hosted by GrandRoad. 2BR, rooftop pool/hot tub, keypad check-in 4pm, checkout 10am. Free cancel before Apr 20.',
-    url: 'https://www.airbnb.com/rooms/1377086372116606050',
-    phone: '801-201-5734',
-  },
-  {
-    label: 'Glacier National Park',
-    dates: 'Fri-Sun May 29-31 (2 nights)',
-    name: 'Apgar Village Lodge & Cabins',
-    conf: '#3870048',
-    cost: '$392.26 total',
-    paid: '$189.22',
-    balance: '$203.04 at check-in + Preservation Fee',
-    details: 'Cabin 3 Queen, 2 Room. Glacier Park Collection. 3 guests (Colin + Mom + Robin). $1/night Glacier NP donation at checkout.',
-    url: 'https://www.glacierparkcollection.com/lodging/apgar-village/',
-    phone: '1-844-868-7474',
-  },
-];
-
-const BOOKED_ACTIVITIES = [
-  {
-    label: 'Upper Antelope Canyon Tour',
-    dates: 'Thu May 14, 10:00am-11:30am',
-    conf: 'Order #FMBYMK / Booking #341017065',
-    cost: '$220 (2 adults)',
-    details: 'Antelope Slot Canyon Tours. Luxury 4x4 vans. Colin signed waiver — MOM STILL NEEDS TO SIGN (check email).',
-    url: 'https://antelopeslotcanyon.com/',
-  },
-  {
-    label: 'Bacchanal Buffet at Caesars Palace',
-    dates: 'Sun May 10 (afternoon)',
-    conf: 'OpenTable reservation',
-    cost: '~$130-160 (2 adults)',
-    details: 'Sunday brunch $65/pp (crab upgrade $80). 250+ dishes, lobster claws, lobster bisque. 90-min dining. Reservation = line skip.',
-    url: 'https://www.opentable.com/r/bacchanal-buffet-caesars-palace-las-vegas',
-  },
-];
-
-interface Option {
-  name: string;
-  price: string;
-  total: string;
-  beds: string;
-  wifi: string;
-  wifiWarning?: boolean;
-  location: string;
-  perks: string;
-  url: string;
-  recommended?: boolean;
-  avoid?: boolean;
-}
-
-interface PendingStay {
-  label: string;
-  dates: string;
-  nights: number;
-  workDays: string;
-  wifiNeeded: boolean;
-  criteria: string;
-  nearTo: string;
-  options: Option[];
-}
-
-const PENDING_STAYS: PendingStay[] = [
-  {
-    label: 'Page, AZ',
-    dates: 'Wed-Fri May 13-15',
-    nights: 3,
-    workDays: 'May 15 (1 full day)',
-    wifiNeeded: true,
-    criteria: '2BR or 2 queens, 300Mbps+ WiFi for work day, close to Antelope Canyon & Horseshoe Bend',
-    nearTo: 'Antelope Canyon (~10min), Horseshoe Bend (~5min), Lake Powell (~15min)',
-    options: [
-      { name: '2BR Airbnb Duplex (downtown Page)', price: '$90-150/n', total: '$270-450', beds: '2 bedrooms', wifi: '867 Mbps fiber CONFIRMED', location: 'Downtown, walk to restaurants', perks: 'Kitchen, quiet neighborhood', url: 'https://www.airbnb.com/page-az/stays', recommended: true },
-      { name: 'Hampton Inn & Suites Page', price: '$140-250/n', total: '$420-750', beds: '2 Queen Suite', wifi: 'Rated 8.9/10, 24hr biz center', location: '5min Horseshoe Bend, 15min Lake Powell', perks: 'Free hot breakfast, indoor pool, #1 on TripAdvisor', url: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/' },
-      { name: 'Country Inn & Suites Radisson', price: '$114-160/n', total: '$340-480', beds: '2 Queens', wifi: 'Unverified (newer property)', location: 'Central Page off Hwy 89', perks: 'Free breakfast, biz center, pool, modern', url: '' },
-      { name: 'Home2 Suites by Hilton Page', price: '$100-140/n', total: '$300-420', beds: '2 Queens', wifi: 'Unverified', location: 'Central Page', perks: 'Kitchenette, Hilton Honors, newer (2020)', url: '' },
-    ],
-  },
-  {
-    label: 'Moab, UT',
-    dates: 'Sat-Tue May 16-19',
-    nights: 4,
-    workDays: 'May 17 (full) + May 16 & 19 (half days)',
-    wifiNeeded: true,
-    criteria: '2BR or 2 queens, 300Mbps+ WiFi CRITICAL (2 work days), close to Arches & Canyonlands. May = PEAK season ($309/n avg)',
-    nearTo: 'Arches NP entrance (~5mi), Canyonlands Island in the Sky (~32mi), Dead Horse Point (~35mi)',
-    options: [
-      { name: 'My Place Hotel Moab', price: '$200-280/n', total: '$800-1,120', beds: '2 Queens, full kitchen', wifi: '100+ Mbps CONFIRMED', location: 'North Moab, 4-5mi to Arches', perks: 'Rolling desk + office chair, biz center, extended-stay brand', url: 'https://www.myplacehotels.com/locations/my-place-hotel-moab-ut', recommended: true },
-      { name: 'Element Moab (Marriott)', price: '$250-350/n', total: '$1,000-1,400', beds: '2 Queens (418sqft), kitchenette', wifi: 'Unverified — buy enhanced tier', location: '6min to Arches', perks: 'Free breakfast, pool, Marriott Bonvoy pts, desk in room', url: 'https://www.marriott.com/en-us/hotels/cnyel-element-moab/overview/' },
-      { name: '2BR Airbnb/VRBO with Fiber', price: '$250-400/n', total: '$1,150-1,850', beds: 'True 2 bedrooms', wifi: 'Fiber or Starlink (varies)', location: 'Downtown Moab ~5mi Arches', perks: 'Privacy, full kitchen. VRBO #431015 "Arches Retreat" has fiber', url: 'https://www.vrbo.com/431015' },
-      { name: '⚠️ Hyatt Place Moab', price: '$200-320/n', total: 'AVOID', beds: '2Q or Casita 2BR', wifi: '3-5 Mbps DOCUMENTED — TERRIBLE', wifiWarning: true, location: '5mi to Arches', perks: 'Nice property but WiFi kills it for work', url: '', avoid: true },
-    ],
-  },
-  {
-    label: 'Driggs, ID (Teton Valley)',
-    dates: 'Sun-Tue May 24-26',
-    nights: 3,
-    workDays: 'May 25 Memorial Day (full) + May 24 (half)',
-    wifiNeeded: true,
-    criteria: '2BR or 2 queens, 300Mbps+ WiFi, Teton views ideal. Memorial Day = work day. Silver Star fiber (1Gbps) available in area.',
-    nearTo: 'Grand Teton NP (~60min via Teton Pass), Grand Targhee ski resort (~12mi)',
-    options: [
-      { name: 'Bronze Buffalo Ranch 2BR Suite (Victor)', price: '$400-600/n', total: '$1,200-1,800', beds: 'True 2BR, 1,185sqft, gourmet kitchen', wifi: 'Fiber resort-grade', location: 'Victor, 11mi south of Driggs', perks: 'Spa/pool for Mom, fireplace, Teton view balcony, luxury', url: 'https://www.bronzebuffaloranch.com/', recommended: true },
-      { name: 'Teton Valley Cabins (Driggs)', price: '$150-200/n', total: '$450-600', beds: '2 Queens SAME ROOM (no separation)', wifi: 'Fiber optic CONFIRMED', location: '1mi east of downtown Driggs', perks: 'Best value, cottonwood forest, walkable to town', url: 'https://www.tetonvalleycabins.com/' },
-      { name: 'Saddlehorn Cabin (VRBO #1066147)', price: '$300-400/n', total: '$900-1,200', beds: 'True 2BR, 1,353sqft, 3 beds', wifi: 'VERIFY with host (Silver Star fiber in area)', location: 'Driggs area, Teton views', perks: 'Full kitchen, washer/dryer, fireplace, privacy', url: 'https://www.vrbo.com/1066147' },
-    ],
-  },
-  {
-    label: 'West Yellowstone, MT',
-    dates: 'Wed-Thu May 27-28',
-    nights: 2,
-    workDays: 'None — all park days',
-    wifiNeeded: false,
-    criteria: '2 queens, walking distance to West Yellowstone park entrance. Memorial Day week = peak demand.',
-    nearTo: 'Yellowstone NP West Entrance (walkable), Old Faithful (~30mi inside park)',
-    options: [
-      { name: 'Gray Wolf Inn & Suites', price: '$200-250/n', total: '$400-500', beds: 'Deluxe Double Queen (2 queens)', wifi: 'Free WiFi', location: '2 blocks to West Entrance (closest)', perks: 'JUST RENOVATED ($1.4M, May 21, 2026), pool, hot tub, breakfast, AAA 3-Diamond', url: 'https://www.yellowstonevacations.com/stay/lodging/gray-wolf-inn-and-suites/', recommended: true },
-      { name: 'Kelly Inn West Yellowstone', price: '$200-280/n', total: '$400-560', beds: '2 Queens (Grizzly Building)', wifi: 'Free WiFi', location: '11min walk to entrance', perks: 'Biggest pool in town, free breakfast, 100% non-smoking, proven choice', url: 'https://www.yellowstonekellyinn.com/' },
-      { name: 'Stage Coach Inn', price: '$180-220/n', total: '$360-440', beds: '2 Queens available', wifi: 'Free WiFi', location: 'Center of town, walkable to entrance', perks: 'Budget option, on main street near shops/restaurants', url: '' },
-    ],
-  },
-];
-
-const PENDING_FLIGHTS = [
-  { who: 'Colin', route: 'SEA → LAS', date: 'Sun May 10', best: '$81 Alaska nonstop', alt: '$67 Frontier (no bags), $89 Delta', url: 'https://www.google.com/travel/flights' },
-  { who: 'Mom', route: 'YYZ → LAS', date: 'Sun May 10', best: '$129 Air Canada nonstop', alt: '$228 Porter (best comfort, no middle seats)', url: 'https://www.google.com/travel/flights' },
-  { who: 'Robin', route: 'SEA → FCA', date: 'Fri May 29', best: '$127 Alaska 1:13pm nonstop', alt: '$152 Alaska 9:35pm (after work)', url: 'https://www.google.com/travel/flights' },
-  { who: 'Colin+Robin', route: 'FCA → SEA', date: 'Sun May 31', best: '$152/ea Alaska 11:33am nonstop', alt: '$303 total for 2', url: 'https://www.google.com/travel/flights' },
-  { who: 'Mom', route: 'FCA → YYZ', date: 'Sun May 31', best: '$286 United via DEN', alt: '$289 Alaska via SEA, $289 United via ORD', url: 'https://www.google.com/travel/flights' },
-];
-
-const SIGNUPS = [
-  { name: 'AARP ($12/yr)', why: '30-35% off car, 10% hotels, Hilton Silver', before: 'Hotels & car', url: 'https://www.aarp.org/membership/' },
-  { name: 'Hilton Honors (free)', why: 'Member rates Hampton Inn, AARP = Silver', before: 'Page hotel', url: 'https://www.hilton.com/en/hilton-honors/' },
-  { name: 'National Emerald Club (free)', why: 'May waive drop fee, skip counter', before: 'Car rental', url: 'https://www.nationalcar.com/en/loyalty/program.html' },
-  { name: 'Tock account (free)', why: 'El Tovar lunch 30-day window Apr 12', before: 'Apr 12', url: 'https://www.exploretock.com/' },
-  { name: 'Google Flights tracking', why: 'Track all 6 routes for price drops', before: 'ASAP', url: 'https://www.google.com/travel/flights' },
-];
-
-function ExtLink({ href, children }: { href: string; children: React.ReactNode }) {
-  if (!href) return <>{children}</>;
+function ExtLink({ href, children, className = '' }: { href: string; children: React.ReactNode; className?: string }) {
+  if (!href) return <span className={className}>{children}</span>;
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-0.5">
-      {children}<ExternalLink className="w-3 h-3" />
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`text-blue-600 hover:underline inline-flex items-center gap-0.5 ${className}`}>
+      {children}<ExternalLink className="w-2.5 h-2.5 shrink-0" />
     </a>
   );
 }
 
+function StatusBadge({ status }: { status: 'booked' | 'pending' | 'action' | 'info' }) {
+  if (status === 'booked') return <span className="inline-flex items-center gap-1 text-[10px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded-full whitespace-nowrap"><Check className="w-3 h-3" />BOOKED</span>;
+  if (status === 'pending') return <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full whitespace-nowrap"><Circle className="w-3 h-3" />NEED TO BOOK</span>;
+  if (status === 'action') return <span className="inline-flex items-center gap-1 text-[10px] font-bold text-red-700 bg-red-100 px-1.5 py-0.5 rounded-full whitespace-nowrap"><AlertTriangle className="w-3 h-3" />ACTION NEEDED</span>;
+  return <span className="text-[10px] text-gray-400">—</span>;
+}
+
+// All stays with full context
+const STAYS = [
+  {
+    id: 'vegas',
+    location: 'Las Vegas, NV',
+    dates: 'Sun May 10',
+    nights: 1,
+    days: [1],
+    dayType: 'Arrive, buffet, Strip walk',
+    status: 'booked' as const,
+    booking: {
+      name: 'The LINQ Hotel & Casino',
+      conf: 'Hotels.com #73410152077445',
+      cost: '$56.63 (resort fee only — room paid via OneKeyCash)',
+      paid: 'Room paid. $56.63 resort fee at check-in.',
+      details: 'Deluxe Room, 2 Queen Beds, Non Smoking. 3535 Las Vegas Blvd South. Check-in 4pm, out 11am Mon.',
+    },
+    activities: [
+      { name: 'Arrive LAS, pick up rental car', status: 'info' as const },
+      { name: 'Bacchanal Buffet (Caesars Palace)', status: 'booked' as const, detail: 'OpenTable reservation. $65/pp brunch, $80 crab upgrade. Lobster claws, bisque, 250+ dishes. 90min.', url: 'https://www.opentable.com/r/bacchanal-buffet-caesars-palace-las-vegas' },
+      { name: 'Bellagio Fountains + Strip Walk', status: 'info' as const },
+      { name: 'Fremont Street Experience', status: 'info' as const },
+    ],
+    searchCriteria: null,
+  },
+  {
+    id: 'gc',
+    location: 'Grand Canyon South Rim (IN-PARK)',
+    dates: 'Mon-Wed May 11-13',
+    nights: 2,
+    days: [2, 3],
+    dayType: 'Day 2: Drive LV→GC + Mather Point + Hermit Rd sunset. Day 3: Rim Trail, El Tovar lunch, Yavapai Museum.',
+    status: 'booked' as const,
+    booking: {
+      name: 'Maswik Lodge (Inside Park) — 20% off!',
+      conf: 'Xanterra #20514347',
+      cost: '$547.30 ($255.99/n × 2 + tax)',
+      paid: '$273.65 deposit (Visa). Balance $273.65 at check-in. Cancel penalty after May 9.',
+      details: 'Standard 2 Queen North. Inside the park — no re-entry hassle, sunrise/sunset access.',
+    },
+    activities: [
+      { name: 'El Tovar lunch reservation', status: 'pending' as const, detail: 'Tock 30-day window opens Apr 12 at 6am MST. CREATE TOCK ACCOUNT NOW. Set alarm 5:55am.', url: 'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim' },
+    ],
+    searchCriteria: null,
+  },
+  {
+    id: 'page',
+    location: 'Page, AZ',
+    dates: 'Wed-Fri May 13-15',
+    nights: 3,
+    days: [4, 5, 6],
+    dayType: 'Day 4: Drive GC→Page + Horseshoe Bend sunset. Day 5: Upper Antelope Canyon 10am + Lake Powell. Day 6: WORK DAY (Colin works, Mom explores).',
+    status: 'pending' as const,
+    booking: null,
+    activities: [
+      { name: 'Upper Antelope Canyon Tour', status: 'booked' as const, detail: 'Order #FMBYMK. 10:00am-11:30am Thu May 14. 2 adults. Antelope Slot Canyon Tours. MOM NEEDS TO SIGN WAIVER.', url: 'https://antelopeslotcanyon.com/' },
+    ],
+    searchCriteria: {
+      checkIn: 'Wed May 13',
+      checkOut: 'Sat May 16',
+      guests: '2 adults',
+      mustHave: [
+        '2 bedrooms OR 2 queen beds (Colin + Mom sleep separately)',
+        'Fast WiFi 300Mbps+ — May 15 is a FULL WORK DAY with video calls',
+        'Central Page location (10-15min to Antelope Canyon + Horseshoe Bend)',
+      ],
+      niceToHave: ['Kitchen/kitchenette', 'Workspace/desk', 'Free breakfast'],
+      searchLinks: [
+        { label: 'Airbnb Page AZ 2BR', url: 'https://www.airbnb.com/s/Page--AZ/homes?checkin=2026-05-13&checkout=2026-05-16&adults=2&min_bedrooms=2' },
+        { label: 'VRBO Page AZ', url: 'https://www.vrbo.com/search?destination=Page%2C+AZ&startDate=2026-05-13&endDate=2026-05-16&adults=2' },
+        { label: 'Hotels.com Page AZ', url: 'https://www.hotels.com/Hotel-Search?destination=Page%2C+AZ&startDate=2026-05-13&endDate=2026-05-16&rooms=1&adults=2' },
+        { label: 'Booking.com Page', url: 'https://www.booking.com/searchresults.html?ss=Page%2C+Arizona&checkin=2026-05-13&checkout=2026-05-16&group_adults=2&no_rooms=1' },
+      ],
+      wifiWarning: 'Page is rural — most hotels have mediocre WiFi. Search Airbnb for listings mentioning "fiber", "Starlink", or "fast WiFi". One duplex has 867 Mbps confirmed.',
+      suggestions: [
+        { name: 'Airbnb 2BR Duplex (downtown)', price: '$90-150/n ($270-450)', note: '867 Mbps fiber CONFIRMED — only verified-fast WiFi in Page. 2BR. Search Airbnb.' },
+        { name: 'Hampton Inn & Suites Page', price: '$140-250/n ($420-750)', note: '#1 of 22 on TripAdvisor. 2Q suite avail. WiFi rated 8.9/10 + 24hr biz center. Free breakfast.' },
+        { name: 'Home2 Suites by Hilton Page', price: '$100-140/n ($300-420)', note: 'Kitchenette, newer (2020), Hilton Honors eligible.' },
+        { name: 'Country Inn & Suites Radisson', price: '$114-160/n ($340-480)', note: 'Newer property, free breakfast, biz center. Budget pick.' },
+      ],
+      avoidNote: null,
+      budgetRange: '$270-750 for 3 nights',
+    },
+  },
+  {
+    id: 'moab',
+    location: 'Moab, UT',
+    dates: 'Sat-Tue May 16-19',
+    nights: 4,
+    days: [7, 8, 9, 10],
+    dayType: 'Day 7: Half work + drive Page→Moab via Monument Valley. Day 8: WORK DAY. Day 9: Arches NP full day. Day 10: Canyonlands AM + half work PM.',
+    status: 'pending' as const,
+    booking: null,
+    activities: [],
+    searchCriteria: {
+      checkIn: 'Sat May 16',
+      checkOut: 'Wed May 20',
+      guests: '2 adults',
+      mustHave: [
+        '2 bedrooms OR 2 queen beds',
+        'Fast WiFi 300Mbps+ — TWO WORK DAYS (May 17 full + May 16 & 19 half) with video calls',
+        'Central Moab (5mi to Arches entrance, 32mi to Canyonlands)',
+      ],
+      niceToHave: ['Dedicated desk/workspace', 'Kitchen', 'Pool for Mom on work days'],
+      searchLinks: [
+        { label: 'Airbnb Moab 2BR', url: 'https://www.airbnb.com/s/Moab--UT/homes?checkin=2026-05-16&checkout=2026-05-20&adults=2&min_bedrooms=2' },
+        { label: 'VRBO Moab 2BR', url: 'https://www.vrbo.com/search?destination=Moab%2C+UT&startDate=2026-05-16&endDate=2026-05-20&adults=2' },
+        { label: 'Hotels.com Moab', url: 'https://www.hotels.com/Hotel-Search?destination=Moab%2C+UT&startDate=2026-05-16&endDate=2026-05-20&rooms=1&adults=2' },
+        { label: 'Booking.com Moab', url: 'https://www.booking.com/searchresults.html?ss=Moab%2C+Utah&checkin=2026-05-16&checkout=2026-05-20&group_adults=2&no_rooms=1' },
+      ],
+      wifiWarning: 'Moab WiFi is bad at most hotels. Emery Telcom fiber exists in town. Search Airbnb/VRBO for "fiber" or "Starlink". Ask hosts for speed tests.',
+      suggestions: [
+        { name: 'My Place Hotel Moab', price: '$200-280/n ($800-1,120)', note: '100+ Mbps CONFIRMED. 2 queens, rolling desk, full kitchen, biz center. Best work hotel in Moab.' },
+        { name: 'Element Moab (Marriott)', price: '$250-350/n ($1,000-1,400)', note: '2Q 418sqft, kitchenette, desk, free breakfast, pool. WiFi unverified — buy Marriott enhanced tier.' },
+        { name: 'VRBO #431015 "Arches Retreat"', price: '$250-400/n ($1,150-1,850)', note: '3BR townhome downtown, FIBER CONFIRMED. Gold standard for work + separate rooms.' },
+      ],
+      avoidNote: '⚠️ DO NOT book Hyatt Place Moab — documented 3-5 Mbps WiFi per multiple 2024-25 reviews. Unusable for video calls.',
+      budgetRange: '$800-1,850 for 4 nights (May = PEAK season, avg $309/n)',
+    },
+  },
+  {
+    id: 'slc',
+    location: 'Salt Lake City, UT',
+    dates: 'Wed-Sun May 20-24',
+    nights: 4,
+    days: [11, 12, 13, 14],
+    dayType: 'Day 11: Half work + drive Moab→SLC + Temple Square. Day 12: WORK DAY. Day 13: WORK DAY. Day 14: SLC explore (Natural History Museum, Antelope Island).',
+    status: 'booked' as const,
+    booking: {
+      name: 'Convention Ctr 2BR Airbnb — Pool/HotTub/Gym/Theatre',
+      conf: 'Airbnb HMN2P4MBR9',
+      cost: '$1,256.86 ($272/n × 4 + $168.86 taxes)',
+      paid: '$544 paid Apr 1 (Visa 6386). $712.86 charged May 5.',
+      details: '241 W 200 S, SLC, UT 84101. Hosted by GrandRoad. 2BR, rooftop pool/hot tub, keypad check-in 4pm, checkout 10am. Free cancel before Apr 20. Host: 801-201-5734.',
+    },
+    activities: [],
+    searchCriteria: null,
+  },
+  {
+    id: 'driggs',
+    location: 'Driggs, ID (Teton Valley)',
+    dates: 'Sun-Tue May 24-26',
+    nights: 3,
+    days: [15, 16, 17],
+    dayType: 'Day 15: Half work + drive SLC→Driggs. Day 16: WORK DAY (Memorial Day Mon May 25 — Mom rests). Day 17: Grand Teton full day (Oxbow Bend, Mormon Row, Jackson Lake).',
+    status: 'pending' as const,
+    booking: null,
+    activities: [],
+    searchCriteria: {
+      checkIn: 'Sun May 24',
+      checkOut: 'Wed May 27',
+      guests: '2 adults',
+      mustHave: [
+        '2 bedrooms OR 2 queen beds',
+        'Fast WiFi 300Mbps+ — Memorial Day Mon is a FULL WORK DAY',
+        'Driggs / Victor / Tetonia area (west side of Tetons)',
+      ],
+      niceToHave: ['Teton mountain views', 'Kitchen', 'Workspace/desk', 'Pool/spa for Mom on work day'],
+      searchLinks: [
+        { label: 'Airbnb Driggs 2BR', url: 'https://www.airbnb.com/s/Driggs--ID/homes?checkin=2026-05-24&checkout=2026-05-27&adults=2&min_bedrooms=2' },
+        { label: 'VRBO Driggs/Victor', url: 'https://www.vrbo.com/search?destination=Driggs%2C+ID&startDate=2026-05-24&endDate=2026-05-27&adults=2' },
+        { label: 'Booking.com Driggs', url: 'https://www.booking.com/searchresults.html?ss=Driggs%2C+Idaho&checkin=2026-05-24&checkout=2026-05-27&group_adults=2&no_rooms=1' },
+      ],
+      wifiWarning: 'Silver Star Communications provides fiber (up to 1Gbps) throughout Teton Valley. Ask hosts if they have Silver Star fiber. Many cabins do.',
+      suggestions: [
+        { name: 'Bronze Buffalo Ranch 2BR Suite (Victor)', price: '$400-600/n ($1,200-1,800)', note: 'Luxury: 1,185sqft, true 2BR, gourmet kitchen, fireplace, Teton view balcony, spa/pool. Fiber WiFi. 11mi S of Driggs.' },
+        { name: 'Teton Valley Cabins (Driggs)', price: '$150-200/n ($450-600)', note: 'FIBER CONFIRMED. 2 queens but SAME ROOM (no bedroom separation). Best value. 1mi E of downtown.' },
+        { name: 'Saddlehorn Cabin VRBO #1066147', price: '$300-400/n ($900-1,200)', note: 'True 2BR, 1,353sqft, Teton views. VERIFY WiFi speed with host.' },
+      ],
+      avoidNote: null,
+      budgetRange: '$450-1,800 for 3 nights (Memorial Day = prices up)',
+    },
+  },
+  {
+    id: 'yellowstone',
+    location: 'West Yellowstone, MT',
+    dates: 'Wed-Thu May 27-28',
+    nights: 2,
+    days: [18, 19],
+    dayType: 'Day 18: Drive Driggs→Yellowstone + Old Faithful + Grand Prismatic. Day 19: Yellowstone full day (Canyon, Mammoth, Tower Fall, Lamar Valley).',
+    status: 'pending' as const,
+    booking: null,
+    activities: [],
+    searchCriteria: {
+      checkIn: 'Wed May 27',
+      checkOut: 'Fri May 29',
+      guests: '2 adults',
+      mustHave: [
+        '2 queen beds (no bunk beds — Mom is 80)',
+        'Walking distance or short drive to West Yellowstone park entrance',
+      ],
+      niceToHave: ['Indoor pool/hot tub (after long park days)', 'Free breakfast', 'WiFi (nice to have, not critical — no work days)'],
+      searchLinks: [
+        { label: 'Hotels.com West Yellowstone', url: 'https://www.hotels.com/Hotel-Search?destination=West+Yellowstone%2C+MT&startDate=2026-05-27&endDate=2026-05-29&rooms=1&adults=2' },
+        { label: 'Booking.com W.Yellowstone', url: 'https://www.booking.com/searchresults.html?ss=West+Yellowstone%2C+Montana&checkin=2026-05-27&checkout=2026-05-29&group_adults=2&no_rooms=1' },
+        { label: 'VRBO W.Yellowstone cabin', url: 'https://www.vrbo.com/search?destination=West+Yellowstone%2C+MT&startDate=2026-05-27&endDate=2026-05-29&adults=2' },
+      ],
+      wifiWarning: null,
+      suggestions: [
+        { name: 'Gray Wolf Inn & Suites', price: '$200-250/n ($400-500)', note: 'JUST RENOVATED ($1.4M, reopened May 21). 2 queens, 2 blocks to entrance, pool/hot tub, breakfast. AAA 3-Diamond.' },
+        { name: 'Kelly Inn West Yellowstone', price: '$200-280/n ($400-560)', note: 'Biggest pool in town. 2 queens (Grizzly building). Free breakfast. 11min walk to entrance. Proven reliable.' },
+        { name: 'Stage Coach Inn', price: '$180-220/n ($360-440)', note: 'Budget. Center of town. 2 queens available. Near shops/restaurants.' },
+      ],
+      avoidNote: 'Skip Explorer Cabins — 2nd bedroom has bunk beds (not good for Mom). Also adds $20 amenity + $2 TBID fees/night.',
+      budgetRange: '$360-560 for 2 nights (Memorial Day week = peak)',
+    },
+  },
+  {
+    id: 'glacier',
+    location: 'Columbia Falls / West Glacier, MT',
+    dates: 'Fri-Sun May 29-31',
+    nights: 2,
+    days: [20, 21, 22],
+    dayType: 'Day 20: Drive Yellowstone→Glacier + Robin arrives FCA evening. Day 21: Glacier all three — Lake McDonald, Trail of Cedars, hike. Day 22: Morning lake, afternoon flights home.',
+    status: 'booked' as const,
+    booking: {
+      name: 'Apgar Village Lodge & Cabins',
+      conf: '#3870048',
+      cost: '$392.26 ($181.60/n × 2 + tax)',
+      paid: '$189.22 paid. Balance $203.04 at check-in + Preservation Fee + $1/n donation.',
+      details: 'Cabin 3 Queen, 2 Room. Glacier Park Collection. 3 guests (Colin + Mom + Robin). Contact: 1-844-868-7474.',
+    },
+    activities: [],
+    searchCriteria: null,
+  },
+];
+
+const OTHER_ITEMS = [
+  { category: 'Car', name: 'Rental SUV LAS→FCA (21 days)', status: 'pending' as const, detail: 'Compact AWD SUV one-way. National Emerald Club (may waive drop fee), Budget AARP 30% off, Costco Travel, AutoSlash. ~$1,040. PAY WITH Chase Sapphire Reserve = primary insurance. Decline CDW/LDW.', url: 'https://www.autoslash.com', dates: 'May 10-31' },
+  { category: 'Pass', name: 'America the Beautiful Pass ($80)', status: 'pending' as const, detail: "Colin's pass covers Mom + Robin as passengers. Saves $250 in park fees across 6 parks!", url: 'https://store.usgs.gov/pass/annual', dates: 'Before May 10' },
+  { category: 'Action', name: "Mom's Antelope Canyon Waiver", status: 'action' as const, detail: 'Colin signed his. MOM STILL NEEDS TO SIGN. Check email for waiver link from Antelope Slot Canyon Tours.', url: '', dates: 'ASAP' },
+];
+
+const FLIGHTS = [
+  { who: 'Colin', route: 'SEA → LAS', date: 'Sun May 10', status: 'pending' as const, best: '$81 Alaska nonstop 2:45pm', alts: '$67 Frontier (no bags), $89 Delta nonstop', url: 'https://www.google.com/travel/flights', cardTip: 'Capital One → Alaska MP' },
+  { who: 'Mom', route: 'YYZ → LAS', date: 'Sun May 10', status: 'pending' as const, best: '$129 Air Canada Rouge nonstop 8:35pm', alts: '$228 Porter (no middle seats, comfiest for Mom)', url: 'https://www.google.com/travel/flights', cardTip: 'Amex Plat 5x via Amex Travel' },
+  { who: 'Robin', route: 'SEA → FCA', date: 'Fri May 29', status: 'pending' as const, best: '$127 Alaska 1:13pm nonstop (half day off)', alts: '$152 Alaska 9:35pm nonstop (after work)', url: 'https://www.google.com/travel/flights', cardTip: 'Capital One or Chase portal' },
+  { who: 'Colin+Robin', route: 'FCA → SEA', date: 'Sun May 31', status: 'pending' as const, best: '$152/ea Alaska 11:33am nonstop ($303 total)', alts: '$167/ea 6:15am flight', url: 'https://www.google.com/travel/flights', cardTip: 'Capital One → Alaska MP' },
+  { who: 'Mom', route: 'FCA → YYZ', date: 'Sun May 31', status: 'pending' as const, best: '$286 United via DEN 6:20am', alts: '$289 Alaska via SEA, $289 United via ORD', url: 'https://www.google.com/travel/flights', cardTip: 'Chase portal 1.5x' },
+];
+
+const SIGNUPS = [
+  { name: 'AARP ($12/yr)', why: '30-35% off car rental, 10% hotel discounts, instant Hilton Silver', before: 'Before hotels & car', url: 'https://www.aarp.org/membership/', status: 'pending' as const },
+  { name: 'Hilton Honors (free)', why: 'Member rates at Hampton Inn + Hilton properties. AARP = Silver tier', before: 'Before Page hotel', url: 'https://www.hilton.com/en/hilton-honors/', status: 'pending' as const },
+  { name: 'National Emerald Club (free)', why: 'May waive one-way drop fee, skip counter, choose your car', before: 'Before car rental', url: 'https://www.nationalcar.com/en/loyalty/program.html', status: 'pending' as const },
+  { name: 'Tock account (free)', why: 'El Tovar lunch 30-day window opens Apr 12 6am MST', before: 'BEFORE Apr 12', url: 'https://www.exploretock.com/', status: 'pending' as const },
+  { name: 'Google Flights tracking', why: 'Track all 6 routes for price drops. Prices volatile.', before: 'ASAP', url: 'https://www.google.com/travel/flights', status: 'pending' as const },
+];
+
 export default function BookingsPage() {
-  const bookedTotal = 57 + 547 + 1257 + 392 + 220 + 160;
+  const bookedCount = STAYS.filter(s => s.status === 'booked').length + 2; // +2 for Antelope + Bacchanal
+  const pendingStays = STAYS.filter(s => s.status === 'pending').length;
+  const pendingFlights = FLIGHTS.filter(f => f.status === 'pending').length;
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 print:text-[11px]">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-4 py-6">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold">Booking HQ — Mom Road Trip 2026</h1>
-          <p className="text-blue-100 text-sm mt-1">May 10-31 | Colin + Mom + Robin (Day 20) | 22 days, 6 parks</p>
-          <p className="text-blue-200 text-xs mt-2">Robin: book anything marked PENDING below. All research done, just pick and book.</p>
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-4 py-5 print:py-2 print:bg-blue-700">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-xl font-bold">Trip Booking Briefing</h1>
+          <p className="text-blue-100 text-sm">Las Vegas → Glacier | May 10-31, 2026 | Colin + Mom + Robin (joins Day 20)</p>
+          <p className="text-blue-200 text-xs mt-1">{bookedCount} booked, {pendingStays} hotels + {pendingFlights} flights + car still needed. Prices as of Apr 1.</p>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-6 space-y-8">
+      <div className="max-w-6xl mx-auto px-4 py-4 space-y-6">
 
-        {/* Progress */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-green-700">6</div>
-            <div className="text-xs text-green-600">Booked</div>
-          </div>
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-amber-700">4</div>
-            <div className="text-xs text-amber-600">Hotels Pending</div>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-blue-700">5</div>
-            <div className="text-xs text-blue-600">Flights Pending</div>
-          </div>
-          <div className="bg-gray-100 border border-gray-200 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-gray-700">${bookedTotal.toLocaleString()}</div>
-            <div className="text-xs text-gray-500">Booked So Far</div>
-          </div>
-        </div>
-
-        {/* BOOKED ACCOMMODATIONS */}
+        {/* ========== STAYS: DAY BY DAY ========== */}
         <section>
-          <h2 className="text-lg font-bold text-green-700 flex items-center gap-2 mb-3"><CheckCircle2 className="w-5 h-5" /> Booked Accommodations</h2>
-          <div className="space-y-2">
-            {BOOKED.map(b => (
-              <div key={b.label} className="bg-white border border-green-100 rounded-lg p-3 text-sm">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <div className="font-bold text-green-800">{b.label} — {b.name}</div>
-                    <div className="text-gray-500 text-xs">{b.dates} | {b.conf}</div>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <div className="font-bold">{b.cost}</div>
-                    <div className="text-xs text-gray-400">Paid: {b.paid}</div>
-                  </div>
-                </div>
-                <div className="text-xs text-gray-600 mt-1">{b.details}</div>
-                <div className="flex gap-3 mt-1 text-xs">
-                  {b.balance && <span className="text-amber-600">Balance: {b.balance}</span>}
-                  {b.phone && <span className="text-gray-400">Ph: {b.phone}</span>}
-                  <ExtLink href={b.url}>View booking</ExtLink>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* BOOKED ACTIVITIES */}
-        <section>
-          <h2 className="text-lg font-bold text-green-700 flex items-center gap-2 mb-3"><CheckCircle2 className="w-5 h-5" /> Booked Activities</h2>
-          <div className="space-y-2">
-            {BOOKED_ACTIVITIES.map(a => (
-              <div key={a.label} className="bg-white border border-green-100 rounded-lg p-3 text-sm">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <div className="font-bold text-green-800">{a.label}</div>
-                    <div className="text-gray-500 text-xs">{a.dates} | {a.conf}</div>
-                  </div>
-                  <div className="font-bold shrink-0">{a.cost}</div>
-                </div>
-                <div className="text-xs text-gray-600 mt-1">{a.details}</div>
-                <ExtLink href={a.url}><span className="text-xs">View</span></ExtLink>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* PENDING HOTELS — THE BIG COMPARISON TABLES */}
-        <section>
-          <h2 className="text-lg font-bold text-amber-700 flex items-center gap-2 mb-1"><Hotel className="w-5 h-5" /> Hotels Still Needed — Pick & Book</h2>
-          <p className="text-xs text-gray-500 mb-4">Research done. Compare options, pick one, book it. Prices as of Apr 1, 2026.</p>
-
-          {PENDING_STAYS.map(stay => (
-            <div key={stay.label} className="mb-6 bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <h2 className="text-base font-bold text-gray-800 mb-3 border-b pb-1">Accommodations — Stay by Stay</h2>
+          {STAYS.map(stay => (
+            <div key={stay.id} className={`mb-4 border rounded-lg overflow-hidden ${stay.status === 'booked' ? 'border-green-200' : 'border-amber-200'}`}>
               {/* Stay header */}
-              <div className="bg-amber-50 px-4 py-3 border-b border-amber-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold text-gray-900">{stay.label} — {stay.nights} nights</h3>
-                    <div className="text-xs text-gray-500">{stay.dates}</div>
-                  </div>
-                  {stay.wifiNeeded && (
-                    <span className="bg-red-100 text-red-700 text-xs font-medium px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <Wifi className="w-3 h-3" /> Fast WiFi needed
-                    </span>
-                  )}
+              <div className={`px-3 py-2 flex items-center justify-between ${stay.status === 'booked' ? 'bg-green-50' : 'bg-amber-50'}`}>
+                <div>
+                  <div className="font-bold text-sm">{stay.location}</div>
+                  <div className="text-xs text-gray-500">{stay.dates} ({stay.nights}n)</div>
                 </div>
-                <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-1 text-xs text-gray-600">
-                  <div className="flex items-center gap-1"><Clock className="w-3 h-3 text-gray-400" /> <strong>Work days:</strong> {stay.workDays}</div>
-                  <div className="flex items-center gap-1"><MapPin className="w-3 h-3 text-gray-400" /> <strong>Near:</strong> {stay.nearTo}</div>
-                  <div className="col-span-full flex items-center gap-1"><BedDouble className="w-3 h-3 text-gray-400" /> <strong>Need:</strong> {stay.criteria}</div>
-                </div>
+                <StatusBadge status={stay.status} />
               </div>
 
-              {/* Options table */}
-              <div className="overflow-x-auto">
-                <table className="w-full text-xs">
-                  <thead>
-                    <tr className="bg-gray-50 text-gray-500 border-b">
-                      <th className="text-left px-3 py-2 font-medium">Option</th>
-                      <th className="text-left px-3 py-2 font-medium">$/night</th>
-                      <th className="text-left px-3 py-2 font-medium">Total</th>
-                      <th className="text-left px-3 py-2 font-medium">Beds</th>
-                      <th className="text-left px-3 py-2 font-medium">WiFi</th>
-                      <th className="text-left px-3 py-2 font-medium">Perks</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {stay.options.map((opt, i) => (
-                      <tr key={i} className={`border-b last:border-0 ${opt.avoid ? 'bg-red-50 opacity-60' : opt.recommended ? 'bg-blue-50' : ''}`}>
-                        <td className="px-3 py-2 font-medium max-w-[200px]">
-                          <div className="flex items-center gap-1">
-                            {opt.recommended && <span className="text-blue-600 text-[10px] font-bold bg-blue-100 px-1 rounded">TOP</span>}
-                            {opt.avoid && <AlertTriangle className="w-3 h-3 text-red-500 shrink-0" />}
-                            {opt.url ? <ExtLink href={opt.url}>{opt.name}</ExtLink> : opt.name}
-                          </div>
-                        </td>
-                        <td className="px-3 py-2 whitespace-nowrap">{opt.price}</td>
-                        <td className="px-3 py-2 whitespace-nowrap font-medium">{opt.total}</td>
-                        <td className="px-3 py-2">{opt.beds}</td>
-                        <td className={`px-3 py-2 ${opt.wifiWarning ? 'text-red-600 font-bold' : ''}`}>{opt.wifi}</td>
-                        <td className="px-3 py-2 text-gray-500 max-w-[200px]">{opt.perks}</td>
-                      </tr>
+              <div className="px-3 py-2 text-xs space-y-2">
+                {/* What happens these days */}
+                <div className="text-gray-600"><strong>Schedule:</strong> {stay.dayType}</div>
+
+                {/* BOOKED: show confirmation */}
+                {stay.booking && (
+                  <div className="bg-green-50 border border-green-100 rounded p-2">
+                    <div className="font-bold text-green-800">{stay.booking.name}</div>
+                    <div className="text-gray-600 mt-0.5">{stay.booking.details}</div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1 text-gray-500">
+                      <span><strong>Conf:</strong> {stay.booking.conf}</span>
+                      <span><strong>Cost:</strong> {stay.booking.cost}</span>
+                    </div>
+                    <div className="text-gray-500 mt-0.5">{stay.booking.paid}</div>
+                  </div>
+                )}
+
+                {/* Activities with statuses */}
+                {stay.activities.length > 0 && (
+                  <div>
+                    {stay.activities.map((a, i) => (
+                      <div key={i} className="flex items-start gap-2 py-0.5">
+                        <StatusBadge status={a.status} />
+                        <div>
+                          <span className="font-medium">{a.name}</span>
+                          {a.detail && <span className="text-gray-500 ml-1">— {a.detail}</span>}
+                          {a.url && <> <ExtLink href={a.url} className="text-[10px]">Link</ExtLink></>}
+                        </div>
+                      </div>
                     ))}
-                  </tbody>
-                </table>
+                  </div>
+                )}
+
+                {/* PENDING: search criteria for Robin */}
+                {stay.searchCriteria && (
+                  <div className="border border-amber-200 bg-amber-50/50 rounded p-2 space-y-2">
+                    <div className="font-bold text-amber-800 flex items-center gap-1"><Search className="w-3 h-3" /> Robin: Find & Book This Stay</div>
+                    <div className="text-gray-600">
+                      <strong>Check-in:</strong> {stay.searchCriteria.checkIn} | <strong>Check-out:</strong> {stay.searchCriteria.checkOut} | <strong>Guests:</strong> {stay.searchCriteria.guests}
+                    </div>
+
+                    <div>
+                      <div className="font-semibold text-gray-700">Must Have:</div>
+                      <ul className="list-disc list-inside text-gray-600 ml-1">
+                        {stay.searchCriteria.mustHave.map((m, i) => <li key={i}>{m}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-700">Nice to Have:</div>
+                      <ul className="list-disc list-inside text-gray-500 ml-1">
+                        {stay.searchCriteria.niceToHave.map((m, i) => <li key={i}>{m}</li>)}
+                      </ul>
+                    </div>
+
+                    {stay.searchCriteria.wifiWarning && (
+                      <div className="text-amber-700 bg-amber-100 rounded px-2 py-1 text-[11px]">
+                        <strong>WiFi tip:</strong> {stay.searchCriteria.wifiWarning}
+                      </div>
+                    )}
+                    {stay.searchCriteria.avoidNote && (
+                      <div className="text-red-700 bg-red-50 rounded px-2 py-1 text-[11px]">
+                        {stay.searchCriteria.avoidNote}
+                      </div>
+                    )}
+
+                    {/* Search links */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {stay.searchCriteria.searchLinks.map((l, i) => (
+                        <ExtLink key={i} href={l.url} className="text-[10px] bg-blue-50 border border-blue-200 rounded px-1.5 py-0.5">{l.label}</ExtLink>
+                      ))}
+                    </div>
+
+                    {/* Suggestions from research */}
+                    <div>
+                      <div className="font-semibold text-gray-700 mt-1">Colin&apos;s Research (suggestions, not final picks):</div>
+                      <div className="text-gray-400 text-[10px] mb-1">These are starting points — feel free to find better options.</div>
+                      <table className="w-full text-[11px] border-collapse">
+                        <thead><tr className="border-b border-gray-200 text-gray-500">
+                          <th className="text-left py-0.5 pr-2 font-medium">Option</th>
+                          <th className="text-left py-0.5 pr-2 font-medium">Price</th>
+                          <th className="text-left py-0.5 font-medium">Notes</th>
+                        </tr></thead>
+                        <tbody>
+                          {stay.searchCriteria.suggestions.map((s, i) => (
+                            <tr key={i} className="border-b border-gray-100">
+                              <td className="py-1 pr-2 font-medium whitespace-nowrap">{s.name}</td>
+                              <td className="py-1 pr-2 whitespace-nowrap">{s.price}</td>
+                              <td className="py-1 text-gray-500">{s.note}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div className="text-gray-400 text-[10px]">Budget range: {stay.searchCriteria.budgetRange}</div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </section>
 
-        {/* FLIGHTS */}
+        {/* ========== FLIGHTS ========== */}
         <section>
-          <h2 className="text-lg font-bold text-blue-700 flex items-center gap-2 mb-3"><Plane className="w-5 h-5" /> Flights — Book These (prices as of Mar 31)</h2>
-          <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="bg-gray-50 text-gray-500 border-b">
-                  <th className="text-left px-3 py-2 font-medium">Who</th>
-                  <th className="text-left px-3 py-2 font-medium">Route</th>
-                  <th className="text-left px-3 py-2 font-medium">Date</th>
-                  <th className="text-left px-3 py-2 font-medium">Best Price</th>
-                  <th className="text-left px-3 py-2 font-medium">Alternatives</th>
+          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Flights — 5 to Book</h2>
+          <p className="text-xs text-gray-500 mb-2">Prices as of Mar 31. Search on <ExtLink href="https://www.google.com/travel/flights">Google Flights</ExtLink>. Set up price tracking.</p>
+          <table className="w-full text-xs border-collapse">
+            <thead><tr className="border-b-2 border-gray-200 text-gray-500">
+              <th className="text-left py-1 pr-2 font-medium">Who</th>
+              <th className="text-left py-1 pr-2 font-medium">Route</th>
+              <th className="text-left py-1 pr-2 font-medium">Date</th>
+              <th className="text-left py-1 pr-2 font-medium">Best Price Found</th>
+              <th className="text-left py-1 pr-2 font-medium">Alternatives</th>
+              <th className="text-left py-1 pr-2 font-medium">Card Tip</th>
+              <th className="text-right py-1 font-medium">Status</th>
+            </tr></thead>
+            <tbody>
+              {FLIGHTS.map((f, i) => (
+                <tr key={i} className="border-b border-gray-100">
+                  <td className="py-1.5 pr-2 font-medium">{f.who}</td>
+                  <td className="py-1.5 pr-2"><ExtLink href={f.url}>{f.route}</ExtLink></td>
+                  <td className="py-1.5 pr-2 whitespace-nowrap">{f.date}</td>
+                  <td className="py-1.5 pr-2 font-medium text-green-700">{f.best}</td>
+                  <td className="py-1.5 pr-2 text-gray-500">{f.alts}</td>
+                  <td className="py-1.5 pr-2 text-purple-600 text-[10px]">{f.cardTip}</td>
+                  <td className="py-1.5 text-right"><StatusBadge status={f.status} /></td>
                 </tr>
-              </thead>
-              <tbody>
-                {PENDING_FLIGHTS.map((f, i) => (
-                  <tr key={i} className="border-b last:border-0">
-                    <td className="px-3 py-2 font-medium">{f.who}</td>
-                    <td className="px-3 py-2"><ExtLink href={f.url}>{f.route}</ExtLink></td>
-                    <td className="px-3 py-2">{f.date}</td>
-                    <td className="px-3 py-2 font-bold text-green-700">{f.best}</td>
-                    <td className="px-3 py-2 text-gray-500">{f.alt}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-gray-400 mt-1">Card tip: Chase Travel portal 1.5x pts, Capital One for Alaska, Amex Plat 5x for Air Canada via Amex Travel.</p>
+              ))}
+            </tbody>
+          </table>
         </section>
 
-        {/* CAR RENTAL */}
+        {/* ========== OTHER ITEMS ========== */}
         <section>
-          <h2 className="text-lg font-bold text-gray-700 flex items-center gap-2 mb-3"><Car className="w-5 h-5" /> Car Rental — LAS to FCA, 21 days</h2>
-          <div className="bg-white border border-gray-200 rounded-lg p-3 text-sm">
-            <div className="flex justify-between items-start">
-              <div>
-                <div className="font-bold">Compact AWD SUV, one-way Las Vegas to Kalispell</div>
-                <div className="text-xs text-gray-500">May 10-31, ~$1,040 estimated</div>
-              </div>
-              <ExtLink href="https://www.autoslash.com"><span className="text-xs">AutoSlash</span></ExtLink>
-            </div>
-            <div className="mt-2 text-xs text-gray-600 space-y-1">
-              <p><strong>Best options:</strong> National Emerald Club (may waive drop fee), Budget BCD Y508539 / Avis AWD A359824 (AARP 30% off), Costco Travel (free extra driver).</p>
-              <p><strong>Pro tip:</strong> Try 28-day quote (weekly rate may be cheaper than 21-day).</p>
-              <p className="text-purple-700"><CreditCard className="w-3 h-3 inline" /> PAY WITH Chase Sapphire Reserve — primary rental insurance. Decline ALL CDW/LDW (saves $300-400).</p>
-            </div>
-          </div>
-        </section>
-
-        {/* OTHER PENDING */}
-        <section>
-          <h2 className="text-lg font-bold text-gray-700 flex items-center gap-2 mb-3"><UtensilsCrossed className="w-5 h-5" /> Other Pending</h2>
-          <div className="space-y-2">
-            <div className="bg-white border border-amber-200 rounded-lg p-3 text-sm">
-              <div className="font-bold text-amber-800">El Tovar Lunch — Tock opens Apr 12 at 6am MST</div>
-              <div className="text-xs text-gray-600 mt-1">30-day window. Set alarm for 5:55am MST. Create <ExtLink href="https://www.exploretock.com/">Tock account</ExtLink> NOW. Lunch easier than dinner. ~$40/pp. Backup: Arizona Room (walk-in, arrive 4:30pm).</div>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-3 text-sm">
-              <div className="font-bold">America the Beautiful Pass — $80</div>
-              <div className="text-xs text-gray-600 mt-1">Buy before May 10. <ExtLink href="https://store.usgs.gov/pass/annual">USGS Store</ExtLink>. Colin&apos;s pass covers Mom + Robin as passengers. Saves $250 in nonresident fees across 6 parks!</div>
-            </div>
-            <div className="bg-white border border-red-100 rounded-lg p-3 text-sm">
-              <div className="font-bold text-red-700">Mom&apos;s Antelope Canyon Waiver — SIGN NOW</div>
-              <div className="text-xs text-gray-600 mt-1">Colin signed his. Mom still needs to sign. Check email for waiver link from Antelope Slot Canyon Tours.</div>
-            </div>
-          </div>
-        </section>
-
-        {/* SIGNUPS */}
-        <section>
-          <h2 className="text-lg font-bold text-gray-700 flex items-center gap-2 mb-3">Do These First (before booking)</h2>
-          <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="bg-gray-50 text-gray-500 border-b">
-                  <th className="text-left px-3 py-2 font-medium">Signup</th>
-                  <th className="text-left px-3 py-2 font-medium">Why</th>
-                  <th className="text-left px-3 py-2 font-medium">Do Before</th>
+          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Car, Passes & Actions</h2>
+          <table className="w-full text-xs border-collapse">
+            <thead><tr className="border-b-2 border-gray-200 text-gray-500">
+              <th className="text-left py-1 pr-2 font-medium">Category</th>
+              <th className="text-left py-1 pr-2 font-medium">Item</th>
+              <th className="text-left py-1 pr-2 font-medium">When</th>
+              <th className="text-left py-1 pr-2 font-medium">Details</th>
+              <th className="text-right py-1 font-medium">Status</th>
+            </tr></thead>
+            <tbody>
+              {OTHER_ITEMS.map((item, i) => (
+                <tr key={i} className="border-b border-gray-100">
+                  <td className="py-1.5 pr-2 text-gray-400">{item.category}</td>
+                  <td className="py-1.5 pr-2 font-medium">{item.url ? <ExtLink href={item.url}>{item.name}</ExtLink> : item.name}</td>
+                  <td className="py-1.5 pr-2 whitespace-nowrap">{item.dates}</td>
+                  <td className="py-1.5 pr-2 text-gray-600">{item.detail}</td>
+                  <td className="py-1.5 text-right"><StatusBadge status={item.status} /></td>
                 </tr>
-              </thead>
-              <tbody>
-                {SIGNUPS.map((s, i) => (
-                  <tr key={i} className="border-b last:border-0">
-                    <td className="px-3 py-2 font-medium"><ExtLink href={s.url}>{s.name}</ExtLink></td>
-                    <td className="px-3 py-2 text-gray-600">{s.why}</td>
-                    <td className="px-3 py-2">{s.before}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
+        </section>
+
+        {/* ========== SIGNUPS ========== */}
+        <section>
+          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Signups — Do Before Booking</h2>
+          <table className="w-full text-xs border-collapse">
+            <thead><tr className="border-b-2 border-gray-200 text-gray-500">
+              <th className="text-left py-1 pr-2 font-medium">Signup</th>
+              <th className="text-left py-1 pr-2 font-medium">Why</th>
+              <th className="text-left py-1 pr-2 font-medium">Do Before</th>
+              <th className="text-right py-1 font-medium">Status</th>
+            </tr></thead>
+            <tbody>
+              {SIGNUPS.map((s, i) => (
+                <tr key={i} className="border-b border-gray-100">
+                  <td className="py-1.5 pr-2 font-medium"><ExtLink href={s.url}>{s.name}</ExtLink></td>
+                  <td className="py-1.5 pr-2 text-gray-600">{s.why}</td>
+                  <td className="py-1.5 pr-2 whitespace-nowrap">{s.before}</td>
+                  <td className="py-1.5 text-right"><StatusBadge status={s.status} /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </section>
 
         {/* Footer */}
-        <div className="text-center py-6 text-xs text-gray-400">
-          <p>Prices researched Mar 31 - Apr 5, 2026. Check current prices before booking.</p>
-          <p className="mt-1"><a href="/" className="text-blue-500">View full trip planner</a> | <a href="/mom" className="text-blue-500">Mom&apos;s view</a></p>
+        <div className="text-center py-4 text-xs text-gray-400 border-t print:hidden">
+          <a href="/" className="text-blue-500 mr-3">Full trip planner</a>
+          <a href="/mom" className="text-blue-500">Mom&apos;s view</a>
         </div>
       </div>
     </div>
