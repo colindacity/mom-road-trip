@@ -2,7 +2,7 @@
 
 import { tripData } from '@/data/tripData';
 import { format, parseISO } from 'date-fns';
-import { ExternalLink, Check, Circle, AlertTriangle, ChevronDown, ChevronRight, Save, Edit3, PenLine } from 'lucide-react';
+import { ExternalLink, Check, Circle, AlertTriangle, ChevronDown, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
 // ─── Tiny helpers ───
@@ -34,36 +34,56 @@ function Acc({ title, open: defaultOpen = false, n, children }: { title: string;
   );
 }
 
-// ─── Inline Note (GSheets-style) ───
-function Note({ id, notes, onSave }: { id: string; notes: Record<string, { text: string; updatedAt: string; updatedBy: string }>; onSave: (id: string, text: string) => void }) {
+// ─── Always-visible editable area (like GSheets cell / OneNote) ───
+function NoteArea({ id, label, notes, onSave }: { id: string; label?: string; notes: Record<string, { text: string; updatedAt: string; updatedBy: string }>; onSave: (id: string, text: string) => void }) {
   const existing = notes[id];
-  const [editing, setEditing] = useState(false);
   const [text, setText] = useState(existing?.text || '');
+  const [dirty, setDirty] = useState(false);
+  const [saved, setSaved] = useState(false);
   const ref = useRef<HTMLTextAreaElement>(null);
+  const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => { setText(existing?.text || ''); }, [existing?.text]);
-  useEffect(() => { if (editing && ref.current) { ref.current.focus(); ref.current.style.height = 'auto'; ref.current.style.height = ref.current.scrollHeight + 'px'; } }, [editing]);
 
-  const save = () => { onSave(id, text); setEditing(false); };
+  const resize = () => { if (ref.current) { ref.current.style.height = 'auto'; ref.current.style.height = Math.max(56, ref.current.scrollHeight) + 'px'; } };
+  useEffect(resize, [text]);
 
-  if (!editing && !existing?.text) return <button onClick={() => setEditing(true)} className="bk-note-add"><PenLine className="w-3 h-3" />note</button>;
-  if (!editing) return (
-    <div className="bk-note" onClick={() => setEditing(true)}>
-      <div className="bk-note-t">{existing.text}</div>
-      <div className="bk-note-m"><span className={existing.updatedBy === 'Robin' ? 'text-purple-600' : 'text-blue-600'}>{existing.updatedBy}</span> {format(parseISO(existing.updatedAt), 'M/d h:mma')}</div>
-      <Edit3 className="w-3 h-3 absolute top-1 right-1 opacity-0 group-hover:opacity-50" />
-    </div>
-  );
+  const doSave = useCallback((val: string) => {
+    if (val !== (existing?.text || '')) {
+      onSave(id, val);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 1500);
+    }
+    setDirty(false);
+  }, [id, existing?.text, onSave]);
+
+  const onChange = (val: string) => {
+    setText(val);
+    setDirty(true);
+    clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(() => doSave(val), 1500);
+  };
+
+  const onBlur = () => { clearTimeout(saveTimer.current); if (dirty) doSave(text); };
+
   return (
-    <div className="bk-note-edit">
-      <textarea ref={ref} value={text} rows={2}
-        onChange={e => { setText(e.target.value); e.target.style.height = 'auto'; e.target.style.height = e.target.scrollHeight + 'px'; }}
-        onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) save(); if (e.key === 'Escape') { setText(existing?.text || ''); setEditing(false); } }}
-        placeholder="Links, research, options..." className="bk-note-ta" />
-      <div className="flex gap-2 mt-0.5 items-center">
-        <button onClick={save} className="bk-note-sv"><Save className="w-3 h-3" />Save</button>
-        <button onClick={() => { setText(existing?.text || ''); setEditing(false); }} className="text-[10px] text-gray-400">Esc</button>
+    <div className="bk-area">
+      <div className="bk-area-hdr">
+        <span className="bk-area-label">{label || 'Notes & Research'}</span>
+        {existing?.updatedBy && <span className="bk-area-meta"><span className={existing.updatedBy === 'Robin' ? 'text-purple-600' : 'text-blue-600'}>{existing.updatedBy}</span> {format(parseISO(existing.updatedAt), 'M/d h:mma')}</span>}
+        {saved && <span className="bk-area-saved">Saved</span>}
+        {dirty && !saved && <span className="bk-area-dirty">Unsaved</span>}
       </div>
+      <textarea
+        ref={ref}
+        value={text}
+        onChange={e => onChange(e.target.value)}
+        onBlur={onBlur}
+        onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); clearTimeout(saveTimer.current); doSave(text); } }}
+        placeholder="Paste links, compare options, add research... Auto-saves when you click away."
+        className="bk-area-ta"
+        rows={3}
+      />
     </div>
   );
 }
@@ -371,7 +391,7 @@ export default function BookingsPage() {
                   )}
 
                   {/* Notes */}
-                  <Note id={`stay-${stay.id}`} notes={notes} onSave={saveNote} />
+                  <NoteArea id={`stay-${stay.id}`} notes={notes} onSave={saveNote} />
                 </div>
               </div>
             );
@@ -382,7 +402,7 @@ export default function BookingsPage() {
         <section id="flights" className="mt-4">
           <div className="bk-sec-t">Flights</div>
           <table className="bk-tbl">
-            <thead><tr><th>Who</th><th>Route</th><th>Date</th><th>Best Price</th><th>Alternatives</th><th>Card</th><th>Notes</th></tr></thead>
+            <thead><tr><th>Who</th><th>Route</th><th>Date</th><th>Best Price</th><th>Alternatives</th><th>Card</th></tr></thead>
             <tbody>{FLIGHTS.map((f,i) => (
               <tr key={i}>
                 <td className="font-medium">{f.who}</td>
@@ -391,17 +411,17 @@ export default function BookingsPage() {
                 <td className="text-green-700 font-medium whitespace-nowrap">{f.best}</td>
                 <td className="opacity-50">{f.alts}</td>
                 <td className="text-purple-600 text-[10px] whitespace-nowrap">{f.card}</td>
-                <td><Note id={`fl-${i}`} notes={notes} onSave={saveNote} /></td>
               </tr>
             ))}</tbody>
           </table>
+          <NoteArea id="flights-notes" label="Flight research & booking notes" notes={notes} onSave={saveNote} />
         </section>
 
         {/* ═══ LOGISTICS TABLE ═══ */}
         <section id="logistics" className="mt-4">
           <div className="bk-sec-t">Car, Passes & Actions</div>
           <table className="bk-tbl">
-            <thead><tr><th>Cat</th><th>Item</th><th>When</th><th>Details</th><th>Status</th><th>Notes</th></tr></thead>
+            <thead><tr><th>Cat</th><th>Item</th><th>When</th><th>Details</th><th>Status</th></tr></thead>
             <tbody>{LOGISTICS.map((l,i) => (
               <tr key={i}>
                 <td className="text-[10px] font-bold opacity-40">{l.cat}</td>
@@ -409,10 +429,10 @@ export default function BookingsPage() {
                 <td className="whitespace-nowrap">{l.when}</td>
                 <td>{l.detail}</td>
                 <td><Badge s={l.status} /></td>
-                <td><Note id={`lg-${i}`} notes={notes} onSave={saveNote} /></td>
               </tr>
             ))}</tbody>
           </table>
+          <NoteArea id="logistics-notes" label="Car rental & logistics notes" notes={notes} onSave={saveNote} />
         </section>
 
         {/* ═══ SIGNUPS TABLE ═══ */}
@@ -518,17 +538,21 @@ export default function BookingsPage() {
       /* Section titles */
       .bk-sec-t { font-size:13px; font-weight:600; margin-bottom:4px; }
 
-      /* Notes (GSheets-style) */
-      .bk-note-add { display:inline-flex; align-items:center; gap:2px; font-size:10px; color:#bbb; background:none; border:none; cursor:pointer; padding:1px 0; font-family:inherit; }
-      .bk-note-add:hover { color:#2563eb; }
-      .bk-note { position:relative; background:#FFFDE7; border:1px solid #FFF59D; border-radius:2px; padding:4px 6px; margin-top:3px; cursor:pointer; font-size:11px; group; }
-      .bk-note:hover { border-color:#FDD835; }
-      .bk-note-t { white-space:pre-wrap; color:#5D4037; }
-      .bk-note-m { font-size:9px; color:#BCAAA4; margin-top:2px; }
-      .bk-note-edit { margin-top:3px; }
-      .bk-note-ta { width:100%; background:#FFFDE7; border:1px solid #FDD835; border-radius:2px; padding:4px 6px; font-size:11px; font-family:inherit; color:#5D4037; resize:none; outline:none; min-height:36px; }
-      .bk-note-ta:focus { box-shadow:0 0 0 2px rgba(253,216,53,0.3); }
-      .bk-note-sv { display:inline-flex; align-items:center; gap:2px; font-size:10px; font-weight:500; color:var(--g); background:var(--gl); border:none; padding:2px 8px; border-radius:2px; cursor:pointer; font-family:inherit; }
+      /* Notes area (always-visible, auto-save) */
+      .bk-area { margin-top:6px; border:1px solid #e8e8e8; border-radius:4px; background:#FEFEF8; }
+      .bk-area-hdr { display:flex; align-items:center; gap:6px; padding:4px 8px; border-bottom:1px solid #f0f0f0; background:#FAFAF2; border-radius:4px 4px 0 0; }
+      .bk-area-label { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.3px; color:#999; }
+      .bk-area-meta { font-size:9px; color:#bbb; margin-left:auto; }
+      .bk-area-saved { font-size:9px; color:var(--g); font-weight:500; animation:bk-fade 1.5s forwards; }
+      .bk-area-dirty { font-size:9px; color:var(--a); }
+      @keyframes bk-fade { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
+      .bk-area-ta {
+        width:100%; min-height:56px; padding:8px 10px; border:none; border-radius:0 0 4px 4px;
+        font-size:12px; font-family:'DM Sans',system-ui,sans-serif; line-height:1.5;
+        color:#333; background:#FEFEF8; resize:vertical; outline:none;
+      }
+      .bk-area-ta:focus { background:#FFFFF0; box-shadow:inset 0 0 0 1px #E8D44D; }
+      .bk-area-ta::placeholder { color:#ccc; }
 
       @media(max-width:768px) {
         .bk-search-grid { grid-template-columns:1fr; }
