@@ -285,13 +285,37 @@ export default function BookingsPage() {
         </div>
       </div>
 
+      {/* Sticky nav */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 print:hidden">
+        <div className="max-w-6xl mx-auto px-4 flex items-center gap-1 overflow-x-auto py-1.5 text-xs scrollbar-hide">
+          <a href="#stays" className="shrink-0 px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 font-medium text-gray-700 transition-colors">
+            Hotels <span className="text-amber-600 font-bold">{pendingStays}</span>
+          </a>
+          <a href="#flights" className="shrink-0 px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 font-medium text-gray-700 transition-colors">
+            Flights <span className="text-amber-600 font-bold">{pendingFlights}</span>
+          </a>
+          <a href="#car" className="shrink-0 px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 font-medium text-gray-700 transition-colors">
+            Car + Passes
+          </a>
+          <a href="#signups" className="shrink-0 px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 font-medium text-gray-700 transition-colors">
+            Signups
+          </a>
+          <span className="shrink-0 text-gray-300 mx-1">|</span>
+          {STAYS.map(s => (
+            <a key={s.id} href={`#${s.id}`} className={`shrink-0 px-2 py-1 rounded-full text-[10px] font-medium transition-colors ${s.status === 'booked' ? 'bg-green-50 text-green-700 hover:bg-green-100' : 'bg-amber-50 text-amber-700 hover:bg-amber-100'}`}>
+              {s.location.split(',')[0].split('(')[0].trim()}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <div className="max-w-6xl mx-auto px-4 py-4 space-y-6">
 
         {/* ========== STAYS: DAY BY DAY ========== */}
-        <section>
+        <section id="stays">
           <h2 className="text-base font-bold text-gray-800 mb-3 border-b pb-1">Accommodations — Stay by Stay</h2>
           {STAYS.map(stay => (
-            <div key={stay.id} className={`mb-4 border rounded-lg overflow-hidden ${stay.status === 'booked' ? 'border-green-200' : 'border-amber-200'}`}>
+            <div key={stay.id} id={stay.id} className={`mb-4 border rounded-lg overflow-hidden scroll-mt-16 ${stay.status === 'booked' ? 'border-green-200' : 'border-amber-200'}`}>
               {/* Stay header */}
               <div className={`px-3 py-2 flex items-center justify-between ${stay.status === 'booked' ? 'bg-green-50' : 'bg-amber-50'}`}>
                 <div>
@@ -405,7 +429,7 @@ export default function BookingsPage() {
 
         {/* ========== FLIGHTS ========== */}
         <section>
-          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Flights — 5 to Book</h2>
+          <h2 id="flights" className="text-base font-bold text-gray-800 mb-2 border-b pb-1 scroll-mt-16">Flights — 5 to Book</h2>
           <p className="text-xs text-gray-500 mb-2">Prices as of Mar 31. Search on <ExtLink href="https://www.google.com/travel/flights">Google Flights</ExtLink>. Set up price tracking.</p>
           <table className="w-full text-xs border-collapse">
             <thead><tr className="border-b-2 border-gray-200 text-gray-500">
@@ -435,7 +459,7 @@ export default function BookingsPage() {
 
         {/* ========== OTHER ITEMS ========== */}
         <section>
-          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Car, Passes & Actions</h2>
+          <h2 id="car" className="text-base font-bold text-gray-800 mb-2 border-b pb-1 scroll-mt-16">Car, Passes & Actions</h2>
           <table className="w-full text-xs border-collapse">
             <thead><tr className="border-b-2 border-gray-200 text-gray-500">
               <th className="text-left py-1 pr-2 font-medium">Category</th>
@@ -460,7 +484,7 @@ export default function BookingsPage() {
 
         {/* ========== SIGNUPS ========== */}
         <section>
-          <h2 className="text-base font-bold text-gray-800 mb-2 border-b pb-1">Signups — Do Before Booking</h2>
+          <h2 id="signups" className="text-base font-bold text-gray-800 mb-2 border-b pb-1 scroll-mt-16">Signups — Do Before Booking</h2>
           <table className="w-full text-xs border-collapse">
             <thead><tr className="border-b-2 border-gray-200 text-gray-500">
               <th className="text-left py-1 pr-2 font-medium">Signup</th>
