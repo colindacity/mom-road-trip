@@ -105,3 +105,66 @@ src/
 └── data/
     └── tripData.ts          # Trip itinerary data
 ```
+
+## Bookings Page (/bookings)
+
+### Purpose
+Collaborative trip booking tracker for Colin + Robin. Dense spreadsheet-style interface showing all trip segments, accommodation options, activities, and booking statuses in one place.
+
+### Architecture
+- **Client component** (`src/app/bookings/page.tsx`) with Redis persistence via `/api/bookings-notes`
+- **API v2 schema**: Single Redis key `mom-road-trip-bookings-v2` stores all dynamic data:
+  - `notes` - per-section text notes (auto-saving)
+  - `statuses` - per-item booking status badges (not-started, researching, booked, skipped)
+  - `customItems` - user-added items per section
+  - `checks` - signup/task checkboxes per item
+- **Data flow**: Static trip data from `tripData.ts` (days, activities, accommodationOptions, weather) merged with dynamic user data from Redis API at render time
+
+### Key Features
+- Clickable status badges (cycle through: not-started, researching, booked, skipped)
+- Inline add-item rows per section for custom entries
+- Auto-saving note areas (debounced writes to Redis)
+- Signup checkboxes (who's responsible for booking what)
+- Accordion drill-down into day-by-day details, activities, and accommodation options pulled live from tripData
+- Mobile horizontal scroll for dense tables
+
+### User Identity
+- Stored in `localStorage` as `bookings-user-name`
+- Displayed as Colin (blue badges) or Robin (purple badges)
+- Used to attribute notes and checkbox signups
+
+### STAYS Array vs tripData
+The `STAYS` array in `page.tsx` is a simplified subset of `tripData` defining the high-level booking segments (location, dates, nights). The full `accommodationOptions`, `activities`, historical weather, etc. are pulled live from `tripData.days` at render time and displayed in the accordion expansion for each stay.
+
+### Files
+```
+src/
+├── app/
+│   ├── bookings/
+│   │   └── page.tsx          # Bookings page (client component)
+│   └── api/
+│       └── bookings-notes/
+│           └── route.ts      # GET/POST for bookings v2 data
+```
+
+## Bookings Roadmap
+
+### DONE
+- Dense spreadsheet-style tables with all tripData fields exposed
+- Clickable status badges (not-started / researching / booked / skipped)
+- Inline add-item rows per section
+- Signup checkboxes per item
+- Mobile horizontal scroll
+- Auto-expanding, auto-saving notes per section
+- Accordion drill-down into day-by-day activities and accommodation options
+
+### TODO
+- West Yellowstone accommodation still needs booking
+- All flights need booking (Colin SEA, Mom YYZ, Robin SEA-FCA)
+- Car rental needs booking
+- Signup checkboxes incomplete (not all items assigned)
+
+### FUTURE
+- Real-time sync (currently last-write-wins on Redis)
+- Flight price tracking / alerts
+- Cost totals dashboard with per-person breakdown
