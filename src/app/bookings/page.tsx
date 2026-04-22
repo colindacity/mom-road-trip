@@ -128,7 +128,7 @@ function AddItemRow({ listId, user, onAdd }: { listId: string; user: string; onA
 // ─── Data ───
 const days = tripData.days;
 
-const STAYS = [
+const STAYS: { id:string; loc:string; region:string; dates:string; nights:number; dayNums:number[]; status:'booked'|'pending'; booking:{ name:string; conf:string; cost:string; paid:string; details:string }|null; acts:{ name:string; status:string; detail:string; url:string }[]; search:{ ci:string; co:string; g:string; must:string[]; nice:string[]; links:{ l:string; u:string }[]; wifi:string|null; avoid:string|null; budget:string }|null }[] = [
   { id:'vegas', loc:'Las Vegas', region:'NV', dates:'Sun 5/10', nights:1, dayNums:[1], status:'booked' as const,
     booking:{ name:'The LINQ Hotel & Casino', conf:'Hotels.com #73410152077445', cost:'$56.63 resort fee (room via OneKeyCash)', paid:'Paid. $56.63 resort fee at check-in.', details:'Deluxe 2Q Non-Smoking. 3535 Las Vegas Blvd S. In 4pm, out 11am.' },
     acts:[{ name:'Bacchanal Buffet', status:'booked', detail:'OpenTable res. $65/pp, $80 crab.', url:'https://www.opentable.com/r/bacchanal-buffet-caesars-palace-las-vegas' }],
@@ -152,12 +152,9 @@ const STAYS = [
     booking:{ name:'Mountain Modern Victor House', conf:'Airbnb HM2FC8WSJ8', cost:'$885.47 ($381.67/n×3, $460 off!)', paid:'$885.47 paid 4/15 (Visa 6386). Non-refundable.', details:'8487 Caribou Ct, Victor ID 83455. Hosted by Cristine. In 4pm, out 10am. Keypad.' },
     acts:[],
     search:null },
-  { id:'yellowstone', loc:'West Yellowstone', region:'MT', dates:'Wed-Fri 5/27-29', nights:2, dayNums:[18,19], status:'pending' as const, booking:null, acts:[],
-    search:{ ci:'Wed 5/27', co:'Fri 5/29', g:'2 adults',
-      must:['2 queen beds (no bunks — Mom is 80)','Near park entrance'],
-      nice:['Pool/hot tub','Free breakfast','WiFi'],
-      links:[{l:'Hotels.com',u:'https://www.hotels.com/Hotel-Search?destination=West+Yellowstone%2C+MT&startDate=2026-05-27&endDate=2026-05-29&rooms=1&adults=2'},{l:'Booking.com',u:'https://www.booking.com/searchresults.html?ss=West+Yellowstone%2C+Montana&checkin=2026-05-27&checkout=2026-05-29&group_adults=2&no_rooms=1'},{l:'VRBO',u:'https://www.vrbo.com/search?destination=West+Yellowstone%2C+MT&startDate=2026-05-27&endDate=2026-05-29&adults=2'}],
-      wifi:null, avoid:'Explorer Cabins = bunk beds. Skip.', budget:'$360-560 / 2n' }},
+  { id:'yellowstone', loc:'West Yellowstone', region:'MT', dates:'Wed-Fri 5/27-29', nights:2, dayNums:[18,19], status:'booked' as const,
+    booking:{ name:'Crosswinds Inn (2Q, Breakfast Incl)', conf:'Booking.com #5288855262 PIN:3523', cost:'$657.18 ($291.60/n+tax+fees)', paid:'Prepaid Visa 6386. Non-refundable.', details:'201 Firehole Ave, West Yellowstone MT 59758. 2Q beds, breakfast included. In 4pm, out 11am. Ph: 406-646-9557.' },
+    acts:[], search:null },
   { id:'glacier', loc:'Glacier NP', region:'Columbia Falls, MT', dates:'Fri-Sun 5/29-31', nights:2, dayNums:[20,21,22], status:'booked' as const,
     booking:{ name:'Apgar Village Lodge (In-Park Cabin)', conf:'#3870048', cost:'$392.26 ($182/n×2+tax)', paid:'$189.22 paid. $203.04 at check-in.', details:'Cabin 3Q, 2 Room. 3 guests. 1-844-868-7474.' },
     acts:[], search:null },
