@@ -161,15 +161,15 @@ const STAYS: { id:string; loc:string; region:string; dates:string; nights:number
 ];
 
 const FLIGHTS = [
-  { who:'Colin', route:'SEA→LAS', date:'Sun 5/10', best:'$81 Alaska nonstop 2:45pm', alts:'$67 Frontier, $89 Delta', card:'Cap1→Alaska MP' },
-  { who:'Mom', route:'YYZ→LAS', date:'Sun 5/10', best:'$129 Air Canada nonstop', alts:'$228 Porter (comfiest)', card:'Amex Plat 5x' },
-  { who:'Robin', route:'SEA→FCA', date:'Fri 5/29', best:'$127 Alaska 1:13pm', alts:'$152 Alaska 9:35pm', card:'Cap1 or Chase' },
+  { who:'Colin', route:'PAE→LAS', date:'Sun 5/10', best:'AS 777 8:20am→10:53am 2h33m $212.83', alts:'BOOKED Chase Travel #1016489986 conf KJMXSI. 18,507 pts redeemed.', card:'Chase Sapphire 1.15x boost' },
+  { who:'Mom', route:'YYZ→LAS', date:'Sun 5/10', best:'Porter PD 653 9:55am→11:42am 4h47m $276.23', alts:'BOOKED conf C3STYI. Seat 5C. 1 bag incl. PorterClassic Freedom.', card:'Direct' },
+  { who:'Robin', route:'SEA→FCA', date:'Fri 5/29', best:'$127 Alaska 1:13pm nonstop', alts:'$152 Alaska 9:35pm', card:'Cap1 or Chase' },
   { who:'C+R', route:'FCA→SEA', date:'Sun 5/31', best:'$152/ea Alaska 11:33am', alts:'$167/ea 6:15am', card:'Cap1→Alaska MP' },
   { who:'Mom', route:'FCA→YYZ', date:'Sun 5/31', best:'$286 United via DEN', alts:'$289 Alaska via SEA', card:'Chase 1.5x' },
 ];
 
 const LOGISTICS = [
-  { cat:'Car', name:'Rental SUV LAS→FCA 21d', detail:'AWD one-way. National Emerald, AARP 30%, AutoSlash. ~$1,040. Chase Sapphire = insurance.', url:'https://www.autoslash.com', when:'5/10-31', status:'pending' as const },
+  { cat:'Car', name:'Rental Car LAS pickup 5/10 12pm', detail:'Booking.com Itinerary #767545928. LAS pickup May 10 noon. Chase Sapphire Reserve = primary insurance, decline CDW.', url:'https://cars.booking.com', when:'5/10-31', status:'booked' as const },
   { cat:'Pass', name:'America the Beautiful $80', detail:"Colin's pass covers all. Saves $250 across 6 parks.", url:'https://store.usgs.gov/pass/annual', when:'Before 5/10', status:'pending' as const },
   { cat:'!!', name:"Mom's Antelope Waiver", detail:'MOM STILL NEEDS TO SIGN. Check email.', url:'', when:'ASAP', status:'action' as const },
 ];
