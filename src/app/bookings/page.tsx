@@ -135,7 +135,7 @@ const STAYS: { id:string; loc:string; region:string; dates:string; nights:number
     search:null },
   { id:'gc', loc:'Grand Canyon', region:'South Rim, AZ', dates:'Mon-Wed 5/11-13', nights:2, dayNums:[2,3], status:'booked' as const,
     booking:{ name:'Maswik Lodge (In-Park) 20% off', conf:'Xanterra #20514347', cost:'$547.30 ($256/n×2+tax)', paid:'$273.65 dep. Balance at check-in.', details:'Std 2Q North. Inside park.' },
-    acts:[{ name:'El Tovar lunch', status:'pending', detail:'Tock 30-day window Apr 12 6am MST.', url:'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim' }],
+    acts:[],
     search:null },
   { id:'page', loc:'Page', region:'AZ', dates:'Wed-Sat 5/13-16', nights:3, dayNums:[4,5,6], status:'booked' as const,
     booking:{ name:'2BR Home 5min from Antelope', conf:'Airbnb HMYET8RCAK', cost:'$669.27 ($170.67/n×3+fees)', paid:'$669.27 paid 4/15 (Visa 6386). Cancel partial refund before 5/6.', details:'871 Sandpiper Dr, Page AZ 86040. Hosted by Sarah & Jeremy. In 3pm, out 11am.' },

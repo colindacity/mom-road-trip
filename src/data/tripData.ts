@@ -103,7 +103,7 @@ export const tripData: TripData = {
   startDate: '2026-05-10',
   endDate: '2026-05-31',
   travelers: [
-    { id: 'colin', name: 'Colin', origin: 'SEA', originCity: 'Seattle, WA', color: '#3b82f6', notes: 'Flying SEA → LAS' },
+    { id: 'colin', name: 'Colin', origin: 'PAE', originCity: 'Everett, WA', color: '#3b82f6', notes: 'Flying PAE → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
     { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Fri May 29 evening - Sun May 31). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$110 one-way, 1hr 20min. FCA is 13min from Columbia Falls.' }
   ],
@@ -154,14 +154,14 @@ export const tripData: TripData = {
       id: 'f1',
       type: 'outbound',
       passenger: 'colin',
-      from: 'SEA',
+      from: 'PAE',
       to: 'LAS',
       date: '2026-05-10',
       airline: 'Alaska Airlines',
       price: 80,
       duration: '2h 40m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-10&curr=USD',
-      notes: 'Multiple direct flights daily ~2h 40m. SEA→LAS is heavily served.'
+      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+PAE+to+LAS+on+2026-05-10&curr=USD',
+      notes: 'Multiple direct flights daily ~2h 40m. PAE→LAS is heavily served.'
     },
     {
       id: 'f2',
@@ -241,27 +241,27 @@ export const tripData: TripData = {
       id: 'fo1',
       passenger: 'colin',
       type: 'outbound',
-      recommended: 'sea-las-alaska',
-      notes: 'Colin flies SEA→LAS. Multiple direct flights daily.',
+      recommended: 'pae-las-alaska',
+      notes: 'Colin flies PAE→LAS. Multiple direct flights daily.',
       options: [
         {
-          id: 'sea-las-alaska',
+          id: 'pae-las-alaska',
           type: 'outbound',
           passenger: 'colin',
-          from: 'SEA',
+          from: 'PAE',
           to: 'LAS',
           date: '2026-05-10',
           airline: 'Alaska Airlines',
           price: 89,
           duration: '2h 55m DIRECT',
-          bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+LAS+on+2026-05-10&curr=USD',
+          bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+PAE+to+LAS+on+2026-05-10&curr=USD',
           notes: 'DIRECT! 4+ daily nonstops.'
         },
         {
-          id: 'sea-las-sw',
+          id: 'pae-las-sw',
           type: 'outbound',
           passenger: 'colin',
-          from: 'SEA',
+          from: 'PAE',
           to: 'LAS',
           date: '2026-05-10',
           airline: 'Southwest',
@@ -454,7 +454,7 @@ export const tripData: TripData = {
       title: 'LV → Grand Canyon — Mather Point & Hermit Rd Sunset',
       summary: 'Desert drive to the canyon, first views at Mather, Hermit Road sunset',
       location: locations.find(l => l.id === 'gc')!,
-      overnight: 'Grand Canyon (Tusayan)',
+      overnight: 'Grand Canyon (South Rim, In-Park)',
       drivingDistance: '280 miles',
       drivingTime: '4.5 hours',
       weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation (7,000 ft)' },
@@ -591,7 +591,7 @@ export const tripData: TripData = {
       title: 'Grand Canyon Full Day — Rim Trail, El Tovar, Yavapai',
       summary: 'Rim Trail walk, El Tovar lunch, Yavapai Geology Museum, sunset',
       location: locations.find(l => l.id === 'gc')!,
-      overnight: 'Grand Canyon (Tusayan)',
+      overnight: 'Grand Canyon (South Rim, In-Park)',
       weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation' },
       activities: [
         {
@@ -744,30 +744,30 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc4a',
-        name: 'Page 2BR Airbnb Duplex — 867 Mbps fiber',
+        name: '2BR Home 5min from Antelope — BOOKED',
         type: 'vacation_rental',
-        priceRange: '$90-150/night',
-        pricePerNight: 120,
-        address: 'Page, AZ',
+        priceRange: '$170.67/night',
+        pricePerNight: 171,
+        address: '871 Sandpiper Dr, Page, AZ 86040',
         website: 'https://www.airbnb.com/page-az/stays',
-        amenities: ['867 Mbps fiber WiFi', '2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
+        amenities: ['2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BEST for work day. 867 Mbps fiber confirmed — only verified-fast WiFi in Page. 2BR duplex, walking distance to downtown. 10-15min to Antelope Canyon and Horseshoe Bend.'
+        notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
       },
       accommodationOptions: [
         {
           id: 'acc4a',
-          name: 'Page 2BR Airbnb Duplex — 867 Mbps fiber',
+          name: '2BR Home 5min from Antelope — BOOKED',
           type: 'vacation_rental',
-          priceRange: '$90-150/night',
-          pricePerNight: 120,
-          address: 'Page, AZ',
+          priceRange: '$170.67/night',
+          pricePerNight: 171,
+          address: '871 Sandpiper Dr, Page, AZ 86040',
           website: 'https://www.airbnb.com/page-az/stays',
-          amenities: ['867 Mbps fiber WiFi', '2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
+          amenities: ['2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'BEST for work day. 867 Mbps fiber confirmed — only verified-fast WiFi in Page. 2BR duplex, walking distance to downtown. 10-15min to Antelope Canyon and Horseshoe Bend.'
+          notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
         },
         {
           id: 'acc4b',
@@ -795,7 +795,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 10, gas: 30, total: 230 }
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 10, gas: 30, total: 281 }
     },
 
     // ============================================================
@@ -857,16 +857,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc5a',
-        name: 'Page 2BR Airbnb Duplex (same as previous night)',
+        name: '2BR Home 5min from Antelope (same as previous night)',
         type: 'vacation_rental',
-        priceRange: '$90-150/night',
-        pricePerNight: 120,
+        priceRange: '$170.67/night',
+        pricePerNight: 171,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night — same Airbnb.'
       },
       notes: ['Antelope Canyon + Lake Powell views', 'No intense hiking today', 'Good rest before work day tomorrow'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 107, gas: 10, total: 307 }
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 107, gas: 10, total: 358 }
     },
 
     // ============================================================
@@ -917,16 +917,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc6a',
-        name: 'Page 2BR Airbnb Duplex (same as previous night)',
+        name: '2BR Home 5min from Antelope (same as previous night)',
         type: 'vacation_rental',
-        priceRange: '$90-150/night',
-        pricePerNight: 120,
+        priceRange: '$170.67/night',
+        pricePerNight: 171,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night — same Airbnb.'
       },
-      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same Airbnb as previous nights', '867 Mbps fiber WiFi', 'Pack tonight for early departure tomorrow'],
-      budgetBreakdown: { accommodation: 120, food: 70, activities: 0, gas: 0, total: 190 }
+      notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same Airbnb as previous nights', 'Pack tonight for early departure tomorrow'],
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 0, gas: 0, total: 241 }
     },
 
     // ============================================================
@@ -1000,30 +1000,30 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc7a',
-        name: 'My Place Hotel Moab — 100+ Mbps WiFi',
-        type: 'hotel',
-        priceRange: '$200-280/night',
-        pricePerNight: 240,
-        address: 'Moab, UT',
-        website: 'https://www.myplacehotels.com/locations/my-place-hotel-moab-ut',
-        amenities: ['100+ Mbps WiFi confirmed', '2 Queen Beds', 'Rolling desk + office chair', 'Full kitchen', 'Business center', 'Next to Element Moab'],
+        name: 'Moab Airbnb HotTub/Pool/Kitchen/Views — BOOKED',
+        type: 'vacation_rental',
+        priceRange: '$392/night',
+        pricePerNight: 392,
+        address: '3442 Tierra del Sol Dr, Moab, UT 84532',
+        website: 'https://www.airbnb.com/',
+        amenities: ['Hot tub', 'Pool', 'Kitchen', 'Views', 'Patio', 'Smart lock'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BEST WORK HOTEL: 100+ Mbps confirmed (rare in Moab). 4-5mi to Arches entrance. Extended-stay brand designed for remote workers. Rolling desk + chair in room.'
+        notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
       },
       accommodationOptions: [
         {
           id: 'acc7a',
-          name: 'My Place Hotel Moab — 100+ Mbps WiFi',
-          type: 'hotel',
-          priceRange: '$200-280/night',
-          pricePerNight: 240,
-          address: 'Moab, UT',
-          website: 'https://www.myplacehotels.com/locations/my-place-hotel-moab-ut',
-          amenities: ['100+ Mbps WiFi confirmed', '2 Queen Beds', 'Rolling desk + office chair', 'Full kitchen', 'Business center', 'Next to Element Moab'],
+          name: 'Moab Airbnb HotTub/Pool/Kitchen/Views — BOOKED',
+          type: 'vacation_rental',
+          priceRange: '$392/night',
+          pricePerNight: 392,
+          address: '3442 Tierra del Sol Dr, Moab, UT 84532',
+          website: 'https://www.airbnb.com/',
+          amenities: ['Hot tub', 'Pool', 'Kitchen', 'Views', 'Patio', 'Smart lock'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'BEST WORK HOTEL: 100+ Mbps confirmed (rare in Moab). 4-5mi to Arches entrance. Extended-stay brand designed for remote workers. Rolling desk + chair in room.'
+          notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
         },
         {
           id: 'acc7b',
@@ -1049,7 +1049,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
-      budgetBreakdown: { accommodation: 240, food: 70, activities: 10, gas: 55, total: 375 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 10, gas: 55, total: 527 }
     },
 
     // ============================================================
@@ -1110,16 +1110,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc8a',
-        name: 'My Place Hotel Moab (same as previous night)',
-        type: 'hotel',
-        priceRange: '$200-280/night',
-        pricePerNight: 240,
+        name: 'Moab Airbnb HotTub/Pool/Kitchen/Views (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$392/night',
+        pricePerNight: 392,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night in Moab.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for Arches tomorrow'],
-      budgetBreakdown: { accommodation: 240, food: 70, activities: 20, gas: 10, total: 340 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 20, gas: 10, total: 492 }
     },
 
     // ============================================================
@@ -1196,16 +1196,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc9a',
-        name: 'My Place Hotel Moab (same as previous night)',
-        type: 'hotel',
-        priceRange: '$200-280/night',
-        pricePerNight: 240,
+        name: 'Moab Airbnb HotTub/Pool/Kitchen/Views (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$392/night',
+        pricePerNight: 392,
         seniorFriendly: true,
         recommended: true,
         notes: 'Third night in Moab.'
       },
       notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Monday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
-      budgetBreakdown: { accommodation: 240, food: 70, activities: 15, gas: 10, total: 335 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 10, total: 487 }
     },
 
     // ============================================================
@@ -1268,16 +1268,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc10a',
-        name: 'My Place Hotel Moab (same as previous night)',
-        type: 'hotel',
-        priceRange: '$200-280/night',
-        pricePerNight: 240,
+        name: 'Moab Airbnb HotTub/Pool/Kitchen/Views (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$392/night',
+        pricePerNight: 392,
         seniorFriendly: true,
         recommended: true,
         notes: 'Fourth and final night in Moab.'
       },
       notes: ['Canyonlands AM + HALF WORK PM', 'Canyonlands overlooks are easy — mostly drive-up', 'Last night in Moab — pack for SLC drive tomorrow', 'FILL GAS — Green River to Salina on I-70 is 110mi with NO gas stations'],
-      budgetBreakdown: { accommodation: 240, food: 70, activities: 15, gas: 15, total: 340 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 15, total: 492 }
     },
 
     // ============================================================
@@ -1676,30 +1676,30 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc15a',
-        name: 'Bronze Buffalo Ranch — 2BR Luxury Suite',
-        type: 'cabin',
-        priceRange: '$400-600/night',
-        pricePerNight: 500,
-        address: 'Victor, ID',
-        website: 'https://www.bronzebuffaloranch.com/',
-        amenities: ['Fiber WiFi', '2 separate bedrooms', '1,185sqft suite', 'Gourmet kitchen', 'Fireplace', 'Teton view balcony', 'Spa/pool', 'Golf'],
+        name: 'Mountain Modern Victor House — BOOKED',
+        type: 'vacation_rental',
+        priceRange: '$295.16/night (after $460 discount)',
+        pricePerNight: 295,
+        address: '8487 Caribou Ct, Victor, ID 83455',
+        website: 'https://www.airbnb.com/',
+        amenities: ['Keypad self check-in', 'Mountain modern design', 'Kitchen', '2 bedrooms'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'LUXURY: Victor ID, 11mi south of Driggs. True 2BR for separate sleeping. Fiber WiFi reliable. Spa/pool great for Mom on work day. 27mi to Grand Teton NP.'
+        notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
       },
       accommodationOptions: [
         {
           id: 'acc15a',
-          name: 'Bronze Buffalo Ranch — 2BR Luxury Suite',
-          type: 'cabin',
-          priceRange: '$400-600/night',
-          pricePerNight: 500,
-          address: 'Victor, ID',
-          website: 'https://www.bronzebuffaloranch.com/',
-          amenities: ['Fiber WiFi', '2 separate bedrooms', '1,185sqft suite', 'Gourmet kitchen', 'Fireplace', 'Teton view balcony', 'Spa/pool', 'Golf'],
+          name: 'Mountain Modern Victor House — BOOKED',
+          type: 'vacation_rental',
+          priceRange: '$295.16/night (after $460 discount)',
+          pricePerNight: 295,
+          address: '8487 Caribou Ct, Victor, ID 83455',
+          website: 'https://www.airbnb.com/',
+          amenities: ['Keypad self check-in', 'Mountain modern design', 'Kitchen', '2 bedrooms'],
           seniorFriendly: true,
           recommended: true,
-          notes: 'LUXURY: Victor ID, 11mi south of Driggs. True 2BR for separate sleeping. Fiber WiFi reliable. Spa/pool great for Mom on work day. 27mi to Grand Teton NP.'
+          notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
         },
         {
           id: 'acc15b',
@@ -1726,7 +1726,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
-      budgetBreakdown: { accommodation: 500, food: 70, activities: 0, gas: 55, total: 625 }
+      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 55, total: 420 }
     },
 
     // ============================================================
@@ -1786,16 +1786,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc16a',
-        name: 'Bronze Buffalo Ranch (same as previous night)',
-        type: 'cabin',
-        priceRange: '$400-600/night',
-        pricePerNight: 500,
+        name: 'Mountain Modern Victor House (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$295.16/night (after $460 discount)',
+        pricePerNight: 295,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night at Bronze Buffalo Ranch.'
+        notes: 'Second night at Mountain Modern Victor House.'
       },
       notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
-      budgetBreakdown: { accommodation: 500, food: 70, activities: 0, gas: 5, total: 575 }
+      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 5, total: 370 }
     },
 
     // ============================================================
@@ -1875,16 +1875,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc17a',
-        name: 'Bronze Buffalo Ranch (same as previous night)',
-        type: 'cabin',
-        priceRange: '$400-600/night',
-        pricePerNight: 500,
+        name: 'Mountain Modern Victor House (same as previous night)',
+        type: 'vacation_rental',
+        priceRange: '$295.16/night (after $460 discount)',
+        pricePerNight: 295,
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third and final night at Bronze Buffalo Ranch.'
+        notes: 'Third and final night at Mountain Modern Victor House.'
       },
       notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road likely CLOSED in late May (opens ~June 1) — skip it, do Schwabacher Landing instead', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
-      budgetBreakdown: { accommodation: 500, food: 80, activities: 0, gas: 30, total: 610 }
+      budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 }
     },
 
     // ============================================================
@@ -1968,30 +1968,32 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc18a',
-        name: 'Gray Wolf Inn & Suites — Just Renovated',
+        name: 'Crosswinds Inn — BOOKED',
         type: 'hotel',
-        priceRange: '$200-250/night',
-        pricePerNight: 225,
-        address: 'West Yellowstone, MT',
-        website: 'https://www.yellowstonevacations.com/stay/lodging/gray-wolf-inn-and-suites/',
-        amenities: ['Just renovated May 2026', '2 queens Deluxe Double', 'Indoor heated pool', 'Hot tub', 'Continental breakfast', 'Coffee bar', '2 blocks to West Entrance'],
+        priceRange: '$291.60/night',
+        pricePerNight: 292,
+        address: '201 Firehole Ave, West Yellowstone, MT 59758',
+        phone: '+1 406-646-9557',
+        website: 'https://www.booking.com/',
+        amenities: ['2 Queen Beds', 'Breakfast included', 'Near West Entrance'],
         seniorFriendly: true,
         recommended: true,
-        notes: '$1.4M renovation just completed May 21, 2026. New bathrooms, furniture, carpeting. Closest walking distance to park entrance. AAA 3-Diamond.'
+        notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
       },
       accommodationOptions: [
         {
           id: 'acc18a',
-          name: 'Gray Wolf Inn & Suites — Just Renovated',
+          name: 'Crosswinds Inn — BOOKED',
           type: 'hotel',
-          priceRange: '$200-250/night',
-          pricePerNight: 225,
-          address: 'West Yellowstone, MT',
-          website: 'https://www.yellowstonevacations.com/stay/lodging/gray-wolf-inn-and-suites/',
-          amenities: ['Just renovated May 2026', '2 queens Deluxe Double', 'Indoor heated pool', 'Hot tub', 'Continental breakfast', 'Coffee bar', '2 blocks to West Entrance'],
+          priceRange: '$291.60/night',
+          pricePerNight: 292,
+          address: '201 Firehole Ave, West Yellowstone, MT 59758',
+          phone: '+1 406-646-9557',
+          website: 'https://www.booking.com/',
+          amenities: ['2 Queen Beds', 'Breakfast included', 'Near West Entrance'],
           seniorFriendly: true,
           recommended: true,
-          notes: '$1.4M renovation just completed May 21, 2026. New bathrooms, furniture, carpeting. Closest walking distance to park entrance. AAA 3-Diamond.'
+          notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
         },
         {
           id: 'acc18b',
@@ -2018,7 +2020,7 @@ export const tripData: TripData = {
         }
       ],
       notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
-      budgetBreakdown: { accommodation: 225, food: 70, activities: 35, gas: 30, total: 360 }
+      budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 }
     },
 
     // ============================================================
@@ -2090,16 +2092,16 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc19a',
-        name: 'Gray Wolf Inn & Suites (same as previous night)',
+        name: 'Crosswinds Inn (same as previous night)',
         type: 'hotel',
-        priceRange: '$200-250/night',
-        pricePerNight: 225,
+        priceRange: '$291.60/night',
+        pricePerNight: 292,
         seniorFriendly: true,
         recommended: true,
         notes: 'Second night — same hotel.'
       },
       notes: ['FULL YELLOWSTONE DAY — big loop, long but rewarding', 'Leave early (5am) for Lamar Valley wildlife', 'Lamar → Tower Fall → Mammoth → Canyon → West Yellowstone', 'All boardwalk/drive-up activities — no real hiking', 'WILDLIFE: Lamar Valley at dawn — wolves, grizzlies, bison calves', 'Artist Point is a MUST-SEE', 'Dress in warm layers — Yellowstone is cold in late May'],
-      budgetBreakdown: { accommodation: 225, food: 70, activities: 0, gas: 40, total: 335 }
+      budgetBreakdown: { accommodation: 292, food: 70, activities: 0, gas: 40, total: 402 }
     },
 
     // ============================================================
@@ -2361,7 +2363,7 @@ export const tripData: TripData = {
   },
   costBreakdown: {
     flights: {
-      colinOutbound: { description: 'SEA→LAS Alaska', price: 80 },
+      colinOutbound: { description: 'PAE→LAS Alaska', price: 80 },
       momOutbound: { description: 'YYZ→LAS Porter', price: 200 },
       colinReturn: { description: 'FCA→SEA Alaska nonstop', price: 130 },
       momReturn: { description: 'FCA→MSP→YYZ Delta', price: 350 },
@@ -2380,10 +2382,10 @@ export const tripData: TripData = {
   },
   importantReservations: [
     {
-      item: 'Antelope Canyon X Tour',
+      item: 'Upper Antelope Canyon Tour',
       bookBy: '2026-04-15',
-      website: 'https://fareharbor.com/embeds/book/antelopecanyon/items/49363/date/2026-05-14/?ref=https://www.antelopecanyon.com',
-      notes: 'Book 9:00 AM or 9:50 AM slot. $92/person + $15 Navajo entry fee = $107/person. Book at antelopecanyon.com (FareHarbor). Canyon X is senior-friendly (no ladders).'
+      website: 'https://antelopeslotcanyon.com/',
+      notes: 'BOOKED: 10:00am May 14, 2 adults. Antelope Slot Canyon Tours (Tsosie family). $95/person + $15 Navajo fee = $220 total. Luxury enclosed 4x4 vans.'
     },
     {
       item: 'Grand Canyon Lodging (Tusayan)',
