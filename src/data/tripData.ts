@@ -105,7 +105,7 @@ export const tripData: TripData = {
   travelers: [
     { id: 'colin', name: 'Colin', origin: 'PAE', originCity: 'Everett, WA', color: '#3b82f6', notes: 'Flying PAE → LAS' },
     { id: 'mom', name: 'Mom', origin: 'YYZ', originCity: 'Toronto, ON', color: '#ec4899', notes: 'Active 80yo, walks a lot, can do short hikes. Flying YYZ → LAS.' },
-    { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Fri May 29 evening - Sun May 31). Flying SEA → FCA (Kalispell). Alaska Airlines nonstop ~$110 one-way, 1hr 20min. FCA is 13min from Columbia Falls.' }
+    { id: 'robin', name: 'Robin', origin: 'SEA', originCity: 'Seattle, WA', color: '#8b5cf6', notes: 'Joining for Glacier weekend (Fri May 29 afternoon (3:34pm) - Sun May 31). BOOKED AS 2402 SEA→FCA nonstop, 2h21m. Return: BOOKED AS 2419 (same flight as Colin). FCA is 13min from Columbia Falls.' }
   ],
   phases: [
     {
@@ -233,10 +233,13 @@ export const tripData: TripData = {
       toCity: 'Kalispell (Glacier Park)',
       date: '2026-05-29',
       airline: 'Alaska Airlines',
+      flightNumber: 'AS 2402',
       price: 110,
-      duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+SEA+to+FCA+on+2026-05-29&curr=USD',
-      notes: 'Robin flies in Friday evening. DIRECT on Alaska Airlines. FCA is 13 min from Columbia Falls.'
+      duration: '2h 21m',
+      departureTime: '1:13 PM',
+      arrivalTime: '3:34 PM',
+      bookingUrl: 'https://www.alaskaair.com/',
+      notes: 'BOOKED: Robin arrives FCA 3:34pm Friday afternoon. Alaska AS 2402 nonstop from SEA.'
     },
     {
       id: 'f6',
@@ -248,10 +251,13 @@ export const tripData: TripData = {
       toCity: 'Seattle',
       date: '2026-05-31',
       airline: 'Alaska Airlines',
+      flightNumber: 'AS 2419',
       price: 110,
-      duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-      notes: 'NOT BOOKED. Robin\'s return FCA→SEA. Colin now flying separately (AS 2419 at 5:40pm First Class).'
+      duration: '1h 32m',
+      departureTime: '5:40 PM',
+      arrivalTime: '6:12 PM',
+      bookingUrl: 'https://www.alaskaair.com/',
+      notes: 'BOOKED: Robin on same AS 2419 as Colin. FCA 5:40pm→SEA 6:12pm.'
     }
   ],
   flightOptions: [
@@ -2168,13 +2174,13 @@ export const tripData: TripData = {
         },
         {
           id: 'a20-3',
-          name: 'Robin Arrives FCA — Evening',
-          description: 'Robin flies in Friday evening on Alaska Airlines from Seattle. FCA is 13 minutes from Columbia Falls. Pick her up at the airport.',
+          name: 'Robin Arrives FCA — Afternoon (3:34pm)',
+          description: 'Robin flies in Friday afternoon on Alaska AS 2402 from Seattle (departs 1:13pm PDT, arrives 3:34pm MDT, 2h21m nonstop). FCA is 13 minutes from Columbia Falls. Pick her up at the airport.',
           duration: '45 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['FCA is 13min from Columbia Falls', 'Robin: Alaska nonstop from SEA, 1h20m (Friday evening)', 'Small airport — she\'ll be out quickly', 'Celebrate the reunion at the condo!']
+          tips: ['FCA is 13min from Columbia Falls', 'Robin: Alaska AS 2402 nonstop from SEA, 2h21m (Friday afternoon, arrives 3:34pm)', 'Small airport — she\'ll be out quickly', 'Celebrate the reunion at the condo!']
         }
       ],
       accommodation: {
@@ -2234,7 +2240,7 @@ export const tripData: TripData = {
           notes: 'Search: 2BR, May 29-31, $175 max. Hungry Horse is 10-15min from park.'
         }
       ],
-      notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday evening — Alaska Airlines nonstop from SEA', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
+      notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday afternoon 3:34pm — Alaska AS 2402', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 }
     },
 
@@ -2357,15 +2363,15 @@ export const tripData: TripData = {
         {
           id: 'a22-3',
           name: 'Fly Home',
-          description: 'Mom: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm (conf G5FIWA). Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY). Robin: FCA→SEA TBD (not yet booked).',
+          description: 'Mom: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm (conf G5FIWA). Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY). Robin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm (same flight as Colin).',
           duration: 'All day',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Mom departs first at 2:30pm (Delta to MSP then YYZ)', 'Colin departs 5:40pm (Alaska AS 2419 First Class to SEA)', 'Robin: FCA→SEA not yet booked', 'What an incredible 22-day trip!']
+          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Mom departs first at 2:30pm (Delta to MSP then YYZ)', 'Colin departs 5:40pm (Alaska AS 2419 First Class to SEA)', 'Robin + Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm', 'What an incredible 22-day trip!']
         }
       ],
-      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm (conf G5FIWA)', 'Colin: AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY)', 'Robin: FCA→SEA not yet booked', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
+      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm (conf G5FIWA)', 'Colin: AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY)', 'Robin + Colin: AS 2419 FCA 5:40pm→SEA 6:12pm — BOOKED', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
@@ -2385,8 +2391,8 @@ export const tripData: TripData = {
       momOutbound: { description: 'YYZ→LAS Porter PD 653 — BOOKED conf C3STYI', price: 276.23 },
       colinReturn: { description: 'FCA→SEA Alaska AS 2419 First Class — BOOKED Chase #1016667852 conf ZAAGXY', price: 218.40 },
       momReturn: { description: 'FCA→MSP→YYZ Delta DL 2575+3866 — BOOKED Amex #7468-1456 conf G5FIWA', price: 244.33 },
-      robinOutbound: { description: 'SEA→FCA Alaska — NOT BOOKED (estimate)', price: 110 },
-      robinReturn: { description: 'FCA→SEA Alaska — NOT BOOKED (estimate)', price: 110 },
+      robinOutbound: { description: 'SEA→FCA Alaska AS 2402 — BOOKED', price: 110 },
+      robinReturn: { description: 'FCA→SEA Alaska AS 2419 — BOOKED (same flight as Colin)', price: 110 },
       total: 1171.79,
     },
     carRental: {
