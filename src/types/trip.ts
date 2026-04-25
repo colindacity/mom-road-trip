@@ -141,7 +141,12 @@ export interface Flight {
   departureTime?: string;
   arrivalTime?: string;
   duration?: string;
+  cabin?: string;
+  legs?: string;
   price?: number;
+  bookingRef?: string;
+  bookingSource?: string;
+  ticketNumber?: string;
   bookingUrl?: string;
   notes?: string;
   alternative?: boolean; // Is this an alternative option?
@@ -192,6 +197,8 @@ export interface CostBreakdown {
     momOutbound: CostItem;
     colinReturn: CostItem;
     momReturn: CostItem;
+    robinOutbound?: CostItem;
+    robinReturn?: CostItem;
     total: number;
   };
   carRental: {

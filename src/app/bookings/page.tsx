@@ -161,11 +161,11 @@ const STAYS: { id:string; loc:string; region:string; dates:string; nights:number
 ];
 
 const FLIGHTS = [
-  { who:'Colin', route:'PAE→LAS', date:'Sun 5/10', best:'AS 777 8:20am→10:53am 2h33m $212.83', alts:'BOOKED Chase Travel #1016489986 conf KJMXSI. 18,507 pts redeemed.', card:'Chase Sapphire 1.15x boost' },
-  { who:'Mom', route:'YYZ→LAS', date:'Sun 5/10', best:'Porter PD 653 9:55am→11:42am 4h47m $276.23', alts:'BOOKED conf C3STYI. Seat 5C. 1 bag incl. PorterClassic Freedom.', card:'Direct' },
+  { who:'Colin', route:'PAE→LAS', date:'Sun 5/10', best:'AS 777 8:20am→10:53am 2h33m $212.83', alts:'BOOKED Chase #1016489986 conf KJMXSI. 18,507 pts.', card:'Chase 1.15x boost' },
+  { who:'Mom', route:'YYZ→LAS', date:'Sun 5/10', best:'Porter PD 653 9:55am→11:42am 4h47m $276.23', alts:'BOOKED conf C3STYI. Seat 5C. PorterClassic Freedom.', card:'Direct' },
   { who:'Robin', route:'SEA→FCA', date:'Fri 5/29', best:'$127 Alaska 1:13pm nonstop', alts:'$152 Alaska 9:35pm', card:'Cap1 or Chase' },
-  { who:'C+R', route:'FCA→SEA', date:'Sun 5/31', best:'$152/ea Alaska 11:33am', alts:'$167/ea 6:15am', card:'Cap1→Alaska MP' },
-  { who:'Mom', route:'FCA→YYZ', date:'Sun 5/31', best:'$286 United via DEN', alts:'$289 Alaska via SEA', card:'Chase 1.5x' },
+  { who:'Colin', route:'FCA→SEA', date:'Sun 5/31', best:'AS 2419 5:40pm→6:12pm 1h32m FIRST CLASS $218.40', alts:'BOOKED Chase #1016667852 conf ZAAGXY. 14,560 pts.', card:'Chase 1.5x boost' },
+  { who:'Mom', route:'FCA→MSP→YYZ', date:'Sun 5/31', best:'DL 2575 2:30pm→6:15pm + DL 3866 8:05pm→11:14pm $244.33', alts:'BOOKED Amex #7468-1456 conf G5FIWA. Seats 25C/19B.', card:'Amex Plat' },
 ];
 
 const LOGISTICS = [

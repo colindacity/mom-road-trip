@@ -158,10 +158,13 @@ export const tripData: TripData = {
       to: 'LAS',
       date: '2026-05-10',
       airline: 'Alaska Airlines',
-      price: 80,
+      flightNumber: 'AS 777',
+      price: 212.83,
       duration: '2h 40m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+PAE+to+LAS+on+2026-05-10&curr=USD',
-      notes: 'Multiple direct flights daily ~2h 40m. PAE→LAS is heavily served.'
+      bookingRef: 'KJMXSI',
+      bookingSource: 'Chase Travel #1016489986',
+      bookingUrl: 'https://www.alaskaair.com/',
+      notes: 'BOOKED: Alaska AS 777 PAE→LAS. Chase Travel #1016489986, conf KJMXSI. $212.83.'
     },
     {
       id: 'f2',
@@ -171,10 +174,12 @@ export const tripData: TripData = {
       to: 'LAS',
       date: '2026-05-10',
       airline: 'Porter Airlines',
-      price: 200,
+      flightNumber: 'PD 653',
+      price: 276.23,
       duration: '4h 45m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+YYZ+to+LAS+on+2026-05-10&curr=USD',
-      notes: 'YYZ→LAS has many options. Porter, WestJet, Flair all fly direct.'
+      bookingRef: 'C3STYI',
+      bookingUrl: 'https://www.flyporter.com/',
+      notes: 'BOOKED: Porter PD 653 YYZ→LAS. Conf C3STYI. $276.23.'
     },
     {
       id: 'f3',
@@ -186,10 +191,16 @@ export const tripData: TripData = {
       toCity: 'Seattle',
       date: '2026-05-31',
       airline: 'Alaska Airlines',
-      price: 130,
-      duration: '1h 20m',
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-      notes: 'FCA→SEA NONSTOP on Alaska Airlines. ~3 flights/day. 1hr 20min. Could be same flight as Robin.'
+      flightNumber: 'AS 2419',
+      price: 218.40,
+      duration: '1h 32m',
+      departureTime: '5:40 PM',
+      arrivalTime: '6:12 PM',
+      cabin: 'First Class',
+      bookingRef: 'ZAAGXY',
+      bookingSource: 'Chase Travel #1016667852',
+      bookingUrl: 'https://www.alaskaair.com/',
+      notes: 'BOOKED: Alaska AS 2419 FCA→SEA 5:40pm→6:12pm FIRST CLASS. Chase Travel #1016667852, conf ZAAGXY. $218.40 via 14,560 pts.'
     },
     {
       id: 'f4',
@@ -201,9 +212,16 @@ export const tripData: TripData = {
       toCity: 'Toronto',
       date: '2026-05-31',
       airline: 'Delta',
-      price: 350,
-      bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+YYZ+on+2026-05-31&curr=USD',
-      notes: 'FCA→MSP→YYZ on Delta. One airline, one stop at Minneapolis hub (~8hrs total).'
+      flightNumber: 'DL 2575 + DL 3866',
+      price: 244.33,
+      departureTime: '2:30 PM',
+      arrivalTime: '11:14 PM',
+      legs: 'FCA 2:30pm → MSP 6:15pm, MSP 8:05pm → YYZ 11:14pm',
+      bookingRef: 'G5FIWA',
+      bookingSource: 'Amex Travel #7468-1456',
+      ticketNumber: '0067436637545',
+      bookingUrl: 'https://www.delta.com/',
+      notes: 'BOOKED: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm. Amex Travel #7468-1456, conf G5FIWA. Ticket #0067436637545. $244.33.'
     },
     {
       id: 'f5',
@@ -233,7 +251,7 @@ export const tripData: TripData = {
       price: 110,
       duration: '1h 20m',
       bookingUrl: 'https://www.google.com/travel/flights?type=2&q=Flights+from+FCA+to+SEA+on+2026-05-31&curr=USD',
-      notes: 'Robin\'s return. Sunday May 31 flight — could be same flight as Colin.'
+      notes: 'NOT BOOKED. Robin\'s return FCA→SEA. Colin now flying separately (AS 2419 at 5:40pm First Class).'
     }
   ],
   flightOptions: [
@@ -2339,35 +2357,37 @@ export const tripData: TripData = {
         {
           id: 'a22-3',
           name: 'Fly Home',
-          description: 'Colin + Robin: FCA → SEA nonstop on Alaska Airlines (1h20m) — could be same flight. Mom: FCA → MSP → YYZ on Delta (~8hrs total, one stop at Minneapolis).',
+          description: 'Mom: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm (conf G5FIWA). Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY). Robin: FCA→SEA TBD (not yet booked).',
           duration: 'All day',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Colin + Robin: Alaska nonstop to SEA, 1h20m — could share a flight!', 'Mom: Delta to MSP then YYZ, ~8hrs total', 'What an incredible 22-day trip!']
+          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Mom departs first at 2:30pm (Delta to MSP then YYZ)', 'Colin departs 5:40pm (Alaska AS 2419 First Class to SEA)', 'Robin: FCA→SEA not yet booked', 'What an incredible 22-day trip!']
         }
       ],
-      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Colin + Robin: FCA→SEA nonstop (Alaska, could be same flight!)', 'Mom: FCA→MSP→YYZ (Delta, ~8hrs, one stop)', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
+      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm (conf G5FIWA)', 'Colin: AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY)', 'Robin: FCA→SEA not yet booked', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
     }
   ],
   totalBudget: {
-    flights: 980,
+    flights: 1172,
     carRental: 1040,
     accommodations: 2750,
     food: 1570,
     activities: 350,
     gas: 505,
     misc: 520,
-    total: 7715
+    total: 7907
   },
   costBreakdown: {
     flights: {
-      colinOutbound: { description: 'PAE→LAS Alaska', price: 80 },
-      momOutbound: { description: 'YYZ→LAS Porter', price: 200 },
-      colinReturn: { description: 'FCA→SEA Alaska nonstop', price: 130 },
-      momReturn: { description: 'FCA→MSP→YYZ Delta', price: 350 },
-      total: 760,
+      colinOutbound: { description: 'PAE→LAS Alaska AS 777 — BOOKED Chase #1016489986 conf KJMXSI', price: 212.83 },
+      momOutbound: { description: 'YYZ→LAS Porter PD 653 — BOOKED conf C3STYI', price: 276.23 },
+      colinReturn: { description: 'FCA→SEA Alaska AS 2419 First Class — BOOKED Chase #1016667852 conf ZAAGXY', price: 218.40 },
+      momReturn: { description: 'FCA→MSP→YYZ Delta DL 2575+3866 — BOOKED Amex #7468-1456 conf G5FIWA', price: 244.33 },
+      robinOutbound: { description: 'SEA→FCA Alaska — NOT BOOKED (estimate)', price: 110 },
+      robinReturn: { description: 'FCA→SEA Alaska — NOT BOOKED (estimate)', price: 110 },
+      total: 1171.79,
     },
     carRental: {
       dailyRate: 40,
