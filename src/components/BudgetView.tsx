@@ -166,11 +166,10 @@ export default function BudgetView({ trip }: BudgetViewProps) {
       <div className="bg-amber-50 rounded-xl border border-amber-200 p-4">
         <h4 className="font-medium text-amber-800 mb-2">Budget Notes</h4>
         <ul className="text-sm text-amber-700 space-y-1">
-          <li>• Prices are estimates based on research and may vary</li>
-          <li>• Book accommodations early for better rates</li>
-          <li>• One-way car rentals have significant drop-off fees</li>
-          <li>• Consider America the Beautiful Pass ($80) for all national parks</li>
-          <li>• Budget includes ~$100/day for food for 2 people</li>
+          <li>• All accommodations + flights + car BOOKED. Prices reflect actual paid amounts.</li>
+          <li>• Gas + food are still daily estimates (~$100/day food for 2)</li>
+          <li>• America the Beautiful Pass ($80) — still to buy before May 10</li>
+          <li>• Mom&apos;s Antelope Canyon waiver — still needs signing</li>
         </ul>
       </div>
     </div>

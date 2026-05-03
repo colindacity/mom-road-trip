@@ -909,14 +909,14 @@ export const tripData: TripData = {
         {
           id: 'a6-1',
           name: 'Colin Works — Hotel (Full Day)',
-          description: 'Full work day at hotel. Hampton Inn has good WiFi and a lobby workspace. Slackers bar on Lake Powell Blvd also has WiFi.',
+          description: 'Full work day at the Page Airbnb (871 Sandpiper Dr). Mom can rest, walk around town, or relax.',
           duration: '8 hours',
           startTime: '8:00 AM',
           endTime: '5:00 PM',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Hampton Inn lobby has a dedicated work area', 'Page is a small town — hotel WiFi is your best bet', 'Hotspot as backup']
+          tips: ['Airbnb is 5min from Antelope Canyon area', 'Page is a small town — Airbnb WiFi is your best bet', 'Hotspot as backup']
         },
         {
           id: 'a6-2',
