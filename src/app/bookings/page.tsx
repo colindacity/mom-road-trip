@@ -389,7 +389,7 @@ export default function BookingsPage() {
         </section>
 
         <div className="text-center mt-6 pb-4 text-[11px] opacity-30">
-          <a href="/" className="hover:opacity-100">Full planner</a><span className="mx-2">&middot;</span><a href="/mom" className="hover:opacity-100">Mom&apos;s view</a>
+          <a href="/" className="hover:opacity-100">Full planner</a><span className="mx-2">&middot;</span><a href="/mom" className="hover:opacity-100">Mom&apos;s view</a><span className="mx-2">&middot;</span><a href="/guide" className="hover:opacity-100">Tour guide</a>
         </div>
       </main>
     </div>
