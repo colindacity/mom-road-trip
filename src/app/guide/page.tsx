@@ -342,10 +342,327 @@ const SECTIONS: Section[] = [
   },
 ];
 
+// ─── Daily Schedule data (compressed from META-schedule.md) ───
+type DaySchedule = { n: number; date: string; title: string; vibe: string; hotel: string; bullets: string[]; eats: string; dontMiss: string; momNote: string };
+
+const SCHEDULE: DaySchedule[] = [
+  { n:1, date:'Sun May 10', title:'Las Vegas', vibe:'City · Hot · Uber LAS→LINQ',
+    hotel:'The LINQ Hotel, 3535 LV Blvd S',
+    bullets:[
+      '14:30 Land LAS (Mom, 4h47m from YYZ)',
+      '15:15 LINQ check-in (4pm official, front desk holds bags)',
+      '17:30 Bacchanal Buffet (OpenTable confirmed)',
+      '20:00 Bellagio fountains (every 15min after 8pm)',
+      '21:30 Bed — SKIP Fremont (Mom on Toronto midnight)',
+    ],
+    eats:'Dinner Bacchanal 5:30pm',
+    dontMiss:'Sunset 7:38pm. Beer Park at Paris LV is best seated viewing for Mom (cost of one drink)',
+    momNote:'Closed-toe shoes for cold buffet floors. Strip is 4.2mi end-to-end — looks short on map' },
+  { n:2, date:'Mon May 11', title:'Vegas → Grand Canyon', vibe:'Drive · Hot day, cool eve · 280mi/4.5hr (gain 1hr → MST)',
+    hotel:'Maswik Lodge, GC Village',
+    bullets:[
+      '07:30 Pick up rental car LAS RAC',
+      '09:00 Depart Vegas. Top off gas Kingman or Williams (NOT Tusayan)',
+      '12:30 Lunch Pine Country Restaurant Williams',
+      '15:30 South Entrance (afternoon = short lines). Buy America the Beautiful $80',
+      '18:15 Mather Point — walk 5min east on Rim Trail for fewer crowds',
+      '19:24 Sunset',
+    ],
+    eats:'Lunch Pine Country (Williams). Dinner Maswik Food Court',
+    dontMiss:'Mather sunset 7:24pm — be parked by 6:15pm',
+    momNote:'Altitude 7,000ft day 1 = light only. 3-4L water, electrolytes, half-portion alcohol, ibuprofen if headache. Headlamp for return walk' },
+  { n:3, date:'Tue May 12', title:'Grand Canyon — Three Viewpoints', vibe:'Park · Mild day, cool eve · in-park shuttle',
+    hotel:'Maswik Lodge (2nd night)',
+    bullets:[
+      '08:30 Yavapai Geology Museum (free, 30-45min)',
+      '09:30 Rim Trail Yavapai → Mather (1.4mi RT, paved, benches every 0.2mi)',
+      '11:15 Put name in El Tovar — walk 2min to Bright Angel/Arizona Steakhouse as fallback',
+      '13:30 Rest at Maswik (heat of day)',
+      '15:30 Hermit Road Red Route shuttle to Hopi Point (THE sunset spot)',
+      '19:25 Sunset Hopi (west-facing peninsula)',
+    ],
+    eats:'Lunch El Tovar attempt → Arizona Steakhouse backup. Dinner Maswik Pizza Pub',
+    dontMiss:'Three viewpoints done well > eight done exhausted',
+    momNote:'Trekking pole. Brimmed hat. Skip Pima/Abyss past Mohave' },
+  { n:4, date:'Wed May 13', title:'GC → Page (Horseshoe Bend)', vibe:'Drive · Hot · 140mi/2.5hr',
+    hotel:'Airbnb 871 Sandpiper Dr, Page',
+    bullets:[
+      '09:00 Desert View Drive eastbound (in-park, 25mi)',
+      '11:00 Desert View Watchtower (Mary Colter 1932)',
+      '12:30 Lunch Cameron Trading Post — fuel up here (only reliable stop)',
+      '15:00 Page Airbnb check-in',
+      '18:30 Horseshoe Bend ($10 parking, 1.5mi RT, ABA-compliant)',
+      '19:25 Sunset — stand on LEFT (west) side',
+    ],
+    eats:'Lunch Cameron Trading Post (Navajo tacos). Dinner State 48 Tavern',
+    dontMiss:'Bring 1L water pp — vault toilets at trailhead, NO water',
+    momNote:'Sunglasses essential — exposed slickrock blast' },
+  { n:5, date:'Thu May 14', title:'Antelope Canyon + Lake Powell', vibe:'⭐ TOUR · Hot · short local drives',
+    hotel:'Airbnb Page (2nd night)',
+    bullets:[
+      '09:30 At Antelope Slot Canyon Tours (22 S Lake Powell Blvd)',
+      '⚠️ NO bags, fanny packs, hydration packs. Phone + 1 water bottle in hand only',
+      '10:00 MST tour — Order #FMBYMK paid (operates on MST not MDT)',
+      '12:45 Lunch Lake Powell Resort (Wahweap Marina, lake views)',
+      '14:30 Glen Canyon Dam Overlook (free)',
+      '18:30 Dinner Big John\'s Texas BBQ',
+    ],
+    eats:'Lunch Lake Powell Resort. Dinner Big John\'s Texas BBQ',
+    dontMiss:'TOUR IS ON MST NOT MDT. Arrive 9:30am hard. Sand floors — closed-toe shoes',
+    momNote:'Phone HDR mode for light beams; tap-to-expose for bright beam, let rock fall dark' },
+  { n:6, date:'Fri May 15', title:'Page (Mom solo, Colin works)', vibe:'Solo / Rest · Hot · walking',
+    hotel:'Airbnb Page (3rd night)',
+    bullets:[
+      '08:00 Colin works at Airbnb',
+      '10:00 Mom: John Wesley Powell Museum (small, indoor, AC, ~1hr)',
+      '11:30 Lunch downtown (Gone West or El Tapatio)',
+      '13:00 Mom rests',
+      '15:00 Optional Hanging Gardens Trail (1.2mi RT, shaded gravel)',
+      '18:30 Dinner BirdHouse (fried chicken)',
+    ],
+    eats:'Lunch downtown Page. Dinner BirdHouse',
+    dontMiss:'Hydrate aggressively today — tomorrow is 6.5hr drive day',
+    momNote:'Rest day matters before heavy drive Day 7 + Arches Day 9' },
+  { n:7, date:'Sat May 16', title:'Page → Moab via Monument Valley', vibe:'Drive · Hot · 270mi/6.5hr (verified, NOT 5hr)',
+    hotel:'Moab Airbnb, 3442 Tierra del Sol Dr',
+    bullets:[
+      '09:00 Fuel Page (only one station before Kayenta)',
+      '11:30 Kayenta — mandatory fuel + restroom',
+      '12:30 Monument Valley View Hotel deck (FREE viewpoint). SKIP $8/$15 17-mile loop drive',
+      '13:30 Forrest Gump Point (Mile Marker 13 on US-163 north of park)',
+      '14:00 Lunch Twin Rocks Cafe Bluff — closes 2pm sharp',
+      '18:30 Arrive Moab Airbnb',
+      '19:30 Dinner Moab Brewery',
+    ],
+    eats:'Lunch Twin Rocks Bluff. Dinner Moab Brewery',
+    dontMiss:'Fuel BOTH Page AND Kayenta. Skip MV loop drive (deep sand, not rental-friendly)',
+    momNote:'Compression socks all day. Break every 90min' },
+  { n:8, date:'Sun May 17', title:'Moab (Colin works, Mom solo)', vibe:'Solo / Rest · Hot',
+    hotel:'Moab Airbnb (2nd night)',
+    bullets:[
+      '09:00 Mom Mill Creek Parkway (2mi paved, flat, shaded, benches)',
+      '12:00 Lunch Antica Forma (Neapolitan pizza, daily 11am-9pm)',
+      '13:30 Moab Information Center (free maps for tomorrow)',
+      '14:00-17:00 Pool/hot tub at Airbnb',
+      '19:00 Dinner Sabaku Sushi (takeout)',
+    ],
+    eats:'Lunch Antica Forma. Dinner Sabaku Sushi takeout',
+    dontMiss:'Moab Museum CLOSED Sunday — push to Tuesday',
+    momNote:'Mom rests for 4am wake-up Day 10 (Mesa Arch sunrise)' },
+  { n:9, date:'Mon May 18', title:'Arches NP Full Day', vibe:'Park · Hot · 5mi to entrance',
+    hotel:'Moab Airbnb (3rd night)',
+    bullets:[
+      '🎉 2026 timed entry CANCELLED. Arrive before 8am or after 3pm',
+      '07:00 Enter Arches by 7am',
+      '07:15 Park Avenue Viewpoint (drive-up + 0.2mi to overlook)',
+      '07:45 Balanced Rock (0.3mi paved loop)',
+      '08:15 Windows Section (1mi loop, sandy)',
+      '09:15 Double Arch (0.5mi RT flat)',
+      '10:30 Delicate Arch LOWER Viewpoint (NOT 3mi arch trail)',
+      '11:30 Lunch BACK in Moab (escape midday heat)',
+      '15:30 Re-enter — Skyline Arch + Park Avenue golden hour',
+      '19:00 Balanced Rock at sunset',
+    ],
+    eats:'Lunch Moab Diner. Dinner Antica Forma',
+    dontMiss:'2L water/person — NO shade. Restrooms only at Visitor Center, Devils Garden, Wolfe Ranch',
+    momNote:'Heat strategy — out of park 11:30am-3:30pm' },
+  { n:10, date:'Tue May 19', title:'Mesa Arch Sunrise + Canyonlands', vibe:'⭐ Park · Hot · 45-60min predawn drive',
+    hotel:'Moab Airbnb (4th night)',
+    bullets:[
+      '04:30 LEAVE MOAB sharp (parking fills 60-90min before sunrise)',
+      '05:20 Arrive Mesa Arch parking',
+      '06:07 Sunrise — arch glows ~1hr after',
+      '07:30 Drive-up viewpoints: Shafer, Buck Canyon, Grand View Point, Green River Overlook (best)',
+      '11:30 Back in Moab',
+      '12:00 Colin starts PM work',
+      '13:00 Mom: pool, Moab Museum (Tue open)',
+      '19:00 Dinner Diavolo (Sorrel River, splurge) or Moab Brewery',
+    ],
+    eats:'Coffee + protein bar in car. Dinner Diavolo or Moab Brewery',
+    dontMiss:'LEAVE MOAB 4:30AM SHARP. ~6 prime tripod spots',
+    momNote:'Mom can sleep on drive out. She can skip Mesa Arch and join Canyonlands viewpoints at 7:30am if knees flare' },
+  { n:11, date:'Wed May 20', title:'Moab → SLC + Temple Square', vibe:'Drive / City · Mild · 230mi/4hr',
+    hotel:'SLC Airbnb 241 W 200 S',
+    bullets:[
+      '09:00 Depart Moab',
+      '11:30 Lunch Tamarisk Restaurant Green River (51mi from Moab)',
+      '16:00 SLC Airbnb check-in',
+      '17:00 Walk to Temple Square (4 blocks N). New Visitors\' Center opened May 18!',
+      '18:30 City Creek Center walk (5min, retractable roof)',
+      '19:30 Dinner Red Iguana 2 (866 W S Temple — same menu as #1, shorter line). Mole sampler!',
+    ],
+    eats:'Lunch Tamarisk. Dinner Red Iguana 2',
+    dontMiss:'Mole sampler at Red Iguana (8 moles complimentary)',
+    momNote:'SLC = 4,226ft, fully acclimated from GC + Moab. Easy' },
+  { n:12, date:'Thu May 21', title:'SLC (Colin works, Mom solo)', vibe:'Solo / City · Mild',
+    hotel:'SLC Airbnb (2nd night)',
+    bullets:[
+      '08:00 Coffee La Barba (327 W 200 S, 1 block from Airbnb)',
+      '09:00 Mom walks City Creek Center',
+      '10:30 Uber to Tracy Aviary at Liberty Park ($14, paved paths, ADHD-friendly)',
+      '12:00 Tabernacle organ recital (12-12:30pm Mon-Sat)',
+      '13:00 Lunch Caputo\'s Market & Deli (3min walk)',
+      '14:00 Mom rests, rooftop pool/hot tub',
+      '17:00 Family History Library (5min walk)',
+      '19:30 Dinner The Copper Onion (upscale, reservation)',
+    ],
+    eats:'La Barba breakfast. Caputo\'s lunch. Copper Onion dinner',
+    dontMiss:'Tabernacle organ recital noon',
+    momNote:'Tracy Aviary is the secret weapon — paved, contained, lots to see, low effort' },
+  { n:13, date:'Fri May 22', title:'SLC (Colin works AM, joint PM)', vibe:'Solo AM / Joint PM · Mild',
+    hotel:'SLC Airbnb (3rd night)',
+    bullets:[
+      '09:00 Mom: Liberty Park 1.5mi flat loop OR This Is The Place Heritage Park',
+      '12:00 Lunch Caputo\'s or Crown Burgers (pastrami burger Utah classic)',
+      '16:00 Colin done early',
+      '17:00 Walk Temple Square together at golden hour',
+      '19:00 Dinner Red Iguana 1 — go before 6pm or expect wait',
+    ],
+    eats:'La Barba breakfast. Caputo\'s/Crown lunch. Red Iguana dinner',
+    dontMiss:'Pre-pack head nets, water, layers for Antelope Island tomorrow',
+    momNote:'Light day before busy Saturday' },
+  { n:14, date:'Sat May 23', title:'Antelope Island + NHMU + Ensign Peak', vibe:'Adventure · Mild',
+    hotel:'SLC Airbnb (4th night)',
+    bullets:[
+      '08:00 Drive Antelope Island (45min, $10/car). 🪰 HEAD NETS ON',
+      '09:00 Buffalo Point easy walk (breezier, fewer bugs)',
+      '12:30 Out',
+      '14:00 NHMU U of U ($20.95 senior, NOT $18). Past Worlds dinos, Bug World, rooftop terrace',
+      '19:00 Ensign Peak (0.9mi RT NOT 0.8, steep). Hiking poles strongly recommended',
+      '20:35 Sunset — bail to State Capitol grounds if knees flare',
+    ],
+    eats:'Crown Burgers/Caputo\'s lunch. Caputo\'s takeout dinner',
+    dontMiss:'HEAD NETS for Antelope Island gnats. Hiking poles for Ensign',
+    momNote:'Long day. If energy gone after NHMU, swap Ensign for State Capitol grounds at sunset' },
+  { n:15, date:'Sun May 24', title:'SLC → Driggs ID', vibe:'Drive · Mild · 290mi/4.5-5hr (via Idaho Falls NOT Jackson)',
+    hotel:'Mountain Modern Victor House, 8487 Caribou Ct',
+    bullets:[
+      '09:00 Depart SLC north on I-15',
+      '10:45 Lunch Bluebird Café Logan UT (1914 historic) ~140mi in',
+      '14:30 Idaho Falls quick break',
+      '16:00 ID-33 E into Victor over Pine Creek Pass (gentle, NOT Teton Pass)',
+      '17:00 Cabin check-in',
+      '18:30 Dinner Tatanka Tavern (3rd-floor Teton view) or Forage Bistro',
+    ],
+    eats:'Bluebird Café Logan lunch. Tatanka Tavern dinner',
+    dontMiss:'ID-33 (Pine Creek Pass) NOT Teton Pass — saves Mom 1.5hr + climb',
+    momNote:'Compression socks for the drive' },
+  { n:16, date:'Mon May 25', title:'Memorial Day Driggs (Colin works, Mom solo)', vibe:'Solo / Rest · Mild',
+    hotel:'Mountain Modern Victor House (2nd night)',
+    bullets:[
+      '09:00 Mom breakfast Rise Coffee House',
+      '10:00 Teton Geo Center (60 S Main, free, Mon 10am-4pm)',
+      '11:30 Driggs Main Street stroll',
+      '12:30 Lunch Tatanka Tavern',
+      '14:00 Spud Drive-In iconic giant potato photo',
+      '14:30 Teton Creek Corridor / Sherman Park (paved level path)',
+      '19:00 Dinner Royal Wolf (pub since 1997)',
+    ],
+    eats:'Rise Coffee. Tatanka Tavern lunch. Royal Wolf dinner',
+    dontMiss:'Pack for tomorrow\'s 6:30am wake-up',
+    momNote:'Rest day before Tetons big day' },
+  { n:17, date:'Tue May 26', title:'⭐ Grand Teton NP loop', vibe:'Park · Cool/Mild · via Teton Pass',
+    hotel:'Mountain Modern Victor House (3rd night)',
+    bullets:[
+      '⚠️ Mom $100 non-resident surcharge: total $135 single-park entry',
+      '06:30 Leave Victor → Teton Pass (sunrise 5:50am — accept "good light" not true golden)',
+      '07:30 Mormon Row (Moulton barns, balsamroot wildflowers)',
+      '08:30 Schwabacher Landing (0.5mi flat, aspen+Tetons)',
+      '09:30 Snake River Overlook (Ansel Adams spot)',
+      '11:30 Lunch Persephone Bakery Jackson, walk Town Square antler arches',
+      '13:30 Chapel of the Transfiguration',
+      '14:15 String Lake (skip Hidden Falls boat — too steep)',
+      '15:30 Oxbow Bend (afternoon light, moose)',
+      '16:30 Return via Hwy 26 → Hwy 33 — AVOIDS Teton Pass at dusk',
+    ],
+    eats:'Cabin breakfast. Persephone Bakery lunch. Forage Bistro or cabin dinner',
+    dontMiss:'Mom\'s $100 non-resident surcharge — bring card. 100yd from bears, 25yd from bison/moose',
+    momNote:'Gloves + beanie for sunrise. Light puffy. 38% chance rain — pack shell' },
+  { n:18, date:'Wed May 27', title:'Driggs → West Yellowstone', vibe:'Drive / Park · Cool · 85mi/1h45',
+    hotel:'Crosswinds Inn, 201 Firehole Ave',
+    bullets:[
+      '10:00 Depart Driggs → ID-33 → Hwy 20 N',
+      '12:00 Lunch Madison Crossing Lounge (historic schoolhouse)',
+      '13:00 Enter park West Entrance',
+      '14:30 Old Faithful — check predicted eruption time at Visitor Center',
+      '15:00 Watch eruption from boardwalk benches',
+      '15:30 Upper Geyser Basin loop (~1mi flat boardwalk past Castle/Grand/Beehive — quieter)',
+      '16:00 Old Faithful Inn lobby (1904 log architecture)',
+      '17:15 Grand Prismatic OVERLOOK from Fairy Falls Trailhead (1.2mi RT, NPS calls it "very well-suited for seniors")',
+      '19:30 Dinner Wild West Pizzeria (walking distance from hotel)',
+    ],
+    eats:'Madison Crossing lunch. Wild West Pizzeria dinner',
+    dontMiss:'Fairy Falls Overlook (Grand Prismatic from above — iconic shot, NOT Midway boardwalk)',
+    momNote:'If Mom tired, Midway Geyser Basin boardwalk (0.5mi flat) is the GP backup' },
+  { n:19, date:'Thu May 28', title:'Yellowstone Upper Loop', vibe:'Park · Cool/cold high passes · ~200mi in-park',
+    hotel:'Crosswinds Inn (2nd night)',
+    bullets:[
+      '07:00 Depart Crosswinds (early = wildlife + fewer crowds)',
+      '08:00 Norris Geyser Basin (Porcelain Basin boardwalk 0.5mi flat)',
+      '09:30 Mammoth — drive Upper Terrace 1.5mi loop FIRST (sit-down view)',
+      '11:30 Lamar Valley — TURN AROUND at Slough Creek pullout',
+      '13:00 Lunch Roosevelt Lodge or Tower Fall General Store',
+      '14:00 Tower Fall viewpoint (0.1mi)',
+      '14:30 Drive Dunraven Pass (8,800ft, snow patches)',
+      '15:30 Canyon — Artist Point (ICONIC Lower Falls shot)',
+      '16:00 Brink of Upper Falls or Lookout Point — SKIP Brink of Lower (600ft of stairs)',
+      '19:30 Dinner Three Bear Restaurant',
+    ],
+    eats:'Roosevelt Lodge lunch. Three Bear Restaurant dinner',
+    dontMiss:'Binoculars for Lamar. Top off gas Madison Junction or Old Faithful',
+    momNote:'Layers, gloves, beanie, waterproof shell. Snow possible at Dunraven Pass' },
+  { n:20, date:'Fri May 29', title:'West Yellowstone → Glacier (💜 ROBIN ARRIVES)', vibe:'Drive · Cool, rain likely · 380mi/6.5-7hr',
+    hotel:'Apgar Village Lodge & Cabins (in-park)',
+    bullets:[
+      '07:00 Depart Crosswinds (Mom sleeps in car)',
+      '10:30-11:30 Lunch Bozeman ~1.5hr in (vibrant downtown, farm-to-table)',
+      '15:30 Pass Missoula, US-93 N → Kalispell',
+      '16:00 BUY BEAR SPRAY in Kalispell (or rent at Apgar — can\'t fly with it)',
+      '17:00 Drop Mom at Apgar Village Lodge to rest',
+      '17:15 Colin solo to FCA (27mi/35min)',
+      'Robin Alaska AS 2402 lands FCA (afternoon — verify time)',
+      'Back at Apgar ~16:40',
+      '19:00 Welcome dinner Russell\'s Fireside at Lake McDonald Lodge (1913 historic) — RESERVATION',
+    ],
+    eats:'Bozeman lunch. Russell\'s Fireside dinner',
+    dontMiss:'Bear spray Kalispell. Russell\'s Fireside reservation',
+    momNote:'7hr drive day — compression socks all day, breaks every 90min' },
+  { n:21, date:'Sat May 30', title:'Glacier — Avalanche + Boat Tour', vibe:'Park · Cool, rain likely · 16mi up GTSR',
+    hotel:'Apgar Village Lodge (2nd night)',
+    bullets:[
+      '🎉 2026 timed entry ELIMINATED. GTSR plowed to Avalanche Creek (Logan Pass closed til mid-June)',
+      '08:30 Drive 16mi to Avalanche Creek trailhead — park early, fills fast',
+      '09:00 Trail of the Cedars boardwalk (0.9mi loop, all-accessible)',
+      '09:45 Decision point: Avalanche Lake (4.6mi RT/730ft) OR turn around at first mile',
+      '13:00 Lunch Russell\'s Fireside at Lake McDonald Lodge',
+      '14:30 DeSmet boat tour (1hr historic 1930 wooden boat) — book 406-257-2426',
+      '16:00 Apgar beach colored pebbles (red/green/blue argillite — leave the rocks!)',
+      '20:55 Sunset Apgar pier',
+    ],
+    eats:'Eddie\'s Cafe breakfast. Russell\'s Fireside lunch. Lucke\'s Lounge dinner',
+    dontMiss:'Bear spray on Avalanche hike (active grizzly area). Boat tour booking',
+    momNote:'Day 21 of trip — Avalanche Lake doable but stretch. Bail at first mile is fine' },
+  { n:22, date:'Sun May 31', title:'Departures (Glacier → home)', vibe:'Travel home · Cool · 27mi to FCA',
+    hotel:'N/A',
+    bullets:[
+      '06:30 Sunrise Lake McDonald (Apgar pier 5min)',
+      '07:30 Slow breakfast Eddie\'s Cafe',
+      '12:00 LATEST depart Apgar with Mom (HARD)',
+      '12:35 Arrive FCA',
+      '14:30 Mom departs DL 2575 (Delta to YYZ via MSP)',
+      'Lunch Backslope Brewing Whitefish or Three Forks Grille',
+      '17:40 Colin + Robin depart AS 2419 (FCA → SEA, 1h32m, First Class for Colin)',
+    ],
+    eats:'Eddie\'s Cafe breakfast. Backslope Brewing lunch',
+    dontMiss:'Mom needs FCA by 13:00 — leave Apgar by 12:00 hard',
+    momNote:'Compression socks for flight. All meds in carry-on. 2x reading glasses' },
+];
+
 // ─── Page ───
 export default function GuidePage() {
   const [openSection, setOpenSection] = useState<string | null>('vegas');
-  const [openTab, setOpenTab] = useState<'guide' | 'mom' | 'pack'>('guide');
+  const [openDay, setOpenDay] = useState<number | null>(null);
+  const [openTab, setOpenTab] = useState<'guide' | 'schedule' | 'mom' | 'pack'>('guide');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white pb-12">
@@ -361,6 +678,7 @@ export default function GuidePage() {
         <div className="flex gap-1 bg-gray-100 rounded-xl p-1 mb-4">
           {([
             ['guide', '📍 Locations', Compass],
+            ['schedule', '📅 Schedule', Clock],
             ['mom', '👵 Mom Tips', Heart],
             ['pack', '🎒 Pack List', Backpack],
           ] as const).map(([id, label]) => (
@@ -389,6 +707,43 @@ export default function GuidePage() {
                 </button>
                 {openSection === s.id && (
                   <div className="px-4 pb-5 border-t border-gray-100">{s.content}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* SCHEDULE TAB */}
+        {openTab === 'schedule' && (
+          <div className="space-y-2">
+            <Card emoji="📅" title="22-Day Hour-by-Hour Schedule">
+              <P>Tap any day below to see the full plan. Researched by location specialists, validated against current 2026 park status (Arches + Glacier timed entry both eliminated, $100 non-resident surcharge for Mom at Tetons).</P>
+            </Card>
+            {SCHEDULE.map(d => (
+              <div key={d.n} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <button onClick={() => setOpenDay(openDay === d.n ? null : d.n)}
+                  className="w-full flex items-center gap-3 p-3 hover:bg-amber-50 transition-colors text-left">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-100 flex flex-col items-center justify-center">
+                    <div className="text-xs font-bold text-amber-600">DAY</div>
+                    <div className="text-base font-bold text-amber-700 leading-none">{d.n}</div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs text-gray-500">{d.date}</div>
+                    <div className="font-bold text-gray-800 leading-tight">{d.title}</div>
+                    <div className="text-[11px] text-gray-500 mt-0.5">{d.vibe}</div>
+                  </div>
+                  {openDay === d.n ? <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronRight className="w-5 h-5 text-gray-400 shrink-0" />}
+                </button>
+                {openDay === d.n && (
+                  <div className="px-3 pb-4 border-t border-gray-100 text-sm">
+                    <div className="bg-amber-50 px-2 py-1.5 mt-2 rounded text-xs"><B>Hotel:</B> {d.hotel}</div>
+                    <ul className="mt-3 space-y-1 text-gray-700">
+                      {d.bullets.map((b, i) => <li key={i} className="text-[13px]">{b}</li>)}
+                    </ul>
+                    <div className="mt-3 text-xs"><B>Eats:</B> <span className="text-gray-600">{d.eats}</span></div>
+                    <div className="mt-2 bg-blue-50 border-l-4 border-blue-300 p-2 text-xs"><B>Don&apos;t miss:</B> {d.dontMiss}</div>
+                    <div className="mt-2 bg-purple-50 border-l-4 border-purple-300 p-2 text-xs"><B>Mom note:</B> {d.momNote}</div>
+                  </div>
                 )}
               </div>
             ))}
