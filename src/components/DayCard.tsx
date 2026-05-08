@@ -268,13 +268,21 @@ const accTypeConfig: Record<string, { icon: typeof Hotel; label: string; color: 
 function AccommodationCard({ acc }: { acc: Accommodation }) {
   const typeConf = accTypeConfig[acc.type] || accTypeConfig.hotel;
   const TypeIcon = typeConf.icon;
+  const isBooked = !!(acc.notes && /booked/i.test(acc.notes));
 
   return (
-    <div className={`bg-white rounded-lg p-3 border ${acc.recommended ? 'border-blue-300 ring-1 ring-blue-100' : 'border-gray-200'}`}>
+    <div className={`bg-white rounded-lg p-3 border ${
+      isBooked ? 'border-emerald-300 ring-1 ring-emerald-100'
+      : acc.recommended ? 'border-blue-300 ring-1 ring-blue-100' : 'border-gray-200'
+    }`}>
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            {acc.recommended && (
+            {isBooked ? (
+              <span className="px-1.5 py-0.5 bg-emerald-600 text-white text-[10px] font-semibold rounded uppercase tracking-wide">
+                ✓ Booked
+              </span>
+            ) : acc.recommended && (
               <span className="px-1.5 py-0.5 bg-blue-500 text-white text-[10px] font-semibold rounded uppercase tracking-wide">
                 Top Pick
               </span>
@@ -283,7 +291,7 @@ function AccommodationCard({ acc }: { acc: Accommodation }) {
               <TypeIcon className="w-2.5 h-2.5" />
               {typeConf.label}
             </span>
-            <span className="font-medium text-gray-900 text-sm">{acc.name}</span>
+            <span className="font-medium text-gray-900 text-sm">{acc.name.replace(/ — BOOKED$/, '')}</span>
           </div>
           <div className="flex items-center gap-3 mt-1.5 text-xs text-gray-600 flex-wrap">
             <span className="font-semibold text-gray-900">{acc.priceRange}/night</span>
