@@ -245,19 +245,30 @@ function ReservationsCard({ reservations }: { reservations: TripData['importantR
 
   if (!reservations || reservations.length === 0) return null;
 
+  // Categorize each reservation
+  const isBooked = (r: { bookBy: string; item: string }) =>
+    /^(BOOKED|OWNED|N\/A)$/i.test(r.bookBy) || r.item.startsWith('✅') || r.item.startsWith('ℹ️');
+  const isAction = (r: { item: string }) => r.item.startsWith('🔴');
+
+  const bookedCount = reservations.filter(isBooked).length;
+  const actionCount = reservations.filter(isAction).length;
+
   return (
-    <div className="bg-white rounded-xl border border-red-200 shadow-sm overflow-hidden">
+    <div className="bg-white rounded-xl border border-emerald-200 shadow-sm overflow-hidden">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full p-4 flex items-center justify-between hover:bg-red-50 transition-colors"
+        className="w-full p-4 flex items-center justify-between hover:bg-emerald-50 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-            <AlertCircle className="w-5 h-5 text-red-600" />
+          <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
+            <AlertCircle className="w-5 h-5 text-emerald-600" />
           </div>
           <div className="text-left">
-            <h3 className="font-semibold text-gray-900">Important Reservations</h3>
-            <p className="text-sm text-red-600">{reservations.length} items need booking</p>
+            <h3 className="font-semibold text-gray-900">Reservations & Status</h3>
+            <p className="text-sm text-gray-600">
+              <span className="text-emerald-700 font-medium">{bookedCount} booked/done</span>
+              {actionCount > 0 && <span className="text-red-600 font-medium"> · {actionCount} action needed</span>}
+            </p>
           </div>
         </div>
         {expanded ? (
@@ -268,13 +279,18 @@ function ReservationsCard({ reservations }: { reservations: TripData['importantR
       </button>
 
       {expanded && (
-        <div className="border-t border-red-100 p-4 space-y-3 animate-fade-in">
-          {reservations.map((res, idx) => (
-            <div key={idx} className="bg-red-50 rounded-lg p-3">
+        <div className="border-t border-emerald-100 p-4 space-y-3 animate-fade-in">
+          {reservations.map((res, idx) => {
+            const booked = isBooked(res);
+            const action = isAction(res);
+            const bg = booked ? 'bg-emerald-50' : action ? 'bg-red-50' : 'bg-amber-50';
+            const labelColor = booked ? 'text-emerald-700' : action ? 'text-red-700' : 'text-amber-700';
+            return (
+            <div key={idx} className={`${bg} rounded-lg p-3`}>
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h4 className="font-medium text-gray-900">{res.item}</h4>
-                  <p className="text-sm text-red-700 mt-0.5">Book: {res.bookBy}</p>
+                  <p className={`text-sm ${labelColor} mt-0.5`}>{res.bookBy}</p>
                   {res.notes && (
                     <p className="text-xs text-gray-500 mt-1">{res.notes}</p>
                   )}
@@ -289,7 +305,8 @@ function ReservationsCard({ reservations }: { reservations: TripData['importantR
                 </a>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>

@@ -2234,58 +2234,64 @@ export const tripData: TripData = {
   },
   importantReservations: [
     {
-      item: 'Upper Antelope Canyon Tour',
-      bookBy: '2026-04-15',
+      item: '✅ Upper Antelope Canyon Tour — BOOKED',
+      bookBy: 'BOOKED',
       website: 'https://antelopeslotcanyon.com/',
-      notes: 'BOOKED: 10:00am May 14, 2 adults. Antelope Slot Canyon Tours (Tsosie family). $95/person + $15 Navajo fee = $220 total. Luxury enclosed 4x4 vans.'
+      notes: 'Order #FMBYMK. 10:00am MST May 14, 2 adults. Antelope Slot Canyon Tours. ⚠️ TIMEZONE: Tour operates on MST (Arizona time = same as PDT in summer), NOT Navajo MDT. Mom still needs to sign waiver — check email.'
     },
     {
-      item: 'Grand Canyon Lodging (Tusayan)',
-      bookBy: '2026-03-15',
-      website: 'https://www.redfeatherlodge.com/',
-      notes: 'BOOKED: Maswik Lodge in-park. Xanterra #20514347. 20% discount rate.'
+      item: '✅ Grand Canyon — Maswik Lodge BOOKED',
+      bookBy: 'BOOKED',
+      website: 'https://www.grandcanyonlodges.com/',
+      notes: 'Maswik Lodge IN-PARK (not Tusayan). Xanterra #20514347. Standard 2 Queen North, 20% discount. $547.30 total ($273.65 deposit paid).'
     },
     {
-      item: 'El Tovar Dining Room Reservation',
-      bookBy: '2026-03-14',
-      website: 'https://www.exploretock.com/el-tovar-dining-room---grand-canyon-south-rim',
-      notes: 'Opens 60 days ahead on Tock. For May 12 lunch, book by mid-March. Lunch is easier to get than dinner.'
+      item: '✅ Car Rental LAS→FCA — BOOKED',
+      bookBy: 'BOOKED',
+      website: 'https://cars.booking.com',
+      notes: 'Booking.com Itinerary #767545928. LAS pickup May 10 at 12:00pm noon. Pay with Chase Sapphire Reserve = primary rental insurance, decline ALL CDW/LDW.'
     },
     {
-      item: 'Car Rental LAS→FCA One-Way',
-      bookBy: '2026-03-15',
-      website: 'https://www.costcotravel.com/Rental-Cars',
-      notes: 'Book via Costco Travel, then check AutoSlash (autoslash.com). Free cancellation — rebook if prices drop. 21-day rental, ~$1040 total.'
+      item: '✅ Driggs — Mountain Modern Victor House BOOKED',
+      bookBy: 'BOOKED',
+      website: 'https://www.airbnb.com/rooms/1133460407258641526',
+      notes: 'Airbnb HM2FC8WSJ8. 8487 Caribou Ct, Victor ID 83455. 3n Sun-Wed May 24-27. $885.47 paid 4/15 (Visa 6386). NON-REFUNDABLE.'
     },
     {
-      item: 'Driggs Lodging (Memorial Day Weekend)',
-      bookBy: '2026-03-15',
-      website: 'https://www.tetonvalleycabins.com/',
-      notes: 'May 24-27 overlaps Memorial Day weekend (Mon May 25). Teton Valley fills up — book ASAP.'
+      item: '✅ Glacier — Apgar Village Lodge BOOKED',
+      bookBy: 'BOOKED',
+      website: 'https://www.glacierparkcollection.com/lodging/apgar-village/',
+      notes: 'Apgar Village Lodge (IN-PARK, near Lake McDonald — NOT Columbia Falls). Reservation #3870048. Cabin 3 Queen, 2 Room. 2n May 29-31. $392.26 ($189.22 paid, $203.04 balance at check-in).'
     },
     {
-      item: 'Glacier Lodging (Columbia Falls)',
-      bookBy: '2026-03-15',
-      website: 'https://meadowlake.com/',
-      notes: '2BR condo for 3 adults (Robin arrives Fri). May 29-31. Book early — Memorial Day weekend travelers may extend into this period.'
+      item: '✅ America the Beautiful Pass — OWNED',
+      bookBy: 'OWNED',
+      website: 'https://store.usgs.gov/pass/annual',
+      notes: 'Colin\'s annual pass. Covers all passengers including nonresident fees at federal parks. Saves $250 across 6 parks. ⚠️ Does NOT waive Mom\'s Grand Teton non-resident $100 surcharge (new for 2026) — that is in addition to vehicle entry.'
     },
     {
-      item: 'Park Passes (NEW 2026 Nonresident Fees!)',
-      bookBy: '2026-05-01',
-      website: 'https://www.nps.gov/planyourvisit/passes.htm',
-      notes: 'Colin: $80 America the Beautiful pass. This covers Colin + all passengers (including Mom) and waives nonresident fees. Mom does NOT need the $250 Nonresident Pass — Colin\'s pass covers her as a vehicle passenger at all parks. Buy at first park entrance or online at recreation.gov.'
+      item: '🔴 Mom\'s Antelope Canyon Waiver',
+      bookBy: 'ASAP before May 14',
+      website: 'https://antelopeslotcanyon.com/',
+      notes: 'Colin signed his. Mom STILL NEEDS TO SIGN. Check email for waiver link from Antelope Slot Canyon Tours. Order #FMBYMK.'
     },
     {
-      item: 'Arches NP — No Timed Entry in 2026',
+      item: 'ℹ️ Arches NP — No Timed Entry in 2026',
       bookBy: 'N/A',
-      website: 'https://www.nps.gov/arch/planyourvisit/timed-entry-reservation.htm',
-      notes: 'Timed entry dropped for 2026. No reservation needed. Arrive early (before 8am) to avoid crowds.'
+      website: 'https://www.nps.gov/arch/learn/news/news02182026.htm',
+      notes: 'Timed entry CANCELLED for 2026. No reservation needed. Arrive before 8am or after 3pm to avoid parking restrictions when full.'
     },
     {
-      item: 'Glacier — No Vehicle Reservation in 2026',
+      item: 'ℹ️ Glacier — No Vehicle Reservation in 2026',
       bookBy: 'N/A',
       website: 'https://www.nps.gov/glac/planyourvisit/visiting-glacier-2026.htm',
-      notes: 'Timed-entry vehicle reservation system discontinued for 2026. New ticketed shuttle + 3hr Logan Pass parking limit starts July 1 (after your trip). Sun Road will only be open to Avalanche Creek area in late May.'
+      notes: 'Timed-entry vehicle reservation ELIMINATED for 2026. Sun Road only open to Avalanche Creek area in late May (Logan Pass closed until mid-June).'
+    },
+    {
+      item: '🔴 Mom\'s Travel Insurance (Canadian)',
+      bookBy: 'Before May 10',
+      website: 'https://www.manulife.ca/personal/travel-insurance.html',
+      notes: 'OHIP/provincial covers ~5-10% of US medical costs. Single ER visit $3,000+. Get supplemental for entire 22 days from Manulife/Blue Cross/TuGo/Allianz. Expect $200-400. Verify pre-existing condition coverage (90-180 day stability).'
     }
   ]
 };

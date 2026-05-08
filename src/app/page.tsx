@@ -544,21 +544,26 @@ export default function Home() {
             )}
 
             {/* Important reservations */}
-            {tripData.importantReservations && tripData.importantReservations.length > 0 && (
-              <div className="p-3 bg-red-50 rounded-lg col-span-2">
-                <div className="text-xs text-red-600 font-medium mb-1">
-                  {tripData.importantReservations.length} reservations needed
+            {tripData.importantReservations && tripData.importantReservations.length > 0 && (() => {
+              const items = tripData.importantReservations;
+              const actionItems = items.filter(r => r.item.startsWith('🔴'));
+              const bookedCount = items.filter(r => /^(BOOKED|OWNED|N\/A)$/i.test(r.bookBy) || r.item.startsWith('✅') || r.item.startsWith('ℹ️')).length;
+              const bg = actionItems.length > 0 ? 'bg-red-50' : 'bg-emerald-50';
+              const labelColor = actionItems.length > 0 ? 'text-red-600' : 'text-emerald-700';
+              return (
+                <div className={`p-3 ${bg} rounded-lg col-span-2`}>
+                  <div className={`text-xs ${labelColor} font-medium mb-1`}>
+                    {bookedCount}/{items.length} done
+                    {actionItems.length > 0 && ` · ${actionItems.length} action needed`}
+                  </div>
+                  <div className="space-y-1">
+                    {(actionItems.length > 0 ? actionItems : items).slice(0, 2).map((res, i) => (
+                      <div key={i} className="text-xs text-gray-600">{res.item}</div>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  {tripData.importantReservations.slice(0, 2).map((res, i) => (
-                    <div key={i} className="text-xs text-gray-600">{res.item}</div>
-                  ))}
-                  {tripData.importantReservations.length > 2 && (
-                    <div className="text-xs text-gray-400">+{tripData.importantReservations.length - 2} more</div>
-                  )}
-                </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* Budget breakdown */}
             <div className="p-3 bg-green-50 rounded-lg">
