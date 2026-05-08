@@ -337,8 +337,8 @@ export const tripData: TripData = {
     }
   ],
   carRental: {
-    company: 'Budget or Enterprise',
-    vehicleType: 'Compact AWD SUV (Subaru Crosstrek / Toyota RAV4)',
+    company: 'Booking.com',
+    vehicleType: 'Rental Car (LAS pickup May 10 noon)',
     pickupLocation: 'Las Vegas Harry Reid Airport (LAS)',
     pickupDate: '2026-05-10',
     dropoffLocation: 'Glacier Park International Airport (FCA)',
@@ -347,7 +347,8 @@ export const tripData: TripData = {
     dailyRate: 40,
     dropoffFee: 200,
     totalCost: 1040,
-    notes: 'One-way compact SUV. LAS to FCA drop-off. AWD nice but not required — all roads are paved. Book via Costco Travel or AutoSlash. Try Hertz with DRIVE rate code for cheap one-way drops. AARP gets 30-35% off at Avis/Budget.'
+    bookingUrl: 'https://cars.booking.com',
+    notes: 'BOOKED: Booking.com Itinerary #767545928. LAS pickup May 10 at 12:00pm noon, one-way to FCA over 21 days. Pay with Chase Sapphire Reserve = primary rental insurance, decline ALL CDW/LDW.'
   },
   days: [
     // ============================================================

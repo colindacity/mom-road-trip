@@ -1,6 +1,6 @@
 'use client';
 
-import { Car, MapPin, Calendar, DollarSign, ExternalLink, AlertCircle } from 'lucide-react';
+import { Car, MapPin, Calendar, ExternalLink, AlertCircle, Check } from 'lucide-react';
 import { CarRental } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
 
@@ -12,16 +12,19 @@ export default function CarRentalInfo({ carRental }: CarRentalInfoProps) {
   const pickupDate = parseISO(carRental.pickupDate);
   const dropoffDate = parseISO(carRental.dropoffDate);
 
+  // Detect booked from notes
+  const isBooked = !!(carRental.notes && /booked/i.test(carRental.notes));
+
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-r from-orange-500 to-amber-500 p-4">
+      <div className={`p-4 ${isBooked ? 'bg-gradient-to-r from-emerald-500 to-green-600' : 'bg-gradient-to-r from-orange-500 to-amber-500'}`}>
         <div className="flex items-center gap-2 text-white">
           <Car className="w-5 h-5" />
-          <h2 className="font-semibold">Car Rental</h2>
+          <h2 className="font-semibold">Car Rental {isBooked && '— Booked ✓'}</h2>
         </div>
-        <p className="text-white/80 text-sm mt-1">
-          {carRental.totalDays} days • One-way rental
+        <p className="text-white/90 text-sm mt-1">
+          {carRental.totalDays} days · One-way rental
         </p>
       </div>
 
@@ -35,7 +38,11 @@ export default function CarRentalInfo({ carRental }: CarRentalInfoProps) {
             <div className="font-medium text-gray-900">{carRental.vehicleType}</div>
             <div className="text-sm text-gray-500">{carRental.company}</div>
           </div>
-          {carRental.bookingUrl && (
+          {isBooked ? (
+            <span className="px-3 py-1.5 bg-emerald-100 text-emerald-700 text-sm rounded-lg font-semibold flex items-center gap-1">
+              <Check className="w-4 h-4" /> Booked
+            </span>
+          ) : carRental.bookingUrl ? (
             <a
               href={carRental.bookingUrl}
               target="_blank"
@@ -45,7 +52,7 @@ export default function CarRentalInfo({ carRental }: CarRentalInfoProps) {
               Book
               <ExternalLink className="w-3 h-3" />
             </a>
-          )}
+          ) : null}
         </div>
 
         {/* Pickup & Dropoff */}
@@ -94,8 +101,8 @@ export default function CarRentalInfo({ carRental }: CarRentalInfoProps) {
             </div>
           )}
           <div className="flex items-center justify-between text-base font-bold pt-2 border-t border-gray-200">
-            <span className="text-gray-800">Estimated Total</span>
-            <span className="text-orange-600">${carRental.totalCost?.toLocaleString() || ((carRental.dailyRate || 0) * carRental.totalDays + (carRental.dropoffFee || 0)).toLocaleString()}</span>
+            <span className="text-gray-800">{isBooked ? 'Total' : 'Estimated Total'}</span>
+            <span className={isBooked ? 'text-emerald-600' : 'text-orange-600'}>${carRental.totalCost?.toLocaleString() || ((carRental.dailyRate || 0) * carRental.totalDays + (carRental.dropoffFee || 0)).toLocaleString()}</span>
           </div>
         </div>
 
