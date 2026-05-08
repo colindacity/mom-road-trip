@@ -2203,14 +2203,14 @@ export const tripData: TripData = {
     }
   ],
   totalBudget: {
-    flights: 1172,
+    flights: 952,
     carRental: 1040,
-    accommodations: 2750,
+    accommodations: 6242,
     food: 1570,
     activities: 350,
     gas: 505,
     misc: 520,
-    total: 7907
+    total: 11179
   },
   costBreakdown: {
     flights: {
@@ -2218,16 +2218,16 @@ export const tripData: TripData = {
       momOutbound: { description: 'YYZ→LAS Porter PD 653 — BOOKED conf C3STYI', price: 276.23 },
       colinReturn: { description: 'FCA→SEA Alaska AS 2419 First Class — BOOKED Chase #1016667852 conf ZAAGXY', price: 218.40 },
       momReturn: { description: 'FCA→MSP→YYZ Delta DL 2575+3866 — BOOKED Amex #7468-1456 conf G5FIWA', price: 244.33 },
-      robinOutbound: { description: 'SEA→FCA Alaska AS 2402 — BOOKED', price: 110 },
-      robinReturn: { description: 'FCA→SEA Alaska AS 2419 — BOOKED (same flight as Colin)', price: 110 },
-      total: 1171.79,
+      robinOutbound: { description: 'SEA→FCA Alaska AS 2402 — BOOKED (Robin paid separately)', price: 0 },
+      robinReturn: { description: 'FCA→SEA Alaska AS 2419 — BOOKED (same flight as Colin, Robin paid separately)', price: 0 },
+      total: 951.79,
     },
     carRental: {
       dailyRate: 40,
       days: 21,
       dropoffFee: 200,
       total: 1040,
-      notes: 'LAS→FCA one-way. 21 days (May 10 → May 31). Book via Costco Travel or AutoSlash.',
+      notes: 'BOOKED: Booking.com Itinerary #767545928. LAS pickup May 10 noon, one-way to FCA over 21 days. Chase Sapphire Reserve = primary insurance.',
     },
     accommodationAvg: 132,
     foodPerDay: 71,
