@@ -118,25 +118,25 @@ export default function CostBreakdownComponent({ tripDays }: CostBreakdownProps)
           </div>
           <div className="pl-6 space-y-1.5 text-sm">
             <FlightRow
-              label="Colin: SEA→PHX"
+              label="Colin: PAE→LAS"
               item={breakdown.flights.colinOutbound}
               isEditing={isEditing}
               onChange={(price) => updateFlightPrice('colinOutbound', price)}
             />
             <FlightRow
-              label="Mom: YYZ→PHX"
+              label="Mom: YYZ→LAS"
               item={breakdown.flights.momOutbound}
               isEditing={isEditing}
               onChange={(price) => updateFlightPrice('momOutbound', price)}
             />
             <FlightRow
-              label="Colin: PDX→SEA"
+              label="Colin: FCA→SEA"
               item={breakdown.flights.colinReturn}
               isEditing={isEditing}
               onChange={(price) => updateFlightPrice('colinReturn', price)}
             />
             <FlightRow
-              label="Mom: PDX→YYZ"
+              label="Mom: FCA→YYZ"
               item={breakdown.flights.momReturn}
               isEditing={isEditing}
               onChange={(price) => updateFlightPrice('momReturn', price)}
