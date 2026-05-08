@@ -209,6 +209,7 @@ function CarRentalCard({ rental }: { rental?: TripData['carRental'] }) {
   const [expanded, setExpanded] = useState(true);
 
   if (!rental) return null;
+  const isBooked = !!(rental.notes && /booked/i.test(rental.notes));
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
@@ -217,11 +218,11 @@ function CarRentalCard({ rental }: { rental?: TripData['carRental'] }) {
         className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
-            <Car className="w-5 h-5 text-amber-600" />
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${isBooked ? 'bg-emerald-100' : 'bg-amber-100'}`}>
+            <Car className={`w-5 h-5 ${isBooked ? 'text-emerald-600' : 'text-amber-600'}`} />
           </div>
           <div className="text-left">
-            <h3 className="font-semibold text-gray-900">Car Rental</h3>
+            <h3 className="font-semibold text-gray-900">Car Rental {isBooked && '— Booked ✓'}</h3>
             <p className="text-sm text-gray-500">{rental.totalDays} days, one-way</p>
           </div>
         </div>
