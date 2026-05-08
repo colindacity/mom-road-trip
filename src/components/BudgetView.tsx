@@ -168,7 +168,7 @@ export default function BudgetView({ trip }: BudgetViewProps) {
         <ul className="text-sm text-amber-700 space-y-1">
           <li>• All accommodations + flights + car BOOKED. Prices reflect actual paid amounts.</li>
           <li>• Gas + food are still daily estimates (~$100/day food for 2)</li>
-          <li>• America the Beautiful Pass ($80) — still to buy before May 10</li>
+          <li>• America the Beautiful Pass ($80) — already owned</li>
           <li>• Mom&apos;s Antelope Canyon waiver — still needs signing</li>
         </ul>
       </div>

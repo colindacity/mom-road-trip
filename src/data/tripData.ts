@@ -447,21 +447,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in.'
-        },
-        {
-          id: 'acc1b',
-          name: 'Best Western Casino Royale',
-          type: 'hotel',
-          priceRange: '$80-110',
-          pricePerNight: 95,
-          reviewRating: 3.8,
-          reviewSource: 'TripAdvisor',
-          address: '3411 S Las Vegas Blvd',
-          website: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
-          bookingUrl: 'https://www.bestwestern.com/en_US/book/hotel-rooms.29087.html',
-          amenities: ['$0 resort fee', 'Free parking', 'Center Strip', 'Casino'],
-          seniorFriendly: true,
-          notes: 'ONLY Strip hotel with $0 resort fee + free parking. All-in ~$95. 5 min walk to Caesars/Bacchanal.'
         }
       ],
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
@@ -571,34 +556,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347.'
-        },
-        {
-          id: 'acc2b',
-          name: 'Holiday Inn Express Grand Canyon (Tusayan)',
-          type: 'hotel',
-          priceRange: '$170-250',
-          pricePerNight: 210,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor',
-          address: 'Tusayan, AZ (1 mile from South Rim entrance)',
-          website: 'https://www.ihg.com/',
-          amenities: ['Free breakfast', 'Pool', 'Free parking', 'Free WiFi'],
-          seniorFriendly: true,
-          notes: 'Holiday Inn Squire Tusayan. 1mi from park entrance. Reliable fallback.'
-        },
-        {
-          id: 'acc2c',
-          name: 'Grand Hotel Tusayan',
-          type: 'hotel',
-          priceRange: '$102-180',
-          pricePerNight: 140,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor',
-          address: 'Tusayan, AZ',
-          website: 'https://www.visitgrandcanyon.com/',
-          amenities: ['Indoor pool', 'Hot tub', 'Free parking', 'Restaurant'],
-          seniorFriendly: true,
-          notes: 'Grand Hotel Tusayan. Good value alternative outside the park.'
         }
       ],
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
@@ -792,30 +749,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
-        },
-        {
-          id: 'acc4b',
-          name: 'Hampton Inn & Suites Page — Lake Powell',
-          type: 'hotel',
-          priceRange: '$140-250/night',
-          pricePerNight: 180,
-          address: 'Page, AZ',
-          website: 'https://www.hilton.com/',
-          bookingUrl: 'https://www.hilton.com/en/hotels/pgalphx-hampton-suites-page-lake-powell/',
-          amenities: ['Indoor pool', 'Free hot breakfast', '24hr business center', 'Desk in room', 'Hilton Honors'],
-          seniorFriendly: true,
-          notes: '#1 of 22 in Page, 8.9/10 WiFi rated, best hotel backup'
-        },
-        {
-          id: 'acc4c',
-          name: 'Country Inn & Suites by Radisson',
-          type: 'hotel',
-          priceRange: '$114-160/night',
-          pricePerNight: 130,
-          address: 'Page, AZ',
-          amenities: ['Free breakfast', 'Business center', 'Indoor pool', 'Newer property'],
-          seniorFriendly: true,
-          notes: 'Budget option, newer property = better infrastructure'
         }
       ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
@@ -1048,28 +981,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
-        },
-        {
-          id: 'acc7b',
-          name: 'Element Moab (Marriott)',
-          type: 'hotel',
-          priceRange: '$250-350/night',
-          pricePerNight: 300,
-          address: 'Moab, UT',
-          amenities: ['2 queens 418sqft', 'Desk in every room', 'Kitchenette', 'Free breakfast', 'Pool', 'Marriott Bonvoy'],
-          seniorFriendly: true,
-          notes: 'Larger rooms than My Place but WiFi unverified. Marriott enhanced WiFi tier worth buying. 6min to Arches.'
-        },
-        {
-          id: 'acc7c',
-          name: '2BR Airbnb with Fiber/Starlink',
-          type: 'vacation_rental',
-          priceRange: '$250-400/night',
-          pricePerNight: 320,
-          address: 'Moab, UT',
-          amenities: ['Fiber or Starlink WiFi', 'True 2 bedrooms', 'Full kitchen', 'Privacy'],
-          seniorFriendly: true,
-          notes: 'Search VRBO #431015 Arches Retreat (fiber confirmed) or Airbnb filter for "fiber/Starlink". Only way to get true 2BR + fast WiFi.'
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],

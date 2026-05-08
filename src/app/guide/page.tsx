@@ -364,7 +364,7 @@ const SCHEDULE: DaySchedule[] = [
       '07:30 Pick up rental car LAS RAC',
       '09:00 Depart Vegas. Top off gas Kingman or Williams (NOT Tusayan)',
       '12:30 Lunch Pine Country Restaurant Williams',
-      '15:30 South Entrance (afternoon = short lines). Buy America the Beautiful $80',
+      '15:30 South Entrance (afternoon = short lines). Show America the Beautiful pass (already owned)',
       '18:15 Mather Point — walk 5min east on Rim Trail for fewer crowds',
       '19:24 Sunset',
     ],

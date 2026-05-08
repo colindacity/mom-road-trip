@@ -170,7 +170,7 @@ const FLIGHTS = [
 
 const LOGISTICS = [
   { cat:'Car', name:'Rental Car LAS pickup 5/10 12pm', detail:'Booking.com Itinerary #767545928. LAS pickup May 10 noon. Chase Sapphire Reserve = primary insurance, decline CDW.', url:'https://cars.booking.com', when:'5/10-31', status:'booked' as const },
-  { cat:'Pass', name:'America the Beautiful $80', detail:"Colin's pass covers all. Saves $250 across 6 parks.", url:'https://store.usgs.gov/pass/annual', when:'Before 5/10', status:'pending' as const },
+  { cat:'Pass', name:'America the Beautiful $80', detail:"OWNED. Colin's pass covers all passengers. Saves $250 across 6 parks. Does NOT waive Mom's Tetons non-resident $100 surcharge (new for 2026).", url:'https://store.usgs.gov/pass/annual', when:'OWNED', status:'booked' as const },
   { cat:'!!', name:"Mom's Antelope Waiver", detail:'MOM STILL NEEDS TO SIGN. Check email.', url:'', when:'ASAP', status:'action' as const },
 ];
 

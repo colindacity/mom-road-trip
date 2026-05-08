@@ -262,14 +262,15 @@ export function generateActionItems(): ActionItem[] {
   items.push({
     id: 'pass-colin',
     category: 'pass',
-    title: 'Buy America the Beautiful Pass ($80)',
-    description: "Covers Colin + Mom + Robin as passengers. Saves $250 across 6 parks.",
-    status: 'pending',
+    title: '✅ America the Beautiful Pass — OWNED',
+    description: "Colin's annual pass covers all passengers including nonresident fees.",
+    status: 'booked',
     deadline: '2026-05-10',
     tripDay: 2,
     estimatedCost: 80,
+    actualCost: 80,
     bookingUrl: 'https://store.usgs.gov/pass/annual',
-    notes: "Colin's annual pass covers all passengers including nonresident fees. SAVES $250 across 6 parks!",
+    notes: "Already owned. Saves $250 across 6 parks. Note: Grand Teton 2026 added a $100/person non-resident surcharge for Mom (Canadian) — pass does not waive that.",
     updatedAt: now(),
   });
 
