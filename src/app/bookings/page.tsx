@@ -115,7 +115,7 @@ function AddItemRow({ listId, user, onAdd }: { listId: string; user: string; onA
 
   return (
     <div className="bk-add-form">
-      <input value={name} onChange={e => setName(e.target.value)} placeholder="Name (e.g. Hampton Inn Page)" className="bk-add-input bk-add-name" onKeyDown={e => e.key === 'Enter' && submit()} />
+      <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" className="bk-add-input bk-add-name" onKeyDown={e => e.key === 'Enter' && submit()} />
       <input value={price} onChange={e => setPrice(e.target.value)} placeholder="Price" className="bk-add-input bk-add-price" />
       <input value={link} onChange={e => setLink(e.target.value)} placeholder="URL" className="bk-add-input bk-add-link" />
       <input value={note} onChange={e => setNote(e.target.value)} placeholder="Notes" className="bk-add-input bk-add-note" onKeyDown={e => e.key === 'Enter' && submit()} />

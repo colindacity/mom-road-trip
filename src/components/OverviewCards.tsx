@@ -39,14 +39,20 @@ function FlightsCard({ flights }: { flights: TripData['flights'] }) {
   // Group by traveler for clearer per-person view
   const colinFlights = flights.filter(f => f.passenger === 'colin');
   const momFlights = flights.filter(f => f.passenger === 'mom');
+  const robinFlights = flights.filter(f => f.passenger === 'robin');
 
   const colinOutbound = colinFlights.find(f => f.type === 'outbound');
   const colinReturn = colinFlights.find(f => f.type === 'return');
   const momOutbound = momFlights.find(f => f.type === 'outbound');
   const momReturn = momFlights.find(f => f.type === 'return');
+  const robinOutbound = robinFlights.find(f => f.type === 'outbound');
+  const robinReturn = robinFlights.find(f => f.type === 'return');
 
   const colinTotal = colinFlights.reduce((sum, f) => sum + (f.price || 0), 0);
   const momTotal = momFlights.reduce((sum, f) => sum + (f.price || 0), 0);
+
+  // All booked check
+  const allBooked = flights.every(f => !!(f.bookingRef || (f.notes && /booked/i.test(f.notes))));
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
@@ -55,12 +61,12 @@ function FlightsCard({ flights }: { flights: TripData['flights'] }) {
         className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-            <Plane className="w-5 h-5 text-purple-600" />
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${allBooked ? 'bg-emerald-100' : 'bg-purple-100'}`}>
+            <Plane className={`w-5 h-5 ${allBooked ? 'text-emerald-600' : 'text-purple-600'}`} />
           </div>
           <div className="text-left">
-            <h3 className="font-semibold text-gray-900">Flights</h3>
-            <p className="text-sm text-gray-500">{flights.length} flights for 2 travelers</p>
+            <h3 className="font-semibold text-gray-900">Flights {allBooked && '— All Booked ✓'}</h3>
+            <p className="text-sm text-gray-500">{flights.length} flights for 3 travelers</p>
           </div>
         </div>
         {expanded ? (
@@ -78,7 +84,7 @@ function FlightsCard({ flights }: { flights: TripData['flights'] }) {
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center">C</div>
                 <span className="font-semibold text-blue-900">Colin</span>
-                <span className="text-blue-600 text-sm">(Seattle)</span>
+                <span className="text-blue-600 text-sm">(Everett PAE)</span>
               </div>
               <span className="font-semibold text-blue-700">${colinTotal}</span>
             </div>
@@ -146,6 +152,44 @@ function FlightsCard({ flights }: { flights: TripData['flights'] }) {
               )}
             </div>
           </div>
+
+          {/* Robin's Flights */}
+          {robinFlights.length > 0 && (
+            <div className="border border-purple-200 rounded-lg overflow-hidden">
+              <div className="bg-purple-50 px-3 py-2 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center">R</div>
+                  <span className="font-semibold text-purple-900">Robin</span>
+                  <span className="text-purple-600 text-sm">(Seattle, joins Glacier weekend)</span>
+                </div>
+                <span className="text-purple-700 text-xs">Booked separately</span>
+              </div>
+              <div className="p-3 space-y-2">
+                {robinOutbound && (
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-green-600 font-medium w-16">Outbound</span>
+                    <span className="font-medium text-gray-900">{robinOutbound.from} → {robinOutbound.to}</span>
+                    <span className="text-gray-500">{robinOutbound.date && format(parseISO(robinOutbound.date), 'MMM d')}</span>
+                    <span className="text-emerald-600 ml-auto text-xs font-semibold">✓ {robinOutbound.flightNumber}</span>
+                  </div>
+                )}
+                {robinOutbound?.airline && (
+                  <div className="text-xs text-gray-500 pl-[76px]">{robinOutbound.airline} {robinOutbound.departureTime} → {robinOutbound.arrivalTime}</div>
+                )}
+                {robinReturn && (
+                  <div className="flex items-center gap-3 text-sm mt-2">
+                    <span className="text-red-600 font-medium w-16">Return</span>
+                    <span className="font-medium text-gray-900">{robinReturn.from} → {robinReturn.to}</span>
+                    <span className="text-gray-500">{robinReturn.date && format(parseISO(robinReturn.date), 'MMM d')}</span>
+                    <span className="text-emerald-600 ml-auto text-xs font-semibold">✓ Same as Colin</span>
+                  </div>
+                )}
+                {robinReturn?.airline && (
+                  <div className="text-xs text-gray-500 pl-[76px]">{robinReturn.airline} {robinReturn.flightNumber} {robinReturn.departureTime} → {robinReturn.arrivalTime}</div>
+                )}
+              </div>
+            </div>
+          )}
 
           <div className="pt-2 border-t border-gray-100">
             <div className="flex justify-between text-sm">
