@@ -108,9 +108,11 @@ export default function CarRentalInfo({ carRental }: CarRentalInfoProps) {
 
         {/* Notes */}
         {carRental.notes && (
-          <div className="flex items-start gap-2 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm">
-            <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-            <p className="text-amber-800">{carRental.notes}</p>
+          <div className={`flex items-start gap-2 p-3 rounded-lg text-sm border ${
+            isBooked ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'
+          }`}>
+            {isBooked ? <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" /> : <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />}
+            <p className={isBooked ? 'text-emerald-800' : 'text-amber-800'}>{carRental.notes}</p>
           </div>
         )}
       </div>
