@@ -234,12 +234,14 @@ export const tripData: TripData = {
       date: '2026-05-29',
       airline: 'Alaska Airlines',
       flightNumber: 'AS 2402',
-      price: 110,
+      price: 0,
       duration: '2h 21m',
       departureTime: '1:13 PM',
       arrivalTime: '3:34 PM',
+      bookingRef: 'AS 2402',
+      bookingSource: 'Robin booked separately',
       bookingUrl: 'https://www.alaskaair.com/',
-      notes: 'BOOKED: Robin arrives FCA 3:34pm Friday afternoon. Alaska AS 2402 nonstop from SEA.'
+      notes: 'BOOKED: Robin booked separately. AS 2402 nonstop SEA→FCA, arrives 3:34pm Friday afternoon.'
     },
     {
       id: 'f6',
@@ -252,10 +254,12 @@ export const tripData: TripData = {
       date: '2026-05-31',
       airline: 'Alaska Airlines',
       flightNumber: 'AS 2419',
-      price: 110,
+      price: 0,
       duration: '1h 32m',
       departureTime: '5:40 PM',
       arrivalTime: '6:12 PM',
+      bookingRef: 'AS 2419',
+      bookingSource: 'Same flight as Colin',
       bookingUrl: 'https://www.alaskaair.com/',
       notes: 'BOOKED: Robin on same AS 2419 as Colin. FCA 5:40pm→SEA 6:12pm.'
     }
@@ -1307,20 +1311,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Airbnb HMN2P4MBR9. 2BR with rooftop pool/hot tub/gym/theatre. Hosted by GrandRoad. $1,256.86 total for 4 nights.'
-        },
-        {
-          id: 'acc11b',
-          name: 'Crystal Inn Hotel & Suites Downtown SLC',
-          type: 'hotel',
-          priceRange: '$90-120',
-          pricePerNight: 100,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5)',
-          address: '230 W 500 S, SLC',
-          website: 'https://www.crystalinnsaltlake.com/',
-          amenities: ['Free breakfast', 'Free parking', 'Airport shuttle', 'Indoor pool'],
-          seniorFriendly: true,
-          notes: '2 queen beds. Best value with hot breakfast. Downtown, right off I-15. Hotel fallback.'
         }
       ],
       notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
@@ -1635,29 +1625,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
-        },
-        {
-          id: 'acc15b',
-          name: 'Teton Valley Cabins',
-          type: 'cabin',
-          priceRange: '$150-200/night',
-          pricePerNight: 175,
-          address: '1 mile east of Driggs, ID',
-          website: 'https://www.tetonvalleycabins.com/',
-          amenities: ['Fiber WiFi confirmed', '2 queens', 'Cottonwood forest', 'Walking to Driggs'],
-          seniorFriendly: true,
-          notes: 'Fiber confirmed but 2 queens SAME ROOM (no bedroom separation). Best value. 1mi east of downtown Driggs.'
-        },
-        {
-          id: 'acc15c',
-          name: 'Saddlehorn Cabin (VRBO #1066147)',
-          type: 'vacation_rental',
-          priceRange: '$300-400/night',
-          pricePerNight: 350,
-          address: 'Driggs, ID',
-          amenities: ['True 2 bedrooms', '3 beds sleeps 5', '1,353sqft', 'Teton views', 'Full kitchen'],
-          seniorFriendly: true,
-          notes: 'True 2BR with Teton views. VERIFY WiFi speed with host before booking.'
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
@@ -1929,29 +1896,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
-        },
-        {
-          id: 'acc18b',
-          name: 'Kelly Inn West Yellowstone',
-          type: 'hotel',
-          priceRange: '$200-280/night',
-          pricePerNight: 240,
-          address: '104 S Canyon St, West Yellowstone, MT',
-          website: 'https://www.yellowstonekellyinn.com/',
-          amenities: ['2 Queens Grizzly Bldg', 'Biggest indoor pool in town', 'Free continental breakfast', '11min walk to entrance'],
-          seniorFriendly: true,
-          notes: 'Reliable proven choice. Non-smoking. Strong reviews.'
-        },
-        {
-          id: 'acc18c',
-          name: 'Stage Coach Inn',
-          type: 'hotel',
-          priceRange: '$180-220/night',
-          pricePerNight: 200,
-          address: 'West Yellowstone, MT',
-          amenities: ['2 queen beds available', 'Center of town', 'Free WiFi'],
-          seniorFriendly: true,
-          notes: 'Budget option, older property but walkable to entrance and shops.'
         }
       ],
       notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
@@ -2120,35 +2064,6 @@ export const tripData: TripData = {
           seniorFriendly: true,
           recommended: true,
           notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
-        },
-        {
-          id: 'acc20b',
-          name: 'Meadow Lake Resort & Condos',
-          type: 'condo',
-          priceRange: '$130-180',
-          pricePerNight: 150,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (#1 in Columbia Falls)',
-          reviewCount: 1147,
-          address: 'Columbia Falls, MT',
-          website: 'https://meadowlake.com/',
-          amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub', 'Pool', 'Restaurant'],
-          seniorFriendly: true,
-          notes: '2BR condo. Full kitchen, hot tub. 20min to park. Backup option.'
-        },
-        {
-          id: 'acc20c',
-          name: 'Airbnb 2BR Cabin (Hungry Horse/Columbia Falls)',
-          type: 'airbnb',
-          priceRange: '$100-175',
-          pricePerNight: 135,
-          reviewRating: 4.9,
-          reviewSource: 'Airbnb',
-          address: 'Hungry Horse or Columbia Falls, MT',
-          bookingUrl: 'https://www.airbnb.com/columbia-falls-mt/stays',
-          amenities: ['2 bedrooms', 'Full kitchen', 'Hot tub (some)', 'Free parking'],
-          seniorFriendly: true,
-          notes: 'Search: 2BR, May 29-31, $175 max. Hungry Horse is 10-15min from park.'
         }
       ],
       notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday afternoon 3:34pm — Alaska AS 2402', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
