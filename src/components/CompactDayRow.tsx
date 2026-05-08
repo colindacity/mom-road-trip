@@ -72,21 +72,25 @@ const accTypeIcon: Record<string, string> = {
 
 function AccOptionInline({ acc }: { acc: Accommodation }) {
   const url = acc.website || acc.bookingUrl;
+  const isBooked = !!(acc.notes && /booked/i.test(acc.notes));
   const inner = (
     <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] leading-tight ${
-      acc.recommended ? 'bg-blue-50 text-blue-800 ring-1 ring-blue-200' : 'bg-gray-50 text-gray-600'
+      isBooked ? 'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200'
+       : acc.recommended ? 'bg-blue-50 text-blue-800 ring-1 ring-blue-200' : 'bg-gray-50 text-gray-600'
     }`}>
       <span>{accTypeIcon[acc.type] || '🏨'}</span>
-      <span className="font-medium truncate max-w-[120px]">{acc.name.replace(/ \(.*?\)/, '')}</span>
+      <span className="font-medium truncate max-w-[140px]">{acc.name.replace(/ — .+/, '').replace(/ \(.*?\)/, '')}</span>
       <span className="text-gray-400">·</span>
       <span className="font-semibold">{acc.priceRange}</span>
-      {acc.reviewRating && (
+      {acc.reviewRating && !isBooked && (
         <>
           <Star className="w-2.5 h-2.5 text-amber-400 fill-amber-400" />
           <span>{acc.reviewRating}</span>
         </>
       )}
-      {acc.recommended && (
+      {isBooked ? (
+        <span className="px-1 py-px bg-emerald-600 text-white text-[8px] font-bold rounded">BOOKED ✓</span>
+      ) : acc.recommended && (
         <span className="px-1 py-px bg-blue-500 text-white text-[8px] font-bold rounded">TOP</span>
       )}
     </span>
