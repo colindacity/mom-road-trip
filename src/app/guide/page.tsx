@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, MapPin, Compass, Backpack, Clock, Heart, Camera, AlertTriangle } from 'lucide-react';
+import SiteNav from '@/components/SiteNav';
 
 // ─── Helper components ───
 const H = ({ children }: { children: React.ReactNode }) =>
@@ -666,6 +667,7 @@ export default function GuidePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white pb-12">
+      <SiteNav current="guide" />
       {/* Header */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 text-white px-4 py-6 text-center">
         <h1 className="text-2xl md:text-3xl font-bold flex items-center justify-center gap-2"><Compass className="w-7 h-7" /> Tour Guide</h1>

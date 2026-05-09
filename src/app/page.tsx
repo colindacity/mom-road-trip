@@ -20,6 +20,7 @@ import TripTable from '@/components/TripTable';
 import {
   Map, DollarSign, Calendar, Users, Car, Search, ListTodo, CalendarCheck, RotateCcw, LayoutGrid, List, Backpack, Plane, Clock, MoreVertical, X, Wifi, HeartPulse, ExternalLink, Table2
 } from 'lucide-react';
+import SiteNav from '@/components/SiteNav';
 
 const TripMap = dynamic(() => import('@/components/TripMap'), {
   ssr: false,
@@ -120,42 +121,27 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Minimal header */}
-      <header className="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="text-lg font-semibold text-gray-900">{tripData.name}</div>
-              <span className="text-xs text-gray-400 hidden sm:inline">
+      <SiteNav current="home" />
+      {/* Page header (tier 2 + 3) */}
+      <header className="border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-[40px] z-40">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Tier 2: page title + sidebar toggles */}
+          <div className="flex items-center justify-between py-2.5">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="font-semibold text-gray-900 truncate">{tripData.name}</div>
+              <span className="text-xs text-gray-400 hidden sm:inline whitespace-nowrap">
                 {tripData.startDate} → {tripData.endDate}
               </span>
-            </div>
-            <div className="flex items-center gap-2">
-              {/* Confirmed activities count */}
               {confirmedCount > 0 && (
-                <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 text-green-700 rounded-lg text-xs">
-                  <CalendarCheck className="w-3.5 h-3.5" />
-                  <span className="font-medium">{confirmedCount}</span>
+                <div className="flex items-center gap-1 px-2 py-0.5 bg-green-50 text-green-700 rounded-full text-xs whitespace-nowrap">
+                  <CalendarCheck className="w-3 h-3" />
+                  <span className="font-medium">{confirmedCount} confirmed</span>
                 </div>
               )}
+            </div>
 
-              {/* Queue button */}
-              <button
-                onClick={() => setShowQueue(!showQueue)}
-                className={`relative p-2 rounded-lg transition-colors ${
-                  showQueue ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title="Activity queue"
-              >
-                <ListTodo className="w-4 h-4" />
-                {queuedCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-white text-[10px] rounded-full flex items-center justify-center">
-                    {queuedCount}
-                  </span>
-                )}
-              </button>
-
-              {/* Reset button */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              {/* Reset (only shown when there's state to reset) */}
               {(queuedCount > 0 || confirmedCount > 0) && (
                 <button
                   onClick={() => {
@@ -163,162 +149,94 @@ export default function Home() {
                       resetState();
                     }
                   }}
-                  className="p-2 rounded-lg text-gray-400 hover:text-gray-600 transition-colors"
+                  className="p-1.5 rounded text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
                   title="Reset all"
                 >
                   <RotateCcw className="w-4 h-4" />
                 </button>
               )}
 
-              {/* View toggle */}
-              <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+              {/* Queue */}
+              <button
+                onClick={() => setShowQueue(!showQueue)}
+                className={`relative px-2 py-1.5 rounded text-xs font-medium transition-colors flex items-center gap-1 ${
+                  showQueue ? 'bg-amber-100 text-amber-700' : 'text-gray-500 hover:bg-gray-100'
+                }`}
+                title="Activity queue"
+              >
+                <ListTodo className="w-4 h-4" />
+                <span className="hidden sm:inline">Queue</span>
+                {queuedCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-white text-[10px] rounded-full flex items-center justify-center">
+                    {queuedCount}
+                  </span>
+                )}
+              </button>
+
+              {/* View mode segmented control */}
+              <div className="flex items-center border border-gray-200 rounded overflow-hidden">
                 <button
                   onClick={() => setViewMode('timeline')}
-                  className={`p-2 transition-colors ${
-                    viewMode === 'timeline' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  className={`p-1.5 transition-colors ${
+                    viewMode === 'timeline' ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-100'
                   }`}
                   title="Timeline view"
                 >
-                  <List className="w-4 h-4" />
+                  <List className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setViewMode('calendar')}
-                  className={`p-2 transition-colors ${
-                    viewMode === 'calendar' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  className={`p-1.5 transition-colors ${
+                    viewMode === 'calendar' ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-100'
                   }`}
                   title="Calendar view"
                 >
-                  <LayoutGrid className="w-4 h-4" />
+                  <LayoutGrid className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setViewMode('table')}
-                  className={`p-2 transition-colors ${
-                    viewMode === 'table' ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                  className={`p-1.5 transition-colors ${
+                    viewMode === 'table' ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-100'
                   }`}
                   title="Table view"
                 >
-                  <Table2 className="w-4 h-4" />
+                  <Table2 className="w-3.5 h-3.5" />
                 </button>
-              </div>
-
-              {/* Desktop panel buttons */}
-              <div className="hidden md:flex items-center gap-1">
-                <button
-                  onClick={() => setShowBudget(!showBudget)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showBudget ? 'bg-emerald-100 text-emerald-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Budget"
-                >
-                  <DollarSign className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setShowPacking(!showPacking)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showPacking ? 'bg-indigo-100 text-indigo-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Packing"
-                >
-                  <Backpack className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setShowFlights(!showFlights)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showFlights ? 'bg-blue-100 text-blue-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Flights"
-                >
-                  <Plane className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setShowCarRental(!showCarRental)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showCarRental ? 'bg-orange-100 text-orange-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Car Rental"
-                >
-                  <Car className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setShowActions(!showActions)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showActions ? 'bg-teal-100 text-teal-700' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  title="Action Tracker"
-                >
-                  <ListTodo className="w-4 h-4" />
-                </button>
-                <a
-                  href="/bookings"
-                  className="p-2 rounded-lg text-gray-400 hover:text-blue-600 transition-colors"
-                  title="Booking HQ"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Mobile more menu */}
-              <div className="relative md:hidden">
-                <button
-                  onClick={() => setShowMobileMenu(!showMobileMenu)}
-                  className={`p-2 rounded-lg transition-colors ${
-                    showMobileMenu ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                >
-                  {showMobileMenu ? <X className="w-4 h-4" /> : <MoreVertical className="w-4 h-4" />}
-                </button>
-                {showMobileMenu && (
-                  <div className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[160px] z-50">
-                    <button
-                      onClick={() => { setShowBudget(!showBudget); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showBudget ? 'bg-emerald-50 text-emerald-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <DollarSign className="w-4 h-4" /> Budget
-                    </button>
-                    <button
-                      onClick={() => { setShowFlights(!showFlights); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showFlights ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <Plane className="w-4 h-4" /> Flights
-                    </button>
-                    <button
-                      onClick={() => { setShowCarRental(!showCarRental); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showCarRental ? 'bg-orange-50 text-orange-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <Car className="w-4 h-4" /> Car Rental
-                    </button>
-                    <button
-                      onClick={() => { setShowPacking(!showPacking); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showPacking ? 'bg-indigo-50 text-indigo-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <Backpack className="w-4 h-4" /> Packing List
-                    </button>
-                    <button
-                      onClick={() => { setShowActions(!showActions); setShowMobileMenu(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-sm ${showActions ? 'bg-teal-50 text-teal-700' : 'text-gray-600 hover:bg-gray-50'}`}
-                    >
-                      <ListTodo className="w-4 h-4" /> Action Tracker
-                    </button>
-                    <a
-                      href="/bookings"
-                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-blue-600 hover:bg-blue-50"
-                    >
-                      <ExternalLink className="w-4 h-4" /> Booking HQ
-                    </a>
-                  </div>
-                )}
               </div>
 
               <button
                 onClick={() => setShowMap(!showMap)}
-                className={`p-2 rounded-lg transition-colors ${
-                  showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                className={`p-1.5 rounded transition-colors ${
+                  showMap ? 'bg-gray-100 text-gray-900' : 'text-gray-500 hover:bg-gray-100'
                 }`}
                 title="Toggle map"
               >
                 <Map className="w-4 h-4" />
               </button>
             </div>
+          </div>
+
+          {/* Tier 3: Side-panel toggles (clearly labeled) */}
+          <div className="flex items-center gap-1 pb-2 overflow-x-auto scrollbar-hide -mx-1 px-1">
+            <span className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mr-1 shrink-0">Panels:</span>
+            {([
+              ['Actions', ListTodo, showActions, () => setShowActions(!showActions), 'bg-teal-100 text-teal-700 ring-1 ring-teal-200'],
+              ['Flights', Plane, showFlights, () => setShowFlights(!showFlights), 'bg-blue-100 text-blue-700 ring-1 ring-blue-200'],
+              ['Car', Car, showCarRental, () => setShowCarRental(!showCarRental), 'bg-orange-100 text-orange-700 ring-1 ring-orange-200'],
+              ['Packing', Backpack, showPacking, () => setShowPacking(!showPacking), 'bg-indigo-100 text-indigo-700 ring-1 ring-indigo-200'],
+              ['Budget', DollarSign, showBudget, () => setShowBudget(!showBudget), 'bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200'],
+            ] as const).map(([label, Icon, active, toggle, activeClass]) => (
+              <button
+                key={label}
+                onClick={toggle}
+                className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
+                  active ? activeClass : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                {label}
+              </button>
+            ))}
           </div>
         </div>
       </header>

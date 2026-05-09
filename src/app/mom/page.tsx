@@ -3,6 +3,7 @@
 import { tripData } from '@/data/tripData';
 import { format, parseISO } from 'date-fns';
 import { useState } from 'react';
+import SiteNav from '@/components/SiteNav';
 
 // ─── Vibe types: WHERE + WHAT you'll do ───
 type Vibe = 'desert' | 'mountain' | 'city' | 'rest' | 'drive' | 'tour' | 'fly' | 'robin';
@@ -85,6 +86,7 @@ export default function MomView() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-blue-50 pb-12">
+      <SiteNav current="mom" />
       {/* Hero */}
       <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-blue-500 text-white px-4 py-6 text-center shadow-lg">
         <h1 className="text-2xl md:text-3xl font-bold">Our Road Trip 🚗</h1>

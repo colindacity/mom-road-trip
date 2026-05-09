@@ -4,6 +4,7 @@ import { tripData } from '@/data/tripData';
 import { format, parseISO } from 'date-fns';
 import { ExternalLink, Check, Circle, AlertTriangle, ChevronDown, ChevronRight, Plus, X } from 'lucide-react';
 import { useState, useEffect, useCallback, useRef } from 'react';
+import SiteNav from '@/components/SiteNav';
 
 // ─── Types ───
 type BData = {
@@ -222,6 +223,7 @@ export default function BookingsPage() {
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
 
     <div className="bk">
+      <SiteNav current="bookings" />
       {showPick && <div className="fixed inset-0 z-[100] bg-black/40 flex items-center justify-center p-4"><div className="bg-white rounded-lg p-5 shadow-xl max-w-[240px] w-full text-center"><div className="text-sm font-semibold mb-3">Who&apos;s editing?</div><div className="flex gap-2"><button onClick={()=>pick('Colin')} className="flex-1 py-2.5 bg-blue-600 text-white rounded text-sm font-medium">Colin</button><button onClick={()=>pick('Robin')} className="flex-1 py-2.5 bg-purple-600 text-white rounded text-sm font-medium">Robin</button></div></div></div>}
 
       {/* Header */}
@@ -398,12 +400,12 @@ export default function BookingsPage() {
       :root { --g:#22804A; --gl:#E8F5E9; --a:#B8860B; --al:#FFF8E1; --r:#C62828; --rl:#FDE8E8; }
       .bk { min-height:100vh; background:#fff; color:#1a1a1a; font-family:'DM Sans',system-ui,sans-serif; font-size:12px; line-height:1.45; }
 
-      .bk-hdr { background:#f8f8f8; border-bottom:1px solid #e8e8e8; font-size:12px; position:sticky; top:0; z-index:60; }
+      .bk-hdr { background:#f8f8f8; border-bottom:1px solid #e8e8e8; font-size:12px; position:sticky; top:38px; z-index:55; }
       .bk-hdr-in { max-width:1200px; margin:0 auto; padding:6px 12px; display:flex; align-items:center; flex-wrap:wrap; gap:4px; }
       .bk-hdr-sub { opacity:0.5; }
       .bk-hdr-user { font-size:11px; }
 
-      .bk-nav { position:sticky; top:33px; z-index:50; background:#fff; border-bottom:1px solid #eee; }
+      .bk-nav { position:sticky; top:71px; z-index:50; background:#fff; border-bottom:1px solid #eee; }
       .bk-nav-in { max-width:1200px; margin:0 auto; padding:4px 12px; display:flex; gap:3px; overflow-x:auto; font-size:11px; }
       .bk-nl { padding:3px 10px; border-radius:3px; background:#f5f5f5; color:#666; text-decoration:none; white-space:nowrap; }
       .bk-nl:hover { background:#eee; color:#333; }
