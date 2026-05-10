@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, MapPin, Compass, Backpack, Clock, Heart, Camera, AlertTriangle } from 'lucide-react';
 import SiteNav from '@/components/SiteNav';
+import { getForecast, getHourly, getMultiLoc } from '@/data/forecast';
+import { trailsForDay } from '@/data/trails';
+import { stopsForDay, BUY_RENT } from '@/data/buyRent';
 
 // ─── Helper components ───
 const H = ({ children }: { children: React.ReactNode }) =>
@@ -1029,6 +1032,51 @@ function MasterPack() {
         ]} />
       </Card>
 
+      <Card emoji="💡" title="Things often forgotten (gap list)">
+        <P><B>Pre-trip (today):</B></P>
+        <Ul items={[
+          'Trekking poles → CHECKED BAG only (TSA bans carry-on)',
+          'Bear spray → CANNOT FLY at all → buy in Kalispell Day 20 or rent at Apgar',
+          'Photocopies of passport + travel insurance — separate from originals',
+          "Mom's Canadian roaming activated BEFORE leaving home (Rogers/Bell US day pass ~$300 for 22 days)",
+          'Vehicle pre-rental walkaround photos — date-stamped, every panel + interior',
+          'Permethrin clothing treatment AT HOME 24-48hrs before flight (NOT day-of for Antelope Island Day 14)',
+        ]} />
+        <P><B>Quantity math (easy to underbuy):</B></P>
+        <Ul items={[
+          'Sunscreen: 1oz/day/person × 22 × 2 = ~44oz total = 6 bottles of 8oz',
+          'Lip balm × 6 (you WILL lose some — desert + altitude destroys lips)',
+          'Cash $300-500 backup (Antelope Canyon tip, gas stations declining cards, Tetons backup)',
+        ]} />
+        <P><B>Cold-mornings comfort (Tetons sunrise 40°F · Yellowstone 33°F · Dunraven Pass snow):</B></P>
+        <Ul items={[
+          'HotHands hand warmers × 10 pairs (~$15 Walmart SLC Day 11)',
+          'Rain pants — NOT just shell. Glacier averages 11 wet days in May',
+          'Phone-in-cold drains 30%+ → keep near torso in inner pocket + power bank',
+        ]} />
+        <P><B>Off-grid safety (Yellowstone + Glacier dead zones):</B></P>
+        <Ul items={[
+          'Apple Watch Series 9+ has satellite SOS → confirm setup before flying',
+          'Garmin InReach Mini 2 rental ~$95/3wks from Outdoorsgeek (vs $315 REI rental)',
+          "Mom's printed paper itinerary in pocket (phone dies → still has plan)",
+        ]} />
+        <P><B>Mom-specific health:</B></P>
+        <Ul items={[
+          'Probiotic (Florastor or Culturelle) — start 1 week before trip for gut shift insurance',
+          'Antihistamine (Claritin) — pollen + dust',
+          'Imodium for travel-tummy',
+          'Glasses strap (Croakies) for reading + sun glasses',
+          'Pre-trip dental check — last cavity on a 22-day trip = nightmare',
+        ]} />
+        <P><B>Cheap gear, big use:</B></P>
+        <Ul items={[
+          'Microfiber pack towel × 3 — pool/sweat/rain dry-off',
+          'Ziplock bags gallon × 10 — wet shoes, electronics in rain, snacks',
+          'Reusable shopping tote × 2 — for SLC/Moab/Driggs grocery stops',
+          'Trash bags × 5 for car — daily clean-out',
+        ]} />
+      </Card>
+
       <Card emoji="🛒" title="TO BUY Before Trip">
         <Ul items={[
           'Mom: hiking shoes (Hoka Anacapa Low or Merrell Moab 3 Low)',
@@ -1844,16 +1892,31 @@ const DAILY_PACK: DayPack[] = [
   },
 ];
 
+// ─── Helpers ───
+const precipPrep = (pct: number): string => {
+  if (pct <= 5) return 'No rain prep needed';
+  if (pct <= 15) return 'Light shell in pack just in case';
+  if (pct <= 30) return 'Pack rain shell + dry-socks change';
+  if (pct <= 45) return '⚠️ Pack rain shell + rain pants + dry change';
+  return '⚠️ HIGH RAIN — full rain shell + rain pants + dry socks + dry shirt';
+};
+
 // ─── Daily pack accordion component ───
 function DailyPack() {
   const [openDay, setOpenDay] = useState<number | null>(null);
   return (
     <div className="space-y-3">
       <div className="bg-amber-100 border border-amber-300 rounded-xl p-4">
-        <div className="font-bold text-amber-900 mb-1">📅 What to wear · what to bring · per event</div>
-        <div className="text-sm text-amber-900">22 days, every event tied to outfit + day-bag + activity-specific gear. <B>Tap a day to expand.</B></div>
+        <div className="font-bold text-amber-900 mb-1">📅 Outfit · day-bag · weather · trails · gear stops — per day</div>
+        <div className="text-sm text-amber-900">Live forecast Days 1-15, 3yr-avg climatology Days 16-22. <B>Tap a day to expand.</B></div>
       </div>
-      {DAILY_PACK.map(d => (
+      {DAILY_PACK.map(d => {
+        const fc = getForecast(d.n);
+        const hr = getHourly(d.n);
+        const ml = getMultiLoc(d.n);
+        const trails = trailsForDay(d.n);
+        const stops = stopsForDay(d.n);
+        return (
         <div key={d.n} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <button onClick={() => setOpenDay(openDay === d.n ? null : d.n)}
             className="w-full flex items-center gap-3 p-3 hover:bg-amber-50 transition-colors text-left">
@@ -1864,12 +1927,82 @@ function DailyPack() {
             <div className="flex-1 min-w-0">
               <div className="text-xs text-gray-500">{d.date}</div>
               <div className="font-bold text-gray-800 leading-tight">{d.title}</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">🌡️ {d.weather}</div>
+              <div className="text-[11px] text-gray-500 mt-0.5">
+                {fc ? (
+                  <>🌡️ {fc.high_f}°F / {fc.high_c}°C · {fc.low_f}°F / {fc.low_c}°C · {fc.precip_pct}% rain · UV {fc.uv}</>
+                ) : (
+                  <>🌡️ {d.weather}</>
+                )}
+              </div>
             </div>
             {openDay === d.n ? <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronRight className="w-5 h-5 text-gray-400 shrink-0" />}
           </button>
           {openDay === d.n && (
             <div className="px-3 pb-4 border-t border-gray-100 text-sm space-y-3 pt-3">
+              {/* Weather block (from live forecast) */}
+              {fc && (
+                <div>
+                  <div className="font-bold text-sky-700 text-xs uppercase tracking-wide mb-1.5">
+                    🌤️ Weather {fc.status === 'forecast' ? <span className="text-emerald-600 font-normal normal-case ml-1">live forecast</span> : <span className="text-gray-500 font-normal normal-case ml-1">3yr climatology</span>}
+                  </div>
+                  <div className="bg-sky-50 rounded-lg p-2.5 space-y-1 text-[13px]">
+                    <div><B>📍 {fc.location}</B></div>
+                    <div><B>High:</B> {fc.high_f}°F / {fc.high_c}°C · <B>Low:</B> {fc.low_f}°F / {fc.low_c}°C</div>
+                    <div><B>Conditions:</B> {fc.conditions}</div>
+                    <div><B>Rain:</B> {fc.precip_pct}% · <B>UV:</B> {fc.uv} · <B>Wind:</B> {fc.wind_mph}mph {fc.wind_dir}</div>
+                    <div><B>🌅 Sunrise:</B> {fc.sunrise} · <B>🌇 Sunset:</B> {fc.sunset}</div>
+                    <div className="text-emerald-700 font-medium pt-1">☔ {precipPrep(fc.precip_pct)}</div>
+                    {fc.tz_note && <div className="bg-amber-100 rounded px-2 py-1 mt-1 text-[12px] text-amber-900">🕐 {fc.tz_note}</div>}
+                    {fc.caveat && <div className="bg-amber-100 rounded px-2 py-1 mt-1 text-[12px] text-amber-900">{fc.caveat}</div>}
+                  </div>
+                </div>
+              )}
+
+              {/* Hourly buckets AM/midday/PM/evening */}
+              {hr && (
+                <div>
+                  <div className="font-bold text-sky-700 text-xs uppercase tracking-wide mb-1.5">
+                    ⏰ AM / Midday / PM / Evening <span className="text-gray-500 font-normal normal-case ml-1">at {hr.location}</span>
+                  </div>
+                  <div className="grid grid-cols-4 gap-1.5 text-[11px]">
+                    {([
+                      ['🌅 6-9am', hr.morning],
+                      ['☀️ 11am-2pm', hr.midday],
+                      ['🌤️ 3-6pm', hr.afternoon],
+                      ['🌇 7-9pm', hr.evening],
+                    ] as const).map(([label, b], i) => (
+                      <div key={i} className="bg-sky-50 rounded p-1.5 text-center">
+                        <div className="font-semibold text-sky-900 text-[10px]">{label}</div>
+                        <div className="font-bold text-sky-700 text-sm mt-0.5">{b.temp_f}°F</div>
+                        <div className="text-sky-600 text-[10px]">{b.temp_c}°C</div>
+                        <div className="text-sky-700 text-[10px] mt-0.5">{b.conditions}</div>
+                        <div className="text-sky-700/80 text-[10px]">UV {b.uv} · {b.wind_mph}mph</div>
+                        {b.precip_pct > 5 && <div className="text-blue-700 text-[10px] font-semibold">{b.precip_pct}% rain</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Multi-location stops on driving days */}
+              {ml && (
+                <div>
+                  <div className="font-bold text-indigo-700 text-xs uppercase tracking-wide mb-1.5">
+                    🚗 Weather along the route (drive day)
+                  </div>
+                  <div className="bg-indigo-50 rounded-lg p-2.5 space-y-1.5">
+                    {ml.stops.map((s, i) => (
+                      <div key={i} className="flex items-center gap-2 text-[12px]">
+                        <span className="font-bold text-indigo-900 w-16 shrink-0">{s.time}</span>
+                        <span className="font-semibold text-indigo-800 flex-1">{s.location}</span>
+                        <span className="text-indigo-700 font-bold">{s.temp_f}°F / {s.temp_c}°C</span>
+                        <span className="text-indigo-600 text-[11px]">{s.conditions}{s.precip_pct > 5 ? ` · ${s.precip_pct}%` : ''} · {s.wind_mph}mph</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Outfit */}
               <div>
                 <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">👕 Outfit</div>
@@ -1941,10 +2074,76 @@ function DailyPack() {
                   </div>
                 </div>
               )}
+
+              {/* Trails today */}
+              {trails.length > 0 && (
+                <div>
+                  <div className="font-bold text-emerald-700 text-xs uppercase tracking-wide mb-1.5">🥾 Trails today (download offline night before)</div>
+                  <div className="space-y-2">
+                    {trails.map((t, i) => (
+                      <div key={i} className="bg-emerald-50 rounded-lg p-2.5">
+                        <div className="font-semibold text-emerald-900 text-[13px]">{t.trail}</div>
+                        <div className="text-[11px] text-emerald-800/80 mt-0.5">
+                          {t.miles_rt}mi RT · {t.elevation_gain_ft}ft gain · {t.difficulty} · Mom: {t.senior_friendly}
+                        </div>
+                        <div className="text-[11px] text-emerald-900/80 mt-1">{t.notes}</div>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {t.alltrails_url && (
+                            <a href={t.alltrails_url} target="_blank" rel="noopener noreferrer"
+                              className="text-[11px] bg-emerald-600 text-white px-2 py-1 rounded font-semibold hover:bg-emerald-700">
+                              AllTrails ↗
+                            </a>
+                          )}
+                          {t.nps_map_pdf && (
+                            <a href={t.nps_map_pdf} target="_blank" rel="noopener noreferrer"
+                              className="text-[11px] bg-amber-600 text-white px-2 py-1 rounded font-semibold hover:bg-amber-700">
+                              NPS Map PDF ↗
+                            </a>
+                          )}
+                          <span className="text-[11px] text-gray-500">Search Gaia by name</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Gear stops today */}
+              {stops.length > 0 && (
+                <div>
+                  <div className="font-bold text-rose-700 text-xs uppercase tracking-wide mb-1.5">🛒 Gear to grab today ({stops[0].best_city})</div>
+                  <div className="space-y-2">
+                    {stops.map((s, i) => (
+                      <div key={i} className="bg-rose-50 rounded-lg p-2.5">
+                        <div className="font-semibold text-rose-900 text-[13px]">{s.item}</div>
+                        {s.reason && <div className="text-[11px] text-rose-800/80 italic mt-0.5">{s.reason}</div>}
+                        <div className="text-[12px] text-rose-900 mt-1.5">
+                          <B>{s.best.store}</B> — {s.best.address}<br/>
+                          <span className="text-rose-800">{s.best.price}{s.best.hours ? ` · ${s.best.hours}` : ''}{s.best.phone ? ` · ${s.best.phone}` : ''}</span>
+                          {s.best.note && <div className="text-[11px] text-rose-800/80 mt-0.5 italic">{s.best.note}</div>}
+                        </div>
+                        {s.alternatives && s.alternatives.length > 0 && (
+                          <details className="mt-2">
+                            <summary className="text-[11px] text-rose-700 cursor-pointer hover:underline">Show {s.alternatives.length} alt option{s.alternatives.length > 1 ? 's' : ''}</summary>
+                            <div className="mt-1 space-y-1 pl-2">
+                              {s.alternatives.map((a, j) => (
+                                <div key={j} className="text-[11px] text-rose-800">
+                                  <B>{a.store}</B> — {a.address} · {a.price}{a.note ? ` · ${a.note}` : ''}
+                                </div>
+                              ))}
+                            </div>
+                          </details>
+                        )}
+                        {s.recommendation && <div className="text-[11px] text-emerald-800 bg-emerald-50 rounded p-1.5 mt-1.5">💡 {s.recommendation}</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
-      ))}
+      );})}
     </div>
   );
 }
