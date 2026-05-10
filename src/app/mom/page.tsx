@@ -4,6 +4,7 @@ import { tripData } from '@/data/tripData';
 import { format, parseISO } from 'date-fns';
 import { useState } from 'react';
 import SiteNav from '@/components/SiteNav';
+import { getForecast } from '@/data/forecast';
 
 // ─── Vibe types: WHERE + WHAT you'll do ───
 type Vibe = 'desert' | 'mountain' | 'city' | 'rest' | 'drive' | 'tour' | 'fly' | 'robin';
@@ -42,30 +43,74 @@ const tempBucket = (high?: number): Weather => {
 type Energy = 1 | 2 | 3;
 const ENERGY_LABEL: Record<Energy, string> = { 1: 'Easy', 2: 'Medium', 3: 'Active' };
 
-// Each day's vibes, energy level, and Mom-friendly blurb
-const DAY_INFO: Record<number, { vibes: Vibe[]; energy: Energy; blurb: string }> = {
-  1:  { vibes: ['fly', 'city'],         energy: 2, blurb: 'Land in Vegas, fancy buffet at Bacchanal, walk the Strip lights at night.' },
-  2:  { vibes: ['drive', 'desert'],     energy: 2, blurb: 'Long desert drive. First glimpse of Grand Canyon at sunset — wow moment.' },
-  3:  { vibes: ['desert'],              energy: 2, blurb: 'Easy walking along the canyon rim. Stunning views all day. Bring water.' },
-  4:  { vibes: ['drive', 'desert'],     energy: 2, blurb: 'Drive to Page. Horseshoe Bend at sunset (1.5mi walk, some stairs).' },
-  5:  { vibes: ['tour', 'desert'],      energy: 2, blurb: 'BIG DAY: Antelope Canyon tour 10am sharp. Magical light beams. Then Lake Powell.' },
-  6:  { vibes: ['rest'],                energy: 1, blurb: 'Rest day. Colin works. Swim, read, or walk around Page town.' },
-  7:  { vibes: ['drive', 'desert'],     energy: 2, blurb: 'Long scenic drive Page→Moab. Stop at Monument Valley for photos.' },
-  8:  { vibes: ['rest'],                energy: 1, blurb: 'Rest day in Moab. Colin works. Pool, books, easy.' },
-  9:  { vibes: ['desert'],              energy: 3, blurb: 'Arches National Park! Lots of walking + arches everywhere. Bring water.' },
-  10: { vibes: ['desert', 'rest'],      energy: 2, blurb: 'Canyonlands viewpoints in the morning (drive-up, easy). Colin works after lunch.' },
-  11: { vibes: ['drive', 'city'],       energy: 2, blurb: 'Drive Moab→Salt Lake City. Temple Square in evening if up for it.' },
-  12: { vibes: ['rest', 'city'],        energy: 1, blurb: 'Rest day. Colin works in SLC. Airbnb has a pool/hot tub!' },
-  13: { vibes: ['rest', 'city'],        energy: 1, blurb: 'Rest day. Colin works. Same Airbnb — relax.' },
-  14: { vibes: ['city'],                energy: 2, blurb: 'SLC fun day. Natural History Museum + Antelope Island (bison!). Easy pace.' },
-  15: { vibes: ['drive', 'mountain'],   energy: 2, blurb: 'Drive SLC→Driggs. Tetons come into view. Cooler temps now.' },
-  16: { vibes: ['rest', 'mountain'],    energy: 1, blurb: 'Memorial Day rest. Colin works. Walk around tiny mountain town.' },
-  17: { vibes: ['mountain'],            energy: 2, blurb: 'Grand Teton! Mountains everywhere, easy viewpoints + Mormon Row. Beautiful.' },
-  18: { vibes: ['drive', 'mountain'],   energy: 2, blurb: 'Drive into Yellowstone! Old Faithful + Grand Prismatic. Iconic geysers.' },
-  19: { vibes: ['mountain'],            energy: 3, blurb: 'Yellowstone full day. Geysers, canyons, bison and elk. Lots to see.' },
-  20: { vibes: ['drive', 'robin'],      energy: 2, blurb: 'Drive to Glacier. ROBIN ARRIVES at the airport in the evening! 💜' },
-  21: { vibes: ['mountain'],            energy: 3, blurb: 'Glacier National Park together. Lake McDonald + easy hike with Robin.' },
-  22: { vibes: ['fly', 'mountain'],     energy: 1, blurb: 'Morning by the lake. Fly home from Kalispell.' },
+// Each day's vibes, energy level, Mom-friendly blurb, and a tour-guide-flavor tip
+const DAY_INFO: Record<number, { vibes: Vibe[]; energy: Energy; blurb: string; tip: string }> = {
+  1:  { vibes: ['fly', 'city'],         energy: 2,
+        blurb: 'Land in Vegas, fancy buffet at Bacchanal, walk the Strip lights at night.',
+        tip: '🍤 At Bacchanal: hit king crab legs + lobster claws + prime rib FIRST (skip pasta/pizza). Fountain view: Beer Park patio at Paris LV — sit + cost of one drink.' },
+  2:  { vibes: ['drive', 'desert'],     energy: 2,
+        blurb: 'Long desert drive. First glimpse of Grand Canyon at sunset — wow moment.',
+        tip: '🌅 Mather Point sunset 7:24pm — walk 5min east on Rim Trail for fewer crowds. Top off gas in Williams or Kingman, NOT Tusayan.' },
+  3:  { vibes: ['desert'],              energy: 2,
+        blurb: 'Easy walking along the canyon rim. Stunning views all day. Bring water.',
+        tip: '📚 Free 30-min ranger geology talk at Yavapai. Hopi Point is THE sunset spot (west-facing peninsula) — shuttle 5:45pm. Three viewpoints done well > eight done exhausted.' },
+  4:  { vibes: ['drive', 'desert'],     energy: 2,
+        blurb: 'Drive to Page. Horseshoe Bend at sunset (1.5mi walk, some stairs).',
+        tip: '⚠️ 37mph wind alert — secure hat, sunglasses, sand will sting. Stand on LEFT (west) side of overlook for classic shot. NO water at trailhead — bring 1L pp.' },
+  5:  { vibes: ['tour', 'desert'],      energy: 2,
+        blurb: 'BIG DAY: Antelope Canyon tour 10am sharp. Magical light beams. Then Lake Powell.',
+        tip: '📵 NO bags allowed — phone + 1 water bottle in hand only. Phone HDR mode, tap-to-expose for the bright light beam (let rock fall dark). Tour timezone — verify by phone morning-of.' },
+  6:  { vibes: ['rest'],                energy: 1,
+        blurb: 'Rest day. Colin works. Swim, read, or walk around Page town.',
+        tip: '🌿 Hanging Gardens Trail (1.2mi shaded gravel) if you want a walk — fern grotto at the end. Otherwise: John Wesley Powell Museum (small, indoor, AC).' },
+  7:  { vibes: ['drive', 'desert'],     energy: 2,
+        blurb: 'Long scenic drive Page→Moab. Stop at Monument Valley for photos.',
+        tip: '🕐 Set clock FORWARD 1hr leaving Page (MST → MDT). Monument Valley View Hotel deck = FREE viewpoint of the mittens. SKIP the 17-mile loop drive (deep sand, not rental-friendly).' },
+  8:  { vibes: ['rest'],                energy: 1,
+        blurb: 'Rest day in Moab. Colin works. Pool, books, easy.',
+        tip: '💧 Mill Creek Parkway = 2mi paved riverside walk if you want air. Pool/hot tub at Airbnb. Moab Museum closed Sunday.' },
+  9:  { vibes: ['desert'],              energy: 3,
+        blurb: 'Arches National Park! Lots of walking + arches everywhere. Bring water.',
+        tip: '🔥 OUT of park 11:30am-3:30pm to escape midday heat. Re-enter for golden hour. NO shade anywhere — UPF sun shirt + wide-brim hat critical. 2L water per person MIN.' },
+  10: { vibes: ['desert', 'rest'],      energy: 2,
+        blurb: 'Canyonlands viewpoints in the morning (drive-up, easy). Colin works after lunch.',
+        tip: '🌄 Mesa Arch glows for ~1hr after sunrise — no rush leaving. Drive-up viewpoints after: Shafer, Buck Canyon, Grand View, Green River Overlook (best). You can sleep in car between stops.' },
+  11: { vibes: ['drive', 'city'],       energy: 2,
+        blurb: 'Drive Moab→Salt Lake City. Temple Square in evening if up for it.',
+        tip: '✨ Brand-new Temple Square Visitors\' Center opened May 18 — 2 days before arrival! Tamarisk Restaurant in Green River (51mi from Moab) for lunch. Mole sampler at Red Iguana 2 (shorter line than #1).' },
+  12: { vibes: ['rest', 'city'],        energy: 1,
+        blurb: 'Rest day. Colin works in SLC. Airbnb has a pool/hot tub!',
+        tip: '🦜 Tracy Aviary at Liberty Park — paved, contained, $14 senior, lots to see, low effort. Tabernacle organ recital 12-12:30pm Mon-Sat. Airbnb rooftop pool.' },
+  13: { vibes: ['rest', 'city'],        energy: 1,
+        blurb: 'Rest day. Colin works. Same Airbnb — relax.',
+        tip: '🌳 Liberty Park 1.5mi flat loop OR This Is The Place Heritage Park ($9 senior). Crown Burgers = Utah classic pastrami burger. Light day — rest joints before busy Saturday.' },
+  14: { vibes: ['city'],                energy: 2,
+        blurb: 'SLC fun day. Natural History Museum + Antelope Island (bison!). Easy pace.',
+        tip: '🪰 HEAD NETS for Antelope Island — May is peak biting gnat season (insect repellent doesn\'t work). NHMU dinosaurs after lunch. Ensign Peak sunset is steep — bail to State Capitol grounds if knees flare.' },
+  15: { vibes: ['drive', 'mountain'],   energy: 2,
+        blurb: 'Drive SLC→Driggs. Tetons come into view. Cooler temps now.',
+        tip: '🏔️ Logan UT lunch at Bluebird Café (1914 historic). Pine Creek Pass route — NOT Teton Pass (saves 1.5hr + steep climb). Driggs is at 6,100ft — chilly evening (50°F).' },
+  16: { vibes: ['rest', 'mountain'],    energy: 1,
+        blurb: 'Memorial Day rest. Colin works. Walk around tiny mountain town.',
+        tip: '🥔 Spud Drive-In iconic giant potato photo (231 S Hwy 33). Tatanka Tavern 3rd-floor Teton view for lunch. Pendl\'s Pastries open Memorial Day.' },
+  17: { vibes: ['mountain'],            energy: 2,
+        blurb: 'Grand Teton! Mountains everywhere, easy viewpoints + Mormon Row. Beautiful.',
+        tip: '🪪 $135 entry for Mom (NEW 2026 non-resident surcharge). Cold sunrise 40°F = hand warmers, beanie, gloves. 50% rain chance — pack rain shell. Oxbow Bend afternoon = best moose habitat.' },
+  18: { vibes: ['drive', 'mountain'],   energy: 2,
+        blurb: 'Drive into Yellowstone! Old Faithful + Grand Prismatic. Iconic geysers.',
+        tip: '🌈 Grand Prismatic from FAIRY FALLS overlook (1.2mi RT, NPS calls senior-friendly) — NOT Midway boardwalk. Old Faithful eruption every ~90min. Old Faithful Inn 1904 lobby worth 10min.' },
+  19: { vibes: ['mountain'],            energy: 3,
+        blurb: 'Yellowstone full day. Geysers, canyons, bison and elk. Lots to see.',
+        tip: '🦬 Lamar Valley = America\'s Serengeti. Bison + maybe distant wolves. Turn around at Slough Creek pullout. ⚠️ Snow possible at Dunraven Pass 8,800ft — call NPS 307-344-2117 morning-of.' },
+  20: { vibes: ['drive', 'robin'],      energy: 2,
+        blurb: 'Drive to Glacier. ROBIN ARRIVES at the airport in the evening! 💜',
+        tip: '🐻 BUY BEAR SPRAY in Kalispell ($45-55 Sportsman & Ski Haus) — can\'t fly with it. Russell\'s Fireside dinner at Lake McDonald Lodge (1913 historic) — reservation made.' },
+  21: { vibes: ['mountain'],            energy: 3,
+        blurb: 'Glacier National Park together. Lake McDonald + easy hike with Robin.',
+        tip: '🥾 Avalanche Lake bail point at 1mi (creek gorge — still gorgeous). DeSmet boat tour 1hr historic 1930 wooden boat. Apgar pebble beach colored stones — leave them (federal offense to remove).' },
+  22: { vibes: ['fly', 'mountain'],     energy: 1,
+        blurb: 'Morning by the lake. Fly home from Kalispell.',
+        tip: '🌅 Sunrise at Lake McDonald (Apgar pier 5min). Eddie\'s Cafe huckleberry pie. Leave Apgar by 12pm HARD to make 2:30pm flight.' },
 };
 
 export default function MomView() {
@@ -110,7 +155,9 @@ export default function MomView() {
               const info = DAY_INFO[day.dayNumber];
               const primary = info?.vibes[0] || 'rest';
               const v = VIBES[primary];
-              const w = WEATHER[tempBucket(day.weather?.high)];
+              const fc = getForecast(day.dayNumber);
+              const high_c = fc?.high_c ?? day.weather?.high;
+              const w = WEATHER[tempBucket(high_c)];
               const d = parseISO(day.date);
               return (
                 <button
@@ -222,9 +269,15 @@ export default function MomView() {
               const info = DAY_INFO[day.dayNumber];
               const primary = info?.vibes[0] || 'rest';
               const v = VIBES[primary];
-              const w = WEATHER[tempBucket(day.weather?.high)];
+              const fc = getForecast(day.dayNumber);
+              const high_c = fc?.high_c ?? day.weather?.high;
+              const low_c = fc?.low_c ?? day.weather?.low;
+              const high_f = fc?.high_f;
+              const low_f = fc?.low_f;
+              const w = WEATHER[tempBucket(high_c)];
               const d = parseISO(day.date);
               const blurb = info?.blurb || day.summary || day.title;
+              const tip = info?.tip;
               const expanded = expandedDay === day.dayNumber;
               const activities = momActivities(day);
               const energy = info?.energy || 1;
@@ -254,7 +307,7 @@ export default function MomView() {
                           </span>
                         ))}
                         <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: w.bg, color: w.color }}>
-                          {w.emoji} {day.weather?.high}°
+                          {w.emoji} {high_f ? `${high_f}°F / ${high_c}°C` : `${high_c}°C`}
                         </span>
                         <span className="text-[9px] text-gray-500">
                           {'●'.repeat(energy)}{'○'.repeat(3 - energy)} {ENERGY_LABEL[energy]}
@@ -274,18 +327,38 @@ export default function MomView() {
                         </div>
                       )}
 
-                      {/* Weather advice card */}
-                      {day.weather && (
-                        <div className="mt-3 rounded-lg p-2.5 flex items-center gap-2" style={{ background: w.bg }}>
-                          <span className="text-2xl">{w.emoji}</span>
-                          <div className="flex-1">
-                            <div className="text-sm font-bold" style={{ color: w.color }}>
-                              {day.weather.high}°/{day.weather.low}°C · {w.label}
-                            </div>
-                            <div className="text-xs" style={{ color: w.color }}>
-                              {day.weather.conditions} — {w.advice}
+                      {/* Weather card (live forecast) */}
+                      {(fc || day.weather) && (
+                        <div className="mt-3 rounded-lg p-2.5" style={{ background: w.bg }}>
+                          <div className="flex items-center gap-2">
+                            <span className="text-2xl">{w.emoji}</span>
+                            <div className="flex-1">
+                              <div className="text-sm font-bold" style={{ color: w.color }}>
+                                {fc ? (
+                                  <>{fc.high_f}°F / {fc.high_c}°C high · {fc.low_f}°F / {fc.low_c}°C low · {w.label}</>
+                                ) : (
+                                  <>{day.weather!.high}°/{day.weather!.low}°C · {w.label}</>
+                                )}
+                              </div>
+                              <div className="text-xs" style={{ color: w.color }}>
+                                {fc ? <>{fc.conditions} · {fc.precip_pct}% rain · UV {fc.uv}</> : <>{day.weather!.conditions} — {w.advice}</>}
+                              </div>
                             </div>
                           </div>
+                          {fc && (
+                            <div className="text-[11px] mt-1.5 pt-1.5 border-t border-white/40" style={{ color: w.color }}>
+                              🌅 {fc.sunrise} · 🌇 {fc.sunset}
+                              {fc.caveat && <div className="mt-1 italic">{fc.caveat}</div>}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Tour-guide tip */}
+                      {tip && (
+                        <div className="mt-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg p-2.5">
+                          <div className="text-[11px] font-bold text-amber-700 uppercase tracking-wide mb-0.5">💡 Tour guide tip</div>
+                          <div className="text-[13px] text-amber-900 leading-snug">{tip}</div>
                         </div>
                       )}
 
