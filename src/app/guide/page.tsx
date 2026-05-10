@@ -885,8 +885,28 @@ function MomTips() {
   );
 }
 
-// ─── Pack List ───
+// ─── Pack List (with sub-tabs: Daily | Master) ───
 function PackList() {
+  const [sub, setSub] = useState<'daily' | 'master'>('daily');
+  return (
+    <div>
+      <div className="flex gap-1 bg-white border border-gray-200 rounded-xl p-1 mb-3 shadow-sm">
+        <button onClick={() => setSub('daily')}
+          className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-colors ${sub === 'daily' ? 'bg-amber-600 text-white' : 'text-gray-500 hover:bg-amber-50'}`}>
+          📅 Daily (per event)
+        </button>
+        <button onClick={() => setSub('master')}
+          className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-colors ${sub === 'master' ? 'bg-amber-600 text-white' : 'text-gray-500 hover:bg-amber-50'}`}>
+          🎒 Master List
+        </button>
+      </div>
+      {sub === 'daily' ? <DailyPack /> : <MasterPack />}
+    </div>
+  );
+}
+
+// ─── Master pack list (the original everything-list) ───
+function MasterPack() {
   return (
     <div className="space-y-3">
       <div className="bg-amber-100 border border-amber-300 rounded-xl p-4">
@@ -1036,3 +1056,895 @@ const Card = ({ emoji, title, children }: { emoji: string; title: string; childr
     <div className="text-sm text-gray-700">{children}</div>
   </div>
 );
+
+// ─── DAILY_PACK — hyper-detailed per-day per-event packing ───
+type Outfit = { base?: string; top: string; bottom: string; footwear: string; layer?: string; acc?: string };
+type DayPack = {
+  n: number;
+  date: string;
+  title: string;
+  weather: string;
+  outfit: Outfit;
+  daypack: string[];
+  activity?: { label: string; items: string[] }[];
+  evening?: string;
+  electronics?: string[];
+  warnings?: string[];
+  mom?: string[];
+};
+
+const DAILY_PACK: DayPack[] = [
+  { n: 1, date: 'Sun May 10', title: 'Vegas — Land + Bacchanal',
+    weather: 'Hot 95°F day · 65°F evening',
+    outfit: {
+      top: 'Smart-casual button-down (Colin) / blouse (Mom). Light cotton/linen — Bacchanal AC is cold',
+      bottom: 'Dark jeans or chinos',
+      footwear: 'Closed-toe walking shoes (Allbirds / Skechers Hands-Free) — NOT sandals',
+      layer: 'Light cardigan or lightweight blazer for AC dining',
+      acc: 'Sunglasses for Strip walk · small crossbody (NO big purse — Bacchanal tables tight)',
+    },
+    daypack: [
+      'Refillable water bottle (40oz Hydro Flask)',
+      '$20-40 cash for valet + tips',
+      'Lip balm (Aquaphor — desert destroys lips fast)',
+      "Mom's day-of meds in pillbox",
+      'Sunglasses + hat (afternoon walk to Bacchanal)',
+      'Hotel keycard + ID in pocket (skip bag at Bellagio)',
+    ],
+    activity: [
+      { label: 'Bacchanal Buffet 5:30pm', items: [
+        'Small crossbody only (tables tight)',
+        'Digestive tablets (Tums) — huge meal',
+        'Camera/phone fully charged for fountain walk after',
+      ]},
+      { label: 'Bellagio fountains 8pm', items: [
+        'Light cardigan ON — Strip drops to 65°F after sunset',
+        'Beer Park at Paris LV = best seated viewing for Mom (cost of one drink)',
+      ]},
+    ],
+    electronics: ['Phones to 80%+ before going out (Strip kills battery)', 'Hotel-room chargers plugged in for overnight'],
+    warnings: ['Mom on Toronto midnight = 9pm Vegas. Skip Fremont Street. Bed by 9:30pm.'],
+    mom: ['Compression socks ON (just landed 4h47m flight YYZ→LAS)', 'Eye mask + earplugs for early sleep', 'Hearing aids charged'],
+  },
+  { n: 2, date: 'Mon May 11', title: 'Vegas → Grand Canyon',
+    weather: 'Hot AM 95°F desert · Cold eve 45°F at 7,000ft Mather Point',
+    outfit: {
+      top: 'T-shirt or short-sleeve button-down (cool car AC)',
+      bottom: 'Lightweight zip-off pants — NOT shorts (sun + 7K ft cool eve)',
+      footwear: 'Walking shoes (Colin LOWA broken-in, Mom Hoka Bondi)',
+      layer: 'Fleece + light puffy READY in pack for Mather Point sunset',
+      acc: 'Brimmed hat (Tilley T3) + polarized sunglasses',
+    },
+    daypack: [
+      '2× 1.5L water bottles (refill in Williams or Kingman)',
+      'Trail mix, jerky, apples, RXBars',
+      'Mineral SPF 50 sunscreen',
+      'Lip balm + hand sanitizer',
+      'Headlamp (post-sunset walk back to car at Mather)',
+      "10K mAh Anker power bank fully charged",
+    ],
+    activity: [
+      { label: 'Mather Point sunset 7:24pm MST', items: [
+        'Walk 5min east on Rim Trail = fewer crowds',
+        'Trekking pole for Mom (paved but uneven near rim)',
+        'Headlamp around neck (NOT in bag) for descent walk',
+        'Fleece + light puffy ON — drops to 45°F after sunset with wind',
+      ]},
+    ],
+    electronics: ['USB-C cable in car · charge phones during 4.5hr drive', 'Top off power bank to 100%'],
+    warnings: ['Top off gas Kingman or Williams (NOT Tusayan — overpriced)', "Show Colin's America the Beautiful pass at South Entrance (already owned)"],
+    mom: ['Compression socks for the 4.5hr drive', 'Knee sleeves ON before Mather walk', '3-4L water/day starts NOW (altitude)'],
+  },
+  { n: 3, date: 'Tue May 12', title: 'Grand Canyon Three Viewpoints',
+    weather: 'Mild 70°F day · Cool 40°F eve · 7,000ft sun strong',
+    outfit: {
+      top: 'UPF 50 long-sleeve sun shirt OR T-shirt + sunscreen reapply',
+      bottom: 'Light hiking pants',
+      footwear: 'Hiking shoes (Colin LOWA, Mom Hoka Anacapa Low)',
+      layer: 'Fleece + light wind shell (sunset at 7K ft drops to 45°F with wind)',
+      acc: 'Wide-brim hat + polarized wraparound sunglasses (canyon glare)',
+    },
+    daypack: [
+      '1.5L water/person (refill at Visitor Center, Yavapai, Maswik)',
+      'Trail mix + jerky + apples',
+      'LMNT or Nuun electrolyte tabs (1-2/day at altitude)',
+      'Ibuprofen (altitude headache prevention)',
+      'Sunscreen reapply + Aquaphor lip balm',
+      'Headlamp + 10K power bank',
+      'Trekking poles strapped on side',
+    ],
+    activity: [
+      { label: 'AM Yavapai Geology + Rim Trail (1.4mi paved)', items: [
+        'Sun shirt + brimmed hat',
+        'Trekking pole for Mom — benches every 0.2mi',
+        'Notebook/phone for free 30-min ranger geology talk',
+      ]},
+      { label: 'PM Hopi Point sunset 7:25pm (Hermit Road shuttle)', items: [
+        'Fleece + wind shell ON for the 5:45pm shuttle',
+        'Foldable seat cane for Mom (shuttle wait)',
+        'Headlamp ON for return shuttle line in dark',
+      ]},
+    ],
+    electronics: ['Charge cabin overnight + cable in car for shuttle wait time'],
+    warnings: ['Altitude 7,000ft = real. 3-4L water, half-portion alcohol night 1.', "El Tovar didn't book — walk-in to Arizona Steakhouse if turned away"],
+    mom: ['Knee sleeves ON for Rim Trail', 'Pre-emptive ibuprofen at breakfast', 'Foldable seat cane'],
+  },
+  { n: 4, date: 'Wed May 13', title: 'GC → Page (Horseshoe Bend sunset)',
+    weather: 'Hot 90°F · Slickrock blast at Horseshoe Bend',
+    outfit: {
+      top: 'UPF 50 sun shirt — backup T-shirt in car for after sweat',
+      bottom: 'Light hiking pants',
+      footwear: 'Hiking shoes (sandy slickrock at Horseshoe Bend)',
+      layer: 'Light fleece for AC car',
+      acc: 'Wide-brim hat + sunglasses ESSENTIAL (slickrock glare brutal)',
+    },
+    daypack: [
+      '1L water/person MIN (NO water at Horseshoe Bend trailhead)',
+      '$10 cash for Horseshoe parking (NO senior discount)',
+      'Headlamp (post-sunset walk back)',
+      'Sunscreen reapply at 4pm + Aquaphor lip balm',
+      'Trail mix for the long drive',
+      'Phone fully charged for sunset photos',
+    ],
+    activity: [
+      { label: 'Horseshoe Bend sunset 7:25pm MST', items: [
+        '1.5mi RT ABA-compliant packed dirt (slight rise)',
+        'Stand on LEFT (west) side for classic horseshoe symmetry',
+        'NO drone allowed — banned by city ordinance',
+        'Vault toilets at trailhead, NONE at overlook — pee before trail',
+        'Foldable seat cane for Mom at viewpoint',
+      ]},
+    ],
+    electronics: ['USB-C in car — top up phones during 2.5hr drive', 'Power bank to 100%'],
+    warnings: ['Cameron Trading Post = ONLY reliable gas + lunch on US-89. Top off here.', 'Sunscreen reapply REAL — slickrock reflects UV from below'],
+    mom: ['Trekking pole for slight rise', 'Foldable seat cane at overlook (no benches)'],
+  },
+  { n: 5, date: 'Thu May 14', title: '⭐ Antelope Canyon TOUR + Lake Powell',
+    weather: 'Hot 92°F dry',
+    outfit: {
+      top: 'UPF 50 sun shirt OR T-shirt',
+      bottom: 'Light hiking pants (sand floors of canyon)',
+      footwear: 'Closed-toe shoes ESSENTIAL (sand pours into open shoes)',
+      layer: 'Light fleece for car AC after canyon',
+      acc: 'Brimmed hat + sunglasses (off DURING canyon — sun is filtered inside)',
+    },
+    daypack: [
+      'LEFT IN CAR during tour: regular daypack contents',
+      "Mom's printed waiver backup + insurance card (in glovebox)",
+      "1L water/person for Lake Powell PM",
+    ],
+    activity: [
+      { label: '⚠️ Antelope Canyon 10am MST tour — STRICT GEAR RULES', items: [
+        '🚫 NO bags, fanny packs, hydration packs, backpacks, purses',
+        '🚫 NO tripods, monopods, selfie sticks, drones, GoPro chest mounts',
+        '✅ IN HAND ONLY: phone (HDR mode, 100% battery), ONE water bottle',
+        '✅ IN POCKET ONLY: car keys, tip cash $10/person ($20 family for guide)',
+        'Phone HDR mode set · tap-to-expose for bright light beam (let rock fall dark)',
+        'Signed digital waiver on phone + printed backup in car',
+      ]},
+      { label: 'Lake Powell PM (Wahweap Marina lunch)', items: [
+        'Same outfit OR swim trunks if wading',
+        'Pool towel from Airbnb if swimming',
+        'Sunscreen reapply 2pm',
+      ]},
+    ],
+    electronics: ['Phones to 100% before 9:30am office check-in', 'Power bank in car (tour bans bags)'],
+    warnings: ['🕐 TOUR IS ON MST (= same as PDT in May). DO NOT trust phone — Page itself runs on MDT. Order #FMBYMK paid.', 'Be at office 9:30am MST sharp — leave Airbnb 9:15am'],
+    mom: ['Hearing aids in (guide narrates)', 'Reading glasses for waiver re-check at office', "Don't bring Mom's purse — leave EVERYTHING in car"],
+  },
+  { n: 6, date: 'Fri May 15', title: 'Page (Colin works · Mom solo)',
+    weather: 'Hot 90°F',
+    outfit: {
+      top: 'COLIN: T-shirt or button-down for video calls · MOM: light blouse or T-shirt',
+      bottom: 'COLIN: shorts off-camera · MOM: comfortable pants or capri',
+      footwear: 'COLIN: slippers · MOM: Hoka Bondi (paved downtown)',
+      layer: 'Light cardigan (Mom — AC museum)',
+      acc: 'MOM: sun hat, sunglasses, small crossbody',
+    },
+    daypack: [
+      "MOM: 1L water bottle",
+      "MOM: $20 cash + reading glasses + phone",
+      "MOM: SPF 50 sunscreen + Aquaphor lip balm",
+      "MOM: light snack (RXBar)",
+    ],
+    activity: [
+      { label: '10am John Wesley Powell Museum (small, indoor, AC)', items: [
+        'Reading glasses for exhibit text',
+        '~1hr — indoor AC = light cardigan',
+      ]},
+      { label: '3pm Hanging Gardens Trail (1.2mi RT shaded)', items: [
+        'Walking shoes adequate (gentle gravel)',
+        'NO trekking poles needed',
+        'Water bottle, hat — shaded alcove but exposed approach',
+      ]},
+    ],
+    electronics: ['Colin: laptop + phone at desk · headphones for calls', "Mom: phone topped to 100% before solo walk"],
+    warnings: ["Hydrate aggressively today — tomorrow is 6.5hr drive. Mom 3-4L water."],
+    mom: ['Hearing aids charged · pill organizer for evening dose', 'Cabin: tea/coffee setup, book, downloaded shows'],
+  },
+  { n: 7, date: 'Sat May 16', title: 'Page → Moab via Monument Valley',
+    weather: 'Hot 90°F · 6.5hr drive (verified)',
+    outfit: {
+      top: 'Synthetic T-shirt (no irritation under seatbelt)',
+      bottom: 'Light hiking pants (zip-off for break stops)',
+      footwear: 'Walking shoes (slip-on friendly for restroom stops)',
+      layer: 'Fleece + light puffy ready for cool Moab arrival',
+      acc: 'Sunglasses + brimmed hat for Monument Valley photo stop',
+    },
+    daypack: [
+      '2L water/person (long drive, fewer stops)',
+      'Trail mix + jerky + apples + 4 RXBars',
+      'Sunscreen + Aquaphor lip balm',
+      'Travel TP roll + hand sanitizer + wet wipes',
+      'Trash bag for car',
+    ],
+    activity: [
+      { label: 'Monument Valley View Hotel deck (10-min photo stop)', items: [
+        'Brimmed hat ON (exposed deck)',
+        'NO 17-mile loop — gravel + deep sand, NOT rental-car friendly',
+        'Forrest Gump Point Mile Marker 13 on US-163 north of park',
+      ]},
+      { label: 'Twin Rocks Cafe Bluff lunch (CLOSES 2pm SHARP)', items: [
+        'Leave Kayenta no later than 1pm',
+        'Cash + card both accepted',
+      ]},
+    ],
+    electronics: ['USB-C + Lightning cables in car · gas card ready', 'Offline maps downloaded — Navajo Nation has no signal'],
+    warnings: ['⛽ FUEL UP IN PAGE before leaving (only 1 station before Kayenta)', '⛽ FUEL UP AGAIN in Kayenta (mandatory restroom + fuel)'],
+    mom: ['Compression socks ALL DAY', 'Neck pillow + lumbar pillow', 'Breaks every 90min', 'Ear plugs for in-car nap'],
+  },
+  { n: 8, date: 'Sun May 17', title: 'Moab (Colin works · Mom solo)',
+    weather: 'Hot 90°F',
+    outfit: {
+      top: 'COLIN: T-shirt for calls · MOM: T-shirt or tank',
+      bottom: 'COLIN: shorts off-camera · MOM: shorts or capri (heat)',
+      footwear: 'COLIN: slippers · MOM: Hoka Bondi (paved Mill Creek), pool slides for hot tub',
+      layer: 'MOM: light cover-up for pool · cardigan for AC indoor lunch',
+      acc: 'MOM: sun hat, sunglasses, swimsuit + cover-up for Airbnb pool',
+    },
+    daypack: [
+      'MOM: 2L water (heat is real)',
+      'MOM: SPF 50 sunscreen reapply + lip balm',
+      'MOM: $20 cash + phone + reading glasses',
+      'POOL kit: swimsuit, cover-up, towel, slides, waterproof phone case',
+    ],
+    activity: [
+      { label: '9am Mill Creek Parkway (2mi paved riverside)', items: [
+        'Walking shoes, water, hat',
+        'Flat + shaded + benches — NO poles needed',
+      ]},
+      { label: '12-5pm Pool/hot tub at Airbnb', items: [
+        'Swimsuit + cover-up + towel + slides',
+        'Waterproof phone pouch',
+        'SPF 50 reapply every 2hrs',
+      ]},
+    ],
+    electronics: ['Pool day = phone risk near water — waterproof pouch'],
+    warnings: ['Moab Museum CLOSED Sundays — push to Tuesday Day 10', 'Mom rests for 4am wake-up Day 10 (Mesa Arch sunrise)'],
+    mom: ['Early start before noon heat', 'Cabin AC + hydration before tomorrow Arches'],
+  },
+  { n: 9, date: 'Mon May 18', title: '🔥 Arches NP Full Day',
+    weather: 'Hot 85°F · NO SHADE anywhere · exposed slickrock',
+    outfit: {
+      top: 'UPF 50 LONG-SLEEVE sun shirt (CRITICAL — Arches has NO shade) · backup T-shirt in car for sweat change',
+      bottom: 'Light hiking pants (zip-off for shorts mid-day option)',
+      footwear: 'Hiking shoes (Colin LOWA, Mom Hoka Anacapa Low — sandy trails)',
+      layer: 'NONE on body · light fleece in pack for AC car',
+      acc: 'WIDE-BRIM HAT (NOT cap — ears + neck burn fast on Mom) · polarized wraparound sunglasses · neck buff for sun + dust',
+    },
+    daypack: [
+      '2L water/person MIN (refill ONLY at Visitor Center)',
+      'LMNT/Nuun electrolyte tabs (1-2 — heat sweat)',
+      'Trail mix + jerky + apples + RXBars × 2',
+      'Sunscreen reapply 2× (mid-morning + 2pm) + 2× lip balm',
+      'Ibuprofen (heat headache) + antihistamine',
+      'FOLDABLE SEAT CANE for Mom (Windows Section sit-spots)',
+      'Camera + phone + 10K power bank',
+      'Headlamp (post-sunset return)',
+      'Trekking poles for Mom',
+      'Backup T-shirt in car for after sweat',
+      'Spray bottle of water (face cool)',
+    ],
+    activity: [
+      { label: '7am Park Avenue (drive-up + 0.2mi to overlook)', items: ['Stop at Visitor Center first — pee + refill 2L bottles'] },
+      { label: '7:45am Balanced Rock (0.3mi paved loop)', items: ['Easy warmup'] },
+      { label: '8:15am Windows Section (1mi sandy loop)', items: [
+        'Knee sleeves ON for Mom · KT tape on patella',
+        'Foldable seat cane for sit-spots',
+        'Reapply sunscreen now (sun strong by 8am)',
+      ]},
+      { label: '9:15am Double Arch (0.5mi flat)', items: ['Quick stop'] },
+      { label: '10:30am Delicate Arch LOWER Viewpoint (100yd flat)', items: ['NOT the 3mi arch trail — Mom can do this'] },
+      { label: '11:30am LUNCH BACK in Moab (escape midday heat)', items: [
+        'Change into backup T-shirt at car',
+        'AC restaurant (Moab Diner) for full hour',
+      ]},
+      { label: '3:30pm RE-ENTER Arches (Skyline + golden hour)', items: ['Sunscreen reapply at 4pm'] },
+      { label: '7pm Balanced Rock at sunset', items: ['Headlamps for descent walk'] },
+    ],
+    electronics: ['Phone to 100% · power bank fully charged · USB-C in car for re-entry afternoon'],
+    warnings: ['🚻 Restrooms ONLY at Visitor Center, Devils Garden, Wolfe Ranch (no others). Pee BEFORE each trail.', '🔥 NO shade except Devils Garden trees. Out of park 11:30am-3:30pm hard.', '🎉 2026 timed entry CANCELLED — but parking fills. Arrive 7am.'],
+    mom: ['Knee sleeves + KT tape · ibuprofen pre-emptive at breakfast', 'Foldable seat cane MUST', 'Backup hat in car if first one sweat-soaked'],
+  },
+  { n: 10, date: 'Tue May 19', title: '⭐ Mesa Arch Sunrise + Canyonlands',
+    weather: 'Cold predawn 40°F · Warm midday 80°F · 6,000ft elevation',
+    outfit: {
+      base: 'Thermal long-sleeve OR merino base (predawn cold)',
+      top: 'Fleece OR fleece + T-shirt underneath (peel layers as sun rises)',
+      bottom: 'Hiking pants (NOT shorts predawn at 6,000ft)',
+      footwear: 'Hiking shoes (gravel walk to arch in dark)',
+      layer: 'Light puffy + BEANIE + light gloves for predawn shoot',
+      acc: 'HEADLAMP REQUIRED for 0.7mi predawn walk · polarized sunglasses for after',
+    },
+    daypack: [
+      '🔥 THERMOS OF HOT COFFEE prepped night before (4:30am coffee shops CLOSED)',
+      '2L water + granola bars + RXBars',
+      'Camera + tripod (allowed at Mesa Arch — only spot in trip)',
+      'Phone + 10K power bank',
+      'Gloves + beanie + change-of-layer for after sunrise',
+      'Headlamp WITH FRESH BATTERIES (check night before)',
+      'Trekking poles for Mom (gravel in dark)',
+    ],
+    activity: [
+      { label: '4:30am LEAVE MOAB SHARP (set 2 alarms)', items: [
+        'Coffee thermos already prepped',
+        'Headlamp battery checked night before',
+        'Layers laid out night before — drowsy = no thinking',
+        '60mi/45min drive to Mesa Arch',
+      ]},
+      { label: '5:20am arrive parking', items: [
+        '(Parking fills 60-90min before sunrise)',
+        'Headlamps ON to walk 0.7mi gravel',
+      ]},
+      { label: '6:07am sunrise — arch glows ~1hr after', items: [
+        'Tripod = ~6 prime spots at Mesa Arch',
+        'Peel base layer once sun is up',
+        'Stay 30-60min after — golden glow continues',
+      ]},
+      { label: '7:30am drive-up viewpoints', items: [
+        'Shafer Canyon · Buck Canyon · Grand View Point',
+        'Green River Overlook (best drive-up view)',
+        'Skip all hikes — Mom can stay in car at viewpoints',
+      ]},
+    ],
+    electronics: ['Phone to 100% NIGHT BEFORE · power bank charged · USB-C cable in car'],
+    warnings: ['4:30AM HARD — set 2 alarms. Coffee prepped. Layers laid out.', "Mom can SKIP pre-dawn — sleep in, Colin solo Mesa Arch, pickup at 7:30am for Canyonlands viewpoints"],
+    mom: ['If knees flared from yesterday Arches, skip pre-dawn — sleep + sit-in-car viewpoints at 7:30am', 'Compression socks for the predawn drive nap'],
+  },
+  { n: 11, date: 'Wed May 20', title: 'Moab → SLC + Temple Square',
+    weather: 'Mild 75°F · 4hr drive',
+    outfit: {
+      top: 'AM: T-shirt for travel · PM: nicer button-down/blouse for Temple Square',
+      bottom: 'AM: hiking pants · PM: dressier pants',
+      footwear: 'Walking shoes (Mom Hoka Bondi) — no hikers needed',
+      layer: 'Light cardigan/fleece for AC restaurants + cool evening',
+      acc: 'Sunglasses · hat optional',
+    },
+    daypack: [
+      '1L water + snacks for road',
+      'Light jacket for evening',
+      'Sunscreen + lip balm',
+      'Phone + charger + power bank',
+    ],
+    activity: [
+      { label: '11:30am Tamarisk Restaurant Green River lunch', items: ['51mi from Moab · riverside views · classic since 1979'] },
+      { label: '5pm walk Temple Square (4 blocks N from Airbnb)', items: [
+        '✨ NEW Visitors\' Center opened May 18 — 2 days before arrival',
+        'Salt Lake Temple still closed (renovation through 2027)',
+        'Light cardigan ON for cool evening',
+      ]},
+      { label: '7:30pm Red Iguana 2 dinner (866 W S Temple)', items: [
+        'Same menu as #1, shorter line',
+        'Mole sampler complimentary — try all 8',
+      ]},
+    ],
+    electronics: ['Cables in car · top up during 4hr drive'],
+    warnings: ['Tamarisk lunch hours fine, but closes 8pm if changes plans', 'SLC = 4,226ft — fully acclimated from GC + Moab'],
+    mom: ['Compression socks for the drive', 'Lumbar pillow', 'Knee sleeves OFF (rest day for joints before Sat hikes)'],
+  },
+  { n: 12, date: 'Thu May 21', title: 'SLC (Colin works · Mom solo)',
+    weather: 'Mild 75°F',
+    outfit: {
+      top: 'COLIN: button-down for video calls · MOM: light blouse or T-shirt',
+      bottom: 'COLIN: dark jeans/slacks · MOM: light pants or skirt',
+      footwear: 'COLIN: slippers · MOM: Hoka Bondi (lots of city walking)',
+      layer: 'MOM: cardigan for AC museum/aviary',
+      acc: 'MOM: sun hat + sunglasses + small purse · Uber app set up',
+    },
+    daypack: [
+      'MOM: 1L water + sunscreen + lip balm',
+      'MOM: $20 cash + phone + reading glasses',
+      'MOM: $14 Tracy Aviary cash/card',
+      'POOL kit (afternoon): swimsuit, cover-up, slides, towel',
+    ],
+    activity: [
+      { label: '8am La Barba coffee (327 W 200 S, 1 block from Airbnb)', items: ['Mom-friendly walk'] },
+      { label: '10:30am Uber Tracy Aviary at Liberty Park ($14 senior)', items: [
+        'Paved paths, ADHD-friendly, lots to see',
+        'Sun hat + sunscreen — outdoor',
+      ]},
+      { label: '12pm Tabernacle organ recital (free, 30min)', items: ['Mon-Sat 12-12:30pm · Cardigan for AC'] },
+      { label: '2pm rooftop pool/hot tub at Airbnb', items: ['Swimsuit + cover-up + towel'] },
+      { label: '7:30pm Copper Onion dinner (UPSCALE)', items: [
+        'Change to dressier outfit',
+        'Reservation made',
+      ]},
+    ],
+    electronics: ["Mom's phone topped up before solo Uber day"],
+    warnings: ['Tracy Aviary is the secret weapon for Mom — paved, contained, low effort'],
+    mom: ['Hearing aids charged', 'Pill organizer for evening dose'],
+  },
+  { n: 13, date: 'Fri May 22', title: 'SLC (Colin works AM · joint PM)',
+    weather: 'Mild 75°F',
+    outfit: {
+      top: 'COLIN: nicer T-shirt/polo (4pm transition) · MOM: blouse or T-shirt',
+      bottom: 'Jeans or light pants',
+      footwear: 'Walking shoes',
+      layer: 'Fleece for cool 5pm Temple Square walk',
+      acc: 'Sunglasses · light bag',
+    },
+    daypack: [
+      '1L water + sunscreen + lip balm',
+      'Light layers for evening',
+    ],
+    activity: [
+      { label: 'Mom AM: Liberty Park 1.5mi flat loop OR This Is The Place', items: ['Walking shoes · Hoka Bondi'] },
+      { label: '12pm Crown Burgers lunch (Utah classic pastrami burger)', items: ['Casual outfit fine'] },
+      { label: '5pm joint Temple Square golden hour walk', items: ['Fleece ON · cool evening'] },
+      { label: '7pm Red Iguana 1 dinner', items: ['Go BEFORE 6pm or expect 60-90min wait'] },
+    ],
+    electronics: ['Laptop done by 4pm · Mom + Colin both charged for Saturday'],
+    warnings: ['LIGHT day before busy Saturday Antelope Island'],
+    mom: ['REST joints today — head nets + hiking poles + KT tape ready in pack for tomorrow'],
+  },
+  { n: 14, date: 'Sat May 23', title: '🪰 Antelope Island + NHMU + Ensign Peak',
+    weather: 'Mild 70°F · GNAT SEASON PEAK',
+    outfit: {
+      top: 'UPF sun shirt — TUCKED-IN collar (gnats find any gap)',
+      bottom: 'Hiking pants — TUCKED INTO socks (ankle gnats) · zip-offs for later',
+      footwear: 'Hiking shoes for Buffalo Point + Ensign · CHANGE to walking shoes for NHMU',
+      layer: 'Fleece + light shell · museum AC cool',
+      acc: '🪰 FINE-MESH HEAD NET (BOTH) · brimmed hat · sunglasses · gloves optional',
+    },
+    daypack: [
+      '2L water + snacks',
+      'HEAD NETS × 2 backup (lose one and trip ruined)',
+      'Permethrin-treated layer (only thing that works on no-see-ums)',
+      'Binoculars (bison spotting)',
+      'Camera + phone + 10K power bank',
+      'Knee sleeves + KT tape for Mom',
+      'Headlamps (Ensign Peak descent in dusk)',
+      'Trekking poles strapped on',
+    ],
+    activity: [
+      { label: '8am drive Antelope Island (45min, $10/car)', items: [
+        '🪰 HEAD NETS ON before getting out of car',
+        'Buffalo Point easy walk (breezier, fewer bugs)',
+        'Out by 12:30pm',
+      ]},
+      { label: '2pm NHMU U of U ($20.95 senior — NOT $18)', items: [
+        'Change to walking shoes · stash hiking gear in car',
+        'Fleece ON (AC cool)',
+        'Past Worlds dinosaurs · Bug World · rooftop terrace',
+      ]},
+      { label: '7pm Ensign Peak (0.9mi RT — NOT 0.8 — steep)', items: [
+        'Back to hiking shoes',
+        'Hiking poles ON for Mom',
+        '300ft gain in 0.45mi · steep',
+        'Headlamp ON for descent (sunset 8:35pm)',
+        'Bail to State Capitol grounds if knees flare',
+      ]},
+    ],
+    electronics: ['Phone to 100% · power bank topped up · headlamp battery checked'],
+    warnings: ['🪰 HEAD NETS CRITICAL — May = peak no-see-um/biting gnat season. Insect repellent does NOT work.', 'Ensign Peak descent in dusk = headlamp essential'],
+    mom: ['HEAD NET + tucked-in collar + tucked-in pants', 'Knee sleeves + KT tape for Ensign', 'Trekking poles + headlamp', 'Foldable seat cane if energy spent'],
+  },
+  { n: 15, date: 'Sun May 24', title: 'SLC → Driggs ID',
+    weather: 'Mild 70°F → Cool mountain 60°F · 4.5hr drive',
+    outfit: {
+      top: 'T-shirt + fleece for the drive (cool as you climb)',
+      bottom: 'Hiking pants',
+      footwear: 'Walking shoes',
+      layer: 'Fleece + light puffy in pack (Driggs cooler than SLC)',
+      acc: 'Sunglasses (mountain reflection)',
+    },
+    daypack: [
+      'Snacks + water + light jacket for stops',
+      'Sunglasses + lip balm',
+    ],
+    activity: [
+      { label: '10:45am Logan UT lunch — Bluebird Café (1914 historic)', items: ['Walking shoes · light jacket · casual outfit'] },
+      { label: '6:30pm Tatanka Tavern Driggs dinner (3rd-floor Teton view)', items: ['Light puffy ON — Driggs evenings 50°F'] },
+    ],
+    electronics: ['USB-C in car · podcasts queued for 4.5hr drive'],
+    warnings: ['ID-33 Pine Creek Pass — NOT Teton Pass (saves Mom 1.5hr + steep climb)'],
+    mom: ['Compression socks for the drive', 'Neck pillow + lumbar pillow'],
+  },
+  { n: 16, date: 'Mon May 25', title: 'Memorial Day Driggs (Colin works · Mom solo)',
+    weather: 'Cool mountain 60°F day · 35-40°F nights',
+    outfit: {
+      top: 'COLIN: WFH casual · MOM: T-shirt + fleece (cooler than SLC)',
+      bottom: 'Hiking pants or warm pants',
+      footwear: 'Walking shoes (downtown stroll)',
+      layer: 'MOM: light puffy for evening',
+      acc: 'MOM: sunglasses + light gloves optional + small bag',
+    },
+    daypack: [
+      'MOM: 1L water + snacks + $20 cash',
+      'MOM: SPF 50 (UV strong at altitude even when cool) + lip balm',
+      'MOM: phone + reading glasses',
+    ],
+    activity: [
+      { label: '10am Teton Geo Center (60 S Main, free)', items: ['Mon 10am-4pm only — Memorial Day open'] },
+      { label: '11:30am Driggs Main Street stroll', items: ['Just 2 blocks of shops/galleries'] },
+      { label: '12:30pm Tatanka Tavern lunch', items: ['3rd-floor Teton view!'] },
+      { label: '2pm Spud Drive-In iconic giant potato photo', items: ['231 S Hwy 33 — quick photo stop'] },
+      { label: '2:30pm Teton Creek Corridor / Sherman Park', items: ['Paved level path · gentle'] },
+    ],
+    electronics: ['Cabin laptop + phone overnight', "Mom's phone topped up before solo walk"],
+    warnings: ['REST DAY before Tetons big day tomorrow (6:30am wake-up)', 'Pack for tomorrow tonight: gloves, beanie, layers, $135 cash/card for Mom park entry'],
+    mom: ['Light puffy for evening (Driggs lows 35-40°F)', 'Knee sleeves OFF — rest joints'],
+  },
+  { n: 17, date: 'Tue May 26', title: '⭐ Grand Teton NP loop',
+    weather: 'Cool 60-65°F day · Cold 35-40°F sunrise · 38% rain/snow chance',
+    outfit: {
+      base: 'Thermal long-sleeve OR merino base (sunrise cold)',
+      top: 'T-shirt + fleece (peel layers mid-morning)',
+      bottom: 'Hiking pants (NOT shorts)',
+      footwear: 'Hiking shoes (Colin LOWA, Mom Hoka Anacapa)',
+      layer: 'Light puffy + RAIN SHELL (38% chance rain/snow)',
+      acc: 'BEANIE + light gloves for sunrise · brimmed hat for midday · polarized sunglasses',
+    },
+    daypack: [
+      '🪪 $135 CASH/CARD for Mom park entry ($35 + $100 non-resident)',
+      'Gloves + beanie',
+      '2L water/person',
+      'BIG snack supply: trail mix + jerky + apples + RXBars × 3',
+      'Camera + binoculars (moose at Oxbow Bend)',
+      'Trekking poles for Mom (String Lake walk)',
+      'Sunscreen (high elevation = strong UV even cool) + lip balm',
+      'Foldable seat cane for Mom',
+    ],
+    activity: [
+      { label: '6:30am leave Victor → Teton Pass', items: [
+        'Sunrise 5:50am MDT — accept "good light" not true golden',
+        'Beanie + gloves + puffy ON',
+      ]},
+      { label: '7:30am Mormon Row (Moulton barns + balsamroot)', items: ['30min · drive-up · brief walks'] },
+      { label: '8:30am Schwabacher Landing (0.5mi flat)', items: ['Aspen + Tetons reflection · knee sleeves on if Mom feels'] },
+      { label: '9:30am Snake River Overlook (drive-up)', items: ['Ansel Adams spot · 15min'] },
+      { label: '11:30am Persephone Bakery Jackson lunch', items: ['Walk Town Square antler arches · peel base layer to T-shirt'] },
+      { label: '1:30pm Chapel of the Transfiguration', items: ['Small log chapel · Tetons through window · 20min'] },
+      { label: '2:15pm String Lake (skip Hidden Falls boat — too steep)', items: [
+        'Trekking poles ON',
+        'Optional flat 1mi walk along water',
+      ]},
+      { label: '3:30pm Oxbow Bend (afternoon light, moose)', items: ['Binoculars · 30min'] },
+      { label: '4:30pm return via Hwy 26 → Hwy 33', items: ['AVOIDS Teton Pass at dusk ✅'] },
+    ],
+    electronics: ['Phone to 100% · power bank · USB-C in car for the loop'],
+    warnings: ['🪪 $135 Mom non-resident surcharge (NEW 2026 fee). Bring CARD.', 'Wildlife: 100yd bears, 25yd bison/moose. NO bear spray needed (not bushwhacking).', 'Layers ON/OFF all day · rain shell ESSENTIAL'],
+    mom: ['Beanie + gloves for sunrise', 'Knee sleeves ON', 'Trekking poles', 'Foldable seat cane'],
+  },
+  { n: 18, date: 'Wed May 27', title: 'Driggs → West Yellowstone + Old Faithful + Grand Prismatic',
+    weather: 'Cool 60°F · possibly rain',
+    outfit: {
+      top: 'T-shirt + fleece',
+      bottom: 'Hiking pants',
+      footwear: 'Hiking shoes (boardwalk + 1.2mi gravel hike)',
+      layer: 'Fleece + RAIN SHELL (Yellowstone weather changes fast)',
+      acc: 'Brimmed hat + sunglasses + light gloves morning',
+    },
+    daypack: [
+      '1.5L water + snacks',
+      'Gloves + beanie (cold mornings)',
+      'Camera + ranger predicted-eruption schedule (printed at VEC)',
+      'Trekking poles for Mom (105ft uphill to Fairy Falls Overlook)',
+      'Sunscreen + lip balm',
+      'Foldable seat cane for 90-min eruption wait',
+    ],
+    activity: [
+      { label: '12pm Madison Crossing Lounge lunch (historic schoolhouse)', items: ['Walking distance from Crosswinds Inn for later'] },
+      { label: '2:30pm Old Faithful — check predicted eruption', items: [
+        'Boardwalk benches for eruption viewing',
+        'Foldable seat cane for Mom if 90-min wait',
+      ]},
+      { label: '3:30pm Upper Geyser Basin loop (~1mi flat boardwalk)', items: [
+        'Past Castle/Grand/Beehive — quieter than main',
+      ]},
+      { label: '4pm Old Faithful Inn lobby (1904 log architecture)', items: ['10min worth even if not eating'] },
+      { label: '5:15pm Fairy Falls Overlook for Grand Prismatic', items: [
+        '1.2mi RT, 105ft gain over 0.6mi',
+        'NPS calls it "very well-suited for seniors"',
+        'NOT the Midway boardwalk — overlook is the iconic shot',
+        'Trekking poles for Mom',
+        'Backup: Midway Geyser Basin (0.5mi flat) if Mom tired',
+      ]},
+    ],
+    electronics: ['Phone to 100% · OFFLINE MAPS DOWNLOADED (Yellowstone has dead zones)'],
+    warnings: ['📵 Yellowstone has cell dead zones. Download offline maps.', 'Eruption time check at Visitor Education Center first thing'],
+    mom: ['Foldable seat cane for eruption wait', 'Beanie + gloves for morning', 'Knee sleeves ON for Fairy Falls hike'],
+  },
+  { n: 19, date: 'Thu May 28', title: '🦬 Yellowstone Upper Loop (LONG day)',
+    weather: 'Cool 50-65°F · Snow possible at 8,800ft Dunraven Pass',
+    outfit: {
+      base: 'Thermal long-sleeve OR merino base',
+      top: 'T-shirt + fleece',
+      bottom: 'Hiking pants',
+      footwear: 'Hiking shoes',
+      layer: 'Light puffy + RAIN SHELL ALL · snow at Dunraven Pass realistic',
+      acc: 'BEANIE + gloves (snow reflection!) · polarized sunglasses · brimmed hat for low elevations',
+    },
+    daypack: [
+      '2L water/person',
+      'BIG snack supply — 10-12hr day: trail mix + jerky + apples + RXBars × 4 + extra bars',
+      'Gloves + beanie',
+      'Sunscreen (snow reflection BURNS!) + lip balm × 2',
+      'Binoculars (Lamar Valley wildlife — bison + maybe distant wolves)',
+      'Camera + phone + 10K power bank',
+      'Eye drops (high altitude dryness)',
+      'Foldable seat cane for Mom',
+    ],
+    activity: [
+      { label: '7am depart Crosswinds (early = wildlife + fewer crowds)', items: [
+        'Layers ON — beanie + fleece + puffy',
+        '⛽ Top off gas BEFORE leaving',
+      ]},
+      { label: '8am Norris Geyser Basin (Porcelain 0.5mi flat boardwalk)', items: ['Cold morning · puffy ON'] },
+      { label: '9:30am Mammoth — Upper Terrace 1.5mi loop FIRST (sit-down)', items: ['Drive loop · Lower boardwalk if energy'] },
+      { label: '11:30am Lamar Valley — TURN AROUND at Slough Creek pullout', items: [
+        'Bison + pronghorn reliable midday',
+        'Binoculars · DON\'T push past!',
+      ]},
+      { label: '1pm Roosevelt Lodge or Tower Fall General Store lunch', items: ['Layers off briefly inside'] },
+      { label: '2pm Tower Fall viewpoint (0.1mi)', items: ['Lower trail closed — overlook only'] },
+      { label: '2:30pm Dunraven Pass (8,800ft, snow patches)', items: [
+        'GLOVES + BEANIE ON',
+        'Sunscreen reapply (snow reflection)',
+        'Foldable seat cane if photo stops',
+      ]},
+      { label: '3:30pm Canyon — Artist Point (ICONIC Lower Falls)', items: ['Tripod allowed'] },
+      { label: '4pm Brink of Upper Falls or Lookout Point', items: ['SKIP Brink of Lower Falls (600ft of metal stairs)'] },
+      { label: '7:30pm Three Bear Restaurant dinner', items: ['Walking distance from Crosswinds'] },
+    ],
+    electronics: ['Phone to 100% · power bank fully charged · USB-C in car · OFFLINE MAPS'],
+    warnings: ['⛽ TOP OFF GAS Madison Junction or Old Faithful (long stretches no gas)', '🦬 Bison jams normal — STAY IN CAR · 100yd bears/wolves, 25yd bison/elk', '☀️ Snow reflection BURNS skin even when cool — sunscreen mandatory'],
+    mom: ['Compression socks for the long drive', 'Knee sleeves', 'Eye drops (altitude dryness)', 'Foldable seat cane'],
+  },
+  { n: 20, date: 'Fri May 29', title: 'West Yellowstone → Glacier (💜 ROBIN ARRIVES)',
+    weather: 'Cool 55°F · 6.5-7hr drive · rain likely',
+    outfit: {
+      top: 'T-shirt + fleece',
+      bottom: 'Hiking pants (long drive comfort)',
+      footwear: 'Walking shoes',
+      layer: 'Fleece + rain shell ready · light puffy in pack',
+      acc: 'Sunglasses',
+    },
+    daypack: [
+      'Snacks + 2L water + podcasts',
+      'Neck pillow + lumbar pillow for Mom',
+      'Charging cables (Lightning + USB-C)',
+      'Eye drops + ear plugs',
+    ],
+    activity: [
+      { label: '7am depart Crosswinds (Mom sleeps in car)', items: [
+        'Compression socks ON for Mom',
+        'Coffee + breakfast in to-go cups',
+      ]},
+      { label: '10:30-11:30am Bozeman lunch', items: [
+        '~1.5hr in · vibrant downtown · farm-to-table',
+        'Change Mom into nicer shirt for dinner readiness',
+      ]},
+      { label: '4pm BUY BEAR SPRAY in Kalispell', items: [
+        '⚠️ CRITICAL — can\'t fly with it, must buy locally',
+        'Or rent at Apgar (cheaper but more restrictive)',
+      ]},
+      { label: '5pm drop Mom at Apgar Village Lodge to rest', items: ['Robin\'s clothes ready in suitcase for tomorrow'] },
+      { label: 'Robin pickup AS 2402 FCA', items: [
+        'Colin solo to FCA (27mi/35min)',
+        'Back at Apgar with Robin',
+      ]},
+      { label: '7pm Russell\'s Fireside dinner Lake McDonald Lodge', items: [
+        '1913 historic · RESERVATION made',
+        'Nicer button-down (Colin) / blouse (Mom + Robin)',
+        'Dress pants',
+        '10min from Apgar',
+      ]},
+    ],
+    electronics: ['Cables in car · charge during drive', 'Russell\'s reservation confirmation on phone'],
+    warnings: ['🐻 BUY BEAR SPRAY — can\'t fly with it', 'Russell\'s Fireside reservation Friday May 29 for 3 — confirmed'],
+    mom: ['Compression socks ALL DAY (7hr drive)', 'Neck pillow + lumbar pillow', 'Breaks every 90min', 'Eye drops + ear plugs for in-car nap'],
+  },
+  { n: 21, date: 'Sat May 30', title: '🧊 Glacier — Avalanche + Boat Tour',
+    weather: 'Cool 55-65°F · RAIN LIKELY (Glacier averages 11 wet days in May)',
+    outfit: {
+      base: 'Thermal long-sleeve',
+      top: 'T-shirt + fleece',
+      bottom: 'Hiking pants (waterproof if you have them, else quick-dry)',
+      footwear: 'Hiking shoes — WATERPROOF if possible (Avalanche trail muddy after rain)',
+      layer: 'RAIN SHELL REQUIRED (Glacier wet)',
+      acc: 'Brimmed hat or beanie · light gloves',
+    },
+    daypack: [
+      '2L water/person + lots of snacks',
+      '🐻 BEAR SPRAY (Avalanche is grizzly area)',
+      'DRY SOCKS change in pack',
+      'DRY T-shirt change in car',
+      'Camera + binoculars',
+      'Trekking poles for Mom (730ft gain on Avalanche Lake)',
+      'Sunscreen + lip balm',
+      'Foldable seat cane for boat tour',
+    ],
+    activity: [
+      { label: '8:30am drive 16mi up GTSR to Avalanche Creek', items: [
+        '⚠️ Park early — fills fast',
+        'Bear spray on belt or pack hip strap (NOT inside pack)',
+      ]},
+      { label: '9am Trail of the Cedars boardwalk (0.9mi loop, all-accessible)', items: ['Warmup · stroller-friendly'] },
+      { label: '9:45am DECISION POINT: Avalanche Lake Trail', items: [
+        'Full: 4.6mi RT / 730ft gain',
+        'MOM BAIL: turn back at 1mi mark beside Avalanche Creek gorge (still gorgeous)',
+        'Trekking poles ESSENTIAL for descent',
+        'Bear spray accessible',
+      ]},
+      { label: '1pm Russell\'s Fireside lunch (Lake McDonald Lodge)', items: ['Casual outfit fine for lunch'] },
+      { label: '2:30pm DeSmet boat tour (1hr historic 1930 wooden boat)', items: [
+        'Booked 406-257-2426',
+        'Light jacket on boat (lake breeze)',
+        'Foldable seat cane if Mom standing',
+      ]},
+      { label: '4pm Apgar beach colored pebbles', items: [
+        'Red/green/blue argillite',
+        '⚠️ Illegal to remove — leave the rocks!',
+      ]},
+      { label: '8:55pm sunset Apgar pier walk', items: ['Light puffy + light · cool evening'] },
+    ],
+    electronics: ['Phone to 100% · power bank · USB-C in car', '📵 Cell service spotty in park'],
+    warnings: ['🐻 BEAR SPRAY on Avalanche hike (active grizzly area)', '🌧️ Wet weather likely — rain shell + dry socks + dry shirt change in car', '🪨 LEAVE THE ROCKS — federal offense to remove'],
+    mom: ['Knee sleeves + KT tape for 730ft gain (or bail at 1mi)', 'Trekking poles ESSENTIAL', 'Dry socks change', 'Foldable seat cane for boat'],
+  },
+  { n: 22, date: 'Sun May 31', title: '✈️ Departures (Glacier → home)',
+    weather: 'Cool 55°F',
+    outfit: {
+      top: 'T-shirt or light long-sleeve (TSA-friendly)',
+      bottom: 'Light pants — proper pants (Mom prefers over yoga)',
+      footwear: 'Slip-on shoes (Allbirds Wool Loungers or Skechers Hands-Free) — TSA-friendly',
+      layer: 'Cardigan or fleece for AC airports',
+      acc: 'Sunglasses · hat optional',
+    },
+    daypack: [
+      'See "Mom carry-on" below — DO NOT CHECK',
+    ],
+    activity: [
+      { label: '6:30am sunrise Lake McDonald (Apgar pier 5min)', items: ['Quick photo stop · light puffy ON'] },
+      { label: '7:30am slow breakfast Eddie\'s Cafe', items: ['Apgar Village · huckleberry pie!'] },
+      { label: '12pm LATEST depart Apgar with Mom (HARD)', items: ['27mi/35min to FCA'] },
+      { label: '12:35pm arrive FCA · 2:30pm Mom DL 2575 (YYZ via MSP)', items: [
+        'TSA · check Mom in 1.5hrs early',
+      ]},
+      { label: 'Lunch Backslope Brewing Whitefish OR Three Forks Grille', items: ['Colin + Robin between flights'] },
+      { label: '5:40pm Colin + Robin AS 2419 (FCA→SEA, 1h32m, First Class Colin)', items: [] },
+    ],
+    electronics: ['Phones to 100% night before · power bank charged'],
+    warnings: ['Mom MUST be at FCA by 1pm — leave Apgar 12pm HARD'],
+    mom: [
+      '🚫 ALL MEDS in CARRY-ON, NOT checked',
+      'Original pharmacy bottles + 1-week buffer beyond trip + prescription list',
+      'Passport (Canadian)',
+      'Travel insurance card + 24/7 claims # (photo on phone)',
+      'Phone fully charged + 10K Anker power bank',
+      'Reading glasses × 2 pairs',
+      'Wallet, IDs',
+      'One change of clothes (in case checked bag delayed)',
+      'Compression socks ON (long flights + connection)',
+      'Lumbar pillow + neck pillow',
+      'Eye mask + earplugs',
+      'Hearing aids in + spare batteries (size 312)',
+    ],
+  },
+];
+
+// ─── Daily pack accordion component ───
+function DailyPack() {
+  const [openDay, setOpenDay] = useState<number | null>(null);
+  return (
+    <div className="space-y-3">
+      <div className="bg-amber-100 border border-amber-300 rounded-xl p-4">
+        <div className="font-bold text-amber-900 mb-1">📅 What to wear · what to bring · per event</div>
+        <div className="text-sm text-amber-900">22 days, every event tied to outfit + day-bag + activity-specific gear. <B>Tap a day to expand.</B></div>
+      </div>
+      {DAILY_PACK.map(d => (
+        <div key={d.n} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <button onClick={() => setOpenDay(openDay === d.n ? null : d.n)}
+            className="w-full flex items-center gap-3 p-3 hover:bg-amber-50 transition-colors text-left">
+            <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-100 flex flex-col items-center justify-center">
+              <div className="text-[10px] font-bold text-amber-600">DAY</div>
+              <div className="text-base font-bold text-amber-700 leading-none">{d.n}</div>
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs text-gray-500">{d.date}</div>
+              <div className="font-bold text-gray-800 leading-tight">{d.title}</div>
+              <div className="text-[11px] text-gray-500 mt-0.5">🌡️ {d.weather}</div>
+            </div>
+            {openDay === d.n ? <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronRight className="w-5 h-5 text-gray-400 shrink-0" />}
+          </button>
+          {openDay === d.n && (
+            <div className="px-3 pb-4 border-t border-gray-100 text-sm space-y-3 pt-3">
+              {/* Outfit */}
+              <div>
+                <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">👕 Outfit</div>
+                <div className="bg-amber-50 rounded-lg p-2.5 space-y-1 text-[13px]">
+                  {d.outfit.base && <div><B>Base:</B> {d.outfit.base}</div>}
+                  <div><B>Top:</B> {d.outfit.top}</div>
+                  <div><B>Bottom:</B> {d.outfit.bottom}</div>
+                  <div><B>Footwear:</B> {d.outfit.footwear}</div>
+                  {d.outfit.layer && <div><B>Layer:</B> {d.outfit.layer}</div>}
+                  {d.outfit.acc && <div><B>Accessories:</B> {d.outfit.acc}</div>}
+                </div>
+              </div>
+
+              {/* Day bag */}
+              <div>
+                <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">🎒 In the daypack</div>
+                <ul className="list-disc list-outside ml-5 text-[13px] text-gray-700 space-y-0.5">
+                  {d.daypack.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+              </div>
+
+              {/* Activity-specific gear */}
+              {d.activity && d.activity.length > 0 && (
+                <div>
+                  <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">⏱️ Per event</div>
+                  <div className="space-y-2">
+                    {d.activity.map((a, i) => (
+                      <div key={i} className="bg-blue-50 border-l-4 border-blue-300 rounded p-2.5">
+                        <div className="font-semibold text-blue-900 text-[13px] mb-1">{a.label}</div>
+                        <ul className="list-disc list-outside ml-4 text-[12px] text-blue-900/90 space-y-0.5">
+                          {a.items.map((i2, j) => <li key={j}>{i2}</li>)}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Electronics */}
+              {d.electronics && d.electronics.length > 0 && (
+                <div>
+                  <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">🔌 Electronics</div>
+                  <ul className="list-disc list-outside ml-5 text-[13px] text-gray-700 space-y-0.5">
+                    {d.electronics.map((e, i) => <li key={i}>{e}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {/* Mom extras */}
+              {d.mom && d.mom.length > 0 && (
+                <div>
+                  <div className="font-bold text-purple-700 text-xs uppercase tracking-wide mb-1.5">👵 Mom extras</div>
+                  <div className="bg-purple-50 border-l-4 border-purple-300 rounded p-2.5">
+                    <ul className="list-disc list-outside ml-4 text-[12px] text-purple-900 space-y-0.5">
+                      {d.mom.map((m, i) => <li key={i}>{m}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Warnings */}
+              {d.warnings && d.warnings.length > 0 && (
+                <div>
+                  <div className="font-bold text-amber-700 text-xs uppercase tracking-wide mb-1.5">⚠️ Critical reminders</div>
+                  <div className="bg-amber-50 border-l-4 border-amber-400 rounded p-2.5">
+                    <ul className="list-disc list-outside ml-4 text-[12px] text-amber-900 space-y-0.5">
+                      {d.warnings.map((w, i) => <li key={i}>{w}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
