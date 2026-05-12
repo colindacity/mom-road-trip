@@ -362,7 +362,7 @@ export const tripData: TripData = {
       summary: 'Land, pick up car, Bacchanal Buffet, Fremont Street',
       location: locations.find(l => l.id === 'las')!,
       overnight: 'Las Vegas, NV',
-      weather: { high: 36, low: 20, conditions: 'Hot and sunny — desert heat!' },
+      weather: { high: 38, low: 21, conditions: 'Hot, sunny — 101°F/38°C peak. Hydrate aggressively. UV 9.' },
       activities: [
         {
           id: 'a1-1',
@@ -471,7 +471,7 @@ export const tripData: TripData = {
       overnight: 'Grand Canyon (South Rim, In-Park)',
       drivingDistance: '280 miles',
       drivingTime: '4.5 hours',
-      weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation (7,000 ft)' },
+      weather: { high: 28, low: 14, conditions: 'Overcast at GC rim 7,000ft — 82°F day / 57°F evening. SW wind. Sunset 7:24pm MST.' },
       activities: [
         {
           id: 'a2-1',
@@ -578,7 +578,7 @@ export const tripData: TripData = {
       summary: 'Rim Trail walk, El Tovar lunch, Yavapai Geology Museum, sunset',
       location: locations.find(l => l.id === 'gc')!,
       overnight: 'Grand Canyon (South Rim, In-Park)',
-      weather: { high: 26, low: 7, conditions: 'Sunny, pleasant at rim elevation' },
+      weather: { high: 29, low: 14, conditions: 'Overcast, 17mph SW gusts at viewpoints. 84°F/57°F. UV 8 even with clouds.' },
       activities: [
         {
           id: 'a3-1',
@@ -664,7 +664,7 @@ export const tripData: TripData = {
       overnight: 'Page, AZ',
       drivingDistance: '160 miles (Desert View to Page via Cameron)',
       drivingTime: '2.5 hours (after Desert View Drive)',
-      weather: { high: 31, low: 14, conditions: 'Sunny, warm in the desert' },
+      weather: { high: 30, low: 19, conditions: '⚠️ 37mph SSW WIND ALERT at Horseshoe Bend — eye protection essential, sand will sting. 86°F/67°F.' },
       activities: [
         {
           id: 'a4-1',
@@ -771,7 +771,7 @@ export const tripData: TripData = {
       summary: 'BOOKED: Upper Antelope Canyon with light beams (10:00am), Lake Powell overlooks',
       location: locations.find(l => l.id === 'antelope')!,
       overnight: 'Page, AZ',
-      weather: { high: 31, low: 14, conditions: 'Sunny, warm' },
+      weather: { high: 32, low: 15, conditions: '30mph SW wind = sand at canyon entry. 89°F/59°F. Mainly clear.' },
       activities: [
         {
           id: 'a5-1',
@@ -842,7 +842,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom explores Wahweap & Rim View Trail',
       location: locations.find(l => l.id === 'page')!,
       overnight: 'Page, AZ',
-      weather: { high: 31, low: 14, conditions: 'Sunny, warm' },
+      weather: { high: 28, low: 13, conditions: 'Clear sky, 18mph W wind. 83°F/55°F. UV 8 by 11am.' },
       activities: [
         {
           id: 'a6-1',
@@ -904,7 +904,7 @@ export const tripData: TripData = {
       overnight: 'Moab, UT',
       drivingDistance: '270 miles',
       drivingTime: '5 hours (with Monument Valley stop)',
-      weather: { high: 32, low: 16, conditions: 'Sunny, hot in the desert' },
+      weather: { high: 28, low: 13, conditions: 'Clear entire route. 82°F/55°F. Set clock FORWARD 1hr at Page→Monument Valley (MST→MDT).' },
       activities: [
         {
           id: 'a7-1',
@@ -1003,7 +1003,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom: pool, Dead Horse Point drive',
       location: locations.find(l => l.id === 'moab')!,
       overnight: 'Moab, UT',
-      weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
+      weather: { high: 32, low: 16, conditions: 'Overcast. 90°F/60°F. UV 8, light wind. Pool day perfect.' },
       activities: [
         {
           id: 'a8-1',
@@ -1073,7 +1073,7 @@ export const tripData: TripData = {
       summary: 'Windows section, Double Arch, Delicate Arch viewpoint, Balanced Rock',
       location: locations.find(l => l.id === 'arches')!,
       overnight: 'Moab, UT',
-      weather: { high: 32, low: 14, conditions: 'Sunny, hot — go early' },
+      weather: { high: 32, low: 17, conditions: 'Overcast at Arches — 90°F, NO shade. Slickrock radiates 100°F+ by noon.' },
       activities: [
         {
           id: 'a9-1',
@@ -1159,7 +1159,7 @@ export const tripData: TripData = {
       summary: 'Morning overlooks at Canyonlands, Colin works afternoon',
       location: locations.find(l => l.id === 'canyonlands')!,
       overnight: 'Moab, UT',
-      weather: { high: 32, low: 14, conditions: 'Sunny, hot' },
+      weather: { high: 30, low: 17, conditions: 'OVERCAST AT SUNRISE = Mesa Arch underglow MAY be muted. 86°F/63°F. WSW wind PM.' },
       activities: [
         {
           id: 'a10-1',
@@ -1233,7 +1233,7 @@ export const tripData: TripData = {
       overnight: 'Salt Lake City, UT',
       drivingDistance: '230 miles',
       drivingTime: '4 hours',
-      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      weather: { high: 33, low: 20, conditions: 'Partly cloudy. 92°F Moab → 88°F SLC. Possible PM thunderstorm (13%).' },
       activities: [
         {
           id: 'a11-1',
@@ -1329,7 +1329,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom explores Capitol Hill, Liberty Park, or Family History Library',
       location: locations.find(l => l.id === 'slc')!,
       overnight: 'Salt Lake City, UT',
-      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      weather: { high: 26, low: 17, conditions: 'Overcast, cool, comfortable. 79°F/63°F. UV 8 even under clouds.' },
       activities: [
         {
           id: 'a12-1',
@@ -1400,7 +1400,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom: Great Salt Lake, Capitol Hill',
       location: locations.find(l => l.id === 'slc')!,
       overnight: 'Salt Lake City, UT',
-      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      weather: { high: 23, low: 13, conditions: 'Clear sky. 73°F/56°F. Light jacket for evening — sets 8:44pm.' },
       activities: [
         {
           id: 'a13-1',
@@ -1469,7 +1469,7 @@ export const tripData: TripData = {
       summary: 'Natural History Museum, Antelope Island scenic drive, Ensign Peak views',
       location: locations.find(l => l.id === 'slc')!,
       overnight: 'Salt Lake City, UT',
-      weather: { high: 27, low: 13, conditions: 'Clear and warm' },
+      weather: { high: 29, low: 15, conditions: '🪰 GNAT PEAK at Antelope Island. 84°F/59°F. Overcast, possible cloud cover at sunset.' },
       activities: [
         {
           id: 'a14-1',
@@ -1556,7 +1556,7 @@ export const tripData: TripData = {
       overnight: 'Driggs, ID',
       drivingDistance: '290 miles',
       drivingTime: '4.5 hours',
-      weather: { high: 18, low: 3, conditions: 'Cooler mountain weather, partly cloudy' },
+      weather: { high: 23, low: 10, conditions: 'Overcast with light drizzle. 73°F/50°F. 26% precip — light rain jacket essential.' },
       activities: [
         {
           id: 'a15-1',
@@ -1643,7 +1643,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom: town walk and Teton views',
       location: locations.find(l => l.id === 'driggs')!,
       overnight: 'Driggs, ID',
-      weather: { high: 18, low: 3, conditions: 'Clear, cool mountain air' },
+      weather: { high: 21, low: 7, conditions: 'Partly cloudy. 70°F/45°F. 30% precip chance. Memorial Day rest.' },
       activities: [
         {
           id: 'a16-1',
@@ -1712,7 +1712,7 @@ export const tripData: TripData = {
       summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Schwabacher Landing',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Driggs, ID',
-      weather: { high: 18, low: 3, conditions: 'Clear skies, crisp mountain air' },
+      weather: { high: 17, low: 4, conditions: '⚠️ 50% RAIN. Tetons sunrise 40°F. Pack rain shells. UV 7 high altitude.' },
       activities: [
         {
           id: 'a17-1',
@@ -1803,7 +1803,7 @@ export const tripData: TripData = {
       overnight: 'West Yellowstone, MT',
       drivingDistance: '150 miles (Driggs to West Yellowstone via park)',
       drivingTime: '4 hours (with stops)',
-      weather: { high: 16, low: 0, conditions: 'Cool, variable — can change fast at elevation' },
+      weather: { high: 17, low: 1, conditions: '🥶 FREEZING OVERNIGHT 33°F. Targhee Pass possible snow/slush. 62°F/33°F.' },
       activities: [
         {
           id: 'a18-1',
@@ -1914,7 +1914,7 @@ export const tripData: TripData = {
       summary: 'Artist Point, Mammoth terraces, Tower Fall, Lamar Valley wildlife',
       location: locations.find(l => l.id === 'yellowstone')!,
       overnight: 'West Yellowstone, MT',
-      weather: { high: 16, low: 0, conditions: 'Cool, variable' },
+      weather: { high: 17, low: 1, conditions: '⚠️ SNOW POSSIBLE at Dunraven Pass 8,800ft. Call NPS 307-344-2117 morning-of. 62°F/33°F.' },
       activities: [
         {
           id: 'a19-1',
@@ -1997,7 +1997,7 @@ export const tripData: TripData = {
       overnight: 'Columbia Falls, MT',
       drivingDistance: '380 miles',
       drivingTime: '5.5 hours',
-      weather: { high: 17, low: 3, conditions: 'Cool, mountain weather' },
+      weather: { high: 21, low: 7, conditions: 'Light drizzle clearing → partly cloudy. 70°F/45°F. Lake McDonald cold 40-45°F.' },
       activities: [
         {
           id: 'a20-1',
@@ -2082,7 +2082,7 @@ export const tripData: TripData = {
       summary: 'Lake McDonald, Trail of Cedars boardwalk, Avalanche Lake hike, colorful rocks',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls, MT',
-      weather: { high: 17, low: 3, conditions: 'Cool, possible mountain weather' },
+      weather: { high: 19, low: 7, conditions: 'Clearing — partly cloudy to mainly clear. 67°F/45°F. GTSR ends at Avalanche Creek (Logan Pass closed til mid-June).' },
       activities: [
         {
           id: 'a21-1',
@@ -2165,7 +2165,7 @@ export const tripData: TripData = {
       summary: 'Morning at the lake, return rental car, fly home',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Home!',
-      weather: { high: 17, low: 3, conditions: 'Cool mountain weather' },
+      weather: { high: 23, low: 7, conditions: 'Overcast, dry. 73°F/44°F. Comfortable mild departure day.' },
       activities: [
         {
           id: 'a22-1',
