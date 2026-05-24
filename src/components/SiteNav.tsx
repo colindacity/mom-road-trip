@@ -1,7 +1,7 @@
 'use client';
 
 interface SiteNavProps {
-  current: 'home' | 'guide' | 'mom' | 'bookings';
+  current: 'home' | 'guide' | 'mom' | 'bookings' | 'offline';
 }
 
 const TABS = [
@@ -9,6 +9,7 @@ const TABS = [
   { id: 'guide', href: '/guide', label: '🧭 Tour Guide' },
   { id: 'mom', href: '/mom', label: '👵 Mom\'s View' },
   { id: 'bookings', href: '/bookings', label: '✅ Bookings' },
+  { id: 'offline', href: '/offline', label: '📍 Offline' },
 ] as const;
 
 export default function SiteNav({ current }: SiteNavProps) {

@@ -1624,50 +1624,97 @@ export const tripData: TripData = {
       summary: 'Morning work, afternoon drive to Teton Valley',
       location: locations.find(l => l.id === 'driggs')!,
       overnight: 'Driggs, ID',
-      drivingDistance: '290 miles',
-      drivingTime: '4.5 hours',
-      weather: { high: 23, low: 10, conditions: 'Overcast with light drizzle. 73°F/50°F. 26% precip — light rain jacket essential.' },
+      drivingDistance: '285 miles',
+      drivingTime: '4h 45m drive (6.5h with stops)',
+      weather: { high: 18, low: 10, conditions: 'Sunny. SLC 73°F → Driggs 57°F/40°F at 6,100ft. Light fleece for evening.' },
       activities: [
         {
           id: 'a15-1',
-          name: 'Colin Works — Hotel (8am-11am)',
-          description: 'Morning work block at Airbnb. Check out by 11am.',
+          name: 'Colin Works — Airbnb (8am-11am)',
+          description: 'Morning work block. Pack between meetings. Check out by 11am.',
           startTime: '8:00 AM',
           endTime: '11:00 AM',
           duration: '3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Free breakfast before work', 'Check out by 11am']
+          tips: ['Top off gas in SLC — next reliable fuel is Tremonton (Exit 379) or Pocatello', 'Confirm Driggs Airbnb HM2FC8WSJ8 door code BEFORE leaving — cell is patchy on Pine Creek Pass', 'Download offline Google Maps for the Idaho Falls → Driggs segment', 'Reserve Forage Bistro for 7:30pm if that\'s the dinner pick']
         },
         {
           id: 'a15-2',
-          name: 'Drive SLC to Driggs, ID',
-          description: 'Head north on I-15 through Idaho farmland, then east on ID-33 to Driggs. The last stretch has Teton views appearing on the horizon. Driggs is on the west (quiet) side of the Tetons.',
-          duration: '4.5 hours (with stops)',
+          name: 'Drive SLC → Pocatello (lunch stop)',
+          description: 'I-15 N for 2h30. Buddy\'s Italian on Lewis St, Exit 69. Family-run since 1955, famous mixed-greens salad, easy parking, bathrooms.',
+          startTime: '12:00 PM',
+          endTime: '3:15 PM',
+          duration: '3h 15m (2h30 drive + 45min lunch)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Stop in Pocatello or Idaho Falls for lunch and gas', 'ID-33 from Rexburg to Driggs is scenic farmland with Teton backdrop', 'Driggs is the "quiet side" of the Tetons — much cheaper than Jackson']
-        },
-        {
-          id: 'a15-checkin',
-          name: 'Check In & Drop Bags at Hotel',
-          description: 'Drop bags, freshen up, get settled before exploring.',
-          duration: '30 min',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
+          url: 'https://www.buddysitalian.com/sandwich-menu',
+          directionsUrl: 'https://www.google.com/maps/dir/Salt+Lake+City+UT/Buddy%27s+Italian+Restaurant+626+E+Lewis+St+Pocatello+ID/',
+          tips: ['Exit 69 off I-15, 0.5mi to restaurant', 'Salad is famous — get it on the side', 'Bathrooms + gas at this exit too']
         },
         {
           id: 'a15-3',
-          name: 'Arrive Driggs & Teton Views',
-          description: 'Check in and take in the western Teton views. Walk downtown Driggs — a small charming Idaho mountain town with a few shops and restaurants. The Tetons loom just to the east.',
+          name: 'Idaho Falls — Bear Spray + River Walk',
+          description: 'Two-purpose stop: (1) Sportsman\'s Warehouse on S 25th E for 2 cans of bear spray (~$45-55/can Counter Assault or UDAP) — you NEED this by Tuesday Tetons. (2) 15-min stretch along the Snake River Greenbelt to see the falls in downtown Idaho Falls. Flat paved path, restrooms at LDS Temple lot.',
+          startTime: '3:15 PM',
+          endTime: '4:30 PM',
+          duration: '1h 15m (50min drive + 25min stops)',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          url: 'https://www.sportsmans.com/store-details/idaho-falls-id',
+          tips: ['📞 Call Sportsman\'s 208-552-9500 BEFORE detouring to confirm stock', 'Buy 2 cans Counter Assault or UDAP, note expiry date', 'Park River Pkwy near the Temple for the falls overlook', 'Cabela\'s Ammon 3500 E 17th St is the backup if Sportsman\'s is out']
+        },
+        {
+          id: 'a15-4',
+          name: 'Palisades Reservoir + Swan Valley (US-26 scenic)',
+          description: 'Leave I-15 at Idaho Falls and pick up US-26 east. The road hugs Palisades Reservoir for 20mi — pullouts at Calamity Point and Blowout Boat Ramp. Dusk is the prime moose/elk/eagle window — drive slow, scan the willows along the river.',
+          startTime: '4:30 PM',
+          endTime: '5:55 PM',
+          duration: '1h 25m (55min drive + 30min wildlife stops)',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['US-26 is the prettiest stretch of the day — don\'t rush', 'Two best pullouts: Calamity Point and Blowout Boat Ramp', 'Binoculars + willows along the river for moose', 'No services after Swan Valley until Driggs']
+        },
+        {
+          id: 'a15-5',
+          name: 'Pine Creek Pass → Victor → Driggs',
+          description: 'ID-31 winds over Pine Creek Pass (6,720ft) through Targhee NF. Coming down into Teton Valley you get the first Teton reveal from the west side. Pullout on ID-31 just before Victor for the wide-open shot. Then ID-33 north to Driggs.',
+          startTime: '5:55 PM',
+          endTime: '6:55 PM',
+          duration: '1 hour (45min drive + 15min overlook)',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Pine Creek Pass essentially never closes May–Oct, paved, fine in rain', 'Pullout for Teton view is on ID-31 between the pass summit and Victor', 'Tetons fill the eastern sky as you drop into the valley']
+        },
+        {
+          id: 'a15-checkin',
+          name: 'Check In Driggs Airbnb + Unpack',
+          description: 'Mountain Modern Victor House, 8487 Caribou Ct, Victor ID. Keypad self check-in. 3-night stay. Unpack, settle in, breathe the mountain air.',
+          startTime: '6:55 PM',
+          endTime: '7:30 PM',
+          duration: '35 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Door code from Cristine (host) — confirm BEFORE leaving SLC', 'Kitchen + 2 bedrooms — stock up on groceries tomorrow at Barrels & Bins', '6,100ft elevation — drink water, easy on alcohol tonight']
+        },
+        {
+          id: 'a15-6',
+          name: 'Driggs Dinner (Forage / Teton Thai / Tatanka)',
+          description: 'Sunset 8:52pm MDT — you have plenty of light. Forage Bistro is the upscale pick (reserve). Teton Thai is the casual walk-in. Tatanka Tavern for pub food with Teton views. Skip Royal Wolf on a Sunday — it gets crowded with locals.',
+          startTime: '7:30 PM',
+          endTime: '9:00 PM',
           duration: '1.5 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Driggs is tiny — the whole downtown is 2 blocks', 'Teton views from town are spectacular', 'Barrels & Bins community market for groceries', 'Royal Wolf for pizza and beer']
+          url: 'https://forageandlounge.com/',
+          tips: ['Forage Bistro — reserve ahead if you want this one', 'Teton Thai — solid casual, walk-in fine', 'After dinner: 5min drive east for sunset alpenglow on the Tetons at 8:52pm', 'It\'s 50°F at sunset — wear a fleece']
         }
       ],
       accommodation: {
@@ -1713,7 +1760,7 @@ export const tripData: TripData = {
         departure: '12:00 noon MDT',
         arrival: '~6:30pm MDT',
         sunset: '8:52pm MDT',
-        forecast: 'Sunny, 57°F high. Cool at 6,100ft — bring a light fleece.',
+        forecast: 'Sunny all the way. SLC 73°F → Pocatello 70°F → Driggs 57°F (40°F overnight at 6,100ft). Light fleece for the evening.',
         tldr: 'I-15 N → Idaho Falls → US-26 E through Swan Valley & Palisades Reservoir → ID-31 over Pine Creek Pass → Victor → Driggs. Same drive time as the direct ID-33 route but the prettiest stretch of the day — Snake River, reservoir, dusk wildlife window, real mountain pass dropping into Teton Valley.',
         stops: [
           {
@@ -1868,9 +1915,23 @@ export const tripData: TripData = {
       weather: { high: 17, low: 4, conditions: '⚠️ 50% RAIN. Tetons sunrise 40°F. Pack rain shells. UV 7 high altitude.' },
       activities: [
         {
+          id: 'a17-0',
+          name: 'Colin Works — Driggs Airbnb (7am-10am)',
+          description: 'Morning work block before the Teton day. Weather is 50% rain — starting later means better visibility on the pass and at Oxbow Bend. Mom: slow breakfast, pack day bag, layers.',
+          startTime: '7:00 AM',
+          endTime: '10:00 AM',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Citizen 33 in downtown Driggs opens 7am for backup coffee/WiFi', 'Pack the day bag now: layers, rain shell, water, snacks, bear spray, hand warmers', 'Mom: breakfast at Pendl\'s Pastries on Main St before heading out']
+        },
+        {
           id: 'a17-1',
           name: 'Drive Driggs to Grand Teton via Teton Pass',
-          description: 'Cross over Teton Pass (8,431ft) from the Idaho side into Jackson Hole. Dramatic mountain pass with hairpin turns and stunning views. Enter Grand Teton from the south.',
+          description: 'Cross over Teton Pass (8,431ft) from the Idaho side into Jackson Hole. Dramatic mountain pass with hairpin turns and stunning views. Enter Grand Teton from the south. Leaving at 10am means lighter traffic than the dawn rush and better visibility if morning rain clears.',
+          startTime: '10:00 AM',
+          endTime: '11:00 AM',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
@@ -2168,6 +2229,18 @@ export const tripData: TripData = {
       weather: { high: 21, low: 7, conditions: 'Light drizzle clearing → partly cloudy. 70°F/45°F. Lake McDonald cold 40-45°F.' },
       activities: [
         {
+          id: 'a20-0',
+          name: 'Colin Works — Crosswinds Inn (7am-10am)',
+          description: 'Morning work block before the long drive. Robin\'s flight lands FCA 3:34pm — leaving West Yellowstone at 10am puts you at FCA right on time.',
+          startTime: '7:00 AM',
+          endTime: '10:00 AM',
+          duration: '3 hours',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Hotel breakfast included — eat while on calls', 'Check out by 10am sharp — Missoula lunch keeps the schedule', 'Confirm Apgar Village Lodge check-in window (#3870048) before leaving']
+        },
+        {
           id: 'a20-1',
           name: 'Drive West Yellowstone to Glacier',
           description: 'Drive west on US-20/I-15 to Butte, then I-90 west to Missoula, then US-93 north to Polson and up to Columbia Falls. Long drive but beautiful Montana scenery. Stop in Butte or Missoula for lunch.',
@@ -2175,7 +2248,8 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Leave by 8am to arrive mid-afternoon', 'Missoula is a great lunch stop — hip college town', 'Polson on Flathead Lake is scenic if you need another stretch break', 'Fill gas in Missoula']
+          directionsUrl: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Butte+MT/Missoula+MT/Polson+MT/Columbia+Falls+MT/',
+          tips: ['Leave by 10am after AM work block to arrive 3pm — pick Robin up at FCA 3:34pm', 'Missoula is a great lunch stop — hip college town', 'Polson on Flathead Lake is scenic if you need another stretch break', 'Fill gas in Missoula']
         },
         {
           id: 'a20-checkin',
@@ -2265,6 +2339,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
+          directionsUrl: 'https://www.google.com/maps/dir/Columbia+Falls+MT/Apgar+Visitor+Center+Glacier/Lake+McDonald+Lodge/Trail+of+the+Cedars+Trailhead+Glacier/Apgar+Village+MT/Columbia+Falls+MT/',
           tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Morning calm water = best reflections', 'iPhone: shoot at rock-level for colorful pebbles with mountains behind', 'Park entrance: $35/vehicle or use America the Beautiful pass']
         },
         {

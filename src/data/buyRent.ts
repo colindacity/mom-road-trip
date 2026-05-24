@@ -13,17 +13,18 @@ export type GearStop = {
 };
 
 export const BUY_RENT: GearStop[] = [
-  { item: '🐻 Bear spray (2 cans)',
+  { item: '🐻 Bear spray (2 cans) — BUY DAY 15 EN ROUTE',
     must_buy_locally: true,
-    reason: 'TSA prohibits checked AND carry-on — illegal to fly with',
-    best: { store: 'Sportsman & Ski Haus', address: '145 Hutton Ranch Rd, Kalispell MT', price: '$45-55/can (Counter Assault or UDAP)', hours: 'Mon-Sat 9am-9pm Sun 10am-6pm', phone: '406-755-6484', note: 'Largest selection on route, en route Bozeman→Glacier' },
+    reason: 'TSA prohibits checked AND carry-on — illegal to fly with. Need by Day 17 Tetons.',
+    best: { store: 'Sportsman\'s Warehouse Idaho Falls', address: '2867 S 25th E, Idaho Falls ID (Exit 116 off I-15)', price: '$45-55/can (Counter Assault or UDAP)', hours: 'Sun 9am-7pm Mon-Sat 9am-9pm', phone: '208-552-9500', note: 'Day 15 lunch detour adds 10 min. Call ahead to confirm stock.' },
     alternatives: [
-      { store: 'Glacier Outfitters Apgar', address: '196 Apgar Loop Rd, West Glacier MT', price: '$10/day rental, ~$45 buy', note: 'RENTAL = avoid disposing partial cans' },
-      { store: 'Free Heel and Wheel', address: '33 Yellowstone Ave, West Yellowstone MT', price: '$50-60/can', note: 'Smaller selection, can run out peak season' },
-      { store: 'Bob Ward\'s Sports', address: '3015 Max Ave, Bozeman MT', price: '$45-50/can', note: 'Backup' },
+      { store: 'Cabela\'s Ammon (backup, Day 15)', address: '3500 E 17th St, Ammon ID', price: '$45-55/can', note: 'Sun 10am-7pm. Backup if Sportsman\'s out.' },
+      { store: 'Yostmark Mountain Equipment Driggs', address: '12 W Main St, Driggs ID', price: '$50-60/can', note: 'Day 16 backup. Tiny shop, Memorial Day Mon hours may be reduced.' },
+      { store: 'Sportsman & Ski Haus Kalispell', address: '145 Hutton Ranch Rd, Kalispell MT', price: '$45-55/can', note: 'Day 20 — too late for Tetons. Use only if Day 15 stop falls through.' },
+      { store: 'Glacier Outfitters Apgar', address: '196 Apgar Loop Rd, West Glacier MT', price: '$10/day rental', note: 'Rental — Glacier only, not for Tetons/Yellowstone' },
     ],
-    best_day: 20, best_city: 'Kalispell',
-    recommendation: 'Buy in Kalispell on Day 20 transit — cheapest, in-stock, en route. Or rent at Apgar for $10/day = $30 for 3 days vs $90 to buy 2 cans.' },
+    best_day: 15, best_city: 'Idaho Falls',
+    recommendation: 'Buy 2 cans at Sportsman\'s Warehouse Idaho Falls on Day 15 lunch stop. Phone 208-552-9500 first to confirm. Cabela\'s Ammon is the backup. Note expiry date on cans.' },
 
   { item: 'Trekking poles × 2', best_day: 1, best_city: 'Las Vegas',
     reason: 'Can fly checked but bulky — easier to buy Day 1',
