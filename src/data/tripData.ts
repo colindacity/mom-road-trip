@@ -455,7 +455,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
-      budgetBreakdown: { accommodation: 57, food: 100, activities: 0, gas: 0, total: 157 }
+      budgetBreakdown: { accommodation: 57, food: 100, activities: 0, gas: 0, total: 157 },
+      momNotes: {
+        vibes: ['fly', 'city'], energy: 2,
+        blurb: 'Land in Vegas, fancy buffet at Bacchanal, walk the Strip lights at night.',
+        tip: '🍤 At Bacchanal: hit king crab legs + lobster claws + prime rib FIRST (skip pasta/pizza). Fountain view: Beer Park patio at Paris LV — sit + cost of one drink.'
+      }
     },
 
     // ============================================================
@@ -564,7 +569,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
-      budgetBreakdown: { accommodation: 274, food: 80, activities: 35, gas: 55, total: 444 }
+      budgetBreakdown: { accommodation: 274, food: 80, activities: 35, gas: 55, total: 444 },
+      momNotes: {
+        vibes: ['drive', 'desert'], energy: 2,
+        blurb: 'Long desert drive. First glimpse of Grand Canyon at sunset — wow moment.',
+        tip: '🌅 Mather Point sunset 7:24pm — walk 5min east on Rim Trail for fewer crowds. Top off gas in Williams or Kingman, NOT Tusayan.'
+      }
     },
 
     // ============================================================
@@ -648,7 +658,12 @@ export const tripData: TripData = {
         notes: 'Second night — same lodge. BOOKED via Xanterra #20514347.'
       },
       notes: ['FULL DAY at Grand Canyon — no driving', 'El Tovar lunch is a highlight — book ahead', 'Rim Trail is paved and flat — perfect for Mom', 'Rest in the afternoon, sunset shuttle in the evening'],
-      budgetBreakdown: { accommodation: 274, food: 100, activities: 0, gas: 0, total: 374 }
+      budgetBreakdown: { accommodation: 274, food: 100, activities: 0, gas: 0, total: 374 },
+      momNotes: {
+        vibes: ['desert'], energy: 2,
+        blurb: 'Easy walking along the canyon rim. Stunning views all day. Bring water.',
+        tip: '📚 Free 30-min ranger geology talk at Yavapai. Hopi Point is THE sunset spot (west-facing peninsula) — shuttle 5:45pm. Three viewpoints done well > eight done exhausted.'
+      }
     },
 
     // ============================================================
@@ -757,7 +772,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
-      budgetBreakdown: { accommodation: 171, food: 70, activities: 10, gas: 30, total: 281 }
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 10, gas: 30, total: 281 },
+      momNotes: {
+        vibes: ['drive', 'desert'], energy: 2,
+        blurb: 'Drive to Page. Horseshoe Bend at sunset (1.5mi walk, some stairs).',
+        tip: '⚠️ 37mph wind alert — secure hat, sunglasses, sand will sting. Stand on LEFT (west) side of overlook for classic shot. NO water at trailhead — bring 1L pp.'
+      }
     },
 
     // ============================================================
@@ -828,7 +848,12 @@ export const tripData: TripData = {
         notes: 'Second night — same Airbnb.'
       },
       notes: ['Antelope Canyon + Lake Powell views', 'No intense hiking today', 'Good rest before work day tomorrow'],
-      budgetBreakdown: { accommodation: 171, food: 70, activities: 107, gas: 10, total: 358 }
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 107, gas: 10, total: 358 },
+      momNotes: {
+        vibes: ['tour', 'desert'], energy: 2,
+        blurb: 'BIG DAY: Antelope Canyon tour 10am sharp. Magical light beams. Then Lake Powell.',
+        tip: '📵 NO bags allowed — phone + 1 water bottle in hand only. Phone HDR mode, tap-to-expose for the bright light beam (let rock fall dark). Tour timezone — verify by phone morning-of.'
+      }
     },
 
     // ============================================================
@@ -888,7 +913,12 @@ export const tripData: TripData = {
         notes: 'Third night — same Airbnb.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Same Airbnb as previous nights', 'Pack tonight for early departure tomorrow'],
-      budgetBreakdown: { accommodation: 171, food: 70, activities: 0, gas: 0, total: 241 }
+      budgetBreakdown: { accommodation: 171, food: 70, activities: 0, gas: 0, total: 241 },
+      momNotes: {
+        vibes: ['rest'], energy: 1,
+        blurb: 'Rest day. Colin works. Swim, read, or walk around Page town.',
+        tip: '🌿 Hanging Gardens Trail (1.2mi shaded gravel) if you want a walk — fern grotto at the end. Otherwise: John Wesley Powell Museum (small, indoor, AC).'
+      }
     },
 
     // ============================================================
@@ -989,7 +1019,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
-      budgetBreakdown: { accommodation: 392, food: 70, activities: 10, gas: 55, total: 527 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 10, gas: 55, total: 527 },
+      momNotes: {
+        vibes: ['drive', 'desert'], energy: 2,
+        blurb: 'Long scenic drive Page→Moab. Stop at Monument Valley for photos.',
+        tip: '🕐 Set clock FORWARD 1hr leaving Page (MST → MDT). Monument Valley View Hotel deck = FREE viewpoint of the mittens. SKIP the 17-mile loop drive (deep sand, not rental-friendly).'
+      }
     },
 
     // ============================================================
@@ -1059,7 +1094,12 @@ export const tripData: TripData = {
         notes: 'Second night in Moab.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Dead Horse Point is an easy solo drive for Mom', 'Rest up for Arches tomorrow'],
-      budgetBreakdown: { accommodation: 392, food: 70, activities: 20, gas: 10, total: 492 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 20, gas: 10, total: 492 },
+      momNotes: {
+        vibes: ['rest'], energy: 1,
+        blurb: 'Rest day in Moab. Colin works. Pool, books, easy.',
+        tip: '💧 Mill Creek Parkway = 2mi paved riverside walk if you want air. Pool/hot tub at Airbnb. Moab Museum closed Sunday.'
+      }
     },
 
     // ============================================================
@@ -1145,7 +1185,12 @@ export const tripData: TripData = {
         notes: 'Third night in Moab.'
       },
       notes: ['HIKING DAY — ~3-4mi total (easy terrain)', 'NO timed entry needed in 2026! But arrive before 8am — parking fills fast', 'Monday = fewer crowds', 'America the Beautiful pass ($80) covers Arches + Canyonlands + all other parks', 'Bring 2L water per person', 'Double Arch is a highlight — don\'t skip it'],
-      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 10, total: 487 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 10, total: 487 },
+      momNotes: {
+        vibes: ['desert'], energy: 3,
+        blurb: 'Arches National Park! Lots of walking + arches everywhere. Bring water.',
+        tip: '🔥 OUT of park 11:30am-3:30pm to escape midday heat. Re-enter for golden hour. NO shade anywhere — UPF sun shirt + wide-brim hat critical. 2L water per person MIN.'
+      }
     },
 
     // ============================================================
@@ -1217,7 +1262,12 @@ export const tripData: TripData = {
         notes: 'Fourth and final night in Moab.'
       },
       notes: ['Canyonlands AM + HALF WORK PM', 'Canyonlands overlooks are easy — mostly drive-up', 'Last night in Moab — pack for SLC drive tomorrow', 'FILL GAS — Green River to Salina on I-70 is 110mi with NO gas stations'],
-      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 15, total: 492 }
+      budgetBreakdown: { accommodation: 392, food: 70, activities: 15, gas: 15, total: 492 },
+      momNotes: {
+        vibes: ['desert', 'rest'], energy: 2,
+        blurb: 'Canyonlands viewpoints in the morning (drive-up, easy). Colin works after lunch.',
+        tip: '🌄 Mesa Arch glows for ~1hr after sunrise — no rush leaving. Drive-up viewpoints after: Shafer, Buck Canyon, Grand View, Green River Overlook (best). You can sleep in car between stops.'
+      }
     },
 
     // ============================================================
@@ -1315,7 +1365,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
-      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 55, total: 439 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 55, total: 439 },
+      momNotes: {
+        vibes: ['drive', 'city'], energy: 2,
+        blurb: 'Drive Moab→Salt Lake City. Temple Square in evening if up for it.',
+        tip: '✨ Brand-new Temple Square Visitors\' Center opened May 18 — 2 days before arrival! Tamarisk Restaurant in Green River (51mi from Moab) for lunch. Mole sampler at Red Iguana 2 (shorter line than #1).'
+      }
     },
 
     // ============================================================
@@ -1386,7 +1441,12 @@ export const tripData: TripData = {
         notes: 'Second night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['FULL WORK DAY — extra day in SLC for better WiFi than Moab', 'Mom can explore at her own pace', 'Capitol Hill is free and walkable', 'Laundry day — nearby laundromat'],
-      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 5, total: 389 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 5, total: 389 },
+      momNotes: {
+        vibes: ['rest', 'city'], energy: 1,
+        blurb: 'Rest day. Colin works in SLC. Airbnb has a pool/hot tub!',
+        tip: '🦜 Tracy Aviary at Liberty Park — paved, contained, $14 senior, lots to see, low effort. Tabernacle organ recital 12-12:30pm Mon-Sat. Airbnb rooftop pool.'
+      }
     },
 
     // ============================================================
@@ -1455,7 +1515,12 @@ export const tripData: TripData = {
         notes: 'Third night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['FULL WORK DAY — Colin works, Mom explores', 'Great Salt Lake is a unique experience for Canadians', 'Laundry day — nearby laundromat'],
-      budgetBreakdown: { accommodation: 314, food: 70, activities: 15, gas: 10, total: 409 }
+      budgetBreakdown: { accommodation: 314, food: 70, activities: 15, gas: 10, total: 409 },
+      momNotes: {
+        vibes: ['rest', 'city'], energy: 1,
+        blurb: 'Rest day. Colin works. Same Airbnb — relax.',
+        tip: '🌳 Liberty Park 1.5mi flat loop OR This Is The Place Heritage Park ($9 senior). Crown Burgers = Utah classic pastrami burger. Light day — rest joints before busy Saturday.'
+      }
     },
 
     // ============================================================
@@ -1540,7 +1605,12 @@ export const tripData: TripData = {
         notes: 'Fourth and final night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
       notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
-      budgetBreakdown: { accommodation: 314, food: 80, activities: 18, gas: 0, total: 412 }
+      budgetBreakdown: { accommodation: 314, food: 80, activities: 18, gas: 0, total: 412 },
+      momNotes: {
+        vibes: ['city'], energy: 2,
+        blurb: 'SLC fun day. Natural History Museum + Antelope Island (bison!). Easy pace.',
+        tip: '🪰 HEAD NETS for Antelope Island — May is peak biting gnat season (insect repellent doesn\'t work). NHMU dinosaurs after lunch. Ensign Peak sunset is steep — bail to State Capitol grounds if knees flare.'
+      }
     },
 
     // ============================================================
@@ -1629,7 +1699,85 @@ export const tripData: TripData = {
         }
       ],
       notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
-      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 55, total: 420 }
+      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 55, total: 420 },
+      momNotes: {
+        vibes: ['drive', 'mountain'], energy: 2,
+        blurb: 'Drive SLC→Driggs through Idaho. Tetons come into view late afternoon. Cooler temps now.',
+        tip: '🦌 Buddy\'s Italian Pocatello (Exit 69) lunch ~2:30pm. Pine Creek Pass via Swan Valley — moose/elk dusk window. Sunset Driggs 8:52pm MDT. Driggs is at 6,100ft — chilly evening (50°F), bring a fleece.'
+      },
+      driveRoute: {
+        from: 'Salt Lake City, UT',
+        to: 'Driggs, ID (Teton Valley)',
+        miles: 285,
+        driveHours: 4.75,
+        departure: '12:00 noon MDT',
+        arrival: '~6:30pm MDT',
+        sunset: '8:52pm MDT',
+        forecast: 'Sunny, 57°F high. Cool at 6,100ft — bring a light fleece.',
+        tldr: 'I-15 N → Idaho Falls → US-26 E through Swan Valley & Palisades Reservoir → ID-31 over Pine Creek Pass → Victor → Driggs. Same drive time as the direct ID-33 route but the prettiest stretch of the day — Snake River, reservoir, dusk wildlife window, real mountain pass dropping into Teton Valley.',
+        stops: [
+          {
+            name: "Buddy's Italian, Pocatello",
+            type: 'lunch',
+            driveFromPrev: '2h30 from SLC',
+            timeNeeded: '45 min',
+            note: '626 E Lewis St (Exit 69 off I-15). Family-run since 1955, famous salad. Bathrooms + easy parking. Arrive ~2:30pm.',
+            url: 'https://www.buddysitalian.com/sandwich-menu',
+          },
+          {
+            name: 'Snake River Greenbelt, Idaho Falls',
+            type: 'bathroom',
+            driveFromPrev: '50 min',
+            timeNeeded: '15 min',
+            note: 'Stretch + bathroom stop. Park near falls overlook on River Pkwy. Paved path, restrooms at visitor center.',
+            url: 'https://www.visitidahofalls.com/',
+          },
+          {
+            name: 'Palisades Reservoir overlook, Swan Valley',
+            type: 'wildlife',
+            driveFromPrev: '55 min on US-26',
+            timeNeeded: '30 min',
+            note: 'US-26 hugs the reservoir for 20 mi. Pullouts at Calamity Point and Blowout Boat Ramp. Dusk = prime moose/elk/eagle window — drive slow, scan willows along the river.',
+          },
+          {
+            name: 'Pine Creek Pass + Victor overlook',
+            type: 'view',
+            driveFromPrev: '45 min on ID-31',
+            timeNeeded: '15 min',
+            note: 'ID-31 winds over the pass through Targhee NF. First Teton reveal coming down into Teton Valley. Pullout on ID-31 just before Victor.',
+          },
+          {
+            name: 'Driggs check-in + dinner',
+            type: 'view',
+            driveFromPrev: '10 min on ID-33',
+            timeNeeded: 'evening',
+            note: 'Tetons fill the eastern sky. Dinner: Forage Bistro (reserve) or Teton Thai (walk-in). Tatanka Tavern pizza as fallback.',
+            url: 'https://forageandlounge.com/',
+          },
+        ],
+        alternatives: [
+          { name: 'Direct I-15 → ID-33 (fastest)', verdict: 'maybe', why: 'Save 30 min but skip the prettiest hour. Use if leaving SLC after 1:30pm.' },
+          { name: 'Logan Canyon → Bear Lake', verdict: 'skip', why: '+90 min, Bear Lake water 54°F (look not swim), arrives Driggs in twilight.' },
+          { name: 'Heber → Star Valley → Teton Pass', verdict: 'skip', why: '7+ hours, arrives after dark, burns Tuesday\'s Grand Teton reveal.' },
+          { name: 'Mesa Falls Scenic Byway', verdict: 'save', why: 'Save for a half-day from Driggs — 90 min RT from Driggs, $5/car, 0.6mi boardwalk to 114-ft falls.' },
+          { name: 'Harriman SP (trumpeter swans)', verdict: 'save', why: 'Save for a half-day from Driggs — 65 min north near Island Park.' },
+          { name: 'Antelope Island', verdict: 'skip', why: 'Wrong direction from SLC + May = peak gnat season.' },
+        ],
+        contingencies: [
+          'If leaving SLC after 1:30pm: drop Swan Valley detour. Take direct I-15 → US-20 → ID-33. Eat lunch at Sandpiper in Idaho Falls. Arrive Driggs ~6:30pm.',
+          'If it rains: Pine Creek Pass is paved/fine but wildlife drops off. Skip Victor pullout. Lava Hot Springs (Exit 47, $12-15) becomes a great rain play.',
+          'Pine Creek Pass essentially never closes May–Oct. Teton Pass not on this route. Check Idaho 511 morning-of.',
+          'Wildfire smoke / air quality alert: skip outdoor stops, drive direct with Pocatello lunch only.',
+        ],
+        preDeparture: [
+          'Top off gas in SLC (next reliable gas: Tremonton Exit 379 or Pocatello).',
+          'Confirm Driggs Airbnb (HM2FC8WSJ8) check-in time + door code BEFORE leaving SLC — cell is patchy on Pine Creek Pass.',
+          'Download offline Google Maps for the Idaho Falls → Driggs segment.',
+          'Reserve Forage Bistro for 7:30pm Sunday if that\'s the dinner pick.',
+          'Check Idaho 511 + Wyoming 511 for Memorial Day Sunday Jackson-bound traffic.',
+          'Pack: light fleece, water bottles, sunglasses, sunscreen (high elevation), walking shoes, snacks.',
+        ],
+      }
     },
 
     // ============================================================
@@ -1698,7 +1846,12 @@ export const tripData: TripData = {
         notes: 'Second night at Mountain Modern Victor House.'
       },
       notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
-      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 5, total: 370 }
+      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 5, total: 370 },
+      momNotes: {
+        vibes: ['rest', 'mountain'], energy: 1,
+        blurb: 'Memorial Day rest. Colin works. Walk around tiny mountain town.',
+        tip: '🥔 Spud Drive-In iconic giant potato photo (231 S Hwy 33). Tatanka Tavern 3rd-floor Teton view for lunch. Pendl\'s Pastries open Memorial Day.'
+      }
     },
 
     // ============================================================
@@ -1787,7 +1940,12 @@ export const tripData: TripData = {
         notes: 'Third and final night at Mountain Modern Victor House.'
       },
       notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road likely CLOSED in late May (opens ~June 1) — skip it, do Schwabacher Landing instead', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
-      budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 }
+      budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 },
+      momNotes: {
+        vibes: ['mountain'], energy: 2,
+        blurb: 'Grand Teton! Mountains everywhere, easy viewpoints + Mormon Row. Beautiful.',
+        tip: '🪪 $135 entry for Mom (NEW 2026 non-resident surcharge). Cold sunrise 40°F = hand warmers, beanie, gloves. 50% rain chance — pack rain shell. Oxbow Bend afternoon = best moose habitat.'
+      }
     },
 
     // ============================================================
@@ -1900,7 +2058,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
-      budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 }
+      budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 },
+      momNotes: {
+        vibes: ['drive', 'mountain'], energy: 2,
+        blurb: 'Drive into Yellowstone! Old Faithful + Grand Prismatic. Iconic geysers.',
+        tip: '🌈 Grand Prismatic from FAIRY FALLS overlook (1.2mi RT, NPS calls senior-friendly) — NOT Midway boardwalk. Old Faithful eruption every ~90min. Old Faithful Inn 1904 lobby worth 10min.'
+      }
     },
 
     // ============================================================
@@ -1981,7 +2144,12 @@ export const tripData: TripData = {
         notes: 'Second night — same hotel.'
       },
       notes: ['FULL YELLOWSTONE DAY — big loop, long but rewarding', 'Leave early (5am) for Lamar Valley wildlife', 'Lamar → Tower Fall → Mammoth → Canyon → West Yellowstone', 'All boardwalk/drive-up activities — no real hiking', 'WILDLIFE: Lamar Valley at dawn — wolves, grizzlies, bison calves', 'Artist Point is a MUST-SEE', 'Dress in warm layers — Yellowstone is cold in late May'],
-      budgetBreakdown: { accommodation: 292, food: 70, activities: 0, gas: 40, total: 402 }
+      budgetBreakdown: { accommodation: 292, food: 70, activities: 0, gas: 40, total: 402 },
+      momNotes: {
+        vibes: ['mountain'], energy: 3,
+        blurb: 'Yellowstone full day. Geysers, canyons, bison and elk. Lots to see.',
+        tip: '🦬 Lamar Valley = America\'s Serengeti. Bison + maybe distant wolves. Turn around at Slough Creek pullout. ⚠️ Snow possible at Dunraven Pass 8,800ft — call NPS 307-344-2117 morning-of.'
+      }
     },
 
     // ============================================================
@@ -2068,7 +2236,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday afternoon 3:34pm — Alaska AS 2402', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
-      budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 }
+      budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 },
+      momNotes: {
+        vibes: ['drive', 'robin'], energy: 2,
+        blurb: 'Drive to Glacier. ROBIN ARRIVES at the airport in the evening! 💜',
+        tip: '🐻 BUY BEAR SPRAY in Kalispell ($45-55 Sportsman & Ski Haus) — can\'t fly with it. Russell\'s Fireside dinner at Lake McDonald Lodge (1913 historic) — reservation made.'
+      }
     },
 
     // ============================================================
@@ -2151,7 +2324,12 @@ export const tripData: TripData = {
         notes: 'Second and final night. All 3 together. Pack tonight for tomorrow\'s flights.'
       },
       notes: ['ALL THREE TOGETHER — Robin\'s full day in Glacier (Saturday)', 'Trail of the Cedars is the must-do for everyone', 'Avalanche Lake is Colin + Robin only (Mom waits at lodge/Apgar)', 'Going-to-the-Sun Road only open to Avalanche Creek area in late May', 'No vehicle reservations needed for 2026', 'CELEBRATION DINNER — what an incredible trip!'],
-      budgetBreakdown: { accommodation: 196, food: 100, activities: 35, gas: 15, total: 346 }
+      budgetBreakdown: { accommodation: 196, food: 100, activities: 35, gas: 15, total: 346 },
+      momNotes: {
+        vibes: ['mountain'], energy: 3,
+        blurb: 'Glacier National Park together. Lake McDonald + easy hike with Robin.',
+        tip: '🥾 Avalanche Lake bail point at 1mi (creek gorge — still gorgeous). DeSmet boat tour 1hr historic 1930 wooden boat. Apgar pebble beach colored stones — leave them (federal offense to remove).'
+      }
     },
 
     // ============================================================
@@ -2199,7 +2377,12 @@ export const tripData: TripData = {
         }
       ],
       notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm (conf G5FIWA)', 'Colin: AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY)', 'Robin + Colin: AS 2419 FCA 5:40pm→SEA 6:12pm — BOOKED', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
-      budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 }
+      budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 },
+      momNotes: {
+        vibes: ['fly', 'mountain'], energy: 1,
+        blurb: 'Morning by the lake. Fly home from Kalispell.',
+        tip: '🌅 Sunrise at Lake McDonald (Apgar pier 5min). Eddie\'s Cafe huckleberry pie. Leave Apgar by 12pm HARD to make 2:30pm flight.'
+      }
     }
   ],
   totalBudget: {

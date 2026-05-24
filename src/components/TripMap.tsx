@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { Location, DayPlan } from '@/types/trip';
 import { MapPin, Car, Bed, Camera, ChevronRight } from 'lucide-react';
+import { format, parseISO } from 'date-fns';
 import MapController from './MapController';
 import { useRouteGeometry } from '@/hooks/useRouteGeometry';
 
@@ -283,9 +284,11 @@ export default function TripMap({ days, selectedDay, onSelectDay }: TripMapProps
         const isSelected = selectedDay !== null &&
           locData.days.some(d => d.dayNumber === selectedDay);
         const isMultiDay = locData.days.length > 1;
-        const dayRange = locData.firstDay === locData.lastDay
-          ? `Day ${locData.firstDay}`
-          : `Days ${locData.firstDay}-${locData.lastDay}`;
+        const firstDate = locData.days[0]?.date;
+        const lastDate = locData.days[locData.days.length - 1]?.date;
+        const dayRange = !isMultiDay
+          ? (firstDate ? format(parseISO(firstDate), 'EEE MMM d') : `Day ${locData.firstDay}`)
+          : (firstDate && lastDate ? `${format(parseISO(firstDate), 'MMM d')} – ${format(parseISO(lastDate), 'MMM d')}` : `Days ${locData.firstDay}-${locData.lastDay}`);
 
         const allActivities = locData.days.flatMap(d => d.activities);
         const topActivities = allActivities.slice(0, 3);
@@ -340,12 +343,13 @@ export default function TripMap({ days, selectedDay, onSelectDay }: TripMapProps
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                        <span className={`w-14 h-8 rounded flex flex-col items-center justify-center text-[10px] font-bold leading-tight ${
                           selectedDay === day.dayNumber
                             ? 'bg-red-500 text-white'
                             : 'bg-gray-200 text-gray-700'
                         }`}>
-                          {day.dayNumber}
+                          <span>{format(parseISO(day.date), 'EEE')}</span>
+                          <span className="text-[11px]">{format(parseISO(day.date), 'MMM d')}</span>
                         </span>
                         <span className="text-sm font-medium text-gray-900">{day.title}</span>
                       </div>

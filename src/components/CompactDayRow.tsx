@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { DayPlan, TripPhase, Activity, Accommodation } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
 import { ChevronRight, MapPin, Car, Camera, Bed, DollarSign, Clock, TrendingUp, ExternalLink, Navigation, Info, Play, Trash2, CalendarCheck, CalendarX, Star, Home, Trees, Building2, Hotel, Sun, Cloud, CloudRain, Snowflake, Laptop, Mountain, Plane } from 'lucide-react';
+import { isToday } from '@/lib/dateUtils';
 import Image from 'next/image';
 import HistoricalWeather from './HistoricalWeather';
 
@@ -128,8 +129,9 @@ export default function CompactDayRow({
   const badge = dayTypeBadge(day);
   const accOptions = day.accommodationOptions || (day.accommodation ? [day.accommodation] : []);
 
+  const today_ = isToday(day.date);
   return (
-    <div className={`group transition-all ${isSelected ? 'bg-gray-50' : ''}`}>
+    <div className={`group transition-all ${isSelected ? 'bg-gray-50' : ''} ${today_ ? 'ring-2 ring-amber-300 rounded-lg' : ''}`}>
       {/* Top line: day info + title + badges — clickable to expand */}
       <div
         onClick={onToggle}
@@ -147,18 +149,19 @@ export default function CompactDayRow({
           </div>
         )}
 
-        {/* Day # + date */}
+        {/* Date primary + day # secondary */}
         <div
-          className="w-14 sm:w-16 shrink-0 flex items-baseline gap-1"
+          className="w-20 sm:w-24 shrink-0 flex flex-col"
           style={{ color: phase?.color || '#374151' }}
         >
-          <span className="text-lg font-bold leading-none">{day.dayNumber}</span>
-          <span className="text-[10px] text-gray-400">{format(parseISO(day.date), 'EEE M/d')}</span>
+          <span className="text-sm font-bold leading-tight">{format(parseISO(day.date), 'EEE MMM d')}</span>
+          <span className="text-[9px] text-gray-400 font-mono leading-tight">day {day.dayNumber}</span>
         </div>
 
         {/* Title */}
-        <div className="flex-1 min-w-0">
-          <span className="text-sm font-medium text-gray-900 truncate block">{day.title}</span>
+        <div className="flex-1 min-w-0 flex items-center gap-1.5">
+          <span className="text-sm font-medium text-gray-900 truncate">{day.title}</span>
+          {isToday(day.date) && <span className="shrink-0 text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500 text-white">TODAY</span>}
         </div>
 
         {/* Day type badge with icon */}

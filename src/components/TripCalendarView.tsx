@@ -48,8 +48,8 @@ function DayCell({ day, phase, onClick }: { day?: DayPlan; phase?: TripPhase; on
       {/* Date header */}
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-1">
-          <span className="text-xs font-bold" style={{ color: phaseColor }}>{day.dayNumber}</span>
-          <span className="text-[9px] text-gray-400">{format(parseISO(day.date), 'M/d')}</span>
+          <span className="text-xs font-bold" style={{ color: phaseColor }}>{format(parseISO(day.date), 'MMM d')}</span>
+          <span className="text-[8px] text-gray-300 font-mono">d{day.dayNumber}</span>
         </div>
         <div className="flex items-center gap-0.5">
           {day.weather && (
@@ -293,10 +293,10 @@ export default function TripCalendarView({ onSelectDay }: { onSelectDay?: (dayNu
                 className={`flex gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors ${work ? 'bg-blue-50/30' : ''}`}
               >
                 {/* Date column */}
-                <div className="w-12 shrink-0 text-center">
-                  <div className="text-lg font-bold" style={{ color: phaseColor }}>{day.dayNumber}</div>
-                  <div className="text-[9px] text-gray-400">{format(parseISO(day.date), 'EEE')}</div>
-                  <div className="text-[9px] text-gray-400">{format(parseISO(day.date), 'M/d')}</div>
+                <div className="w-14 shrink-0 text-center">
+                  <div className="text-[10px] font-bold uppercase" style={{ color: phaseColor }}>{format(parseISO(day.date), 'EEE')}</div>
+                  <div className="text-base font-bold" style={{ color: phaseColor }}>{format(parseISO(day.date), 'MMM d')}</div>
+                  <div className="text-[9px] text-gray-300 font-mono">d{day.dayNumber}</div>
                 </div>
 
                 {/* Activities timeline */}

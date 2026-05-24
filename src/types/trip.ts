@@ -48,6 +48,17 @@ export interface Activity {
   optionalSkip?: boolean; // Can skip this for half-work day instead
 }
 
+export interface AccommodationBooking {
+  conf: string;          // confirmation # or booking code
+  cost: string;          // human-friendly cost line
+  paid: string;          // payment status
+  details: string;       // host name, check-in time, room type, etc.
+  checkIn?: string;      // e.g. "4pm"
+  checkOut?: string;     // e.g. "11am"
+  host?: string;
+  phone?: string;
+}
+
 export interface Accommodation {
   id: string;
   name: string;
@@ -67,6 +78,7 @@ export interface Accommodation {
   recommended?: boolean;
   notes?: string;
   image?: string;
+  booking?: AccommodationBooking;
 }
 
 export interface Restaurant {
@@ -76,6 +88,46 @@ export interface Restaurant {
   priceRange: '$' | '$$' | '$$$' | '$$$$';
   address?: string;
   notes?: string;
+}
+
+export type Vibe = 'desert' | 'mountain' | 'city' | 'rest' | 'drive' | 'tour' | 'fly' | 'robin';
+
+export interface MomNotes {
+  vibes: Vibe[];
+  energy: 1 | 2 | 3;     // 1 easy / 2 medium / 3 active
+  blurb: string;          // 1-2 line summary in Mom voice
+  tip: string;            // tour-guide tactical tip
+}
+
+export interface DriveStop {
+  name: string;
+  type: 'lunch' | 'view' | 'wildlife' | 'walk' | 'bathroom' | 'bonus';
+  driveFromPrev?: string;       // e.g. "2h30 from SLC"
+  timeNeeded: string;           // e.g. "45 min"
+  note: string;                 // why it's good, address, fee, mom-fit note
+  url?: string;
+}
+
+export interface DriveRoute {
+  from: string;
+  to: string;
+  miles: number;
+  driveHours: number;            // total driving without stops
+  tldr: string;                  // 1-2 sentence why-this-route
+  departure: string;             // e.g. "12:00 noon"
+  arrival: string;               // e.g. "~6:30pm"
+  sunset?: string;               // e.g. "8:52pm MDT"
+  forecast?: string;             // e.g. "Sunny, 57°F high"
+  stops: DriveStop[];
+  alternatives?: { name: string; verdict: 'skip' | 'maybe' | 'save'; why: string }[];
+  contingencies?: string[];      // weather / late departure / road closure
+  preDeparture?: string[];       // top-off gas, reservations, etc.
+}
+
+export interface GuideScheduleItem {
+  time: string;                  // e.g. "2:30pm" or "Morning"
+  what: string;                  // e.g. "Lunch at Buddy's Italian"
+  note?: string;                 // optional detail
 }
 
 export interface DayPlan {
@@ -112,6 +164,13 @@ export interface DayPlan {
   };
   image?: string;
   images?: string[];
+
+  // Mom-facing presentation (was DAY_INFO in /mom)
+  momNotes?: MomNotes;
+  // Tour-guide tactical schedule (was SCHEDULE in /guide)
+  guideSchedule?: GuideScheduleItem[];
+  // Transit-day drive details
+  driveRoute?: DriveRoute;
 }
 
 export interface TripPhase {

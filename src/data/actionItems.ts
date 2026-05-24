@@ -1,5 +1,10 @@
 import { ActionItem } from '@/types/actions';
 
+// NOTE: This file duplicates booking metadata that also lives in src/data/tripData.ts.
+// All entries below are kept in sync manually with tripData. The single-source-of-truth
+// migration target is to derive these items from tripData.flights + tripData.days[].accommodation.
+// Until that refactor, edit BOTH places when a booking changes.
+
 function now() {
   return new Date().toISOString();
 }

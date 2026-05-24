@@ -1,6 +1,7 @@
 'use client';
 
 import { TripData } from '@/types/trip';
+import { format, parseISO } from 'date-fns';
 import {
   DollarSign,
   Plane,
@@ -139,8 +140,9 @@ export default function BudgetView({ trip }: BudgetViewProps) {
         <div className="space-y-2 max-h-96 overflow-y-auto">
           {trip.days.filter(d => d.budgetBreakdown?.total).map(day => (
             <div key={day.id} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg">
-              <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-sm font-medium text-gray-700">
-                {day.dayNumber}
+              <div className="w-14 h-10 rounded-lg bg-gray-100 flex flex-col items-center justify-center text-gray-700 leading-tight">
+                <span className="text-[10px] font-bold uppercase">{format(parseISO(day.date), 'EEE')}</span>
+                <span className="text-xs font-semibold">{format(parseISO(day.date), 'MMM d')}</span>
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-medium text-gray-900 truncate">{day.title}</div>

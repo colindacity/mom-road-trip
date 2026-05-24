@@ -53,7 +53,6 @@ const locationTypeIcons = {
 export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelect, onEdit }: DayCardProps) {
   const [editingField, setEditingField] = useState<string | null>(null);
 
-  const formattedDate = format(parseISO(day.date), 'EEE, MMM d');
   const dayOfWeek = format(parseISO(day.date), 'EEEE');
 
   return (
@@ -68,12 +67,12 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
         onClick={onSelect}
       >
         <div className="flex items-start gap-3">
-          {/* Day number badge */}
-          <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex flex-col items-center justify-center ${
+          {/* Date badge (date-first, day-number secondary) */}
+          <div className={`flex-shrink-0 w-16 h-12 rounded-xl flex flex-col items-center justify-center ${
             isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 text-gray-700'
           }`}>
-            <span className="text-xs font-medium opacity-80">Day</span>
-            <span className="text-lg font-bold leading-none">{day.dayNumber}</span>
+            <span className="text-[10px] font-bold leading-none uppercase opacity-80">{format(parseISO(day.date), 'EEE')}</span>
+            <span className="text-base font-bold leading-none mt-0.5">{format(parseISO(day.date), 'MMM d')}</span>
           </div>
 
           {/* Main content */}
@@ -81,6 +80,7 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className="font-semibold text-gray-900 text-lg">{day.title}</h3>
               <span className="text-lg">{locationTypeIcons[day.location.type]}</span>
+              <span className="text-[10px] text-gray-400 font-mono">day {day.dayNumber}</span>
             </div>
 
             <div className="flex items-center gap-3 mt-1 text-sm text-gray-600 flex-wrap">
@@ -89,7 +89,7 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
                 {day.location.name}
               </span>
               <span className="text-gray-300">•</span>
-              <span>{formattedDate}</span>
+              <span>{dayOfWeek}</span>
             </div>
 
             {/* Quick info badges */}

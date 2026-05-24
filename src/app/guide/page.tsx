@@ -6,6 +6,18 @@ import SiteNav from '@/components/SiteNav';
 import { getForecast, getHourly, getMultiLoc } from '@/data/forecast';
 import { trailsForDay } from '@/data/trails';
 import { stopsForDay, BUY_RENT } from '@/data/buyRent';
+import { tripData } from '@/data/tripData';
+import { getTodayDay, formatTripDateLong } from '@/lib/dateUtils';
+import { DriveStop } from '@/types/trip';
+
+const STOP_ICON: Record<DriveStop['type'], string> = {
+  lunch: '🍽',
+  view: '📸',
+  wildlife: '🦌',
+  walk: '🚶',
+  bathroom: '🚻',
+  bonus: '✨',
+};
 
 // ─── Helper components ───
 const H = ({ children }: { children: React.ReactNode }) =>
@@ -30,7 +42,7 @@ type Section = { id: string; title: string; emoji: string; days: string; content
 
 const SECTIONS: Section[] = [
   {
-    id: 'vegas', title: 'Las Vegas', emoji: '🎰', days: 'Day 1 (May 10)',
+    id: 'vegas', title: 'Las Vegas', emoji: '🎰', days: 'Sun May 10 (Day 1)',
     content: (<>
       <H>Tactic of the Day</H>
       <P><B>Take an Uber from LAS to LINQ; pick up the rental car next morning.</B> Mom is jet-lagged 3hr from Toronto. Save her the rental shuttle + paperwork dance. Uber: $10-20 + $4.50 LAS surcharge, ~10-15min ride.</P>
@@ -62,7 +74,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'gc', title: 'Grand Canyon', emoji: '🏜️', days: 'Days 2-3 (May 11-13)',
+    id: 'gc', title: 'Grand Canyon', emoji: '🏜️', days: 'Mon May 11 – Wed May 13',
     content: (<>
       <H>Drive Vegas → GC (Mon)</H>
       <P>US-93 S → Kingman → I-40 E → exit 165 (Williams) → AZ-64 N. <B>~280mi/4.5hr.</B> Leave Vegas ~9am PT. Cross into MST at Hoover Dam (AZ no DST).</P>
@@ -96,7 +108,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'page', title: 'Page, AZ', emoji: '🌊', days: 'Days 4-6 (May 13-15)',
+    id: 'page', title: 'Page, AZ', emoji: '🌊', days: 'Wed May 13 – Fri May 15',
     content: (<>
       <H>Drive GC → Page (Wed)</H>
       <P>Desert View Drive eastbound (25mi within park) → East Entrance → US-89 N via Cameron → Page. <B>~140mi/2.5hr.</B></P>
@@ -135,7 +147,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'moab', title: 'Moab', emoji: '🪨', days: 'Days 7-10 (May 16-20)',
+    id: 'moab', title: 'Moab', emoji: '🪨', days: 'Sat May 16 – Tue May 19',
     content: (<>
       <H>🎉 GREAT NEWS</H>
       <P><B>Arches timed-entry CANCELLED for 2026.</B> No reservation needed. Just drive in. (Confirmed via NPS Feb 18, 2026 announcement.)</P>
@@ -183,7 +195,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'slc', title: 'Salt Lake City', emoji: '🏔️', days: 'Days 11-14 (May 20-24)',
+    id: 'slc', title: 'Salt Lake City', emoji: '🏔️', days: 'Wed May 20 – Sat May 23',
     content: (<>
       <H>Drive Moab → SLC (Wed, 230mi/4hr)</H>
       <P><B>Lunch: Tamarisk Restaurant in Green River</B> (51mi from Moab, ~1hr in). Riverside views, classic since 1979. Push to SLC by 4pm.</P>
@@ -212,11 +224,11 @@ const SECTIONS: Section[] = [
       <H>Coffee/Breakfast for Work Days</H>
       <P>La Barba (327 W 200 S, 1-block from Airbnb), Eva&apos;s Bakery, Salt Lake Roasting Co, The Park Cafe (institution)</P>
 
-      <Note>Sun May 24 → Driggs (290mi/4.5hr): I-15 N → Logan UT (1.5hr lunch at Bluebird Candy 1881-era / Crumb Brothers Bakery) → Idaho Falls → Driggs over Pine Creek Pass. AVOID Teton Pass on travel day.</Note>
+      <Note><B>Sun May 24 → Driggs (285mi/4h45):</B> I-15 N → Pocatello lunch at <B>Buddy&apos;s Italian</B> (Exit 69, family-run since 1955) ~2:30pm → Idaho Falls → <B>US-26 E Swan Valley + Palisades Reservoir</B> (moose/elk dusk window) → ID-31 Pine Creek Pass → Victor → Driggs ~6:30pm. Sunset 8:52pm MDT. Skip Logan/Bear Lake (adds 90min, 54°F water). Save Teton Pass for Tuesday GTNP loop. See <B>/mom</B> Today banner for the full drive plan.</Note>
     </>),
   },
   {
-    id: 'tetons', title: 'Driggs / Tetons', emoji: '⛰️', days: 'Days 15-17 (May 24-27)',
+    id: 'tetons', title: 'Driggs / Tetons', emoji: '⛰️', days: 'Sun May 24 – Tue May 26',
     content: (<>
       <Warning>NEW 2026 FEE: <B>$100/person non-resident surcharge</B> for Mom (Canadian). Total Grand Teton entry: $35 + $100 = $135. America the Beautiful $80 → $80 + $100 = $180 (only worth if hitting other parks). Recommend $135 single-park entry.</Warning>
 
@@ -252,7 +264,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'yellowstone', title: 'Yellowstone', emoji: '🦬', days: 'Days 18-19 (May 27-29)',
+    id: 'yellowstone', title: 'Yellowstone', emoji: '🦬', days: 'Wed May 27 – Thu May 28',
     content: (<>
       <H>Drive Driggs → West Yellowstone (Wed)</H>
       <P><B>Skip the south-entrance detour.</B> Drive Driggs → ID-33 → Hwy 20 N → West Yellowstone (~85mi, 1h45m-2h). Enter from west.</P>
@@ -298,7 +310,7 @@ const SECTIONS: Section[] = [
     </>),
   },
   {
-    id: 'glacier', title: 'Glacier', emoji: '🧊', days: 'Days 20-22 (May 29-31)',
+    id: 'glacier', title: 'Glacier', emoji: '🧊', days: 'Fri May 29 – Sun May 31',
     content: (<>
       <H>🎉 2026 NEWS</H>
       <P><B>Going-to-the-Sun Road timed-entry vehicle reservations ELIMINATED for 2026.</B> No booking needed. Just drive in.</P>
@@ -538,19 +550,20 @@ const SCHEDULE: DaySchedule[] = [
     eats:'Crown Burgers/Caputo\'s lunch. Caputo\'s takeout dinner',
     dontMiss:'HEAD NETS for Antelope Island gnats. Hiking poles for Ensign',
     momNote:'Long day. If energy gone after NHMU, swap Ensign for State Capitol grounds at sunset' },
-  { n:15, date:'Sun May 24', title:'SLC → Driggs ID', vibe:'Drive · Mild · 290mi/4.5-5hr (via Idaho Falls NOT Jackson)',
-    hotel:'Mountain Modern Victor House, 8487 Caribou Ct',
+  { n:15, date:'Sun May 24', title:'SLC → Driggs ID', vibe:'Drive · Mild · 285mi/4h45 · sunset Driggs 8:52pm MDT',
+    hotel:'Mountain Modern Victor House, 8487 Caribou Ct, Victor ID',
     bullets:[
-      '09:00 Depart SLC north on I-15',
-      '10:45 Lunch Bluebird Café Logan UT (1914 historic) ~140mi in',
-      '14:30 Idaho Falls quick break',
-      '16:00 ID-33 E into Victor over Pine Creek Pass (gentle, NOT Teton Pass)',
-      '17:00 Cabin check-in',
-      '18:30 Dinner Tatanka Tavern (3rd-floor Teton view) or Forage Bistro',
+      '12:00 Depart SLC north on I-15 (gas top-off)',
+      '14:30 Lunch Buddy\'s Italian Pocatello, Exit 69 (~45min, classic since 1955)',
+      '15:45 Idaho Falls Snake River Greenbelt stretch + bathroom (15min)',
+      '16:30 US-26 E into Swan Valley — Palisades Reservoir overlook (30min, dusk wildlife window — moose/elk/eagles)',
+      '17:45 ID-31 over Pine Creek Pass — first Teton reveal at Victor overlook (15min)',
+      '18:30 Cabin check-in at Driggs Airbnb (Mountain Modern Victor House)',
+      '19:30 Dinner Forage Bistro (reserve) or Teton Thai walk-in',
     ],
-    eats:'Bluebird Café Logan lunch. Tatanka Tavern dinner',
-    dontMiss:'ID-33 (Pine Creek Pass) NOT Teton Pass — saves Mom 1.5hr + climb',
-    momNote:'Compression socks for the drive' },
+    eats:'Buddy\'s Italian Pocatello lunch. Forage Bistro Driggs dinner.',
+    dontMiss:'Swan Valley dusk = moose/elk window. Pine Creek Pass (not Teton Pass). Pre-confirm Airbnb keypad before leaving SLC (patchy cell on pass).',
+    momNote:'Compression socks for the drive. Light fleece on arrival — Driggs 6,100ft = 50°F evening.' },
   { n:16, date:'Mon May 25', title:'Memorial Day Driggs (Colin works, Mom solo)', vibe:'Solo / Rest · Mild',
     hotel:'Mountain Modern Victor House (2nd night)',
     bullets:[
@@ -664,8 +677,9 @@ const SCHEDULE: DaySchedule[] = [
 
 // ─── Page ───
 export default function GuidePage() {
-  const [openSection, setOpenSection] = useState<string | null>('vegas');
-  const [openDay, setOpenDay] = useState<number | null>(null);
+  const today = getTodayDay();
+  const [openSection, setOpenSection] = useState<string | null>(today ? null : 'vegas');
+  const [openDay, setOpenDay] = useState<number | null>(today?.dayNumber ?? null);
   const [openTab, setOpenTab] = useState<'guide' | 'schedule' | 'mom' | 'pack'>('guide');
 
   return (
@@ -677,6 +691,9 @@ export default function GuidePage() {
         <p className="text-sm md:text-base mt-1 text-white/95">Deep dive · Day-by-day insider tips · Mom-tested pacing</p>
         <p className="text-xs text-white/80 mt-1">Researched by location specialists across 8 stops + Mom expert</p>
       </div>
+
+      {/* Today banner (tactical) */}
+      {today && <GuideTodayBanner day={today} />}
 
       {/* Tabs */}
       <div className="max-w-3xl mx-auto px-4 pt-4">
@@ -724,17 +741,22 @@ export default function GuidePage() {
             <Card emoji="📅" title="22-Day Hour-by-Hour Schedule">
               <P>Tap any day below to see the full plan. Researched by location specialists, validated against current 2026 park status (Arches + Glacier timed entry both eliminated, $100 non-resident surcharge for Mom at Tetons).</P>
             </Card>
-            {SCHEDULE.map(d => (
-              <div key={d.n} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            {SCHEDULE.map(d => {
+              const isTodayDay = today?.dayNumber === d.n;
+              return (
+              <div key={d.n} className={`bg-white rounded-xl shadow-sm overflow-hidden border ${isTodayDay ? 'border-amber-400 ring-2 ring-amber-200' : 'border-gray-100'}`}>
                 <button onClick={() => setOpenDay(openDay === d.n ? null : d.n)}
                   className="w-full flex items-center gap-3 p-3 hover:bg-amber-50 transition-colors text-left">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-100 flex flex-col items-center justify-center">
-                    <div className="text-xs font-bold text-amber-600">DAY</div>
-                    <div className="text-base font-bold text-amber-700 leading-none">{d.n}</div>
+                  <div className={`shrink-0 w-14 h-14 rounded-xl flex flex-col items-center justify-center ${isTodayDay ? 'bg-amber-500 text-white' : 'bg-amber-100'}`}>
+                    <div className={`text-[10px] font-bold ${isTodayDay ? 'text-white' : 'text-amber-700'}`}>{d.date.split(' ')[0]}</div>
+                    <div className={`text-sm font-bold leading-none ${isTodayDay ? 'text-white' : 'text-amber-700'}`}>{d.date.split(' ').slice(1).join(' ')}</div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-xs text-gray-500">{d.date}</div>
-                    <div className="font-bold text-gray-800 leading-tight">{d.title}</div>
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="font-bold text-gray-800 leading-tight">{d.title}</span>
+                      {isTodayDay && <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500 text-white">TODAY</span>}
+                      <span className="text-[10px] text-gray-400 font-mono">d{d.n}</span>
+                    </div>
                     <div className="text-[11px] text-gray-500 mt-0.5">{d.vibe}</div>
                   </div>
                   {openDay === d.n ? <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronRight className="w-5 h-5 text-gray-400 shrink-0" />}
@@ -751,7 +773,7 @@ export default function GuidePage() {
                   </div>
                 )}
               </div>
-            ))}
+            );})}
           </div>
         )}
 
@@ -1587,26 +1609,37 @@ const DAILY_PACK: DayPack[] = [
     warnings: ['🪰 HEAD NETS CRITICAL — May = peak no-see-um/biting gnat season. Insect repellent does NOT work.', 'Ensign Peak descent in dusk = headlamp essential'],
     mom: ['HEAD NET + tucked-in collar + tucked-in pants', 'Knee sleeves + KT tape for Ensign', 'Trekking poles + headlamp', 'Foldable seat cane if energy spent'],
   },
-  { n: 15, date: 'Sun May 24', title: 'SLC → Driggs ID',
-    weather: 'Mild 70°F → Cool mountain 60°F · 4.5hr drive',
+  { n: 15, date: 'Sun May 24', title: 'SLC → Driggs ID (via Pocatello + Swan Valley)',
+    weather: 'Mild 70°F → Cool mountain 57°F · 4h45 drive · sunset 8:52pm MDT',
     outfit: {
       top: 'T-shirt + fleece for the drive (cool as you climb)',
       bottom: 'Hiking pants',
       footwear: 'Walking shoes',
-      layer: 'Fleece + light puffy in pack (Driggs cooler than SLC)',
+      layer: 'Fleece + light puffy in pack (Driggs cooler than SLC, 6,100ft = 50°F evening)',
       acc: 'Sunglasses (mountain reflection)',
     },
     daypack: [
-      'Snacks + water + light jacket for stops',
+      'Snacks + 2L water for stops',
       'Sunglasses + lip balm',
+      'Binoculars (dusk wildlife — moose/elk in Swan Valley)',
+      'Camera/phone charged',
     ],
     activity: [
-      { label: '10:45am Logan UT lunch — Bluebird Café (1914 historic)', items: ['Walking shoes · light jacket · casual outfit'] },
-      { label: '6:30pm Tatanka Tavern Driggs dinner (3rd-floor Teton view)', items: ['Light puffy ON — Driggs evenings 50°F'] },
+      { label: '12:00 noon leave SLC (top off gas)', items: ['Confirm Driggs Airbnb keypad BEFORE leaving — patchy cell on Pine Creek Pass'] },
+      { label: '2:30pm Buddy\'s Italian, Pocatello (Exit 69, ~45min)', items: ['626 E Lewis St · classic since 1955 · bathrooms + parking'] },
+      { label: '3:45pm Snake River Greenbelt, Idaho Falls (15min stretch)', items: ['Park near falls overlook · paved · restrooms'] },
+      { label: '4:30pm Palisades Reservoir overlook, Swan Valley (30min)', items: ['Calamity Point or Blowout Boat Ramp pullouts', 'DUSK = moose / elk / eagle window — drive slow, scan willows'] },
+      { label: '5:45pm Pine Creek Pass + Victor overlook (15min)', items: ['First Teton reveal coming down into the valley'] },
+      { label: '6:30pm Driggs check-in', items: ['8487 Caribou Ct, Victor ID · keypad in 4pm'] },
+      { label: '7:30pm Forage Bistro dinner (reserve) or Teton Thai walk-in', items: ['Tetons fill the eastern sky · light puffy ON — 50°F'] },
     ],
-    electronics: ['USB-C in car · podcasts queued for 4.5hr drive'],
-    warnings: ['ID-33 Pine Creek Pass — NOT Teton Pass (saves Mom 1.5hr + steep climb)'],
-    mom: ['Compression socks for the drive', 'Neck pillow + lumbar pillow'],
+    electronics: ['USB-C in car · podcasts queued for 5hr drive', 'Offline Google Maps downloaded for Idaho Falls → Driggs (patchy cell)'],
+    warnings: [
+      'Route: I-15 → US-26 → ID-31 Pine Creek Pass — NOT Teton Pass and NOT Logan/Bear Lake (adds 90min + closures)',
+      'Memorial Day Sunday traffic Jackson-bound = use Pine Creek Pass, not WY-22',
+      'Pre-departure: gas top-off, Forage reservation, Idaho 511 check',
+    ],
+    mom: ['Compression socks for the drive', 'Neck pillow + lumbar pillow', 'Light fleece on arrival — Driggs evening 50°F'],
   },
   { n: 16, date: 'Mon May 25', title: 'Memorial Day Driggs (Colin works · Mom solo)',
     weather: 'Cool mountain 60°F day · 35-40°F nights',
@@ -1892,6 +1925,74 @@ const DAILY_PACK: DayPack[] = [
   },
 ];
 
+// ─── Today banner (tactical, for transit days) ───
+function GuideTodayBanner({ day }: { day: typeof tripData.days[0] }) {
+  const r = day.driveRoute;
+  return (
+    <div className="max-w-3xl mx-auto px-4 pt-4">
+      <div className="rounded-xl shadow-md border-2 border-amber-400 bg-gradient-to-br from-amber-50 to-white p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-amber-700 bg-amber-200 px-2 py-0.5 rounded-full">TODAY</span>
+          <span className="text-lg font-bold text-gray-900">{formatTripDateLong(day.date)}</span>
+          <span className="text-xs text-gray-400 font-mono ml-auto">Day {day.dayNumber} of {tripData.days.length}</span>
+        </div>
+        <div className="text-sm font-semibold text-gray-800 leading-snug mb-1">{day.title}</div>
+        {day.momNotes?.blurb && <div className="text-sm text-gray-700 leading-snug">{day.momNotes.blurb}</div>}
+
+        {r && (
+          <div className="mt-3 rounded-lg bg-white border border-slate-200 p-3">
+            <div className="font-bold text-slate-800 mb-1">🚗 {r.from} → {r.to}</div>
+            <div className="text-xs text-slate-500 mb-2">{r.miles} mi · {r.driveHours}h drive · leave {r.departure} · arrive {r.arrival}{r.sunset ? ` · sunset ${r.sunset}` : ''}</div>
+            <p className="text-sm text-slate-700 leading-snug mb-3">{r.tldr}</p>
+
+            <div className="space-y-1.5">
+              <div className="text-[10px] font-bold uppercase text-slate-500 tracking-wide">Stops, in order</div>
+              {r.stops.map((stop, i) => (
+                <div key={i} className="flex gap-2 text-sm">
+                  <span className="shrink-0 text-base leading-none mt-0.5">{STOP_ICON[stop.type]}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold text-slate-800">{stop.name} <span className="text-[11px] font-normal text-slate-500">· {stop.timeNeeded}</span></div>
+                    <div className="text-xs text-slate-700">{stop.note}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {r.preDeparture && (
+              <details className="mt-3" open>
+                <summary className="text-[11px] font-bold uppercase text-slate-500 tracking-wide cursor-pointer">Before leaving SLC</summary>
+                <ul className="mt-1 space-y-0.5 text-xs text-slate-700">
+                  {r.preDeparture.map((p, i) => <li key={i} className="flex gap-1.5"><span className="text-slate-400">☐</span>{p}</li>)}
+                </ul>
+              </details>
+            )}
+
+            {r.alternatives && (
+              <details className="mt-2">
+                <summary className="text-[11px] font-bold uppercase text-slate-500 tracking-wide cursor-pointer">Routes considered (and skipped)</summary>
+                <ul className="mt-1 space-y-1 text-xs">
+                  {r.alternatives.map((a, i) => (
+                    <li key={i}>
+                      <span className={`font-semibold ${a.verdict === 'skip' ? 'text-red-700' : a.verdict === 'save' ? 'text-blue-700' : 'text-slate-700'}`}>{a.name} — {a.verdict.toUpperCase()}.</span> <span className="text-slate-600">{a.why}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
+        )}
+
+        {day.momNotes?.tip && (
+          <div className="mt-3 bg-amber-100/60 border-l-4 border-amber-400 rounded-r-lg p-2.5">
+            <div className="text-[11px] font-bold text-amber-700 uppercase tracking-wide mb-0.5">💡 Tour guide tip</div>
+            <div className="text-[13px] text-amber-900 leading-snug">{day.momNotes.tip}</div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─── Helpers ───
 const precipPrep = (pct: number): string => {
   if (pct <= 5) return 'No rain prep needed';
@@ -1916,17 +2017,22 @@ function DailyPack() {
         const ml = getMultiLoc(d.n);
         const trails = trailsForDay(d.n);
         const stops = stopsForDay(d.n);
+        const today = getTodayDay();
+        const isTodayDay = today?.dayNumber === d.n;
         return (
-        <div key={d.n} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div key={d.n} className={`bg-white rounded-xl shadow-sm overflow-hidden border ${isTodayDay ? 'border-amber-400 ring-2 ring-amber-200' : 'border-gray-100'}`}>
           <button onClick={() => setOpenDay(openDay === d.n ? null : d.n)}
             className="w-full flex items-center gap-3 p-3 hover:bg-amber-50 transition-colors text-left">
-            <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-100 flex flex-col items-center justify-center">
-              <div className="text-[10px] font-bold text-amber-600">DAY</div>
-              <div className="text-base font-bold text-amber-700 leading-none">{d.n}</div>
+            <div className={`shrink-0 w-14 h-14 rounded-xl flex flex-col items-center justify-center ${isTodayDay ? 'bg-amber-500 text-white' : 'bg-amber-100'}`}>
+              <div className={`text-[10px] font-bold ${isTodayDay ? 'text-white' : 'text-amber-700'}`}>{d.date.split(' ')[0]}</div>
+              <div className={`text-sm font-bold leading-none ${isTodayDay ? 'text-white' : 'text-amber-700'}`}>{d.date.split(' ').slice(1).join(' ')}</div>
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-xs text-gray-500">{d.date}</div>
-              <div className="font-bold text-gray-800 leading-tight">{d.title}</div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="font-bold text-gray-800 leading-tight">{d.title}</span>
+                {isTodayDay && <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500 text-white">TODAY</span>}
+                <span className="text-[10px] text-gray-400 font-mono">d{d.n}</span>
+              </div>
               <div className="text-[11px] text-gray-500 mt-0.5">
                 {fc ? (
                   <>🌡️ {fc.high_f}°F / {fc.high_c}°C · {fc.low_f}°F / {fc.low_c}°C · {fc.precip_pct}% rain · UV {fc.uv}</>

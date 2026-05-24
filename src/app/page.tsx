@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { tripData, locations } from '@/data/tripData';
 import { TripPhase } from '@/types/trip';
 import { differenceInDays, parseISO } from 'date-fns';
+import { getTodayDay, formatTripDateLong } from '@/lib/dateUtils';
 import PhaseNav from '@/components/PhaseNav';
 import CompactDayRow from '@/components/CompactDayRow';
 import ActivityQueue from '@/components/ActivityQueue';
@@ -118,6 +119,16 @@ export default function Home() {
 
   // Calculate days until trip
   const daysUntilTrip = differenceInDays(parseISO(tripData.startDate), new Date());
+  const today = getTodayDay();
+
+  // Auto-expand today's day when it exists
+  useEffect(() => {
+    if (today && expandedDays.size === 0) {
+      setExpandedDays(new Set([today.id]));
+      setSelectedDay(today.dayNumber);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -242,6 +253,28 @@ export default function Home() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-4">
+        {/* Today banner */}
+        {today && (
+          <div className="mb-4 rounded-xl border-2 border-amber-400 bg-gradient-to-r from-amber-50 via-orange-50 to-white p-4 shadow-sm">
+            <div className="flex items-center gap-3">
+              <div className="shrink-0">
+                <div className="text-[10px] font-bold tracking-widest uppercase text-amber-700 bg-amber-200 px-2 py-0.5 rounded-full inline-block">TODAY</div>
+                <div className="text-xl font-bold text-gray-900 mt-1">{formatTripDateLong(today.date)}</div>
+              </div>
+              <div className="flex-1 min-w-0 border-l border-amber-200 pl-3">
+                <div className="text-sm font-semibold text-gray-800 leading-tight">{today.title}</div>
+                {today.momNotes?.blurb && <div className="text-xs text-gray-600 mt-0.5 line-clamp-2">{today.momNotes.blurb}</div>}
+                <div className="flex flex-wrap gap-2 mt-1.5 text-[10px]">
+                  <span className="bg-white text-gray-700 px-2 py-0.5 rounded-full border border-gray-200">📍 {today.overnight || today.location.name}</span>
+                  {today.drivingDistance && <span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">🚗 {today.drivingDistance} · {today.drivingTime}</span>}
+                  {today.driveRoute && <span className="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-semibold">🛣️ Drive route on /mom & /guide</span>}
+                </div>
+              </div>
+              <a href="/mom" className="shrink-0 text-xs bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg font-semibold">Today details →</a>
+            </div>
+          </div>
+        )}
+
         {/* Quick stats row */}
         <div className="flex items-center gap-3 sm:gap-6 text-xs text-gray-500 mb-4 overflow-x-auto pb-2 scrollbar-hide" suppressHydrationWarning>
           <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">

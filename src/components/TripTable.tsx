@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { DayPlan, TripPhase } from '@/types/trip';
 import { format, parseISO } from 'date-fns';
 import { Car, Sun, Cloud, CloudRain, Snowflake, Laptop, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { isToday } from '@/lib/dateUtils';
 
 interface TripTableProps {
   days: DayPlan[];
@@ -77,8 +78,8 @@ export default function TripTable({ days, phases, onSelectDay }: TripTableProps)
           <thead className="sticky top-0 z-10 bg-white">
             <tr className="border-b border-gray-200">
               <th className="w-1 p-0"></th>
-              <th className="px-2 py-2 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider w-10">#</th>
               <th className="px-2 py-2 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider w-20">Date</th>
+              <th className="px-2 py-2 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider w-10">D#</th>
               <th className="px-2 py-2 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Title</th>
               <th className="px-2 py-2 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider w-28 hidden lg:table-cell">Overnight</th>
               <th className="px-2 py-2 text-center text-[10px] font-semibold text-gray-400 uppercase tracking-wider w-14 hidden md:table-cell">Wx</th>
@@ -95,10 +96,11 @@ export default function TripTable({ days, phases, onSelectDay }: TripTableProps)
               const expanded = expandedRows.has(day.dayNumber);
               const phaseColor = phase?.color || '#6b7280';
 
+              const today_ = isToday(day.date);
               return (
                 <tr
                   key={day.id}
-                  className={`border-b border-gray-100 hover:bg-gray-50/60 cursor-pointer transition-colors ${work ? 'bg-blue-50/20' : ''}`}
+                  className={`border-b border-gray-100 hover:bg-gray-50/60 cursor-pointer transition-colors ${work ? 'bg-blue-50/20' : ''} ${today_ ? 'bg-amber-50 ring-1 ring-amber-300' : ''}`}
                   onClick={() => toggleRow(day.dayNumber)}
                   onDoubleClick={() => onSelectDay?.(day.dayNumber)}
                 >
@@ -107,18 +109,19 @@ export default function TripTable({ days, phases, onSelectDay }: TripTableProps)
                     <div className="w-1 h-full min-h-[40px]" style={{ backgroundColor: phaseColor }} />
                   </td>
 
-                  {/* Day number */}
-                  <td className="px-2 py-2 align-top">
-                    <div className="flex items-center gap-1">
-                      <span className="font-bold text-sm" style={{ color: phaseColor }}>{day.dayNumber}</span>
-                      {work && <Laptop className="w-3 h-3 text-blue-400" />}
-                    </div>
+                  {/* Date (primary) */}
+                  <td className="px-2 py-2 align-top whitespace-nowrap">
+                    <div className="text-gray-800 font-bold leading-tight">{format(d, 'EEE')}</div>
+                    <div className="text-gray-600 text-[11px] font-medium leading-tight">{format(d, 'MMM d')}</div>
+                    {today_ && <div className="text-[8px] font-bold mt-0.5 text-amber-700 bg-amber-200 px-1 py-px rounded inline-block">TODAY</div>}
                   </td>
 
-                  {/* Date */}
-                  <td className="px-2 py-2 align-top whitespace-nowrap">
-                    <div className="text-gray-700 font-medium">{format(d, 'EEE')}</div>
-                    <div className="text-gray-400 text-[10px]">{format(d, 'MMM d')}</div>
+                  {/* Day number (secondary) */}
+                  <td className="px-2 py-2 align-top">
+                    <div className="flex items-center gap-1">
+                      <span className="font-mono text-[10px] text-gray-400">d{day.dayNumber}</span>
+                      {work && <Laptop className="w-3 h-3 text-blue-400" />}
+                    </div>
                   </td>
 
                   {/* Title + Activities */}

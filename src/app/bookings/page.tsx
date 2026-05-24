@@ -5,6 +5,7 @@ import { format, parseISO } from 'date-fns';
 import { ExternalLink, Check, Circle, AlertTriangle, ChevronDown, ChevronRight, Plus, X } from 'lucide-react';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import SiteNav from '@/components/SiteNav';
+import { getTodayDay, formatTripDate, isToday } from '@/lib/dateUtils';
 
 // ─── Types ───
 type BData = {
@@ -250,6 +251,17 @@ export default function BookingsPage() {
       </div></nav>
 
       <main className="bk-main">
+        {/* Today banner */}
+        {(() => { const today = getTodayDay(); if (!today) return null; const stay = STAYS.find(s => s.dayNums.includes(today.dayNumber)); return (
+          <div className="bk-today">
+            <span className="bk-today-label">TODAY</span>
+            <span className="font-semibold">{formatTripDate(today.date)}</span>
+            <span className="opacity-70">·</span>
+            <span>{today.title}</span>
+            {stay && <a href={`#s-${stay.id}`} className="ml-auto bk-today-link">Jump to {stay.loc} ↓</a>}
+          </div>
+        ); })()}
+
         {/* ═══ STAYS ═══ */}
         <section id="stays">
           {STAYS.map(stay => {
@@ -295,13 +307,13 @@ export default function BookingsPage() {
                   {/* Day-by-day */}
                   <Acc title="Day-by-day itinerary" n={stayDays.length}>
                     <div className="bk-tbl-wrap">
-                    <table className="bk-tbl"><thead><tr><th>Day</th><th>Date</th><th>Title</th><th>Drive</th><th>Weather</th><th>Budget</th></tr></thead>
+                    <table className="bk-tbl"><thead><tr><th>Date</th><th>Day</th><th>Title</th><th>Drive</th><th>Weather</th><th>Budget</th></tr></thead>
                     <tbody>
-                      {stayDays.map(d => <tr key={d.id}><td className="font-medium">{d.dayNumber}</td><td className="whitespace-nowrap">{format(parseISO(d.date),'EEE M/d')}</td><td>{d.title}</td><td className="whitespace-nowrap opacity-40">{d.drivingDistance?`${d.drivingDistance} / ${d.drivingTime}`:'-'}</td><td className="whitespace-nowrap opacity-40">{d.weather?`${d.weather.high}°/${d.weather.low}°`:'-'}</td><td className="whitespace-nowrap">{d.budgetBreakdown?`$${d.budgetBreakdown.total}`:'-'}</td></tr>)}
+                      {stayDays.map(d => <tr key={d.id} className={isToday(d.date) ? 'bg-amber-50' : ''}><td className="whitespace-nowrap font-medium">{formatTripDate(d.date)}{isToday(d.date) && <span className="ml-1 text-[8px] font-bold px-1 py-px rounded bg-amber-500 text-white">TODAY</span>}</td><td className="opacity-40 font-mono text-[10px]">d{d.dayNumber}</td><td>{d.title}</td><td className="whitespace-nowrap opacity-40">{d.drivingDistance?`${d.drivingDistance} / ${d.drivingTime}`:'-'}</td><td className="whitespace-nowrap opacity-40">{d.weather?`${d.weather.high}°/${d.weather.low}°`:'-'}</td><td className="whitespace-nowrap">{d.budgetBreakdown?`$${d.budgetBreakdown.total}`:'-'}</td></tr>)}
                       {stayDays.length>1&&<tr className="font-medium border-t border-gray-200"><td colSpan={5} className="text-right opacity-40">Total</td><td>${totalBudget.total}</td></tr>}
                     </tbody></table>
                     </div>
-                    {stayDays.map(d => <Acc key={d.id} title={`Day ${d.dayNumber} activities`} n={d.activities.length}>
+                    {stayDays.map(d => <Acc key={d.id} title={`${formatTripDate(d.date)} activities`} n={d.activities.length}>
                       <div className="bk-tbl-wrap">
                       <table className="bk-tbl"><thead><tr><th>Activity</th><th>Time</th><th>Dur</th><th>Diff</th><th>Cost</th><th>Res?</th><th>Link</th></tr></thead>
                       <tbody>{d.activities.map(a => <tr key={a.id}><td className="font-medium">{a.name}</td><td className="whitespace-nowrap">{a.startTime||'-'}</td><td className="whitespace-nowrap">{a.duration}</td><td><span className={`bk-diff-${a.difficulty}`}>{a.difficulty}</span></td><td>{a.cost||'-'}</td><td>{a.reservationRequired?'Yes':'-'}</td><td>{a.url?<EL href={a.url}>info</EL>:a.directionsUrl?<EL href={a.directionsUrl}>map</EL>:'-'}</td></tr>)}</tbody></table>
@@ -414,6 +426,9 @@ export default function BookingsPage() {
       .bk-nc-a { background:var(--al); color:var(--a); }
 
       .bk-main { max-width:1200px; margin:0 auto; padding:12px 12px; }
+      .bk-today { display:flex; align-items:center; gap:6px; background:linear-gradient(to right, #fef3c7, #fffbeb); border:2px solid #f59e0b; border-radius:6px; padding:8px 12px; margin-bottom:12px; font-size:13px; }
+      .bk-today-label { background:#f59e0b; color:#fff; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:2px 8px; border-radius:99px; }
+      .bk-today-link { font-size:11px; color:#0369a1; text-decoration:underline; }
       .bk-sec-t { font-size:13px; font-weight:600; margin-bottom:4px; }
 
       .bk-b { display:inline-flex; align-items:center; gap:2px; font-size:10px; font-weight:600; padding:1px 6px; border-radius:3px; white-space:nowrap; user-select:none; }
