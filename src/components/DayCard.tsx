@@ -156,29 +156,29 @@ export default function DayCard({ day, isExpanded, isSelected, onToggle, onSelec
             </div>
           )}
 
-          {/* Accommodation Options */}
-          {(day.accommodationOptions || day.accommodation) && (
-            <div className="p-4 bg-gray-50 border-t border-gray-100">
-              <h4 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
-                <Hotel className="w-4 h-4 text-blue-500" />
-                Stays: {day.overnight}
-                {day.accommodationOptions && day.accommodationOptions.length > 1 && (
-                  <span className="text-xs font-normal text-gray-500">
-                    ({day.accommodationOptions.length} options)
-                  </span>
-                )}
-              </h4>
-              <div className="space-y-2">
-                {day.accommodationOptions && day.accommodationOptions.length > 0 ? (
-                  day.accommodationOptions.map((acc) => (
-                    <AccommodationCard key={acc.id} acc={acc} />
-                  ))
-                ) : day.accommodation ? (
-                  <AccommodationCard acc={day.accommodation} />
-                ) : null}
+          {/* Booked stay (or unbooked options) */}
+          {(day.accommodationOptions || day.accommodation) && (() => {
+            const hasMultipleOptions = day.accommodationOptions && day.accommodationOptions.length > 1;
+            const isBooked = day.accommodation?.notes?.toLowerCase().includes('booked') || day.accommodation?.name?.toLowerCase().includes('booked');
+            return (
+              <div className="p-4 bg-gray-50 border-t border-gray-100">
+                <h4 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
+                  <Hotel className="w-4 h-4 text-blue-500" />
+                  {isBooked ? 'Booked stay' : hasMultipleOptions ? `Stay options (${day.accommodationOptions!.length})` : 'Stay'}
+                  <span className="text-xs font-normal text-gray-500">— {day.overnight}</span>
+                </h4>
+                <div className="space-y-2">
+                  {hasMultipleOptions ? (
+                    day.accommodationOptions!.map((acc) => (
+                      <AccommodationCard key={acc.id} acc={acc} />
+                    ))
+                  ) : day.accommodation ? (
+                    <AccommodationCard acc={day.accommodation} />
+                  ) : null}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {/* Reservations needed */}
           {day.reservationsNeeded && day.reservationsNeeded.length > 0 && (

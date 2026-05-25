@@ -150,15 +150,15 @@ const STAYS: { id:string; loc:string; region:string; dates:string; nights:number
   { id:'slc', loc:'Salt Lake City', region:'UT', dates:'Wed-Sun 5/20-24', nights:4, dayNums:[11,12,13,14], status:'booked' as const,
     booking:{ name:'2BR Airbnb Pool/HotTub/Gym', conf:'Airbnb HMN2P4MBR9', cost:'$1,256.86 ($272/n×4+tax)', paid:'$544 paid 4/1. $712.86 due 5/5.', details:'241 W 200 S, SLC. 2BR, rooftop pool, keypad 4pm, out 10am.' },
     acts:[], search:null },
-  { id:'driggs', loc:'Driggs', region:'Teton Valley, ID', dates:'Sun-Wed 5/24-27', nights:3, dayNums:[15,16,17], status:'booked' as const,
+  { id:'driggs', loc:'Victor (Teton Valley)', region:'ID — 12mi south of Driggs', dates:'Sun-Wed 5/24-27', nights:3, dayNums:[15,16,17], status:'booked' as const,
     booking:{ name:'Mountain Modern Victor House', conf:'Airbnb HM2FC8WSJ8', cost:'$885.47 ($381.67/n×3, $460 off!)', paid:'$885.47 paid 4/15 (Visa 6386). Non-refundable.', details:'8487 Caribou Ct, Victor ID 83455. Hosted by Cristine. In 4pm, out 10am. Keypad.' },
     acts:[],
     search:null },
   { id:'yellowstone', loc:'West Yellowstone', region:'MT', dates:'Wed-Fri 5/27-29', nights:2, dayNums:[18,19], status:'booked' as const,
     booking:{ name:'Crosswinds Inn (2Q, Breakfast Incl)', conf:'Booking.com #5288855262 PIN:3523', cost:'$657.18 ($291.60/n+tax+fees)', paid:'Prepaid Visa 6386. Non-refundable.', details:'201 Firehole Ave, West Yellowstone MT 59758. 2Q beds, breakfast included. In 4pm, out 11am. Ph: 406-646-9557.' },
     acts:[], search:null },
-  { id:'glacier', loc:'Glacier NP', region:'Columbia Falls, MT', dates:'Fri-Sun 5/29-31', nights:2, dayNums:[20,21,22], status:'booked' as const,
-    booking:{ name:'Apgar Village Lodge (In-Park Cabin)', conf:'#3870048', cost:'$392.26 ($182/n×2+tax)', paid:'$189.22 paid. $203.04 at check-in.', details:'Cabin 3Q, 2 Room. 3 guests. 1-844-868-7474.' },
+  { id:'glacier', loc:'Apgar Village (in-park)', region:'West Glacier, MT — inside Glacier NP', dates:'Fri-Sun 5/29-31', nights:2, dayNums:[20,21,22], status:'booked' as const,
+    booking:{ name:'Apgar Village Lodge (In-Park Cabin)', conf:'#3870048', cost:'$392.26 ($182/n×2+tax)', paid:'$189.22 paid. $203.04 at check-in.', details:'Cabin 3Q, 2 Room. Apgar Village, West Glacier MT (inside park, walking distance to Lake McDonald). 3 guests. 1-844-868-7474.' },
     acts:[], search:null },
 ];
 
@@ -321,8 +321,8 @@ export default function BookingsPage() {
                     </Acc>)}
                   </Acc>
 
-                  {/* Accommodation options */}
-                  {(accomOpts.length > 0 || customs.length > 0) && (
+                  {/* Accommodation alternatives — only if booking is NOT confirmed OR user added custom items */}
+                  {actualStatus !== 'booked' && (accomOpts.length > 0 || customs.length > 0) && (
                     <Acc title="Accommodation options" n={accomOpts.length + customs.length} open={customs.length > 0}>
                       <div className="bk-tbl-wrap">
                       <table className="bk-tbl"><thead><tr><th>Name</th><th>Type</th><th>$/n</th><th>Amenities</th><th>Notes</th><th>Link</th></tr></thead>
@@ -335,8 +335,8 @@ export default function BookingsPage() {
                     </Acc>
                   )}
 
-                  {/* Search criteria */}
-                  {stay.search && (
+                  {/* Search criteria — hide when booking is confirmed */}
+                  {actualStatus !== 'booked' && stay.search && (
                     <div className="bk-search">
                       <div className="bk-search-hdr">Search: {stay.search.ci} → {stay.search.co} &middot; {stay.search.g} &middot; <strong>Budget {stay.search.budget}</strong></div>
                       <div className="bk-search-grid">

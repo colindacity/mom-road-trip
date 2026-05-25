@@ -436,24 +436,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in. 3535 Las Vegas Blvd South.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc1a',
-          name: 'The LINQ Hotel & Casino — BOOKED',
-          type: 'hotel',
-          priceRange: '$0 room + $57 resort fee',
-          pricePerNight: 57,
-          reviewRating: 4.3,
-          reviewSource: 'TripAdvisor (4.5/5)',
-          address: '3535 Las Vegas Blvd South',
-          website: 'https://www.caesars.com/linq',
-          bookingUrl: 'https://www.hotels.com/',
-          amenities: ['Pool', 'Center Strip', 'Bacchanal next door', 'Spa', 'Casino'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in.'
-        }
-      ],
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
       budgetBreakdown: { accommodation: 57, food: 100, activities: 0, gas: 0, total: 157 },
       momNotes: {
@@ -550,24 +532,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347. Cancel penalty after May 9. Phone: 888-297-2757.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc2a',
-          name: 'Maswik Lodge (Inside Park) — BOOKED',
-          type: 'lodge',
-          priceRange: '$256/night (20% off)',
-          pricePerNight: 274,
-          reviewRating: 4.0,
-          reviewSource: 'TripAdvisor (4.0/5), KAYAK (8.6/10)',
-          reviewCount: 1800,
-          address: 'Grand Canyon Village, South Rim',
-          website: 'https://www.grandcanyonlodges.com/',
-          amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347.'
-        }
-      ],
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
       budgetBreakdown: { accommodation: 274, food: 80, activities: 35, gas: 55, total: 444 },
       momNotes: {
@@ -756,21 +720,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc4a',
-          name: '2BR Home 5min from Antelope — BOOKED',
-          type: 'vacation_rental',
-          priceRange: '$170.67/night',
-          pricePerNight: 171,
-          address: '871 Sandpiper Dr, Page, AZ 86040',
-          website: 'https://www.airbnb.com/page-az/stays',
-          amenities: ['2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
-        }
-      ],
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
       budgetBreakdown: { accommodation: 171, food: 70, activities: 10, gas: 30, total: 281 },
       momNotes: {
@@ -1003,21 +952,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc7a',
-          name: 'Moab Airbnb HotTub/Pool/Kitchen/Views — BOOKED',
-          type: 'vacation_rental',
-          priceRange: '$392/night',
-          pricePerNight: 392,
-          address: '3442 Tierra del Sol Dr, Moab, UT 84532',
-          website: 'https://www.airbnb.com/',
-          amenities: ['Hot tub', 'Pool', 'Kitchen', 'Views', 'Patio', 'Smart lock'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
-        }
-      ],
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
       budgetBreakdown: { accommodation: 392, food: 70, activities: 10, gas: 55, total: 527 },
       momNotes: {
@@ -1350,20 +1284,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Airbnb HMN2P4MBR9. 2BR with rooftop pool/hot tub/gym/theatre. Hosted by GrandRoad. $1,256.86 total for 4 nights.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc11a',
-          name: 'Convention Ctr 2BR Airbnb — BOOKED',
-          type: 'vacation_rental',
-          priceRange: '$272/night',
-          pricePerNight: 314,
-          address: '241 W 200 S, Salt Lake City, UT 84101',
-          amenities: ['2 bedrooms', 'Rooftop pool', 'Hot tub', 'Gym', 'Theatre', 'Fast WiFi'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Airbnb HMN2P4MBR9. 2BR with rooftop pool/hot tub/gym/theatre. Hosted by GrandRoad. $1,256.86 total for 4 nights.'
-        }
-      ],
       notes: ['HALF WORK AM + DRIVING DAY', 'Temple Square is a good first-afternoon activity', 'SLC has better WiFi for remote work than Moab', 'Green River stop: Tamarisk restaurant, Price UT for a break'],
       budgetBreakdown: { accommodation: 314, food: 70, activities: 0, gas: 55, total: 439 },
       momNotes: {
@@ -1623,7 +1543,7 @@ export const tripData: TripData = {
       title: 'Half Work AM + SLC → Driggs',
       summary: 'Morning work, afternoon drive to Teton Valley',
       location: locations.find(l => l.id === 'driggs')!,
-      overnight: 'Driggs, ID',
+      overnight: 'Victor, ID (Teton Valley)',
       drivingDistance: '285 miles',
       drivingTime: '4h 45m drive (6.5h with stops)',
       weather: { high: 21, low: 7, conditions: '🌧️ Mostly cloudy, light drizzle possible (23%). 70°F/45°F. Wind 21mph at Pine Creek Pass. Rain jacket on hand.' },
@@ -1730,21 +1650,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc15a',
-          name: 'Mountain Modern Victor House — BOOKED',
-          type: 'vacation_rental',
-          priceRange: '$295.16/night (after $460 discount)',
-          pricePerNight: 295,
-          address: '8487 Caribou Ct, Victor, ID 83455',
-          website: 'https://www.airbnb.com/',
-          amenities: ['Keypad self check-in', 'Mountain modern design', 'Kitchen', '2 bedrooms'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
-        }
-      ],
       notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
       budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 55, total: 420 },
       momNotes: {
@@ -1837,7 +1742,7 @@ export const tripData: TripData = {
       title: 'Work Day — Driggs',
       summary: 'Colin works full day, Mom: town walk and Teton views',
       location: locations.find(l => l.id === 'driggs')!,
-      overnight: 'Driggs, ID',
+      overnight: 'Victor, ID (Teton Valley)',
       weather: { high: 23, low: 9, conditions: 'Overcast, dry, breezy. 74°F/48°F. 18% precip. Memorial Day comfortable.' },
       activities: [
         {
@@ -1884,13 +1789,14 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc16a',
-        name: 'Mountain Modern Victor House (same as previous night)',
+        name: 'Mountain Modern Victor House — BOOKED',
         type: 'vacation_rental',
         priceRange: '$295.16/night (after $460 discount)',
         pricePerNight: 295,
+        address: '8487 Caribou Ct, Victor, ID 83455',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night at Mountain Modern Victor House.'
+        notes: 'BOOKED · Night 2 of 3. Airbnb HM2FC8WSJ8. Hosted by Cristine.'
       },
       notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
       budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 5, total: 370 },
@@ -1911,7 +1817,7 @@ export const tripData: TripData = {
       title: 'Teton Full Day — Oxbow Bend, Mormon Row, Jackson Lake',
       summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Schwabacher Landing',
       location: locations.find(l => l.id === 'teton')!,
-      overnight: 'Driggs, ID',
+      overnight: 'Victor, ID (Teton Valley)',
       weather: { high: 16, low: 6, conditions: '🌧️ WET DAY — 69-81% precip across Tetons + Driggs. 60°F/42°F. Wind 22mph. Reorganized to indoor-leaning Jackson Lake Lodge focus.' },
       activities: [
         {
@@ -2005,13 +1911,14 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc17a',
-        name: 'Mountain Modern Victor House (same as previous night)',
+        name: 'Mountain Modern Victor House — BOOKED',
         type: 'vacation_rental',
         priceRange: '$295.16/night (after $460 discount)',
         pricePerNight: 295,
+        address: '8487 Caribou Ct, Victor, ID 83455',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Third and final night at Mountain Modern Victor House.'
+        notes: 'BOOKED · Final night (3 of 3). Airbnb HM2FC8WSJ8. Out 10am tomorrow.'
       },
       notes: ['🌧️ RAIN DAY REORGANIZED — Jackson Lake Lodge interior is the centerpiece', '7-10am Colin work block, then 10am leave for Tetons (was earlier)', 'Skip Schwabacher (muddy) + Cathedral Group exterior walk', 'Mormon Row + Oxbow Bend stay (drive-up viewpoints)', 'Jackson Lake Lodge 60ft picture windows = 2hr couch+fire+lunch — the prime rain activity', 'Carry bear spray on Mormon Row + any trails', 'WILDLIFE: animals MORE active in cool wet weather'],
       budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 },
@@ -2140,22 +2047,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc18a',
-          name: 'Crosswinds Inn — BOOKED',
-          type: 'hotel',
-          priceRange: '$291.60/night',
-          pricePerNight: 292,
-          address: '201 Firehole Ave, West Yellowstone, MT 59758',
-          phone: '+1 406-646-9557',
-          website: 'https://www.booking.com/',
-          amenities: ['2 Queen Beds', 'Breakfast included', 'Near West Entrance'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
-        }
-      ],
       notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 },
       momNotes: {
@@ -2265,13 +2156,15 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc19a',
-        name: 'Crosswinds Inn (same as previous night)',
+        name: 'Crosswinds Inn — BOOKED',
         type: 'hotel',
         priceRange: '$291.60/night',
         pricePerNight: 292,
+        address: '201 Firehole Ave, West Yellowstone, MT 59758',
+        phone: '+1 406-646-9557',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second night — same hotel.'
+        notes: 'BOOKED · Night 2 of 2. Booking.com #5288855262 PIN:3523. Out 11am tomorrow.'
       },
       notes: ['✨ BEST DAY of the trip — invest energy here', '5am SHARP departure for Lamar dawn wildlife window', 'Live forecast: overcast 12% precip 78°F afternoon — IDEAL', 'All activities are boardwalk/drive-up (mom-friendly: 0.1-0.75mi)', 'Loop: West YS → Lamar → Tower → Mammoth → Canyon → Artist Point → home', 'Hand warmers for dawn at Lamar (45°F)', 'Bring thermos of coffee from hotel before 5am', 'Artist Point + Lookout Point are mom\'s big-view easy wins'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 0, gas: 40, total: 402 },
@@ -2292,7 +2185,7 @@ export const tripData: TripData = {
       title: 'Drive Yellowstone → Glacier + Robin Arrives',
       summary: 'Drive to Glacier via Missoula, Robin flies in Friday evening',
       location: locations.find(l => l.id === 'glacier')!,
-      overnight: 'Columbia Falls, MT',
+      overnight: 'Apgar Village (Glacier NP), MT',
       drivingDistance: '380 miles',
       drivingTime: '5.5 hours',
       weather: { high: 24, low: 6, conditions: '⛈️ APGAR STORM (69%, weather code 81 violent rain showers). W.Yellowstone dry → Apgar wet. Robin\'s flight (3:34pm) may be bumpy — check arrival status.' },
@@ -2363,21 +2256,6 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
       },
-      accommodationOptions: [
-        {
-          id: 'acc20a',
-          name: 'Apgar Village Lodge & Cabins — BOOKED',
-          type: 'cabin',
-          priceRange: '$181/night',
-          pricePerNight: 196,
-          address: 'Apgar Village, West Glacier, MT (inside park)',
-          website: 'https://www.glacierparkcollection.com/',
-          amenities: ['3 Queen beds', '2 rooms', 'Inside park', 'Near Lake McDonald'],
-          seniorFriendly: true,
-          recommended: true,
-          notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
-        }
-      ],
       notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday afternoon 3:34pm — Alaska AS 2402', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 },
       momNotes: {
@@ -2397,7 +2275,7 @@ export const tripData: TripData = {
       title: 'Glacier — Cedars + Lake McDonald + Lodge Fire (RAIN-DAY)',
       summary: 'Trail of Cedars mystical in fog, colorful rocks, Lake McDonald Lodge by the fire',
       location: locations.find(l => l.id === 'glacier')!,
-      overnight: 'Columbia Falls, MT',
+      overnight: 'Apgar Village (Glacier NP), MT',
       weather: { high: 19, low: 9, conditions: '🌫️ FOG + RAIN (63%, code 45). 66°F/49°F. Avalanche Lake MOVED to Day 22 (clearer). Cedars + Lake McDonald + lodge fire today.' },
       activities: [
         {
@@ -2471,13 +2349,14 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc21a',
-        name: 'Apgar Village Lodge (same as previous night)',
+        name: 'Apgar Village Lodge — BOOKED',
         type: 'cabin',
         priceRange: '$181/night',
         pricePerNight: 196,
+        address: 'Apgar Village, West Glacier, MT (inside park)',
         seniorFriendly: true,
         recommended: true,
-        notes: 'Second and final night. All 3 together. Pack tonight for tomorrow\'s flights.'
+        notes: 'BOOKED · Final night (2 of 2). Res #3870048. All 3 together. Pack tonight — Avalanche hike 5:30am tomorrow.'
       },
       notes: ['🌫️ FOG + RAIN DAY REORGANIZED — cedars + lake + lodge fire', 'Avalanche Lake hike MOVED to Day 22 morning (clearer + Colin+Robin only)', 'Trail of the Cedars is MAGICAL in fog — primeval rainforest vibe', 'Russell\'s Fireside lunch + fire at Lake McDonald Lodge = rain-day centerpiece', 'DeSmet boat 406-257-2426 morning-of to confirm running in rain', 'GTSR only open to Avalanche Creek (Logan Pass closed til mid-June)', 'No vehicle reservations needed for 2026', 'EARLY NIGHT — Avalanche hike at 5:30am tomorrow!'],
       budgetBreakdown: { accommodation: 196, food: 100, activities: 35, gas: 15, total: 346 },
