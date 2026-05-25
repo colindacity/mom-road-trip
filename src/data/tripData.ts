@@ -1626,7 +1626,7 @@ export const tripData: TripData = {
       overnight: 'Driggs, ID',
       drivingDistance: '285 miles',
       drivingTime: '4h 45m drive (6.5h with stops)',
-      weather: { high: 18, low: 10, conditions: 'Sunny. SLC 73°F → Driggs 57°F/40°F at 6,100ft. Light fleece for evening.' },
+      weather: { high: 21, low: 7, conditions: '🌧️ Mostly cloudy, light drizzle possible (23%). 70°F/45°F. Wind 21mph at Pine Creek Pass. Rain jacket on hand.' },
       activities: [
         {
           id: 'a15-1',
@@ -1838,7 +1838,7 @@ export const tripData: TripData = {
       summary: 'Colin works full day, Mom: town walk and Teton views',
       location: locations.find(l => l.id === 'driggs')!,
       overnight: 'Driggs, ID',
-      weather: { high: 21, low: 7, conditions: 'Partly cloudy. 70°F/45°F. 30% precip chance. Memorial Day rest.' },
+      weather: { high: 23, low: 9, conditions: 'Overcast, dry, breezy. 74°F/48°F. 18% precip. Memorial Day comfortable.' },
       activities: [
         {
           id: 'a16-1',
@@ -1912,7 +1912,7 @@ export const tripData: TripData = {
       summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Schwabacher Landing',
       location: locations.find(l => l.id === 'teton')!,
       overnight: 'Driggs, ID',
-      weather: { high: 17, low: 4, conditions: '⚠️ 50% RAIN. Tetons sunrise 40°F. Pack rain shells. UV 7 high altitude.' },
+      weather: { high: 16, low: 6, conditions: '🌧️ WET DAY — 69-81% precip across Tetons + Driggs. 60°F/42°F. Wind 22mph. Reorganized to indoor-leaning Jackson Lake Lodge focus.' },
       activities: [
         {
           id: 'a17-0',
@@ -1928,66 +1928,79 @@ export const tripData: TripData = {
         },
         {
           id: 'a17-1',
-          name: 'Drive Driggs to Grand Teton via Teton Pass',
-          description: 'Cross over Teton Pass (8,431ft) from the Idaho side into Jackson Hole. Dramatic mountain pass with hairpin turns and stunning views. Enter Grand Teton from the south. Leaving at 10am means lighter traffic than the dawn rush and better visibility if morning rain clears.',
-          startTime: '10:00 AM',
-          endTime: '11:00 AM',
+          name: 'Drive Driggs → Teton Pass → Park (RAIN-DAY ROUTE)',
+          description: 'Cross Teton Pass (8,431ft) — paved, safe in rain, but visibility may be poor. Drive slow on hairpins. Enter Grand Teton from south. Today\'s reorganized rain-day plan: car-based viewpoints + Jackson Lake Lodge interior (the famous 60ft picture windows are PERFECT on a wet day). Skip the muddy Schwabacher gravel road and the exterior Cathedral Group walk.',
+          startTime: '11:00 AM',
+          endTime: '12:00 PM',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit/Oxbow+Bend+Turnout/Mormon+Row+Historic+District/Jackson+Lake+Lodge/Schwabacher+Landing/Cathedral+Group+Turnout',
-          tips: ['Teton Pass is dramatic — pullover for photos at the top', 'From Jackson, head north into Grand Teton NP', 'America the Beautiful pass covers entry']
+          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Jackson+Lake+Lodge+WY/Driggs+ID/',
+          tips: ['🌧️ 69-81% rain today — drive slow, headlights on, wind 22mph', 'Teton Pass closed in fog? Check WY 511 morning of: 888-996-7623', 'Skip the Schwabacher dirt road today — it gets gluey when wet', 'America the Beautiful pass covers entry (Mom now $135 GTNP day pass otherwise)']
         },
         {
           id: 'a17-2',
-          name: 'Oxbow Bend Wildlife Stop',
-          description: 'Drive to Oxbow Bend for the iconic Mt. Moran reflection on still water. Moose, beavers, and bald eagles are frequently spotted. All viewing from the car or roadside pulloff.',
-          duration: '45 min',
+          name: 'Mormon Row — Iconic Barns (drive-up)',
+          description: '0.5mi flat walk along the road from car to T.A. Moulton Barn — the most photographed barn in America. Moody dramatic Teton clouds in rain make for unique shots vs. the typical sunny postcard. Bison often in the fields. Hold an umbrella over the camera.',
+          startTime: '12:00 PM',
+          endTime: '12:30 PM',
+          duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
+          distance: '0.5 miles (flat dirt road walk from car)',
           reservationRequired: false,
-          tips: ['Morning is best — still water for reflections', 'Moose are frequently spotted here', 'Bring binoculars', 'Stay in/near the car', 'iPhone: 2x zoom for the Mt. Moran reflection']
+          tips: ['Flat 0.5mi road walk — perfect for mom', 'Cloudy/rain = moody dramatic barn shots (uncommon angle)', 'Bison are common — stay in or near the car', 'iPhone: shoot through windshield if rain is heavy']
         },
         {
           id: 'a17-3',
-          name: 'Mormon Row — Iconic Barns & Bison',
-          description: 'Drive to the famous Moulton Barns with the Teton Range behind them. Bison often graze in the fields. The T.A. Moulton Barn is the most photographed barn in America.',
-          duration: '45 min',
+          name: 'Oxbow Bend Wildlife Stop',
+          description: 'Drive-up turnout, no walking required. Iconic Mt. Moran reflection on the Snake River oxbow. Moose, beavers, bald eagles often visible. Cloudy weather = animals MORE active than on bluebird days.',
+          startTime: '12:45 PM',
+          endTime: '1:15 PM',
+          duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
+          distance: '0.05 miles (drive-up turnout)',
           reservationRequired: false,
-          tips: ['T.A. Moulton Barn is the classic postcard shot', 'Bison are common — stay in or near the car', 'Morning or evening light is best', 'iPhone: 1x or 2x with barn in foreground, Tetons behind']
+          tips: ['Drive-up — no walking required', 'Moose are MORE active in cool wet weather', 'Binoculars essential, scan willows along river', 'iPhone: 2x zoom for Mt. Moran reflection (still water through rain)']
         },
         {
           id: 'a17-4',
-          name: 'Jackson Lake Lodge — Picture Windows & Lunch',
-          description: 'Visit the historic Jackson Lake Lodge with its famous 60-foot picture windows framing the entire Teton Range. The lobby alone is worth the visit. Grab lunch at the lodge.',
-          duration: '1.5 hours',
+          name: 'Jackson Lake Lodge — Lunch + 60ft Picture Windows (PRIME RAIN ACTIVITY)',
+          description: 'THE main event for a rain day. The historic Jackson Lake Lodge lobby has 60-foot picture windows framing the entire Teton Range — one of the greatest views in any national park, watched from a couch by the fire. Lunch at the Mural Room or quick at Pioneer Grill. Stay 2+ hours — read, photograph, eat, watch the storm move across the range.',
+          startTime: '1:15 PM',
+          endTime: '3:30 PM',
+          duration: '2h 15m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['60-foot windows in the lobby — one of the great views in the national parks', 'Lunch Tree Hill: 1mi easy walk behind the lodge, 360-degree views', 'Comfortable seating to just sit and take in the view']
+          url: 'https://www.gtlc.com/lodges/jackson-lake-lodge',
+          tips: ['60-foot windows in the lobby — one of the great views in the parks', 'Mural Room for lunch (reservation: 307-543-3463) or Pioneer Grill walk-in', 'Couches by the fire = perfect rain-day spot', 'Lunch Tree Hill (0.5mi gentle paved loop behind lodge) if rain breaks — gives 360° views', 'Gift shop + Native American art exhibit indoor']
         },
         {
           id: 'a17-5',
-          name: 'Schwabacher Landing & Jackson Lake Dam',
-          description: 'Schwabacher Landing: short dirt road to the Snake River with iconic Teton reflections (best morning calm water). Then Jackson Lake Dam viewpoint for sweeping lake and mountain views. Signal Mountain Summit Road is usually closed until June 1 — skip it this trip.',
-          duration: '1 hour',
+          name: 'Drive Back to Driggs (Teton Pass)',
+          description: 'Direct return to Driggs via Teton Pass before evening rain peaks (81% precip 7pm). Drop into the dry warm cabin for an early dinner.',
+          startTime: '3:30 PM',
+          endTime: '5:00 PM',
+          duration: '1h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Schwabacher Landing: bumpy dirt road (0.5mi) but any car can handle it', 'Best reflections in early morning calm water', 'Jackson Lake Dam has restrooms and a great viewpoint', 'Signal Mountain road likely CLOSED in late May — opens ~June 1']
+          tips: ['Drive Teton Pass back BEFORE evening precip peak (81% at 7pm)', 'Pull over once at Wilson if rain breaks for a final Teton look', 'Wind 22mph — go slow on the hairpins']
         },
         {
           id: 'a17-6',
-          name: 'Cathedral Group Turnout & Return to Driggs',
-          description: 'Stop at Cathedral Group Turnout along Teton Park Road for the classic postcard view of Grand, Middle, and South Teton. Then drive back over Teton Pass to Driggs for dinner.',
-          duration: '1.5 hours (including drive back)',
+          name: 'Warm Dinner in Driggs',
+          description: 'Get back to the cabin, dry out, then walk to dinner. Forage Bistro (reserve 7pm) for upscale local food. Tatanka Tavern for pizza by the fire. Royal Wolf for casual pub. Tatanka is the cozy pick on a wet night.',
+          startTime: '6:30 PM',
+          endTime: '8:00 PM',
+          duration: '1h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Cathedral Group Turnout is the classic postcard view', 'Late afternoon light on the Tetons is magical', 'Drive back over Teton Pass — last views of the day']
+          tips: ['Tatanka Tavern: cozy pizza + fire = ideal wet-night pick', 'Forage Bistro: upscale, reserve ahead 208-354-2858', 'Skip Royal Wolf on Tue if it\'s slow', 'Pack tonight for Yellowstone tomorrow']
         }
       ],
       accommodation: {
@@ -2000,12 +2013,12 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Third and final night at Mountain Modern Victor House.'
       },
-      notes: ['FULL TETON DAY — no work, all sightseeing', 'Teton Pass drive is dramatic — take it slow', 'All activities are easy/drive-up except Lunch Tree Hill (1mi optional walk)', 'Signal Mountain road likely CLOSED in late May (opens ~June 1) — skip it, do Schwabacher Landing instead', 'Carry bear spray on any trails', 'WILDLIFE: Late May is calving season — moose, bison, bears with cubs'],
+      notes: ['🌧️ RAIN DAY REORGANIZED — Jackson Lake Lodge interior is the centerpiece', '7-10am Colin work block, then 10am leave for Tetons (was earlier)', 'Skip Schwabacher (muddy) + Cathedral Group exterior walk', 'Mormon Row + Oxbow Bend stay (drive-up viewpoints)', 'Jackson Lake Lodge 60ft picture windows = 2hr couch+fire+lunch — the prime rain activity', 'Carry bear spray on Mormon Row + any trails', 'WILDLIFE: animals MORE active in cool wet weather'],
       budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 },
       momNotes: {
         vibes: ['mountain'], energy: 2,
-        blurb: 'Grand Teton! Mountains everywhere, easy viewpoints + Mormon Row. Beautiful.',
-        tip: '🪪 $135 entry for Mom (NEW 2026 non-resident surcharge). Cold sunrise 40°F = hand warmers, beanie, gloves. 50% rain chance — pack rain shell. Oxbow Bend afternoon = best moose habitat.'
+        blurb: 'Tetons rain day — Jackson Lake Lodge 60ft picture windows + lunch by the fire. Cozy.',
+        tip: '🌧️ 69-81% precip today. Plan is reorganized: Mormon Row barns from the road, Oxbow Bend drive-up, then 2hr at Jackson Lake Lodge interior (60ft windows = legendary). Skip Schwabacher (muddy). Pack rain shell + dry-out fleece. Mom\'s $135 GTNP day pass — America the Beautiful covers.'
       }
     },
 
@@ -2022,51 +2035,76 @@ export const tripData: TripData = {
       overnight: 'West Yellowstone, MT',
       drivingDistance: '150 miles (Driggs to West Yellowstone via park)',
       drivingTime: '4 hours (with stops)',
-      weather: { high: 17, low: 1, conditions: '🥶 FREEZING OVERNIGHT 33°F. Targhee Pass possible snow/slush. 62°F/33°F.' },
+      weather: { high: 22, low: 6, conditions: 'Light drizzle, partly cloudy. 72°F/43°F. 47% precip. Much warmer than typical — no snow concerns this year.' },
       activities: [
         {
           id: 'a18-1',
-          name: 'Drive Driggs → Grand Teton (Teton Pass)',
-          description: 'Cross Teton Pass one more time. Enter the park from the south and stop at Schwabacher Landing for Teton reflections in beaver ponds. Last Teton views before heading north.',
-          duration: '1.5 hours',
+          name: 'Drive Driggs → Grand Teton (Teton Pass) — SKIP Schwabacher',
+          description: 'Cross Teton Pass one more time and head north through GTNP. Schwabacher was on the original plan but yesterday\'s rain left the gravel road muddy — skip it. Light drizzle today won\'t stop the geysers but boardwalks will be wet — careful steps.',
+          startTime: '8:30 AM',
+          endTime: '10:00 AM',
+          duration: '1h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Schwabacher+Landing/West+Thumb+Geyser+Basin/Old+Faithful/Grand+Prismatic+Spring+Overlook/West+Yellowstone+MT',
-          tips: ['Schwabacher Landing: flat, easy 0.5mi walk to beaver ponds with Teton reflections', 'Best reflections in early morning with still water', 'Gravel road is fine for any car']
+          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit+WY/West+Thumb+Geyser+Basin+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Madison+Junction+Yellowstone/West+Yellowstone+MT/',
+          tips: ['Skip Schwabacher today (muddy from yesterday\'s rain)', 'Wave goodbye to the Tetons from Teton Pass summit', 'Boardwalks will be wet — careful steps', 'Fill gas in Jackson before entering Yellowstone (last cheap gas)']
         },
         {
           id: 'a18-2',
-          name: 'Drive Through Grand Teton → Yellowstone South Entrance',
-          description: 'Drive north through Grand Teton into Yellowstone via the south entrance. Watch for bison on the road. Stop at West Thumb Geyser Basin right on Yellowstone Lake — a 30min boardwalk loop.',
-          duration: '2 hours (drive + West Thumb)',
+          name: 'West Thumb Geyser Basin — Lakeside Boardwalk',
+          description: 'Drive north through Grand Teton into Yellowstone via the south entrance. Stop at West Thumb Geyser Basin right on Yellowstone Lake — small thermal features along a 0.6mi flat boardwalk, gorgeous lakeshore setting. Fishing Cone (geyser at the lake edge) is the highlight.',
+          startTime: '10:30 AM',
+          endTime: '12:00 PM',
+          duration: '1h 30m (drive + walk)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.5 miles (West Thumb boardwalk)',
-          tips: ['South entrance may have lines — arrive by late morning', 'West Thumb Geyser Basin is right on the lakeshore', 'Fill gas at Grant Village']
+          distance: '0.6 miles (flat boardwalk loop)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/west-thumb-geyser-basin-loop',
+          tips: ['South entrance may have lines — arrive by late morning', 'West Thumb sits right on the lake — beautiful even in light drizzle', 'Fishing Cone = geyser at the water\'s edge, photo highlight', 'Fill gas at Grant Village (last gas before West Yellowstone)']
         },
         {
           id: 'a18-3',
-          name: 'Old Faithful',
-          description: 'Watch the world\'s most famous geyser erupt. Flat boardwalk loop with benches. Eruptions every 60-110 minutes. Check the visitor center for the next predicted time.',
-          duration: '1.5 hours',
+          name: 'Old Faithful — Lunch + Eruption',
+          description: 'World\'s most famous geyser. Flat 0.7mi ABA-accessible boardwalk loop with benches every ~100ft. Eruptions every 60-110min (~94min average). Check the visitor center board for the next predicted time and time your lunch around it. Old Faithful Inn lobby (largest log structure in the world) for lunch + warmth.',
+          startTime: '12:30 PM',
+          endTime: '2:30 PM',
+          duration: '2 hours (incl lunch)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.8 miles (boardwalk loop)',
-          tips: ['Download the GeyserTimes app for eruption predictions', 'Arrive 30min early for good bench seats', 'Old Faithful Inn lobby is worth seeing — largest log structure in the world', 'iPhone: video mode for the eruption, then slo-mo for the peak']
+          distance: '0.7 miles (boardwalk loop, ABA accessible)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/old-faithful-geyser-loop',
+          tips: ['📱 GeyserTimes app for live eruption predictions', 'Time eruption: visitor center board lists next ~94min interval', 'Lunch at Old Faithful Inn dining room or cafeteria during waiting period', 'Inn lobby is HUGE log structure — worth seeing inside', 'iPhone: video mode at eruption, slow-mo for the peak']
         },
         {
           id: 'a18-4',
-          name: 'Grand Prismatic Spring',
-          description: 'The largest hot spring in the US, famous for its vivid rainbow colors. Short boardwalk loop at Midway Geyser Basin.',
-          duration: '45 min',
+          name: 'Grand Prismatic via Fairy Falls Overlook (THE iconic shot)',
+          description: 'Drive to Fairy Falls Trailhead (NOT Grand Prismatic parking — that lot fills + only gives ground-level view). 1.6mi RT, 105ft gentle gain through trees to the elevated overlook with the famous aerial-style view of the rainbow-colored hot spring. Mom-bail: turn back at the 0.5mi marker for a view through trees if the 105ft gain is too much. Backup if mom skips: Midway Geyser Basin boardwalk (0.8mi flat, ground-level).',
+          startTime: '3:00 PM',
+          endTime: '5:00 PM',
+          duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.8 miles (boardwalk)',
-          tips: ['Midway Geyser Basin parking fills up — go mid-afternoon when morning crowds thin', 'Colors best on sunny days when steam is minimal', 'Afternoon (after 1pm) is better for photos: less steam, sun overhead', 'iPhone: 0.5x ultrawide from the boardwalk']
+          distance: '1.6 miles RT (or 0.8mi backup at Midway)',
+          elevation: { gain: 105 },
+          url: 'https://www.alltrails.com/trail/us/wyoming/grand-prismatic-spring-overlook',
+          tips: ['Trailhead is Fairy Falls TH — NOT Grand Prismatic Spring parking', 'Fairy Falls TH fills by 9am, but mid-afternoon often opens up', 'Mom-bail at 0.5mi if 105ft gain is too much — partial view through trees', 'Backup for mom: Midway Geyser Basin (0.8mi flat, ground-level walk over Excelsior + Prismatic)', 'Colors are most vivid afternoon when steam thins out (less steam after 1pm)', 'iPhone: 0.5x ultrawide at the overlook captures the whole spring']
+        },
+        {
+          id: 'a18-4b',
+          name: 'Midway Geyser Basin Backup (if mom skips overlook)',
+          description: 'If the 1.6mi/105ft Fairy Falls overlook is too much, do this instead. Flat 0.8mi ABA-friendly boardwalk over Excelsior Geyser Crater and Grand Prismatic at ground level. You miss the aerial view but you walk right past the spring.',
+          duration: '45 min',
+          optionalSkip: true,
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '0.8 miles (flat boardwalk)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/midway-geyser-basin-trail',
+          tips: ['Use this if Fairy Falls overlook is too long for mom', 'Ground-level view of Grand Prismatic — different angle than the overlook', 'Excelsior Crater is huge and steamy', 'iPhone: shoot through the steam for moody atmosphere']
         },
         {
           id: 'a18-checkin',
@@ -2138,60 +2176,91 @@ export const tripData: TripData = {
       summary: 'Artist Point, Mammoth terraces, Tower Fall, Lamar Valley wildlife',
       location: locations.find(l => l.id === 'yellowstone')!,
       overnight: 'West Yellowstone, MT',
-      weather: { high: 17, low: 1, conditions: '⚠️ SNOW POSSIBLE at Dunraven Pass 8,800ft. Call NPS 307-344-2117 morning-of. 62°F/33°F.' },
+      weather: { high: 26, low: 7, conditions: '✨ BEST DAY — overcast, 12% precip, 78°F/45°F. Perfect for Lamar wildlife + Yellowstone loop. Dunraven Pass almost certainly open at these temps.' },
       activities: [
         {
           id: 'a19-1',
-          name: 'Lamar Valley Wildlife Drive (early AM)',
-          description: 'Early morning drive to the Lamar Valley — the "Serengeti of North America." Dawn to 9am is best. Stay in the car with binoculars. Wolves, bison herds, bears, pronghorn, and elk are all possible.',
-          duration: '2.5 hours',
+          name: 'Lamar Valley Wildlife Drive (5am-9am) — BEST DAY OF TRIP',
+          description: 'THE day to invest energy. Live weather: 45°F dawn, overcast, 8% precip — perfect wildlife conditions (animals more active in cool overcast than bluebird sun). Lamar Valley = "America\'s Serengeti." Leave West Yellowstone 5am, dawn in Lamar by 7am. Pull over every 0.5mi at the marked turnouts. Wolves, bison herds, grizzly bears (cubs!), pronghorn, elk all possible.',
+          startTime: '5:00 AM',
+          endTime: '9:30 AM',
+          duration: '4h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Madison+Junction+Yellowstone/Canyon+Village+Yellowstone/Tower+Fall+Yellowstone/Lamar+Valley/Mammoth+Hot+Springs/West+Yellowstone+MT',
-          tips: ['Leave West Yellowstone by 5am for dawn in Lamar (1.5hr drive via Canyon)', 'Stay in the car — binoculars essential', 'Wolves are best spotted with a scope at distance', 'Bison herds are almost guaranteed', 'Look for bears on hillsides in early morning']
+          distance: '~140 miles drive, 0 hiking',
+          directionsUrl: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Madison+Junction+Yellowstone/Lamar+Valley+Pullouts+Yellowstone/Tower+Fall+Yellowstone/Mammoth+Hot+Springs+Yellowstone/Artist+Point+Yellowstone/West+Yellowstone+MT/',
+          tips: ['🚨 Leave West Yellowstone 5am SHARP — dawn in Lamar by 7am', 'Stay in the car at pullouts — binoculars essential', 'Wolves: scope spotters often gather along the road — join them', 'Bison herds are almost guaranteed', 'Hand warmers for the 45°F dawn standing-around', 'Hot coffee in a thermos before leaving the hotel']
         },
         {
           id: 'a19-2',
-          name: 'Tower Fall Viewpoint',
-          description: 'Short walk from parking to view the 132ft Tower Fall. Quick stop on the way back west.',
+          name: 'Tower Fall Viewpoint (drive-up)',
+          description: '0.2mi short paved path from parking to the 132ft Tower Fall overlook. The trail down to the base is closed (washed out) — don\'t attempt it. Quick stop on the way west from Lamar.',
+          startTime: '9:30 AM',
+          endTime: '10:00 AM',
           duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Very short walk from parking to the overlook', 'The trail down to the base is steep — skip it']
+          distance: '0.2 miles (paved)',
+          elevation: { gain: 30 },
+          url: 'https://www.alltrails.com/trail/us/wyoming/tower-falls-overlook',
+          tips: ['0.2mi paved short walk — perfect for mom', 'Trail to base CLOSED (washed out) — skip it', 'Bathrooms at Tower-Roosevelt junction']
         },
         {
           id: 'a19-3',
-          name: 'Mammoth Hot Springs Terraces',
-          description: 'Boardwalk through stunning travertine terraces formed by hot springs. The terraces constantly change — some are flowing, some are dry. Lower terraces have gentle inclines.',
-          duration: '45 min',
+          name: 'Mammoth Hot Springs — Lower Terraces + Upper Drive',
+          description: 'Lower Terraces 0.75mi boardwalk with gentle inclines (some stairs but well-spaced benches). Travertine terraces constantly change — different shape every visit. Then drive the Upper Terrace one-way loop (paved, all from the car). Elk often lounge on the Mammoth village lawns — bring binoculars.',
+          startTime: '10:30 AM',
+          endTime: '12:00 PM',
+          duration: '1h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.75 miles (lower terraces boardwalk)',
-          tips: ['Lower terraces boardwalk has gentle inclines', 'Upper terraces accessible by car (one-way loop drive)', 'Terraces change constantly — different every visit', 'Fill gas at Mammoth', 'Elk often lounge right on the Mammoth lawns']
+          distance: '0.75 miles boardwalk + 1.5mi drive loop',
+          elevation: { gain: 50 },
+          url: 'https://www.alltrails.com/trail/us/wyoming/porcelain-basin-trail',
+          tips: ['Lower Terraces: 0.75mi boardwalk gentle inclines + stairs (well-spaced benches)', 'Upper Terraces: 1.5mi one-way scenic DRIVE — no hiking', 'Elk often on the Mammoth village lawns — keep distance!', 'Fill gas at Mammoth', 'Lunch at Mammoth Hotel Dining Room or Wonderland Cafe']
         },
         {
           id: 'a19-4',
           name: 'Artist Point — Grand Canyon of the Yellowstone',
-          description: 'Drive back through Canyon Village. Short paved walk to the most iconic viewpoint in Yellowstone: the Grand Canyon of the Yellowstone with Lower Falls (308ft). This is a must-see.',
-          duration: '45 min',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '0.3 miles (paved walk to overlook)',
-          tips: ['Artist Point is THE iconic Yellowstone viewpoint', 'Short paved path from parking', 'Uncle Tom\'s Trail has 300+ stairs — skip it', 'Upper Falls viewpoint is also easy and worth a quick stop']
-        },
-        {
-          id: 'a19-5',
-          name: 'Return to West Yellowstone',
-          description: 'Drive back to West Yellowstone via Madison Junction. Watch for wildlife in the meadows along the Madison River in the evening.',
+          description: 'THE iconic Yellowstone viewpoint. Drive back south to Canyon Village. 0.15mi paved walk from parking to the overlook of the Grand Canyon + Lower Falls (308ft). Mom: easiest big-view stop of the day. Skip Uncle Tom\'s Trail (300+ stairs DOWN — and back up) and Brink of Upper Falls (0.4mi/100ft DOWN — comes back up hard).',
+          startTime: '1:30 PM',
+          endTime: '2:30 PM',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Madison River meadows are great for evening wildlife', 'Fill gas at Canyon Village before heading west', 'Long but incredible day — early dinner in West Yellowstone']
+          distance: '0.15 miles (paved, drive-up)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/artist-point',
+          tips: ['Artist Point is the iconic Yellowstone postcard view', '0.15mi paved from parking — perfect for mom', 'SKIP Uncle Tom\'s (300+ stairs)', 'SKIP Brink of Upper Falls (100ft down = workout coming back)', 'Lookout Point (drive-up 0.1mi) on North Rim Drive is the other easy big view']
+        },
+        {
+          id: 'a19-4b',
+          name: 'Lookout Point + Inspiration Point (North Rim, drive-up)',
+          description: 'On the way back west, swing through North Rim Drive. Lookout Point is a 0.1mi paved walk from the parking lot — postcard shot of Lower Falls from a different angle than Artist Point. Inspiration Point next stop, also 0.1mi paved. Both fully drive-up.',
+          startTime: '2:30 PM',
+          endTime: '3:15 PM',
+          duration: '45 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '0.1mi each (both paved)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/lookout-point',
+          tips: ['Both drive-up — 0.1mi flat from parking lots', 'Different angle on Lower Falls vs Artist Point', 'Skip the Red Rock Point descent (500ft down)', 'Bathrooms at Canyon Village before heading west']
+        },
+        {
+          id: 'a19-5',
+          name: 'Return to West Yellowstone via Madison',
+          description: 'Drive back via Norris Junction → Madison Junction → West Yellowstone. Madison River meadows are prime evening wildlife — elk, bison herds. ~1.5hr drive. Early dinner in West Yellowstone — you\'ve earned it.',
+          startTime: '3:30 PM',
+          endTime: '5:00 PM',
+          duration: '1h 30m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Madison River meadows = evening wildlife', 'Fill gas at Canyon Village BEFORE heading west (long stretch)', 'Long but incredible day — early dinner in West Yellowstone', 'Wild West Pizza or Bullwinkle\'s Saloon for casual', 'Madison Crossing Lounge for upscale']
         }
       ],
       accommodation: {
@@ -2204,7 +2273,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second night — same hotel.'
       },
-      notes: ['FULL YELLOWSTONE DAY — big loop, long but rewarding', 'Leave early (5am) for Lamar Valley wildlife', 'Lamar → Tower Fall → Mammoth → Canyon → West Yellowstone', 'All boardwalk/drive-up activities — no real hiking', 'WILDLIFE: Lamar Valley at dawn — wolves, grizzlies, bison calves', 'Artist Point is a MUST-SEE', 'Dress in warm layers — Yellowstone is cold in late May'],
+      notes: ['✨ BEST DAY of the trip — invest energy here', '5am SHARP departure for Lamar dawn wildlife window', 'Live forecast: overcast 12% precip 78°F afternoon — IDEAL', 'All activities are boardwalk/drive-up (mom-friendly: 0.1-0.75mi)', 'Loop: West YS → Lamar → Tower → Mammoth → Canyon → Artist Point → home', 'Hand warmers for dawn at Lamar (45°F)', 'Bring thermos of coffee from hotel before 5am', 'Artist Point + Lookout Point are mom\'s big-view easy wins'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 0, gas: 40, total: 402 },
       momNotes: {
         vibes: ['mountain'], energy: 3,
@@ -2226,7 +2295,7 @@ export const tripData: TripData = {
       overnight: 'Columbia Falls, MT',
       drivingDistance: '380 miles',
       drivingTime: '5.5 hours',
-      weather: { high: 21, low: 7, conditions: 'Light drizzle clearing → partly cloudy. 70°F/45°F. Lake McDonald cold 40-45°F.' },
+      weather: { high: 24, low: 6, conditions: '⛈️ APGAR STORM (69%, weather code 81 violent rain showers). W.Yellowstone dry → Apgar wet. Robin\'s flight (3:34pm) may be bumpy — check arrival status.' },
       activities: [
         {
           id: 'a20-0',
@@ -2249,7 +2318,7 @@ export const tripData: TripData = {
           seniorFriendly: true,
           reservationRequired: false,
           directionsUrl: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Butte+MT/Missoula+MT/Polson+MT/Columbia+Falls+MT/',
-          tips: ['Leave by 10am after AM work block to arrive 3pm — pick Robin up at FCA 3:34pm', 'Missoula is a great lunch stop — hip college town', 'Polson on Flathead Lake is scenic if you need another stretch break', 'Fill gas in Missoula']
+          tips: ['Leave by 10am after AM work block to arrive 3pm — pick Robin up at FCA 3:34pm', '⛈️ STORM at Apgar arrival (69% precip, code 81 violent showers) — drive into it, plan indoor arrival', '📞 Check Alaska AS 2402 flight status before driving to FCA — may be delayed by Glacier weather', 'Missoula is a great lunch stop — hip college town, Plonk wine bar or Burns St. Bistro', 'Polson on Flathead Lake — skip if storm pushing in', 'Fill gas in Missoula (last cheap before Glacier prices)']
         },
         {
           id: 'a20-checkin',
@@ -2325,67 +2394,79 @@ export const tripData: TripData = {
       id: 'd21',
       dayNumber: 21,
       date: '2026-05-30',
-      title: 'Glacier — All Three — Lake McDonald, Trail of Cedars, Hike',
-      summary: 'Lake McDonald, Trail of Cedars boardwalk, Avalanche Lake hike, colorful rocks',
+      title: 'Glacier — Cedars + Lake McDonald + Lodge Fire (RAIN-DAY)',
+      summary: 'Trail of Cedars mystical in fog, colorful rocks, Lake McDonald Lodge by the fire',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Columbia Falls, MT',
-      weather: { high: 19, low: 7, conditions: 'Clearing — partly cloudy to mainly clear. 67°F/45°F. GTSR ends at Avalanche Creek (Logan Pass closed til mid-June).' },
+      weather: { high: 19, low: 9, conditions: '🌫️ FOG + RAIN (63%, code 45). 66°F/49°F. Avalanche Lake MOVED to Day 22 (clearer). Cedars + Lake McDonald + lodge fire today.' },
       activities: [
         {
           id: 'a21-1',
-          name: 'Lake McDonald Morning',
-          description: 'Drive to the west entrance (20min from Columbia Falls). Walk along the famous colorful rocky shore at Lake McDonald. Clear water over multicolored stones is one of Glacier\'s signature sights.',
-          duration: '1 hour',
+          name: 'Lake McDonald Colorful Rocks (slow morning)',
+          description: 'Drive to the west entrance (20min). Walk the famous colorful rocky shore at Lake McDonald — red/green/blue argillite pebbles. Water actually SATURATES the colors in the wet, more vivid than on a dry day. Apgar Pebble Beach (0.3mi flat from parking) is the gentlest access.',
+          startTime: '9:00 AM',
+          endTime: '10:30 AM',
+          duration: '1h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
+          distance: '0.3 miles (flat to pebble beach)',
           reservationRequired: false,
+          url: 'https://www.alltrails.com/trail/us/montana/apgar-bike-path-and-mcdonald-creek-trail',
           directionsUrl: 'https://www.google.com/maps/dir/Columbia+Falls+MT/Apgar+Visitor+Center+Glacier/Lake+McDonald+Lodge/Trail+of+the+Cedars+Trailhead+Glacier/Apgar+Village+MT/Columbia+Falls+MT/',
-          tips: ['20min from Columbia Falls to West Glacier entrance', 'Famous colorful rocks on the shore', 'Morning calm water = best reflections', 'iPhone: shoot at rock-level for colorful pebbles with mountains behind', 'Park entrance: $35/vehicle or use America the Beautiful pass']
+          tips: ['Pebble beach access from Apgar parking — 0.3mi flat', 'Wet rocks = more saturated colors (counterintuitive but true)', 'iPhone: shoot at rock-level, focus close — pebbles vivid in foreground, misty lake behind', 'Leave the rocks where you find them (federal law)', 'Park entrance: $35/vehicle or America the Beautiful pass']
         },
         {
           id: 'a21-2',
-          name: 'Trail of the Cedars',
-          url: 'https://www.alltrails.com/trail/us/montana/trail-of-the-cedars--2',
-          description: '1mi boardwalk loop through ancient old-growth cedar and hemlock forest. Fully accessible, flat, gorgeous. Everyone does this together.',
-          duration: '30 min',
+          name: 'Trail of the Cedars — MYSTICAL IN FOG',
+          description: 'The Trail of the Cedars boardwalk is at its absolute best in fog and rain — the 500+ year old western red cedars and hemlock canopy turn into a primeval rainforest scene. Boardwalk keeps you out of the mud, canopy keeps the worst rain off. Avalanche Creek gorge viewpoint mid-trail with turquoise water through a narrow chute.',
+          startTime: '11:00 AM',
+          endTime: '12:30 PM',
+          duration: '1h 30m (with photos)',
           difficulty: 'easy',
           seniorFriendly: true,
+          distance: '0.9 miles (boardwalk loop, ABA-accessible)',
+          elevation: { gain: 50 },
           reservationRequired: false,
-          distance: '1 mile (boardwalk loop)',
-          tips: ['Fully easy access boardwalk', 'Old-growth western red cedars — some 500+ years old', 'Gorge viewpoint along the trail is stunning', 'Near the Avalanche Creek trailhead']
+          url: 'https://www.alltrails.com/trail/us/montana/trail-of-the-cedars--2',
+          tips: ['Fully accessible flat boardwalk', 'Cedars 500+ years old, look ancient + mystical in fog', 'Gorge viewpoint mid-trail = turquoise creek through narrow rock chute', 'Carry bear spray — active grizzly area', 'Avalanche Creek 0.7mi bail point if anyone wants a turnaround']
         },
         {
           id: 'a21-3',
-          name: 'Avalanche Lake Hike (Colin + Robin)',
-          url: 'https://www.alltrails.com/trail/us/montana/avalanche-lake--6',
-          description: 'Mom: Trail of the Cedars only (1mi, flat boardwalk) — relax at Lake McDonald Lodge or Apgar Village while Colin and Robin hike. Colin + Robin: continue to Avalanche Lake (5.8mi RT, 730ft gain). Turquoise alpine lake ringed by waterfalls.',
-          duration: '3-4 hours (full hike)',
-          difficulty: 'moderate',
-          seniorFriendly: false,
-          reservationRequired: false,
-          distance: '5.8 miles RT',
-          elevation: { gain: 730 },
-          tips: ['Mom: Trail of the Cedars only — wait at Lake McDonald Lodge or Apgar', 'Colin + Robin: Avalanche Lake is 5.8mi RT, 730ft gain', 'Snow patches possible in late May — bring hiking poles', 'Carry bear spray', 'The lake is surrounded by waterfalls from Sperry Glacier']
+          name: 'Lunch at Lake McDonald Lodge — Russell\'s Fireside',
+          description: 'Historic 1913 lodge with massive stone fireplace and Native American-influenced timber lobby. Lunch at Russell\'s Fireside Dining Room. Sit by the fire afterward — the rain-day equivalent of Jackson Lake Lodge\'s picture windows.',
+          startTime: '12:45 PM',
+          endTime: '2:30 PM',
+          duration: '1h 45m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: true,
+          url: 'https://www.glaciernationalparklodges.com/dining/russells-fireside-dining-room/',
+          tips: ['Reserve: 855-733-4522 (or already booked per car-rental notes)', 'Sit by the fire after lunch — perfect rain afternoon', 'Lake views from the lobby even in fog (atmospheric)', 'Gift shop has good Native American art selection']
         },
         {
           id: 'a21-4',
-          name: 'Afternoon: Lake McDonald Lodge & Apgar Village',
-          description: 'Regroup at Lake McDonald for a relaxed afternoon. Lake McDonald Lodge has a Swiss chalet vibe and is worth exploring inside. Apgar Village has a gift shop, boat rentals, and visitor center.',
-          duration: '2 hours',
+          name: 'DeSmet Boat Tour (if running)',
+          description: '1930 wooden boat 1hr cruise on Lake McDonald. $22/person. Runs in light rain but cancels in heavy storms — call morning-of. If cancelled, swap for Apgar Visitor Center indoor exhibits.',
+          startTime: '3:00 PM',
+          endTime: '4:30 PM',
+          duration: '1h 30m',
+          optionalSkip: true,
           difficulty: 'easy',
           seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Lake McDonald Lodge has a Swiss chalet vibe', 'Apgar Village has a gift shop and visitor center', 'Kayak/canoe rentals at Apgar if available', 'Water is cold — kayaking only, no swimming!']
+          reservationRequired: true,
+          tips: ['📞 406-257-2426 morning-of to confirm running', '$22/person, 1hr cruise', 'Historic 1930 wooden boat', 'BACKUP: Apgar Visitor Center + nature trail (covered)']
         },
         {
           id: 'a21-5',
           name: 'Celebration Dinner — Last Night Together',
-          description: 'Cook a final meal in the condo (full kitchen) or go out for a nice dinner. Celebrate an incredible 21-day trip.',
-          duration: '2 hours',
+          description: 'Drive back to Columbia Falls (or Whitefish 15min). Full kitchen at the condo lets you cook an intimate last meal. Or splurge: Belton Chalet in West Glacier for upscale Montana cuisine.',
+          startTime: '6:00 PM',
+          endTime: '8:30 PM',
+          duration: '2h 30m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Cook at the condo — more intimate last meal', 'Or: Belton Chalet for upscale Montana cuisine (in West Glacier)', 'Whitefish restaurants (15min drive) are also excellent', 'Pack tonight — flight day tomorrow!']
+          tips: ['Cook at the condo — more intimate last meal', 'Or: Belton Chalet for upscale Montana cuisine (West Glacier)', 'Whitefish 15min drive — Causeway, Tupelo Grille are excellent', 'PACK TONIGHT — Colin+Robin Avalanche hike at 5:30am tomorrow!', 'Set 3 alarms: 5:00am wake, 5:30am depart for hike']
         }
       ],
       accommodation: {
@@ -2398,7 +2479,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Second and final night. All 3 together. Pack tonight for tomorrow\'s flights.'
       },
-      notes: ['ALL THREE TOGETHER — Robin\'s full day in Glacier (Saturday)', 'Trail of the Cedars is the must-do for everyone', 'Avalanche Lake is Colin + Robin only (Mom waits at lodge/Apgar)', 'Going-to-the-Sun Road only open to Avalanche Creek area in late May', 'No vehicle reservations needed for 2026', 'CELEBRATION DINNER — what an incredible trip!'],
+      notes: ['🌫️ FOG + RAIN DAY REORGANIZED — cedars + lake + lodge fire', 'Avalanche Lake hike MOVED to Day 22 morning (clearer + Colin+Robin only)', 'Trail of the Cedars is MAGICAL in fog — primeval rainforest vibe', 'Russell\'s Fireside lunch + fire at Lake McDonald Lodge = rain-day centerpiece', 'DeSmet boat 406-257-2426 morning-of to confirm running in rain', 'GTSR only open to Avalanche Creek (Logan Pass closed til mid-June)', 'No vehicle reservations needed for 2026', 'EARLY NIGHT — Avalanche hike at 5:30am tomorrow!'],
       budgetBreakdown: { accommodation: 196, food: 100, activities: 35, gas: 15, total: 346 },
       momNotes: {
         vibes: ['mountain'], energy: 3,
@@ -2418,45 +2499,80 @@ export const tripData: TripData = {
       summary: 'Morning at the lake, return rental car, fly home',
       location: locations.find(l => l.id === 'glacier')!,
       overnight: 'Home!',
-      weather: { high: 23, low: 7, conditions: 'Overcast, dry. 73°F/44°F. Comfortable mild departure day.' },
+      weather: { high: 26, low: 6, conditions: '☀️ Best Glacier morning — overcast clearing, 28% precip, 79°F/42°F. Avalanche Lake hike (Colin+Robin) relocated here 5:30-8:45am.' },
       activities: [
         {
           id: 'a22-1',
-          name: 'Morning at Lake McDonald (optional)',
-          description: 'If flights are afternoon, one last morning visit to Lake McDonald for quiet shoreline time. The colorful rocks at sunrise are magical.',
+          name: 'Avalanche Lake Hike (Colin + Robin) — RELOCATED FROM DAY 21',
+          description: 'Day 22 morning has the clearer weather (was overcast/dry vs Day 21\'s fog/63% rain). Leave Apgar 5:30am to be on trail at 5:45am. 4.6mi RT, 757ft gain, 3hr total. Turquoise alpine lake ringed by waterfalls from Sperry Glacier. Back to cabin by 9:00am — plenty of time for 10am checkout. Mom does Apgar pebble beach instead (parallel activity).',
+          startTime: '5:30 AM',
+          endTime: '9:00 AM',
+          duration: '3h 30m (incl drive)',
+          difficulty: 'moderate',
+          seniorFriendly: false,
+          reservationRequired: false,
+          distance: '4.6 miles RT',
+          elevation: { gain: 757 },
+          url: 'https://www.alltrails.com/trail/us/montana/avalanche-lake--6',
+          directionsUrl: 'https://www.google.com/maps/dir/Apgar+Village+MT/Avalanche+Lake+Trailhead+Glacier/Apgar+Village+MT/',
+          tips: ['Leave Apgar 5:30am — first light, no crowds, wildlife active', 'Carry bear spray (active grizzly area)', 'Snow patches possible upper trail — hiking poles useful', 'Lake is turquoise with waterfalls from Sperry Glacier above', 'Back by 9am — pack/checkout 10am no problem']
+        },
+        {
+          id: 'a22-2',
+          name: 'Mom: Apgar Pebble Beach Morning (parallel to Avalanche hike)',
+          description: 'Mom\'s peaceful last morning while Colin+Robin hike. 0.3mi flat walk from cabin to Apgar Pebble Beach — the famous colored rocks. Coffee/pastry at Eddie\'s Cafe (opens 6:30am, huckleberry pie + good coffee). Sit lake-side, watch the light come up on the Howe Ridge across the water. 70°F by 8am — gorgeous.',
+          startTime: '6:30 AM',
+          endTime: '9:00 AM',
+          duration: '2h 30m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          distance: '0.3 miles (flat to pebble beach)',
+          reservationRequired: false,
+          tips: ['Eddie\'s Cafe Apgar — huckleberry pie + coffee, opens 6:30am', '0.3mi flat from cabin to pebble beach', 'Bring a book or just sit and watch the lake wake up', 'Mom\'s last morning in the mountains — give it space', 'Back at cabin by 9am to pack with Colin+Robin']
+        },
+        {
+          id: 'a22-3',
+          name: 'Pack + Check Out',
+          description: 'Reunite at 9am, pack up. Last condo coffee. Check out by 10am sharp (window enforced).',
+          startTime: '9:00 AM',
+          endTime: '10:00 AM',
           duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Only if flights are afternoon — skip if morning departure', 'Morning calm water = best reflections on the lake', 'Say goodbye to the mountains']
+          tips: ['10am checkout window is firm', 'Last condo coffee + huckleberry breakfast', 'Confirm all 3 boarding passes downloaded']
         },
         {
-          id: 'a22-2',
-          name: 'Breakfast & Check Out',
-          description: 'Last breakfast at the condo. Pack up and check out. Drive 15 min to FCA airport.',
-          duration: '1.5 hours',
+          id: 'a22-4',
+          name: 'Lunch in Whitefish or Columbia Falls + Drive to FCA',
+          description: 'Quick lunch in Whitefish (15min) or Columbia Falls before splitting up. Mom\'s flight is first (2:30pm) so prioritize getting her to FCA by 1:00pm. Return rental car at FCA when Colin/Robin head in for their flight.',
+          startTime: '10:00 AM',
+          endTime: '1:00 PM',
+          duration: '3 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['FCA is only 15 min from Columbia Falls', 'Return rental car at FCA airport', 'Small airport — no TSA chaos']
+          tips: ['Causeway in Whitefish for a great last lunch', 'Or Tupelo Grille (Whitefish) — Cajun-meets-Montana', 'FCA is 15min from Columbia Falls, 25min from Whitefish', 'Drop Mom at FCA by 1:00pm for her 2:30pm Delta flight']
         },
         {
-          id: 'a22-3',
+          id: 'a22-5',
           name: 'Fly Home',
-          description: 'Mom: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm (conf G5FIWA). Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY). Robin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm (same flight as Colin).',
+          description: 'Mom: Delta DL 2575 FCA 2:30pm→MSP 6:15pm + DL 3866 MSP 8:05pm→YYZ 11:14pm (conf G5FIWA). Colin + Robin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm (Colin First Class conf ZAAGXY).',
+          startTime: '2:30 PM',
+          endTime: 'End of trip',
           duration: 'All day',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: true,
-          tips: ['FCA is a small, easy airport — very manageable', 'Arrive 1.5hrs before departure', 'Mom departs first at 2:30pm (Delta to MSP then YYZ)', 'Colin departs 5:40pm (Alaska AS 2419 First Class to SEA)', 'Robin + Colin: Alaska AS 2419 FCA 5:40pm→SEA 6:12pm', 'What an incredible 22-day trip!']
+          tips: ['FCA is a small, easy airport — very manageable', 'Mom departs 2:30pm (Delta to MSP then YYZ, arrives 11:14pm)', 'Colin+Robin departs 5:40pm (Alaska AS 2419 to SEA, arrives 6:12pm)', 'Return rental car at FCA when Colin+Robin go in', 'What an incredible 22-day trip!']
         }
       ],
-      notes: ['FLIGHT DAY — morning lake (optional), then airport', 'Return rental car at FCA airport', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm (conf G5FIWA)', 'Colin: AS 2419 FCA 5:40pm→SEA 6:12pm First Class (conf ZAAGXY)', 'Robin + Colin: AS 2419 FCA 5:40pm→SEA 6:12pm — BOOKED', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
+      notes: ['🥾 AVALANCHE HIKE RELOCATED here from Day 21 — clearer weather (overcast clearing 28% vs Day 21 fog 63%)', 'Colin+Robin: 5:30am leave, 5:45am on trail, 9am back to cabin', 'Mom: 0.3mi Apgar pebble beach + Eddie\'s Cafe huckleberry pie morning', '10am checkout HARD STOP', 'Mom: DL 2575 FCA 2:30pm→MSP, DL 3866 MSP→YYZ 11:14pm', 'Colin: AS 2419 FCA 5:40pm→SEA First Class', 'Robin + Colin: AS 2419 FCA 5:40pm→SEA — same flight', '22 days, 6 national parks, Las Vegas to Glacier — trip of a lifetime!'],
       budgetBreakdown: { accommodation: 0, food: 30, activities: 0, gas: 0, total: 30 },
       momNotes: {
         vibes: ['fly', 'mountain'], energy: 1,
-        blurb: 'Morning by the lake. Fly home from Kalispell.',
-        tip: '🌅 Sunrise at Lake McDonald (Apgar pier 5min). Eddie\'s Cafe huckleberry pie. Leave Apgar by 12pm HARD to make 2:30pm flight.'
+        blurb: 'Apgar pebble beach morning with huckleberry pie. Fly home from Kalispell.',
+        tip: '☀️ Best Glacier morning of the trip (overcast clearing, 79°F afternoon). Colin+Robin do Avalanche Lake 5:30-9am. Mom: 0.3mi flat walk to pebble beach + Eddie\'s Cafe coffee. 10am checkout HARD. Mom\'s flight 2:30pm.'
       }
     }
   ],
