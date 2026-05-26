@@ -131,12 +131,12 @@ export const tripData: TripData = {
     {
       id: 'slc_tetons',
       name: 'SLC & Tetons',
-      summary: 'Salt Lake City, Driggs, Grand Teton',
+      summary: 'Salt Lake City, Teton Valley, Grand Teton',
       days: [11, 12, 13, 14, 15, 16, 17],
       startDay: 11,
       endDay: 17,
       color: '#22c55e',
-      highlights: ['Temple Square', 'Natural History Museum', 'Teton Valley from Driggs', 'Oxbow Bend', 'Mormon Row', 'Schwabacher Landing']
+      highlights: ['Temple Square', 'Natural History Museum', 'Teton Valley views', 'Oxbow Bend', 'Mormon Row', 'Schwabacher Landing']
     },
     {
       id: 'yellowstone_glacier',
@@ -430,11 +430,10 @@ export const tripData: TripData = {
         reviewSource: 'TripAdvisor (4.5/5)',
         address: '3535 Las Vegas Blvd South, Las Vegas, NV',
         website: 'https://www.caesars.com/linq',
-        bookingUrl: 'https://www.hotels.com/',
         amenities: ['Pool', 'Center Strip', 'Free WiFi', 'Casino', 'Bacchanal Buffet next door', 'Spa'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Hotels.com #73410152077445. Room paid via OneKeyCash. Resort fee $56.63 at check-in. 3535 Las Vegas Blvd South.'
+        notes: 'BOOKED · Hotels.com conf #73410152077445 · Room paid via OneKeyCash · Resort fee $56.63 at check-in · 3535 Las Vegas Blvd South'
       },
       notes: ['ARRIVAL DAY — buffet + Fremont St', 'Vegas hotels are cheap on Sundays', 'Resort fees ~$40-50/night extra (not included in room rate)', 'Hydrate — desert air is very dry', 'Only 1 night in Vegas — pack it in!'],
       budgetBreakdown: { accommodation: 57, food: 100, activities: 0, gas: 0, total: 157 },
@@ -530,7 +529,7 @@ export const tripData: TripData = {
         amenities: ['Inside park', 'Free shuttle', 'Free parking', 'Dining on-site'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Maswik Lodge, Standard 2 Queen North. 20% discount rate $255.99/night. Xanterra #20514347. Cancel penalty after May 9. Phone: 888-297-2757.'
+        notes: 'BOOKED · Xanterra conf #20514347 · Maswik Lodge Standard 2Q North · 20% discount rate $255.99/n · $273.65 deposit paid · 📞 888-297-2757 · Inside park'
       },
       notes: ['DRIVING DAY + canyon PM', 'Route goes through Route 66 town of Williams', 'GC elevation 7,000ft — may feel altitude', 'Pack layers for evening', 'BOOK El Tovar dinner for tomorrow NOW — 60 day window at grandcanyonlodges.com'],
       budgetBreakdown: { accommodation: 274, food: 80, activities: 35, gas: 55, total: 444 },
@@ -714,11 +713,10 @@ export const tripData: TripData = {
         priceRange: '$170.67/night',
         pricePerNight: 171,
         address: '871 Sandpiper Dr, Page, AZ 86040',
-        website: 'https://www.airbnb.com/page-az/stays',
         amenities: ['2 bedrooms', 'Downtown Page', 'Walking to restaurants', 'Kitchen'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Airbnb HMYET8RCAK. $669.27 total ($170.67/n x 3 + fees). Hosted by Sarah & Jeremy. Check-in 3pm, out 11am. Paid 4/15 Visa 6386.'
+        notes: 'BOOKED · Airbnb conf HMYET8RCAK · Hosted by Sarah & Jeremy · $669.27 paid (Visa 6386) · Check-in 3pm, out 11am · 871 Sandpiper Dr Page AZ'
       },
       notes: ['Drive + Horseshoe Bend sunset', 'Horseshoe Bend is 1.5mi with stairs — moderate', 'Bring water and hat', '3 nights in Page coming up'],
       budgetBreakdown: { accommodation: 171, food: 70, activities: 10, gas: 30, total: 281 },
@@ -946,11 +944,10 @@ export const tripData: TripData = {
         priceRange: '$392/night',
         pricePerNight: 392,
         address: '3442 Tierra del Sol Dr, Moab, UT 84532',
-        website: 'https://www.airbnb.com/',
         amenities: ['Hot tub', 'Pool', 'Kitchen', 'Views', 'Patio', 'Smart lock'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Airbnb HMAW5TWC9Q. $1,778.43 total ($392/n x 4 + fees). Hosted by Patrick & Angie. Check-in 4pm, out 10am. $784 paid 4/15, $994.43 due 5/1. Visa 6386.'
+        notes: 'BOOKED · Airbnb conf HMAW5TWC9Q · Hosted by Patrick & Angie · $1,778.43 paid (Visa 6386) · Check-in 4pm, out 10am · 3442 Tierra del Sol Dr Moab UT'
       },
       notes: ['HALF WORK + DRIVING DAY', 'Monument Valley is an optional stop — can skip to arrive earlier', 'FILL GAS in Page or Kayenta before Navajo Nation stretch', 'Pack food — limited services between Page and Moab', 'Arrive Moab by evening'],
       budgetBreakdown: { accommodation: 392, food: 70, activities: 10, gas: 55, total: 527 },
@@ -1511,7 +1508,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['HSL for craft cocktails and small plates', 'Valter\'s Osteria for Italian', 'Pack tonight — heading to Driggs tomorrow']
+          tips: ['HSL for craft cocktails and small plates', 'Valter\'s Osteria for Italian', 'Pack tonight — heading to Teton Valley (Victor cabin) tomorrow']
         }
       ],
       accommodation: {
@@ -1524,7 +1521,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'Fourth and final night in SLC. BOOKED via Airbnb HMN2P4MBR9.'
       },
-      notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Driggs drive tomorrow'],
+      notes: ['EXPLORE DAY — museums, nature, views', 'Natural History Museum is a highlight', 'Antelope Island: bison from the car, great for seniors', 'Ensign Peak: short hike, huge views', 'Saturday in SLC — relaxed pace', 'Pack tonight for Teton Valley drive tomorrow'],
       budgetBreakdown: { accommodation: 314, food: 80, activities: 18, gas: 0, total: 412 },
       momNotes: {
         vibes: ['city'], energy: 2,
@@ -1540,8 +1537,8 @@ export const tripData: TripData = {
       id: 'd15',
       dayNumber: 15,
       date: '2026-05-24',
-      title: 'Half Work AM + SLC → Driggs',
-      summary: 'Morning work, afternoon drive to Teton Valley',
+      title: 'SLC → Victor / Teton Valley',
+      summary: 'Morning work, afternoon drive via Pocatello + Swan Valley to Victor (Teton Valley)',
       location: locations.find(l => l.id === 'driggs')!,
       overnight: 'Victor, ID (Teton Valley)',
       drivingDistance: '285 miles',
@@ -1558,7 +1555,7 @@ export const tripData: TripData = {
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Top off gas in SLC — next reliable fuel is Tremonton (Exit 379) or Pocatello', 'Confirm Driggs Airbnb HM2FC8WSJ8 door code BEFORE leaving — cell is patchy on Pine Creek Pass', 'Download offline Google Maps for the Idaho Falls → Driggs segment', 'Reserve Forage Bistro for 7:30pm if that\'s the dinner pick']
+          tips: ['Top off gas in SLC — next reliable fuel is Tremonton (Exit 379) or Pocatello', 'Confirm Victor cabin HM2FC8WSJ8 door code BEFORE leaving — cell is patchy on Pine Creek Pass', 'Download offline Google Maps for the Idaho Falls → Victor segment', 'Reserve Forage Bistro for 7:30pm if that\'s the dinner pick']
         },
         {
           id: 'a15-2',
@@ -1601,8 +1598,8 @@ export const tripData: TripData = {
         },
         {
           id: 'a15-5',
-          name: 'Pine Creek Pass → Victor → Driggs',
-          description: 'ID-31 winds over Pine Creek Pass (6,720ft) through Targhee NF. Coming down into Teton Valley you get the first Teton reveal from the west side. Pullout on ID-31 just before Victor for the wide-open shot. Then ID-33 north to Driggs.',
+          name: 'Pine Creek Pass → Victor (cabin)',
+          description: 'ID-31 winds over Pine Creek Pass (6,720ft) through Targhee NF. Coming down into Teton Valley you get the first Teton reveal from the west side. Pullout on ID-31 just before Victor for the wide-open shot. Then continue 5 min into Victor to the cabin (NOT north to Driggs — cabin is south).',
           startTime: '5:55 PM',
           endTime: '6:55 PM',
           duration: '1 hour (45min drive + 15min overlook)',
@@ -1613,7 +1610,7 @@ export const tripData: TripData = {
         },
         {
           id: 'a15-checkin',
-          name: 'Check In Driggs Airbnb + Unpack',
+          name: 'Check In Victor Cabin + Unpack',
           description: 'Mountain Modern Victor House, 8487 Caribou Ct, Victor ID. Keypad self check-in. 3-night stay. Unpack, settle in, breathe the mountain air.',
           startTime: '6:55 PM',
           endTime: '7:30 PM',
@@ -1644,29 +1641,28 @@ export const tripData: TripData = {
         priceRange: '$295.16/night (after $460 discount)',
         pricePerNight: 295,
         address: '8487 Caribou Ct, Victor, ID 83455',
-        website: 'https://www.airbnb.com/',
         amenities: ['Keypad self check-in', 'Mountain modern design', 'Kitchen', '2 bedrooms'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Airbnb HM2FC8WSJ8. $885.47 total ($381.67/n x 3, $460 discount). Hosted by Cristine. Check-in 4pm, out 10am. Paid 4/15 Visa 6386. Non-refundable.'
+        notes: 'BOOKED · Airbnb conf HM2FC8WSJ8 · Hosted by Cristine · $885.47 paid (Visa 6386) · Check-in 4pm, out 10am · Keypad self check-in · Non-refundable · 8487 Caribou Ct Victor ID'
       },
-      notes: ['HALF WORK + DRIVING DAY', 'Driggs is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
+      notes: ['HALF WORK + DRIVING DAY', 'Victor / Teton Valley is cheaper than Jackson and has great Teton views', 'Cooler temps — bring layers', 'Sunday drive — light traffic on I-15 northbound'],
       budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 55, total: 420 },
       momNotes: {
         vibes: ['drive', 'mountain'], energy: 2,
-        blurb: 'Drive SLC→Driggs through Idaho. Tetons come into view late afternoon. Cooler temps now.',
-        tip: '🦌 Buddy\'s Italian Pocatello (Exit 69) lunch ~2:30pm. Pine Creek Pass via Swan Valley — moose/elk dusk window. Sunset Driggs 8:52pm MDT. Driggs is at 6,100ft — chilly evening (50°F), bring a fleece.'
+        blurb: 'Drive SLC → Victor (Teton Valley) via Pocatello + Swan Valley. Tetons come into view late afternoon. Cooler temps now.',
+        tip: '🦌 Buddy\'s Italian Pocatello (Exit 69) lunch ~2:30pm. Pine Creek Pass via Swan Valley — moose/elk dusk window. Sunset 8:52pm MDT. Victor cabin at 6,100ft — chilly evening (50°F), bring a fleece.'
       },
       driveRoute: {
         from: 'Salt Lake City, UT',
-        to: 'Driggs, ID (Teton Valley)',
+        to: 'Victor, ID (Teton Valley) — cabin',
         miles: 285,
         driveHours: 4.75,
         departure: '12:00 noon MDT',
         arrival: '~6:30pm MDT',
         sunset: '8:52pm MDT',
-        forecast: 'Sunny all the way. SLC 73°F → Pocatello 70°F → Driggs 57°F (40°F overnight at 6,100ft). Light fleece for the evening.',
-        tldr: 'I-15 N → Idaho Falls → US-26 E through Swan Valley & Palisades Reservoir → ID-31 over Pine Creek Pass → Victor → Driggs. Same drive time as the direct ID-33 route but the prettiest stretch of the day — Snake River, reservoir, dusk wildlife window, real mountain pass dropping into Teton Valley.',
+        forecast: 'Sunny all the way. SLC 73°F → Pocatello 70°F → Victor 57°F (40°F overnight at 6,100ft). Light fleece for the evening.',
+        tldr: 'I-15 N → Idaho Falls → US-26 E through Swan Valley & Palisades Reservoir → ID-31 over Pine Creek Pass → Victor (cabin). Same drive time as the direct ID-33 route but the prettiest stretch of the day — Snake River, reservoir, dusk wildlife window, real mountain pass dropping into Teton Valley.',
         stops: [
           {
             name: "Buddy's Italian, Pocatello",
@@ -1699,7 +1695,7 @@ export const tripData: TripData = {
             note: 'ID-31 winds over the pass through Targhee NF. First Teton reveal coming down into Teton Valley. Pullout on ID-31 just before Victor.',
           },
           {
-            name: 'Driggs check-in + dinner',
+            name: 'Victor cabin check-in + Driggs dinner',
             type: 'view',
             driveFromPrev: '10 min on ID-33',
             timeNeeded: 'evening',
@@ -1709,22 +1705,22 @@ export const tripData: TripData = {
         ],
         alternatives: [
           { name: 'Direct I-15 → ID-33 (fastest)', verdict: 'maybe', why: 'Save 30 min but skip the prettiest hour. Use if leaving SLC after 1:30pm.' },
-          { name: 'Logan Canyon → Bear Lake', verdict: 'skip', why: '+90 min, Bear Lake water 54°F (look not swim), arrives Driggs in twilight.' },
+          { name: 'Logan Canyon → Bear Lake', verdict: 'skip', why: '+90 min, Bear Lake water 54°F (look not swim), arrives Victor in twilight.' },
           { name: 'Heber → Star Valley → Teton Pass', verdict: 'skip', why: '7+ hours, arrives after dark, burns Tuesday\'s Grand Teton reveal.' },
-          { name: 'Mesa Falls Scenic Byway', verdict: 'save', why: 'Save for a half-day from Driggs — 90 min RT from Driggs, $5/car, 0.6mi boardwalk to 114-ft falls.' },
-          { name: 'Harriman SP (trumpeter swans)', verdict: 'save', why: 'Save for a half-day from Driggs — 65 min north near Island Park.' },
+          { name: 'Mesa Falls Scenic Byway', verdict: 'save', why: 'Save for a half-day from Victor — 90 min RT, $5/car, 0.6mi boardwalk to 114-ft falls.' },
+          { name: 'Harriman SP (trumpeter swans)', verdict: 'save', why: 'Save for a half-day from Victor — 65 min north near Island Park.' },
           { name: 'Antelope Island', verdict: 'skip', why: 'Wrong direction from SLC + May = peak gnat season.' },
         ],
         contingencies: [
-          'If leaving SLC after 1:30pm: drop Swan Valley detour. Take direct I-15 → US-20 → ID-33. Eat lunch at Sandpiper in Idaho Falls. Arrive Driggs ~6:30pm.',
+          'If leaving SLC after 1:30pm: drop Swan Valley detour. Take direct I-15 → US-20 → ID-33. Eat lunch at Sandpiper in Idaho Falls. Arrive Victor cabin ~6:30pm.',
           'If it rains: Pine Creek Pass is paved/fine but wildlife drops off. Skip Victor pullout. Lava Hot Springs (Exit 47, $12-15) becomes a great rain play.',
           'Pine Creek Pass essentially never closes May–Oct. Teton Pass not on this route. Check Idaho 511 morning-of.',
           'Wildfire smoke / air quality alert: skip outdoor stops, drive direct with Pocatello lunch only.',
         ],
         preDeparture: [
           'Top off gas in SLC (next reliable gas: Tremonton Exit 379 or Pocatello).',
-          'Confirm Driggs Airbnb (HM2FC8WSJ8) check-in time + door code BEFORE leaving SLC — cell is patchy on Pine Creek Pass.',
-          'Download offline Google Maps for the Idaho Falls → Driggs segment.',
+          'Confirm Victor cabin (HM2FC8WSJ8) check-in time + door code BEFORE leaving SLC — cell is patchy on Pine Creek Pass.',
+          'Download offline Google Maps for the Idaho Falls → Victor segment.',
           'Reserve Forage Bistro for 7:30pm Sunday if that\'s the dinner pick.',
           'Check Idaho 511 + Wyoming 511 for Memorial Day Sunday Jackson-bound traffic.',
           'Pack: light fleece, water bottles, sunglasses, sunscreen (high elevation), walking shoes, snacks.',
@@ -1739,52 +1735,117 @@ export const tripData: TripData = {
       id: 'd16',
       dayNumber: 16,
       date: '2026-05-25',
-      title: 'Work Day — Driggs',
-      summary: 'Colin works full day, Mom: town walk and Teton views',
-      location: locations.find(l => l.id === 'driggs')!,
+      title: 'Tetons Day — Schwabacher Reflection + Mormon Row + Jackson Lake',
+      summary: 'Reflection view at Schwabacher, Mormon Row barns, Jackson Lake Lodge, String Lake',
+      location: locations.find(l => l.id === 'teton')!,
       overnight: 'Victor, ID (Teton Valley)',
-      weather: { high: 23, low: 9, conditions: 'Overcast, dry, breezy. 74°F/48°F. 18% precip. Memorial Day comfortable.' },
+      weather: { high: 24, low: 9, conditions: 'Sunny morning → light rain shower 3-5pm. 75°F/48°F. Wind 28mph at 3pm. Great Tetons day.' },
       activities: [
         {
           id: 'a16-1',
-          name: 'Colin Works — Cabin or Cafe (Full Day)',
-          description: 'Full work day. Work from cabin (WiFi) or walk to Citizen 33 coffee shop in downtown Driggs.',
-          duration: '8 hours',
+          name: 'Yostmark Mountain Equipment — Bear Spray',
+          description: 'Quick stop in Driggs for 2 cans of bear spray ($50-55 each Counter Assault or UDAP) before heading to the Tetons. Yostmark is on Main St in downtown Driggs, 10min from the Victor cabin.',
+          startTime: '10:35 AM',
+          endTime: '10:50 AM',
+          duration: '15 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Citizen 33: downtown Driggs, good coffee and WiFi', 'Cabin WiFi should be decent', 'Memorial Day Monday — some shops may have holiday hours']
+          url: 'https://yostmark.com/',
+          tips: ['📞 208-354-2828 to confirm stock', '12 N Main St, Driggs', 'Note expiry date on cans', 'Backup: Peaked Sports 70 E Little Ave, Driggs']
         },
         {
           id: 'a16-2',
-          name: 'Mom Solo: Driggs Town Walk & Teton Views',
-          description: 'Walk downtown Driggs (flat, 2 blocks). Browse shops, grab coffee. Walk east on any side road for open Teton views across the farm fields. The setting is peaceful and beautiful.',
-          duration: '3-4 hours',
+          name: 'Drive Victor → Teton Pass → GTNP',
+          description: 'Cross Teton Pass (8,431ft) from Idaho side into Jackson Hole. Hairpin turns and stunning views from the summit pullout. Enter Grand Teton from the south.',
+          startTime: '11:00 AM',
+          endTime: '12:00 PM',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Downtown is tiny but charming — 2 blocks', 'Walk east toward the Tetons for open field views', 'Barrels & Bins for groceries and local goods', 'Peaked Sports for outdoor gear window shopping', 'Teton views from town are spectacular on clear days']
+          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Schwabacher+Landing+WY/Jackson+Lake+Lodge+WY/String+Lake+Trailhead+Grand+Teton/Victor+ID/',
+          tips: ['Pullover at Teton Pass summit for the wide-open shot', 'America the Beautiful pass covers entry']
         },
         {
           id: 'a16-3',
-          name: 'Mom Solo: Alta, WY Drive (optional)',
-          optionalSkip: true,
-          description: 'Short drive east to Alta, Wyoming — a tiny mountain community at the base of the Tetons. Grand Targhee Resort is up the canyon with mountain views and a nice lodge to explore.',
-          duration: '2 hours',
+          name: 'Mormon Row — Iconic Barns + Bison',
+          description: '0.5mi flat road walk along the dirt road to T.A. Moulton Barn — most photographed barn in America with full Teton range behind it. Bison often graze in the fields.',
+          startTime: '12:00 PM',
+          endTime: '12:35 PM',
+          duration: '35 min',
           difficulty: 'easy',
           seniorFriendly: true,
+          distance: '0.5 miles (flat road)',
           reservationRequired: false,
-          tips: ['12mi drive from Driggs to Alta/Grand Targhee', 'Grand Targhee has a restaurant and nice mountain setting', 'Road is paved and easy']
+          url: 'https://www.alltrails.com/trail/us/wyoming/mormon-row-historic-district',
+          tips: ['T.A. Moulton Barn = the classic shot', 'Bison common — stay near the car', 'Sunny morning = bluebird Teton backdrop']
         },
         {
           id: 'a16-4',
-          name: 'Dinner Together',
-          description: 'Reconnect for dinner in Driggs.',
-          duration: '1.5 hours',
+          name: 'Oxbow Bend — Mt. Moran Reflection #1',
+          description: 'Drive-up turnout (no walking). Iconic Mt. Moran reflected in the Snake River oxbow. Moose, beavers, bald eagles common. Bring binoculars.',
+          startTime: '12:45 PM',
+          endTime: '1:15 PM',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          distance: '0.05 miles (drive-up)',
+          reservationRequired: false,
+          tips: ['Drive-up — no walking required', 'Binoculars for moose in the willows', 'iPhone: 2x zoom for the Mt. Moran reflection']
+        },
+        {
+          id: 'a16-5',
+          name: 'Schwabacher Landing — THE Reflection View',
+          description: 'The iconic Mt. Moran + Tetons reflected in beaver ponds along the Snake River. This is the postcard shot Mom remembered. 0.5mi gravel road off US-191 to parking, then 1.4mi flat dirt path along the river.',
+          startTime: '1:15 PM',
+          endTime: '2:45 PM',
+          duration: '1h 30m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          distance: '1.4 miles (flat dirt path)',
+          reservationRequired: false,
+          url: 'https://www.alltrails.com/trail/us/wyoming/schwabacher-landing-trail',
+          tips: ['Be done by 2:45pm — 3pm forecast brings 28mph wind + rain shower', 'Shoot at water level for the reflection', 'Flat dirt — sturdy walking shoes fine']
+        },
+        {
+          id: 'a16-6',
+          name: 'Lunch at Jackson Lake Lodge — 60ft Picture Windows',
+          description: 'Indoor refuge during the 3pm wind/rain. Historic lodge with 60-foot picture windows framing the entire Teton range. Mural Room or Pioneer Grill for lunch, fire-side couch afterward.',
+          startTime: '2:45 PM',
+          endTime: '4:00 PM',
+          duration: '1h 15m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Forage Bistro for upscale local food', 'Royal Wolf for casual pizza and beer', 'Tatanka Tavern for pub food with Teton views']
+          url: 'https://www.gtlc.com/lodges/jackson-lake-lodge',
+          tips: ['Time it as the indoor break during 3pm storm gust', 'Mural Room: 307-543-3463 for lunch reservation', 'Lunch Tree Hill 0.5mi paved loop behind lodge if weather breaks']
+        },
+        {
+          id: 'a16-7',
+          name: 'String Lake — Cathedral Group Reflection #2',
+          description: 'Alpine lake with Grand/Middle/South Teton reflected in calm bay. Park at String Lake trailhead, walk 0.5mi flat path to picnic beach, turn back. By 4pm wind has died, drizzle clearing.',
+          startTime: '4:15 PM',
+          endTime: '5:30 PM',
+          duration: '1h 15m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          distance: '1.0 mile RT (flat to picnic beach)',
+          reservationRequired: false,
+          url: 'https://www.alltrails.com/trail/us/wyoming/string-lake-loop',
+          tips: ['First 0.5mi to picnic beach is flat — turn back there', 'Cathedral Group reflection is the highlight', 'Wind dies after 4pm, drizzle clearing by 5pm']
+        },
+        {
+          id: 'a16-8',
+          name: 'Drive Back to Victor + Dinner in Driggs',
+          description: 'Drive back over Teton Pass to Victor cabin. Dinner in Driggs — Forage Bistro (upscale, reserve) or Tatanka Tavern (pizza by the fire).',
+          startTime: '5:30 PM',
+          endTime: '8:00 PM',
+          duration: '2h 30m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Forage Bistro: 208-354-2858 reserve', 'Tatanka Tavern: walk-in pizza by the fire', 'Pendl\'s Pastries closes 4pm (sorry)']
         }
       ],
       accommodation: {
@@ -1798,12 +1859,12 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED · Night 2 of 3. Airbnb HM2FC8WSJ8. Hosted by Cristine.'
       },
-      notes: ['FULL WORK DAY — Memorial Day Monday', 'Mom can explore Driggs at her own pace', 'Quiet, peaceful mountain town setting', 'Rest up for Teton full day tomorrow'],
-      budgetBreakdown: { accommodation: 295, food: 70, activities: 0, gas: 5, total: 370 },
+      notes: ['TETONS DAY — went today to beat Tue rain forecast', 'Mormon Row + Oxbow Bend + Schwabacher Landing reflection (THE shot) + Jackson Lake Lodge + String Lake', 'Total hiking ~2.9mi all flat', 'Bear spray bought at Yostmark Driggs', '3pm wind/rain window sheltered at Jackson Lake Lodge'],
+      budgetBreakdown: { accommodation: 295, food: 80, activities: 110, gas: 25, total: 510 },
       momNotes: {
-        vibes: ['rest', 'mountain'], energy: 1,
-        blurb: 'Memorial Day rest. Colin works. Walk around tiny mountain town.',
-        tip: '🥔 Spud Drive-In iconic giant potato photo (231 S Hwy 33). Tatanka Tavern 3rd-floor Teton view for lunch. Pendl\'s Pastries open Memorial Day.'
+        vibes: ['mountain', 'tour'], energy: 3,
+        blurb: 'Tetons! Schwabacher reflection of Mt Moran (the shot Mom remembered). String Lake. Jackson Lake Lodge.',
+        tip: '🏔️ THE reflection view = Schwabacher Landing (1.4mi flat). Cathedral Group reflected at String Lake (0.5mi to picnic beach). Jackson Lake Lodge 60ft windows = indoor shelter for 3pm wind.'
       }
     },
 
@@ -1814,99 +1875,57 @@ export const tripData: TripData = {
       id: 'd17',
       dayNumber: 17,
       date: '2026-05-26',
-      title: 'Teton Full Day — Oxbow Bend, Mormon Row, Jackson Lake',
-      summary: 'Oxbow Bend, Mormon Row, Jackson Lake Lodge, Schwabacher Landing',
-      location: locations.find(l => l.id === 'teton')!,
-      overnight: 'Victor, ID (Teton Valley)',
-      weather: { high: 16, low: 6, conditions: '🌧️ WET DAY — 69-81% precip across Tetons + Driggs. 60°F/42°F. Wind 22mph. Reorganized to indoor-leaning Jackson Lake Lodge focus.' },
+      title: 'Work Day — Victor Cabin (Rain)',
+      summary: 'Colin works full day at the cabin while Tue rains. Mom: rest, light Driggs town walk if dry windows.',
+      location: locations.find(l => l.id === 'driggs')!,
+      overnight: 'Victor, ID (Teton Valley) — final night',
+      weather: { high: 18, low: 4, conditions: '🌧️ Cool wet day — 50°F, drizzle 22-45% through afternoon, heavy rain shower 5pm. Perfect work-from-cabin weather.' },
       activities: [
         {
-          id: 'a17-0',
-          name: 'Colin Works — Driggs Airbnb (7am-10am)',
-          description: 'Morning work block before the Teton day. Weather is 50% rain — starting later means better visibility on the pass and at Oxbow Bend. Mom: slow breakfast, pack day bag, layers.',
-          startTime: '7:00 AM',
-          endTime: '10:00 AM',
-          duration: '3 hours',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Citizen 33 in downtown Driggs opens 7am for backup coffee/WiFi', 'Pack the day bag now: layers, rain shell, water, snacks, bear spray, hand warmers', 'Mom: breakfast at Pendl\'s Pastries on Main St before heading out']
-        },
-        {
           id: 'a17-1',
-          name: 'Drive Driggs → Teton Pass → Park (RAIN-DAY ROUTE)',
-          description: 'Cross Teton Pass (8,431ft) — paved, safe in rain, but visibility may be poor. Drive slow on hairpins. Enter Grand Teton from south. Today\'s reorganized rain-day plan: car-based viewpoints + Jackson Lake Lodge interior (the famous 60ft picture windows are PERFECT on a wet day). Skip the muddy Schwabacher gravel road and the exterior Cathedral Group walk.',
-          startTime: '11:00 AM',
-          endTime: '12:00 PM',
-          duration: '1 hour',
+          name: 'Colin Works — Cabin Full Day',
+          description: 'Full work day from the Victor cabin. Strong WiFi, full kitchen for coffee/lunch. Citizen 33 in Driggs (10min drive) is the backup co-working spot. Catch up after Mon\'s Tetons day.',
+          startTime: '8:00 AM',
+          endTime: '6:00 PM',
+          duration: '~10 hours (with breaks)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Jackson+Lake+Lodge+WY/Driggs+ID/',
-          tips: ['🌧️ 69-81% rain today — drive slow, headlights on, wind 22mph', 'Teton Pass closed in fog? Check WY 511 morning of: 888-996-7623', 'Skip the Schwabacher dirt road today — it gets gluey when wet', 'America the Beautiful pass covers entry (Mom now $135 GTNP day pass otherwise)']
+          tips: ['Cabin WiFi works well — strong from the kitchen counter', 'Citizen 33 Driggs: 7am-3pm Tue, backup co-working if cabin feels stuffy', 'Take a midday break at Pendl\'s Pastries (closes 4pm Tue)', 'Use the break to confirm tomorrow\'s Crosswinds Inn early bag drop']
         },
         {
           id: 'a17-2',
-          name: 'Mormon Row — Iconic Barns (drive-up)',
-          description: '0.5mi flat walk along the road from car to T.A. Moulton Barn — the most photographed barn in America. Moody dramatic Teton clouds in rain make for unique shots vs. the typical sunny postcard. Bison often in the fields. Hold an umbrella over the camera.',
-          startTime: '12:00 PM',
-          endTime: '12:30 PM',
-          duration: '30 min',
+          name: 'Mom: Rest Day + Optional Driggs Town Walk',
+          description: 'Mom rest day after yesterday\'s big Tetons day. Light Driggs town walk during any dry window (most likely 10am-1pm before the 2-5pm rain peak). Browse Peaked Sports, Barrels & Bins. Cabin sofa + book otherwise.',
+          startTime: '10:00 AM',
+          endTime: '4:00 PM',
+          duration: 'flexible',
           difficulty: 'easy',
           seniorFriendly: true,
-          distance: '0.5 miles (flat dirt road walk from car)',
           reservationRequired: false,
-          tips: ['Flat 0.5mi road walk — perfect for mom', 'Cloudy/rain = moody dramatic barn shots (uncommon angle)', 'Bison are common — stay in or near the car', 'iPhone: shoot through windshield if rain is heavy']
+          tips: ['Best dry window: 10am-1pm (4-22% precip)', '2-5pm = peak rain (39-45%) — be at the cabin', 'Downtown Driggs: 12N Main St area, flat 2 blocks', 'Barrels & Bins: groceries + local goods', 'Peaked Sports: window-shop outdoor gear, 70 E Little Ave', 'Bring rain jacket — drizzle can pop up']
         },
         {
           id: 'a17-3',
-          name: 'Oxbow Bend Wildlife Stop',
-          description: 'Drive-up turnout, no walking required. Iconic Mt. Moran reflection on the Snake River oxbow. Moose, beavers, bald eagles often visible. Cloudy weather = animals MORE active than on bluebird days.',
-          startTime: '12:45 PM',
-          endTime: '1:15 PM',
-          duration: '30 min',
+          name: 'Confirm Crosswinds Inn Early Bag Drop',
+          description: 'Call Crosswinds Inn (West Yellowstone) to arrange early bag drop tomorrow. Check-in is officially 4pm but they almost always allow noon bag-drop with advance notice. Tomorrow\'s plan: arrive ~12:30pm, drop bags, head into Yellowstone, return 5pm for check-in.',
+          duration: '5 min',
           difficulty: 'easy',
           seniorFriendly: true,
-          distance: '0.05 miles (drive-up turnout)',
           reservationRequired: false,
-          tips: ['Drive-up — no walking required', 'Moose are MORE active in cool wet weather', 'Binoculars essential, scan willows along river', 'iPhone: 2x zoom for Mt. Moran reflection (still water through rain)']
+          tips: ['📞 Crosswinds Inn 406-646-9557', 'Ask: "We arrive around 12:30pm tomorrow — can we drop bags before official 4pm check-in?"', 'Confirmation #5288855262, PIN 3523', 'Most West Yellowstone hotels allow this Memorial Day weekend']
         },
         {
           id: 'a17-4',
-          name: 'Jackson Lake Lodge — Lunch + 60ft Picture Windows (PRIME RAIN ACTIVITY)',
-          description: 'THE main event for a rain day. The historic Jackson Lake Lodge lobby has 60-foot picture windows framing the entire Teton Range — one of the greatest views in any national park, watched from a couch by the fire. Lunch at the Mural Room or quick at Pioneer Grill. Stay 2+ hours — read, photograph, eat, watch the storm move across the range.',
-          startTime: '1:15 PM',
-          endTime: '3:30 PM',
-          duration: '2h 15m',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          url: 'https://www.gtlc.com/lodges/jackson-lake-lodge',
-          tips: ['60-foot windows in the lobby — one of the great views in the parks', 'Mural Room for lunch (reservation: 307-543-3463) or Pioneer Grill walk-in', 'Couches by the fire = perfect rain-day spot', 'Lunch Tree Hill (0.5mi gentle paved loop behind lodge) if rain breaks — gives 360° views', 'Gift shop + Native American art exhibit indoor']
-        },
-        {
-          id: 'a17-5',
-          name: 'Drive Back to Driggs (Teton Pass)',
-          description: 'Direct return to Driggs via Teton Pass before evening rain peaks (81% precip 7pm). Drop into the dry warm cabin for an early dinner.',
-          startTime: '3:30 PM',
-          endTime: '5:00 PM',
-          duration: '1h 30m',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Drive Teton Pass back BEFORE evening precip peak (81% at 7pm)', 'Pull over once at Wilson if rain breaks for a final Teton look', 'Wind 22mph — go slow on the hairpins']
-        },
-        {
-          id: 'a17-6',
-          name: 'Warm Dinner in Driggs',
-          description: 'Get back to the cabin, dry out, then walk to dinner. Forage Bistro (reserve 7pm) for upscale local food. Tatanka Tavern for pizza by the fire. Royal Wolf for casual pub. Tatanka is the cozy pick on a wet night.',
+          name: 'Final Driggs Dinner — Forage or Tatanka',
+          description: 'Last night in the Victor cabin. Forage Bistro for upscale (reserve 208-354-2858) or Tatanka Tavern for pizza by the fire (walk-in). Pack tonight — bags out 10am sharp tomorrow.',
           startTime: '6:30 PM',
-          endTime: '8:00 PM',
-          duration: '1h 30m',
+          endTime: '8:30 PM',
+          duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Tatanka Tavern: cozy pizza + fire = ideal wet-night pick', 'Forage Bistro: upscale, reserve ahead 208-354-2858', 'Skip Royal Wolf on Tue if it\'s slow', 'Pack tonight for Yellowstone tomorrow']
+          tips: ['Forage Bistro: 208-354-2858, upscale Idaho farm-to-table', 'Tatanka Tavern: pizza + fire on a rainy night', 'PACK TONIGHT — 10am checkout sharp', 'Set bag-drop alarm for tomorrow']
         }
       ],
       accommodation: {
@@ -1920,12 +1939,12 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED · Final night (3 of 3). Airbnb HM2FC8WSJ8. Out 10am tomorrow.'
       },
-      notes: ['🌧️ RAIN DAY REORGANIZED — Jackson Lake Lodge interior is the centerpiece', '7-10am Colin work block, then 10am leave for Tetons (was earlier)', 'Skip Schwabacher (muddy) + Cathedral Group exterior walk', 'Mormon Row + Oxbow Bend stay (drive-up viewpoints)', 'Jackson Lake Lodge 60ft picture windows = 2hr couch+fire+lunch — the prime rain activity', 'Carry bear spray on Mormon Row + any trails', 'WILDLIFE: animals MORE active in cool wet weather'],
-      budgetBreakdown: { accommodation: 295, food: 80, activities: 0, gas: 30, total: 405 },
+      notes: ['🛌 WORK + REST day at the cabin', 'Tetons done yesterday — today is heads-down work in the rain', 'Call Crosswinds Inn 406-646-9557 to arrange early bag drop tomorrow', 'Pack tonight — bags out 10am sharp', 'Mom: low-key day, light Driggs walk 10am-1pm dry window'],
+      budgetBreakdown: { accommodation: 295, food: 65, activities: 0, gas: 5, total: 365 },
       momNotes: {
-        vibes: ['mountain'], energy: 2,
-        blurb: 'Tetons rain day — Jackson Lake Lodge 60ft picture windows + lunch by the fire. Cozy.',
-        tip: '🌧️ 69-81% precip today. Plan is reorganized: Mormon Row barns from the road, Oxbow Bend drive-up, then 2hr at Jackson Lake Lodge interior (60ft windows = legendary). Skip Schwabacher (muddy). Pack rain shell + dry-out fleece. Mom\'s $135 GTNP day pass — America the Beautiful covers.'
+        vibes: ['rest'], energy: 1,
+        blurb: 'Rest day after Tetons. Colin works. Light Driggs walk + cozy cabin.',
+        tip: '🌧️ Rain on/off all day (drizzle 22-45%, heavy 5pm). 10am-1pm is the driest window. Pack tonight — Yellowstone tomorrow with early bag drop at Crosswinds Inn.'
       }
     },
 
@@ -1936,40 +1955,50 @@ export const tripData: TripData = {
       id: 'd18',
       dayNumber: 18,
       date: '2026-05-27',
-      title: 'Driggs → Yellowstone — Teton AM + Old Faithful & Grand Prismatic PM',
-      summary: 'Last Teton stops, enter Yellowstone south, Old Faithful, Grand Prismatic',
+      title: 'Victor → West Yellowstone (Bag Drop) → Old Faithful + Grand Prismatic',
+      summary: 'Direct Targhee Pass route, early bag drop at Crosswinds, then west entrance to Yellowstone',
       location: locations.find(l => l.id === 'yellowstone')!,
       overnight: 'West Yellowstone, MT',
-      drivingDistance: '150 miles (Driggs to West Yellowstone via park)',
-      drivingTime: '4 hours (with stops)',
+      drivingDistance: '95 miles (Victor → West Yellowstone via Targhee Pass)',
+      drivingTime: '2 hours direct + park loops',
       weather: { high: 22, low: 6, conditions: 'Light drizzle, partly cloudy. 72°F/43°F. 47% precip. Much warmer than typical — no snow concerns this year.' },
       activities: [
         {
           id: 'a18-1',
-          name: 'Drive Driggs → Grand Teton (Teton Pass) — SKIP Schwabacher',
-          description: 'Cross Teton Pass one more time and head north through GTNP. Schwabacher was on the original plan but yesterday\'s rain left the gravel road muddy — skip it. Light drizzle today won\'t stop the geysers but boardwalks will be wet — careful steps.',
-          startTime: '8:30 AM',
+          name: 'Pack Up Cabin + Check Out (10am sharp)',
+          description: 'Final pack-up. Strip beds per Airbnb instructions. Trash to bin. Door code → check-out by 10am. Get coffee + breakfast from cabin before leaving (or Pendl\'s in Driggs).',
+          startTime: '9:00 AM',
           endTime: '10:00 AM',
-          duration: '1h 30m',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit+WY/West+Thumb+Geyser+Basin+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Madison+Junction+Yellowstone/West+Yellowstone+MT/',
-          tips: ['Skip Schwabacher today (muddy from yesterday\'s rain)', 'Wave goodbye to the Tetons from Teton Pass summit', 'Boardwalks will be wet — careful steps', 'Fill gas in Jackson before entering Yellowstone (last cheap gas)']
+          tips: ['10am checkout HARD STOP', 'Coffee + leftovers from cabin kitchen before leaving', 'Pendl\'s Pastries opens 7am Wed if you want a Driggs stop', 'Confirm trash + dishes per Airbnb instructions']
         },
         {
           id: 'a18-2',
-          name: 'West Thumb Geyser Basin — Lakeside Boardwalk',
-          description: 'Drive north through Grand Teton into Yellowstone via the south entrance. Stop at West Thumb Geyser Basin right on Yellowstone Lake — small thermal features along a 0.6mi flat boardwalk, gorgeous lakeshore setting. Fishing Cone (geyser at the lake edge) is the highlight.',
-          startTime: '10:30 AM',
-          endTime: '12:00 PM',
-          duration: '1h 30m (drive + walk)',
+          name: 'Drive Victor → West Yellowstone via Targhee Pass (DIRECT)',
+          description: 'Take ID-33 north to Ashton → US-20 north over Targhee Pass (7,072ft) → West Yellowstone. 95mi, 2hr direct. Skip the Teton Pass / South Entrance loop today — you did Tetons Monday and the priority is bag-drop + west-entrance Yellowstone access.',
+          startTime: '10:00 AM',
+          endTime: '12:30 PM',
+          duration: '2h 30m (with one stop)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.6 miles (flat boardwalk loop)',
-          url: 'https://www.alltrails.com/trail/us/wyoming/west-thumb-geyser-basin-loop',
-          tips: ['South entrance may have lines — arrive by late morning', 'West Thumb sits right on the lake — beautiful even in light drizzle', 'Fishing Cone = geyser at the water\'s edge, photo highlight', 'Fill gas at Grant Village (last gas before West Yellowstone)']
+          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/Madison+Junction+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Crosswinds+Inn+West+Yellowstone+MT/',
+          tips: ['Stop at Mesa Falls Scenic Byway pullout near Ashton if weather holds (10min off route, 0.2mi to Upper Mesa Falls overlook)', 'Fill gas in Ashton or Island Park — West Yellowstone gas is pricey', 'Targhee Pass 7,072ft — paved, no concerns at 72°F day', 'Wildlife in Island Park area — moose, elk']
+        },
+        {
+          id: 'a18-3',
+          name: 'Bag Drop at Crosswinds Inn (Early — call ahead)',
+          description: 'Arrive Crosswinds Inn ~12:30pm. Bag drop only (official check-in is 4pm but they typically allow noon bag-drop with advance notice from Tue evening). Park at hotel, drop luggage in the lobby/storage room, keep day bag. Head into Yellowstone via west entrance (5 min from hotel).',
+          startTime: '12:30 PM',
+          endTime: '1:00 PM',
+          duration: '30 min',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Confirmed by Tuesday call to 406-646-9557', 'Conf #5288855262 PIN 3523', '201 Firehole Ave, West Yellowstone', '5 min drive from hotel to YS west entrance', 'Lunch grab: Wild West Pizza or Slippery Otter walk-in']
         },
         {
           id: 'a18-3',
@@ -2014,23 +2043,16 @@ export const tripData: TripData = {
           tips: ['Use this if Fairy Falls overlook is too long for mom', 'Ground-level view of Grand Prismatic — different angle than the overlook', 'Excelsior Crater is huge and steamy', 'iPhone: shoot through the steam for moody atmosphere']
         },
         {
-          id: 'a18-checkin',
-          name: 'Check In & Drop Bags at Hotel',
-          description: 'Drop bags, freshen up, get settled before exploring.',
-          duration: '30 min',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-        },
-        {
           id: 'a18-5',
-          name: 'Drive to West Yellowstone via Madison',
-          description: 'Exit the park via the west entrance to West Yellowstone, MT. Stop at Madison Junction to scan for elk and bison in the meadows along the Madison River.',
-          duration: '45 min',
+          name: 'Return to Crosswinds Inn — Real Check-In + Dinner',
+          description: 'Drive back to West Yellowstone via Madison Junction (15 min from Fairy Falls TH). Madison River meadows often have elk + bison in evening. Real check-in at Crosswinds Inn (key pickup), freshen up, walk to dinner.',
+          startTime: '5:15 PM',
+          endTime: '8:00 PM',
+          duration: '2h 45m',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Madison River meadows often have elk and bison', 'West Yellowstone is right at the park entrance', 'Fill gas in West Yellowstone']
+          tips: ['Madison River meadows = evening wildlife', 'Crosswinds check-in desk: pickup keys after bag-drop earlier', 'Dinner walking distance: Wild West Pizza, Bullwinkle\'s Saloon, Madison Crossing Lounge', 'Fill gas in West Yellowstone — early start tomorrow at 5am']
         }
       ],
       accommodation: {
@@ -2041,18 +2063,18 @@ export const tripData: TripData = {
         pricePerNight: 292,
         address: '201 Firehole Ave, West Yellowstone, MT 59758',
         phone: '+1 406-646-9557',
-        website: 'https://www.booking.com/',
+        website: 'https://crosswindsinn.com/',
         amenities: ['2 Queen Beds', 'Breakfast included', 'Near West Entrance'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Booking.com #5288855262 PIN:3523. $657.18 total ($291.60/n x 2 + tax + fees). Check-in 4pm, out 11am. Prepaid Visa 6386. Non-refundable.'
+        notes: 'BOOKED · Booking.com conf #5288855262 PIN:3523 · $657.18 prepaid (Visa 6386) · Check-in 4pm, out 11am · Non-refundable · 📞 406-646-9557 for early bag drop'
       },
-      notes: ['TETON AM + YELLOWSTONE PM', 'Last Teton views at Schwabacher Landing', 'Old Faithful + Grand Prismatic are the two must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas at Grant Village and West Yellowstone'],
+      notes: ['🧳 BAG DROP DAY — direct Targhee Pass route, drop bags at Crosswinds at 12:30pm, then YS via west entrance', '📞 Crosswinds Inn 406-646-9557 confirm early bag drop Tue evening', 'Old Faithful + Grand Prismatic (Fairy Falls overlook) are the must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas in Ashton + West Yellowstone'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 },
       momNotes: {
         vibes: ['drive', 'mountain'], energy: 2,
-        blurb: 'Drive into Yellowstone! Old Faithful + Grand Prismatic. Iconic geysers.',
-        tip: '🌈 Grand Prismatic from FAIRY FALLS overlook (1.2mi RT, NPS calls senior-friendly) — NOT Midway boardwalk. Old Faithful eruption every ~90min. Old Faithful Inn 1904 lobby worth 10min.'
+        blurb: 'Direct to Yellowstone via Targhee Pass. Bag drop at Crosswinds, then Old Faithful + Grand Prismatic.',
+        tip: '🌈 Grand Prismatic from FAIRY FALLS overlook (1.6mi RT, 105ft) — NOT Midway boardwalk. Mom-bail at 0.5mi if 105ft gain too much (Midway 0.8mi flat is the backup). Old Faithful eruption every ~94min — use GeyserTimes app.'
       }
     },
 
@@ -2250,11 +2272,11 @@ export const tripData: TripData = {
         priceRange: '$181/night',
         pricePerNight: 196,
         address: 'Apgar Village, West Glacier, MT (inside park)',
-        website: 'https://www.glacierparkcollection.com/',
+        website: 'https://www.glacierparkcollection.com/lodging/apgar-village/',
         amenities: ['3 Queen beds', '2 rooms', 'Inside park', 'Near Lake McDonald', 'Free parking'],
         seniorFriendly: true,
         recommended: true,
-        notes: 'BOOKED: Reservation #3870048. Cabin 3 Queen, 2 Room. $392.26 total. Glacier Park Collection.'
+        notes: 'BOOKED · Glacier Park Collection res #3870048 · Cabin 3Q 2R · $189.22 paid, $203.04 balance at check-in · 📞 1-844-868-7474 · Apgar Village inside park (NOT Columbia Falls — walking distance to Lake McDonald)'
       },
       notes: ['DRIVING DAY + Robin arrives!', 'Robin arrives FCA Friday afternoon 3:34pm — Alaska AS 2402', 'FCA is 13min from Columbia Falls', '3 adults Fri-Sun: need 2 bedrooms', 'Going-to-the-Sun Road NOT fully open — Logan Pass closed until ~mid-June'],
       budgetBreakdown: { accommodation: 196, food: 80, activities: 0, gas: 60, total: 336 },
@@ -2349,7 +2371,7 @@ export const tripData: TripData = {
       ],
       accommodation: {
         id: 'acc21a',
-        name: 'Apgar Village Lodge — BOOKED',
+        name: 'Apgar Village Lodge — BOOKED (in-park)',
         type: 'cabin',
         priceRange: '$181/night',
         pricePerNight: 196,

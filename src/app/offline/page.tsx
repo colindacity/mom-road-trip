@@ -4,32 +4,78 @@ import { TRAILS } from '@/data/trails';
 import SiteNav from '@/components/SiteNav';
 import { getTodayDayNumber } from '@/lib/dateUtils';
 
-// Drive/route summaries for each remaining day. Hand-curated multi-stop URLs.
+// Drive/route summaries — EVERY DAY of the trip, in order.
 const ROUTES: { dayNum: number; date: string; label: string; url: string; note: string }[] = [
-  { dayNum: 15, date: 'Sun May 24', label: 'SLC → Driggs (via Pocatello + Swan Valley)',
+  { dayNum: 1, date: 'Sun May 10', label: 'Fly to Las Vegas + LINQ',
+    url: 'https://www.google.com/maps/dir/Harry+Reid+International+Airport+Las+Vegas/LINQ+Hotel+3535+Las+Vegas+Blvd+South+Las+Vegas/Bacchanal+Buffet+Caesars+Palace+Las+Vegas/Bellagio+Fountains+Las+Vegas/Fremont+Street+Experience+Las+Vegas/',
+    note: 'LAS · LINQ check-in · Bacchanal Buffet · Bellagio Fountains · Fremont St' },
+  { dayNum: 2, date: 'Mon May 11', label: 'Las Vegas → Grand Canyon South Rim',
+    url: 'https://www.google.com/maps/dir/LINQ+Hotel+Las+Vegas/Williams+AZ/Tusayan+AZ/Mather+Point+Grand+Canyon/Maswik+Lodge+Grand+Canyon+Village/',
+    note: 'Williams (Route 66) · Tusayan · Mather Point sunset · Maswik Lodge' },
+  { dayNum: 3, date: 'Tue May 12', label: 'Grand Canyon — Hermit Road + Yavapai',
+    url: 'https://www.google.com/maps/dir/Maswik+Lodge+Grand+Canyon/Mather+Point+Grand+Canyon/Trailview+Overlook+Grand+Canyon/Maricopa+Point+Grand+Canyon/Powell+Point+Grand+Canyon/Hopi+Point+Grand+Canyon/The+Abyss+Grand+Canyon/Hermits+Rest+Grand+Canyon/',
+    note: 'Hermit Road overlooks · Hopi Point sunset · Yavapai geology' },
+  { dayNum: 4, date: 'Wed May 13', label: 'Grand Canyon → Page (Desert View + Cameron)',
+    url: 'https://www.google.com/maps/dir/Grand+Canyon+Village+AZ/Grandview+Point+Grand+Canyon/Moran+Point+Grand+Canyon/Lipan+Point+Grand+Canyon/Desert+View+Watchtower/Cameron+Trading+Post+AZ/Page+AZ/',
+    note: 'East Rim overlooks · Desert View Watchtower · Cameron · Page Airbnb' },
+  { dayNum: 5, date: 'Thu May 14', label: 'Page — Antelope Canyon + Horseshoe Bend',
+    url: 'https://www.google.com/maps/dir/871+Sandpiper+Dr+Page+AZ/Upper+Antelope+Canyon+Tour+Page+AZ/Horseshoe+Bend+Overlook+Page+AZ/Glen+Canyon+Dam+Overlook/871+Sandpiper+Dr+Page+AZ/',
+    note: 'Upper Antelope tour · Horseshoe Bend · Glen Canyon Dam' },
+  { dayNum: 6, date: 'Fri May 15', label: 'Page Work Day + Wahweap',
+    url: 'https://www.google.com/maps/dir/871+Sandpiper+Dr+Page+AZ/Wahweap+Overlook+Lake+Powell/Glen+Canyon+Dam+Overlook+Page+AZ/Hanging+Gardens+Trail+Page+AZ/',
+    note: 'Wahweap · Glen Canyon overlooks · Hanging Gardens (if time)' },
+  { dayNum: 7, date: 'Sat May 16', label: 'Page → Moab via Monument Valley',
+    url: 'https://www.google.com/maps/dir/Page+AZ/Monument+Valley+Navajo+Tribal+Park/Forrest+Gump+Point+US-163/Mexican+Hat+UT/Moab+UT/',
+    note: 'Monument Valley · Forrest Gump Point · Mexican Hat · Moab' },
+  { dayNum: 8, date: 'Sun May 17', label: 'Moab Work Day + Dead Horse Point',
+    url: 'https://www.google.com/maps/dir/3442+Tierra+del+Sol+Dr+Moab+UT/Dead+Horse+Point+State+Park+UT/3442+Tierra+del+Sol+Dr+Moab+UT/',
+    note: 'Mom solo: Dead Horse Point overlook' },
+  { dayNum: 9, date: 'Mon May 18', label: 'Arches NP — Park Ave + Windows + Double Arch',
+    url: 'https://www.google.com/maps/dir/Moab+UT/Arches+National+Park+Visitor+Center/Park+Avenue+Trailhead+Arches/Balanced+Rock+Arches/The+Windows+Loop+Arches/Double+Arch+Arches/Skyline+Arch+Arches/Moab+UT/',
+    note: 'Park Ave · Balanced Rock · Windows · Double Arch · Skyline · Delicate Arch lower viewpoint' },
+  { dayNum: 10, date: 'Tue May 19', label: 'Canyonlands ITS — Mesa Arch sunrise + Grand View',
+    url: 'https://www.google.com/maps/dir/Moab+UT/Mesa+Arch+Trail+Canyonlands/Grand+View+Point+Canyonlands/Green+River+Overlook+Canyonlands/Island+in+the+Sky+Visitor+Center/Moab+UT/',
+    note: 'Mesa Arch sunrise · Grand View Point · Green River Overlook' },
+  { dayNum: 11, date: 'Wed May 20', label: 'Moab → SLC + Temple Square',
+    url: 'https://www.google.com/maps/dir/Moab+UT/Green+River+UT/Price+UT/Soldier+Summit+UT/Temple+Square+Salt+Lake+City/241+W+200+S+Salt+Lake+City+UT/',
+    note: 'Green River · Price · Soldier Summit · Temple Square · SLC Airbnb' },
+  { dayNum: 12, date: 'Thu May 21', label: 'SLC Work Day — Capitol Hill / Liberty Park / Tracy Aviary',
+    url: 'https://www.google.com/maps/dir/241+W+200+S+Salt+Lake+City/Liberty+Park+Salt+Lake+City/Tracy+Aviary+Salt+Lake+City/Utah+State+Capitol+Salt+Lake+City/241+W+200+S+Salt+Lake+City/',
+    note: 'Mom solo: Liberty Park + Tracy Aviary + Capitol Hill' },
+  { dayNum: 13, date: 'Fri May 22', label: 'SLC Work Day — Great Salt Lake',
+    url: 'https://www.google.com/maps/dir/241+W+200+S+Salt+Lake+City/Saltair+Beach+Magna+UT/Great+Salt+Lake+State+Park/241+W+200+S+Salt+Lake+City/',
+    note: 'Mom solo: Saltair + Great Salt Lake State Park' },
+  { dayNum: 14, date: 'Sat May 23', label: 'SLC Explore — NHMU + Antelope Island + Ensign Peak',
+    url: 'https://www.google.com/maps/dir/241+W+200+S+Salt+Lake+City/Natural+History+Museum+of+Utah/Antelope+Island+State+Park/Ensign+Peak+Trailhead+Salt+Lake+City/241+W+200+S+Salt+Lake+City/',
+    note: 'NHMU · Antelope Island bison drive · Ensign Peak sunset' },
+  { dayNum: 15, date: 'Sun May 24', label: 'SLC → Victor (via Pocatello + Swan Valley + Pine Creek Pass)',
     url: 'https://www.google.com/maps/dir/Salt+Lake+City+UT/Buddy%27s+Italian+Restaurant+626+E+Lewis+St+Pocatello+ID/Sportsman%27s+Warehouse+Idaho+Falls+ID/Snake+River+Greenbelt+Idaho+Falls/Palisades+Reservoir+ID/Pine+Creek+Pass+ID/8487+Caribou+Ct+Victor+ID+83455/',
-    note: 'Buddy\'s lunch · bear spray @ Sportsman\'s · Idaho Falls River Walk · Palisades Res. · Pine Creek Pass · Driggs Airbnb' },
-  { dayNum: 17, date: 'Tue May 26', label: 'Driggs → Tetons loop → Driggs',
-    url: 'https://www.google.com/maps/dir/Driggs+ID/Teton+Pass+Summit+WY/Oxbow+Bend+Turnout+Grand+Teton/Mormon+Row+Historic+District+WY/Jackson+Lake+Lodge+WY/Schwabacher+Landing+WY/Cathedral+Group+Turnout+WY/Driggs+ID/',
-    note: 'Teton Pass · Oxbow Bend · Mormon Row · Jackson Lake Lodge · Schwabacher · Cathedral Group · home' },
-  { dayNum: 18, date: 'Wed May 27', label: 'Driggs → Yellowstone → West Yellowstone',
-    url: 'https://www.google.com/maps/dir/Driggs+ID/Schwabacher+Landing+WY/West+Thumb+Geyser+Basin+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/West+Yellowstone+MT/',
-    note: 'Schwabacher final look · West Thumb · Old Faithful · Fairy Falls (Grand Prismatic overlook) · hotel' },
+    note: 'Buddy\'s lunch · bear spray @ Sportsman\'s · Idaho Falls River Walk · Palisades Res. · Pine Creek Pass · Victor cabin' },
+  { dayNum: 16, date: 'Mon May 25', label: 'Tetons Day — Schwabacher reflection + Mormon Row + String Lake',
+    url: 'https://www.google.com/maps/dir/Victor+ID/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Schwabacher+Landing+WY/Jackson+Lake+Lodge+WY/String+Lake+Trailhead+Grand+Teton/Victor+ID/',
+    note: 'Teton Pass · Mormon Row · Oxbow Bend · Schwabacher reflection · Jackson Lake Lodge · String Lake · home' },
+  { dayNum: 17, date: 'Tue May 26', label: 'Work day — cabin (rain)',
+    url: 'https://www.google.com/maps/dir/8487+Caribou+Ct+Victor+ID/Citizen+33+Brewery+Driggs+ID/Pendl%27s+Pastries+Driggs+ID/Forage+Bistro+Driggs+ID/8487+Caribou+Ct+Victor+ID/',
+    note: 'Cabin work · light Driggs town walk · Forage dinner' },
+  { dayNum: 18, date: 'Wed May 27', label: 'Victor → West Yellowstone (bag drop) → Old Faithful + Grand Prismatic',
+    url: 'https://www.google.com/maps/dir/Victor+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/Madison+Junction+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Crosswinds+Inn+West+Yellowstone+MT/',
+    note: 'Victor → Targhee Pass → Crosswinds bag drop → Old Faithful → Fairy Falls overlook → check-in' },
   { dayNum: 19, date: 'Thu May 28', label: 'Yellowstone full loop (W. YS → Lamar → Mammoth → Canyon → W. YS)',
     url: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Madison+Junction+Yellowstone/Lamar+Valley+Pullouts+Yellowstone/Tower+Fall+Yellowstone/Mammoth+Hot+Springs+Yellowstone/Artist+Point+Yellowstone/West+Yellowstone+MT/',
     note: 'Madison · Lamar (dawn wildlife) · Tower Fall · Mammoth · Artist Point · home' },
-  { dayNum: 20, date: 'Fri May 29', label: 'West Yellowstone → Columbia Falls (Robin lands 3:34pm)',
-    url: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Butte+MT/Missoula+MT/Polson+MT/Columbia+Falls+MT/Glacier+Park+International+Airport+FCA/',
-    note: 'Butte · Missoula (lunch) · Polson · Columbia Falls · FCA pickup' },
-  { dayNum: 21, date: 'Sat May 30', label: 'Glacier loop (Lake McDonald + Avalanche)',
-    url: 'https://www.google.com/maps/dir/Columbia+Falls+MT/Apgar+Visitor+Center+Glacier/Lake+McDonald+Lodge/Trail+of+the+Cedars+Trailhead+Glacier/Avalanche+Lake+Trailhead+Glacier/Apgar+Village+MT/Columbia+Falls+MT/',
-    note: 'Apgar · Lake McDonald · Cedars boardwalk · Avalanche TH · pebble beach · home' },
-  { dayNum: 22, date: 'Sun May 31', label: 'Columbia Falls → FCA (fly home)',
-    url: 'https://www.google.com/maps/dir/Columbia+Falls+MT/Glacier+Park+International+Airport+FCA/',
-    note: 'Final 15min drive to the airport' },
+  { dayNum: 20, date: 'Fri May 29', label: 'West Yellowstone → Apgar Village + Robin lands FCA 3:34pm',
+    url: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Butte+MT/Missoula+MT/Glacier+Park+International+Airport+FCA/Apgar+Village+Lodge+West+Glacier+MT/',
+    note: 'Butte · Missoula (lunch) · FCA Robin pickup 3:34pm · Apgar Village Lodge' },
+  { dayNum: 21, date: 'Sat May 30', label: 'Glacier — Cedars + Lake McDonald + lodge fire (fog/rain)',
+    url: 'https://www.google.com/maps/dir/Apgar+Village+Lodge+West+Glacier+MT/Apgar+Pebble+Beach+Glacier/Lake+McDonald+Lodge+Glacier/Trail+of+the+Cedars+Trailhead+Glacier/Apgar+Village+Lodge+West+Glacier+MT/',
+    note: 'Pebble Beach · Trail of Cedars (mystical in fog) · Lake McDonald Lodge fire' },
+  { dayNum: 22, date: 'Sun May 31', label: 'Avalanche AM (Colin+Robin) → FCA flights home',
+    url: 'https://www.google.com/maps/dir/Apgar+Village+Lodge+West+Glacier+MT/Avalanche+Lake+Trailhead+Glacier/Apgar+Village+Lodge+West+Glacier+MT/Glacier+Park+International+Airport+FCA/',
+    note: 'Avalanche Lake 5:30am hike · pack/checkout · FCA: Mom 2:30pm, Colin+Robin 5:40pm' },
 ];
 
-const REMAINING_TRAILS = TRAILS.filter(t => t.trip_days.some(d => d >= 15) && t.alltrails_url);
+// All trails for the trip (past + future). Past-day filtering happens in the render.
+const ALL_TRAILS = TRAILS.filter(t => t.alltrails_url);
 
 const OFFLINE_REGIONS = [
   { name: 'SE Idaho', covers: 'Idaho Falls → Driggs → Jackson Hole', notes: 'Day 15 + 16 + 17 morning' },
@@ -123,7 +169,7 @@ export default function OfflinePage() {
             Requires AllTrails+ ($36/yr) — worth it for this trip.
           </p>
           <div className="space-y-1.5">
-            {REMAINING_TRAILS.map((t, i) => (
+            {ALL_TRAILS.map((t, i) => (
               <div key={i} className="text-sm flex items-start gap-2">
                 <span className="text-xs font-mono text-gray-400 mt-0.5 shrink-0">
                   {t.miles_rt}mi {t.elevation_gain_ft > 0 ? `+${t.elevation_gain_ft}ft` : 'flat'}
@@ -152,7 +198,7 @@ export default function OfflinePage() {
           <pre className="text-xs bg-gray-50 border border-gray-200 rounded p-3 overflow-x-auto whitespace-pre-wrap font-mono text-gray-700 leading-relaxed">
 {ROUTES.map(r => `${r.date} (d${r.dayNum}) — ${r.label}\n${r.url}\n`).join('\n')}
 {`\n\nAllTrails:\n`}
-{REMAINING_TRAILS.map(t => `${t.trail} — ${t.alltrails_url}`).join('\n')}
+{ALL_TRAILS.map(t => `${t.trail} — ${t.alltrails_url}`).join('\n')}
           </pre>
         </section>
       </div>
