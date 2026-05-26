@@ -206,7 +206,7 @@ export default function MomView() {
               <div className="text-xs font-bold text-blue-600 mb-1">WEEK 3 · MAY 24-31 · 🏔️ MOUNTAIN GRAND FINALE</div>
               <div className="text-sm font-semibold text-gray-800 mb-1">Tetons, Yellowstone, Glacier + Robin!</div>
               <p className="text-sm text-gray-600 leading-snug">
-                Cool mountain weather — <strong>bring a jacket!</strong> Memorial Day rest in Driggs, then Grand Teton Tue, Yellowstone Wed-Thu, Glacier Fri-Sun. <strong>Robin flies in Friday 💜</strong>. Fly home Sunday.
+                Cool mountain weather — <strong>bring a jacket!</strong> Victor cabin (Teton Valley). Mon Grand Teton (Schwabacher reflection 🏔️), Tue work-day rain, Wed bag-drop + Yellowstone, Thu Yellowstone loop, Fri-Sun Glacier. <strong>Robin flies in Friday 💜</strong>. Fly home Sunday.
               </p>
             </div>
           </div>
