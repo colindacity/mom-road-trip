@@ -1955,7 +1955,7 @@ export const tripData: TripData = {
       id: 'd18',
       dayNumber: 18,
       date: '2026-05-27',
-      title: 'Victor → West Yellowstone (Bag Drop) → Old Faithful + Grand Prismatic',
+      title: 'Victor → West Yellowstone (check in first) → evening Old Faithful + Grand Prismatic',
       summary: 'Direct Targhee Pass route, early bag drop at Crosswinds, then west entrance to Yellowstone',
       location: locations.find(l => l.id === 'yellowstone')!,
       overnight: 'West Yellowstone, MT',
