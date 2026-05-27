@@ -598,9 +598,9 @@ const SCHEDULE: DaySchedule[] = [
     hotel:'Crosswinds Inn, 201 Firehole Ave',
     bullets:[
       '09:00 Pack up Victor cabin (strip beds, trash, door code), check out 10am',
-      '10:00 Scenic drive: ID-33 → Ashton → Mesa Falls Byway → US-20 → Targhee Pass',
-      '11:00 Upper Mesa Falls (0.5mi boardwalk to 114ft falls, call 208-558-7301 to confirm open)',
-      '12:30 Harriman State Park / Island Park (trumpeter swans, flat walking)',
+      '10:00 Scenic drive: ID-33 → Ashton → US-20 → Targhee Pass (Upper Mesa Falls already done on the way in)',
+      '11:30 Harriman State Park / Island Park (trumpeter swans, flat walking)',
+      '12:30 Big Springs boardwalk (giant spring, big trout, quick flat stop)',
       '14:30 Arrive West Yellowstone, late lunch + browse town',
       '16:00 Check in Crosswinds Inn (bags straight to room, nothing left in car)',
       '16:30 Enter park West Entrance for the evening',
@@ -610,7 +610,7 @@ const SCHEDULE: DaySchedule[] = [
     ],
     eats:'Cabin coffee. Late West Yellowstone lunch. Wild West Pizza dinner',
     dontMiss:'Check in FIRST so bags go to the room, not a hot car all afternoon (Yellowstone bears break into cars with scented items). Evening park visit works great with 9pm sunset.',
-    momNote:'Mesa Falls 0.5mi boardwalk is the gem if open. Mom can turn back at 0.5mi on Fairy Falls, or do flat Midway boardwalk (0.8mi). Rain shell for 47% drizzle.' },
+    momNote:'Upper Mesa Falls already done on the way in. Mom can turn back at 0.5mi on Fairy Falls, or do flat Midway boardwalk (0.8mi). Rain shell for 47% drizzle.' },
   { n:19, date:'Thu May 28', title:'Yellowstone Upper Loop', vibe:'Park · Cool/cold high passes · ~200mi in-park',
     hotel:'Crosswinds Inn (2nd night)',
     bullets:[

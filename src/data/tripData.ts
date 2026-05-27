@@ -1707,7 +1707,7 @@ export const tripData: TripData = {
           { name: 'Direct I-15 → ID-33 (fastest)', verdict: 'maybe', why: 'Save 30 min but skip the prettiest hour. Use if leaving SLC after 1:30pm.' },
           { name: 'Logan Canyon → Bear Lake', verdict: 'skip', why: '+90 min, Bear Lake water 54°F (look not swim), arrives Victor in twilight.' },
           { name: 'Heber → Star Valley → Teton Pass', verdict: 'skip', why: '7+ hours, arrives after dark, burns Tuesday\'s Grand Teton reveal.' },
-          { name: 'Mesa Falls Scenic Byway', verdict: 'save', why: 'Save for a half-day from Victor — 90 min RT, $5/car, 0.6mi boardwalk to 114-ft falls.' },
+          { name: 'Mesa Falls Scenic Byway', verdict: 'maybe', why: 'DONE on the way in: stopped at Upper Mesa Falls (0.6mi boardwalk to the 114ft falls) en route to Victor.' },
           { name: 'Harriman SP (trumpeter swans)', verdict: 'save', why: 'Save for a half-day from Victor — 65 min north near Island Park.' },
           { name: 'Antelope Island', verdict: 'skip', why: 'Wrong direction from SLC + May = peak gnat season.' },
         ],
@@ -1977,16 +1977,16 @@ export const tripData: TripData = {
         },
         {
           id: 'a18-2',
-          name: 'Scenic Drive Victor to West Yellowstone (Mesa Falls + Island Park)',
-          description: 'No rush today. ID-33 north to Ashton, then the Mesa Falls Scenic Byway, then US-20 north over Targhee Pass to West Yellowstone. Take it slow with stops so you arrive close to the 4pm check-in instead of leaving bags in the car all afternoon. Yellowstone summer daylight lasts until almost 9pm, so the park happens this evening after you check in.',
+          name: 'Scenic Drive Victor to West Yellowstone (Harriman / Island Park)',
+          description: 'No rush today. ID-33 north to Ashton, then US-20 north over Targhee Pass to West Yellowstone. (You already did Upper Mesa Falls on the drive in, so skip it.) Take it slow with a stop or two so you arrive close to the 4pm check-in instead of leaving bags in the car all afternoon. Yellowstone summer daylight lasts until almost 9pm, so the park happens this evening after you check in.',
           startTime: '10:00 AM',
           endTime: '2:30 PM',
           duration: '4h 30m (with stops)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Upper+Mesa+Falls+ID/Harriman+State+Park+Island+Park+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/',
-          tips: ['Upper Mesa Falls: 0.5mi boardwalk to a 114ft waterfall, call Caribou-Targhee NF 208-558-7301 to confirm the boardwalk is open', 'Harriman State Park near Island Park: trumpeter swans on Henrys Fork, easy flat walking', 'Fill gas in Ashton or Island Park, West Yellowstone gas is pricey', 'Targhee Pass 7,072ft, paved, no concerns at 72F']
+          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Harriman+State+Park+Island+Park+ID/Big+Springs+Island+Park+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/',
+          tips: ['Upper Mesa Falls already done on the way in, skip it today', 'Harriman State Park near Island Park: trumpeter swans on Henrys Fork, easy flat walking', 'Big Springs: short flat boardwalk over a giant spring with huge trout, quick easy stop', 'Fill gas in Ashton or Island Park, West Yellowstone gas is pricey', 'Targhee Pass 7,072ft, paved, no concerns at 72F']
         },
         {
           id: 'a18-3',
@@ -2068,7 +2068,7 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED · Booking.com conf #5288855262 PIN:3523 · $657.18 prepaid (Visa 6386) · Check-in 4pm, out 11am · Non-refundable · 📞 406-646-9557 for early bag drop'
       },
-      notes: ['CHECK IN FIRST, then park in the evening. Avoids leaving bags in a hot car all afternoon (Yellowstone has active bears, never leave scented items in a parked car).', 'Scenic slow drive: Mesa Falls + Island Park, arrive West Yellowstone ~2:30pm, browse town, check in 4pm.', 'Evening park visit: Old Faithful + Grand Prismatic. Sunset 8:58pm gives plenty of light, and Grand Prismatic looks better in evening (less steam, smaller crowds).', 'Old Faithful + Grand Prismatic overlook are the two must-sees.', 'Fill gas in Ashton or Island Park.'],
+      notes: ['CHECK IN FIRST, then park in the evening. Avoids leaving bags in a hot car all afternoon (Yellowstone has active bears, never leave scented items in a parked car).', 'Scenic slow drive: Harriman State Park / Island Park (Upper Mesa Falls already done on the way in), arrive West Yellowstone ~2:30pm, browse town, check in 4pm.', 'Evening park visit: Old Faithful + Grand Prismatic. Sunset 8:58pm gives plenty of light, and Grand Prismatic looks better in evening (less steam, smaller crowds).', 'Old Faithful + Grand Prismatic overlook are the two must-sees.', 'Fill gas in Ashton or Island Park.'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 },
       momNotes: {
         vibes: ['drive', 'mountain'], energy: 2,
