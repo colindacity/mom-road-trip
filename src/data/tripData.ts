@@ -1977,82 +1977,81 @@ export const tripData: TripData = {
         },
         {
           id: 'a18-2',
-          name: 'Drive Victor → West Yellowstone via Targhee Pass (DIRECT)',
-          description: 'Take ID-33 north to Ashton → US-20 north over Targhee Pass (7,072ft) → West Yellowstone. 95mi, 2hr direct. Skip the Teton Pass / South Entrance loop today — you did Tetons Monday and the priority is bag-drop + west-entrance Yellowstone access.',
+          name: 'Scenic Drive Victor to West Yellowstone (Mesa Falls + Island Park)',
+          description: 'No rush today. ID-33 north to Ashton, then the Mesa Falls Scenic Byway, then US-20 north over Targhee Pass to West Yellowstone. Take it slow with stops so you arrive close to the 4pm check-in instead of leaving bags in the car all afternoon. Yellowstone summer daylight lasts until almost 9pm, so the park happens this evening after you check in.',
           startTime: '10:00 AM',
-          endTime: '12:30 PM',
-          duration: '2h 30m (with one stop)',
+          endTime: '2:30 PM',
+          duration: '4h 30m (with stops)',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/Madison+Junction+Yellowstone/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Crosswinds+Inn+West+Yellowstone+MT/',
-          tips: ['Stop at Mesa Falls Scenic Byway pullout near Ashton if weather holds (10min off route, 0.2mi to Upper Mesa Falls overlook)', 'Fill gas in Ashton or Island Park — West Yellowstone gas is pricey', 'Targhee Pass 7,072ft — paved, no concerns at 72°F day', 'Wildlife in Island Park area — moose, elk']
+          directionsUrl: 'https://www.google.com/maps/dir/Victor+ID/Upper+Mesa+Falls+ID/Harriman+State+Park+Island+Park+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/',
+          tips: ['Upper Mesa Falls: 0.5mi boardwalk to a 114ft waterfall, call Caribou-Targhee NF 208-558-7301 to confirm the boardwalk is open', 'Harriman State Park near Island Park: trumpeter swans on Henrys Fork, easy flat walking', 'Fill gas in Ashton or Island Park, West Yellowstone gas is pricey', 'Targhee Pass 7,072ft, paved, no concerns at 72F']
         },
         {
           id: 'a18-3',
-          name: 'Bag Drop at Crosswinds Inn (Early — call ahead)',
-          description: 'Arrive Crosswinds Inn ~12:30pm. Bag drop only (official check-in is 4pm but they typically allow noon bag-drop with advance notice from Tue evening). Park at hotel, drop luggage in the lobby/storage room, keep day bag. Head into Yellowstone via west entrance (5 min from hotel).',
-          startTime: '12:30 PM',
-          endTime: '1:00 PM',
+          name: 'Late Lunch + Browse West Yellowstone Town',
+          description: 'Arrive West Yellowstone around 2:30pm. Late lunch in town and a wander through the shops until check-in opens at 4pm. This keeps the luggage out of a hot car. Yellowstone has active bears, so you never want scented items or coolers sitting in a parked car anyway.',
+          startTime: '2:30 PM',
+          endTime: '4:00 PM',
+          duration: '1h 30m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          tips: ['Lunch: Wild West Pizza, Slippery Otter Pub, or Cafe Madriz', 'Grizzly and Wolf Discovery Center is a nice indoor hour if you have time', 'Buy any last hand warmers or layers for tomorrow at the west end shops']
+        },
+        {
+          id: 'a18-4',
+          name: 'Check In at Crosswinds Inn (bags safely inside)',
+          description: 'Official 4pm check-in at Crosswinds Inn. Bags go straight to the room, nothing left in the car. Freshen up, then head into the park for the evening (the west entrance is 5 minutes away).',
+          startTime: '4:00 PM',
+          endTime: '4:30 PM',
           duration: '30 min',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          tips: ['Confirmed by Tuesday call to 406-646-9557', 'Conf #5288855262 PIN 3523', '201 Firehole Ave, West Yellowstone', '5 min drive from hotel to YS west entrance', 'Lunch grab: Wild West Pizza or Slippery Otter walk-in']
+          tips: ['201 Firehole Ave, West Yellowstone. Conf #5288855262 PIN 3523', '📞 406-646-9557', 'West entrance is 5 min from the hotel', 'If you arrive earlier and want park time sooner, ask the desk to hold bags (most days they can)']
         },
         {
-          id: 'a18-3',
-          name: 'Old Faithful — Lunch + Eruption',
-          description: 'World\'s most famous geyser. Flat 0.7mi ABA-accessible boardwalk loop with benches every ~100ft. Eruptions every 60-110min (~94min average). Check the visitor center board for the next predicted time and time your lunch around it. Old Faithful Inn lobby (largest log structure in the world) for lunch + warmth.',
-          startTime: '12:30 PM',
-          endTime: '2:30 PM',
-          duration: '2 hours (incl lunch)',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          distance: '0.7 miles (boardwalk loop, ABA accessible)',
-          url: 'https://www.alltrails.com/trail/us/wyoming/old-faithful-geyser-loop',
-          tips: ['📱 GeyserTimes app for live eruption predictions', 'Time eruption: visitor center board lists next ~94min interval', 'Lunch at Old Faithful Inn dining room or cafeteria during waiting period', 'Inn lobby is HUGE log structure — worth seeing inside', 'iPhone: video mode at eruption, slow-mo for the peak']
-        },
-        {
-          id: 'a18-4',
-          name: 'Grand Prismatic via Fairy Falls Overlook (THE iconic shot)',
-          description: 'Drive to Fairy Falls Trailhead (NOT Grand Prismatic parking — that lot fills + only gives ground-level view). 1.6mi RT, 105ft gentle gain through trees to the elevated overlook with the famous aerial-style view of the rainbow-colored hot spring. Mom-bail: turn back at the 0.5mi marker for a view through trees if the 105ft gain is too much. Backup if mom skips: Midway Geyser Basin boardwalk (0.8mi flat, ground-level).',
-          startTime: '3:00 PM',
-          endTime: '5:00 PM',
+          id: 'a18-5',
+          name: 'Evening at Old Faithful',
+          description: 'Drive in to Old Faithful for an evening eruption. Flat 0.7mi accessible boardwalk loop with benches every 100ft or so. Eruptions run about every 94 minutes, and evenings are far less crowded than midday. The Old Faithful Inn lobby (largest log structure in the world) is worth a look while you wait.',
+          startTime: '4:30 PM',
+          endTime: '6:30 PM',
           duration: '2 hours',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '1.6 miles RT (or 0.8mi backup at Midway)',
+          distance: '0.7 miles (accessible boardwalk loop)',
+          url: 'https://www.alltrails.com/trail/us/wyoming/old-faithful-geyser-loop',
+          tips: ['Use the GeyserTimes app for the next predicted eruption', 'Evening crowds are much thinner than midday', 'Old Faithful Inn lobby: huge 1904 log structure, worth a walk through', 'Light dinner at the Inn if you want, or eat back in town later']
+        },
+        {
+          id: 'a18-6',
+          name: 'Grand Prismatic from Fairy Falls Overlook (best evening light)',
+          description: 'The famous rainbow hot spring, seen from above at the Fairy Falls overlook. 1.6mi round trip with a gentle 105ft climb. Late afternoon and evening are actually the best time: less steam, softer light, smaller crowds. Mom can turn back at the 0.5mi mark for a partial view if the climb is too much, or do the flat Midway Geyser Basin boardwalk instead.',
+          startTime: '6:45 PM',
+          endTime: '8:00 PM',
+          duration: '1h 15m',
+          difficulty: 'easy',
+          seniorFriendly: true,
+          reservationRequired: false,
+          distance: '1.6 miles round trip (105ft climb), or 0.8mi flat at Midway',
           elevation: { gain: 105 },
           url: 'https://www.alltrails.com/trail/us/wyoming/grand-prismatic-spring-overlook',
-          tips: ['Trailhead is Fairy Falls TH — NOT Grand Prismatic Spring parking', 'Fairy Falls TH fills by 9am, but mid-afternoon often opens up', 'Mom-bail at 0.5mi if 105ft gain is too much — partial view through trees', 'Backup for mom: Midway Geyser Basin (0.8mi flat, ground-level walk over Excelsior + Prismatic)', 'Colors are most vivid afternoon when steam thins out (less steam after 1pm)', 'iPhone: 0.5x ultrawide at the overlook captures the whole spring']
+          tips: ['Trailhead is Fairy Falls, NOT the Grand Prismatic parking lot', 'Evening means less steam and the lot has cleared out', 'Mom can turn back at 0.5mi for a tree-framed view', 'Flat backup: Midway Geyser Basin boardwalk (0.8mi), walks right past the spring at ground level', 'Sunset is 8:58pm, plenty of light']
         },
         {
-          id: 'a18-4b',
-          name: 'Midway Geyser Basin Backup (if mom skips overlook)',
-          description: 'If the 1.6mi/105ft Fairy Falls overlook is too much, do this instead. Flat 0.8mi ABA-friendly boardwalk over Excelsior Geyser Crater and Grand Prismatic at ground level. You miss the aerial view but you walk right past the spring.',
-          duration: '45 min',
-          optionalSkip: true,
+          id: 'a18-7',
+          name: 'Back to West Yellowstone for Dinner',
+          description: 'Drive back via Madison Junction. The Madison River meadows often have elk and bison in the evening. Dinner in town, then early to bed: tomorrow is a 5am start for Lamar Valley wildlife.',
+          startTime: '8:00 PM',
+          endTime: '9:00 PM',
+          duration: '1 hour',
           difficulty: 'easy',
           seniorFriendly: true,
           reservationRequired: false,
-          distance: '0.8 miles (flat boardwalk)',
-          url: 'https://www.alltrails.com/trail/us/wyoming/midway-geyser-basin-trail',
-          tips: ['Use this if Fairy Falls overlook is too long for mom', 'Ground-level view of Grand Prismatic — different angle than the overlook', 'Excelsior Crater is huge and steamy', 'iPhone: shoot through the steam for moody atmosphere']
-        },
-        {
-          id: 'a18-5',
-          name: 'Return to Crosswinds Inn — Real Check-In + Dinner',
-          description: 'Drive back to West Yellowstone via Madison Junction (15 min from Fairy Falls TH). Madison River meadows often have elk + bison in evening. Real check-in at Crosswinds Inn (key pickup), freshen up, walk to dinner.',
-          startTime: '5:15 PM',
-          endTime: '8:00 PM',
-          duration: '2h 45m',
-          difficulty: 'easy',
-          seniorFriendly: true,
-          reservationRequired: false,
-          tips: ['Madison River meadows = evening wildlife', 'Crosswinds check-in desk: pickup keys after bag-drop earlier', 'Dinner walking distance: Wild West Pizza, Bullwinkle\'s Saloon, Madison Crossing Lounge', 'Fill gas in West Yellowstone — early start tomorrow at 5am']
+          tips: ['Madison River meadows: evening elk and bison', 'Dinner walking distance: Wild West Pizza, Bullwinkles Saloon, Madison Crossing Lounge', 'Fill gas in West Yellowstone tonight, 5am start tomorrow', 'Set a thermos of coffee for the morning']
         }
       ],
       accommodation: {
@@ -2069,12 +2068,12 @@ export const tripData: TripData = {
         recommended: true,
         notes: 'BOOKED · Booking.com conf #5288855262 PIN:3523 · $657.18 prepaid (Visa 6386) · Check-in 4pm, out 11am · Non-refundable · 📞 406-646-9557 for early bag drop'
       },
-      notes: ['🧳 BAG DROP DAY — direct Targhee Pass route, drop bags at Crosswinds at 12:30pm, then YS via west entrance', '📞 Crosswinds Inn 406-646-9557 confirm early bag drop Tue evening', 'Old Faithful + Grand Prismatic (Fairy Falls overlook) are the must-sees', 'Dress in layers — Yellowstone is cold!', 'Fill gas in Ashton + West Yellowstone'],
+      notes: ['CHECK IN FIRST, then park in the evening. Avoids leaving bags in a hot car all afternoon (Yellowstone has active bears, never leave scented items in a parked car).', 'Scenic slow drive: Mesa Falls + Island Park, arrive West Yellowstone ~2:30pm, browse town, check in 4pm.', 'Evening park visit: Old Faithful + Grand Prismatic. Sunset 8:58pm gives plenty of light, and Grand Prismatic looks better in evening (less steam, smaller crowds).', 'Old Faithful + Grand Prismatic overlook are the two must-sees.', 'Fill gas in Ashton or Island Park.'],
       budgetBreakdown: { accommodation: 292, food: 70, activities: 35, gas: 30, total: 427 },
       momNotes: {
         vibes: ['drive', 'mountain'], energy: 2,
-        blurb: 'Direct to Yellowstone via Targhee Pass. Bag drop at Crosswinds, then Old Faithful + Grand Prismatic.',
-        tip: '🌈 Grand Prismatic from FAIRY FALLS overlook (1.6mi RT, 105ft) — NOT Midway boardwalk. Mom-bail at 0.5mi if 105ft gain too much (Midway 0.8mi flat is the backup). Old Faithful eruption every ~94min — use GeyserTimes app.'
+        blurb: 'Scenic drive to West Yellowstone, check in at 4pm, then an evening at Old Faithful and Grand Prismatic.',
+        tip: 'Check in first so the bags go straight to the room. Grand Prismatic from the Fairy Falls overlook (1.6mi round trip, 105ft climb) is best in evening light. Mom can turn back at 0.5mi, or do the flat Midway boardwalk (0.8mi) instead. Old Faithful erupts about every 94 minutes, use the GeyserTimes app.'
       }
     },
 
