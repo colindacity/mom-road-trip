@@ -16,8 +16,8 @@ const ROUTES: { dayNum: number; date: string; label: string; url: string; note: 
     url: 'https://www.google.com/maps/dir/Maswik+Lodge+Grand+Canyon/Mather+Point+Grand+Canyon/Trailview+Overlook+Grand+Canyon/Maricopa+Point+Grand+Canyon/Powell+Point+Grand+Canyon/Hopi+Point+Grand+Canyon/The+Abyss+Grand+Canyon/Hermits+Rest+Grand+Canyon/',
     note: 'Hermit Road overlooks · Hopi Point sunset · Yavapai geology' },
   { dayNum: 4, date: 'Wed May 13', label: 'Grand Canyon → Page (Desert View + Cameron)',
-    url: 'https://www.google.com/maps/dir/Grand+Canyon+Village+AZ/Grandview+Point+Grand+Canyon/Moran+Point+Grand+Canyon/Lipan+Point+Grand+Canyon/Desert+View+Watchtower/Cameron+Trading+Post+AZ/Page+AZ/',
-    note: 'East Rim overlooks · Desert View Watchtower · Cameron · Page Airbnb' },
+    url: 'https://www.google.com/maps/dir/Grand+Canyon+Village+AZ/Grandview+Point+Grand+Canyon/Moran+Point+Grand+Canyon/Lipan+Point+Grand+Canyon/Desert+View+Watchtower/Cameron+Trading+Post+AZ/871+Sandpiper+Dr+Page+AZ+86040/',
+    note: 'East Rim overlooks · Desert View Watchtower · Cameron · Page Airbnb (871 Sandpiper Dr)' },
   { dayNum: 5, date: 'Thu May 14', label: 'Page — Antelope Canyon + Horseshoe Bend',
     url: 'https://www.google.com/maps/dir/871+Sandpiper+Dr+Page+AZ/Upper+Antelope+Canyon+Tour+Page+AZ/Horseshoe+Bend+Overlook+Page+AZ/Glen+Canyon+Dam+Overlook/871+Sandpiper+Dr+Page+AZ/',
     note: 'Upper Antelope tour · Horseshoe Bend · Glen Canyon Dam' },
@@ -25,8 +25,8 @@ const ROUTES: { dayNum: number; date: string; label: string; url: string; note: 
     url: 'https://www.google.com/maps/dir/871+Sandpiper+Dr+Page+AZ/Wahweap+Overlook+Lake+Powell/Glen+Canyon+Dam+Overlook+Page+AZ/Hanging+Gardens+Trail+Page+AZ/',
     note: 'Wahweap · Glen Canyon overlooks · Hanging Gardens (if time)' },
   { dayNum: 7, date: 'Sat May 16', label: 'Page → Moab via Monument Valley',
-    url: 'https://www.google.com/maps/dir/Page+AZ/Monument+Valley+Navajo+Tribal+Park/Forrest+Gump+Point+US-163/Mexican+Hat+UT/Moab+UT/',
-    note: 'Monument Valley · Forrest Gump Point · Mexican Hat · Moab' },
+    url: 'https://www.google.com/maps/dir/871+Sandpiper+Dr+Page+AZ/Monument+Valley+Navajo+Tribal+Park/Forrest+Gump+Point+US-163/Mexican+Hat+UT/3442+Tierra+del+Sol+Dr+Moab+UT+84532/',
+    note: 'Monument Valley · Forrest Gump Point · Mexican Hat · Moab Airbnb (3442 Tierra del Sol Dr)' },
   { dayNum: 8, date: 'Sun May 17', label: 'Moab Work Day + Dead Horse Point',
     url: 'https://www.google.com/maps/dir/3442+Tierra+del+Sol+Dr+Moab+UT/Dead+Horse+Point+State+Park+UT/3442+Tierra+del+Sol+Dr+Moab+UT/',
     note: 'Mom solo: Dead Horse Point overlook' },
@@ -52,17 +52,17 @@ const ROUTES: { dayNum: number; date: string; label: string; url: string; note: 
     url: 'https://www.google.com/maps/dir/Salt+Lake+City+UT/Buddy%27s+Italian+Restaurant+626+E+Lewis+St+Pocatello+ID/Sportsman%27s+Warehouse+Idaho+Falls+ID/Snake+River+Greenbelt+Idaho+Falls/Palisades+Reservoir+ID/Pine+Creek+Pass+ID/8487+Caribou+Ct+Victor+ID+83455/',
     note: 'Buddy\'s lunch · bear spray @ Sportsman\'s · Idaho Falls River Walk · Palisades Res. · Pine Creek Pass · Victor cabin' },
   { dayNum: 16, date: 'Mon May 25', label: 'Tetons Day — Schwabacher reflection + Mormon Row + String Lake',
-    url: 'https://www.google.com/maps/dir/Victor+ID/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Schwabacher+Landing+WY/Jackson+Lake+Lodge+WY/String+Lake+Trailhead+Grand+Teton/Victor+ID/',
-    note: 'Teton Pass · Mormon Row · Oxbow Bend · Schwabacher reflection · Jackson Lake Lodge · String Lake · home' },
-  { dayNum: 17, date: 'Tue May 26', label: 'Work day — cabin (rain)',
-    url: 'https://www.google.com/maps/dir/8487+Caribou+Ct+Victor+ID/Citizen+33+Brewery+Driggs+ID/Pendl%27s+Pastries+Driggs+ID/Forage+Bistro+Driggs+ID/8487+Caribou+Ct+Victor+ID/',
-    note: 'Cabin work · light Driggs town walk · Forage dinner' },
-  { dayNum: 18, date: 'Wed May 27', label: 'Victor → West Yellowstone (check in first) → evening Old Faithful + Grand Prismatic',
-    url: 'https://www.google.com/maps/dir/Victor+ID/Harriman+State+Park+Island+Park+ID/Big+Springs+Island+Park+ID/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Crosswinds+Inn+West+Yellowstone+MT/',
-    note: 'Harriman/Island Park · Big Springs · check in 4pm · evening Old Faithful · Fairy Falls overlook (Mesa Falls already done on the way in)' },
-  { dayNum: 19, date: 'Thu May 28', label: 'Yellowstone full loop (W. YS → Lamar → Mammoth → Canyon → W. YS)',
-    url: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Madison+Junction+Yellowstone/Lamar+Valley+Pullouts+Yellowstone/Tower+Fall+Yellowstone/Mammoth+Hot+Springs+Yellowstone/Artist+Point+Yellowstone/West+Yellowstone+MT/',
-    note: 'Madison · Lamar (dawn wildlife) · Tower Fall · Mammoth · Artist Point · home' },
+    url: 'https://www.google.com/maps/dir/8487+Caribou+Ct+Victor+ID+83455/Teton+Pass+Summit+WY/Mormon+Row+Historic+District+WY/Oxbow+Bend+Turnout+Grand+Teton/Schwabacher+Landing+WY/Jackson+Lake+Lodge+WY/String+Lake+Trailhead+Grand+Teton/8487+Caribou+Ct+Victor+ID+83455/',
+    note: 'Teton Pass · Mormon Row · Oxbow Bend · Schwabacher reflection · Jackson Lake Lodge · String Lake · Victor cabin' },
+  { dayNum: 17, date: 'Tue May 26', label: 'Work day — Victor cabin (rain)',
+    url: 'https://www.google.com/maps/dir/8487+Caribou+Ct+Victor+ID+83455/Citizen+33+Brewery+Driggs+ID/Pendl%27s+Pastries+Driggs+ID/Forage+Bistro+Driggs+ID/8487+Caribou+Ct+Victor+ID+83455/',
+    note: 'Cabin work · light Driggs town walk · Forage dinner · sleeps at 8487 Caribou Ct, Victor' },
+  { dayNum: 18, date: 'Wed May 27', label: 'Victor → West Yellowstone (drop bags first) → Old Faithful + Grand Prismatic',
+    url: 'https://www.google.com/maps/dir/8487+Caribou+Ct+Victor+ID+83455/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT+59758/Old+Faithful+Yellowstone/Fairy+Falls+Trailhead+Yellowstone/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT+59758/',
+    note: 'Direct to Crosswinds Inn (201 Firehole Ave), drop ALL bags ~12:30pm, then Old Faithful + Fairy Falls overlook. Mesa Falls already done on the way in.' },
+  { dayNum: 19, date: 'Thu May 28', label: 'Yellowstone full loop (Lamar → Mammoth → Canyon)',
+    url: 'https://www.google.com/maps/dir/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT+59758/Madison+Junction+Yellowstone/Lamar+Valley+Pullouts+Yellowstone/Tower+Fall+Yellowstone/Mammoth+Hot+Springs+Yellowstone/Artist+Point+Yellowstone/Crosswinds+Inn+201+Firehole+Ave+West+Yellowstone+MT+59758/',
+    note: 'Madison · Lamar (dawn wildlife) · Tower Fall · Mammoth · Artist Point · back to Crosswinds Inn' },
   { dayNum: 20, date: 'Fri May 29', label: 'West Yellowstone → Apgar Village + Robin lands FCA 3:34pm',
     url: 'https://www.google.com/maps/dir/West+Yellowstone+MT/Butte+MT/Missoula+MT/Glacier+Park+International+Airport+FCA/Apgar+Village+Lodge+West+Glacier+MT/',
     note: 'Butte · Missoula (lunch) · FCA Robin pickup 3:34pm · Apgar Village Lodge' },
@@ -112,6 +112,28 @@ export default function OfflinePage() {
             <li><b>Download offline regions tonight on WiFi.</b> Google Maps → profile pic → Offline maps → Select your own map. Download the 4 regions below.</li>
             <li><b>Tap any route link below</b> to recreate the full multi-stop directions in 1 second.</li>
             <li><b>Star every waypoint</b> as a Saved Place — works offline.</li>
+          </ol>
+        </section>
+
+        {/* Save all places to Google My Maps */}
+        <section>
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">Save every stop to Google Maps (as a list with names + notes)</h2>
+          <p className="text-sm text-gray-700">
+            Download this file, then import it into Google My Maps to get a saved map of every
+            hotel and stop, each pinned with its name and notes (confirmation numbers, phone, tips).
+          </p>
+          <a
+            href="/mom-road-trip-places.csv"
+            download
+            className="inline-block mt-2 text-sm font-medium text-blue-600 hover:text-blue-800"
+          >
+            ⬇️ Download all places (.csv)
+          </a>
+          <ol className="text-sm text-gray-700 mt-2 space-y-1 list-decimal pl-5">
+            <li>Open <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer" className="text-blue-600">google.com/maps/d</a> and click Create a new map.</li>
+            <li>Click Import on the layer, and choose the downloaded CSV.</li>
+            <li>Set the position column to Address and the title column to Name (notes come in automatically).</li>
+            <li>Open that map in the Google Maps app under Saved → Maps. It works offline once opened.</li>
           </ol>
         </section>
 
